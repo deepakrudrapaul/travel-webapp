@@ -1,0 +1,1011 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>WanderWagon</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- build:css(.) styles/vendor.css -->
+	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/allmighty-autocomplete/style/autocomplete.css" />
+	<link rel="stylesheet" href="bower_components/ngprogress/ngProgress.css" />
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="styles/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="styles/style.css" type="text/css" />
+	<link rel="stylesheet" href="styles/dark.css" type="text/css" />
+	<link rel="stylesheet" href="styles/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="styles/animate.css" type="text/css" />
+	<link rel="stylesheet" href="styles/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="styles/responsive.css" type="text/css" />
+
+
+	<!-- SLIDER REVOLUTION 5.x CSS SETTINGS -->
+	<link rel="stylesheet" type="text/css" href="styles/settings.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="styles/layers.css">
+	<link rel="stylesheet" type="text/css" href="styles/navigation.css">
+
+	<style>
+
+		.revo-slider-emphasis-text {
+			font-size: 64px;
+			font-weight: 700;
+			letter-spacing: -1px;
+			font-family: 'Raleway', sans-serif;
+			padding: 15px 20px;
+			border-top: 2px solid #FFF;
+			border-bottom: 2px solid #FFF;
+		}
+
+		.revo-slider-desc-text {
+			font-size: 20px;
+			font-family: 'Lato', sans-serif;
+			width: 650px;
+			text-align: center;
+			line-height: 1.5;
+		}
+
+		.revo-slider-caps-text {
+			font-size: 16px;
+			font-weight: 400;
+			letter-spacing: 3px;
+			font-family: 'Raleway', sans-serif;
+		}
+
+		.tp-video-play-button { display: none !important; }
+
+		.tp-caption { white-space: nowrap; }
+
+	</style>
+
+
+
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+
+	<!-- / -->
+
+	<!-- endbuild -->
+</head>
+
+<body ng-app="wanderwagon-webapp">
+
+
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header" data-sticky-class="not-dark" data-responsive-class="not-dark">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="" ui-sref="home" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
+						<a href="" ui-sref="home" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+					</div><!-- #logo end -->
+					<!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						<ul>
+							<li>
+								<a href="" ui-sref-active="current" ui-sref="home">
+									<div><i class="icon-home2"></i>Home</div>
+								</a>
+							</li>
+
+							<li>
+								<a href="" ui-sref-active="active-menu" ui-sref="plan-trip">
+									<div><i class="icon-plane"></i>Plan Trip</div>
+								</a>
+							</li>
+							<li>
+								<a href="" ui-sref-active="active-menu" ui-sref="wander-info">
+									<div><i class="icon-info"></i>Wander Info</div>
+								</a>
+							</li>
+							<li>
+								<a href="" ui-sref-active="active-menu" ui-sref="blog.list">
+									<div><i class="icon-comment"></i>Blog</div>
+								</a>
+							</li>
+							<li>
+								<a href="" ui-sref-active="active-menu" ui-sref="about">
+									<div><i class="icon-cloud"></i>Wander Cap</div>
+								</a>
+							</li>
+						</ul>
+
+					</nav>
+					<!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header>
+		<!-- #header end -->
+
+		<section id="slider" class="slider-parallax revslider-wrap clearfix">
+			<div class="slider-parallax-inner">
+				<!--
+				#################################
+					- THEMEPUNCH BANNER -
+				#################################
+				-->
+				<div class="tp-banner-container rev_slider_wrapper fullscreen-container">
+					<div class="tp-banner" >
+						<ul>    <!-- SLIDE  -->
+							<li class="dark" data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-thumb="images/slider/rev/main/s2-thumb.jpg"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off"  data-title="Unlimited Homepages">
+								<!-- MAIN IMAGE -->
+								<img src="images/slider1.jpg"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+								<!-- LAYERS -->
+
+								<!-- LAYER NR. 2 -->
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-8"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutQuad;"
+								data-speed="700"
+								data-start="2600"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;"><img src="images/slider/rev/main/s2-1.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-7"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutQuad;"
+								data-speed="700"
+								data-start="2800"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 4;"><img src="images/slider/rev/main/s2-2.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-6"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutCubic;"
+								data-speed="700"
+								data-start="3000"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 5;"><img src="images/slider/rev/main/s2-3.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-5"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutCubic;"
+								data-speed="700"
+								data-start="3200"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 6;"><img src="images/slider/rev/main/s2-4.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-4"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutCubic;"
+								data-speed="700"
+								data-start="3400"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 7;"><img src="images/slider/rev/main/s2-5.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-3"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutCubic;"
+								data-speed="700"
+								data-start="3600"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 8;"><img src="images/slider/rev/main/s2-6.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-2"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutCubic;"
+								data-speed="700"
+								data-start="3800"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 9;"><img src="images/slider/rev/main/s2-7.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-1"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutCubic;"
+								data-speed="700"
+								data-start="4000"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 10;"><img src="images/slider/rev/main/s2-8.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-caps-text"
+								data-x="0"
+								data-y="120"
+								data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+								data-speed="800"
+								data-start="1200"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 11; white-space: nowrap;">Speaking of Customization?</div>
+
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-emphasis-text nopadding noborder uppercase"
+								data-x="-3"
+								data-y="140"
+								data-customin="x:5;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:5;skewY:0;opacity:0;s:800;transformPerspective:200;transformOrigin:50% 0%;"
+								data-speed="800"
+								data-start="1400"
+								data-easing="easeOutQuad"
+								data-splitin="chars"
+								data-splitout="none"
+								data-elementdelay="0.1"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 11; font-size: 56px;white-space: nowrap;">25+ Homepages</div>
+
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-desc-text tleft"
+								data-x="0"
+								data-y="240"
+								data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;s:800;transformPerspective:200;transformOrigin:50% 0%;"
+								data-speed="800"
+								data-start="1600"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 11; max-width: 550px; white-space: normal;">Amazing Homepages Custom Designed &amp; Ready to use at your Disposal. And we'll always add more..</div>
+
+								<div class="tp-caption customin ltl tp-resizeme"
+								data-x="0"
+								data-y="345"
+								data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+								data-speed="800"
+								data-start="1800"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1300"
+								data-endeasing="Power4.easeIn" style="z-index: 11;"><a href="#" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Check Now</span> <i class="icon-angle-right"></i></a></div>
+
+							</li>
+							<li class="dark" data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-thumb="images/slider/rev/main/s2-thumb.jpg"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off"  data-title="Unlimited Homepages">
+								<!-- MAIN IMAGE -->
+								<img src="images/slider2.jpg"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+								<!-- LAYERS -->
+
+								<!-- LAYER NR. 2 -->
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-8"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutQuad;"
+								data-speed="700"
+								data-start="2600"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap;"><img src="images/slider/rev/main/s2-1.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-7"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutQuad;"
+								data-speed="700"
+								data-start="2800"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 4;"><img src="images/slider/rev/main/s2-2.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-6"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutCubic;"
+								data-speed="700"
+								data-start="3000"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 5;"><img src="images/slider/rev/main/s2-3.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-5"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutCubic;"
+								data-speed="700"
+								data-start="3200"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 6;"><img src="images/slider/rev/main/s2-4.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-4"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutCubic;"
+								data-speed="700"
+								data-start="3400"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 7;"><img src="images/slider/rev/main/s2-5.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-3"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutCubic;"
+								data-speed="700"
+								data-start="3600"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 8;"><img src="images/slider/rev/main/s2-6.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-2"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutCubic;"
+								data-speed="700"
+								data-start="3800"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 9;"><img src="images/slider/rev/main/s2-7.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-1"
+								data-x="200"
+								data-y="107"
+								data-customin="x:0;y:-250;z:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;s:700;e:Power4.easeOutCubic;"
+								data-speed="700"
+								data-start="4000"
+								data-easing="easeOutCubic"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 10;"><img src="images/slider/rev/main/s2-8.png" alt="Image"></div>
+
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-caps-text"
+								data-x="0"
+								data-y="120"
+								data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+								data-speed="800"
+								data-start="1200"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 11; white-space: nowrap;">Speaking of Customization?</div>
+
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-emphasis-text nopadding noborder uppercase"
+								data-x="-3"
+								data-y="140"
+								data-customin="x:5;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:5;skewY:0;opacity:0;s:800;transformPerspective:200;transformOrigin:50% 0%;"
+								data-speed="800"
+								data-start="1400"
+								data-easing="easeOutQuad"
+								data-splitin="chars"
+								data-splitout="none"
+								data-elementdelay="0.1"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 11; font-size: 56px;white-space: nowrap;">25+ Homepages</div>
+
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-desc-text tleft"
+								data-x="0"
+								data-y="240"
+								data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;s:800;transformPerspective:200;transformOrigin:50% 0%;"
+								data-speed="800"
+								data-start="1600"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 11; max-width: 550px; white-space: normal;">Amazing Homepages Custom Designed &amp; Ready to use at your Disposal. And we'll always add more..</div>
+
+								<div class="tp-caption customin ltl tp-resizeme"
+								data-x="0"
+								data-y="345"
+								data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+								data-speed="800"
+								data-start="1800"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1300"
+								data-endeasing="Power4.easeIn" style="z-index: 11;"><a href="#" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Check Now</span> <i class="icon-angle-right"></i></a></div>
+
+							</li>
+							<li data-transition="slideup" data-slotamount="1" data-masterspeed="1500" data-thumb="images/slider/rev/main/s3-thumb.jpg" data-delay="10000"  data-saveperformance="off"  data-title="Responsive &amp; Retina">
+								<!-- MAIN IMAGE -->
+								<img src="images/slider3.jpg"  alt="kenburns6"  data-bgposition="left top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-scalestart="130" data-scaleend="100" data-bgpositionend="right bottom">
+								<!-- LAYERS -->
+
+								<!-- LAYER NR. 2 -->
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-caps-text uppercase"
+								data-x="0"
+								data-y="150"
+								data-customin="x:-200;y:0;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;s:800;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
+								data-speed="800"
+								data-start="1500"
+								data-easing="easeOutQuad"
+								data-splitin="none"
+								data-splitout="none"
+								data-elementdelay="0.01"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap; color: #222;">Bootstrap 3+ Compatible</div>
+
+								<div class="tp-caption customin ltl tp-resizeme revo-slider-emphasis-text nopadding noborder"
+								data-x="-3"
+								data-y="180"
+								data-customin="x:10;y:0;z:0;rotationY:120;rotationZ:0;scaleX:0.8;scaleY:0.8;skewX:0;s:600;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 50%;"
+								data-speed="600"
+								data-start="1700"
+								data-easing="easeOutCubic"
+								data-splitin="chars"
+								data-splitout="none"
+								data-elementdelay="0.1"
+								data-endelementdelay="0.1"
+								data-endspeed="1000"
+								data-endeasing="Power4.easeIn" style="z-index: 3; white-space: nowrap; color: #222; line-height: 1.2; max-width: 450px; width: 450px; white-space: normal;">Responsive Retina Graphics</div>
+
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+
+
+	<div ui-view></div>
+
+
+
+
+	<!-- Footer
+		============================================= -->
+	<footer class="dark footer">
+		
+			<div class="container">
+
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap clearfix">
+
+					<div class="col_two_third">
+
+						<div class="col_one_third">
+
+							<div class="widget clearfix">
+
+								<img src="images/footer-widget-logo.png" alt="" class="footer-logo">
+
+								<p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
+
+								<div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+									<address>
+										<strong>Headquarters:</strong><br>
+										795 Folsom Ave, Suite 600<br>
+										San Francisco, CA 94107<br>
+									</address>
+									<abbr title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br>
+									<abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11 4752 1433<br>
+									<abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="col_one_third">
+
+							<div class="widget widget_links clearfix">
+
+								<h4>Blogroll</h4>
+
+								<ul>
+									<li><a href="http://codex.wordpress.org/">Documentation</a></li>
+									<li><a href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+									<li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
+									<li><a href="http://wordpress.org/support/">Support Forums</a></li>
+									<li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
+									<li><a href="http://wordpress.org/news/">WordPress Blog</a></li>
+									<li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
+								</ul>
+
+							</div>
+
+						</div>
+
+						<div class="col_one_third col_last">
+
+							<div class="widget clearfix">
+								<h4>Recent Posts</h4>
+
+								<div id="post-list-footer">
+									<div class="spost clearfix">
+										<div class="entry-c">
+											<div class="entry-title">
+												<h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+											</div>
+											<ul class="entry-meta">
+												<li>10th July 2014</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="spost clearfix">
+										<div class="entry-c">
+											<div class="entry-title">
+												<h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
+											</div>
+											<ul class="entry-meta">
+												<li>10th July 2014</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="spost clearfix">
+										<div class="entry-c">
+											<div class="entry-title">
+												<h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
+											</div>
+											<ul class="entry-meta">
+												<li>10th July 2014</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col_one_third col_last">
+
+						<div class="widget clearfix" style="margin-bottom: -20px;">
+
+							<div class="row">
+
+								<div class="col-md-6 bottommargin-sm">
+									<div class="counter counter-small"><span data-from="50" data-to="15065421" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
+									<h5 class="nobottommargin">Total Downloads</h5>
+								</div>
+
+								<div class="col-md-6 bottommargin-sm">
+									<div class="counter counter-small"><span data-from="100" data-to="18465" data-refresh-interval="50" data-speed="2000" data-comma="true"></span></div>
+									<h5 class="nobottommargin">Clients</h5>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="widget subscribe-widget clearfix">
+							<h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
+							<div class="widget-subscribe-form-result"></div>
+							<form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
+								<div class="input-group divcenter">
+									<span class="input-group-addon"><i class="icon-email2"></i></span>
+									<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
+									<span class="input-group-btn">
+										<button class="btn btn-success" type="submit">Subscribe</button>
+									</span>
+								</div>
+							</form>
+						</div>
+
+						<div class="widget clearfix" style="margin-bottom: -20px;">
+
+							<div class="row">
+
+								<div class="col-md-6 clearfix bottommargin-sm">
+									<a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+										<i class="icon-facebook"></i>
+										<i class="icon-facebook"></i>
+									</a>
+									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+								</div>
+								<div class="col-md-6 clearfix">
+									<a href="#" class="social-icon si-dark si-colored si-rss nobottommargin" style="margin-right: 10px;">
+										<i class="icon-rss"></i>
+										<i class="icon-rss"></i>
+									</a>
+									<a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div><!-- .footer-widgets-wrap end -->
+
+			</div>
+
+	<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
+						<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+					</div>
+
+					<div class="col_half col_last tright">
+						<div class="fright clearfix">
+							<a href="#" class="social-icon si-small si-borderless si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-twitter">
+								<i class="icon-twitter"></i>
+								<i class="icon-twitter"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-gplus">
+								<i class="icon-gplus"></i>
+								<i class="icon-gplus"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-pinterest">
+								<i class="icon-pinterest"></i>
+								<i class="icon-pinterest"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-vimeo">
+								<i class="icon-vimeo"></i>
+								<i class="icon-vimeo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-github">
+								<i class="icon-github"></i>
+								<i class="icon-github"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-yahoo">
+								<i class="icon-yahoo"></i>
+								<i class="icon-yahoo"></i>
+							</a>
+
+							<a href="#" class="social-icon si-small si-borderless si-linkedin">
+								<i class="icon-linkedin"></i>
+								<i class="icon-linkedin"></i>
+							</a>
+						</div>
+
+						<div class="clear"></div>
+
+						<i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +91-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+	</footer>
+	<!-- #footer end -->
+
+
+
+
+	<!-- Go To Top
+	============================================= -->
+
+
+
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+	<!--<script>
+		!function (A, n, g, u, l, a, r) {
+		A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+			(A[l].q = A[l].q || []).push(arguments)		
+}, A[l].l = +new Date, a = n.createElement(g),
+			r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+		} (window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>-->
+
+	<!-- build:js(.) scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.js"></script>
+	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+	<script src="bower_components/angular-messages/angular-messages.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="bower_components/angular-touch/angular-touch.js"></script>
+	<script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
+	<script src="bower_components/jszip/dist/jszip.js"></script>
+	<script src="bower_components/js-xlsx/dist/xlsx.js"></script>
+	<script src="bower_components/lodash/lodash.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="bower_components/jspdf/dist/jspdf.min.js"></script>
+	<script src="bower_components/jspdf-autotable/dist/jspdf.plugin.autotable.js"></script>
+	<script src="bower_components/ng-csv/build/ng-csv.min.js"></script>
+	<script src="bower_components/js-xls/dist/xls.js"></script>
+	<script src="bower_components/es6-promise/promise.js"></script>
+	<script src="bower_components/alasql/dist/alasql.min.js"></script>
+	<script src="bower_components/allmighty-autocomplete/script/autocomplete.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+	<script src="bower_components/ngprogress/build/ngprogress.min.js"></script>
+	<script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<script src="scripts/app.js"></script>
+	<script src="scripts/controllers/main.js"></script>
+	<script src="scripts/controllers/login.js"></script>
+	<script src="scripts/controllers/home.js"></script>
+	<script src="scripts/controllers/link.js"></script>
+	<script src="scripts/controllers/group-trip.js"></script>
+	<script src="scripts/controllers/blog.js"></script>
+	<script src="scripts/controllers/wander-info.js"></script>
+	<script src="scripts/controllers/contact.js"></script>
+	<script src="scripts/services/auth.js"></script>
+	<script src="scripts/services/remotesvc.js"></script>
+	<script src="scripts/services/config.js"></script>
+	<script src="scripts/controllers/about.js"></script>
+	<script src="scripts/controllers/account.js"></script>
+	<!-- endbuild -->
+
+	<!-- External JavaScripts
+	============================================= -->
+
+
+	<script type="text/javascript" src="styles/js/jquery.js"></script>
+	<script type="text/javascript" src="styles/js/plugins.js"></script>
+
+	<script type="text/javascript" src="styles/js/functions.js"></script>
+
+	<!-- Travel Demo Specific Script -->
+	<!--<script type="text/javascript" src="scripts/js/datepicker.js"></script>-->
+	<!-- / -->
+
+	<!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
+	<script type="text/javascript" src="styles/js/jquery.themepunch.tools.min.js"></script>
+	<script type="text/javascript" src="styles/js/jquery.themepunch.revolution.min.js"></script>
+
+	<script type="text/javascript" src="styles/js/revolution.extension.video.min.js"></script>
+	<script type="text/javascript" src="styles/js/revolution.extension.slideanims.min.js"></script>
+	<script type="text/javascript" src="styles/js/revolution.extension.actions.min.js"></script>
+	<script type="text/javascript" src="styles/js/revolution.extension.layeranimation.min.js"></script>
+	<script type="text/javascript" src="styles/js/revolution.extension.kenburn.min.js"></script>
+	<script type="text/javascript" src="styles/js/revolution.extension.navigation.min.js"></script>
+	<script type="text/javascript" src="styles/js/revolution.extension.migration.min.js"></script>
+	<script type="text/javascript" src="styles/js/revolution.extension.parallax.min.js"></script>
+
+
+
+	<!-- Footer Scripts
+	============================================= -->
+
+	<script type="text/javascript">
+
+		var tpj=jQuery;
+		tpj.noConflict();
+
+		tpj(document).ready(function() {
+
+			var apiRevoSlider = tpj('.tp-banner').show().revolution(
+			{
+				sliderType:"standard",
+				jsFileLocation:"styles/js/",
+				sliderLayout:"fullscreen",
+				dottedOverlay:"none",
+				delay:9000,
+				responsiveLevels:[1200,992,768,480,320],
+				startwidth:1140,
+				startheight:600,
+				hideThumbs:200,
+
+				thumbWidth:100,
+				thumbHeight:50,
+				thumbAmount:3,
+
+				navigation: {
+					keyboardNavigation:"off",
+					keyboard_direction: "horizontal",
+					mouseScrollNavigation:"off",
+					onHoverStop:"off",
+					touch:{
+						touchenabled:"on",
+						swipe_threshold: 75,
+						swipe_min_touches: 1,
+						swipe_direction: "horizontal",
+						drag_block_vertical: false
+					},
+					arrows: {
+                        style: "hermes",
+                        enable: true,
+                        hide_onmobile: false,
+                        hide_onleave: false,
+                        tmp: '<div class="tp-arr-allwrapper">	<div class="tp-arr-imgholder"></div>	<div class="tp-arr-titleholder">{{title}}</div>	</div>',
+                        left: {
+                            h_align: "left",
+                            v_align: "center",
+                            h_offset: 10,
+                            v_offset: 0
+                        },
+                        right: {
+                            h_align: "right",
+                            v_align: "center",
+                            h_offset: 10,
+                            v_offset: 0
+                        }
+                    }
+				},
+
+				touchenabled:"on",
+				onHoverStop:"on",
+
+				swipe_velocity: 0.7,
+				swipe_min_touches: 1,
+				swipe_max_touches: 1,
+				drag_block_vertical: false,
+
+
+				parallax:"mouse",
+				parallaxBgFreeze:"on",
+				parallaxLevels:[8,7,6,5,4,3,2,1],
+				parallaxDisableOnMobile:"on",
+
+				keyboardNavigation:"on",
+
+				shadow:0,
+				fullWidth:"off",
+				fullScreen:"on",
+
+				spinner:"spinner0",
+
+				stopLoop:"off",
+				stopAfterLoops:-1,
+				stopAtSlide:-1,
+
+				shuffle:"off",
+
+
+				forceFullWidth:"off",
+				fullScreenAlignForce:"off",
+				minFullScreenHeight:"400",
+
+				hideThumbsOnMobile:"off",
+				hideNavDelayOnMobile:1500,
+				hideBulletsOnMobile:"off",
+				hideArrowsOnMobile:"off",
+				hideThumbsUnderResolution:0,
+
+				hideSliderAtLimit:0,
+				hideCaptionAtLimit:0,
+				hideAllCaptionAtLilmit:0,
+				startWithSlide:0,
+				fullScreenOffset:"0px"
+			});
+
+			apiRevoSlider.bind("revolution.slide.onloaded",function (e) {
+				setTimeout( function(){ SEMICOLON.slider.sliderParallaxDimensions(); }, 200 );
+			});
+
+			apiRevoSlider.bind("revolution.slide.onchange",function (e,data) {
+				SEMICOLON.slider.revolutionSliderMenu();
+			});
+
+		}); //END REVOLUTION SLIDER
+
+	</script>
+
+
+</body>
+
+</html>

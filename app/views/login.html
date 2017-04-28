@@ -1,0 +1,87 @@
+
+
+<!-- Page Title
+		============================================= -->
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
+
+					
+
+
+							<div class="tab-content clearfix" id="tab-login">
+								<div class="panel panel-default nobottommargin">
+									<div class="panel-body" style="padding: 40px;">
+										<form id="loginForm" name="loginForm" class="nobottommargin" ng-submit="onLogin(loginForm)">
+
+											<h3>Login to your Account</h3>
+
+											<div class="col_full">
+												<label for="loginForm-username">Email:</label>
+												<input ng-model="loginObj.emailId" type="text" id="loginForm-username" name="loginForm-username" value="" class="form-control" />
+											</div>
+
+											<div class="col_full">
+												<label for="loginForm-password">Password:</label>
+												<input ng-model="loginObj.password" type="password" id="loginForm-password" name="loginForm-password" value="" class="form-control" />
+											</div>
+
+											<div class="col_full nobottommargin">
+												<button type="submit" class="button background-primary" id="loginForm-submit" name="loginForm-submit">Login</button>
+												<a href="#" class="fright">Forgot Password?</a>
+											</div>
+
+										</form>
+
+										<div class="line line-sm"></div>
+
+								<div class="center">
+                                     <h4 style="margin-bottom: 15px;"> Login with:</h4>
+                                     <a href="/accounts/facebook/login/?next=%2F" class="button button-rounded si-facebook si-colored"><i class="icon-facebook"></i> Facebook</a>
+                                     <span class="hidden-xs">or</span>
+                                     <a href="/accounts/google/login" class="button button-rounded si-google si-colored"> <i class="icon-google"></i>Google </a>
+                                </div>
+									</div>
+								</div>
+							</div>
+				
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+<div class="modal fade" id="loginModel" tabindex="-1" role="dialog" aria-labelledby="loginModelLabel">
+	<div class="modal-dialog" role="document" style="height: 100px">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">
+						&times;
+					</span>
+				</button>
+				<h4 class="modal-title" id="loginModelLabel">{{message.type}}</h4>
+			</div>
+			<div class="row modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="text-center">
+							<label class="text-center">
+									{{ message.msg }}
+							</label>
+						</div>
+					</div>  
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

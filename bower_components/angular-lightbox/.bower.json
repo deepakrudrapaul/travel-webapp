@@ -1,0 +1,41 @@
+{
+  "name": "angular-lightbox",
+  "version": "0.0.5",
+  "description": "A minimal lightbox directive for AngularJS.",
+  "main": [
+    "angular-lightbox/angular-lightbox.js",
+    "angular-lightbox/angular-lightbox.css"
+  ],
+  "authors": [
+    "Alexandre Bodelot"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "lightbox"
+  ],
+  "dependencies": {
+    "angular": "^1.3.3"
+  },
+  "homepage": "https://github.com/wisemonks/angular-lightbox",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "angular": "^1.3.3"
+  },
+  "_release": "0.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.5",
+    "commit": "d9c08d681a7d14e36fe6dcd0205472d1fc31e4c9"
+  },
+  "_source": "https://github.com/wisemonks/angular-lightbox.git",
+  "_target": "^0.0.5",
+  "_originalSource": "angular-lightbox",
+  "_direct": true
+}

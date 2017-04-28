@@ -1,0 +1,142 @@
+
+
+<!-- Page Title
+		============================================= -->
+<!--<section id="page-title">
+
+	<div class="container clearfix">
+		<h1>My Account</h1>
+		<ol class="breadcrumb">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Pages</a></li>
+			<li class="active">Login</li>
+		</ol>
+	</div>
+
+</section>-->
+<!-- #page-title end -->
+
+<!-- Content
+		============================================= -->
+<section id="content">
+
+	<div class="content-wrap">
+
+		<div class="container clearfix">
+
+			<div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
+
+
+				<div class="tab-content clearfix" id="tab-register">
+					<div class="panel panel-default nobottommargin">
+						<div class="panel-body" style="padding: 40px;">
+							<h3>Sign up for an Account</h3>
+
+							<form id="signUpForm" name="signUpForm" class="nobottommargin" ng-submit="onSignUp(signUpForm)">
+
+								<!--<div class="col_full">
+									<label for="signUpForm-firstName">First Name:</label>
+									<input ng-model="signUpObj.firstName" type="text" id="signUpForm-firstName" name="signUpForm-firstName" value="" class="form-control"
+										required/>
+								</div>
+
+								<div class="col_full">
+									<label for="signUpForm-lastName">Last Name:</label>
+									<input ng-model="signUpObj.lastName" type="text" id="signUpForm-lastName" name="signUpForm-lastName" value="" class="form-control"
+										required/>
+								</div>-->
+
+								<div class="col_full">
+									<label for="signUpForm-email">Email Address:</label>
+									<input ng-model="signUpObj.email" type="email" id="signUpForm-email" name="signUpForm-email" value="" class="form-control"
+										required/>
+								</div>
+
+								<div class="col_full">
+									<label for="signUpForm-password">Choose Password:</label>
+									<input ng-model="signUpObj.password" type="password" id="signUpForm-password" name="signUpForm-password" value="" class="form-control"
+										required/>
+								</div>
+
+								<div class="col_full">
+									<label for="signUpForm-repassword">Re-enter Password:</label>
+									<input ng-model="signUpObj.confirmPassword" type="password" id="signUpForm-repassword" name="signUpForm-repassword" value=""
+										class="form-control" required/>
+								</div>
+
+								<!--<div class="col_full">
+									<label for="signUpForm-dob">Date of Birth:</label>
+									<p class="input-group">
+										<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="signUpObj.date" is-open="popup1.opened"
+											datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+										<span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+									</p>
+								</div>
+
+								<div class="col_full">
+									<label for="signUpForm-gender">Gender:</label>
+									<span class="radio-control">
+													<input type="radio" id="signUpForm-gender" name="signUpForm-gender" required/> Male
+													<input type="radio" id="signUpForm-gender" name="signUpForm-gender" required/> Female
+												</span>
+
+								</div>-->
+
+
+
+								<div class="row">
+									<div class="col-md-6 brd">
+										<button type="submit" class="button background-primary " id="signUpForm-submit" name="signUpForm-submit">Submit</button>
+									</div>
+									<div class="col-md-6 brd">
+										<div ng-show="showMessage" class="alert" ng-class="'alert-' + (alert.type || 'warning')">
+											{{alert.msg}}
+										</div>
+									</div>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+</section>
+<!-- #content end -->
+
+
+
+<div class="modal fade" id="signUpModel" tabindex="-1" role="dialog" aria-labelledby="signUpModelLabel">
+	<div class="modal-dialog" role="document" style="height: 100px">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">
+						&times;
+					</span>
+				</button>
+				<h4 class="modal-title" id="signUpModelLabel">{{message.type}}</h4>
+			</div>
+			<div class="row modal-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<div class="text-center">
+							<label class="text-center">
+									{{ message.msg }}
+							</label>
+						</div>
+					</div>  
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

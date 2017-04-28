@@ -1,0 +1,19 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$fa-font-path: "../bower_components/font-awesome/fonts";
+
+
+$color-primary : #423129;
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "font-awesome/scss/font-awesome.scss";
+// endbower
+
+.background-primary {
+ 	background-color: $color-primary;
+}
+h1,
+h2,
+h3,
+h4 { font-family: 'Arca Majora', sans-serif; }
+
+

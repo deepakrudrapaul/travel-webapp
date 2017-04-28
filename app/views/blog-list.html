@@ -1,0 +1,217 @@
+<!-- Document Wrapper
+	============================================= -->
+<!-- Page Title
+		============================================= -->
+<section id="page-title" style="background: url('images/blog-bg.jpg'); height: 250px;">
+
+  <div class="container clearfix">
+    <h1>Blog</h1>
+    <span>Our Latest News</span>
+    <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li class="active">Blog</li>
+    </ol>
+  </div>
+
+</section>
+<!-- #page-title end -->
+
+<!-- Content
+		============================================= -->
+<section id="content">
+
+  <div class="content-wrap">
+
+    <div class="container clearfix">
+
+      <!-- Post Content
+					============================================= -->
+      <div class="postcontent nobottommargin clearfix">
+
+        <!-- Posts
+						============================================= -->
+        <div id="posts">
+
+          <div ng-repeat="post in posts" class="entry clearfix">
+            <div class="entry-image">
+              <a ng-href="{{post.image}}" data-lightbox="image"><img class="image_fade" ng-src="{{post.image}}" alt="Standard Post with Image"></a>
+            </div>
+            <div class="entry-title">
+              <h2><a href="" ui-sref="blog.detail">{{post.title}}</a></h2>
+            </div>
+            <ul class="entry-meta clearfix">
+              <li><i class="icon-calendar3"></i>{{post.date}}</li>
+              <li><a href="#"><i class="icon-user"></i> {{post.author}}</a></li>
+              <li><i class="icon-folder-open"></i> <a href="#">{{post.category}}</a></li>
+              <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13 Comments</a></li>
+            </ul>
+            <div class="entry-content">
+              <p>{{post.description}}</p>
+              <a href="" ui-sref="blog.detail" class="more-link">Read More</a>
+            </div>
+          </div>
+
+        </div>
+        <!-- #posts end -->
+
+        <!-- Pagination
+						============================================= -->
+        <ul class="pager nomargin">
+          <li class="previous"><a href="#">&larr; Older</a></li>
+          <li class="next"><a href="#">Newer &rarr;</a></li>
+        </ul>
+        <!-- .pager end -->
+
+      </div>
+      <!-- .postcontent end -->
+
+      <!-- Sidebar
+					============================================= -->
+      <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+
+          <!--<div class="widget widget-twitter-feed clearfix">
+
+								<h4>Twitter Feed</h4>
+								<ul class="iconlist twitter-feed" data-username="envato" data-count="2">
+									<li></li>
+								</ul>
+
+								<a href="#" class="btn btn-default btn-sm fright">Follow Us on Twitter</a>
+
+							</div>-->
+
+          <div class="widget clearfix">
+
+            <h4>Instagram Photostream</h4>
+            <!--<div id="flickr-widget" class="flickr-feed masonry-thumbs" >-->
+            <!--<div ng-repeat="image in instaImages">
+              <img width="50" height="50" class="image_fade" ng-src="{{image.image}}" alt="Standard Post with Image">
+            </div>-->
+            <!--</div>-->
+          </div>
+
+          <div class="widget clearfix">
+
+            <div class="tabs nobottommargin clearfix" id="sidebar-tabs">
+
+              <uib-tabset active="activeJustified" justified="true">
+                <uib-tab index="0" heading="Popular">
+                  <div class="tab-content clearfix" id="tabs-1">
+                    <div id="popular-post-list-sidebar">
+
+                      <div class="spost clearfix">
+                        <div class="entry-image">
+                          <a href="#" class="nobg"><img class="img-circle" src="images/magazine/small/3.jpg" alt=""></a>
+                        </div>
+                        <div class="entry-c">
+                          <div class="entry-title">
+                            <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
+                          </div>
+                          <ul class="entry-meta">
+                            <li><i class="icon-comments-alt"></i> 35 Comments</li>
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </uib-tab>
+                <uib-tab index="1" heading="Recent">
+                  <div class="tab-content clearfix" id="tabs-2">
+                    <div id="recent-post-list-sidebar">
+
+                      <div class="spost clearfix">
+                        <div class="entry-image">
+                          <a href="#" class="nobg"><img class="img-circle" src="images/magazine/small/1.jpg" alt=""></a>
+                        </div>
+                        <div class="entry-c">
+                          <div class="entry-title">
+                            <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                          </div>
+                          <ul class="entry-meta">
+                            <li>10th July 2014</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </uib-tab>
+              </uib-tabset>
+
+            </div>
+
+          </div>
+
+          <!--<div class="widget clearfix">
+
+            <h4>Portfolio Carousel</h4>
+            <div id="oc-portfolio-sidebar" class="owl-carousel carousel-widget" data-items="1" data-margin="10" data-loop="true" data-nav="false"
+              data-autoplay="5000">
+
+              <div class="oc-item">
+                <div class="iportfolio">
+                  <div class="portfolio-image">
+                    <a href="#">
+                      <img src="images/portfolio/4/3.jpg" alt="Mac Sunglasses">
+                    </a>
+                    <div class="portfolio-overlay">
+                      <a href="http://vimeo.com/89396394" class="center-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
+                    </div>
+                  </div>
+                  <div class="portfolio-desc center nobottompadding">
+                    <h3><a href="portfolio-single-video.html">Mac Sunglasses</a></h3>
+                    <span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="oc-item">
+                <div class="iportfolio">
+                  <div class="portfolio-image">
+                    <a href="portfolio-single.html">
+                      <img src="images/portfolio/4/1.jpg" alt="Open Imagination">
+                    </a>
+                    <div class="portfolio-overlay">
+                      <a href="images/blog/full/1.jpg" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+                    </div>
+                  </div>
+                  <div class="portfolio-desc center nobottompadding">
+                    <h3><a href="portfolio-single.html">Open Imagination</a></h3>
+                    <span><a href="#">Media</a>, <a href="#">Icons</a></span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>-->
+
+          <div class="widget clearfix">
+
+            <h4>Tag Cloud</h4>
+            <div class="tagcloud">
+              <a href="#">general</a>
+              <a href="#">videos</a>
+              <a href="#">music</a>
+              <a href="#">media</a>
+              <a href="#">photography</a>
+              <a href="#">parallax</a>
+              <a href="#">ecommerce</a>
+              <a href="#">terms</a>
+              <a href="#">coupons</a>
+              <a href="#">modern</a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      <!-- .sidebar end -->
+
+    </div>
+
+  </div>
+
+</section>
+<!-- #content end -->
