@@ -3,7 +3,7 @@
 describe('Controller: InvoiceCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('qikShipVendorApp'));
+  beforeEach(module('wanderwagon-webapp'));
 
   var InvoiceCtrl,
     scope;

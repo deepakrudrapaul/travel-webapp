@@ -3,7 +3,7 @@
 describe('Controller: SignupCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('qikShipVendorApp'));
+  beforeEach(module('wanderwagon-webapp'));
 
   var SignupCtrl,
     scope;

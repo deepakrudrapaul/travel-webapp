@@ -3,7 +3,7 @@
 describe('Controller: StatusControllerCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('qikShipVendorApp'));
+  beforeEach(module('wanderwagon-webapp'));
 
   var StatusControllerCtrl,
     scope;

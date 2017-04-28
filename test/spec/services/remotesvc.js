@@ -3,7 +3,7 @@
 describe('Service: remoteSvc', function () {
 
   // load the service's module
-  beforeEach(module('qikShipVendorApp'));
+  beforeEach(module('wanderwagon-webapp'));
 
   // instantiate service
   var remoteSvc;

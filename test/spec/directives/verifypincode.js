@@ -3,7 +3,7 @@
 describe('Directive: verifyPincode', function () {
 
   // load the directive's module
-  beforeEach(module('qikShipVendorApp'));
+  beforeEach(module('wanderwagon-webapp'));
 
   var element,
     scope;
