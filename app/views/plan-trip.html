@@ -1,0 +1,114 @@
+<!-- Page Title
+		============================================= -->
+		<section id="page-title" style="background: url('images/plan-trip-bg.jpg'); height: 600px;">
+
+			<div style="padding-top: 150px;" class="center container clearfix">
+				<h3 style="font-size:48px; color: #FFF">PLAN YOUR TRIP</h3></br>
+                <Span style="color: #FFF; font-size: 26px;">Trips customized extensively by you and we shall provide the services. By you, for you, as we ensure the fulfilment of your wishes.</Span>
+			</div>
+
+		</section><!-- #page-title end -->
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div style="float: none; display: block; margin-right: auto; margin-left: auto;" class="col_half nobottommargin">
+
+						<form id="conditional-form" action="/booktrip/" method="post" class="nobottommargin">
+							<input type='hidden' name='csrfmiddlewaretoken' value='bajfYtFDAH9kXmH4gfAHVQOPg4DvfBYZ' />
+							<div class="col_full">
+								<label for="form-condition-1">Destination – Where do you want to go?</label>
+								<input ng-keypress="display={display:'block'}" type="text" class="sm-form-control required" id="form-condition-1" name="form-condition-1" value="">
+								<!-- <a href="#" class="button button-border button-rounded"><i class="icon-gift"></i>Button</a> -->
+							</div>
+
+							<div ng-style="display" class="col_full" id="form-condition-2-wrap" style="display:none;">
+								<label for="form-condition-2">Departure city: From where do you plan to start?</label>
+								<input ng-keypress="display1={display:'block'}" type="text" class="sm-form-control required" id="form-condition-2" name="form-condition-2" value="">
+							</div>
+
+							<div ng-style="display1" class="input-daterange travel-date-group" id="form-condition-3-wrap" style="display:none;">
+							<div class="col_full">
+								<label for="form-condition-3">Departure date: Your departure date</label>
+								<input ng-keypress="display2={display:'block'}" type="text" class="sm-form-control tleft required" id="form-condition-3" name="form-condition-3" placeholder="mm/dd/yyyy" value="">
+							</div>
+							</div>
+
+
+							<div ng-style="display2" class="col_full" id="form-condition-4-wrap" style="display:none;">
+								<label for="form-condition-4">Duration: How long is your trip?</label>
+								<input ng-keypress="display3={display:'block'}" type="text" class="sm-form-control required" id="form-condition-4" name="form-condition-4" value="">
+							</div>
+
+							<div ng-style="display3" class="col_full" id="form-condition-5-wrap" style="display:none;">
+								<label for="form-condition-5">Number of fellow wanderlusts!</label>
+								<input ng-keypress="display4={display:'block'}" type="text" class="sm-form-control required" id="form-condition-5" name="form-condition-5" value="">
+							</div>
+
+
+							<div ng-style="display4" class="col_full" id="form-condition-10-wrap" style="display:none;">
+								<label for="form-condition-10">Per person budget for your trip:</label>
+								<select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required sm-form-control">
+									<option value="">-- Select One --</option>
+									<option value="<5K"> < 5K</option>
+									<option value="5K to 10K">5K to 10K</option>
+									<option value="10K to 15K">10K to 15K</option>
+									<option value="15K to 20K">15K to 20K</option>
+									<option value="more than 20K">more than 20K</option>
+								</select>
+							</div>
+
+
+							<div ng-style="display5" class="col_full" id="form-condition-12-wrap" style="display:none;">
+								<label for="form-condition-12">Stage in Planning</label>
+								<select ng-click="display6={display:'block'}" id="form-condition-12" name="form-condition-12" class="required sm-form-control">
+									<option value="">-- Select One --</option>
+									<option value="Still dreaming...not sure I'm going to this trip">Still dreaming...not sure I'm going to this trip</option>
+									<option value="I know I am going somewhere, but not sure about the places">I know I am going somewhere, but not sure about the places </option>
+									<option value="I am definitely going">I am definitely going</option>
+								</select>
+							</div>
+
+							<div ng-style="display6" class="col_full" id="form-condition-13-wrap" style="display:none;">
+								<label for="form-condition-13">What Would You Like To See And Do?</label>
+								<textarea ng-keypress="display7={display:'block'}" class="sm-form-control required" id="form-condition-13" name="form-condition-13" rows="5" col="20" placeholder="Message to us"></textarea>
+							</div>
+
+							<div ng-style="display7" class="col_full" id="form-condition-14-wrap" style="display:none;">
+								<label for="form-condition-14">Enter Name</label>
+								<input ng-keypress="display8={display:'block'}" type="text" class="sm-form-control required" id="form-condition-14" name="form-condition-14" value="">
+							</div>
+
+							<div ng-style="display8" class="col_full" id="form-condition-15-wrap" style="display:none;">
+								<label for="form-condition-15">Enter Email</label>
+								<input ng-keypress="display9={display:'block'}" type="email" class="sm-form-control required email" id="form-condition-15" name="form-condition-15" value="">
+							</div>
+
+							<div ng-style="display9" class="col_full" id="form-condition-16-wrap" style="display:none;">
+								<label for="form-condition-16">Phone No.</label>
+								<input ng-keypress="display10={display:'block'}" type="text" class="sm-form-control required" id="form-condition-16" name="form-condition-16" value="">
+							</div>
+
+							<div ng-style="display10" class="col_full" id="form-condition-submit" style="display:none;">
+								<button ng-keypress="display10={display:'block'}" class="button button-3d nomargin" type="submit">Plan My Trip</button>
+							</div>
+
+						</form>
+
+					</div>
+
+					<!-- <div class="col_half col_last common-height">
+						<h3></h3>
+						<a href="#" id="button_add_destination" class="bottom button button-small button-border button-reveal button-rounded"><i class="icon-map-marker2"></i>Add Destination</a>
+					</div> -->
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->

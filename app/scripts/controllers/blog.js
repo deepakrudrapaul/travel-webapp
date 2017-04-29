@@ -12,7 +12,7 @@ angular.module('wanderwagon-webapp')
 
     var posts = [
       {
-        image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg",
+        image: "http://lorempixel.com/800/400/nature/",
         title: "First Blog of Wander Wagon",
         date: "01/04/2017",
         author: "Admin",
@@ -21,7 +21,7 @@ angular.module('wanderwagon-webapp')
       },
 
       {
-        image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg",
+        image: "http://lorempixel.com/800/400/nature/",
         title: "Second Blog of Wander Wagon",
         date: "01/04/2017",
         author: "Admin",
@@ -30,7 +30,7 @@ angular.module('wanderwagon-webapp')
       },
 
       {
-        image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg",
+        image: "http://lorempixel.com/800/400/nature/",
         title: "Third Blog of Wander Wagon",
         date: "01/04/2017",
         author: "Admin",
@@ -39,7 +39,7 @@ angular.module('wanderwagon-webapp')
       },
 
       {
-        image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg",
+        image: "http://lorempixel.com/800/400/nature/",
         title: "Fourth Blog of Wander Wagon",
         date: "01/04/2017",
         author: "Admin",
@@ -49,18 +49,50 @@ angular.module('wanderwagon-webapp')
     ];
 
     var instaImages = [
-      {image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg"},
-      {image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg"},
-      {image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg"},
-      {image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg"},
-      {image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg"},
-      {image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg"},
-      {image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg"},
-      {image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg"},
-      {image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg"},
-      {image: "http://weknowyourdreams.com/images/adventure/adventure-08.jpg"}
+      {image: "http://lorempixel.com/800/400/nature/"},
+      {image: "http://lorempixel.com/800/400/people/"},
+      {image: "http://lorempixel.com/800/400/sports/"},
+      {image: "http://lorempixel.com/800/400/nature/"},
+      {image: "http://lorempixel.com/800/400/nature/"},
+      {image: "http://lorempixel.com/800/400/nature/"},
+      {image: "http://lorempixel.com/800/400/nature/"},
+      {image: "http://lorempixel.com/800/400/nature/"},
+      {image: "http://lorempixel.com/800/400/nature/"},
+      {image: "http://lorempixel.com/800/400/nature/"}
     ];
 
+    var popularPosts = [
+      {authorImage: "http://lorempixel.com/100/100/people/",
+        postTitle: "This is the most popular post of this month",
+        numberOfComments: 29
+      },
+      {authorImage: "http://lorempixel.com/100/100/people/",
+        postTitle: "This is the most popular post of this month",
+        numberOfComments: 10
+      },
+      {authorImage: "http://lorempixel.com/100/100/people/",
+        postTitle: "This is the most popular post of this month",
+        numberOfComments: 9
+      }
+    ];
+
+    var recentPosts = [
+      {authorImage: "http://lorempixel.com/100/100/people/",
+        postTitle: "This is the most recent post of this month",
+        date: "19th April 2017"
+      },
+      {authorImage: "http://lorempixel.com/100/100/people/",
+        postTitle: "This is the most recent post of this month",
+        date: "9th April 2017"
+      },
+      {authorImage: "http://lorempixel.com/100/100/people/",
+        postTitle: "This is the most recent post of this month",
+        date: "7th April 2017"
+      }
+    ];
+
+    $scope.recentPosts = recentPosts;
+    $scope.popularPosts = popularPosts;
     $scope.instaImages = instaImages;
     $scope.posts = posts;
 

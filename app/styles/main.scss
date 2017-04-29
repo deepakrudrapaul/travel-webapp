@@ -3345,6 +3345,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     border-bottom-color: #ffffff;
   }
 }
+
+.tab-content {
+  padding-top: 10px;
+}
+
 .tab-content > .tab-pane {
   display: none;
 }
@@ -12184,6 +12189,9 @@ body #side-panel.dark #side-panel-trigger-close a {
 	form .col_one_sixth,
 	form .col_five_sixth { margin-bottom: 25px !important; }
 
+  .page-title {
+    color: #FFFFFF;
+  }
 
 	#page-title {
 		padding: 20px 0 25px;
