@@ -69,12 +69,12 @@ angular
       .state('blog.list', {
         url: '/list',
         templateUrl: 'views/blog-list.html',
-        controller: 'BlogCtrl'
+        controller: 'BlogListCtrl'
       })
       .state('blog.detail', {
         url: '/detail',
         templateUrl: 'views/blog-detail.html',
-        controller: 'BlogCtrl'
+        controller: 'BlogDetailCtrl'
       })
       .state('about', {
         url: '/about',

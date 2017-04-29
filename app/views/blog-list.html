@@ -34,16 +34,15 @@
 
           <div ng-repeat="post in posts" class="entry clearfix">
             <div class="entry-image">
-              <a ng-href="{{post.image}}" data-lightbox="image"><img class="image_fade" ng-src="{{post.image}}" alt="Standard Post with Image"></a>
+              <a ng-href="{{post.imageUrl}}" data-lightbox="image"><img class="image_fade" ng-src="{{post.imageUrl}}" alt="Standard Post with Image"></a>
             </div>
             <div class="entry-title">
               <h2><a href="" ui-sref="blog.detail">{{post.title}}</a></h2>
             </div>
             <ul class="entry-meta clearfix">
-              <li><i class="icon-calendar3"></i>{{post.date}}</li>
-              <li><a href="#"><i class="icon-user"></i> {{post.author}}</a></li>
-              <li><i class="icon-folder-open"></i> <a href="#">{{post.category}}</a></li>
-              <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13 Comments</a></li>
+              <li><i class="icon-calendar3"></i>{{post.time}}</li>  
+              <li><a href="#"><i class="icon-user"></i> {{post.user.name}}</a></li>
+              <li><a href="blog-single.html#comments"><i class="icon-comments"></i> {{post.comments}} Comment(s)</a></li>
             </ul>
             <div class="entry-content">
               <p>{{post.description}}</p>

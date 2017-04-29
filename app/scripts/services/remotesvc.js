@@ -42,10 +42,7 @@ angular.module('wanderwagon-webapp')
       getAllPosts : function() {
         return $http({
           method: 'GET',
-          headers: {
-            'auth-token': auth.getToken()
-          },
-          url: remoteAddr
+          url: remoteAddr + '/blogs/all'
         })
       }
     };
