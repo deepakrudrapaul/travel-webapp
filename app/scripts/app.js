@@ -21,6 +21,7 @@ angular
     'ui.router',
     'config',
     'ngProgress',
+    'ae-datetimepicker'
   ])
   .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, socialProvider) {
 
