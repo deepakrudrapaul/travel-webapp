@@ -8118,6 +8118,7 @@ button.close {
   /* line 16, ../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_carousel.scss */
   .carousel-inner > .item {
     transition: transform 0.6s ease-in-out;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     perspective: 1000px;
   }
@@ -19951,6 +19952,7 @@ button.close {
   /* line 5453, ../../app/styles/main.scss */
   .carousel-inner > .item {
     transition: transform 0.6s ease-in-out;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     perspective: 1000px;
   }
@@ -21300,6 +21302,7 @@ Copyright (c) 2014 Daniel Eden
 }
 /* line 7727, ../../app/styles/main.scss */
 .animated.flip {
+  -webkit-backface-visibility: visible;
   backface-visibility: visible;
   animation-name: flip;
 }
@@ -21326,6 +21329,7 @@ Copyright (c) 2014 Daniel Eden
 }
 /* line 7800, ../../app/styles/main.scss */
 .flipInX {
+  -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
   animation-name: flipInX;
 }
@@ -21352,6 +21356,7 @@ Copyright (c) 2014 Daniel Eden
 }
 /* line 7873, ../../app/styles/main.scss */
 .flipInY {
+  -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
   animation-name: flipInY;
 }
@@ -21371,6 +21376,7 @@ Copyright (c) 2014 Daniel Eden
 /* line 7918, ../../app/styles/main.scss */
 .flipOutX {
   animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
 }
 @keyframes flipOutY {
@@ -21388,6 +21394,7 @@ Copyright (c) 2014 Daniel Eden
 }
 /* line 7963, ../../app/styles/main.scss */
 .flipOutY {
+  -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
   animation-name: flipOutY;
 }
@@ -28166,6 +28173,7 @@ span.middot {
   -o-filter: brightness(80%) grayscale(1) contrast(90%);
   -ms-filter: brightness(80%) grayscale(1) contrast(90%);
   transition: 1s filter ease;
+  -webkit-transition: 1s -webkit-filter ease;
   -moz-transition: 1s -moz-filter ease;
   -ms-transition: 1s -ms-filter ease;
   -o-transition: 1s -o-filter ease;
@@ -41455,7 +41463,6 @@ blockquote.pull-right {
   cursor: pointer;
   cursor: hand;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -41498,6 +41505,7 @@ blockquote.pull-right {
 /* line 25675, ../../app/styles/main.scss */
 .owl-carousel.owl-grab {
   cursor: move;
+  cursor: -webkit-grab;
   cursor: -o-grab;
   cursor: -ms-grab;
   cursor: grab;

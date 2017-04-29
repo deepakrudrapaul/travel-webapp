@@ -26,6 +26,8 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  var serveStatic = require('serve-static');
+
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -102,6 +104,7 @@ module.exports = function (grunt) {
         hostname: '0.0.0.0',
         livereload: 35730
       },
+      
       livereload: {
         options: {
           open: true,
