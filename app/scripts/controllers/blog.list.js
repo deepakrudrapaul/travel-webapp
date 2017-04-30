@@ -8,7 +8,7 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('BlogListCtrl', function ($scope, remoteSvc) {
+  .controller('BlogListCtrl', function ($scope, remoteSvc, $location) {
 
     $scope.getAllPosts = function () {
       remoteSvc.getAllPosts()
@@ -20,6 +20,8 @@ angular.module('wanderwagon-webapp')
 
         })
     };
+   
+
     $scope.getAllPosts();
 
     var instaImages = [{

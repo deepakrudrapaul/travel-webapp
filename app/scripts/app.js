@@ -73,7 +73,7 @@ angular
         controller: 'BlogListCtrl'
       })
       .state('blog.detail', {
-        url: '/detail',
+        url: '/list/:postId',
         templateUrl: 'views/blog-detail.html',
         controller: 'BlogDetailCtrl'
       })

@@ -37,7 +37,7 @@
               <a ng-href="{{post.imageUrl}}" data-lightbox="image"><img class="image_fade" ng-src="{{post.imageUrl}}" alt="Standard Post with Image"></a>
             </div>
             <div class="entry-title">
-              <h2><a href="" ui-sref="blog.detail">{{post.title}}</a></h2>
+              <h2><a href="" ui-sref="blog.detail({postId: post.id})">{{post.title}}</a></h2>
             </div>
             <ul class="entry-meta clearfix">
               <li><i class="icon-calendar3"></i>{{post.time}}</li>  

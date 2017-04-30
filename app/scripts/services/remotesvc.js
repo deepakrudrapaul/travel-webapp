@@ -21,7 +21,7 @@ angular.module('wanderwagon-webapp')
           },
           url: remoteAddr + '/consumer/account/profile'
         })
-      }, 
+      },
 
       updateConsumerProfile: function(profileObj) {
         return $http({
@@ -43,6 +43,13 @@ angular.module('wanderwagon-webapp')
         return $http({
           method: 'GET',
           url: remoteAddr + '/blogs/all'
+        })
+      },
+
+      getBlogDetail : function(postId) {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + '/blogs/blogdetail/' + postId
         })
       }
     };
