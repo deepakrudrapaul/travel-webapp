@@ -16,6 +16,25 @@ h2,
 h3,
 h4 { font-family: 'Arca Majora', sans-serif; }
 
+.wrap {
+    width: auto;
+    height:auto;
+    margin: auto;
+    text-align:center;
+    position:relative;
+}
+.text_over_image {
+    position: absolute;
+ margin: auto;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    color:#EEE;
+   height:100px;
+   font-size: 48px;
+}
+
 
 // BOOTSTRAP
 /*!
