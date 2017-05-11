@@ -30,9 +30,16 @@
 
         <!-- Posts
 						============================================= -->
-        <div id="posts">
+        <div id="posts" class="post-timeline clearfix">
+          <div class="timeline-border"></div>
+
 
           <div ng-repeat="post in posts" class="entry clearfix">
+            <div class="entry-timeline">
+									10<span>{{post.date | date:'MMM'}}</span>
+									<div class="timeline-divider"></div>
+								</div>
+
             <div class="entry-image">
               <a ng-href="{{post.imageUrl}}" data-lightbox="image"><img class="image_fade" ng-src="{{post.imageUrl}}" alt="Standard Post with Image"></a>
             </div>
@@ -40,8 +47,8 @@
               <h2><a href="" ui-sref="blog.detail({postId: post.id})">{{post.title}}</a></h2>
             </div>
             <ul class="entry-meta clearfix">
-              <li><i class="icon-calendar3"></i>{{post.time}}</li>  
-              <li><a href="#"><i class="icon-user"></i> {{post.user.name}}</a></li>
+              <li><a href="#"><i class="icon-user"></i> {{post.author}}</a></li>
+              <li><i class="icon-folder-open"></i> <a href="#">General</a></li>
               <li><a><i class="icon-comments"></i> {{post.comments}} Comment(s)</a></li>
             </ul>
             <div class="entry-content">
@@ -190,7 +197,7 @@
             </div>
           </div>-->
 
-          <div class="widget clearfix">
+          <!--<div class="widget clearfix">
 
             <h4>Tag Cloud</h4>
             <div class="tagcloud">
@@ -206,7 +213,7 @@
               <a href="#">modern</a>
             </div>
 
-          </div>
+          </div>-->
 
         </div>
 

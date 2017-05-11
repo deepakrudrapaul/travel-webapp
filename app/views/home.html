@@ -1,54 +1,73 @@
-
-
 <section id="content">
-    <div class="content-wrap nopadding">
-        <div class="section notopmargin">
-            <div class="container clearfix">
-                <div class="heading-block center nobottomborder nobottommargin">
-                    <h2>Why Choose Us</h2>
-                </div>
-
-            </div>
-        </div>
+  <div class="container">
+    <div class="fancy-title title-center title-dotted-border topmargin">
+      <h3>Travel Inspiration</h3>
     </div>
-    <div class="container bottommargin-lg clearfix">
-        <div class="row">
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <div class="box-awesome-service">
-                    <div class="box-icon">
-                        <span class="icon-compass"></span>
-                    </div>
-                    <div class="box-text">
-                        <h3>ADVENTURE</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse placerat urna a vehicula bibendum,
-                            cras erat ipsum.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <div class="box-awesome-service">
-                    <div class="box-icon">
-                        <span class="icon-support"></span>
-                    </div>
-                    <div class="box-text">
-                        <h3>FUN & SAFETY</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse placerat urna a vehicula bibendum,
-                            cras erat ipsum.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-12 col-xs-12">
-                <div class="box-awesome-service">
-                    <div class="box-icon">
-                        <span class="icon-flag"></span>
-                    </div>
-                    <div class="box-text">
-                        <h3>IMPECCABLE SERVICE</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse placerat urna a vehicula bibendum,
-                            cras erat ipsum.</p>
-                    </div>
-                </div>
-            </div>
+
+
+    <ui-carousel slides="images" slides-to-show="3" slides-to-scroll="3" dots="false">
+      <carousel-item>
+        <img ng-src="{{item.imageUrl}}" alt="{{ item.text }}" />
+        <h3 style="text-align:center;">{{ item.text }}</h3>
+      </carousel-item>
+    </ui-carousel>
+
+
+
+    <div class="entry clear"></div>
+
+    <div class="fancy-title title-center title-dotted-border topmargin">
+      <h3>The Blog</h3>
+    </div>
+
+    <div class="entry clearfix">
+      <div class="pull-right" style="width:50%;">
+        <a href="images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="http://placehold.it/520x300" alt="Standard Post with Image"></a>
+      </div>
+
+      <div class="pull-left" style="width:50%;">
+        <div class="entry-title">
+          <h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
         </div>
+
+        <div class="entry-content" style="margin-top:50px;">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
+            deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus
+            officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab
+            facere.
+          </p>
+          <a href="blog-single.html" class="more-link">Read More</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="entry clearfix">
+      <div class="pull-left" style="width:50%;">
+        <a href="images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="http://placehold.it/520x300" alt="Standard Post with Image"></a>
+      </div>
+
+      <div class="pull-right" style="width:50%;">
+        <div class="entry-title">
+          <h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
+        </div>
+
+        <div class="entry-content" style="margin-top:50px;">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
+            deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus
+            officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab
+            facere.
+          </p>
+          <a href="blog-single.html" class="more-link">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	 <div class="wrap">
+      <img src="https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg" alt="Image" width="1366" height="600">
+      <!--<div class="text_over_image">
+        {{postDetail.title}}
+      </div>-->
     </div>
 </section>

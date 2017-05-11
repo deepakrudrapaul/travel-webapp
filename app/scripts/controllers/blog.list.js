@@ -13,8 +13,19 @@ angular.module('wanderwagon-webapp')
     $scope.getAllPosts = function () {
       remoteSvc.getAllPosts()
         .success(function (data) {
-          console.log(data.response);
-          $scope.posts = data.response;
+          $scope.posts = [];
+          for (var i = 0; i < data.response.length; i++) {
+            var post = data.response[i];
+            $scope.posts[i] = {};
+            $scope.posts[i].title = post.title;
+            $scope.posts[i].author = post.user.name;
+            $scope.posts[i].description = post.description;
+            $scope.posts[i].imageUrl = post.imageUrl;
+            $scope.posts[i].id = post.id;
+            $scope.posts[i].comments = post.comments;
+            $scope.posts[i].date = new Date(new Date("2017-12-09").getTime());
+          }
+          console.log($scope.posts);  
         })
         .error(function (error) {
 

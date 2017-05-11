@@ -29,7 +29,7 @@
  *          ---------
  * rectangle is visible for users
  */
-angular.module('ui.carousel.controllers').controller('CarouselController', ['$scope', '$element', '$timeout', '$q', 'Carousel', function ($scope, $element, $timeout, $q, Carousel) {
+angular.module('ui.carousel.controllers').controller('CarouselController', ['$scope', '$element', '$timeout', '$q', 'Carousel', '$window', function ($scope, $element, $timeout, $q, Carousel, $window) {
   var _this = this;
 
   /**
@@ -43,11 +43,6 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
     _this.initRanges();
     _this.setProps();
     _this.setupInfinite();
-
-    // onInit callback
-    if (_this.onInit) {
-      _this.onInit();
-    }
   };
 
   /**
@@ -84,6 +79,12 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
     if (_this.dots !== undefined) {
       _this.options.dots = _this.dots;
     }
+    if (_this.visiblePrev !== undefined) {
+      _this.options.visiblePrev = _this.visiblePrev;
+    }
+    if (_this.visibleNext !== undefined) {
+      _this.options.visibleNext = _this.visibleNext;
+    }
 
     // TODO write more options for fade mode
     // In fade mode we have to setting slides-to-show and slides-to-scroll
@@ -118,25 +119,30 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
     _this.slideStyle = {};
 
     _this.isVisibleDots = false;
-    _this.isVisiblePrev = false;
-    _this.isVisibleNext = false;
+    _this.isVisiblePrev = _this.options.visiblePrev;
+    _this.isVisibleNext = _this.options.visibleNext;
+
+    _this.isClickablePrev = false;
+    _this.isClickableNext = false;
 
     _this.animType = null;
     _this.transformType = null;
     _this.transitionType = null;
-
-    _this.slidesInTrack = angular.copy(_this.slides);
   };
 
   /**
    * Init UI and carousel track
    */
   this.initUI = function () {
+    _this.width = $element[0].clientWidth;
+
+    // Update track width first
+    _this.initTrack();
+
+    // Then item style
     $timeout(function () {
-      _this.width = $element[0].clientWidth;
       _this.updateItemStyle();
-      _this.initTrack();
-    });
+    }, 200);
   };
 
   /**
@@ -165,6 +171,11 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
       if (!_this.options.fade) {
         _this.refreshTrackStyle();
       }
+
+      // onInit callback
+      if (_this.onInit) {
+        _this.onInit();
+      }
     }).catch(function () {
       // Catch err
     });
@@ -186,6 +197,10 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
    * - 8 total, 4 show, 3 scroll, current 1 => next index = 4
    */
   this.next = function () {
+    if (!_this.isClickableNext) {
+      return false;
+    }
+
     var indexOffset = _this.getIndexOffset();
     var slideOffset = indexOffset === 0 ? _this.options.slidesToScroll : indexOffset;
 
@@ -200,6 +215,10 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
    * @see next function
    */
   this.prev = function () {
+    if (!_this.isClickablePrev) {
+      return false;
+    }
+
     var indexOffset = _this.getIndexOffset();
     var slideOffset = indexOffset === 0 ? _this.options.slidesToScroll : _this.options.slidesToShow - indexOffset;
 
@@ -251,6 +270,7 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
     var show = _this.options.slidesToShow;
 
     if (len <= show) {
+      _this.correctTrack();
       return $q.reject('Length of slides smaller than slides to show');
     }
 
@@ -279,7 +299,8 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
     }
 
     if (_this.onBeforeChange) {
-      _this.onBeforeChange(_this.currentSlide, target);
+      // @see https://docs.angularjs.org/guide/directive
+      _this.onBeforeChange({ currentSlide: _this.currentSlide, target: target });
     }
 
     // Fade handler
@@ -291,11 +312,13 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
       // fire after faded
       // Should be revised
       $timeout(function () {
+        _this.autoplayTrack();
+
         if (_this.onAfterChange) {
-          _this.onAfterChange(_this.currentSlide);
+          _this.onAfterChange({ currentSlide: _this.currentSlide });
         }
       }, _this.options.speed);
-      return $q.resolve('Handler fade');
+      return $q.when('Handler fade');
     }
 
     // No-fade handler
@@ -314,13 +337,24 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
         _this.correctTrack();
       }
 
+      if (!_this.options.infinite) {
+        if (_this.currentSlide === 0) {
+          _this.isClickablePrev = false;
+        } else if (_this.currentSlide === _this.slidesInTrack.length - 1) {
+          _this.isClickableNext = false;
+        } else {
+          _this.isClickablePrev = true;
+          _this.isClickableNext = true;
+        }
+      }
+
       // XXX
       // afterChange method
       // fire after 200ms wakeup and correct track
       // Should be revised
       $timeout(function () {
         if (_this.onAfterChange) {
-          _this.onAfterChange(_this.currentSlide);
+          _this.onAfterChange({ currentSlide: _this.currentSlide });
         }
       }, 200);
     });
@@ -354,7 +388,10 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
   this.correctTrack = function () {
     if (_this.options.infinite) {
       (function () {
-        var left = -1 * (_this.currentSlide + _this.options.slidesToShow) * _this.itemWidth;
+        var left = 0;
+        if (_this.slides.length > _this.options.slidesToShow) {
+          left = -1 * (_this.currentSlide + _this.options.slidesToShow) * _this.itemWidth;
+        }
 
         // Move without anim
         _this.trackStyle[_this.transitionType] = _this.transformType + ' ' + 0 + 'ms ' + _this.options.cssEase;
@@ -438,17 +475,21 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
     var len = _this.slides.length;
     var show = _this.options.slidesToShow;
 
+    var tmpTrack = angular.copy(_this.slides);
+
     if (_this.options.infinite && _this.options.fade === false) {
       if (len > show) {
         var number = show;
         for (var i = 0; i < number; i++) {
-          _this.slidesInTrack.push(angular.copy(_this.slides[i]));
+          tmpTrack.push(angular.copy(_this.slides[i]));
         }
         for (var _i = len - 1; _i >= len - show; _i--) {
-          _this.slidesInTrack.unshift(angular.copy(_this.slides[_i]));
+          tmpTrack.unshift(angular.copy(_this.slides[_i]));
         }
       }
     }
+
+    _this.slidesInTrack = tmpTrack;
   };
 
   /**
@@ -480,6 +521,7 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
   this.setProps = function () {
     var bodyStyle = document.body.style;
 
+    /* eslint-disable */
     if (bodyStyle.OTransform !== undefined) {
       _this.animType = 'OTransform';
       _this.transformType = '-o-transform';
@@ -505,15 +547,27 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
       _this.transformType = 'transform';
       _this.transitionType = 'transition';
     }
+    /* eslint-enable */
 
     _this.transformsEnabled = true;
   };
 
+  /**
+   * Refresh carousel
+   */
   this.refreshCarousel = function () {
     if (_this.slides && _this.slides.length && _this.slides.length > _this.options.slidesToShow) {
       _this.isVisibleDots = true;
       _this.isVisiblePrev = true;
       _this.isVisibleNext = true;
+      _this.isClickablePrev = true;
+      _this.isClickableNext = true;
+    } else {
+      _this.isVisibleDots = false;
+      _this.isVisiblePrev = false;
+      _this.isVisibleNext = false;
+      _this.isClickablePrev = false;
+      _this.isClickableNext = false;
     }
 
     // Re-init UI
@@ -523,8 +577,36 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
   /**
    * refresh model
    */
-  $scope.$watch('ctrl.slides', function () {
+  $scope.$watchCollection('ctrl.slides', function (slides) {
+    if (!slides) {
+      return;
+    }
+
+    // Init carousel
+    if (_this.currentSlide > slides.length - 1) {
+      _this.currentSlide = slides.length - 1;
+    }
+
+    _this.setupInfinite();
     _this.refreshCarousel();
+  });
+
+  /**
+   * update when resize
+   *
+   * @see https://github.com/mihnsen/ui-carousel/issues/10
+   * @author tarkant
+   */
+  angular.element($window).on('resize', this.refreshCarousel);
+
+  /**
+   * cleanup when done
+   *
+   * @see https://github.com/mihnsen/ui-carousel/issues/10
+   * @author tarkant
+   */
+  $scope.$on('$destroy', function () {
+    angular.element($window).off('resize');
   });
 
   // Prior to v1.5, we need to call `$onInit()` manually.
@@ -538,8 +620,8 @@ angular.module('ui.carousel.controllers').controller('CarouselController', ['$sc
 angular.module('ui.carousel.directives').directive('uiCarousel', ['$compile', '$templateCache', '$sce', function ($compile, $templateCache, $sce) {
 
   return { restrict: 'AE',
-    scope: true,
-    bindToController: {
+    bindToController: true,
+    scope: {
       name: '=?',
       slides: '=',
       show: '=?slidesToShow',
@@ -556,13 +638,15 @@ angular.module('ui.carousel.directives').directive('uiCarousel', ['$compile', '$
       arrows: '=?',
       dots: '=?',
       initialSlide: '=?',
+      visibleNext: '=?',
+      visiblePrev: '=?',
 
       // Method
       onBeforeChange: '&',
       onAfterChange: '&',
       onInit: '&'
     },
-    compile: function compile(el) {
+    link: function link($scope, el) {
       var template = angular.element($templateCache.get('ui-carousel/carousel.template.html'));
 
       // dynamic injections to override the inner layers' components
@@ -580,11 +664,8 @@ angular.module('ui.carousel.directives').directive('uiCarousel', ['$compile', '$
         }
       });
 
-      return function ($scope, el) {
-        // Compile
-        var compiledElement = $compile(templateInstance)($scope);
-        el.addClass('ui-carousel').html('').append(compiledElement);
-      };
+      var compiledElement = $compile(templateInstance)($scope);
+      el.addClass('ui-carousel').html('').append(compiledElement);
     },
 
 
@@ -614,6 +695,9 @@ angular.module('ui.carousel.providers').provider('Carousel', function () {
     slidesToShow: 1,
     slidesToScroll: 1,
     speed: 500,
+
+    visiblePrev: false,
+    visibleNext: false,
 
     // Not available right now
     draggable: true,
@@ -647,6 +731,6 @@ angular.module('ui.carousel.providers').provider('Carousel', function () {
     module = angular.module('ui.carousel', []);
   }
   module.run(['$templateCache', function ($templateCache) {
-    $templateCache.put('ui-carousel/carousel.template.html', '<div class="carousel-wrapper" ng-show="ctrl.isCarouselReady"><div class="track-wrapper"><div class="track" ng-style="ctrl.trackStyle"><div class="slide" ng-repeat="item in ctrl.slidesInTrack track by $index" ng-style="ctrl.getSlideStyle($index)"><div class="carousel-item"></div></div></div></div><div class="carousel-prev" ng-if="!ctrl.disableArrow" ng-show="ctrl.isVisiblePrev &amp;&amp; ctrl.options.arrows" ng-click="ctrl.prev()"><button class="carousel-btn"><i class="ui-icon-prev"></i></button></div><div class="carousel-next" ng-if="!ctrl.disableArrow" ng-show="ctrl.isVisibleNext &amp;&amp; ctrl.options.arrows" ng-click="ctrl.next()"><button class="carousel-btn"><i class="ui-icon-next"></i></button></div><ul class="carousel-dots" ng-show="ctrl.isVisibleDots &amp;&amp; ctrl.options.dots"><li ng-repeat="dot in ctrl.getDots()" ng-class="{ \'carousel-active\': dot == ctrl.currentSlide/ctrl.options.slidesToScroll }" ng-click="ctrl.movePage(dot)"><button>{{ dot }}</button></li></ul></div>');
+    $templateCache.put('ui-carousel/carousel.template.html', '<div class="carousel-wrapper" ng-show="ctrl.isCarouselReady"><div class="track-wrapper"><div class="track" ng-style="ctrl.trackStyle"><div class="slide" ng-repeat="item in ctrl.slidesInTrack track by $index" ng-style="ctrl.getSlideStyle($index)"><div class="carousel-item"></div></div></div></div><div class="carousel-prev" ng-if="!ctrl.disableArrow" ng-show="ctrl.isVisiblePrev &amp;&amp; ctrl.options.arrows" ng-class="{\'carousel-disable\': !ctrl.isClickablePrev}" ng-click="ctrl.prev()"><button class="carousel-btn"><i class="ui-icon-prev"></i></button></div><div class="carousel-next" ng-if="!ctrl.disableArrow" ng-show="ctrl.isVisibleNext &amp;&amp; ctrl.options.arrows" ng-class="{\'carousel-disable\': !ctrl.isClickableNext}" ng-click="ctrl.next()"><button class="carousel-btn"><i class="ui-icon-next"></i></button></div><ul class="carousel-dots" ng-show="ctrl.isVisibleDots &amp;&amp; ctrl.options.dots"><li ng-repeat="dot in ctrl.getDots()" ng-class="{ \'carousel-active\': dot == ctrl.currentSlide/ctrl.options.slidesToScroll }" ng-click="ctrl.movePage(dot)"><button>{{ dot }}</button></li></ul></div>');
   }]);
 })();

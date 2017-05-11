@@ -10,42 +10,55 @@
 angular.module('wanderwagon-webapp')
   .controller('HomeCtrl', function ($scope) {
 
-  
 
 
-    $scope.myInterval = 3000;
-    $scope.noWrapSlides = false;
-    $scope.active = 0;
-    var slides = $scope.slides = [];
-    var currIndex = 0;
+    // $scope.myInterval = 3000;
+    // // $scope.noWrapSlides = false;
+    // // $scope.active = 0;
+    // var slides = $scope.slides = [];
+    // // var currIndex = 0;
 
-    $scope.addSlide = function (imageUrl, text) {
-      slides.push({
-        image: imageUrl,
-        text: text,
-        id: currIndex++
-      });
-    };
+    // $scope.addSlide = function (imageUrl, text) {
+    //   slides.push({
+    //     image: imageUrl,
+    //     text: text
+    //   });
+    // };
 
 
     $scope.images = [
       {
-        imageUrl: 'http://moonriveradventure.in/images/slider3.jpg',
-        text: 'Planning a Trip'
+        imageUrl: 'http://placehold.it/380x255',
+        text: 'Backpacking'
       },
       {
-        imageUrl: 'https://mrajshekhar.files.wordpress.com/2012/11/ladakh-51.jpg',
-        text: 'Rent a Bike'
+        imageUrl: 'http://placehold.it/380x255',
+        text: 'Road Trip'
       },
       {
-        imageUrl: 'http://arounddeglobe.com/wp-content/uploads/2014/12/Zip-lining.jpg',
-        text: 'Adrenaline Junkie'
+        imageUrl: 'http://placehold.it/380x255',
+        text: 'Wild Life'
+      },
+      {
+        imageUrl: 'http://placehold.it/380x255',
+        text: 'Family'
+      },
+      {
+        imageUrl: 'http://placehold.it/380x255',
+        text: 'Adventure'
+      },
+      {
+        imageUrl: 'http://placehold.it/380x255',
+        text: 'Couple'
       }
     ];
 
-    angular.forEach($scope.images, function(value, index){
-        $scope.addSlide(value.imageUrl, value.text);
-    })
+
+    
+
+    // angular.forEach($scope.images, function(value, index){
+    //     $scope.addSlide(value.imageUrl, value.text);
+    // })
     
 
 
