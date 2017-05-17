@@ -1,4 +1,11 @@
+<div class="wrap">
+  <img src="images/slider2.jpg" alt="Blog Single" width="1366" height="600">
+  <div style="width:300px;" class="text_over_image" >
+    <a href="#" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Let's Wander</span> <i class="icon-angle-right"></i></a>
+  </div>
+</div>
 <section id="content">
+
   <div class="container">
     <div class="fancy-title title-center title-dotted-border topmargin">
       <h3>Travel Inspiration</h3>
@@ -64,10 +71,117 @@
     </div>
   </div>
 
-	 <div class="wrap">
-      <img src="https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg" alt="Image" width="1366" height="600">
-      <!--<div class="text_over_image">
+  <div style="position:relative;">
+    <img src="https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg" alt="Image" width="1366" height="600">
+    <!--<div class="text_over_image">
         {{postDetail.title}}
       </div>-->
+    <div style="width:538px; min-height:600px; float:left; position:absolute; left:0px; top:0px; z-index:1; background-color: rgba(0,0,0,.66); padding:5px; color: #FFF; font-weight:bold;">
+      <div style="padding:45px;">
+        <div>
+          <div>
+            <h3 style="margin: 0;font-size: 25px;font-weight: 600;
+    line-height: normal;
+    letter-spacing: 2px;
+    color:#FFF;
+    text-transform: uppercase;">Not Sure Where to Begin?</h3>
+            <p style="color:#FFF; font-size:15px;">Complete this form &amp; we'll get right back to you!</p>
+          </div>
+        </div>
+        <form id="">
+          <div style="padding:0px;" class="col-sm-6">
+            <label style="color:#FFF;">First Name<span class="asterisk">*</span></label>
+            <input class="form-control" id="{{inquireFirstName}}" type="text" placeholder="*Required" value="{{firstName}}" data-parsley-trim-value="true"
+              required data-prefill="firstName" />
+          </div>
+
+          <div class="col-sm-6">
+            <label style="color:#FFF;">Last Name</label>
+            <input class="form-control" id="{{inquireLastName}}" type="text" value="{{lastName}}" data-parsley-trim-value="true" data-prefill="lastName"
+            />
+          </div>
+
+          <div style="padding:10px 0 0 0;" class="col-sm-6">
+            <label style="color:#FFF;">Email<span class="asterisk">*</span></label>
+            <input class="form-control" id="{{inquireEmail}}" type="email" value="{{email}}" placeholder="*Required" data-parsley-trim-value="true"
+              required data-prefill="email" />
+          </div>
+
+
+          <div style="padding-top:10px;" class="col-sm-6">
+            <label style="color:#FFF;">Phone Number<span class="asterisk">*</span></label>
+            <div class="inquireTelContainer">
+              <input class="form-control" id="{{inquireTel}}" placeholder="*Required" value="{{tel}}" type="tel" data-parsley-intphone="{{inquireTel}}"
+                data-parsley-cnic required data-prefill="phone" />
+              <input id="{{inquireCountry}}" type="hidden" data-prefill="country" />
+            </div>
+          </div>
+
+          <div style="padding:10px 0 0 0;" class="col-sm-6">
+            <label style="color:#FFF;" for="form-condition-10">I would like to go to...</label>
+            <select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required sm-form-control">
+									<option value="">-- Select One --</option>
+									<option value="<5K"> Rishikesh</option>
+									<option value="5K to 10K">Manali</option>
+									<option value="10K to 15K">Dharamshala</option>
+									<option value="15K to 20K">Ladakh</option>
+									<option value="more than 20K">Shimla</option>
+								</select>
+          </div>
+
+
+
+
+          <div style="padding-top:10px;" class="col-sm-6">
+            <label style="color:#FFF;" for="form-condition-10">In the month of...</label>
+            <select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required sm-form-control">
+									<option value="">Travel Dates TBC</option>
+									<option value="<5K">January</option>
+									<option value="5K to 10K">February</option>
+									<option value="10K to 15K">March</option>
+									<option value="15K to 20K">April</option>
+									<option value="more than 20K">May</option>
+                  <option value="<5K">June</option>
+									<option value="5K to 10K">July</option>
+									<option value="10K to 15K">August</option>
+									<option value="15K to 20K">September</option>
+									<option value="more than 20K">October</option>
+                  <option value="10K to 15K">November</option>
+									<option value="15K to 20K">December</option>
+								</select>
+          </div>
+
+
+          <div style="width:97%;">
+            <label style="padding-top: 10px; color:#FFF;">What's the occasion?<span class="asterisk">*</span></label>
+            <textarea style="max-width:425px; max-height:400px;" class="form-control" placeholder="Tell us a little bit about what you're looking for."></textarea>
+          </div>
+
+           <div style="padding:20px 0 0 0;" class="col-sm-12">
+              <button style="margin:0px !important; width:97%; height:70px;"  id="{{inquireSubmit}}" class="button buttonPrimary">SUBMIT INQUIRY</button>
+            </div>
+          </div>
+
+
+
+          <!--
+          <div class="row-spc-16 mrg-btm-15">
+            <div class="col-sm-12">
+              <label style="color:#FFF;">What's the occasion?</label>
+              <textarea id="{{inquireQuestions}}" placeholder="Tell us a little bit about what you're looking for." data-prefill="inquireOccasion">{{questions}}</textarea>
+            </div>
+          </div>
+
+          <div class="row-spc-16 mrg-btm-15">
+            <div class="col-sm-12">
+              <button id="{{inquireSubmit}}" class="button buttonPrimary">SUBMIT INQUIRY</button>
+            </div>
+          </div>-->
+
+        </form>
+      </div>
+
+
     </div>
+  </div>
 </section>

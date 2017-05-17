@@ -1,0 +1,46 @@
+<!-- Page Title
+		============================================= -->
+<div class="wrap">
+  <img src="images/slider2.jpg" alt="Blog Single" width="1366" height="600">
+  <div style="width:300px;" class="text_over_image">
+    Title of the Article
+  </div>
+</div>
+
+<!-- Content
+		============================================= -->
+<section id="content">
+
+    <div class="container clearfix">
+
+		 <div class="fancy-title title-center title-dotted-border topmargin">
+      <h3>Destinations</h3>
+    </div>
+
+      <div style="padding-left:100px;"  id="posts" class="events small-thumbs">
+
+		<div class=".col-md-3" ng-repeat="destination in destinations">
+          <div class="entry-image" style="padding-bottom:10px;">
+            <a href="#" ui-sref="destination.detail({id: destination.id})">
+              <img ng-src="{{destination.imageUrl}}" alt="Inventore voluptates velit totam ipsa tenetur">
+			  <h3 class="text-center">{{destination.name}}</h3>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pagination
+					============================================= -->
+      <!--<ul class="pager nomargin">
+        <li class="previous"><a href="#">&larr; Older</a></li>
+        <li class="next"><a href="#">Newer &rarr;</a></li>
+      </ul>-->
+      <!-- .pager end -->
+
+    </div>
+
+
+
+</section>
+<!-- #content end -->

@@ -58,10 +58,20 @@ angular
         controller: 'PlanTripCtrl'
       })
 
-      .state('wander-info', {
-        url: '/wander-info',
-        templateUrl: 'views/wander-info.html',
-        controller: 'WanderInfoCtrl'
+      .state('destination', {
+        url: '/destination',
+        abstract: true,
+        template:"<ui-view></ui-view>"
+      })
+      .state('destination.list', {
+        url: '/list',
+        templateUrl: 'views/destination.html',
+        controller: 'DestinationCtrl'
+      })
+      .state('destination.detail', {
+        url: '/list/:id',
+        templateUrl: 'views/destination-detail.html',
+        controller: 'DestinationDetailCtrl'
       })
       .state('blog', {
         url: '/blog',
