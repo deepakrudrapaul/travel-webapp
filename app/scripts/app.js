@@ -22,7 +22,8 @@ angular
     'config',
     'ngProgress',
     'ae-datetimepicker',
-    'ui.carousel'
+    'ui.carousel',
+    'ngMap'
   ])
   .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, socialProvider) {
 
