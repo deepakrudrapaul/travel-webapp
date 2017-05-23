@@ -1,69 +1,216 @@
 <div class="wrap">
   <img src="images/slider2.jpg" alt="Blog Single" width="1366" height="600">
-  <div style="width:300px;" class="text_over_image">
-    Title of the Article
+  <div style="width:700px;" class="text_over_image">
+    Shillong : The Scotland of East
   </div>
 </div>
 <section id="content">
   <div class="container clearfix">
-    <div style="margin-top: 20px;" class="tabs nobottommargin clearfix">
 
-      <uib-tabset active="activeJustified" justified="true">
-        <uib-tab index="0" heading="About The Place">
-          <div class="tab-content clearfix">
-
-            <div class="pull-left" style="width:60%; padding-right:10px;">
-              <h5 class="text-center">Welcome to Dharamshala</h5>
-              <div class="custom-divider"><i class="icon-info"></i></div>
+    <div class="entry clearfix">
+      <div class="pull-left" style="width:60%; padding-right:10px;">
+        <h4 class="text-center">About The Place</h4>
+        <div class="custom-divider"><i class="icon-info"></i></div>
 
 
-              <p>Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="#">Curabitur blandit tempus porttitor</a>.
-                Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis
-                in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida
-                at eget metus. Vestibulum id ligula porta felis euismod semper.</p>
+        <p>Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="#">Curabitur blandit tempus porttitor</a>. Integer
+          posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas
+          eget quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Vestibulum
+          id ligula porta felis euismod semper.</p>
 
 
-              <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet
-                fermentum. Donec id elit non mi porta gravida at eget metus.</p>
+        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum.
+          Donec id elit non mi porta gravida at eget metus.</p>
 
-              <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
-                Cras justo odio, dapibus ac facilisis in, egestas eget quam. <a href="#">Nullam quis risus eget urna</a>                mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur. Cras
+          justo odio, dapibus ac facilisis in, egestas eget quam. <a href="#">Nullam quis risus eget urna</a> mollis ornare
+          vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+      </div>
+
+      <div class="pull-right" style="width:40%;">
+
+        <h4 class="text-center">Location</h4>
+        <div class="custom-divider"><i class="icon-location"></i></div>
+        <ng-map scrollwheel="false" center="[25.5788, 91.8933]" zoom="12">
+          <marker position="25.5788, 91.8933" title="Shillong"></marker>
+        </ng-map>
+      </div>
+    </div>
+
+
+
+    <div class="entry clearfix">
+
+      <div class="pull-left" style="width:60%; padding-right:10px;">
+        <h4 class="text-center">How To Reach</h4>
+        <div class="custom-divider"><i class="icon-question"></i></div>
+
+        <div class="feature-box">
+          <div class="custom-fbox-icon">
+            <i class="icon-plane i-alt"></i>
+          </div>
+          <span style="font:bold; font-size:20px;">Airport</span>
+          <p>Powerful Layout with Responsive functionality that can be adapted to any screen size.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="custom-fbox-icon">
+            <i class="icon-train i-alt"></i>
+          </div>
+          <span style="font:bold; font-size:20px;">Railways</span>
+          <p>Powerful Layout with Responsive functionality that can be adapted to any screen size.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="custom-fbox-icon">
+            <i class="icon-bus i-alt"></i>
+          </div>
+          <span style="font:bold; font-size:20px;">Bus</span>
+          <p>Powerful Layout with Responsive functionality that can be adapted to any screen size
+          </p>
+        </div>
+      </div>
+
+
+      <div class="pull-right" style="width:40%;">
+        <h4 class="text-center">Overview</h4>
+        <div class="custom-divider"><i class="icon-circle"></i></div>
+
+        <div style="margin: 30px;">
+          <h5 class="pull-left"><i style="padding-right:10px;" class="icon-calendar i-alt"></i>Best Time To Visit</h5>
+          <p style="margin-right: 40px;" class="pull-right">All Seasons</p>
+        </div>
+        <span class="clearfix"></span>
+        <div style="margin: 0 30px 30px 30px;">
+          <h5 class="pull-left"><i style="padding-right:10px;" class="icon-calendar i-alt"></i>Days Required</h5>
+          <p style="margin-right: 40px;" class="pull-right">4-5 Days</p>
+        </div>
+
+        <span class="clearfix"></span>
+        <div style="margin: 0 30px 30px 30px;">
+          <h5 class="pull-left"><i style="padding-right:10px;" class="icon-folder i-alt"></i>Category</h5>
+          <p style="margin-right: 40px;" class="pull-right">Hills</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="entry clearfix">
+      <div class="fancy-title title-center title-dotted-border topmargin">
+        <h3>Places To Visit</h3>
+      </div>
+
+      <div class="row">
+        <div class="row">
+
+          <div class="col-md-3">
+            <!-- Controls -->
+            <div class="controls hidden-xs">
+              <a class="icon-angle-left btn" href="#carousel-example-generic" data-slide="prev"></a>
+              <a class="icon-angle-right btn" href="#carousel-example-generic" data-slide="next"></a>
+            </div>
+          </div>
+        </div>
+
+        <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="col-item">
+                    <div class="photo">
+                      <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                    </div>
+                    <div class="info">
+                      <h5 class="text-center">
+                        Dharamshala</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-item">
+                    <div class="photo">
+                      <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                    </div>
+                    <div class="info">
+                      <h5 class="text-center">
+                        Adventure</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-item">
+                    <div class="photo">
+                      <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                    </div>
+                    <div class="info">
+                      <h5 class="text-center">
+                        RoadTrip</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="col-item">
+                    <div class="photo">
+                      <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                    </div>
+                    <div class="info">
+                      <h5 class="text-center">
+                        Nature</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-item">
+                    <div class="photo">
+                      <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                    </div>
+                    <div class="info">
+                      <h5 class="text-center">
+                        Family</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-item">
+                    <div class="photo">
+                      <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                    </div>
+                    <div class="info">
+                      <h5 class="text-center">
+                        Beach</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <accordion-group is-open="heading1.isOpen">
+          <div style="padding-left:50px;" id="posts" class="events small-thumbs">
+
+            <div class="pull-left" style="width:40%;">
+              <a href="images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="images/slider1.jpg" alt="Standard Post with Image"></a>
             </div>
 
-            <div class="pull-right" style="width:40%;">
-
-              <h5 class="text-center">Location</h5>
-              <div class="custom-divider"><i class="icon-location"></i></div>
-              <ng-map scrollwheel="false" center="[32.2190, 76.3234]" zoom="12">
-                <marker position="32.2190, 76.3234" title="Dharamshala"></marker>
-              </ng-map>
-            </div>
-
-            <div style="padding-top:50px;">
-
-              <div class="pull-left" style="width:60%; padding-right:10px;">
-                <h5 class="text-center">How To Reach</h5>
-                <div class="custom-divider"><i class="icon-plane"></i></div>
-
-                <p>Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="#">Curabitur blandit tempus porttitor</a>.
-                  Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis
-                  in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida
-                  at eget metus. Vestibulum id ligula porta felis euismod semper.</p>
+            <div class="pull-right" style="width:60%; padding-left:10px;">
+              <h3>Name</h3>
 
 
-                <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet
-                  fermentum. Donec id elit non mi porta gravida at eget metus.</p>
+              <div>
+                <h4>How To Reach</h4>
 
                 <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam. Mollis ornare vel eu leo. Integer posuere
-                  erat a ante venenatis dapibus posuere velit aliquet.</p>
+                  Cras justo odio, dapibus ac facilisis in, egestas eget quam. <a href="#">Nullam quis risus eget urna</a>                  mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
 
-              </div>
-
-
-              <div class="pull-right" style="width:40%;">
-                <h5 class="text-center">Overview</h5>
-                <div class="custom-divider"><i class="icon-circle"></i></div>
 
               </div>
 
@@ -71,19 +218,138 @@
             </div>
 
           </div>
-        </uib-tab>
-        <uib-tab index="1" heading="Places To Visit">
-          <div class="tab-content clearfix">
+        </accordion-group>
+      </div>
 
-          </div>
-        </uib-tab>
-        <uib-tab index="2" heading="Activities">
-          <div class="tab-content clearfix">
-
-          </div>
-        </uib-tab>
-      </uib-tabset>
 
     </div>
+
+
+    <div class="entry clearfix">
+      <div class="fancy-title title-center title-dotted-border topmargin">
+        <h3>Activities</h3>
+      </div>
+
+      <div class="row">
+        <div class="row">
+
+          <div class="col-md-3">
+            <!-- Controls -->
+            <div class="controls hidden-xs">
+              <a class="icon-angle-left btn" href="#carousel-example-generic" data-slide="prev"></a>
+              <a class="icon-angle-right btn" href="#carousel-example-generic" data-slide="next"></a>
+            </div>
+          </div>
+        </div>
+
+        <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="col-item">
+                    <div class="photo">
+                      <img ng-click="heading2.isOpen = !heading2.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                    </div>
+                    <div class="info">
+                      <h5 class="text-center">
+                        Dharamshala</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-item">
+                    <div class="photo">
+                      <img ng-click="heading2.isOpen = !heading2.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                    </div>
+                    <div class="info">
+                      <h5 class="text-center">
+                        Adventure</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-item">
+                    <div class="photo">
+                      <img ng-click="heading2.isOpen = !heading2.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                    </div>
+                    <div class="info">
+                      <h5 class="text-center">
+                        RoadTrip</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="col-item">
+                    <div class="photo">
+                      <img ng-click="heading2.isOpen = !heading2.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                    </div>
+                    <div class="info">
+                      <h5 class="text-center">
+                        Nature</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-item">
+                    <div class="photo">
+                      <img ng-click="heading2.isOpen = !heading2.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                    </div>
+                    <div class="info">
+                      <h5 class="text-center">
+                        Family</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="col-item">
+                    <div class="photo">
+                      <img ng-click="heading2.isOpen = !heading2.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                    </div>
+                    <div class="info">
+                      <h5 class="text-center">
+                        Beach</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <accordion-group is-open="heading2.isOpen">
+          <div style="padding-left:50px;" id="posts" class="events small-thumbs">
+
+            <div class="pull-left" style="width:40%;">
+              <a href="images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="images/slider1.jpg" alt="Standard Post with Image"></a>
+            </div>
+
+            <div class="pull-right" style="width:60%; padding-left:10px;">
+              <h3>Name</h3>
+
+
+              <div>
+                <h4>How To Reach</h4>
+
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
+                  Cras justo odio, dapibus ac facilisis in, egestas eget quam. <a href="#">Nullam quis risus eget urna</a>                  mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+
+
+              </div>
+
+
+            </div>
+
+          </div>
+        </accordion-group>
+      </div>
+    </div>
+
+
   </div>
 </section>

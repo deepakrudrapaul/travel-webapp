@@ -1,10 +1,15 @@
-<div class="wrap">
+<section class="wrap">
   <img src="images/slider2.jpg" alt="Blog Single" width="1366" height="600">
-  <p class="text_over_image_1">WANDERWAGON MAKES YOUR TRIP MEMORABLE</p>
+  <p style="line-height: 62px;
+    border-width: 0px;
+    font-weight:700;
+    letter-spacing: -1px;
+    font-size: 41px;
+    font-family: 'Raleway', sans-serif;" class="text_over_image_1">WANDERWAGON MAKES YOUR TRIP MEMORABLE</p>
   <div style="width:300px;" class="text_over_image">
     <a href="#" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Let's Wander</span> <i class="icon-angle-right"></i></a>
   </div>
-</div>
+</section>
 <section id="content">
 
   <div class="container">
@@ -12,21 +17,133 @@
       <h3>Travel Inspiration</h3>
     </div>
 
-
-
+    <!--
+    
     <ui-carousel slides="images" slides-to-show="3" slides-to-scroll="3" dots="false">
       <carousel-item>
         <img ng-src="{{item.imageUrl}}" alt="{{ item.text }}" />
-        <h3 style="text-align:center;">{{ item.text }}</h3>
+        <h3 style="cursor:pointer;"style="text-align:center;">{{ item.text }}</h3>
       </carousel-item>
-    </ui-carousel>
+    </ui-carousel>-->
+
+    <div class="row">
+      <div class="row">
+
+        <div class="col-md-3">
+          <!-- Controls -->
+          <div class="controls hidden-xs">
+            <a class="icon-angle-left btn" href="#carousel-example-generic" data-slide="prev"></a>
+            <a class="icon-angle-right btn" href="#carousel-example-generic" data-slide="next"></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="col-item">
+                  <div class="photo">
+                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 class="text-center">
+                      Backpacking</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-item">
+                  <div class="photo">
+                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 class="text-center">
+                      Adventure</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-item">
+                  <div class="photo">
+                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 class="text-center">
+                      RoadTrip</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="col-item">
+                  <div class="photo">
+                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 class="text-center">
+                      Nature</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-item">
+                  <div class="photo">
+                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 class="text-center">
+                      Family</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-item">
+                  <div class="photo">
+                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 class="text-center">
+                      Beach</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <accordion-group is-open="heading1.isOpen">
+        <div style="padding-left:50px;" id="posts" class="events small-thumbs">
+
+          <div class=".col-md-4" ng-repeat="destination in destinations">
+            <div class="entry-image" style="padding-bottom:10px;">
+              <a href="#" ui-sref="destination.detail({id: destination.id})">
+                <img ng-src="{{destination.imageUrl}}" alt="Inventore voluptates velit totam ipsa tenetur">
+                <h3 class="text-center">{{destination.name}}</h3>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </accordion-group>
+    </div>
+
+
+
+
 
 
 
     <div class="entry clear"></div>
 
     <div class="fancy-title title-center title-dotted-border topmargin">
-      <h3>The Blog</h3>
+      <h3 style="cursor:pointer;" ui-sref="blog.list" ng-click="onClicked()">The Blog</h3>
     </div>
 
     <div class="entry clearfix">
@@ -159,14 +276,14 @@
             <textarea style="max-width:425px; max-height:400px;" class="form-control" placeholder="Tell us a little bit about what you're looking for."></textarea>
           </div>
 
-           <div style="padding:20px 0 0 0;" class="col-sm-12">
-              <button style="margin:0px !important; width:97%; height:70px;"  id="{{inquireSubmit}}" class="button buttonPrimary">SUBMIT INQUIRY</button>
-            </div>
+          <div style="padding:20px 0 0 0;" class="col-sm-12">
+            <button style="margin:0px !important; width:97%; height:70px;" id="{{inquireSubmit}}" class="button buttonPrimary">SUBMIT INQUIRY</button>
           </div>
+      </div>
 
 
 
-          <!--
+      <!--
           <div class="row-spc-16 mrg-btm-15">
             <div class="col-sm-12">
               <label style="color:#FFF;">What's the occasion?</label>
@@ -180,10 +297,9 @@
             </div>
           </div>-->
 
-        </form>
-      </div>
-
-
+      </form>
     </div>
+
+
   </div>
 </section>

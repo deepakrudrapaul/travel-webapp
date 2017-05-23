@@ -2,15 +2,12 @@
 	============================================= -->
 <!-- Page Title
 		============================================= -->
-<section id="page-title" style="background: url('images/blog-bg.jpg'); height: 250px;">
+<section id="page-title" style="background: url('images/slider/1.jpg'); height: 600px;">
 
   <div class="container clearfix">
     <h1>Blog</h1>
     <span>Our Latest News</span>
-    <ol class="breadcrumb">
-      <li><a href="#">Home</a></li>
-      <li class="active">Blog</li>
-    </ol>
+ 
   </div>
 
 </section>
@@ -33,15 +30,15 @@
         <div id="posts" class="post-timeline clearfix">
           <div class="timeline-border"></div>
 
-
           <div ng-repeat="post in posts" class="entry clearfix">
             <div class="entry-timeline">
-									10<span>{{post.date | date:'MMM'}}</span>
+									<!--10<span>{{post.date | date:'MMM'}}</span>-->
+                  10<span>May</span>
 									<div class="timeline-divider"></div>
 								</div>
 
             <div class="entry-image">
-              <a ng-href="{{post.imageUrl}}" data-lightbox="image"><img class="image_fade" ng-src="{{post.imageUrl}}" alt="Standard Post with Image"></a>
+              <a ng-href="{{post.image}}" data-lightbox="image"><img class="image_fade" ng-src="{{post.image}}" alt="Standard Post with Image"></a>
             </div>
             <div class="entry-title">
               <h2><a href="" ui-sref="blog.detail({postId: post.id})">{{post.title}}</a></h2>

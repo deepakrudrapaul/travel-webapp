@@ -1,0 +1,189 @@
+<div class="wrap">
+  <img src="images/slider2.jpg" alt="Blog Single" width="1366" height="600">
+  <div style="width:700px;" class="text_over_image">
+    TIME TO TRAVEL
+  </div>
+  <!--<div style="width:300px;" class="text_over_image">
+    <a href="#" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Let's Wander</span> <i class="icon-angle-right"></i></a>
+  </div>-->
+</div>
+<section id="content">
+
+  <div class="container">
+    <div class="fancy-title title-center title-dotted-border topmargin">
+      <h3>Travel Inspiration</h3>
+    </div>
+
+
+
+    <div class="row">
+      <div class="row">
+
+        <div class="col-md-3">
+          <!-- Controls -->
+          <div class="controls hidden-xs">
+            <a class="icon-angle-left btn" href="#carousel-example-generic" data-slide="prev"></a>
+            <a class="icon-angle-right btn" href="#carousel-example-generic" data-slide="next"></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="col-item">
+                  <div class="photo">
+                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 class="text-center">
+                      Backpacking</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-item">
+                  <div class="photo">
+                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 class="text-center">
+                      Adventure</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-item">
+                  <div class="photo">
+                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 class="text-center">
+                      RoadTrip</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="col-item">
+                  <div class="photo">
+                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 class="text-center">
+                      Nature</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-item">
+                  <div class="photo">
+                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 class="text-center">
+                      Family</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="col-item">
+                  <div class="photo">
+                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 class="text-center">
+                      Beach</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <accordion-group is-open="heading1.isOpen">
+        <div style="padding-left:50px;" id="posts" class="events small-thumbs">
+
+          <div class=".col-md-4" ng-repeat="destination in destinations">
+            <div class="entry-image" style="padding-bottom:10px;">
+              <a href="#" ui-sref="destination.detail({id: destination.id})">
+                <img ng-src="{{destination.imageUrl}}" alt="Inventore voluptates velit totam ipsa tenetur">
+                <h3 class="text-center">{{destination.name}}</h3>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </accordion-group>
+    </div>
+
+
+
+
+
+
+    <div class="entry clear"></div>
+
+    <div class="fancy-title title-center title-dotted-border topmargin">
+      <h3 style="cursor:pointer;" ui-sref="blog.list" ng-click="onClicked()">Recent Articles</h3>
+    </div>
+
+    <div class="entry clearfix">
+      <div class="pull-right" style="width:50%;">
+        <a href="images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="images/slider1.jpg" alt="Standard Post with Image"></a>
+      </div>
+
+      <div class="pull-left" style="width:50%; padding-right:10px;">
+        <div class="entry-title">
+          <h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
+        </div>
+
+        <div class="entry-content" style="margin-top:50px;">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
+            deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus
+            officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab
+            facere.
+          </p>
+          <a href="blog-single.html" class="more-link">Read More</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="entry clearfix">
+      <div class="pull-left" style="width:50%;">
+        <a href="images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="images/slider2.jpg" alt="Standard Post with Image"></a>
+      </div>
+
+      <div class="pull-right" style="width:50%; padding-left:10px;">
+        <div class="entry-title">
+          <h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
+        </div>
+
+        <div class="entry-content" style="margin-top:50px;">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
+            deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus
+            officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab
+            facere.
+          </p>
+          <a href="blog-single.html" class="more-link">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:0px 0 30px 0; float: none; display: block; margin-right: auto; margin-left: auto;" class="control-center col-sm-6">
+      <button ui-sref="plan-trip" style="margin:0px !important; width:97%; height:70px;" id="{{inquireSubmit}}" class="button buttonPrimary">Couldn't decide ? Let us Help You !</button>
+    </div>
+
+  </div>
+  </div>
+</section>

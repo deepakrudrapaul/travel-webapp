@@ -45,7 +45,7 @@ h4 {
   bottom: 0;
   color: #EEE;
   height: 100px;
-  font-size: 24px;
+  font-size: 36px;
 }
 
 // BOOTSTRAP
@@ -14326,8 +14326,14 @@ body #side-panel.dark #side-panel-trigger-close a {
 	Retina CSS
 -----------------------------------------------------------------*/
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and ( min--moz-device-pixel-ratio: 2), only screen and ( -o-min-device-pixel-ratio: 2/1), only screen and ( min-device-pixel-ratio: 2), only screen and ( min-resolution: 192dpi), only screen and ( min-resolution: 2dppx) {
-  #logo a.standard-logo, #header.split-menu #logo a.standard-logo {
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and ( min--moz-device-pixel-ratio: 2),
+only screen and ( -o-min-device-pixel-ratio: 2/1),
+only screen and ( min-device-pixel-ratio: 2),
+only screen and ( min-resolution: 192dpi),
+only screen and ( min-resolution: 2dppx) {
+  #logo a.standard-logo,
+  #header.split-menu #logo a.standard-logo {
     display: none;
   }
   #logo a.retina-logo {
@@ -14381,7 +14387,12 @@ body #side-panel.dark #side-panel-trigger-close a {
   }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 991px), only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 991px), only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 991px), only screen and ( min-device-pixel-ratio: 2) and (max-width: 991px), only screen and ( min-resolution: 192dpi) and (max-width: 991px), only screen and ( min-resolution: 2dppx) and (max-width: 991px) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 991px),
+only screen and ( min--moz-device-pixel-ratio: 2) and (max-width: 991px),
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (max-width: 991px),
+only screen and ( min-device-pixel-ratio: 2) and (max-width: 991px),
+only screen and ( min-resolution: 192dpi) and (max-width: 991px),
+only screen and ( min-resolution: 2dppx) and (max-width: 991px) {
   #logo a.standard-logo {
     display: none;
   }
@@ -30589,4 +30600,39 @@ body:not(.no-transition) #wrapper,
   left: 30px;
   height: 0;
   border-top: 1px solid #EEE;
+}
+
+.custom-fbox-icon {
+  display: block;
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  top: 0;
+  left: 0;
+}
+
+.custom-fbox-icon i {
+  font-style: normal;
+  font-size: 18px;
+  text-align: center;
+  line-height: 42px;
+  border-radius: 50%;
+  background-color: #1ABC9F;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.panel-default>.panel-heading {
+  display: none;
+}
+
+.panel-default {
+    border-color:transparent;
 }

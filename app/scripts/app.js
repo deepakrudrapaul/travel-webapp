@@ -99,10 +99,10 @@ angular
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl'
       })
-      .state('wander-cap', {
-        url: '/wander-cap',
-        templateUrl: 'views/wander-cap.html',
-        controller: 'WanderCapCtrl'
+      .state('travel-plan', {
+        url: '/travel-plan',
+        templateUrl: 'views/travel-plan.html',
+        controller: 'TravelPlanCtrl'
       })
       .state('partner', {
         url: '/partner',

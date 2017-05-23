@@ -12,21 +12,28 @@ angular.module('wanderwagon-webapp')
 
     var postId = $stateParams.postId;
 
-    $scope.getPostDetail = function () {
-      remoteSvc.getBlogDetail(postId)
-        .success(function (data) {
-          console.log(data);
-          $scope.postDetail = data.response.blogDetailElements[0];
-          console.log($scope.postDetail);
-          $scope.author = data.response.author;
-          $scope.comments = data.response.comments;
-        })
-        .error(function (error) {
-          console.log(error);
-        })
-    };
+    // $scope.getPostDetail = function () {
+    //   remoteSvc.getBlogDetail(postId)
+    //     .success(function (data) {
+    //       console.log(data);
+    //       $scope.postDetail = data.response.blogDetailElements[0];
+    //       console.log($scope.postDetail);
+    //       $scope.author = data.response.author;
+    //       $scope.comments = data.response.comments;
+    //     })
+    //     .error(function (error) {
+    //       console.log(error);
+    //     })
+    // };
 
-    $scope.getPostDetail();
+    // $scope.getPostDetail();
+
+    $scope.postDetail = {
+      title: "First Blog of Wander Wagon",
+      author: "Paul",
+      description: "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis",
+      imageUrl: "images/related1.jpg"
+    };
 
 
     var popularPosts = [{
