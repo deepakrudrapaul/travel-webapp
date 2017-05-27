@@ -1,31 +1,20 @@
-<!-- Page Title
-		============================================= -->
-<!--<div class="wrap">
-  <img src="images/slider2.jpg" alt="Blog Single" width="1366" height="600">
-  <div style="width:300px;" class="text_over_image">
-    Title of the Article
-  </div>
-</div>-->
-<section id="content">
-  <div class="clearfix">
-    <ui-carousel slides="slides" dots="false">
-      <carousel-item>
-        <img ng-src="{{item.imageUrl}}" alt="{{ item.text }}" />
-<!--        
-        <div style="width:300px;" class="text_over_image">
-          <a href="#" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>{{item.text}}</span> <i class="icon-angle-right"></i></a>
-        </div>-->
-      </carousel-item>
+<section style="height:680px;" id="slider" class="swiper_wrapper full-screen clearfix">
+  <div class="slider-parallax-inner">
 
-      <carousel-prev>
-        <div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
-      </carousel-prev>
-
-      <carousel-next>
-        <div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
-      </carousel-next>
-    </ui-carousel>
-    <Paste>
+    <div class="swiper-container swiper-parent">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide dark" style="background-image: url('images/destination-bg.jpg');  height:680px;">
+          <div class="container clearfix">
+            <div class="slider-caption-center">
+              <h2 style="font-size:48px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:200px;" data-caption-animate="fadeInUp">
+                Top 10 Places To Visit In Dharamshala</h2>
+              <a ui-sref="blog.list" class="button button-border button-white button-light button-large button-rounded tright nomargin">
+                <span>Read More</span> <i class="icon-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -34,38 +23,33 @@
 		============================================= -->
 <section id="content">
 
-  <div class=" clearfix">
 
-    <div class="fancy-title title-center title-dotted-border topmargin">
-      <h3>Destinations</h3>
-    </div>
+  <div class="topmargin">
+    <h2 style="text-align:center;margin-bottom:4rem;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+      Destinations
+      <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+      </div>
+    </h2>
+  </div>
 
-    <div style="padding-left:30px;" id="posts" class="events small-thumbs">
-
-      <div class=".col-md-4" ng-repeat="destination in destinations">
-        <div class="entry-image" style="padding-bottom:10px;">
-          <a href="#" ui-sref="destination.detail({id: destination.id})">
-            <img ng-src="{{destination.imageUrl}}" alt="Inventore voluptates velit totam ipsa tenetur">
-            <h3 class="text-center">{{destination.name}}</h3>
-          </a>
+  <div class="container">
+    <div class="row row-centered">
+      <div style="margin-bottom:10px;" ng-repeat="destination in destinations" class="col-xs-4 col-centered col-fixed">
+        <div class="item">
+          <div style="cursor:pointer;" ui-sref="destination.detail({id: destination.id})" class="content">
+            <img width="380" height="255" ng-src="{{destination.imageUrl}}" />
+            <h5 style="font-size:1.6rem" class="text-center">
+                    {{destination.name}}</h5>
+          </div>
         </div>
       </div>
-
     </div>
-
-    
-
-    <!-- Pagination
-					============================================= -->
-    <!--<ul class="pager nomargin">
-        <li class="previous"><a href="#">&larr; Older</a></li>
-        <li class="next"><a href="#">Newer &rarr;</a></li>
-      </ul>-->
-    <!-- .pager end -->
-
   </div>
 
 
 
+
+
+
+
 </section>
-<!-- #content end -->

@@ -26,64 +26,49 @@ angular.module('wanderwagon-webapp')
     ];
 
     $scope.destinations = [{
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/himachal.jpg',
         name: 'Himachal',
         id: 1
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/uttarakhand.jpg',
         name: 'Uttarakhand',
         id: 2
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/kashmir.jpg',
         name: 'Kashmir',
         id: 3
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/meghalaya.jpg',
         name: 'Meghalaya',
         id: 4
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/arunachal.jpg',
         name: 'Arunachal',
         id: 5
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/sikkim.jpg',
         name: 'Sikkim',
         id: 6
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/manipur.jpg',
         name: 'Manipur',
         id: 7
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/assam.jpg',
         name: 'Assam',
         id: 8
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/darjeeling.jpg',
         name: 'Darjeeling',
         id: 9
-      },
-      {
-        imageUrl: 'http://placehold.it/380x255',
-        name: 'Kolkata',
-        id: 10
-      },
-      {
-        imageUrl: 'http://placehold.it/380x255',
-        name: 'Delhi',
-        id: 11
-      },
-      {
-        imageUrl: 'http://placehold.it/380x255',
-        name: 'Agra',
-        id: 12
       }
     ];
 

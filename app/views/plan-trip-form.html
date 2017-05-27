@@ -1,0 +1,145 @@
+<section style="background:#444;" id="page-title">
+</section>
+
+<div class="container">
+
+  <h1 style="padding:20px;" class="text-center">PLAN YOUR TRIP</h1>
+  <h3 style="padding:20px;" class="text-center">UNDERSTANDING YOUR TRAVEL PREFERENCE</h3>
+
+  <h3>MOST IMPORTANT *</h3>
+
+  <form id="">
+    <div style="padding:0px;" class="col-sm-6">
+      <label style=" text-transform:capitalize">Your name<span class="asterisk">*</span></label>
+      <input class="form-control" id="{{inquireFirstName}}" type="text" placeholder="*Required" value="{{firstName}}" data-parsley-trim-value="true"
+        required data-prefill="firstName" />
+    </div>
+
+    <div class="col-sm-6">
+      <label style=" text-transform:capitalize">Your email address<span class="asterisk">*</span></label>
+      <input class="form-control" id="{{inquireEmail}}" type="email" value="{{email}}" placeholder="*Required" data-parsley-trim-value="true"
+        required data-prefill="email" />
+    </div>
+
+
+
+    <div style="padding:10px 0 0 0;" class="col-sm-6">
+      <label style=" text-transform:capitalize">Which country are you from ?<span class="asterisk">*</span></label>
+      <input class="form-control" id="{{inquireFirstName}}" type="text" placeholder="*Required" value="{{firstName}}" data-parsley-trim-value="true"
+        required data-prefill="firstName" />
+    </div>
+
+
+    <div style="padding-top:10px;" class="col-sm-6">
+      <label style=" text-transform:capitalize">How many people are travelling ? <span class="asterisk">*</span></label>
+      <input class="form-control" id="{{inquireFirstName}}" type="number" placeholder="*Required" value="{{firstName}}" data-parsley-trim-value="true"
+        required data-prefill="firstName" />
+    </div>
+
+    <h3>GETTING TO KNOW YOU A LITTLE BETTER</h3>
+    <div style="padding:0 0 0 0;" class="col-sm-6">
+      <label style=" text-transform:capitalize" for="form-condition-10">Tell us more about your travel companions</label>
+      <select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required sm-form-control">
+									<option value="">0 Selected</option>
+									<option value="5K"> 1</option>
+									<option value="5K to 10K">2</option>
+									<option value="10K to 15K">3</option>
+									<option value="15K to 20K">4</option>
+									<option value="more than 20K">5</option>
+								</select>
+    </div>
+
+
+
+
+    <div class="col-sm-6">
+      <label style=" text-transform:capitalize" for="form-condition-10">What age group do you and your travel companions belong to ?</label>
+      <select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required sm-form-control">
+									<option value="">0 Selected</option>
+									<option value="5K">15 - 20</option>
+									<option value="5K to 10K">20 - 25</option>
+									<option value="10K to 15K">25 - 30</option>
+									<option value="15K to 20K">30+</option>
+								</select>
+    </div>
+
+    <div style="padding:10px 0 0 0;" class="col-sm-6">
+      <label style=" text-transform:capitalize" for="form-condition-10">How many days would you be travelling for ?</label>
+      <select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required sm-form-control">
+									<option value="">0 Selected</option>
+									<option value="5K"> 1</option>
+									<option value="5K to 10K">2</option>
+									<option value="10K to 15K">3</option>
+									<option value="15K to 20K">4</option>
+									<option value="more than 20K">5</option>
+								</select>
+    </div>
+
+
+
+
+    <div style="padding-top:10px;" class="col-sm-6">
+      <label style=" text-transform:capitalize" for="form-condition-10">Where did you hear about us ?</label>
+      <select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required sm-form-control">
+									<option value="">Select option</option>
+									<option value="5K">Yes</option>
+									<option value="5K to 10K">No</option>
+								</select>
+    </div>
+
+
+
+
+
+    <div style="padding:10px 0 0 0;" class="col-sm-6">
+      <label style=" text-transform:capitalize" for="form-condition-10">What kind of traveller do you think you are ?</label>
+      <select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required sm-form-control">
+									<option value="">Select One</option>
+									<option value="5K"> 1</option>
+									<option value="5K to 10K">2</option>
+									<option value="10K to 15K">3</option>
+									<option value="15K to 20K">4</option>
+									<option value="more than 20K">5</option>
+								</select>
+    </div>
+
+
+
+
+    <div style="padding-top:10px;" class="col-sm-6">
+      <label style=" text-transform:capitalize" for="form-condition-10">Do you have exact dates ?</label>
+      <input class="form-control" id="{{inquireFirstName}}" type="text" value="{{firstName}}" data-parsley-trim-value="true" data-prefill="firstName"
+      />
+    </div>
+
+
+   
+
+
+    <div style="padding:10px 0 0 0;" class="col-sm-12">
+      <label style=" text-transform:capitalize" for="form-condition-10">Things you want to tell us ?</label>
+      <textarea style="width:100%; height:205px;" class="form-control" placeholder="Tell us a little bit about what you're looking for."></textarea>
+    </div>
+
+
+
+
+  
+
+
+    <div style="padding:20px 0 20px 0;" class="col-sm-12">
+      <button style="width:50%; height:70px; display:block; margin: 0 auto" id="{{inquireSubmit}}" class="button buttonPrimary">Submit Inquiry</button>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</form>

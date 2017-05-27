@@ -8,31 +8,35 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('HomeCtrl', function ($scope) {
+  .controller('HomeCtrl', function ($scope, $location, $anchorScroll) {
 
+    $scope.gotoTravelInspiration = function() {
+      $location.hash('content');
+      $anchorScroll();
+    };
 
     $scope.images = [{
-        imageUrl: 'images/slider3.jpg',
+        imageUrl: 'images/backpacking.jpg',
         text: 'Backpacking'
       },
       {
-        imageUrl: 'images/related2.jpg',
+        imageUrl: 'images/roadtrip.jpg',
         text: 'Road Trip'
       },
       {
-        imageUrl: 'images/related1.jpg',
-        text: 'Wild Life'
-      },
-      {
-        imageUrl: 'images/related3.jpg',
-        text: 'Family'
-      },
-      {
-        imageUrl: 'images/related4.jpg',
+        imageUrl: 'images/adventure.jpg',
         text: 'Adventure'
       },
       {
-        imageUrl: 'images/related2.jpg',
+        imageUrl: 'images/nature.jpg',
+        text: 'Nature'
+      },
+      {
+        imageUrl: 'images/adventure.jpg',
+        text: 'Family'
+      },
+      {
+        imageUrl: 'images/backpacking.jpg',
         text: 'Couple'
       },
 
@@ -100,6 +104,29 @@ angular.module('wanderwagon-webapp')
         id: 12
       }
     ];
+
+
+    var instaImages = [{
+        image: "images/backpacking.jpg"
+      },
+      {
+        image: "images/roadtrip.jpg"
+      },
+      {
+        image: "images/adventure.jpg"
+      },
+      {
+        image: "images/nature.jpg"
+      },
+      {
+        image: "images/adventure.jpg"
+      },
+      {
+        image: "images/backpacking.jpg"
+      }
+    ];
+
+    $scope.instaImages = instaImages;
 
 
 

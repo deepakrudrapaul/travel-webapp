@@ -8,96 +8,83 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('DestinationDetailCtrl', function ($scope) {
-
-      $scope.images = [
-      {
-        imageUrl: 'images/slider3.jpg',
-        text: 'Backpacking'
-      },
-      {
-        imageUrl: 'images/related2.jpg',
-        text: 'Road Trip'
-      },
-      {
-        imageUrl: 'images/related1.jpg',
-        text: 'Wild Life'
-      },
-      {
-        imageUrl: 'images/related3.jpg',
-        text: 'Family'
-      },
-      {
-        imageUrl: 'images/related4.jpg',
-        text: 'Adventure'
-      },
-      {
-        imageUrl: 'images/related2.jpg',
-        text: 'Couple'
-      }
-    ];
+  .controller('DestinationDetailCtrl', function ($scope, $location, $anchorScroll) {
 
 
-     $scope.destinations = [{
-        imageUrl: 'http://placehold.it/380x255',
+
+ $scope.places = [{
+        imageUrl: 'images/himachal.jpg',
         name: 'Himachal',
         id: 1
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/uttarakhand.jpg',
         name: 'Uttarakhand',
         id: 2
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/kashmir.jpg',
         name: 'Kashmir',
         id: 3
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/meghalaya.jpg',
         name: 'Meghalaya',
         id: 4
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/arunachal.jpg',
         name: 'Arunachal',
         id: 5
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/sikkim.jpg',
         name: 'Sikkim',
         id: 6
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/manipur.jpg',
         name: 'Manipur',
         id: 7
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/assam.jpg',
         name: 'Assam',
         id: 8
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/darjeeling.jpg',
         name: 'Darjeeling',
         id: 9
-      },
-      {
-        imageUrl: 'http://placehold.it/380x255',
-        name: 'Kolkata',
-        id: 10
-      },
-      {
-        imageUrl: 'http://placehold.it/380x255',
-        name: 'Delhi',
-        id: 11
-      },
-      {
-        imageUrl: 'http://placehold.it/380x255',
-        name: 'Agra',
-        id: 12
       }
+    ];
+
+     
+      $scope.activities = [{
+        imageUrl: 'images/backpacking.jpg',
+        text: 'Backpacking'
+      },
+      {
+        imageUrl: 'images/roadtrip.jpg',
+        text: 'Road Trip'
+      },
+      {
+        imageUrl: 'images/adventure.jpg',
+        text: 'Adventure'
+      },
+      {
+        imageUrl: 'images/nature.jpg',
+        text: 'Nature'
+      },
+      {
+        imageUrl: 'images/adventure.jpg',
+        text: 'Family'
+      },
+      {
+        imageUrl: 'images/backpacking.jpg',
+        text: 'Couple'
+      },
+
     ];
 
 
@@ -109,6 +96,13 @@ angular.module('wanderwagon-webapp')
 
     $scope.onClicked = function() {
       console.log("CLICKED");
+    };
+
+
+
+     $scope.gotoContent = function(name) {
+      $location.hash(name);
+      $anchorScroll();
     };
 
   });

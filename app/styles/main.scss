@@ -14591,7 +14591,7 @@ h6 {
   color: #444;
   font-weight: 600;
   line-height: 1.5;
-  margin: 0 0 30px 0;
+  margin: 0 0 10px 0;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -15853,10 +15853,9 @@ body.stretched #header.full-header .container {
 }
 
 #header.full-header #primary-menu>ul {
-  float: left;
+  
   padding-right: 15px;
   margin-right: 15px;
-  border-right: 1px solid #EEE;
 }
 
 #header.transparent-header.full-header #primary-menu>ul {
@@ -15911,7 +15910,7 @@ body.stretched #header.full-header .container {
   display: block;
   line-height: 22px;
   padding: 39px 15px;
-  color: #444;
+  color: #FFF;
   font-weight: bold;
   font-size: 13px;
   letter-spacing: 1px;
@@ -16943,6 +16942,7 @@ body.top-search-open #top-account {
 #header.sticky-header:not(.static-sticky) #primary-menu>ul>li>a {
   padding-top: 19px;
   padding-bottom: 19px;
+  color:#444;
 }
 
 #header.sticky-header:not(.static-sticky).sticky-style-2,
@@ -22340,8 +22340,8 @@ body:not(.device-touch) .button {
 }
 
 .button.button-border.button-light {
-  border-color: #EEE;
-  color: #EEE;
+  border-color: #FFF;
+  color: #FFF;
 }
 
 .button.button-border.button-light:hover {
@@ -30636,3 +30636,58 @@ body:not(.no-transition) #wrapper,
 .panel-default {
     border-color:transparent;
 }
+
+
+.photo img {
+   max-width: 100%;
+  
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.photo:hover img {
+  -moz-transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+
+.instaText:before, .instaText:after {
+  content:'\00a0\00a0\00a0\00a0';
+  text-decoration: line-through;
+  margin: auto 0.5em;
+}
+
+.cover {
+  object-fit:cover;
+}
+
+
+.read-more {
+  font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    display: inline-block;
+    font-style: normal;
+}
+
+.read-more:hover {
+  color:#479ad9;
+}
+
+
+.custom-para > p {
+  color: #67747c;
+    font-family: Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin: 0 auto 5.5rem;
+    text-align: center;
+}
+
+
+
+
+

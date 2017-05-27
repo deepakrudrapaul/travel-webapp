@@ -1,18 +1,71 @@
-<div class="wrap">
-  <img src="images/slider2.jpg" alt="Blog Single" width="1366" height="600">
-  <div style="width:700px;" class="text_over_image">
-    Shillong : The Scotland of East
+<section style="height:680px;" id="slider" class="swiper_wrapper full-screen clearfix">
+  <div class="slider-parallax-inner">
+
+    <div class="swiper-container swiper-parent">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide dark" style="background-image: url('images/destination-detail-bg.jpg');  height:680px;">
+          <div class="container clearfix">
+            <div class="center-block slider-caption-center">
+              <h2 class="text-center" style="font-size:68px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:200px;" data-caption-animate="fadeInUp">Dharamshala</h2>
+              <p style="font-size:3rem; font-style:italic;" class="text-center"> is a stunning tapestry</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-<section id="content">
+</section>
+
+<!-- Header
+		============================================= -->
+<header style="height:50px;" sticky id="header" class="full-header">
+  <div class="container clearfix">
+    <!-- Primary Navigation
+					============================================= -->
+    <nav style="margin-left:30%; margin-right:20%;" id="primary-menu" class="style-2">
+      <ul class="one-page-menu">
+        <li>
+          <a ng-click="gotoContent('about')" style="cursor:pointer;color:#444;padding:10px 15px;">
+            <div>About</div>
+          </a>
+        </li>
+        <li>
+          <a ng-click="gotoContent('howToReach')" style="cursor:pointer;color:#444;padding:10px 15px;">
+            <div>How to reach</div>
+          </a>
+        </li>
+        <li>
+          <a ng-click="gotoContent('places')" style="cursor:pointer;color:#444;padding:10px 15px;">
+            <div>Places to visit</div>
+          </a>
+        </li>
+        <li>
+          <a ng-click="gotoContent('activities')" style="cursor:pointer;color:#444;padding:10px 15px;">
+            <div>Activities</div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- #primary-menu end -->
+  </div>
+</header>
+<!-- #header end -->
+
+<section id="about">
   <div class="container clearfix">
 
-    <div class="entry clearfix">
-      <div class="pull-left" style="width:60%; padding-right:10px;">
-        <h4 class="text-center">About The Place</h4>
-        <div class="custom-divider"><i class="icon-info"></i></div>
+    <div class="clearfix">
+      <div class="topmargin">
+        <h2 style="text-align:center;margin:8rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+          About
+          <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+          </div>
+        </h2>
+      </div>
 
 
+      <div class="center-block custom-para" style="width:70%;">
         <p>Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="#">Curabitur blandit tempus porttitor</a>. Integer
           posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas
           eget quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Vestibulum
@@ -25,59 +78,15 @@
         <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur. Cras
           justo odio, dapibus ac facilisis in, egestas eget quam. <a href="#">Nullam quis risus eget urna</a> mollis ornare
           vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+
       </div>
 
-      <div class="pull-right" style="width:40%;">
-
-        <h4 class="text-center">Location</h4>
-        <div class="custom-divider"><i class="icon-location"></i></div>
-        <ng-map scrollwheel="false" center="[25.5788, 91.8933]" zoom="12">
-          <marker position="25.5788, 91.8933" title="Shillong"></marker>
-        </ng-map>
-      </div>
-    </div>
-
-
-
-    <div class="entry clearfix">
-
-      <div class="pull-left" style="width:60%; padding-right:10px;">
-        <h4 class="text-center">How To Reach</h4>
-        <div class="custom-divider"><i class="icon-question"></i></div>
-
-        <div class="feature-box">
-          <div class="custom-fbox-icon">
-            <i class="icon-plane i-alt"></i>
+      <div class="center-block" style="width:40%; border:1px solid #F5F5F5; border-radius:2%;">
+        <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:1.8rem;">
+          Overview
+          <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
           </div>
-          <span style="font:bold; font-size:20px;">Airport</span>
-          <p>Powerful Layout with Responsive functionality that can be adapted to any screen size.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="custom-fbox-icon">
-            <i class="icon-train i-alt"></i>
-          </div>
-          <span style="font:bold; font-size:20px;">Railways</span>
-          <p>Powerful Layout with Responsive functionality that can be adapted to any screen size.
-          </p>
-        </div>
-
-        <div class="feature-box">
-          <div class="custom-fbox-icon">
-            <i class="icon-bus i-alt"></i>
-          </div>
-          <span style="font:bold; font-size:20px;">Bus</span>
-          <p>Powerful Layout with Responsive functionality that can be adapted to any screen size
-          </p>
-        </div>
-      </div>
-
-
-      <div class="pull-right" style="width:40%;">
-        <h4 class="text-center">Overview</h4>
-        <div class="custom-divider"><i class="icon-circle"></i></div>
-
+        </h2>
         <div style="margin: 30px;">
           <h5 class="pull-left"><i style="padding-right:10px;" class="icon-calendar i-alt"></i>Best Time To Visit</h5>
           <p style="margin-right: 40px;" class="pull-right">All Seasons</p>
@@ -95,261 +104,496 @@
         </div>
 
       </div>
-    </div>
 
-    <div class="entry clearfix">
-      <div class="fancy-title title-center title-dotted-border topmargin">
-        <h3>Places To Visit</h3>
+    </div>
+</section>
+
+<section id="howToReach">
+  <div class="container clearfix">
+
+    <div class="clearfix">
+      <div class="topmargin">
+        <h2 style="text-align:center;margin:8rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+          How to reach
+          <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+          </div>
+        </h2>
       </div>
 
+
+      <div class="center-block" style="width:700px;">
+        <div class="feature-box">
+          <div class="custom-fbox-icon">
+            <i class="icon-plane i-alt"></i>
+          </div>
+          <span style="font:bold; font-size:20px;">Airport</span>
+          <p>Powerful Layout with Responsive functionality that can be adapted to any screen size.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="custom-fbox-icon">
+            <i class="icon-train i-alt"></i>
+          </div>
+          <span style="font:bold; font-size:20px;">Railways</span>
+          <p>An overnight train journey is a good option to reach Dharamshala. The nearest major railway station is at Pathankot,
+            85 kilometres away. There are numerous trains that go to Jammu and Kashmir that stop by in Pathankot.
+          </p>
+        </div>
+
+        <div class="feature-box">
+          <div class="custom-fbox-icon">
+            <i class="icon-bus i-alt"></i>
+          </div>
+          <span style="font:bold; font-size:20px;">Bus</span>
+          <p>You can take a taxi or bus from Pathankot to reach Dharamshala.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section id="places">
+  <div class=" container clearfix">
+    <div class="topmargin">
+      <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+        Places to visit
+        <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+        </div>
+      </h2>
+    </div>
+
+    <div class="row">
       <div class="row">
-        <div class="row">
 
-          <div class="col-md-3">
-            <!-- Controls -->
-            <div class="controls hidden-xs">
-              <a class="icon-angle-left btn" href="#carousel-example-generic" data-slide="prev"></a>
-              <a class="icon-angle-right btn" href="#carousel-example-generic" data-slide="next"></a>
-            </div>
+        <div class="col-md-3">
+          <!-- Controls -->
+          <div class="controls hidden-xs">
+            <a class="icon-angle-left btn" href="#carousel-example-generic" ng-non-bindable data-slide="prev"></a>
+            <a class="icon-angle-right btn" href="#carousel-example-generic" ng-non-bindable data-slide="next"></a>
           </div>
         </div>
+      </div>
 
-        <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <div class="row">
-                <div class="col-sm-4">
-                  <div class="col-item">
-                    <div class="photo">
-                      <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                    </div>
-                    <div class="info">
-                      <h5 class="text-center">
-                        Dharamshala</h5>
-                    </div>
+      <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="row">
+              <div class="col-sm-4">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img class="cover" ng-src="{{activities[0].imageUrl}}" alt="a" />
                   </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="col-item">
-                    <div class="photo">
-                      <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                    </div>
-                    <div class="info">
-                      <h5 class="text-center">
-                        Adventure</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="col-item">
-                    <div class="photo">
-                      <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                    </div>
-                    <div class="info">
-                      <h5 class="text-center">
-                        RoadTrip</h5>
-                    </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[0].text}}</h5>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="item">
-              <div class="row">
-                <div class="col-sm-4">
-                  <div class="col-item">
-                    <div class="photo">
-                      <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                    </div>
-                    <div class="info">
-                      <h5 class="text-center">
-                        Nature</h5>
-                    </div>
+              <div class="col-sm-4">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[1].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[1].text}}</h5>
                   </div>
                 </div>
-                <div class="col-sm-4">
-                  <div class="col-item">
-                    <div class="photo">
-                      <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                    </div>
-                    <div class="info">
-                      <h5 class="text-center">
-                        Family</h5>
-                    </div>
+              </div>
+              <div class="col-sm-4">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[2].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="col-item">
-                    <div class="photo">
-                      <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                    </div>
-                    <div class="info">
-                      <h5 class="text-center">
-                        Beach</h5>
-                    </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[2].text}}</h5>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-sm-4">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[3].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[3].text}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[4].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[4].text}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[5].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[5].text}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <accordion-group is-open="heading1.isOpen">
-          <div style="padding-left:50px;" id="posts" class="events small-thumbs">
-
-            <div class="pull-left" style="width:40%;">
-              <a href="images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="images/slider1.jpg" alt="Standard Post with Image"></a>
+      <uib-accordion>
+        <uib-accordion-group is-open="heading1.isOpen">
+          <div class="center-block" style="width:80%;">
+            <div class="topmargin">
+              <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+                Name
+                <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+                </div>
+              </h2>
             </div>
 
-            <div class="pull-right" style="width:60%; padding-left:10px;">
-              <h3>Name</h3>
+            <div class="pull-left" style="width:30%;">
+              <a href="images/blog3.jpg"><img height="350px" width="100%" src="images/blog3.jpg" alt="Standard Post with Image"></a>
+            </div>
 
+            <div class="pull-right" style="width:70%; padding-left:10px;">
+
+              <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                What is it.....</h4>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
+                deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus
+                officia eos rerum.
+              </p>
+
+              <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                Overview</h4>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
+                deserunt.
+              </p>
+
+              <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                How to reach</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
+                deserunt.
+              </p>
 
               <div>
-                <h4>How To Reach</h4>
+                <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                  Timings - <span>8am - 6pm</span></h4>
 
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam. <a href="#">Nullam quis risus eget urna</a>                  mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-
-
+                <h4 class="pull-right" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                  Pricing - <span>₹7999</span></h4>
               </div>
 
 
             </div>
-
           </div>
-        </accordion-group>
-      </div>
-
-
+        </uib-accordion-group>
+      </uib-accordion>
     </div>
 
 
-    <div class="entry clearfix">
-      <div class="fancy-title title-center title-dotted-border topmargin">
-        <h3>Activities</h3>
-      </div>
+  </div>
+</section>
 
+<section id="activities">
+
+  <div class="container clearfix">
+    <div class="topmargin">
+      <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+        Activities
+        <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+        </div>
+      </h2>
+    </div>
+
+    <div class="row">
       <div class="row">
-        <div class="row">
 
-          <div class="col-md-3">
-            <!-- Controls -->
-            <div class="controls hidden-xs">
-              <a class="icon-angle-left btn" href="#carousel-example-generic" data-slide="prev"></a>
-              <a class="icon-angle-right btn" href="#carousel-example-generic" data-slide="next"></a>
-            </div>
+        <div class="col-md-3">
+          <!-- Controls -->
+          <div class="controls hidden-xs">
+            <a class="icon-angle-left btn" href="#carousel-example-generic1" ng-non-bindable data-slide="prev"></a>
+            <a class="icon-angle-right btn" href="#carousel-example-generic1" ng-non-bindable data-slide="next"></a>
           </div>
         </div>
-
-        <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <div class="row">
-                <div class="col-sm-4">
-                  <div class="col-item">
-                    <div class="photo">
-                      <img ng-click="heading2.isOpen = !heading2.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                    </div>
-                    <div class="info">
-                      <h5 class="text-center">
-                        Dharamshala</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="col-item">
-                    <div class="photo">
-                      <img ng-click="heading2.isOpen = !heading2.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                    </div>
-                    <div class="info">
-                      <h5 class="text-center">
-                        Adventure</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="col-item">
-                    <div class="photo">
-                      <img ng-click="heading2.isOpen = !heading2.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                    </div>
-                    <div class="info">
-                      <h5 class="text-center">
-                        RoadTrip</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="row">
-                <div class="col-sm-4">
-                  <div class="col-item">
-                    <div class="photo">
-                      <img ng-click="heading2.isOpen = !heading2.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                    </div>
-                    <div class="info">
-                      <h5 class="text-center">
-                        Nature</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="col-item">
-                    <div class="photo">
-                      <img ng-click="heading2.isOpen = !heading2.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                    </div>
-                    <div class="info">
-                      <h5 class="text-center">
-                        Family</h5>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="col-item">
-                    <div class="photo">
-                      <img ng-click="heading2.isOpen = !heading2.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                    </div>
-                    <div class="info">
-                      <h5 class="text-center">
-                        Beach</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <accordion-group is-open="heading2.isOpen">
-          <div style="padding-left:50px;" id="posts" class="events small-thumbs">
-
-            <div class="pull-left" style="width:40%;">
-              <a href="images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="images/slider1.jpg" alt="Standard Post with Image"></a>
-            </div>
-
-            <div class="pull-right" style="width:60%; padding-left:10px;">
-              <h3>Name</h3>
-
-
-              <div>
-                <h4>How To Reach</h4>
-
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Aenean lacinia bibendum nulla sed consectetur.
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam. <a href="#">Nullam quis risus eget urna</a>                  mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-
-
-              </div>
-
-
-            </div>
-
-          </div>
-        </accordion-group>
       </div>
+
+      <div id="carousel-example-generic1" class="carousel slide hidden-xs" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="row">
+              <div class="col-sm-4">
+                <div ng-click="heading2.isOpen = !heading2.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[0].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[0].text}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div ng-click="heading2.isOpen = !heading2.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[1].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[1].text}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div ng-click="heading2.isOpen = !heading2.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[2].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[2].text}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-sm-4">
+                <div ng-click="heading2.isOpen = !heading2.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[3].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[3].text}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div ng-click="heading2.isOpen = !heading2.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[4].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[4].text}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div ng-click="heading2.isOpen = !heading2.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[5].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[5].text}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <uib-accordion>
+        <uib-accordion-group is-open="heading2.isOpen">
+          <div class="center-block" style="width:80%;">
+            <div class="topmargin">
+              <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+                Name
+                <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+                </div>
+              </h2>
+            </div>
+
+            <div class="pull-left" style="width:30%;">
+              <a href="images/blog3.jpg"><img height="350px" width="100%" src="images/blog3.jpg" alt="Standard Post with Image"></a>
+            </div>
+
+            <div class="pull-right" style="width:70%; padding-left:10px;">
+
+              <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                What is it.....</h4>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
+                deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus
+                officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis
+                ab facere.
+              </p>
+
+              <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                Place Of Conduct</h4>
+
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
+                deserunt.
+              </p>
+
+              <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                Preferred Timings -</h4>
+
+              <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                Duration -</h4>
+
+              <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                Pricing -</h4>
+
+            </div>
+          </div>
+        </uib-accordion-group>
+      </uib-accordion>
     </div>
 
 
+  </div>
+</section>
+
+<section>
+  <div class="topmargin">
+    <h2 style="text-align:center;margin:8rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+      Why we love Destination ?
+      <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+      </div>
+    </h2>
+  </div>
+  <p style="color: #67747c;
+    font-family: Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    line-height: 1.8;
+    margin: 0 auto 5.5rem;
+    text-align: center;
+    width:70%;">
+    " Known for its old temple, a fresh water spring, water falls and slate quarries. Bhagsunag can be approached by road. The
+    Bhagsu fall is one of the main attractions of Mcleodganj. You can take a dip in the chilly water of fall...."<a style="cursor:pointer; margin-left:5px;"
+      class="read-more">READ MORE <span style="font-size:10px;" class="icon-chevron-right"></span></a>
+  </p>
+
+  <div class="center-block" style=" width:70%;">
+    <h2 style="border:1px solid #F5F5F5; padding:5px; text-align:center;margin:8rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+      Loved it ? We got plans for you !
+    </h2>
+  </div>
+
+  <div class="container">
+    <div class="center-block" style=" width:70%;">
+      <h2 style=" text-align:center;margin:8rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+        After Dharamshala, Where Next ?
+      </h2>
+    </div>
+
+    <div class="row">
+      <div class="row">
+
+        <div class="col-md-3">
+          <!-- Controls -->
+          <div class="controls hidden-xs">
+            <a class="icon-angle-left btn" href="#carousel-example-generic1" ng-non-bindable data-slide="prev"></a>
+            <a class="icon-angle-right btn" href="#carousel-example-generic1" ng-non-bindable data-slide="next"></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="carousel-example-generic1" class="carousel slide hidden-xs" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="row">
+              <div class="col-sm-4">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[0].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[0].text}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[1].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[1].text}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[2].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[2].text}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <div class="col-sm-4">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[3].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[3].text}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[4].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[4].text}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:350px; height:400px;" class="photo">
+                    <img ng-src="{{activities[5].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{activities[5].text}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>

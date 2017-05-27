@@ -37,7 +37,7 @@ angular.module('wanderwagon-webapp')
 
     $scope.posts = [
       {
-        "image": "images/related1.jpg",
+        "image": "images/manipur.jpg",
         "title": "First Blog of Wander Wagon",
         "date": "01/04/2017",
         "author": "Admin",
@@ -46,7 +46,7 @@ angular.module('wanderwagon-webapp')
       },
 
       {
-        "image": "images/related2.jpg",
+        "image": "images/himachal.jpg",
         "title": "First Blog of Wander Wagon",
         "date": "01/04/2017",
         "author": "Admin",
@@ -55,7 +55,7 @@ angular.module('wanderwagon-webapp')
       },
 
       {
-        "image": "images/related3.jpg",
+        "image": "images/meghalaya.jpg",
         "title": "First Blog of Wander Wagon",
         "date": "01/04/2017",
         "author": "Admin",
@@ -63,7 +63,7 @@ angular.module('wanderwagon-webapp')
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere."
       },
       {
-        "image": "images/related4.jpg",
+        "image": "images/sikkim.jpg",
         "title": "First Blog of Wander Wagon",
         "date": "01/04/2017",
         "author": "Admin",
@@ -73,35 +73,36 @@ angular.module('wanderwagon-webapp')
 ];
 
     var instaImages = [{
-        image: "http://lorempixel.com/800/400/nature/"
+        image: "images/meghalaya.jpg"
       },
       {
-        image: "http://lorempixel.com/800/400/people/"
+        image: "images/arunachal.jpg"
       },
       {
-        image: "http://lorempixel.com/800/400/sports/"
+        image: "images/sikkim.jpg"
       },
       {
-        image: "http://lorempixel.com/800/400/nature/"
+        image: "images/uttarakhand.jpg"
       },
       {
-        image: "http://lorempixel.com/800/400/nature/"
+        image: "images/manipur.jpg"
       },
       {
-        image: "http://lorempixel.com/800/400/nature/"
+        image: "images/assam.jpg"
       },
       {
-        image: "http://lorempixel.com/800/400/nature/"
+        image: "images/sikkim.jpg"
       },
       {
-        image: "http://lorempixel.com/800/400/nature/"
+        image: "images/uttarakhand.jpg"
       },
       {
-        image: "http://lorempixel.com/800/400/nature/"
+        image: "images/manipur.jpg"
       },
       {
-        image: "http://lorempixel.com/800/400/nature/"
+        image: "images/assam.jpg"
       }
+      
     ];
 
     var popularPosts = [{

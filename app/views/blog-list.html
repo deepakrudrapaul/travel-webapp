@@ -1,17 +1,24 @@
-<!-- Document Wrapper
-	============================================= -->
-<!-- Page Title
-		============================================= -->
-<section id="page-title" style="background: url('images/slider/1.jpg'); height: 600px;">
+<section style="height:680px;" id="slider" class="swiper_wrapper full-screen clearfix">
+  <div class="slider-parallax-inner">
 
-  <div class="container clearfix">
-    <h1>Blog</h1>
-    <span>Our Latest News</span>
- 
+    <div class="swiper-container swiper-parent">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide dark" style="background-image: url('images/slider/1.jpg');  height:680px;">
+          <div class="container clearfix">
+            <div class="slider-caption-center">
+              <h2 style="font-size:48px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:200px;" data-caption-animate="fadeInUp">
+                BLOG
+              </h2>
+              <!--                
+              <a ng-click="gotoTravelInspiration()" class="button button-border button-white button-light button-large button-rounded tright nomargin">
+                <span>Let's Wander</span> <i class="icon-angle-right"></i></a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
 </section>
-<!-- #page-title end -->
 
 <!-- Content
 		============================================= -->
@@ -32,16 +39,17 @@
 
           <div ng-repeat="post in posts" class="entry clearfix">
             <div class="entry-timeline">
-									<!--10<span>{{post.date | date:'MMM'}}</span>-->
-                  10<span>May</span>
-									<div class="timeline-divider"></div>
-								</div>
+              <!--10<span>{{post.date | date:'MMM'}}</span>-->
+              10<span>May</span>
+              <div class="timeline-divider"></div>
+            </div>
 
             <div class="entry-image">
               <a ng-href="{{post.image}}" data-lightbox="image"><img class="image_fade" ng-src="{{post.image}}" alt="Standard Post with Image"></a>
             </div>
             <div class="entry-title">
-              <h2><a href="" ui-sref="blog.detail({postId: post.id})">{{post.title}}</a></h2>
+              <h3 style="cursor:pointer;" ui-sref="blog.detail({postId: post.id})" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
+                For rivers, seas and slopes at their most inviting</h3>
             </div>
             <ul class="entry-meta clearfix">
               <li><a href="#"><i class="icon-user"></i> {{post.author}}</a></li>
@@ -93,8 +101,8 @@
             </div>-->
             <!--</div>-->
             <div class="row">
-              <div ng-repeat="image in instaImages" class="col-sm-4">
-                <img style="padding-bottom: 5px;" width="100" height="50" class="image_fade" ng-src="{{image.image}}" alt="Standard Post with Image">
+              <div ng-repeat="image in instaImages" class="col-sm-6">
+                <img style="padding-bottom: 5px;" width="200" height="100" class="image_fade" ng-src="{{image.image}}" alt="Standard Post with Image">
               </div>
             </div>
           </div>

@@ -8,7 +8,8 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('AccountCtrl', function () {
+  .controller('AccountCtrl', function ($scope) {
 
+    
    
   });

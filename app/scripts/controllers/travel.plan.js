@@ -9,31 +9,31 @@
  */
 angular.module('wanderwagon-webapp')
   .controller('TravelPlanCtrl', function ($scope) {
-      $scope.images = [
-      {
-        imageUrl: 'images/slider3.jpg',
+      $scope.images = [{
+        imageUrl: 'images/backpacking.jpg',
         text: 'Backpacking'
       },
       {
-        imageUrl: 'images/related2.jpg',
+        imageUrl: 'images/roadtrip.jpg',
         text: 'Road Trip'
       },
       {
-        imageUrl: 'images/related1.jpg',
-        text: 'Wild Life'
-      },
-      {
-        imageUrl: 'images/related3.jpg',
-        text: 'Family'
-      },
-      {
-        imageUrl: 'images/related4.jpg',
+        imageUrl: 'images/adventure.jpg',
         text: 'Adventure'
       },
       {
-        imageUrl: 'images/related2.jpg',
+        imageUrl: 'images/nature.jpg',
+        text: 'Nature'
+      },
+      {
+        imageUrl: 'images/adventure.jpg',
+        text: 'Family'
+      },
+      {
+        imageUrl: 'images/backpacking.jpg',
         text: 'Couple'
-      }
+      },
+
     ];
 
      $scope.destinations = [{

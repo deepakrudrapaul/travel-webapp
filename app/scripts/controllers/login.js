@@ -8,7 +8,11 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('LoginCtrl', function ($scope, $timeout, auth, $location, ngProgressFactory) {
+  .controller('LoginCtrl', function ($scope, $timeout, auth, $location, ngProgressFactory, $auth) {
+
+     $scope.authenticate = function(provider) {
+      $auth.authenticate(provider);
+    };
 
     $scope.progressbar = ngProgressFactory.createInstance();
 

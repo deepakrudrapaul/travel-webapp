@@ -32,7 +32,7 @@ angular.module('wanderwagon-webapp')
       title: "First Blog of Wander Wagon",
       author: "Paul",
       description: "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis",
-      imageUrl: "images/related1.jpg"
+      imageUrl: "images/manipur.jpg"
     };
 
 
@@ -61,31 +61,31 @@ angular.module('wanderwagon-webapp')
     };
 
 
-     $scope.images = [
-      {
-        imageUrl: 'http://placehold.it/380x255',
+     $scope.images = [{
+        imageUrl: 'images/backpacking.jpg',
         text: 'Backpacking'
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/roadtrip.jpg',
         text: 'Road Trip'
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
-        text: 'Wild Life'
-      },
-      {
-        imageUrl: 'http://placehold.it/380x255',
-        text: 'Family'
-      },
-      {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/adventure.jpg',
         text: 'Adventure'
       },
       {
-        imageUrl: 'http://placehold.it/380x255',
+        imageUrl: 'images/nature.jpg',
+        text: 'Nature'
+      },
+      {
+        imageUrl: 'images/adventure.jpg',
+        text: 'Family'
+      },
+      {
+        imageUrl: 'images/backpacking.jpg',
         text: 'Couple'
-      }
+      },
+
     ];
 
 

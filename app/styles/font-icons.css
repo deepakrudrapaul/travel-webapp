@@ -573,7 +573,7 @@
 .icon-phone:before {
 	content: "\e672";
 }
-.icon-phone-portrait:before 
+.icon-phone-portrait:before {
 	content: "\e673";
 }
 .icon-calculator:before {
@@ -1433,7 +1433,6 @@
 .icon-bus:before {
 	content: "\1F68C";
 }
-
 
 .icon-calendar3:before {
 	content: "\e728";

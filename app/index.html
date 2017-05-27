@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="bower_components/ngprogress/ngProgress.css" />
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-  <link rel="stylesheet" href="bower_components/angular-ui-carousel/dist/ui-carousel.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -55,15 +54,15 @@
         <!-- Logo
 					============================================= -->
         <div id="logo">
-          <a href="" ui-sref="home" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
-          <a href="" ui-sref="home" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+          <a href="" ui-sref="home" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo-dark.png" alt="Canvas Logo"></a>
+          <a href="" ui-sref="home" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo-dark@2x.png" alt="Canvas Logo"></a>
         </div>
         <!-- #logo end -->
         <!-- #logo end -->
 
         <!-- Primary Navigation
 					============================================= -->
-        <nav id="primary-menu">
+        <nav id="primary-menu" >
 
           <ul>
             <li>
@@ -107,8 +106,13 @@
     </div>
 
   </header>
+  
 
-  <div ui-view></div>
+  
+		
+
+
+  <div id="slider" ui-view></div>
 
 
 
@@ -119,8 +123,7 @@
 
     <div class="container">
 
-      <!-- Footer Widgets
-				============================================= -->
+
       <div class="footer-widgets-wrap clearfix">
 
         <div class="col_two_third">
@@ -130,8 +133,6 @@
             <div class="widget clearfix">
 
               <img src="images/logo-dark.png" alt="" class="footer-logo">
-
-              <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
 
               <div>
                 <address>
@@ -150,17 +151,41 @@
 
             <div class="widget widget_links clearfix">
 
-              <h4>Blogroll</h4>
+              <h4>
+                <a href="" ui-sref-active="active-menu" ui-sref="about">
+                  About us
+                </a>
+              </h4>
 
-              <ul>
-                <li><a href="http://codex.wordpress.org/">Documentation</a></li>
-                <li><a href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
-                <li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
-                <li><a href="http://wordpress.org/support/">Support Forums</a></li>
-                <li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
-                <li><a href="http://wordpress.org/news/">WordPress Blog</a></li>
-                <li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
-              </ul>
+              <h4>
+                <a href="" ui-sref-active="active-menu" ui-sref="contact">
+                  Contact us
+                </a>
+              </h4>
+
+               <h4>
+                <a href="" ui-sref-active="active-menu" ui-sref="faq">
+                  FAQS
+                </a>
+              </h4>
+
+               <h4>
+                <a href="" ui-sref-active="active-menu" ui-sref="cancellation">
+                  Cancellation Policy
+                </a>
+              </h4>
+
+              <h4>
+                <a href="" ui-sref-active="active-menu" ui-sref="tnc">
+                  Term & Conditions
+                </a>
+              </h4>
+
+              <h4>
+                <a href="" ui-sref-active="active-menu" ui-sref="testimonials">
+                  Testimonials
+                </a>
+              </h4>
 
             </div>
 
@@ -213,37 +238,7 @@
 
         <div class="col_one_third col_last">
 
-          <!--<div class="widget clearfix" style="margin-bottom: -20px;">
-
-							<div class="row">
-
-								<div class="col-md-6 bottommargin-sm">
-									<div class="counter counter-small"><span data-from="50" data-to="15065421" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>
-									<h5 class="nobottommargin">Total Downloads</h5>
-								</div>
-
-								<div class="col-md-6 bottommargin-sm">
-									<div class="counter counter-small"><span data-from="100" data-to="18465" data-refresh-interval="50" data-speed="2000" data-comma="true"></span></div>
-									<h5 class="nobottommargin">Clients</h5>
-								</div>
-
-							</div>
-
-						</div>-->
-          <!--
-						<div class="widget subscribe-widget clearfix">
-							<h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
-							<div class="widget-subscribe-form-result"></div>
-							<form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
-								<div class="input-group divcenter">
-									<span class="input-group-addon"><i class="icon-email2"></i></span>
-									<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-									<span class="input-group-btn">
-										<button class="btn btn-success" type="submit">Subscribe</button>
-									</span>
-								</div>
-							</form>
-						</div>-->
+        
 
           <div class="widget clearfix" style="margin-bottom: -20px;">
 
@@ -271,7 +266,7 @@
         </div>
 
       </div>
-      <!-- .footer-widgets-wrap end -->
+
 
     </div>
 
@@ -399,7 +394,9 @@
   <script src="bower_components/moment/moment.js"></script>
   <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
   <script src="bower_components/angular-eonasdan-datetimepicker/dist/angular-eonasdan-datetimepicker.js"></script>
-  <script src="bower_components/angular-ui-carousel/dist/ui-carousel.js"></script>
+  <script src="bower_components/matchmedia/matchMedia.js"></script>
+  <script src="bower_components/ngSticky/lib/sticky.js"></script>
+  <script src="bower_components/satellizer/dist/satellizer.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -425,12 +422,12 @@
 
   <!-- External JavaScripts
 	============================================= -->
+<script src="http://maps.google.com/maps/api/js"></script>
 
-  <script src="http://maps.google.com/maps/api/js"></script>
-  <script type="text/javascript" src="styles/js/jquery.js"></script>
+  <!--<script type="text/javascript" src="styles/js/jquery.js"></script>
   <script type="text/javascript" src="styles/js/plugins.js"></script>
 
-  <script type="text/javascript" src="styles/js/functions.js"></script>
+  <script type="text/javascript" src="styles/js/functions.js"></script>-->
 
   <!-- Travel Demo Specific Script -->
   <!--<script type="text/javascript" src="scripts/js/datepicker.js"></script>-->

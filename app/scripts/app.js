@@ -22,13 +22,22 @@ angular
     'config',
     'ngProgress',
     'ae-datetimepicker',
-    'ui.carousel',
-    'ngMap'
+    'ngMap',
+    'sticky',
+    'satellizer'
   ])
-  .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, socialProvider) {
-
+  .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider','$authProvider',  function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider ) {
 
     // $locationProvider.html5Mode(true);
+
+    $authProvider.facebook({
+      clientId: '1872872876259517'
+    });
+
+    
+    $authProvider.google({
+      clientId: '1074764438873-vr5covic1s763fvrccpa6g29hirsnrpf.apps.googleusercontent.com'
+    });
 
     $urlRouterProvider.otherwise('/home');
 
@@ -62,7 +71,7 @@ angular
       .state('destination', {
         url: '/destination',
         abstract: true,
-        template:"<ui-view></ui-view>"
+        template: "<ui-view></ui-view>"
       })
       .state('destination.list', {
         url: '/list',
@@ -77,7 +86,7 @@ angular
       .state('blog', {
         url: '/blog',
         abstract: true,
-        template:"<ui-view></ui-view>"
+        template: "<ui-view></ui-view>"
       })
       .state('blog.list', {
         url: '/list',
@@ -99,25 +108,49 @@ angular
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl'
       })
+      .state('form', {
+        url: '/contact/plan-trip-form',
+        templateUrl: 'views/plan-trip-form.html',
+        controller: 'ContactCtrl'
+      })
       .state('travel-plan', {
         url: '/travel-plan',
         templateUrl: 'views/travel-plan.html',
         controller: 'TravelPlanCtrl'
       })
-      .state('partner', {
-        url: '/partner',
-        templateUrl: 'views/partner.html',
+      .state('cancellation', {
+        url: '/cancellation',
+        templateUrl: 'views/cancellation-policy.html',
+        controller: 'ContactCtrl'
+      })
+      .state('faq', {
+        url: '/faq',
+        templateUrl: 'views/faq.html',
+        controller: 'ContactCtrl'
+      })
+       .state('tnc', {
+        url: '/tnc',
+        templateUrl: 'views/tnc.html',
+        controller: 'ContactCtrl'
+      })
+      .state('testimonials', {
+        url: '/testimonials',
+        templateUrl: 'views/testimonials.html',
         controller: 'ContactCtrl'
       })
 
   }])
-  .run(function ($rootScope, $location, auth) {
+  .run(function ($rootScope, $location, auth, $anchorScroll) {
 
     $rootScope.changeLocation = function (path) {
       $rootScope.$evalAsync(function () {
         $location.path(path);
       });
     };
+
+    $rootScope.$on("$locationChangeSuccess", function () {
+       $anchorScroll();
+    });
 
 
   });

@@ -1,18 +1,32 @@
-<div class="wrap">
-  <img src="images/slider2.jpg" alt="Blog Single" width="1366" height="600">
-  <div style="width:700px;" class="text_over_image">
-    TIME TO TRAVEL
+<section style="height:680px;" id="slider" class="swiper_wrapper full-screen clearfix">
+  <div class="slider-parallax-inner">
+
+    <div class="swiper-container swiper-parent">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide dark" style="background-image: url('images/travel.jpg');  height:680px;">
+          <div class="container clearfix">
+            <div class="slider-caption-center">
+              <h2 style="font-size:48px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:200px;" data-caption-animate="fadeInUp">
+                It's time to travel</h2>
+              <!--<a ui-sref="blog.list" class="button button-border button-white button-light button-large button-rounded tright nomargin">
+                <span>Read More</span> <i class="icon-angle-right"></i></a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <!--<div style="width:300px;" class="text_over_image">
-    <a href="#" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Let's Wander</span> <i class="icon-angle-right"></i></a>
-  </div>-->
-</div>
+</section>
 <section id="content">
 
   <div class="container">
-    <div class="fancy-title title-center title-dotted-border topmargin">
-      <h3>Travel Inspiration</h3>
-    </div>
+    <div class="topmargin">
+    <h2 style="text-align:center;margin-bottom:4rem;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+      Travel Inspiration
+      <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+      </div>
+    </h2>
+  </div>
 
 
 
@@ -22,93 +36,93 @@
         <div class="col-md-3">
           <!-- Controls -->
           <div class="controls hidden-xs">
-            <a class="icon-angle-left btn" href="#carousel-example-generic" data-slide="prev"></a>
-            <a class="icon-angle-right btn" href="#carousel-example-generic" data-slide="next"></a>
+            <a class="icon-angle-left btn" href="#carousel-example-generic" ng-non-bindable data-slide="prev"></a>
+            <a class="icon-angle-right btn" href="#carousel-example-generic" ng-non-bindable data-slide="next"></a>
           </div>
         </div>
       </div>
 
       <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-          <div class="item active">
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="col-item">
-                  <div class="photo">
-                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                  </div>
-                  <div class="info">
-                    <h5 class="text-center">
-                      Backpacking</h5>
-                  </div>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="row">
+            <div class="col-sm-4">
+              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                <div style="width:350px; height:400px;" class="photo">
+                  <img ng-src="{{images[0].imageUrl}}" class="img-responsive" alt="a" />
+                </div>
+                <div class="info">
+                  <h5 style="font-size:1.6rem" class="text-center">
+                    {{images[0].text}}</h5>
                 </div>
               </div>
-              <div class="col-sm-4">
-                <div class="col-item">
-                  <div class="photo">
-                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                  </div>
-                  <div class="info">
-                    <h5 class="text-center">
-                      Adventure</h5>
-                  </div>
+            </div>
+            <div class="col-sm-4">
+              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                <div style="width:350px; height:400px;" class="photo">
+                  <img ng-src="{{images[1].imageUrl}}" class="img-responsive" alt="a" />
+                </div>
+                <div class="info">
+                  <h5 style="font-size:1.6rem" class="text-center">
+                    {{images[1].text}}</h5>
                 </div>
               </div>
-              <div class="col-sm-4">
-                <div class="col-item">
-                  <div class="photo">
-                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                  </div>
-                  <div class="info">
-                    <h5 class="text-center">
-                      RoadTrip</h5>
-                  </div>
+            </div>
+            <div class="col-sm-4">
+              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                <div style="width:350px; height:400px;" class="photo">
+                  <img ng-src="{{images[2].imageUrl}}" class="img-responsive" alt="a" />
+                </div>
+                <div class="info">
+                  <h5 style="font-size:1.6rem" class="text-center">
+                    {{images[2].text}}</h5>
                 </div>
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="row">
-              <div class="col-sm-4">
-                <div class="col-item">
-                  <div class="photo">
-                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                  </div>
-                  <div class="info">
-                    <h5 class="text-center">
-                      Nature</h5>
-                  </div>
+        </div>
+        <div class="item">
+          <div class="row">
+            <div class="col-sm-4">
+              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                <div style="width:350px; height:400px;" class="photo">
+                  <img ng-src="{{images[3].imageUrl}}" class="img-responsive" alt="a" />
+                </div>
+                <div class="info">
+                  <h5 style="font-size:1.6rem" class="text-center">
+                    {{images[3].text}}</h5>
                 </div>
               </div>
-              <div class="col-sm-4">
-                <div class="col-item">
-                  <div class="photo">
-                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                  </div>
-                  <div class="info">
-                    <h5 class="text-center">
-                      Family</h5>
-                  </div>
+            </div>
+            <div class="col-sm-4">
+              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                <div style="width:350px; height:400px;" class="photo">
+                  <img ng-src="{{images[4].imageUrl}}" class="img-responsive" alt="a" />
+                </div>
+                <div class="info">
+                  <h5 style="font-size:1.6rem" class="text-center">
+                    {{images[4].text}}</h5>
                 </div>
               </div>
-              <div class="col-sm-4">
-                <div class="col-item">
-                  <div class="photo">
-                    <img ng-click="heading1.isOpen = !heading1.isOpen" src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                  </div>
-                  <div class="info">
-                    <h5 class="text-center">
-                      Beach</h5>
-                  </div>
+            </div>
+            <div class="col-sm-4">
+              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                <div style="width:350px; height:400px;" class="photo">
+                  <img ng-src="{{images[5].imageUrl}}" class="img-responsive" alt="a" />
+                </div>
+                <div class="info">
+                  <h5 style="font-size:1.6rem" class="text-center">
+                    {{images[5].text}}</h5>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <accordion-group is-open="heading1.isOpen">
+    </div>
+      <uib-accordion>
+      <uib-accordion-group is-open="heading1.isOpen">
         <div style="padding-left:50px;" id="posts" class="events small-thumbs">
 
           <div class=".col-md-4" ng-repeat="destination in destinations">
@@ -121,7 +135,8 @@
           </div>
 
         </div>
-      </accordion-group>
+      </uib-accordion-group>
+      </uib-accordion>
     </div>
 
 
@@ -129,21 +144,26 @@
 
 
 
-    <div class="entry clear"></div>
+    <div class="clear"></div>
 
-    <div class="fancy-title title-center title-dotted-border topmargin">
-      <h3 style="cursor:pointer;" ui-sref="blog.list" ng-click="onClicked()">Recent Articles</h3>
-    </div>
+     <div class="topmargin">
+    <h2 style="text-align:center;margin-bottom:4rem;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+      Recent Articles
+      <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+      </div>
+    </h2>
+  </div>
 
-    <div class="entry clearfix">
-      <div class="pull-right" style="width:50%;">
-        <a href="images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="images/slider1.jpg" alt="Standard Post with Image"></a>
+    <div class="clearfix">
+      <div class="pull-right" style="width:40%;">
+        <a href="images/blog1.jpg" data-lightbox="image"><img height="300px;" src="images/blog1.jpg" alt="Standard Post with Image"></a>
       </div>
 
-      <div class="pull-left" style="width:50%; padding-right:10px;">
-        <div class="entry-title">
-          <h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
-        </div>
+      <div class="pull-left" style="width:50%; padding-right:50px;">
+         <div class="entry-title">
+        <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
+          For rivers, seas and slopes at their most inviting</h3>
+      </div>
 
         <div class="entry-content" style="margin-top:50px;">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
@@ -159,15 +179,16 @@
 
 
 
-    <div class="entry clearfix">
-      <div class="pull-left" style="width:50%;">
-        <a href="images/blog/full/17.jpg" data-lightbox="image"><img class="image_fade" src="images/slider2.jpg" alt="Standard Post with Image"></a>
+    <div style="margin:30px 0 30px 0;" class="clearfix">
+      <div class="pull-left" style="width:40%;">
+        <a href="images/blog2.jpg" data-lightbox="image"><img height="300px;" class="image_fade" src="images/blog2.jpg" alt="Standard Post with Image"></a>
       </div>
 
       <div class="pull-right" style="width:50%; padding-left:10px;">
         <div class="entry-title">
-          <h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
-        </div>
+        <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
+          For rivers, seas and slopes at their most inviting</h3>
+      </div>
 
         <div class="entry-content" style="margin-top:50px;">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,

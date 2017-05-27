@@ -1,22 +1,19 @@
-
-
 <!-- Page Title
 		============================================= -->
-		<!-- Content
+<!-- Content
 		============================================= -->
-		<section id="content">
+<section id="content" style="background-image: url('images/slider/1.jpg'); background-size:cover; ">
 
-			<div class="content-wrap">
+  <div class="content-wrap">
 
-				<div class="container clearfix">
+    <div class="container clearfix">
 
-					<div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
-
-					
+      <div class="divcenter topmargin nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
 
 
-							<div class="tab-content clearfix" id="tab-login">
-								<div class="panel panel-default nobottommargin">
+        <uib-tabset active="activeJustified" justified="true">
+          <uib-tab index="0" heading="Login">
+			  <div class="panel panel-default nobottommargin">
 									<div class="panel-body" style="padding: 40px;">
 										<form id="loginForm" name="loginForm" class="nobottommargin" ng-submit="onLogin(loginForm)">
 
@@ -43,45 +40,62 @@
 
 								<div class="center">
                                      <h4 style="margin-bottom: 15px;"> Login with:</h4>
-                                     <a href="/accounts/facebook/login/?next=%2F" class="button button-rounded si-facebook si-colored"><i class="icon-facebook"></i> Facebook</a>
+                                     <button class="button button-rounded si-facebook si-colored" ng-click="authenticate('facebook')"><i class="icon-facebook"></i>Facebook</button>
+									 
                                      <span class="hidden-xs">or</span>
-                                     <a href="/accounts/google/login" class="button button-rounded si-google si-colored"> <i class="icon-google"></i>Google </a>
+									 <button class="button button-rounded si-google si-colored" ng-click="authenticate('google')"><i class="icon-facebook"></i>Google</button>
                                 </div>
 									</div>
 								</div>
-							</div>
-				
 
-					</div>
+          </uib-tab>
+          <uib-tab index="1" heading="Sign up">
 
-				</div>
+			  <div class="panel panel-default nobottommargin">
+									<div class="panel-body" style="padding: 40px;">
+										<h3>Sign up for an account</h3>
 
-			</div>
+										<form id="register-form" name="register-form" class="nobottommargin" action="#" method="post">
 
-		</section><!-- #content end -->
+											<div class="col_full">
+												<label for="register-form-name">Name:</label>
+												<input type="text" id="register-form-name" name="register-form-name" value="" class="form-control" />
+											</div>
 
-<div class="modal fade" id="loginModel" tabindex="-1" role="dialog" aria-labelledby="loginModelLabel">
-	<div class="modal-dialog" role="document" style="height: 100px">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">
-						&times;
-					</span>
-				</button>
-				<h4 class="modal-title" id="loginModelLabel">{{message.type}}</h4>
-			</div>
-			<div class="row modal-body">
-				<form class="form-horizontal">
-					<div class="form-group">
-						<div class="text-center">
-							<label class="text-center">
-									{{ message.msg }}
-							</label>
-						</div>
-					</div>  
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
+											<div class="col_full">
+												<label for="register-form-email">Email Address:</label>
+												<input type="text" id="register-form-email" name="register-form-email" value="" class="form-control" />
+											</div>
+
+											<div class="col_full">
+												<label for="register-form-password">Choose Password:</label>
+												<input type="password" id="register-form-password" name="register-form-password" value="" class="form-control" />
+											</div>
+
+											<div class="col_full">
+												<label for="register-form-repassword">Re-enter Password:</label>
+												<input type="password" id="register-form-repassword" name="register-form-repassword" value="" class="form-control" />
+											</div>
+
+											<div class="col_full nobottommargin">
+												<button class="button button-3d nomargin" id="register-form-submit" name="register-form-submit" value="register">Sign up</button>
+											</div>
+
+										</form>
+									</div>
+								</div>
+
+
+          </uib-tab>
+        </uib-tabset>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- #content end -->
+
+
