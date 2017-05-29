@@ -139,8 +139,7 @@ angular.module('wanderwagon-webapp')
 
     $scope.changingText = {};
 
-    25985
-
+  
     $scope.counter = 0;
     var textChangeFunc = function () {
       let timeout = $timeout();
