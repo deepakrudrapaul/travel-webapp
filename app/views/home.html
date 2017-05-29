@@ -1,21 +1,22 @@
-<section style="height:680px;" id="slider" class="swiper_wrapper full-screen clearfix">
-  <div class="slider-parallax-inner">
+<div style="background-color:#000;background-image: url('images/home-bg.jpg');background-size: cover; height:100vh;">
+  <div class="container clearfix">
+    <div class="slider-caption-center">
+      <h2 class="text-center" style="margin-bottom:0px;font-size:32px;letter-spacing:1px;font-weight:600;color:#fff;margin-top:300px;">
+        WANDERWAGON MAKES YOUR GROUP TRIP</h2>
+        <h2 class="text-center" style="margin-bottom:0px;font-size:32px;letter-spacing:1px;font-weight:600;color:#fff;">
+        {{changingText}}</h2>
+      <p style="font-size:2.5rem; margin-bottom:50px; color:#fff;" class="text-center"> 
+        "Wanderwagon is the perfect partner to plan that much awaited trip with your buddies"
+      </p>
+      <a ng-click="gotoTravelInspiration()" class="custom-button center-block text-center">
+        <span>Let's Wander</span> <i style="margin-left:10px;" class="icon-angle-right"></i></a>
 
-    <div class="swiper-container swiper-parent">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide dark" style="background-image: url('images/home-bg.jpg');  height:680px;">
-          <div class="container clearfix">
-            <div class="slider-caption-center">
-              <h2 style="font-size:48px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:200px;" data-caption-animate="fadeInUp">Welcome to Canvas</h2>
-              <a ng-click="gotoTravelInspiration()" class="button button-border button-white button-light button-large button-rounded tright nomargin">
-                <span>Let's Wander</span> <i class="icon-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
-</section>
+</div>
+
+
 
 
 
@@ -40,13 +41,13 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
 
 <section id="content" class="container">
 
-  <div class="topmargin">
+  <div class="topmargin" style="height:100vh;">
     <h2 style="text-align:center;margin-bottom:4rem;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
       Travel Inspiration
       <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
       </div>
     </h2>
-  </div>
+
 
 
 
@@ -143,22 +144,24 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
     </div>
 
     <uib-accordion>
-    <uib-accordion-group is-open="heading1.isOpen">
-      <div style="padding-left:50px;" id="posts" class="events small-thumbs">
+      <uib-accordion-group is-open="heading1.isOpen">
+        <div style="padding-left:50px;" id="posts" class="events small-thumbs">
 
-        <div class=".col-md-4" ng-repeat="destination in destinations">
-          <div class="entry-image" style="padding-bottom:10px;">
-            <a href="#" ui-sref="destination.detail({id: destination.id})">
-              <img ng-src="{{destination.imageUrl}}" alt="Inventore voluptates velit totam ipsa tenetur">
-              <h3 class="text-center">{{destination.name}}</h3>
-            </a>
+          <div class=".col-md-4" ng-repeat="destination in destinations">
+            <div class="entry-image" style="padding-bottom:10px;">
+              <a href="#" ui-sref="destination.detail({id: destination.id})">
+                <img ng-src="{{destination.imageUrl}}" alt="Inventore voluptates velit totam ipsa tenetur">
+                <h3 class="text-center">{{destination.name}}</h3>
+              </a>
+            </div>
           </div>
-        </div>
 
-      </div>
-    </uib-accordion-group>
+        </div>
+      </uib-accordion-group>
     </uib-accordion>
   </div>
+
+    </div>
 
 
 
@@ -193,7 +196,7 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
   </div>
 
 
-  <div style="margin:30px 0 30px 0;" class="clearfix">
+  <div style="margin:0 0 30px 0;" class="clearfix">
     <div class="pull-left" style="width:50%;">
       <a href="images/blog3.jpg"><img height="350px" width="100%" src="images/blog3.jpg" alt="Standard Post with Image"></a>
     </div>
@@ -218,7 +221,7 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
 
 <section>
   <div style="position:relative;">
-    <img src="https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg" alt="Image" width="1366" height="600">
+    <img src="https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg" alt="Image" width="100%" height="600">
     <!--<div class="text_over_image">
         {{postDetail.title}}
       </div>-->

@@ -8,9 +8,9 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('HomeCtrl', function ($scope, $location, $anchorScroll) {
+  .controller('HomeCtrl', function ($scope, $location, $anchorScroll, $timeout, $interval) {
 
-    $scope.gotoTravelInspiration = function() {
+    $scope.gotoTravelInspiration = function () {
       $location.hash('content');
       $anchorScroll();
     };
@@ -43,7 +43,7 @@ angular.module('wanderwagon-webapp')
     ];
 
 
-      $scope.destinations = [{
+    $scope.destinations = [{
         imageUrl: 'http://placehold.it/380x255',
         name: 'Himachal',
         id: 1
@@ -129,9 +129,30 @@ angular.module('wanderwagon-webapp')
     $scope.instaImages = instaImages;
 
 
+    var textArr = [
+      'Hassle Free',
+      'Lively',
+      'Comfortable',
+      'Memorable',
+      'Wondrous'
+    ];
+
+    $scope.changingText = {};
+
+    25985
+
+    $scope.counter = 0;
+    var textChangeFunc = function () {
+      let promise = $timeout();
+      angular.forEach(textArr, function (element) {
+        promise = promise.then(function () {
+          $scope.changingText = element;
+          $scope.counter++;
+          return $timeout(3000);
+        });
+      });
+    };
 
 
-
-
-
+    textChangeFunc();
   });
