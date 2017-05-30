@@ -142,9 +142,9 @@ angular.module('wanderwagon-webapp')
   
     $scope.counter = 0;
     var textChangeFunc = function () {
-      let timeout = $timeout();
+      var time = $timeout();
       angular.forEach(textArr, function (element) {
-        timeout = timeout.then(function () {
+        time = time.then(function () {
           $scope.changingText = element;
           $scope.counter++;
           return $timeout(3000);
