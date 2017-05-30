@@ -66,10 +66,11 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
         <div class="carousel-inner">
           <div class="item active">
             <div class="row">
+
               <div class="col-sm-3 nopadding" >
                 <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" >
-                  <div style="width:300px; height:450px;" class="photo">
-                    <img style="object-fit:contain;" ng-src="http://plants.montara.com/ListPages/FamPages/showpix/scrophulariaS/casfra.JPEG" class="img-responsive" alt="a" />
+                  <div style="width:22vw; height:30vw;" class="photo">
+                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
                     <h5 style="font-size:1.6rem" class="text-center">
@@ -79,8 +80,8 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
               </div>
               <div class="col-sm-3 nopadding" >
                 <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" >
-                  <div style="width:300px; height:500px;" class="photo">
-                    <img style="object-fit:contain;" ng-src="http://plants.montara.com/ListPages/FamPages/showpix/scrophulariaS/casfra.JPEG" class="img-responsive" alt="a" />
+                  <div style="width:22vw; height:30vw;" class="photo">
+                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
                     <h5 style="font-size:1.6rem" class="text-center">
@@ -88,43 +89,34 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
                   </div>
                 </div>
               </div>
+              <div class="col-sm-3 nopadding" >
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" >
+                  <div style="width:22vw; height:30vw;" class="photo">
+                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{images[0].text}}</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3 nopadding" >
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" >
+                  <div style="width:22vw; height:30vw;" class="photo">
+                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{images[0].text}}</h5>
+                  </div>
+                </div>
+              </div>
+              
             </div>
           </div>
           <div class="item">
             <div class="row">
-              <div class="col-sm-3">
-                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                  <div style="width:300px; height:500px;">
-                    <img src="http://newmedia.thomson.co.uk/live/vol/3/67f0d05b6e57bdf9f13913da6abe2762d66f3b09/1080x608/web/FAMLIFE_BRAND_15_HERO_F034_5547bb1f328c7e60de2b964770fe243f8ff1bcc6.jpg" width:300; height:500;  alt="a" />
-                  </div>
-                  <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{images[3].text}}</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                  <div style="width:300px; height:500px;" class="photo">
-                    <img ng-src="{{images[4].imageUrl}}" class="img-responsive" alt="a" />
-                  </div>
-                  <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{images[4].text}}</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                  <div style="width:300px; height:500px;" class="photo">
-                    <img ng-src="{{images[5].imageUrl}}" class="img-responsive" alt="a" />
-                  </div>
-                  <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{images[5].text}}</h5>
-                  </div>
-                </div>
-              </div>
+          
             </div>
           </div>
         </div>
