@@ -3,9 +3,9 @@
     <div class="slider-caption-center">
       <h2 class="text-center" style="margin-bottom:0px;font-size:32px;letter-spacing:1px;font-weight:600;color:#fff;margin-top:300px;">
         WANDERWAGON MAKES YOUR GROUP TRIP</h2>
-        <h2 class="text-center" style="margin-bottom:0px;font-size:32px;letter-spacing:1px;font-weight:600;color:#fff;">
+      <h2 class="text-center" style="margin-bottom:0px;font-size:32px;letter-spacing:1px;font-weight:600;color:#fff;">
         {{changingText}}</h2>
-      <p style="font-size:2.5rem; margin-bottom:50px; color:#fff;" class="text-center"> 
+      <p style="font-size:2.5rem; margin-bottom:50px; color:#fff;" class="text-center">
         "Wanderwagon is the perfect partner to plan that much awaited trip with your buddies"
       </p>
       <a ng-click="gotoTravelInspiration()" class="custom-button center-block text-center">
@@ -49,119 +49,114 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
     </h2>
 
 
-
-
-  <div class="row">
     <div class="row">
+      <div class="row">
 
-      <div class="col-md-3">
-        <!-- Controls -->
-        <div class="controls hidden-xs">
-          <a class="icon-angle-left btn" href="#carousel-example-generic" ng-non-bindable data-slide="prev"></a>
-          <a class="icon-angle-right btn" href="#carousel-example-generic" ng-non-bindable data-slide="next"></a>
+        <div class="col-md-3">
+          <!-- Controls -->
+          <div class="controls hidden-xs">
+            <a class="icon-angle-left btn" href="#carousel-example-generic" data-slide="prev"></a>
+            <a class="icon-angle-right btn" href="#carousel-example-generic" data-slide="next"></a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <div class="row">
-            <div class="col-sm-4">
-              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                <div style="width:350px; height:400px;" class="photo">
-                  <img ng-src="{{images[0].imageUrl}}" class="img-responsive" alt="a" />
-                </div>
-                <div class="info">
-                  <h5 style="font-size:1.6rem" class="text-center">
-                    {{images[0].text}}</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                <div style="width:350px; height:400px;" class="photo">
-                  <img ng-src="{{images[1].imageUrl}}" class="img-responsive" alt="a" />
-                </div>
-                <div class="info">
-                  <h5 style="font-size:1.6rem" class="text-center">
-                    {{images[1].text}}</h5>
+      <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="row">
+              <div class="col-sm-3 nopadding" >
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" >
+                  <div style="width:300px; height:450px;" class="photo">
+                    <img style="object-fit:contain;" ng-src="http://plants.montara.com/ListPages/FamPages/showpix/scrophulariaS/casfra.JPEG" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{images[0].text}}</h5>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                <div style="width:350px; height:400px;" class="photo">
-                  <img ng-src="{{images[2].imageUrl}}" class="img-responsive" alt="a" />
-                </div>
-                <div class="info">
-                  <h5 style="font-size:1.6rem" class="text-center">
-                    {{images[2].text}}</h5>
+              <div class="col-sm-3 nopadding" >
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" >
+                  <div style="width:300px; height:500px;" class="photo">
+                    <img style="object-fit:contain;" ng-src="http://plants.montara.com/ListPages/FamPages/showpix/scrophulariaS/casfra.JPEG" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{images[0].text}}</h5>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="item">
-          <div class="row">
-            <div class="col-sm-4">
-              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                <div style="width:350px; height:400px;" class="photo">
-                  <img ng-src="{{images[3].imageUrl}}" class="img-responsive" alt="a" />
-                </div>
-                <div class="info">
-                  <h5 style="font-size:1.6rem" class="text-center">
-                    {{images[3].text}}</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                <div style="width:350px; height:400px;" class="photo">
-                  <img ng-src="{{images[4].imageUrl}}" class="img-responsive" alt="a" />
-                </div>
-                <div class="info">
-                  <h5 style="font-size:1.6rem" class="text-center">
-                    {{images[4].text}}</h5>
+          <div class="item">
+            <div class="row">
+              <div class="col-sm-3">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:300px; height:500px;">
+                    <img src="http://newmedia.thomson.co.uk/live/vol/3/67f0d05b6e57bdf9f13913da6abe2762d66f3b09/1080x608/web/FAMLIFE_BRAND_15_HERO_F034_5547bb1f328c7e60de2b964770fe243f8ff1bcc6.jpg" width:300; height:500;  alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{images[3].text}}</h5>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                <div style="width:350px; height:400px;" class="photo">
-                  <img ng-src="{{images[5].imageUrl}}" class="img-responsive" alt="a" />
+              <div class="col-sm-3">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:300px; height:500px;" class="photo">
+                    <img ng-src="{{images[4].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{images[4].text}}</h5>
+                  </div>
                 </div>
-                <div class="info">
-                  <h5 style="font-size:1.6rem" class="text-center">
-                    {{images[5].text}}</h5>
+              </div>
+              <div class="col-sm-3">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
+                  <div style="width:300px; height:500px;" class="photo">
+                    <img ng-src="{{images[5].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+                  <div class="info">
+                    <h5 style="font-size:1.6rem" class="text-center">
+                      {{images[5].text}}</h5>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <uib-accordion>
+        <uib-accordion-group is-open="heading1.isOpen">
+          <div style="padding-left:50px;" id="posts" class="events small-thumbs">
+
+            <div class=".col-md-4" ng-repeat="destination in destinations">
+              <div class="entry-image" style="padding-bottom:10px;">
+                <a href="#" ui-sref="destination.detail({id: destination.id})">
+                  <img ng-src="{{destination.imageUrl}}" alt="Inventore voluptates velit totam ipsa tenetur">
+                  <h3 class="text-center">{{destination.name}}</h3>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </uib-accordion-group>
+      </uib-accordion>
     </div>
 
-    <uib-accordion>
-      <uib-accordion-group is-open="heading1.isOpen">
-        <div style="padding-left:50px;" id="posts" class="events small-thumbs">
-
-          <div class=".col-md-4" ng-repeat="destination in destinations">
-            <div class="entry-image" style="padding-bottom:10px;">
-              <a href="#" ui-sref="destination.detail({id: destination.id})">
-                <img ng-src="{{destination.imageUrl}}" alt="Inventore voluptates velit totam ipsa tenetur">
-                <h3 class="text-center">{{destination.name}}</h3>
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </uib-accordion-group>
-    </uib-accordion>
   </div>
 
-    </div>
+
+
+
+
+
+
+  </div>
 
 
 
@@ -176,7 +171,7 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
 
   <div class="clearfix">
     <div class="pull-right" style="width:50%;">
-      <a href="images/blog1.jpg"><img height="350px" width="100%" src="images/blog1.jpg" alt="Standard Post with Image"></a>
+      <a href="images/blog1.jpg"><img height="300px" width="100%" src="images/blog1.jpg" alt="Standard Post with Image"></a>
     </div>
 
     <div class="pull-left" style="width:50%; padding-right:10px;">
@@ -198,7 +193,7 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
 
   <div style="margin:0 0 30px 0;" class="clearfix">
     <div class="pull-left" style="width:50%;">
-      <a href="images/blog3.jpg"><img height="350px" width="100%" src="images/blog3.jpg" alt="Standard Post with Image"></a>
+      <a href="images/blog3.jpg"><img height="300px" width="100%" src="images/blog3.jpg" alt="Standard Post with Image"></a>
     </div>
 
     <div class="pull-right" style="width:50%; padding-left:10px;">
@@ -220,12 +215,12 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
 </section>
 
 <section>
-  <div style="position:relative;">
-    <img src="https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg" alt="Image" width="100%" height="600">
+  <div style="background-color:#000;background-image: url('https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg');background-size: cover;position:relative; width:100%;  height:100vh;">
+
     <!--<div class="text_over_image">
         {{postDetail.title}}
       </div>-->
-    <div style="width:538px; min-height:600px; float:left; position:absolute; left:0px; top:0px; z-index:1; background-color: rgba(0,0,0,.66); padding:5px; color: #FFF; font-weight:bold;">
+    <div style="width:40%; height:100vh; float:left; position:absolute; left:0px; top:0px; z-index:1; background-color: rgba(0,0,0,.66); padding:5px; color: #FFF; font-weight:bold;">
       <div style="padding:45px;">
         <div>
           <div>
@@ -302,7 +297,7 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
 
           <div style="width:97%;">
             <label style="padding-top: 10px; color:#FFF; text-transform:capitalize">What's the occasion?<span class="asterisk">*</span></label>
-            <textarea style="max-width:425px; max-height:400px;" class="form-control" placeholder="Tell us a little bit about what you're looking for."></textarea>
+            <textarea style="max-width:425px; max-height:500px;" class="form-control" placeholder="Tell us a little bit about what you're looking for."></textarea>
           </div>
 
           <div style="padding:20px 0 0 0; text-transform:capitalize" class="col-sm-12">
