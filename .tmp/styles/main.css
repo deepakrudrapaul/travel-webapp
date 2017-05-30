@@ -44245,15 +44245,16 @@ label.checkbox {
 /* line 29614, ../../app/styles/main.scss */
 .photo img {
   max-width: 100%;
-  transition: all 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 /* line 29621, ../../app/styles/main.scss */
 .photo:hover img {
-  transform: scale(1.02);
+  transform: scale(1.1);
+  z-index: 1000;
 }
 
-/* line 29627, ../../app/styles/main.scss */
+/* line 29628, ../../app/styles/main.scss */
 .instaText:before,
 .instaText:after {
   content: '\00a0\00a0\00a0\00a0';
@@ -44261,12 +44262,12 @@ label.checkbox {
   margin: auto 0.5em;
 }
 
-/* line 29634, ../../app/styles/main.scss */
+/* line 29635, ../../app/styles/main.scss */
 .cover {
   object-fit: cover;
 }
 
-/* line 29638, ../../app/styles/main.scss */
+/* line 29639, ../../app/styles/main.scss */
 .read-more {
   font-size: 1.3rem;
   font-weight: 600;
@@ -44276,12 +44277,12 @@ label.checkbox {
   font-style: normal;
 }
 
-/* line 29647, ../../app/styles/main.scss */
+/* line 29648, ../../app/styles/main.scss */
 .read-more:hover {
   color: #479ad9;
 }
 
-/* line 29651, ../../app/styles/main.scss */
+/* line 29652, ../../app/styles/main.scss */
 .custom-para > p {
   color: #67747c;
   font-family: Benton Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -44291,12 +44292,12 @@ label.checkbox {
   text-align: justify;
 }
 
-/* line 29660, ../../app/styles/main.scss */
+/* line 29661, ../../app/styles/main.scss */
 .panel-group .panel-heading + .panel-collapse .panel-body {
   border: none;
 }
 
-/* line 29664, ../../app/styles/main.scss */
+/* line 29665, ../../app/styles/main.scss */
 .custom-button {
   text-transform: uppercase;
   width: 20%;
@@ -44310,7 +44311,7 @@ label.checkbox {
   border-radius: 5px;
 }
 
-/* line 29677, ../../app/styles/main.scss */
+/* line 29678, ../../app/styles/main.scss */
 .custom-button:hover {
   cursor: pointer;
   background-color: #EEE;
@@ -44318,11 +44319,39 @@ label.checkbox {
   border-color: transparent !important;
 }
 
-/* line 29686, ../../app/styles/main.scss */
+/* line 29687, ../../app/styles/main.scss */
 .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
   margin-top: -10px;
   margin-left: -10px;
   color: #444;
+}
+
+/* line 29694, ../../app/styles/main.scss */
+.paul-slider-caption {
+  font-size: 1.6rem;
+  bottom: 2.4rem;
+  left: 3.2rem;
+  color: #fff;
+  z-index: 10;
+  position: absolute;
+  font-weight: 700;
+  letter-spacing: -0.08px;
+}
+
+/* line 29705, ../../app/styles/main.scss */
+.paul-slide {
+  max-height: 520px;
+  height: 69vw;
+  position: relative;
+  box-shadow: none;
+  z-index: 10;
+  transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
+}
+
+/* line 29714, ../../app/styles/main.scss */
+.paul-slide:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 28px 81px -7px rgba(0, 0, 0, 0.44);
 }
 
 /*# sourceMappingURL=main.css.map */
