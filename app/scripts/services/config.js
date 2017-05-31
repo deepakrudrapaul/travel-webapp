@@ -1,5 +1,5 @@
 angular.module('config', [])
 
-.constant('ENV', {name:'development',endPoint:'http://119.9.91.254:8080/api/v1'})
+.constant('ENV', {name:'production',endPoint:'http://52.221.240.74:8080/api/v1'})
 
 ;
