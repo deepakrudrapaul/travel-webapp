@@ -44354,4 +44354,25 @@ label.checkbox {
   box-shadow: 0px 28px 81px -7px rgba(0, 0, 0, 0.44);
 }
 
+/* line 29721, ../../app/styles/main.scss */
+.paul-title {
+  text-align: center;
+  margin-top: 22%;
+  margin-bottom: 22%;
+  letter-spacing: -0.45px;
+  line-height: 1;
+  font-weight: 300;
+  font-size: 3.8rem;
+}
+
+@media only screen and (min-width: 1920px) {
+  /* styles for browsers larger than 1920px; */
+  /* line 29734, ../../app/styles/main.scss */
+  .paul-title {
+    margin-top: 22%;
+    margin-bottom: 22%;
+    font-size: 4.8rem;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
