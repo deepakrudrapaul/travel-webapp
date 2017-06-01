@@ -1602,7 +1602,7 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "\n" +
     "<!--    \n" +
     "  </div>\n" +
-    "</section>--> <section id=\"content\" class=\"container\"> <div class=\"topmargin\" style=\"height:100vh\"> <h2 style=\"text-align:center;margin-top:2%;margin-bottom:4%;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem\"> Travel Inspiration <div style=\"display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px\"> </div> </h2> <div class=\"row\"> <div id=\"carousel-example-generic\" class=\"carousel slide hidden-xs\" data-ride=\"carousel\"> <a style=\"background-color: rgb(255, 255, 255);\n" +
+    "</section>--> <section id=\"content\" class=\"container\"> <div class=\"topmargin\" style=\"height:100vh\"> <h2 class=\"paul-title\"> Travel Inspiration <div style=\"display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px\"> </div> </h2> <div class=\"row\"> <div id=\"carousel-example-generic\" class=\"carousel slide hidden-xs\" data-ride=\"carousel\"> <a style=\"background-color: rgb(255, 255, 255);\n" +
     "    border: 0px;\n" +
     "    border-radius: 50%;\n" +
     "    cursor: pointer;\n" +

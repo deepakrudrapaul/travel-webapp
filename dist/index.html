@@ -1,184 +1,12 @@
-<!doctype html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <title>WanderWagon</title>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <link rel="stylesheet" href="styles/vendor.ce08ec72.css">
-	<link rel="stylesheet" href="styles/main.b90189bd.css">
-	 <link rel="stylesheet" href="styles/font-icons.css">
-  <!--[if lt IE 9]>
+<!doctype html> <html> <head> <meta charset="utf-8"> <title>WanderWagon</title> <meta http-equiv="content-type" content="text/html; charset=utf-8"> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.ce08ec72.css"> <!--[if lt IE 9]>
   <link rel="stylesheet" href="styles/main.b90189bd.css">
-  <![endif]-->
-</head>
-
-<body ng-app="wanderwagon-webapp">
-  <!-- Header
-		============================================= -->
-  <header id="header" class="transparent-header" data-sticky-class="not-dark" data-responsive-class="not-dark">
-    <div id="header-wrap">
-      <div class="container clearfix">
-        <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-        <!-- Logo
-					============================================= -->
-        <div id="logo">
-          <a href="" ui-sref="home" class="standard-logo" data-dark-logo="images/logo-dark.fbc79dcc.png"><img src="images/logo-dark.fbc79dcc.png" alt="Canvas Logo"></a>
-          <a href="" ui-sref="home" class="retina-logo" data-dark-logo="images/logo-dark@2x.13d9d51d.png"><img src="images/logo-dark@2x.13d9d51d.png" alt="Canvas Logo"></a>
-        </div>
-        <!-- #logo end -->
-        <!-- #logo end -->
-        <!-- Primary Navigation
-					============================================= -->
-        <nav id="primary-menu">
-          <ul>
-            <li>
-              <a href="" ui-sref-active="active-menu" ui-sref="travel-plan">
-                <div><i class="icon-calendar2"></i>Travel Plan</div>
-              </a>
-            </li>
-            <li>
-              <a href="" ui-sref-active="active-menu" ui-sref="destination.list">
-                <div><i class="icon-location"></i>Destination</div>
-              </a>
-            </li>
-            <li>
-              <a href="" ui-sref-active="active-menu" ui-sref="blog.list">
-                <div><i class="icon-comment"></i>Blog</div>
-              </a>
-            </li>
-            <li>
-              <a href="" ui-sref-active="active-menu" ui-sref="plan-trip">
-                <div><i class="icon-plane"></i>Plan My Trip</div>
-              </a>
-            </li>
-            <li>
-              <a href="" ui-sref-active="active-menu" ui-sref="login">
-                <div><i class="icon-lock"></i>Login</div>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <!-- #primary-menu end -->
-      </div>
-    </div>
-  </header>
-  <div id="slider" ui-view></div>
-  <!-- Footer
-		============================================= -->
-  <footer class="dark footer">
-    <div class="container">
-      <div class="footer-widgets-wrap clearfix">
-        <div class="col_two_third">
-          <div class="col_one_third">
-            <div class="widget clearfix"> <img src="images/logo-dark.fbc79dcc.png" alt="" class="footer-logo">
-              <div>
-                <address> <strong>Headquarters:</strong><br> 795 Folsom Ave, Suite 600<br> San Francisco, CA 94107<br> </address>
-                <abbr
-                  title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br> <abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11
-                  4752 1433<br> <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com </div>
-            </div>
-          </div>
-          <div class="col_one_third">
-            <div class="widget widget_links clearfix">
-              <h4> <a href="" ui-sref-active="active-menu" ui-sref="about"> About us </a> </h4>
-              <h4> <a href="" ui-sref-active="active-menu" ui-sref="contact"> Contact us </a> </h4>
-              <h4> <a href="" ui-sref-active="active-menu" ui-sref="faq"> FAQS </a> </h4>
-              <h4> <a href="" ui-sref-active="active-menu" ui-sref="cancellation"> Cancellation Policy </a> </h4>
-              <h4> <a href="" ui-sref-active="active-menu" ui-sref="tnc"> Term & Conditions </a> </h4>
-              <h4> <a href="" ui-sref-active="active-menu" ui-sref="testimonials"> Testimonials </a> </h4>
-            </div>
-          </div>
-          <div class="col_one_third col_last">
-            <div class="widget clearfix">
-              <h4>Recent Posts</h4>
-              <div id="post-list-footer">
-                <div class="spost clearfix">
-                  <div class="entry-c">
-                    <div class="entry-title">
-                      <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
-                    </div>
-                    <ul class="entry-meta">
-                      <li>10th July 2014</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="spost clearfix">
-                  <div class="entry-c">
-                    <div class="entry-title">
-                      <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
-                    </div>
-                    <ul class="entry-meta">
-                      <li>10th July 2014</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="spost clearfix">
-                  <div class="entry-c">
-                    <div class="entry-title">
-                      <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
-                    </div>
-                    <ul class="entry-meta">
-                      <li>10th July 2014</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col_one_third col_last">
-          <div class="widget clearfix" style="margin-bottom: -20px">
-            <div class="row">
-              <div class="col-md-6 clearfix bottommargin-sm">
-                <a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px"> <i class="icon-facebook"></i> <i class="icon-facebook"></i> </a> <a href="#"><small style="display: block; margin-top: 3px"><strong>Like us</strong><br>on Facebook</small></a>                </div>
-              <div class="col-md-6 clearfix">
-                <a href="#" class="social-icon si-dark si-colored si-instagram nobottommargin" style="margin-right: 10px">
-                <i class="icon-instagram"></i> <i class="icon-instagram"></i> </a> <a href="#"><small style="display: block; margin-top: 3px"><strong>Follow</strong><br>on Instagram</small></a>                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Copyrights
-			============================================= -->
-    <div id="copyrights">
-      <div class="container clearfix">
-        <div class="col_half"> Copyrights &copy; 2014 All Rights Reserved by WanderWagon Private Ltd.<br>
-          <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
-        </div>
-        <div class="col_half col_last tright">
-          <div class="fright clearfix">
-            <a href="#" class="social-icon si-small si-borderless si-facebook"> <i class="icon-facebook"></i> <i class="icon-facebook"></i> </a>
-            <a href="#" class="social-icon si-small si-borderless si-twitter">
-            <i class="icon-twitter"></i> <i class="icon-twitter"></i> </a>
-            <a href="#" class="social-icon si-small si-borderless si-gplus">
-            <i class="icon-gplus"></i> <i class="icon-gplus"></i> </a>
-            <a href="#" class="social-icon si-small si-borderless si-pinterest">
-            <i class="icon-pinterest"></i> <i class="icon-pinterest"></i> </a>
-            <a href="#" class="social-icon si-small si-borderless si-vimeo">
-            <i class="icon-vimeo"></i> <i class="icon-vimeo"></i> </a>
-            <a href="#" class="social-icon si-small si-borderless si-github">
-            <i class="icon-github"></i> <i class="icon-github"></i> </a>
-            <a href="#" class="social-icon si-small si-borderless si-yahoo">
-            <i class="icon-yahoo"></i> <i class="icon-yahoo"></i> </a>
-            <a href="#" class="social-icon si-small si-borderless si-linkedin">
-            <i class="icon-linkedin"></i> <i class="icon-linkedin"></i> </a>
-          </div>
-          <div class="clear"></div> <i class="icon-envelope2"></i> info@wanderwagon.com <span class="middot">&middot;</span> <i class="icon-headphones"></i>          +91-11-6541-6369 </div>
-      </div>
-    </div>
-    <!-- #copyrights end -->
-  </footer>
-  <!-- #footer end -->
-  <!-- Go To Top
-	============================================= -->
-  <div id="gotoTop" class="icon-angle-up"></div>
-  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-  <!--<script>
+  <![endif]--> </head> <body ng-app="wanderwagon-webapp"> <!-- Header
+		============================================= --> <header id="header" class="transparent-header" data-sticky-class="not-dark" data-responsive-class="not-dark"> <div id="header-wrap"> <div class="container clearfix"> <div id="primary-menu-trigger"><i class="icon-reorder"></i></div> <!-- Logo
+					============================================= --> <div id="logo"> <a href="" ui-sref="home" class="standard-logo" data-dark-logo="images/logo-dark.fbc79dcc.png"><img src="images/logo-dark.fbc79dcc.png" alt="Canvas Logo"></a> <a href="" ui-sref="home" class="retina-logo" data-dark-logo="images/logo-dark@2x.13d9d51d.png"><img src="images/logo-dark@2x.13d9d51d.png" alt="Canvas Logo"></a> </div> <!-- #logo end --> <!-- #logo end --> <!-- Primary Navigation
+					============================================= --> <nav id="primary-menu"> <ul> <li> <a href="" ui-sref-active="active-menu" ui-sref="travel-plan"> <div><i class="icon-calendar2"></i>Travel Plan</div> </a> </li> <li> <a href="" ui-sref-active="active-menu" ui-sref="destination.list"> <div><i class="icon-location"></i>Destination</div> </a> </li> <li> <a href="" ui-sref-active="active-menu" ui-sref="blog.list"> <div><i class="icon-comment"></i>Blog</div> </a> </li> <li> <a href="" ui-sref-active="active-menu" ui-sref="plan-trip"> <div><i class="icon-plane"></i>Plan My Trip</div> </a> </li> <li> <a href="" ui-sref-active="active-menu" ui-sref="login"> <div><i class="icon-lock"></i>Login</div> </a> </li> </ul> </nav> <!-- #primary-menu end --> </div> </div> </header> <div id="slider" ui-view></div> <!-- Footer
+		============================================= --> <footer class="dark footer"> <div class="container"> <div class="footer-widgets-wrap clearfix"> <div class="col_two_third"> <div class="col_one_third"> <div class="widget clearfix"> <img src="images/logo-dark.fbc79dcc.png" alt="" class="footer-logo"> <div> <address> <strong>Headquarters:</strong><br> 795 Folsom Ave, Suite 600<br> San Francisco, CA 94107<br> </address> <abbr title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br> <abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11 4752 1433<br> <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com </div> </div> </div> <div class="col_one_third"> <div class="widget widget_links clearfix"> <h4> <a href="" ui-sref-active="active-menu" ui-sref="about"> About us </a> </h4> <h4> <a href="" ui-sref-active="active-menu" ui-sref="contact"> Contact us </a> </h4> <h4> <a href="" ui-sref-active="active-menu" ui-sref="faq"> FAQS </a> </h4> <h4> <a href="" ui-sref-active="active-menu" ui-sref="cancellation"> Cancellation Policy </a> </h4> <h4> <a href="" ui-sref-active="active-menu" ui-sref="tnc"> Term & Conditions </a> </h4> <h4> <a href="" ui-sref-active="active-menu" ui-sref="testimonials"> Testimonials </a> </h4> </div> </div> <div class="col_one_third col_last"> <div class="widget clearfix"> <h4>Recent Posts</h4> <div id="post-list-footer"> <div class="spost clearfix"> <div class="entry-c"> <div class="entry-title"> <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4> </div> <ul class="entry-meta"> <li>10th July 2014</li> </ul> </div> </div> <div class="spost clearfix"> <div class="entry-c"> <div class="entry-title"> <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4> </div> <ul class="entry-meta"> <li>10th July 2014</li> </ul> </div> </div> <div class="spost clearfix"> <div class="entry-c"> <div class="entry-title"> <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4> </div> <ul class="entry-meta"> <li>10th July 2014</li> </ul> </div> </div> </div> </div> </div> </div> <div class="col_one_third col_last"> <div class="widget clearfix" style="margin-bottom: -20px"> <div class="row"> <div class="col-md-6 clearfix bottommargin-sm"> <a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px"> <i class="icon-facebook"></i> <i class="icon-facebook"></i> </a> <a href="#"><small style="display: block; margin-top: 3px"><strong>Like us</strong><br>on Facebook</small></a> </div> <div class="col-md-6 clearfix"> <a href="#" class="social-icon si-dark si-colored si-instagram nobottommargin" style="margin-right: 10px"> <i class="icon-instagram"></i> <i class="icon-instagram"></i> </a> <a href="#"><small style="display: block; margin-top: 3px"><strong>Follow</strong><br>on Instagram</small></a> </div> </div> </div> </div> </div> </div> <!-- Copyrights
+			============================================= --> <div id="copyrights"> <div class="container clearfix"> <div class="col_half"> Copyrights &copy; 2014 All Rights Reserved by WanderWagon Private Ltd.<br> <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div> </div> <div class="col_half col_last tright"> <div class="fright clearfix"> <a href="#" class="social-icon si-small si-borderless si-facebook"> <i class="icon-facebook"></i> <i class="icon-facebook"></i> </a> <a href="#" class="social-icon si-small si-borderless si-twitter"> <i class="icon-twitter"></i> <i class="icon-twitter"></i> </a> <a href="#" class="social-icon si-small si-borderless si-gplus"> <i class="icon-gplus"></i> <i class="icon-gplus"></i> </a> <a href="#" class="social-icon si-small si-borderless si-pinterest"> <i class="icon-pinterest"></i> <i class="icon-pinterest"></i> </a> <a href="#" class="social-icon si-small si-borderless si-vimeo"> <i class="icon-vimeo"></i> <i class="icon-vimeo"></i> </a> <a href="#" class="social-icon si-small si-borderless si-github"> <i class="icon-github"></i> <i class="icon-github"></i> </a> <a href="#" class="social-icon si-small si-borderless si-yahoo"> <i class="icon-yahoo"></i> <i class="icon-yahoo"></i> </a> <a href="#" class="social-icon si-small si-borderless si-linkedin"> <i class="icon-linkedin"></i> <i class="icon-linkedin"></i> </a> </div> <div class="clear"></div> <i class="icon-envelope2"></i> info@wanderwagon.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +91-11-6541-6369 </div> </div> </div> <!-- #copyrights end --> </footer> <!-- #footer end --> <!-- Go To Top
+	============================================= --> <div id="gotoTop" class="icon-angle-up"></div> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <!--<script>
 		!function (A, n, g, u, l, a, r) {
 		A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
 			(A[l].q = A[l].q || []).push(arguments)		
@@ -188,21 +16,9 @@
 
 		ga('create', 'UA-XXXXX-X');
 		ga('send', 'pageview');
-	</script>-->
-  <script src="scripts/vendor.180082b5.js"></script>
-  <script src="scripts/scripts.5a95b1b3.js"></script>
-  <!-- External JavaScripts
-	============================================= -->
-  <script src="http://maps.google.com/maps/api/js"></script>
-  <!--<script type="text/javascript" src="styles/js/jquery.js"></script>
+	</script>--> <script src="scripts/vendor.180082b5.js"></script> <script src="scripts/scripts.690019f2.js"></script> <!-- External JavaScripts
+	============================================= --> <script src="http://maps.google.com/maps/api/js"></script> <!--<script type="text/javascript" src="styles/js/jquery.js"></script>
   <script type="text/javascript" src="styles/js/plugins.js"></script>
 
-  <script type="text/javascript" src="styles/js/functions.js"></script>-->
-  <!-- Travel Demo Specific Script -->
-  <!--<script type="text/javascript" src="scripts/js/datepicker.js"></script>-->
-  <!-- / -->
-  <!-- Footer Scripts
-	============================================= -->
-</body>
-
-</html>
+  <script type="text/javascript" src="styles/js/functions.js"></script>--> <!-- Travel Demo Specific Script --> <!--<script type="text/javascript" src="scripts/js/datepicker.js"></script>--> <!-- / --> <!-- Footer Scripts
+	============================================= --> </body> </html> 
