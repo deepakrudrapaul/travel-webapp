@@ -1,7 +1,7 @@
 <div style="background-color:#000;background-image: url('images/destination-detail-bg.jpg');background-size: cover; height:100vh;">
   <div class="container clearfix">
    <div class="center-block slider-caption-center">
-              <h2 class="text-center" style="font-size:68px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:200px;" data-caption-animate="fadeInUp">Dharamshala</h2>
+              <h2 class="text-center" style="font-size:68px;letter-spacing:0px;font-weight:600;color:#fff; margin-top:23%;" data-caption-animate="fadeInUp">Dharamshala</h2>
               <p style="font-size:3rem; font-style:italic; color:#fff;" class="text-center"> is a stunning tapestry</p>
 
             </div>
@@ -141,8 +141,8 @@
 
 <section id="places">
   <div class=" container clearfix" style="height:100vh;">
-    <div class="topmargin">
-      <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+    <div class="bottommargin">
+      <h2 style="text-align:center;margin:6rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
         Places to visit
         <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
         </div>
@@ -150,18 +150,47 @@
     </div>
 
     <div class="row">
-      <div class="row">
-
-        <div class="col-md-3">
-          <!-- Controls -->
-          <div class="controls hidden-xs">
-            <a class="icon-angle-left btn" href="#carousel-example-generic" ng-non-bindable data-slide="prev"></a>
-            <a class="icon-angle-right btn" href="#carousel-example-generic" ng-non-bindable data-slide="next"></a>
-          </div>
-        </div>
-      </div>
 
       <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+         <a style="    background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0px;
+    z-index: 20;
+    left: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="prev">
+          <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
+        </a>
+        <a style="background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0;
+    z-index: 20;
+    right: -2em;" class="btn" href="#carousel-example-generic" data-slide="next">
+          <i style="margin:7px 0px 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <div class="item active">
@@ -172,8 +201,8 @@
                     <img class="cover" ng-src="{{activities[0].imageUrl}}" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[0].text}}</h5>
+                     <span class="paul-slider-caption">
+                      {{activities[0].text}}</span>
                   </div>
                 </div>
               </div>
@@ -183,8 +212,8 @@
                     <img ng-src="{{activities[1].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[1].text}}</h5>
+                     <span class="paul-slider-caption">
+                      {{activities[1].text}}</span>
                   </div>
                 </div>
               </div>
@@ -194,8 +223,8 @@
                     <img ng-src="{{activities[2].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[2].text}}</h5>
+                     <span class="paul-slider-caption">
+                      {{activities[2].text}}</span>
                   </div>
                 </div>
               </div>
@@ -209,8 +238,8 @@
                     <img ng-src="{{activities[3].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[3].text}}</h5>
+                     <span class="paul-slider-caption">
+                      {{activities[3].text}}</span>
                   </div>
                 </div>
               </div>
@@ -220,8 +249,8 @@
                     <img ng-src="{{activities[4].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[4].text}}</h5>
+                    <span class="paul-slider-caption">
+                      {{activities[4].text}}</span>
                   </div>
                 </div>
               </div>
@@ -231,8 +260,8 @@
                     <img ng-src="{{activities[5].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[5].text}}</h5>
+                    <span class="paul-slider-caption">
+                      {{activities[5].text}}</span>
                   </div>
                 </div>
               </div>
@@ -240,12 +269,16 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>   
 
-      <uib-accordion>
+<div class="clearfix">
+
+   <uib-accordion>
         <uib-accordion-group is-open="heading1.isOpen">
           <div class="center-block" style="width:80%;">
-            <div class="topmargin">
-              <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+            <div>
+              <h2 style="text-align:center;margin:0rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
                 Name
                 <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
                 </div>
@@ -292,17 +325,17 @@
           </div>
         </uib-accordion-group>
       </uib-accordion>
-    </div>
 
-
-  </div>
+</div>
+  
 </section>
+
 
 <section id="activities">
 
   <div class="container clearfix" style="height:100vh;">
-    <div class="topmargin">
-      <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+    <div>
+      <h2 style="text-align:center;margin:6rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
         Activities
         <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
         </div>
@@ -310,18 +343,47 @@
     </div>
 
     <div class="row">
-      <div class="row">
-
-        <div class="col-md-3">
-          <!-- Controls -->
-          <div class="controls hidden-xs">
-            <a class="icon-angle-left btn" href="#carousel-example-generic1" ng-non-bindable data-slide="prev"></a>
-            <a class="icon-angle-right btn" href="#carousel-example-generic1" ng-non-bindable data-slide="next"></a>
-          </div>
-        </div>
-      </div>
-
+      
       <div id="carousel-example-generic1" class="carousel slide hidden-xs" data-ride="carousel">
+         <a style="    background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0px;
+    z-index: 20;
+    left: -2.22222em;" class="btn" href="#carousel-example-generic1" data-slide="prev">
+          <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
+        </a>
+        <a style="background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0;
+    z-index: 20;
+    right: -2em;" class="btn" href="#carousel-example-generic1" data-slide="next">
+          <i style="margin:7px 0px 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <div class="item active">
@@ -332,8 +394,8 @@
                     <img ng-src="{{activities[0].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[0].text}}</h5>
+                      <span class="paul-slider-caption">
+                      {{activities[0].text}}</span>
                   </div>
                 </div>
               </div>
@@ -343,8 +405,8 @@
                     <img ng-src="{{activities[1].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[1].text}}</h5>
+                     <span class="paul-slider-caption">
+                      {{activities[1].text}}</span>
                   </div>
                 </div>
               </div>
@@ -354,8 +416,8 @@
                     <img ng-src="{{activities[2].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[2].text}}</h5>
+                      <span class="paul-slider-caption">
+                      {{activities[2].text}}</span>
                   </div>
                 </div>
               </div>
@@ -369,8 +431,8 @@
                     <img ng-src="{{activities[3].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[3].text}}</h5>
+                       <span class="paul-slider-caption">
+                      {{activities[3].text}}</span>
                   </div>
                 </div>
               </div>
@@ -380,8 +442,8 @@
                     <img ng-src="{{activities[4].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[4].text}}</h5>
+                     <span class="paul-slider-caption">
+                      {{activities[4].text}}</span>
                   </div>
                 </div>
               </div>
@@ -391,8 +453,8 @@
                     <img ng-src="{{activities[5].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[5].text}}</h5>
+                      <span class="paul-slider-caption">
+                      {{activities[5].text}}</span>
                   </div>
                 </div>
               </div>
@@ -400,12 +462,13 @@
           </div>
         </div>
       </div>
-
-      <uib-accordion>
+    </div>
+  </div>
+   <uib-accordion>
         <uib-accordion-group is-open="heading2.isOpen">
           <div class="center-block" style="width:80%;">
             <div class="topmargin">
-              <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+              <h2 style="text-align:center;margin:0rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
                 Name
                 <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
                 </div>
@@ -447,10 +510,6 @@
           </div>
         </uib-accordion-group>
       </uib-accordion>
-    </div>
-
-
-  </div>
 </section>
 
 <section>
@@ -488,18 +547,47 @@
     </div>
 
     <div class="row">
-      <div class="row">
 
-        <div class="col-md-3">
-          <!-- Controls -->
-          <div class="controls hidden-xs">
-            <a class="icon-angle-left btn" href="#carousel-example-generic1" ng-non-bindable data-slide="prev"></a>
-            <a class="icon-angle-right btn" href="#carousel-example-generic1" ng-non-bindable data-slide="next"></a>
-          </div>
-        </div>
-      </div>
-
-      <div id="carousel-example-generic1" class="carousel slide hidden-xs" data-ride="carousel">
+      <div id="carousel-example-generic2" class="carousel slide hidden-xs" data-ride="carousel">
+        <a style="    background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0px;
+    z-index: 20;
+    left: -2.22222em;" class="btn" href="#carousel-example-generic2" data-slide="prev">
+          <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
+        </a>
+        <a style="background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0;
+    z-index: 20;
+    right: -2em;" class="btn" href="#carousel-example-generic2" data-slide="next">
+          <i style="margin:7px 0px 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <div class="item active">
@@ -510,8 +598,8 @@
                     <img ng-src="{{activities[0].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[0].text}}</h5>
+                    <span class="paul-slider-caption">
+                      {{activities[0].text}}</span>
                   </div>
                 </div>
               </div>
@@ -521,8 +609,8 @@
                     <img ng-src="{{activities[1].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[1].text}}</h5>
+                    <span class="paul-slider-caption">
+                      {{activities[1].text}}</span>
                   </div>
                 </div>
               </div>
@@ -532,8 +620,8 @@
                     <img ng-src="{{activities[2].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[2].text}}</h5>
+                   <span class="paul-slider-caption">
+                      {{activities[2].text}}</span>
                   </div>
                 </div>
               </div>
@@ -547,8 +635,8 @@
                     <img ng-src="{{activities[3].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[3].text}}</h5>
+                    <span class="paul-slider-caption">
+                      {{activities[3].text}}</span>
                   </div>
                 </div>
               </div>
@@ -558,8 +646,8 @@
                     <img ng-src="{{activities[4].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
                   <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[4].text}}</h5>
+                   <span class="paul-slider-caption">
+                      {{activities[4].text}}</span>
                   </div>
                 </div>
               </div>
@@ -568,9 +656,9 @@
                   <div style="width:350px; height:400px;" class="photo">
                     <img ng-src="{{activities[5].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
-                  <div class="info">
-                    <h5 style="font-size:1.6rem" class="text-center">
-                      {{activities[5].text}}</h5>
+                  <div class="info" >
+                    <span class="paul-slider-caption" >
+                      {{activities[5].text}}</span>
                   </div>
                 </div>
               </div>

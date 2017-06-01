@@ -27,12 +27,12 @@
 
   <div class="container">
     <div class="row row-centered">
-      <div style="margin-bottom:10px;" ng-repeat="destination in destinations" class="col-xs-4 col-centered col-fixed">
+      <div style="margin-bottom:2%;" ng-repeat="destination in destinations" class="col-xs-4 col-centered col-fixed">
         <div class="item">
-          <div style="cursor:pointer;" ui-sref="destination.detail({id: destination.id})" class="content">
+          <div style="cursor:pointer;" ui-sref="destination.detail({id: destination.id})" class="photo">
             <img width="380" height="255" ng-src="{{destination.imageUrl}}" />
-            <h5 style="font-size:1.6rem" class="text-center">
-                    {{destination.name}}</h5>
+            <span style="background-color: rgba(0,0,0,.66)" class="paul-slider-caption">
+                      {{destination.name}}</span>
           </div>
         </div>
       </div>

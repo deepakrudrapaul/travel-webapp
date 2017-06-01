@@ -10,6 +10,36 @@
   </div>
 </div>
 
+<div class="content-wrap">
+
+  <div class="container clearfix">
+
+    <div class="si-sticky visible-md visible-lg">
+      <a href="#" class="social-icon si-facebook" data-animate="bounceInLeft">
+        <i class="icon-facebook"></i>
+        <i class="icon-facebook"></i>
+      </a>
+      <a href="#" class="social-icon si-instagram" data-animate="bounceInLeft" data-delay="100">
+        <i class="icon-instagram"></i>
+        <i class="icon-instagram"></i>
+      </a>
+      <a href="#" class="social-icon si-linkedin" data-animate="bounceInLeft" data-delay="600">
+        <i class="icon-linkedin"></i>
+        <i class="icon-linkedin"></i>
+      </a>
+       <a href="#" class="social-icon si-twitter" data-animate="bounceInLeft" data-delay="600">
+        <i class="icon-twitter"></i>
+        <i class="icon-twitter"></i>
+      </a>
+      <a href="#" class="social-icon si-gplus" data-animate="bounceInLeft" data-delay="600">
+        <i class="icon-gplus"></i>
+        <i class="icon-gplus"></i>
+      </a>
+
+    </div>
+  </div>
+</div>
+
 
 
 <!-- Content
@@ -37,7 +67,7 @@
             </div>
 
             <div class="entry-image">
-              <a ng-href="{{post.image}}" data-lightbox="image"><img class="image_fade" ng-src="{{post.image}}" alt="Standard Post with Image"></a>
+              <a ui-sref="blog.detail({postId: post.id})" data-lightbox="image"><img class="image_fade" ng-src="{{post.image}}" alt="Standard Post with Image"></a>
             </div>
             <div class="entry-title">
               <h3 style="cursor:pointer;" ui-sref="blog.detail({postId: post.id})" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
@@ -93,8 +123,8 @@
             </div>-->
             <!--</div>-->
             <div class="row">
-              <div ng-repeat="image in instaImages" class="col-sm-6">
-                <img style="padding-bottom: 5px;" width="200" height="100" class="image_fade" ng-src="{{image.image}}" alt="Standard Post with Image">
+              <div ng-repeat="image in instaImages" class="col-sm-6" style="padding: 2px;">
+                <img  width="200" height="100" class="image_fade" ng-src="{{image.image}}" alt="Standard Post with Image">
               </div>
             </div>
           </div>
