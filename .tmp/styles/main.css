@@ -44251,7 +44251,6 @@ label.checkbox {
 /* line 29621, ../../app/styles/main.scss */
 .photo:hover img {
   transform: scale(1.1);
-  z-index: 1000;
 }
 
 /* line 29628, ../../app/styles/main.scss */
@@ -44358,7 +44357,6 @@ label.checkbox {
 .paul-title {
   text-align: center;
   margin-top: 2%;
-  margin-bottom: 4%;
   letter-spacing: -0.45px;
   line-height: 1;
   font-weight: 300;
@@ -44367,7 +44365,7 @@ label.checkbox {
 
 @media only screen and (min-width: 1920px) {
   /* styles for browsers larger than 1920px; */
-  /* line 29734, ../../app/styles/main.scss */
+  /* line 29733, ../../app/styles/main.scss */
   .paul-title {
     margin-top: 22%;
     margin-bottom: 22%;

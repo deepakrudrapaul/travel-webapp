@@ -1,12 +1,12 @@
 <div style="background-color:#000;background-image: url('images/destination-bg.jpg');background-size: cover; height:100vh;">
   <div class="container clearfix">
     <div class="slider-caption-center">
-       <h2 style="font-size:48px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:200px;" data-caption-animate="fadeInUp">
-                Top 10 Places To Visit In Dharamshala</h2>
-              <a ui-sref="blog.list" class="button button-border button-white button-light button-large button-rounded tright nomargin">
-                <span>Read More</span> <i class="icon-angle-right"></i></a>
-       
-      
+      <h2 style="font-size:48px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:200px;" data-caption-animate="fadeInUp">
+        Top 10 Places To Visit In Dharamshala</h2>
+      <a ui-sref="blog.list" class="button button-border button-white button-light button-large button-rounded tright nomargin">
+        <span>Read More</span> <i class="icon-angle-right"></i></a>
+
+
     </div>
   </div>
 </div>
@@ -28,13 +28,47 @@
   <div class="container">
     <div class="row row-centered">
       <div style="margin-bottom:2%;" ng-repeat="destination in destinations" class="col-xs-4 col-centered col-fixed">
-        <div class="item">
-          <div style="cursor:pointer;" ui-sref="destination.detail({id: destination.id})" class="photo">
-            <img width="380" height="255" ng-src="{{destination.imageUrl}}" />
-            <span style="background-color: rgba(0,0,0,.66)" class="paul-slider-caption">
-                      {{destination.name}}</span>
+        <!--<div class="item" style="width:100%;">
+          <div style="cursor:pointer;" ui-sref="destination.detail({id: destination.id})">
+            <img  width="380" height="255" ng-src="{{destination.imageUrl}}" />
+            <div style="background-color: rgba(0,0,0,.66); width:100%;" >
+                      <span class="paul-slider-caption">{{destination.name}}</span></div>
           </div>
-        </div>
+        </div>-->
+
+        <a ui-sref="destination.detail({id: destination.id})">
+          <div class="photo" style="cursor:pointer; width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin: 10px 0;">
+            <img class="img-responsive" style="height:300px; display: block;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    margin: 0 auto;" ng-src="{{destination.imageUrl}}">
+            <div class="overlay" style="width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out">
+              <h2 style="color: #fff;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px;
+    background: rgba(0,0,0,0.6);" class="ng-binding">{{destination.name}}</h2>
+            </div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
