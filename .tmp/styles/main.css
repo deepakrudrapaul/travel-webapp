@@ -44253,7 +44253,7 @@ label.checkbox {
   transform: scale(1.1);
 }
 
-/* line 29628, ../../app/styles/main.scss */
+/* line 29627, ../../app/styles/main.scss */
 .instaText:before,
 .instaText:after {
   content: '\00a0\00a0\00a0\00a0';
@@ -44261,12 +44261,12 @@ label.checkbox {
   margin: auto 0.5em;
 }
 
-/* line 29635, ../../app/styles/main.scss */
+/* line 29634, ../../app/styles/main.scss */
 .cover {
   object-fit: cover;
 }
 
-/* line 29639, ../../app/styles/main.scss */
+/* line 29638, ../../app/styles/main.scss */
 .read-more {
   font-size: 1.3rem;
   font-weight: 600;
@@ -44276,12 +44276,12 @@ label.checkbox {
   font-style: normal;
 }
 
-/* line 29648, ../../app/styles/main.scss */
+/* line 29647, ../../app/styles/main.scss */
 .read-more:hover {
   color: #479ad9;
 }
 
-/* line 29652, ../../app/styles/main.scss */
+/* line 29651, ../../app/styles/main.scss */
 .custom-para > p {
   color: #67747c;
   font-family: Benton Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -44291,12 +44291,12 @@ label.checkbox {
   text-align: justify;
 }
 
-/* line 29661, ../../app/styles/main.scss */
+/* line 29660, ../../app/styles/main.scss */
 .panel-group .panel-heading + .panel-collapse .panel-body {
   border: none;
 }
 
-/* line 29665, ../../app/styles/main.scss */
+/* line 29664, ../../app/styles/main.scss */
 .custom-button {
   text-transform: uppercase;
   width: 20%;
@@ -44310,7 +44310,7 @@ label.checkbox {
   border-radius: 5px;
 }
 
-/* line 29678, ../../app/styles/main.scss */
+/* line 29677, ../../app/styles/main.scss */
 .custom-button:hover {
   cursor: pointer;
   background-color: #EEE;
@@ -44318,26 +44318,27 @@ label.checkbox {
   border-color: transparent !important;
 }
 
-/* line 29687, ../../app/styles/main.scss */
-.glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+/* line 29684, ../../app/styles/main.scss */
+.glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right {
   margin-top: -10px;
   margin-left: -10px;
   color: #444;
 }
 
-/* line 29694, ../../app/styles/main.scss */
+/* line 29691, ../../app/styles/main.scss */
 .paul-slider-caption {
   font-size: 1.6rem;
   bottom: 2.4rem;
   left: 3.2rem;
   color: #fff;
-  z-index: 10;
+  z-index: 30;
   position: absolute;
   font-weight: 700;
   letter-spacing: -0.08px;
 }
 
-/* line 29705, ../../app/styles/main.scss */
+/* line 29702, ../../app/styles/main.scss */
 .paul-slide {
   max-height: 520px;
   height: 69vw;
@@ -44347,13 +44348,14 @@ label.checkbox {
   transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
 }
 
-/* line 29714, ../../app/styles/main.scss */
+/* line 29711, ../../app/styles/main.scss */
 .paul-slide:hover {
+  z-index: 30;
   transform: scale(1.03);
   box-shadow: 0px 28px 81px -7px rgba(0, 0, 0, 0.44);
 }
 
-/* line 29721, ../../app/styles/main.scss */
+/* line 29717, ../../app/styles/main.scss */
 .paul-title {
   text-align: center;
   margin-top: 2%;
@@ -44365,10 +44367,54 @@ label.checkbox {
 
 @media only screen and (min-width: 1920px) {
   /* styles for browsers larger than 1920px; */
-  /* line 29733, ../../app/styles/main.scss */
+  /* line 29728, ../../app/styles/main.scss */
   .paul-title {
     margin-top: 22%;
     margin-bottom: 22%;
     font-size: 4.8rem;
+  }
+}
+/* line 29735, ../../app/styles/main.scss */
+.text:before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-right: 20px solid #fff;
+  border-bottom: 15px solid transparent;
+}
+
+/* line 29747, ../../app/styles/main.scss */
+.text:after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-left: 20px solid #fff;
+  border-bottom: 15px solid transparent;
+}
+
+/* line 29760, ../../app/styles/main.scss */
+.paul-slideshow {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+/* line 29768, ../../app/styles/main.scss */
+.paul-slideshow .mover-1 {
+  animation: moveSlideshow 6s linear infinite;
+}
+
+@keyframes moveSlideshow {
+  100% {
+    transform: translateX(-66.6666%);
   }
 }
