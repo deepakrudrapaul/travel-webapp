@@ -44340,7 +44340,7 @@ label.checkbox {
 
 /* line 29702, ../../app/styles/main.scss */
 .paul-slide {
-  max-height: 520px;
+  max-height: 500px;
   height: 69vw;
   position: relative;
   box-shadow: none;
@@ -44418,3 +44418,5 @@ label.checkbox {
     transform: translateX(-66.6666%);
   }
 }
+
+/*# sourceMappingURL=main.css.map */

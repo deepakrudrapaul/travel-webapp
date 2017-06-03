@@ -2,10 +2,10 @@
   <div class="container clearfix">
     <div class="slider-caption-center">
       <h2 class="text-center" style="font-size:48px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:200px;" data-caption-animate="fadeInUp">Welcome to Blog Details Page</h2>
-       <!--<a class="custom-button center-block text-center">
+      <!--<a class="custom-button center-block text-center">
          <span>Let's Wander</span> <i style="margin-left:10px;" class="icon-angle-right"></i></a>-->
-       
-      
+
+
     </div>
   </div>
 </div>
@@ -53,6 +53,10 @@
             <!-- Entry Content
 							============================================= -->
             <div class="custom-para notopmargin">
+              <div class="entry-title">
+                <h3 style="cursor:pointer;" ui-sref="blog.detail({postId: post.id})" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
+                  For rivers, seas and slopes at their most inviting</h3>
+              </div>
 
               <p>{{postDetail.description}}</p>
 
@@ -61,6 +65,10 @@
                 in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida
                 at eget metus. Vestibulum id ligula porta felis euismod semper.</p>
 
+              <div class="entry-title">
+                <h3 style="cursor:pointer;" ui-sref="blog.detail({postId: post.id})" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
+                  For rivers, seas and slopes at their most inviting</h3>
+              </div>
 
               <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet
                 fermentum. Donec id elit non mi porta gravida at eget metus.</p>
@@ -72,6 +80,10 @@
                 consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent
                 commodo cursus magna, vel scelerisque nisl consectetur et.</p>
 
+              <div class="entry-title">
+                <h3 style="cursor:pointer;" ui-sref="blog.detail({postId: post.id})" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
+                  For rivers, seas and slopes at their most inviting</h3>
+              </div>
               <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere
                 erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
                 quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus.
@@ -409,7 +421,7 @@
     </div>
 
     <div class="entry clearfix">
-            <div class="row">
+      <div class="row">
       <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
         <a style="    background-color: rgb(255, 255, 255);
     border: 0px;
@@ -429,7 +441,7 @@
     top: 0px;
     z-index: 20;
     left: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="prev">
-          <i style="margin:7px 0 0 10px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
+          <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
         </a>
         <a style="background-color: rgb(255, 255, 255);
     border: 0px;
@@ -449,13 +461,13 @@
     top: 0;
     z-index: 20;
     right: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="next">
-          <i style="margin:7px 10px 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
+          <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
 
         <!-- Wrapper for slides <-->
 
         <div class="carousel-inner">
           <div class="item active">
-            <div class="row">
+            <div class="row" style="padding:2%;">
 
               <div class="col-sm-3 nopadding">
                 <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
@@ -464,7 +476,7 @@
                   </div>
 
                   <span class="paul-slider-caption">
-                      {{images[0].text}}</span>
+                    {{images[0].text}}</span>
 
                 </div>
               </div>
@@ -476,7 +488,7 @@
                   </div>
 
                   <span class="paul-slider-caption">
-                      {{images[1].text}}</span>
+                    {{images[1].text}}</span>
 
                 </div>
               </div>
@@ -488,7 +500,7 @@
                   </div>
 
                   <span class="paul-slider-caption">
-                      {{images[2].text}}</span>
+                    {{images[2].text}}</span>
 
                 </div>
               </div>
@@ -501,14 +513,14 @@
                   </div>
 
                   <span class="paul-slider-caption">
-                      {{images[3].text}}</span>
+                    {{images[3].text}}</span>
 
                 </div>
               </div>
             </div>
           </div>
           <div class="item">
-            <div class="row">
+            <div class="row" style="padding:2%;">
 
               <div class="col-sm-3 nopadding">
                 <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
@@ -517,7 +529,7 @@
                   </div>
 
                   <span class="paul-slider-caption">
-                      {{images[4].text}}</span>
+                    {{images[4].text}}</span>
 
                 </div>
               </div>
@@ -529,7 +541,7 @@
                   </div>
 
                   <span class="paul-slider-caption">
-                      {{images[5].text}}</span>
+                    {{images[5].text}}</span>
 
                 </div>
               </div>
@@ -541,7 +553,7 @@
                   </div>
 
                   <span class="paul-slider-caption">
-                      {{images[5].text}}</span>
+                    {{images[5].text}}</span>
 
                 </div>
               </div>
@@ -553,7 +565,7 @@
                   </div>
 
                   <span class="paul-slider-caption">
-                      {{images[0].text}}</span>
+                    {{images[0].text}}</span>
 
                 </div>
               </div>

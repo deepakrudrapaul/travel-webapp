@@ -11,194 +11,311 @@
     </div>
   </div>
 </div>
-<section id="content">
 
-  <div class="container">
-    <div class="topmargin">
-    <h2 style="text-align:center;margin-bottom:4rem;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+
+<section id="content" style="padding:0 6% 10% 6%;">
+
+  <div style="height:100vh;">
+    <h2 class="paul-title">
       Travel Inspiration
-      <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
-      </div>
+
     </h2>
-  </div>
+
+    <p style="font-size:2rem;" class="text-center">
+      Your choices, Your friends, Your travel plans
+      <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;">
+      </div>
+    </p>
 
 
 
     <div class="row">
-      <div class="row">
-
-        <div class="col-md-3">
-          <!-- Controls -->
-          <div class="controls hidden-xs">
-            <a class="icon-angle-left btn" href="#carousel-example-generic" ng-non-bindable data-slide="prev"></a>
-            <a class="icon-angle-right btn" href="#carousel-example-generic" ng-non-bindable data-slide="next"></a>
-          </div>
-        </div>
-      </div>
-
       <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner">
-        <div class="item active">
-          <div class="row">
-            <div class="col-sm-4">
-              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                <div style="width:350px; height:400px;" class="photo">
-                  <img ng-src="{{images[0].imageUrl}}" class="img-responsive" alt="a" />
-                </div>
-                <div class="info">
-                  <h5 style="font-size:1.6rem" class="text-center">
-                    {{images[0].text}}</h5>
+        <a style="    background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0px;
+    z-index: 20;
+    left: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="prev">
+          <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
+        </a>
+        <a style="background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0;
+    z-index: 20;
+    right: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="next">
+          <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
+
+        <!-- Wrapper for slides <-->
+
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="row" style="padding:2%;">
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{images[0].text}}</span>
+
                 </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                <div style="width:350px; height:400px;" class="photo">
-                  <img ng-src="{{images[1].imageUrl}}" class="img-responsive" alt="a" />
-                </div>
-                <div class="info">
-                  <h5 style="font-size:1.6rem" class="text-center">
-                    {{images[1].text}}</h5>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-bg.jpg" class="img-responsive" alt="a" />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{images[1].text}}</span>
+
                 </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                <div style="width:350px; height:400px;" class="photo">
-                  <img ng-src="{{images[2].imageUrl}}" class="img-responsive" alt="a" />
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" src="images/manipur.jpg" class="img-responsive" alt="a" />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{images[2].text}}</span>
+
                 </div>
-                <div class="info">
-                  <h5 style="font-size:1.6rem" class="text-center">
-                    {{images[2].text}}</h5>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-detail-bg.jpg" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{images[3].text}}</span>
+
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="item">
-          <div class="row">
-            <div class="col-sm-4">
-              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                <div style="width:350px; height:400px;" class="photo">
-                  <img ng-src="{{images[3].imageUrl}}" class="img-responsive" alt="a" />
-                </div>
-                <div class="info">
-                  <h5 style="font-size:1.6rem" class="text-center">
-                    {{images[3].text}}</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                <div style="width:350px; height:400px;" class="photo">
-                  <img ng-src="{{images[4].imageUrl}}" class="img-responsive" alt="a" />
-                </div>
-                <div class="info">
-                  <h5 style="font-size:1.6rem" class="text-center">
-                    {{images[4].text}}</h5>
+          <div class="item">
+            <div class="row" style="padding:2%;">
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{images[4].text}}</span>
+
                 </div>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;" class="col-item">
-                <div style="width:350px; height:400px;" class="photo">
-                  <img ng-src="{{images[5].imageUrl}}" class="img-responsive" alt="a" />
-                </div>
-                <div class="info">
-                  <h5 style="font-size:1.6rem" class="text-center">
-                    {{images[5].text}}</h5>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{images[5].text}}</span>
+
                 </div>
               </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{images[5].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-bg.jpg" class="img-responsive" alt="a" />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{images[0].text}}</span>
+
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
-      <uib-accordion>
-      <uib-accordion-group is-open="heading1.isOpen">
-        <div style="padding-left:50px;" id="posts" class="events small-thumbs">
+  </div>
+</section>
+<section id="articles" class="container">
 
-          <div class=".col-md-4" ng-repeat="destination in destinations">
-            <div class="entry-image" style="padding-bottom:10px;">
-              <a href="#" ui-sref="destination.detail({id: destination.id})">
-                <img ng-src="{{destination.imageUrl}}" alt="Inventore voluptates velit totam ipsa tenetur">
-                <h3 class="text-center">{{destination.name}}</h3>
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </uib-accordion-group>
-      </uib-accordion>
-    </div>
-
-
-
-
-
-
-    <div class="clear"></div>
-
-     <div class="topmargin">
-    <h2 style="text-align:center;margin-bottom:4rem;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+  <div class="topmargin">
+    <h2 class="paul-title">
       Recent Articles
-      <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
-      </div>
     </h2>
+
+    <p style="font-size:2rem;" class="text-center">
+      Live the wanderlust through words
+      <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;">
+      </div>
+    </p>
   </div>
 
-    <div class="clearfix">
-      <div class="pull-right" style="width:40%;">
-        <a href="images/blog1.jpg" data-lightbox="image"><img height="300px;" src="images/blog1.jpg" alt="Standard Post with Image"></a>
+  <div style="overflow:hidden; margin-bottom:-5%;">
+
+    <div ui-sref="blog.list" class="image" style="height: 350px; width: 50%;
+    float: left;background-size: cover;
+    background-position: 50%;
+    transition: .4s;
+    overflow: hidden;">
+      <picture>
+        <source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
+        <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
+        <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">
+
+        <img src="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg" alt="Quiz: can you identify these stunning beaches?">
+      </picture>
+    </div>
+
+
+    <div class="text" style="margin-top:70px; height: 350px; width: 50%;
+    float: left;text-align: left;
+    padding: 10px 20px;
+    position: relative;">
+      <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
+        For rivers, seas and slopes at their most inviting</h3>
+
+
+      <div class="entry-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt,
+          blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus...
+        </p>
+        <div class="feature-info">
+          <span class="icon-calendar3"> 02 Jun 2017 • Zoe Bennett</span>
+        </div>
       </div>
 
-      <div class="pull-left" style="width:50%; padding-right:50px;">
-         <div class="entry-title">
+    </div>
+  </div>
+
+
+  <div style="overflow:hidden;">
+
+    <div ui-sref="blog.list" class="image" style="height: 350px; width: 50%;
+    float: right;background-size: cover;
+    background-position: 50%;
+    transition: .4s;
+    overflow: hidden;">
+      <picture>
+        <source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
+        <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
+        <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">
+
+        <img src="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg" alt="Quiz: can you identify these stunning beaches?">
+      </picture>
+    </div>
+
+
+    <div class="text" style="margin-top:70px; height: 350px; width: 50%;
+    float: right;text-align: right;
+    padding: 10px 20px;
+    position: relative;">
+      <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
+        For rivers, seas and slopes at their most inviting</h3>
+
+
+      <div class="entry-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt,
+          blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus...
+        </p>
+        <div class="feature-info">
+          <span class="icon-calendar3"> 02 Jun 2017 • Zoe Bennett</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!--<div class="clearfix">
+    <div class="pull-right" style="width:50%;">
+      <a href="images/blog1.jpg"><img height="300px" width="100%" src="images/blog1.jpg" alt="Standard Post with Image"></a>
+    </div>
+
+    <div class="pull-left" style="width:50%; padding-right:10px;">
+      <div class="entry-title" style="padding-top:10%;">
         <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
           For rivers, seas and slopes at their most inviting</h3>
       </div>
 
-        <div class="entry-content" style="margin-top:50px;">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
-            deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus
-            officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab
-            facere.
-          </p>
-          <a href="blog-single.html" class="more-link">Read More</a>
-        </div>
+      <div class="entry-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt,
+          blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus...
+        </p>
+        <ul class="entry-meta clearfix">
+          <li><i class="icon-calendar3"></i> 10th July 2014</li>
+          <li><a href="#"><i class="icon-user"></i> Deepak Paul</a></li>
+        </ul>
       </div>
     </div>
+  </div>
 
 
+  <div style="margin:0 0 30px 0;" class="clearfix">
+    <div class="pull-left" style="width:50%;">
+      <a href="images/blog3.jpg"><img height="300px" width="100%" src="images/blog3.jpg" alt="Standard Post with Image"></a>
+    </div>
 
-
-    <div style="margin:30px 0 30px 0;" class="clearfix">
-      <div class="pull-left" style="width:40%;">
-        <a href="images/blog2.jpg" data-lightbox="image"><img height="300px;" class="image_fade" src="images/blog2.jpg" alt="Standard Post with Image"></a>
-      </div>
-
-      <div class="pull-right" style="width:50%; padding-left:10px;">
-        <div class="entry-title">
+    <div class="pull-right" style="width:50%; padding-left:10px;">
+      <div style="padding-top:2%;" class="entry-title">
         <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
-          For rivers, seas and slopes at their most inviting</h3>
+          This is a standard post with preview image</h3>
       </div>
 
-        <div class="entry-content" style="margin-top:50px;">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
-            deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus
-            officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab
-            facere.
-          </p>
-          <a href="blog-single.html" class="more-link">Read More</a>
-        </div>
+      <div class="entry-content" style="margin-top:40px;">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt,
+          blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia
+          eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere.
+        </p>
+        <a style="cursor:pointer;" ui-sref="blog.list" class="more-link">Read More</a>
       </div>
     </div>
+  </div>-->
 
-    <div style="padding:0px 0 30px 0; float: none; display: block; margin-right: auto; margin-left: auto;" class="control-center col-sm-6">
-      <button ui-sref="plan-trip" style="margin:0px !important; width:97%; height:70px;" id="{{inquireSubmit}}" class="button buttonPrimary">Couldn't decide ? Let us Help You !</button>
-    </div>
-
-  </div>
-  </div>
 </section>

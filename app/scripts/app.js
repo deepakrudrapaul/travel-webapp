@@ -24,7 +24,9 @@ angular
     'ae-datetimepicker',
     'ngMap',
     'sticky',
-    'satellizer'
+    'satellizer',
+    'duScroll',
+    'vAccordion'
   ])
   .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider','$authProvider',  function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider ) {
 
