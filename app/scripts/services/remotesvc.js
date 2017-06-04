@@ -51,6 +51,14 @@ angular.module('wanderwagon-webapp')
           method: 'GET',
           url: remoteAddr + '/blogs/blogdetail/' + postId
         })
+      },
+
+
+      getHomePageContent : function() {
+        return $http({
+          method: 'GET',
+          url: 'destination.json'
+        })
       }
     };
   });
