@@ -21,6 +21,17 @@ angular.module('wanderwagon-webapp')
 
     $scope.getHomePageContent();
 
+    $scope.getTravelInspirationDetail = function(id) {
+        mockRemoteSvc.getTravelInspirationDetail(id).then(function(response){
+          console.log(response);
+          $scope.inspirations = response;
+        });
+    };
+
+
+
+   
+
   
 
     var textArr = [

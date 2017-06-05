@@ -14,22 +14,86 @@ angular.module('wanderwagon-webapp')
     var slider = [{
         imageUrl: 'images/backpacking.jpg',
         text: 'Backpacking',
-        id: 1
+        id: 1,
+        data: [{
+            imageUrl: 'images/himachal.jpg',
+            name: 'Himachal',
+            id: 1
+          },
+          {
+            imageUrl: 'images/uttarakhand.jpg',
+            name: 'Uttarakhand',
+            id: 2
+          },
+          {
+            imageUrl: 'images/arunachal.jpg',
+            name: 'Arunachal',
+            id: 5
+          }
+        ]
       },
       {
         imageUrl: 'images/roadtrip.jpg',
         text: 'Road Trip',
-        id: 2
+        id: 2,
+        data: [{
+            imageUrl: 'images/manipur.jpg',
+            name: 'Manipur',
+            id: 7
+          },
+          {
+            imageUrl: 'images/assam.jpg',
+            name: 'Assam',
+            id: 8
+          },
+          {
+            imageUrl: 'images/darjeeling.jpg',
+            name: 'Darjeeling',
+            id: 9
+          }
+        ]
       },
       {
         imageUrl: 'images/adventure.jpg',
         text: 'Adventure',
-        id: 3
+        id: 3,
+        data: [{
+            imageUrl: 'images/meghalaya.jpg',
+            name: 'Meghalaya',
+            id: 4
+          },
+          {
+            imageUrl: 'images/arunachal.jpg',
+            name: 'Arunachal',
+            id: 5
+          },
+          {
+            imageUrl: 'images/sikkim.jpg',
+            name: 'Sikkim',
+            id: 6
+          }
+        ]
       },
       {
         imageUrl: 'images/nature.jpg',
         text: 'Nature',
-        id: 4
+        id: 4,
+        data: [{
+            imageUrl: 'images/manipur.jpg',
+            name: 'Manipur',
+            id: 7
+          },
+          {
+            imageUrl: 'images/assam.jpg',
+            name: 'Assam',
+            id: 8
+          },
+          {
+            imageUrl: 'images/darjeeling.jpg',
+            name: 'Darjeeling',
+            id: 9
+          }
+        ]
       },
       {
         imageUrl: 'images/adventure.jpg',
@@ -101,8 +165,7 @@ angular.module('wanderwagon-webapp')
     ];
 
 
-    var homePageBlog = [
-      {
+    var homePageBlog = [{
         title: 'For rivers, seas and slopes at their most inviting',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus',
         dateTime: '02 Jun 2017',
@@ -150,12 +213,25 @@ angular.module('wanderwagon-webapp')
     };
 
 
+
     // Public API here
     return {
       getHomePageContent: function () {
         var deferred = $q.defer();
         deferred.resolve(homePageContent);
         return deferred.promise;
+      },
+
+
+      getTravelInspirationDetail: function (id) {
+        var deferred = $q.defer();
+        angular.forEach(slider, function (value, key) {
+          if (value.id == id) {
+            deferred.resolve(value.data);
+          }
+        });
+        return deferred.promise;
+
       }
     };
   });

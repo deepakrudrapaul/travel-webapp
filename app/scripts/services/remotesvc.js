@@ -60,13 +60,24 @@ angular.module('wanderwagon-webapp')
       getHomePageContent: function () {
         return $http({
           method: 'GET',
-          url: '/destinations'
+          url: '/home'
         }).then(function (data, status) {
           return data.data;
         }, function (error, status) {
-          return error;
+          return error.data;
         });
       },
+
+      getTravelInspirationDetail: function(id) {
+        return $http({
+          method: 'GET',
+          url: '/inspiration/' + id
+        }).then(function (data, status) {
+          return data.data;
+        }, function (error, status) {
+          return error.data;
+        })
+      }
 
 
     };
