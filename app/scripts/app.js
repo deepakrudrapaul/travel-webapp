@@ -16,6 +16,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
+    'ngMockE2E',
     'ui.bootstrap',
     'ngCsv',
     'ui.router',
@@ -28,7 +29,7 @@ angular
     'duScroll',
     'vAccordion'
   ])
-  .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider','$authProvider',  function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider ) {
+  .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', '$authProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider) {
 
     // $locationProvider.html5Mode(true);
 
@@ -36,7 +37,7 @@ angular
       clientId: '1872872876259517'
     });
 
-    
+
     $authProvider.google({
       clientId: '1074764438873-vr5covic1s763fvrccpa6g29hirsnrpf.apps.googleusercontent.com'
     });
@@ -130,7 +131,7 @@ angular
         templateUrl: 'views/faq.html',
         controller: 'ContactCtrl'
       })
-       .state('tnc', {
+      .state('tnc', {
         url: '/tnc',
         templateUrl: 'views/tnc.html',
         controller: 'ContactCtrl'
@@ -142,7 +143,7 @@ angular
       })
 
   }])
-  .run(function ($rootScope, $location, auth, $anchorScroll) {
+  .run(function ($rootScope, $location, auth, $anchorScroll, $httpBackend) {
 
     $rootScope.changeLocation = function (path) {
       $rootScope.$evalAsync(function () {
@@ -151,8 +152,96 @@ angular
     };
 
     $rootScope.$on("$locationChangeSuccess", function () {
-       $anchorScroll();
+      $anchorScroll();
     });
+
+
+    
+    var destinations = [{
+        imageUrl: 'images/himachal.jpg',
+        name: 'Himachal',
+        id: 1
+      },
+      {
+        imageUrl: 'images/uttarakhand.jpg',
+        name: 'Uttarakhand',
+        id: 2
+      },
+      {
+        imageUrl: 'images/kashmir.jpg',
+        name: 'Kashmir',
+        id: 3
+      },
+      {
+        imageUrl: 'images/meghalaya.jpg',
+        name: 'Meghalaya',
+        id: 4
+      },
+      {
+        imageUrl: 'images/arunachal.jpg',
+        name: 'Arunachal',
+        id: 5
+      },
+      {
+        imageUrl: 'images/sikkim.jpg',
+        name: 'Sikkim',
+        id: 6
+      },
+      {
+        imageUrl: 'images/manipur.jpg',
+        name: 'Manipur',
+        id: 7
+      },
+      {
+        imageUrl: 'images/assam.jpg',
+        name: 'Assam',
+        id: 8
+      },
+      {
+        imageUrl: 'images/darjeeling.jpg',
+        name: 'Darjeeling',
+        id: 9
+      }
+    ];
+
+     var images = [{
+        imageUrl: 'images/backpacking.jpg',
+        text: 'Backpacking'
+      },
+      {
+        imageUrl: 'images/roadtrip.jpg',
+        text: 'Road Trip'
+      },
+      {
+        imageUrl: 'images/adventure.jpg',
+        text: 'Adventure'
+      },
+      {
+        imageUrl: 'images/nature.jpg',
+        text: 'Nature'
+      },
+      {
+        imageUrl: 'images/adventure.jpg',
+        text: 'Family'
+      },
+      {
+        imageUrl: 'images/backpacking.jpg',
+        text: 'Couple'
+      },
+    ];
+
+
+
+
+    var homePageData = [
+     images
+    ];
+
+
+
+
+    $httpBackend.whenGET(/\.html$/).passThrough();
+    $httpBackend.whenGET('/destinations').respond(homePageData);
 
 
   });

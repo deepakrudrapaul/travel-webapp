@@ -18,27 +18,6 @@
 
 
 
-
-<!--<section  style="background-image: url('images/slider1.jpg'); 
-background-size:cover; background-repeat:no-repeat; background-position: center center; height:680px;" class="swiper_wrapper full-screen clearfix">
- 
-</section>-->
-<!--<section class="wrap">
-  <img src="images/slider2.jpg" alt="Blog Single" width="1366" height="600">
-  <p style="line-height: 62px;
-    border-width: 0px;
-    font-weight:700;
-    letter-spacing: -1px;
-    font-size: 41px;
-    font-family: 'Raleway', sans-serif;" class="text_over_image_1">WANDERWAGON MAKES YOUR TRIP MEMORABLE</p>
-  <div style="width:300px;" class="text_over_image">
-     
-
-<!--    
-  </div>
-</section>-->
-
-
 <section id="content" style="padding:0 6% 10% 6%;">
 
   <div style="height:100vh;">
@@ -106,11 +85,11 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
               <div class="col-sm-3 nopadding">
                 <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[0].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{images[0].text}}</span>
+                    {{slider[0].text}}</span>
 
                 </div>
               </div>
@@ -118,11 +97,23 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
               <div class="col-sm-3 nopadding">
                 <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-bg.jpg" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[1].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{images[1].text}}</span>
+                    {{slider[1].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+               <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[2].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{slider[2].text}}</span>
 
                 </div>
               </div>
@@ -130,24 +121,11 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
               <div class="col-sm-3 nopadding">
                 <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/manipur.jpg" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[3].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{images[2].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-detail-bg.jpg" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{images[3].text}}</span>
+                    {{slider[3].text}}</span>
 
                 </div>
               </div>
@@ -159,11 +137,11 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
               <div class="col-sm-3 nopadding">
                 <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[4].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{images[4].text}}</span>
+                    {{slider[4].text}}</span>
 
                 </div>
               </div>
@@ -171,11 +149,11 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
               <div class="col-sm-3 nopadding">
                 <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[5].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{images[5].text}}</span>
+                    {{slider[5].text}}</span>
 
                 </div>
               </div>
@@ -183,11 +161,11 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
               <div class="col-sm-3 nopadding">
                 <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[6].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{images[5].text}}</span>
+                    {{slider[6].text}}</span>
 
                 </div>
               </div>
@@ -195,11 +173,11 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
               <div class="col-sm-3 nopadding">
                 <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-bg.jpg" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[7].imageUrl}}" class="img-responsive" alt="a" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{images[0].text}}</span>
+                    {{slider[7].text}}</span>
 
                 </div>
               </div>
@@ -215,17 +193,45 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
 <div class="container">
   <uib-accordion>
     <uib-accordion-group is-open="heading1.isOpen">
-      <div style="padding-left:50px;" id="posts" class="events small-thumbs">
+      <div class="container">
+        <div class="row row-centered">
+          <div style="margin-bottom:2%;" ng-repeat="destination in destinations" class="col-xs-4 col-centered col-fixed">
 
-        <div class="col-md-4" ng-repeat="destination in destinations">
-          <div class="entry-image" style="padding-bottom:10px;">
-            <a href="#" ui-sref="destination.detail({id: destination.id})">
-              <img ng-src="{{destination.imageUrl}}" alt="Inventore voluptates velit totam ipsa tenetur">
-              <h3 class="text-center">{{destination.name}}</h3>
+            <a ui-sref="destination.detail({id: destination.id})">
+              <div class="photo" style="cursor:pointer; width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    margin: 10px 0;">
+                <img class="img-responsive" style="height:250px; display: block;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    margin: 0 auto;" ng-src="{{destination.imageUrl}}">
+                <div class="overlay" style="width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out">
+                  <h2 style="color: #fff;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 10%;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 10px;
+    background: rgba(0,0,0,0.6);" class="ng-binding">{{destination.name}}</h2>
+                </div>
+              </div>
             </a>
           </div>
         </div>
-
       </div>
     </uib-accordion-group>
   </uib-accordion>
@@ -255,11 +261,11 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
     transition: .4s;
     overflow: hidden;">
       <picture>
-        <source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
+        <!--<source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
         <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
-        <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">
+        <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">-->
 
-        <img src="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg" alt="Quiz: can you identify these stunning beaches?">
+        <img ng-src="{{blog[0].imageUrl}}" alt="{{blog[0].title}}">
       </picture>
     </div>
 
@@ -269,15 +275,14 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
     padding: 10px 20px;
     position: relative;">
       <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
-        For rivers, seas and slopes at their most inviting</h3>
+        {{blog[0].title}}</h3>
 
 
       <div class="entry-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt,
-          blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus...
+        <p>{{blog[0].description}}...
         </p>
         <div class="feature-info">
-          <span class="icon-calendar3"> 02 Jun 2017 • Zoe Bennett</span>
+          <span class="icon-calendar3"> {{blog[0].dateTime}} • {{blog[0].author}}</span>
         </div>
       </div>
 
@@ -293,11 +298,11 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
     transition: .4s;
     overflow: hidden;">
       <picture>
-        <source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
+        <!--<source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
         <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
-        <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">
+        <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">-->
 
-        <img src="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg" alt="Quiz: can you identify these stunning beaches?">
+        <img ng-src="{{blog[1].imageUrl}}" alt="{{blog[1].title}}">
       </picture>
     </div>
 
@@ -307,64 +312,19 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
     padding: 10px 20px;
     position: relative;">
       <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
-        For rivers, seas and slopes at their most inviting</h3>
+         {{blog[1].title}}</h3>
 
 
       <div class="entry-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt,
-          blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus...
+        <p>{{blog[1].description}}...
         </p>
         <div class="feature-info">
-          <span class="icon-calendar3"> 02 Jun 2017 • Zoe Bennett</span>
+          <span class="icon-calendar3"> {{blog[1].dateTime}} • {{blog[1].author}}</span>
         </div>
       </div>
 
     </div>
   </div>
-  <!--<div class="clearfix">
-    <div class="pull-right" style="width:50%;">
-      <a href="images/blog1.jpg"><img height="300px" width="100%" src="images/blog1.jpg" alt="Standard Post with Image"></a>
-    </div>
-
-    <div class="pull-left" style="width:50%; padding-right:10px;">
-      <div class="entry-title" style="padding-top:10%;">
-        <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
-          For rivers, seas and slopes at their most inviting</h3>
-      </div>
-
-      <div class="entry-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt,
-          blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus...
-        </p>
-        <ul class="entry-meta clearfix">
-          <li><i class="icon-calendar3"></i> 10th July 2014</li>
-          <li><a href="#"><i class="icon-user"></i> Deepak Paul</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-
-  <div style="margin:0 0 30px 0;" class="clearfix">
-    <div class="pull-left" style="width:50%;">
-      <a href="images/blog3.jpg"><img height="300px" width="100%" src="images/blog3.jpg" alt="Standard Post with Image"></a>
-    </div>
-
-    <div class="pull-right" style="width:50%; padding-left:10px;">
-      <div style="padding-top:2%;" class="entry-title">
-        <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
-          This is a standard post with preview image</h3>
-      </div>
-
-      <div class="entry-content" style="margin-top:40px;">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt,
-          blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia
-          eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere.
-        </p>
-        <a style="cursor:pointer;" ui-sref="blog.list" class="more-link">Read More</a>
-      </div>
-    </div>
-  </div>-->
 
 </section>
 
@@ -472,10 +432,10 @@ background-size:cover; background-repeat:no-repeat; background-position: center 
     </h2>
   </div>
 
- <marquee behavior="scroll" direction="left">
-<img ng-repeat="image in destinations" style="margin:2%;" ng-src="{{image.imageUrl}}" width="200" height="150" alt="Instafeed">
-</marquee>
+  <marquee behavior="scroll" direction="left">
+    <img ng-repeat="image in destinations" style="margin:2%;" ng-src="{{image.imageUrl}}" width="200" height="150" alt="Instafeed">
+  </marquee>
 
- 
+
 
 </section>

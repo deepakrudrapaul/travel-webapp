@@ -10,6 +10,9 @@
 angular.module('wanderwagon-webapp')
   .factory('remoteSvc', function (auth, $http, ENV, $location) {
 
+    var homePageData;
+
+
     var remoteAddr = ENV.endPoint;
 
     return {
@@ -23,30 +26,30 @@ angular.module('wanderwagon-webapp')
         })
       },
 
-      updateConsumerProfile: function(profileObj) {
+      updateConsumerProfile: function (profileObj) {
         return $http({
-				 method: 'POST',
-				 data: profileObj,
-				 headers: {
-					 'auth-token' : auth.getToken()
-				 },
-				 url: remoteAddr + 'consumer/account/editprofile'
-			 })
+          method: 'POST',
+          data: profileObj,
+          headers: {
+            'auth-token': auth.getToken()
+          },
+          url: remoteAddr + 'consumer/account/editprofile'
+        })
       },
 
-      getCurrentUri : function() {
-          return $location.path();
+      getCurrentUri: function () {
+        return $location.path();
       },
 
 
-      getAllPosts : function() {
+      getAllPosts: function () {
         return $http({
           method: 'GET',
           url: remoteAddr + '/blogs/all'
         })
       },
 
-      getBlogDetail : function(postId) {
+      getBlogDetail: function (postId) {
         return $http({
           method: 'GET',
           url: remoteAddr + '/blogs/blogdetail/' + postId
@@ -54,11 +57,17 @@ angular.module('wanderwagon-webapp')
       },
 
 
-      getHomePageContent : function() {
+      getHomePageContent: function () {
         return $http({
           method: 'GET',
-          url: 'destination.json'
-        })
-      }
+          url: '/destinations'
+        }).then(function (data, status) {
+          return data.data;
+        }, function (error, status) {
+          return error;
+        });
+      },
+
+
     };
   });
