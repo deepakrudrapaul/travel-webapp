@@ -16,7 +16,6 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngMockE2E',
     'ui.bootstrap',
     'ngCsv',
     'ui.router',
@@ -143,7 +142,7 @@ angular
       })
 
   }])
-  .run(function ($rootScope, $location, auth, $anchorScroll, $httpBackend) {
+  .run(function ($rootScope, $location, auth, $anchorScroll) {
 
     $rootScope.changeLocation = function (path) {
       $rootScope.$evalAsync(function () {
@@ -154,94 +153,5 @@ angular
     $rootScope.$on("$locationChangeSuccess", function () {
       $anchorScroll();
     });
-
-
-    
-    var destinations = [{
-        imageUrl: 'images/himachal.jpg',
-        name: 'Himachal',
-        id: 1
-      },
-      {
-        imageUrl: 'images/uttarakhand.jpg',
-        name: 'Uttarakhand',
-        id: 2
-      },
-      {
-        imageUrl: 'images/kashmir.jpg',
-        name: 'Kashmir',
-        id: 3
-      },
-      {
-        imageUrl: 'images/meghalaya.jpg',
-        name: 'Meghalaya',
-        id: 4
-      },
-      {
-        imageUrl: 'images/arunachal.jpg',
-        name: 'Arunachal',
-        id: 5
-      },
-      {
-        imageUrl: 'images/sikkim.jpg',
-        name: 'Sikkim',
-        id: 6
-      },
-      {
-        imageUrl: 'images/manipur.jpg',
-        name: 'Manipur',
-        id: 7
-      },
-      {
-        imageUrl: 'images/assam.jpg',
-        name: 'Assam',
-        id: 8
-      },
-      {
-        imageUrl: 'images/darjeeling.jpg',
-        name: 'Darjeeling',
-        id: 9
-      }
-    ];
-
-     var images = [{
-        imageUrl: 'images/backpacking.jpg',
-        text: 'Backpacking'
-      },
-      {
-        imageUrl: 'images/roadtrip.jpg',
-        text: 'Road Trip'
-      },
-      {
-        imageUrl: 'images/adventure.jpg',
-        text: 'Adventure'
-      },
-      {
-        imageUrl: 'images/nature.jpg',
-        text: 'Nature'
-      },
-      {
-        imageUrl: 'images/adventure.jpg',
-        text: 'Family'
-      },
-      {
-        imageUrl: 'images/backpacking.jpg',
-        text: 'Couple'
-      },
-    ];
-
-
-
-
-    var homePageData = [
-     images
-    ];
-
-
-
-
-    $httpBackend.whenGET(/\.html$/).passThrough();
-    $httpBackend.whenGET('/destinations').respond(homePageData);
-
 
   });
