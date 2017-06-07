@@ -10,9 +10,20 @@
 angular.module('wanderwagon-webapp')
   .controller('HomeCtrl', function ($scope, $timeout, mockRemoteSvc) {
 
-    $scope.getHomePageContent = function() {
-      mockRemoteSvc.getHomePageContent().then(function(response){
+
+    $scope.sliderViewData = [];
+    var convertSliderData = function (data) {
+      for (var index = 0; index < 4; index++) {
+        $scope.sliderViewData.push(data[index]);
+        data.splice(index, 1);
+      }
+    };
+    
+    $scope.getHomePageContent = function () {
+      mockRemoteSvc.getHomePageContent().then(function (response) {
         $scope.slider = response.slider;
+        convertSliderData($scope.slider);
+        console.log($scope.slider);
         $scope.destinations = response.destinations;
         $scope.blog = response.homePageBlog;
         $scope.instaImages = response.instaImages;
@@ -21,18 +32,18 @@ angular.module('wanderwagon-webapp')
 
     $scope.getHomePageContent();
 
-    $scope.getTravelInspirationDetail = function(id) {
-        mockRemoteSvc.getTravelInspirationDetail(id).then(function(response){
-          console.log(response);
-          $scope.inspirations = response;
-        });
+    $scope.getTravelInspirationDetail = function (id) {
+      mockRemoteSvc.getTravelInspirationDetail(id).then(function (response) {
+        console.log(response);
+        $scope.inspirations = response;
+      });
     };
 
 
 
-   
 
-  
+
+
 
     var textArr = [
       'Hassle Free',

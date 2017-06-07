@@ -80,50 +80,14 @@
           <div class="item active" style="padding:2% 0 2% 2%">
             <div class="row">
 
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen; getTravelInspirationDetail(slider[0].id)" style="cursor:pointer;">
+              <div class="col-sm-3 nopadding" ng-repeat="slide in sliderViewData">
+                <div ng-click="heading1.isOpen = !heading1.isOpen; getTravelInspirationDetail(slide.id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[0].imageUrl}}" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slider[0].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen ; getTravelInspirationDetail(slider[1].id)" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[1].imageUrl}}" class="img-responsive" alt="a" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[1].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-               <div ng-click="heading1.isOpen = !heading1.isOpen ; getTravelInspirationDetail(slider[2].id)" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[2].imageUrl}}" class="img-responsive" alt="a" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[2].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen ; getTravelInspirationDetail(slider[3].id)" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[3].imageUrl}}" class="img-responsive" alt="a" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[3].text}}</span>
+                    {{slide.text}}</span>
 
                 </div>
               </div>
@@ -132,54 +96,17 @@
           <div class="item" style="padding:2% 2% 2% 0%">
             <div class="row">
 
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen; getTravelInspirationDetail(slider[4].id) " style="cursor:pointer;">
+              <div class="col-sm-3 nopadding" ng-repeat="slide in slider">
+                <div ng-click="heading1.isOpen = !heading1.isOpen; getTravelInspirationDetail(slide.id) " style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[4].imageUrl}}" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slider[4].text}}</span>
+                    {{slide.text}}</span>
 
                 </div>
               </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen ; getTravelInspirationDetail(slider[5].id)" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[5].imageUrl}}" class="img-responsive" alt="a" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[5].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen ; getTravelInspirationDetail(slider[6].id)" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[6].imageUrl}}" class="img-responsive" alt="a" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[6].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen ; getTravelInspirationDetail(slider[7].id)" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[7].imageUrl}}" class="img-responsive" alt="a" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[7].text}}</span>
-
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
@@ -240,7 +167,7 @@
 <section id="content" class="container">
 
   <div class="topmargin">
-    <h2 class="paul-title">
+    <h2 ui-sref="blog.list" style="cursor:pointer;" class="paul-title">
       The Blog
     </h2>
 

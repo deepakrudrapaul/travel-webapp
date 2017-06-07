@@ -42,10 +42,25 @@ angular.module('wanderwagon-webapp')
       },
 
 
-      getAllPosts: function () {
+      getBlogList: function () {
         return $http({
           method: 'GET',
           url: remoteAddr + '/blogs/all'
+        }).then(function (data, status){
+           var posts = [];
+          for (var i = 0; i < data.response.length; i++) {
+            var post = data.response[i];
+            posts[i] = {};
+            posts[i].title = post.title;
+            posts[i].author = post.user.name;
+            posts[i].description = post.description;
+            posts[i].imageUrl = post.imageUrl;
+            posts[i].id = post.id;
+            posts[i].comments = post.comments;
+            posts[i].date = new Date(new Date("2017-12-09").getTime());
+          }
+        }, function (error, status) {
+
         })
       },
 
@@ -53,14 +68,18 @@ angular.module('wanderwagon-webapp')
         return $http({
           method: 'GET',
           url: remoteAddr + '/blogs/blogdetail/' + postId
-        })
+        }).then(function (data, status){
+          return data.data;
+        }, function (error, status){
+          return error.data;
+        });
       },
 
 
       getHomePageContent: function () {
         return $http({
           method: 'GET',
-          url: '/home'
+          url: remoteAddr + '/home'
         }).then(function (data, status) {
           return data.data;
         }, function (error, status) {
@@ -71,10 +90,43 @@ angular.module('wanderwagon-webapp')
       getTravelInspirationDetail: function(id) {
         return $http({
           method: 'GET',
-          url: '/inspiration/' + id
+          url: remoteAddr + '/inspiration/' + id
         }).then(function (data, status) {
           return data.data;
         }, function (error, status) {
+          return error.data;
+        })
+      },
+
+      getTravelPlanContent: function() {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + '/travel-plan'
+        }).then(function (data, status){
+          return data.data;
+        }, function (error, status){
+          return error.data;
+        })
+      },
+
+      getDestinationsList: function() {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + '/destinations'
+        }).then(function (data, status){
+          return data.data;
+        }, function (error, status){
+          return error.data;
+        })
+      },
+
+      getDestinationDetailById : function(id) {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + '/destinations/' + id
+        }).then(function (data, status){
+          return data.data;
+        }, function (error, status){
           return error.data;
         })
       }
