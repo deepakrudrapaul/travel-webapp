@@ -8,35 +8,53 @@ background: -ms-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 
 background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 47%, rgba(50,138,231,1) 66%, rgba(32,124,229,1) 81%);">
 
 
-    <div class="container clearfix" style="margin:8%;" >
+  <div class="container clearfix" style="margin:8%;">
 
-<div class="center-block clearfix" style="max-width: 550px; background-color:#fff; padding: 30px; border-radius:1%;">
+    <div class="center-block clearfix" style="max-width: 550px; background-color:#fff; padding: 30px; border-radius:1%;">
       <v-accordion id="accordionA" class="vAccordion--default" control="accordionA">
 
         <v-pane id="pane1" expanded>
-          <v-pane-header id="pane1-header" >
+          <v-pane-header id="pane1-header">
             <h3 class="acctitle"><i class="acc-closed icon-lock3"></i><i class="acc-open icon-unlock"></i>Login to your Account</h3>
           </v-pane-header>
 
           <v-pane-content id="pane1-content">
-            <form id="loginForm" name="loginForm" class="nobottommargin" ng-submit="onLogin(loginForm)">
+            <!--<form name="loginForm" class="nobottommargin" ng-submit="onLogin(loginObj)">
               <div class="col_full">
                 <label for="loginForm-username">Email:</label>
-                <input ng-model="loginObj.emailId" type="text" id="loginForm-username" name="loginForm-username" value="" class="form-control"
+                <input ng-model="loginObj.emailId" type="email" id="loginForm-username" name="loginForm-username" class="form-control"
                 />
               </div>
 
               <div class="col_full">
                 <label for="loginForm-password">Password:</label>
-                <input ng-model="loginObj.password" type="password" id="loginForm-password" name="loginForm-password" value="" class="form-control"
+                <input ng-model="loginObj.password" type="password" id="loginForm-password" name="loginForm-password" class="form-control"
                 />
               </div>
 
               <div class="col_full nobottommargin">
-                <button type="submit" class="button background-primary" id="loginForm-submit" name="loginForm-submit">Login</button>
+                <button type="submit" class="button background-primary">Login</button>
                 <a href="#" class="fright">Forgot Password?</a>
               </div>
 
+            </form>-->
+
+            <form class="form-horizontal" name="loginForm" novalidate="novalidate" ng-submit="onLoginFormSubmit(loginForm)">
+              <div class="col_full">
+                <label for="loginEmail">Email</label>
+                <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder="Email" ng-model="loginObj.email"
+                  required />
+              </div>
+              <div class="col_full">
+                <label for="loginPass"> Password</label>
+                <input type="password" class="form-control" id="loginPass" name="loginPass" placeholder="Password" ng-model="loginObj.password"
+                  required>
+              </div>
+
+              <div class="col_full nobottommargin">
+                <button type="submit" class="button background-primary">Login</button>
+                <a href="#" class="fright">Forgot Password?</a>
+              </div>
             </form>
 
             <div class="line line-sm"></div>
@@ -52,41 +70,41 @@ background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 
         </v-pane>
 
         <v-pane id="pane2">
-          <v-pane-header id="pane2-header" >
+          <v-pane-header id="pane2-header">
             <h3 class="acctitle"><i class="acc-closed icon-user4"></i><i class="acc-open icon-ok-sign"></i>New Signup? Register for an Account</h3>
           </v-pane-header>
 
           <v-pane-content id="pane2-content">
-             <form id="register-form" name="register-form" class="nobottommargin" action="#" method="post">
-            <div class="col_full">
-              <label for="register-form-name">Name:</label>
-              <input type="text" id="register-form-name" name="register-form-name" value="" class="form-control" />
-            </div>
+            <form name="signUpForm" class="nobottommargin" ng-submit="onSignUpFormSubmit(signUpForm)">
+              <div class="col_full">
+                <label for="register-form-name">Name:</label>
+                <input type="text" id="register-form-name" name="register-form-name" ng-model="signUpObj.name" value="" class="form-control" />
+              </div>
 
-            <div class="col_full">
-              <label for="register-form-email">Email Address:</label>
-              <input type="text" id="register-form-email" name="register-form-email" value="" class="form-control" />
-            </div>
+              <div class="col_full">
+                <label for="register-form-email">Email Address:</label>
+                <input type="email" id="register-form-email" name="register-form-email" ng-model="signUpObj.email" value="" class="form-control" />
+              </div>
 
-            <div class="col_full">
-              <label for="register-form-phone">Phone:</label>
-              <input type="text" id="register-form-phone" name="register-form-phone" value="" class="form-control" />
-            </div>
+              <div class="col_full">
+                <label for="register-form-phone">Phone:</label>
+                <input type="text" id="register-form-phone" name="register-form-phone" ng-model="signUpObj.phone" value="" class="form-control" />
+              </div>
 
-            <div class="col_full">
-              <label for="register-form-password">Choose Password:</label>
-              <input type="password" id="register-form-password" name="register-form-password" value="" class="form-control" />
-            </div>
+              <div class="col_full">
+                <label for="register-form-password">Choose Password:</label>
+                <input type="password" id="register-form-password" name="register-form-password" ng-model="signUpObj.password" value="" class="form-control" />
+              </div>
 
-            <div class="col_full">
-              <label for="register-form-repassword">Re-enter Password:</label>
-              <input type="password" id="register-form-repassword" name="register-form-repassword" value="" class="form-control" />
-            </div>
+              <div class="col_full">
+                <label for="register-form-repassword">Re-enter Password:</label>
+                <input type="password" id="register-form-repassword" name="register-form-repassword" ng-model="signUpObj.confirmPassword" value="" class="form-control" />
+              </div>
 
-            <div class="col_full nobottommargin">
-              <button class="button button-3d button-black nomargin" id="register-form-submit" name="register-form-submit" value="register">Register Now</button>
-            </div>
-          </form>
+              <div class="col_full nobottommargin">
+                 <button type="submit" class="button background-primary">Sign Up</button>
+              </div>
+            </form>
           </v-pane-content>
         </v-pane>
 
@@ -97,3 +115,5 @@ background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(73,155,234,1) 
 
 </section>
 <!-- #content end -->
+
+<div id="signUpModel" style="width:200px; height:200px;"></div>

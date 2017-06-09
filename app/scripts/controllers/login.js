@@ -8,76 +8,55 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('LoginCtrl', function ($scope, $timeout, auth, $location, ngProgressFactory, $auth) {
-
-
-    $scope.oneAtATime = true;
-
-    $scope.groups = [{
-        title: 'Dynamic Group Header - 1',
-        content: 'Dynamic Group Body - 1'
-      },
-      {
-        title: 'Dynamic Group Header - 2',
-        content: 'Dynamic Group Body - 2'
-      }
-    ];
-
-    $scope.items = ['Item 1', 'Item 2', 'Item 3'];
-
-    $scope.addItem = function () {
-      var newItemNo = $scope.items.length + 1;
-      $scope.items.push('Item ' + newItemNo);
-    };
-
-    $scope.status = {
-      isCustomHeaderOpen: false,
-      isFirstOpen: true,
-      isFirstDisabled: false
-    };
+  .controller('LoginCtrl', function ($scope, $cookies, auth, $location, ngProgressFactory, $auth) {
 
 
     $scope.authenticate = function (provider) {
-      $auth.authenticate(provider);
+      $auth.authenticate(provider)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (response){
+          console.log("Something went Wrong");
+        })
     };
 
     $scope.progressbar = ngProgressFactory.createInstance();
 
-
-    $scope.onSignUp = function (form) {
+    $scope.signUpObj = {};
+    $scope.onSignUpFormSubmit = function (form) {
       $scope.progressbar.start();
       if (form.$valid) {
         $scope.obj = {};
         if ($scope.signUpObj.password == $scope.signUpObj.confirmPassword) {
           $scope.obj.emailId = $scope.signUpObj.email;
           $scope.obj.password = $scope.signUpObj.password;
+          $scope.obj.name = $scope.signUpObj.name;
+          $scope.obj.phone = $scope.signUpObj.phone;
           $scope.obj.accountType = 3;
 
           console.log($scope.obj);
 
-          auth.signUp($scope.obj)
-            .then(function (data) {
-              console.log(data);
-              $scope.signUpObj = {};
-              $scope.progressbar.complete();
+          // auth.signUp($scope.obj)
+          //   .then(function (data) {
+          //     console.log(data);
+          //     $scope.signUpObj = {};
+          //     $scope.progressbar.complete();
 
-              $scope.message = {
-                type: 'Success',
-                msg: 'Sucessfully Signed Up ! Login Now'
-              };
-              angular.element(document.querySelectorAll('#signUpModel')).modal('show');
+          //     $scope.message = {
+          //       type: 'Success',
+          //       msg: 'Sucessfully Signed Up ! Login Now'
+          //     };
+          //   })
+          //   .catch(function (error) {
+          //     console.log(error);
+          //     $scope.progressbar.complete();
+          //     $scope.message = {
+          //       type: 'Error',
+          //       msg: error
+          //     };
 
-
-            })
-            .catch(function (error) {
-              console.log(error);
-              $scope.progressbar.complete();
-              $scope.message = {
-                type: 'Error',
-                msg: error
-              };
-              angular.element(document.querySelectorAll('#signUpModel')).modal('show');
-            });
+          // });
         } else {
           $scope.message = {
             type: 'Error',
@@ -93,46 +72,20 @@ angular.module('wanderwagon-webapp')
 
 
 
-    $scope.onLogin = function (form) {
-      $scope.progressbar.start();
+    $scope.redirected = $cookies.getObject('redirected');
+    $scope.loginObj = {};
+    $scope.pwdObj = {};
+    $scope.resendObj = {};
+
+
+    var login = function (loginObj) {
+      console.log(loginObj);
+    };
+
+    $scope.onLoginFormSubmit = function (form) {
       if (form.$valid) {
         $scope.loginObj.accountType = 3;
-        auth.login($scope.loginObj)
-          .then(function (data) {
-            $location.path('/home');
-            $scope.progressbar.complete();
-            $rootScope.loggedIn = true;
-          })
-          .catch(function (error) {
-            console.log(error);
-            $scope.progressbar.complete();
-            $scope.message = {
-              type: 'Error',
-              msg: error.error.message
-            };
-            angular.element(document.querySelectorAll('#loginModel')).modal('show');
-          });
+        login($scope.loginObj);
       }
-    };
-
-
-
-
-
-    $scope.format = 'dd-MMMM-yyyy';
-
-    $scope.dateOptions = {
-      formatYear: 'yy',
-      maxDate: new Date(),
-      minDate: new Date(1905, 1, 1),
-      startingDay: 1
-    };
-
-    $scope.open1 = function () {
-      $scope.popup1.opened = true;
-    };
-
-    $scope.popup1 = {
-      opened: false
     };
   });
