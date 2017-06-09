@@ -32,6 +32,7 @@ angular
 
     // $locationProvider.html5Mode(true);
 
+    $authProvider.loginUrl = '/auth/facebook-login';
     $authProvider.facebook({
       clientId: '1872872876259517'
     });
