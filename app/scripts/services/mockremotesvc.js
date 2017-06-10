@@ -303,10 +303,10 @@ angular.module('wanderwagon-webapp')
 
 
     var homePageContent = {
-      slider,
-      destinations,
-      homePageBlog,
-      instaImages
+      slider: slider,
+      destinations: destinations,
+      homePageBlog: homePageBlog,
+      instaImages: instaImages
     };
 
     var articles = [{
@@ -329,8 +329,8 @@ angular.module('wanderwagon-webapp')
     ];
 
     var travelPlanContent = {
-      slider,
-      articles
+      slider: slider,
+      articles: articles
     };
 
 
@@ -461,11 +461,11 @@ angular.module('wanderwagon-webapp')
     ];
 
     var blogPageData = {
-      blogs,
-      instaImages,
-      popularPosts,
-      recentPosts
-    }
+      blogs: blogs,
+      instaImages: instaImages,
+      popularPosts: popularPosts,
+      recentPosts: recentPosts
+    };
 
 
     // Public API here

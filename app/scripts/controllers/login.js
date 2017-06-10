@@ -11,7 +11,7 @@ angular.module('wanderwagon-webapp')
   .controller('LoginCtrl', function ($scope, $cookies, auth, $location, ngProgressFactory, $auth) {
 
 
-    $scope.authenticate = function (provider) {
+    $scope.authenticate = function(provider) {
       $auth.authenticate(provider)
         .then(function (response) {
           console.log(response);
@@ -20,6 +20,8 @@ angular.module('wanderwagon-webapp')
           console.log("Something went Wrong");
         })
     };
+
+
 
     $scope.progressbar = ngProgressFactory.createInstance();
 

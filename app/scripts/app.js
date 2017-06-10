@@ -24,22 +24,23 @@ angular
     'ae-datetimepicker',
     'ngMap',
     'sticky',
-    'satellizer',
     'duScroll',
-    'vAccordion'
+    'vAccordion',
+    'satellizer'
   ])
   .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', '$authProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider) {
 
     // $locationProvider.html5Mode(true);
-
-    $authProvider.loginUrl = '/auth/facebook-login';
+    $authProvider.baseUrl = null;
     $authProvider.facebook({
-      clientId: '1872872876259517'
+      clientId: '1872872876259517',
+      responseType: 'token'
     });
 
 
     $authProvider.google({
-      clientId: '1074764438873-vr5covic1s763fvrccpa6g29hirsnrpf.apps.googleusercontent.com'
+      clientId: '1074764438873-k221gusckcgqaalhqnsqn891kjoigcas.apps.googleusercontent.com',
+      responseType: 'token'
     });
 
     $urlRouterProvider.otherwise('/home');
