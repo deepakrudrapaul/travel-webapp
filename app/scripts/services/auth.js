@@ -60,6 +60,59 @@ angular.module('wanderwagon-webapp')
 
         return deferred.promise;
       },
+
+      facebookLogin: function (token, callback) {
+        var cb = callback || angular.noop;
+        var deferred = $q.defer();
+
+        $http
+          .post(remoteAddr + '/auth/facebook-login', {
+            params: {
+              'access-token': token
+            }
+          })
+          .success(function (data, status) {
+            $cookies.put('token', data.response.token);
+            $cookies.put('tokenTime', (new Date()).getTime());
+            deferred.resolve(data);
+            return cb();
+          })
+          .error(function (error, status) {
+            console.log(error, status);
+            deferred.reject(error);
+            return cb(error);
+          }.bind(this));
+
+        return deferred.promise;
+      },
+
+      googleLogin: function (token, callback) {
+        var cb = callback || angular.noop;
+        var deferred = $q.defer();
+
+        $http
+          .post(remoteAddr + '/auth/google-login', {
+            params: {
+              'access-token': token
+            }
+          })
+          .success(function (data, status) {
+            $cookies.put('token', data.response.token);
+            $cookies.put('tokenTime', (new Date()).getTime());
+            deferred.resolve(data);
+            return cb();
+          })
+          .error(function (error, status) {
+            console.log(error, status);
+            deferred.reject(error);
+            return cb(error);
+          }.bind(this));
+
+        return deferred.promise;
+      },
+
+
+
       logout: function () {
         $cookies.remove('token');
         $cookies.remove('tokenTime');

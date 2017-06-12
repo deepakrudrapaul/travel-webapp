@@ -31,11 +31,11 @@ angular.module('wanderwagon-webapp')
     $scope.getDestinationDetailById = function (destinationId) {
       mockRemoteSvc.getDestinationDetailById(destinationId).then(function (response) {
         $scope.detail = response;
-        $scope.placesData = response.places;
+        $scope.placesData = angular.copy(response.places);
         if($scope.placesData.length > 4){
           convertPlacesData($scope.placesData);
         }
-        $scope.activitiesData = response.activities;
+        $scope.activitiesData = angular.copy(response.activities);
         if($scope.activitiesData.length > 4){
           convertActivitiesData($scope.activitiesData);
         }

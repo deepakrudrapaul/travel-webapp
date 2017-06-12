@@ -11,12 +11,30 @@ angular.module('wanderwagon-webapp')
   .controller('LoginCtrl', function ($scope, $cookies, auth, $location, ngProgressFactory, $auth) {
 
 
-    $scope.authenticate = function(provider) {
+    $scope.authenticate = function (provider) {
       $auth.authenticate(provider)
         .then(function (response) {
-          console.log(response);
+          if (provider == 'google') {
+            auth.googleLogin(response.access_token)
+              .then(function (data) {
+                $location.path('/home');
+              })
+              .catch(function (error) {
+                console.log(error);
+                $scope.error = error;
+              });
+          } else {
+            auth.facebookLogin(response.access_token)
+              .then(function (data) {
+                $location.path('/home');
+              })
+              .catch(function (error) {
+                console.log(error);
+                $scope.error = error;
+              });
+          }
         })
-        .catch(function (response){
+        .catch(function (response) {
           console.log("Something went Wrong");
         })
     };
