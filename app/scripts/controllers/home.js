@@ -21,9 +21,10 @@ angular.module('wanderwagon-webapp')
     
     $scope.getHomePageContent = function () {
       mockRemoteSvc.getHomePageContent().then(function (response) {
-        $scope.slider = response.slider;
+        $scope.slider = angular.copy(response.slider);
         convertSliderData($scope.slider);
-        console.log($scope.slider);
+        console.log('RESPONSE' , response.slider);
+        console.log($scope.sliderViewData);
         $scope.destinations = response.destinations;
         $scope.blog = response.homePageBlog;
         $scope.instaImages = response.instaImages;

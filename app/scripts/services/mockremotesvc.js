@@ -108,12 +108,12 @@ angular.module('wanderwagon-webapp')
       {
         imageUrl: 'images/adventure.jpg',
         text: 'Family',
-        id: 5
+        id: 7
       },
       {
         imageUrl: 'images/backpacking.jpg',
         text: 'Couple',
-        id: 6
+        id: 8
       },
     ];
 
