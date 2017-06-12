@@ -30,7 +30,7 @@ angular
   ])
   .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', '$authProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider) {
 
-    $locationProvider.html5Mode(true);
+ 
       
     $authProvider.baseUrl = null;
     $authProvider.facebook({
