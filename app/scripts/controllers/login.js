@@ -15,14 +15,15 @@ angular.module('wanderwagon-webapp')
       $auth.authenticate(provider)
         .then(function (response) {
           if (provider == 'google') {
-            auth.googleLogin(response.access_token)
-              .then(function (data) {
-                $location.path('/home');
-              })
-              .catch(function (error) {
-                console.log(error);
-                $scope.error = error;
-              });
+            console.log(response);
+            // auth.googleLogin(response.access_token)
+            //   .then(function (data) {
+            //     $location.path('/home');
+            //   })
+            //   .catch(function (error) {
+            //     console.log(error);
+            //     $scope.error = error;
+            //   });
           } else {
             auth.facebookLogin(response.access_token)
               .then(function (data) {

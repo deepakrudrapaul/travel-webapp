@@ -142,7 +142,7 @@
     </div>
 
     <div class="row">
-      <div id="carousel-places-generic" class="carousel slide hidden-xs" data-ride="carousel">
+      <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
         <a style="    background-color: rgb(255, 255, 255);
     border: 0px;
     border-radius: 50%;
@@ -160,7 +160,7 @@
     margin-top: auto;
     top: 0px;
     z-index: 20;
-    left: -2.22222em;" class="btn" href="#carousel-places-generic" data-slide="prev">
+    left: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="prev">
           <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
         </a>
         <a style="background-color: rgb(255, 255, 255);
@@ -180,23 +180,65 @@
     margin-top: auto;
     top: 0;
     z-index: 20;
-    right: -2.22222em;" class="btn" href="#carousel-places-generic" data-slide="next">
+    right: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="next">
           <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
 
         <!-- Wrapper for slides <-->
 
-        <div class="carousel-inner" >
+        <div class="carousel-inner">
           <div class="item active" style="padding:2% 0 2% 2%">
             <div class="row">
 
-              <div class="col-sm-3 nopadding" ng-repeat="slide in placesViewData">
-                <div ng-click="heading1.isOpen = !heading1.isOpen; getTravelInspirationDetail(slide.id)" style="cursor:pointer;">
+              <div class="col-sm-3 nopadding">
+
+                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[0].id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.name}}" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[0].imageUrl}}" class="img-responsive" alt="a"
+                    />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slide.name}}</span>
+                    {{placesData[0].text}}</span>
+
+                </div>
+
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[1].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[1].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{placesData[1].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(slideplacesDatar[2].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[2].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{placesData[2].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[3].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[3].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{placesData[3].text}}</span>
 
                 </div>
               </div>
@@ -205,17 +247,58 @@
           <div class="item" style="padding:2% 2% 2% 0%">
             <div class="row">
 
-              <div class="col-sm-3 nopadding" ng-repeat="slide in placesData">
-                <div ng-click="heading1.isOpen = !heading1.isOpen; getTravelInspirationDetail(slide.id) " style="cursor:pointer;">
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[4].id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.name}}" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[4].imageUrl}}" class="img-responsive" alt="a"
+                    />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slide.name}}</span>
+                    {{placesData[4].text}}</span>
 
                 </div>
               </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[5].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[5].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{placesData[5].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[6].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[6].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{placesData[6].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[7].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[7].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{placesData[7].text}}</span>
+
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -223,13 +306,13 @@
     </div>
   </div>
 
-  <div class="clearfix">
+  <div id="accordion" class="clearfix">
 
     <uib-accordion>
-      <uib-accordion-group is-open="heading1.isOpen">
-        <div class="center-block" style="width:80%;">
+      <uib-accordion-group is-open="header1.isOpen">
+        <div class="center-block" style="width:80%;" ng-show="header1.isOpen">
           <div>
-            <h2 style="text-align:center;margin:0rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+            <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
               Name
               <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
               </div>
@@ -283,10 +366,9 @@
 
 
 <section id="activities">
-
-  <div class="container clearfix" style="height:100vh;">
+  <div class=" container clearfix" style="height:100vh;">
     <div>
-      <h2 style="text-align:center;margin:6rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+      <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
         Activities
         <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
         </div>
@@ -294,7 +376,7 @@
     </div>
 
     <div class="row">
-      <div id="carousel-activites-generic" class="carousel slide hidden-xs" data-ride="carousel">
+      <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
         <a style="    background-color: rgb(255, 255, 255);
     border: 0px;
     border-radius: 50%;
@@ -312,7 +394,7 @@
     margin-top: auto;
     top: 0px;
     z-index: 20;
-    left: -2.22222em;" class="btn" href="#carousel-activites-generic" data-slide="prev">
+    left: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="prev">
           <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
         </a>
         <a style="background-color: rgb(255, 255, 255);
@@ -332,23 +414,65 @@
     margin-top: auto;
     top: 0;
     z-index: 20;
-    right: -2.22222em;" class="btn" href="#carousel-activites-generic" data-slide="next">
+    right: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="next">
           <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
 
         <!-- Wrapper for slides <-->
 
-        <div class="carousel-inner" >
+        <div class="carousel-inner">
           <div class="item active" style="padding:2% 0 2% 2%">
             <div class="row">
 
-              <div class="col-sm-3 nopadding" ng-repeat="slide in activitiesViewData">
-                <div ng-click="heading1.isOpen = !heading1.isOpen; getTravelInspirationDetail(slide.id)" style="cursor:pointer;">
+              <div class="col-sm-3 nopadding">
+
+                <div ng-click="header2.isOpen = !header2.isOpen ; getTravelInspirationDetail(activitiesData[0].id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.name}}" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[0].imageUrl}}" class="img-responsive" alt="a"
+                    />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slide.name}}</span>
+                    {{activitiesData[0].text}}</span>
+
+                </div>
+
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header2.isOpen = !header2.isOpen ; getTravelInspirationDetail(activitiesData[1].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[1].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{activitiesData[1].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header2.isOpen = !header2.isOpen ; getTravelInspirationDetail(activitiesData[2].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[2].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{activitiesData[2].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header2.isOpen = !header2.isOpen ; getTravelInspirationDetail(activitiesData[3].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[3].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{activitiesData[3].text}}</span>
 
                 </div>
               </div>
@@ -357,70 +481,127 @@
           <div class="item" style="padding:2% 2% 2% 0%">
             <div class="row">
 
-              <div class="col-sm-3 nopadding" ng-repeat="slide in activitiesData">
-                <div ng-click="heading1.isOpen = !heading1.isOpen; getTravelInspirationDetail(slide.id) " style="cursor:pointer;">
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header2.isOpen = !header2.isOpen ; getTravelInspirationDetail(activitiesData[4].id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.name}}" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[4].imageUrl}}" class="img-responsive" alt="a"
+                    />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slide.name}}</span>
+                    {{activitiesData[4].text}}</span>
 
                 </div>
               </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header2.isOpen = !header2.isOpen ; getTravelInspirationDetail(activitiesData[5].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[5].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{activitiesData[5].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header2.isOpen = !header2.isOpen ; getTravelInspirationDetail(activitiesData[6].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[6].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{activitiesData[6].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ng-click="header2.isOpen = !header2.isOpen ; getTravelInspirationDetail(activitiesData[7].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[7].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{activitiesData[7].text}}</span>
+
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <uib-accordion>
-    <uib-accordion-group is-open="heading2.isOpen">
-      <div class="center-block" style="width:80%;">
-        <div class="topmargin">
-          <h2 style="text-align:center;margin:0rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
-            Name
-            <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+
+  <div id="accordion1" class="clearfix">
+
+    <uib-accordion>
+      <uib-accordion-group is-open="header2.isOpen">
+        <div class="center-block" style="width:80%;" ng-show="header2.isOpen">
+          <div>
+            <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+              Name
+              <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+              </div>
+            </h2>
+          </div>
+
+          <div class="pull-left" style="width:30%;">
+            <a href="images/blog3.jpg"><img height="350px" width="100%" src="images/blog3.jpg" alt="Standard Post with Image"></a>
+          </div>
+
+          <div class="pull-right" style="width:70%; padding-left:10px;">
+
+            <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+              What is it.....</h4>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
+              deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus
+              officia eos rerum.
+            </p>
+
+            <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+              Overview</h4>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
+              deserunt.
+            </p>
+
+            <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+              How to reach</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
+              deserunt.
+            </p>
+
+            <div>
+              <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                Timings - <span>8am - 6pm</span></h4>
+
+              <h4 class="pull-right" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                Pricing - <span>₹7999</span></h4>
             </div>
-          </h2>
+
+
+          </div>
         </div>
+      </uib-accordion-group>
+    </uib-accordion>
 
-        <div class="pull-left" style="width:30%;">
-          <a href="images/blog3.jpg"><img height="350px" width="100%" src="images/blog3.jpg" alt="Standard Post with Image"></a>
-        </div>
+  </div>
 
-        <div class="pull-right" style="width:70%; padding-left:10px;">
-
-          <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-            What is it.....</h4>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
-            deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus
-            officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab
-            facere.
-          </p>
-
-          <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-            Place Of Conduct</h4>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
-            deserunt.
-          </p>
-
-          <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-            Preferred Timings -</h4>
-
-          <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-            Duration -</h4>
-
-          <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-            Pricing -</h4>
-
-        </div>
-      </div>
-    </uib-accordion-group>
-  </uib-accordion>
 </section>
+
+
+
+
+
 
 <section>
   <div class="topmargin">
@@ -456,8 +637,8 @@
       </h2>
     </div>
 
-    <div class="row">
-      <div id="carousel-next-generic" class="carousel slide hidden-xs" data-ride="carousel">
+   <div class="row">
+      <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
         <a style="    background-color: rgb(255, 255, 255);
     border: 0px;
     border-radius: 50%;
@@ -475,7 +656,7 @@
     margin-top: auto;
     top: 0px;
     z-index: 20;
-    left: -2.22222em;" class="btn" href="#carousel-next-generic" data-slide="prev">
+    left: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="prev">
           <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
         </a>
         <a style="background-color: rgb(255, 255, 255);
@@ -495,23 +676,65 @@
     margin-top: auto;
     top: 0;
     z-index: 20;
-    right: -2.22222em;" class="btn" href="#carousel-next-generic" data-slide="next">
+    right: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="next">
           <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
 
         <!-- Wrapper for slides <-->
 
-        <div class="carousel-inner" >
+        <div class="carousel-inner">
           <div class="item active" style="padding:2% 0 2% 2%">
             <div class="row">
 
-              <div class="col-sm-3 nopadding" ng-repeat="slide in activitiesViewData">
-                <div ng-click="heading1.isOpen = !heading1.isOpen; getTravelInspirationDetail(slide.id)" style="cursor:pointer;">
+              <div class="col-sm-3 nopadding">
+
+                <div ui-sref="travel-plan" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.name}}" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[0].imageUrl}}" class="img-responsive" alt="a"
+                    />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slide.name}}</span>
+                    {{activitiesData[0].text}}</span>
+
+                </div>
+
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ui-sref="travel-plan" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[1].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{activitiesData[1].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ui-sref="travel-plan" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[2].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{activitiesData[2].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ui-sref="travel-plan" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[3].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{activitiesData[3].text}}</span>
 
                 </div>
               </div>
@@ -520,17 +743,58 @@
           <div class="item" style="padding:2% 2% 2% 0%">
             <div class="row">
 
-              <div class="col-sm-3 nopadding" ng-repeat="slide in activitiesData">
-                <div ng-click="heading1.isOpen = !heading1.isOpen; getTravelInspirationDetail(slide.id) " style="cursor:pointer;">
+              <div class="col-sm-3 nopadding">
+                <div ui-sref="travel-plan" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.name}}" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[4].imageUrl}}" class="img-responsive" alt="a"
+                    />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slide.name}}</span>
+                    {{activitiesData[4].text}}</span>
 
                 </div>
               </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ui-sref="travel-plan" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[5].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{activitiesData[5].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ui-sref="travel-plan" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[6].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{activitiesData[6].text}}</span>
+
+                </div>
+              </div>
+
+              <div class="col-sm-3 nopadding">
+                <div ui-sref="travel-plan" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[7].imageUrl}}" class="img-responsive" alt="a"
+                    />
+                  </div>
+
+                  <span class="paul-slider-caption">
+                    {{activitiesData[7].text}}</span>
+
+                </div>
+              </div>
+
             </div>
           </div>
         </div>

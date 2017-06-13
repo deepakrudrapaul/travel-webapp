@@ -8,23 +8,14 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('HomeCtrl', function ($scope, $timeout, mockRemoteSvc) {
+  .controller('HomeCtrl', function ($scope, $timeout, mockRemoteSvc, $document) {
 
 
-    $scope.sliderViewData = [];
-    var convertSliderData = function (data) {
-      for (var index = 0; index < 4; index++) {
-        $scope.sliderViewData.push(data[index]);
-        data.splice(index, 1);
-      }
-    };
-    
+   
+
     $scope.getHomePageContent = function () {
       mockRemoteSvc.getHomePageContent().then(function (response) {
-        $scope.slider = angular.copy(response.slider);
-        convertSliderData($scope.slider);
-        console.log('RESPONSE' , response.slider);
-        console.log($scope.sliderViewData);
+        $scope.slider = response.slider;
         $scope.destinations = response.destinations;
         $scope.blog = response.homePageBlog;
         $scope.instaImages = response.instaImages;
@@ -41,6 +32,14 @@ angular.module('wanderwagon-webapp')
     };
 
 
+
+
+     $scope.$watch('header.isOpen', function (isOpen) {
+      if (isOpen) {
+        var someElement = angular.element(document.getElementById('accordion1'));
+        $document.scrollToElement(someElement, 50, 800);
+      }
+    });
 
 
 

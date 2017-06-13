@@ -5,7 +5,6 @@
       <!--<a class="custom-button center-block text-center">
          <span>Let's Wander</span> <i style="margin-left:10px;" class="icon-angle-right"></i></a>-->
 
-
     </div>
   </div>
 </div>
@@ -100,15 +99,29 @@
               <div class="si-share noborder clearfix">
                 <span>Share this Post:</span>
                 <div>
-                  <a href="#" class="social-icon si-borderless si-facebook">
+                  <a socialshare socialshare-provider="facebook" socialshare-text="For rivers, seas and slopes at their most inviting" 
+                      socialshare-hashtags="wanderwagon"
+                      socialshare-description="Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere
+                erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
+                quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus.
+                Vestibulum id ligula porta felis euismod semper."
+                  socialshare-media="images/home-bg.jpg"
+                    socialshare-url="http://wanderwagon.com/" class="social-icon si-borderless si-facebook">
                     <i class="icon-facebook"></i>
                     <i class="icon-facebook"></i>
                   </a>
-                  <a href="#" class="social-icon si-borderless si-twitter">
+                  <a socialshare socialshare-provider="twitter" socialshare-text="For rivers, seas and slopes at their most inviting" 
+                      socialshare-hashtags="wanderwagon"
+                      socialshare-description="Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere
+                erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
+                quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus.
+                Vestibulum id ligula porta felis euismod semper."
+                  socialshare-media="images/home-bg.jpg"
+                    socialshare-url="http://wanderwagon.com/" class="social-icon si-borderless si-twitter">
                     <i class="icon-twitter"></i>
                     <i class="icon-twitter"></i>
                   </a>
-                  <a href="#" class="social-icon si-borderless si-pinterest">
+                  <!--<a href="#" class="social-icon si-borderless si-pinterest">
                     <i class="icon-pinterest"></i>
                     <i class="icon-pinterest"></i>
                   </a>
@@ -123,7 +136,7 @@
                   <a href="#" class="social-icon si-borderless si-email3">
                     <i class="icon-email3"></i>
                     <i class="icon-email3"></i>
-                  </a>
+                  </a>-->
                 </div>
               </div>
               <!-- Post Single - Share End -->
@@ -422,8 +435,8 @@
 
     <div class="entry clearfix">
       <div class="row">
-      <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
-        <a style="    background-color: rgb(255, 255, 255);
+        <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+          <a style="    background-color: rgb(255, 255, 255);
     border: 0px;
     border-radius: 50%;
     cursor: pointer;
@@ -441,9 +454,9 @@
     top: 0px;
     z-index: 20;
     left: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: rgb(255, 255, 255);
+            <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
+          </a>
+          <a style="background-color: rgb(255, 255, 255);
     border: 0px;
     border-radius: 50%;
     cursor: pointer;
@@ -461,120 +474,120 @@
     top: 0;
     z-index: 20;
     right: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
+            <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
 
-        <!-- Wrapper for slides <-->
+          <!-- Wrapper for slides <-->
 
-        <div class="carousel-inner">
-          <div class="item active" style="padding:2% 0 2% 2%">
-            <div class="row">
+          <div class="carousel-inner">
+            <div class="item active" style="padding:2% 0 2% 2%">
+              <div class="row">
 
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
-                  </div>
+                <div class="col-sm-3 nopadding">
+                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                    <div class="paul-slide">
+                      <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                    </div>
 
-                  <span class="paul-slider-caption">
+                    <span class="paul-slider-caption">
                     {{images[0].text}}</span>
 
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-bg.jpg" class="img-responsive" alt="a" />
                   </div>
+                </div>
 
-                  <span class="paul-slider-caption">
+                <div class="col-sm-3 nopadding">
+                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                    <div class="paul-slide">
+                      <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-bg.jpg" class="img-responsive" alt="a" />
+                    </div>
+
+                    <span class="paul-slider-caption">
                     {{images[1].text}}</span>
 
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/manipur.jpg" class="img-responsive" alt="a" />
                   </div>
+                </div>
 
-                  <span class="paul-slider-caption">
+                <div class="col-sm-3 nopadding">
+                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                    <div class="paul-slide">
+                      <img style="object-fit:cover; width:100%; height:100%;" src="images/manipur.jpg" class="img-responsive" alt="a" />
+                    </div>
+
+                    <span class="paul-slider-caption">
                     {{images[2].text}}</span>
 
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-detail-bg.jpg" class="img-responsive" alt="a"
-                    />
                   </div>
+                </div>
 
-                  <span class="paul-slider-caption">
+                <div class="col-sm-3 nopadding">
+                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                    <div class="paul-slide">
+                      <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-detail-bg.jpg" class="img-responsive" alt="a"
+                      />
+                    </div>
+
+                    <span class="paul-slider-caption">
                     {{images[3].text}}</span>
 
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="item" style="padding:2% 2% 2% 0%">
-            <div class="row" >
+            <div class="item" style="padding:2% 2% 2% 0%">
+              <div class="row">
 
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
-                  </div>
+                <div class="col-sm-3 nopadding">
+                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                    <div class="paul-slide">
+                      <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                    </div>
 
-                  <span class="paul-slider-caption">
+                    <span class="paul-slider-caption">
                     {{images[4].text}}</span>
 
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
                   </div>
+                </div>
 
-                  <span class="paul-slider-caption">
+                <div class="col-sm-3 nopadding">
+                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                    <div class="paul-slide">
+                      <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                    </div>
+
+                    <span class="paul-slider-caption">
                     {{images[5].text}}</span>
 
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
                   </div>
+                </div>
 
-                  <span class="paul-slider-caption">
+                <div class="col-sm-3 nopadding">
+                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                    <div class="paul-slide">
+                      <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
+                    </div>
+
+                    <span class="paul-slider-caption">
                     {{images[5].text}}</span>
 
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-bg.jpg" class="img-responsive" alt="a" />
                   </div>
+                </div>
 
-                  <span class="paul-slider-caption">
+                <div class="col-sm-3 nopadding">
+                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
+                    <div class="paul-slide">
+                      <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-bg.jpg" class="img-responsive" alt="a" />
+                    </div>
+
+                    <span class="paul-slider-caption">
                     {{images[0].text}}</span>
 
+                  </div>
                 </div>
-              </div>
 
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
   <div class="clear"></div>

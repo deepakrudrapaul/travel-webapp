@@ -25,7 +25,6 @@ angular.module('wanderwagon-webapp')
     //       console.log(error);
     //     })
     // };
-
     // $scope.getPostDetail();
 
     $scope.postDetail = {

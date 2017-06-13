@@ -8,21 +8,32 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('TravelPlanCtrl', function ($scope, mockRemoteSvc) {
+  .controller('TravelPlanCtrl', function ($scope, mockRemoteSvc, $document) {
 
-     $scope.getTravelPlanContent = function() {
-      mockRemoteSvc.getTravelPlanContent().then(function(response){
+    $scope.getTravelPlanContent = function () {
+      mockRemoteSvc.getTravelPlanContent().then(function (response) {
         $scope.slider = response.slider;
         $scope.articles = response.articles;
       });
     };
 
+
     $scope.getTravelPlanContent();
 
-    $scope.getTravelInspirationDetail = function(id) {
-        mockRemoteSvc.getTravelInspirationDetail(id).then(function(response){
-          $scope.inspirations = response;
-        });
+    $scope.getTravelInspirationDetail = function (id) {
+      mockRemoteSvc.getTravelInspirationDetail(id).then(function (response) {
+        $scope.inspirations = response;
+      });
     };
-      
+
+    $scope.$watch('heading1.isOpen', function (isOpen) {
+      if (isOpen) {
+        var someElement = angular.element(document.getElementById('accordion'));
+        $document.scrollToElement(someElement, 50, 800);
+      }
+    });
+
+
+
+
   });

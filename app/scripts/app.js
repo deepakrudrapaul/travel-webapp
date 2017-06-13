@@ -26,7 +26,8 @@ angular
     'sticky',
     'duScroll',
     'vAccordion',
-    'satellizer'
+    'satellizer',
+    '720kb.socialshare'
   ])
   .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', '$authProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider) {
 
