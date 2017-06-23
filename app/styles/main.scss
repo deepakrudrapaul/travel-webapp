@@ -29699,6 +29699,15 @@ label.checkbox {
   letter-spacing: -0.08px;
 }
 
+.paul-slide-new{
+  max-height: 400px;
+  height: 50vw;
+  position: relative;
+  box-shadow: none;
+  z-index: 10;
+  transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
+}
+
 .paul-slide {
   max-height: 500px;
   height: 69vw;

@@ -44339,6 +44339,16 @@ label.checkbox {
 }
 
 /* line 29702, ../../app/styles/main.scss */
+.paul-slide-new {
+  max-height: 400px;
+  height: 50vw;
+  position: relative;
+  box-shadow: none;
+  z-index: 10;
+  transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
+}
+
+/* line 29711, ../../app/styles/main.scss */
 .paul-slide {
   max-height: 500px;
   height: 69vw;
@@ -44348,14 +44358,14 @@ label.checkbox {
   transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
 }
 
-/* line 29711, ../../app/styles/main.scss */
+/* line 29720, ../../app/styles/main.scss */
 .paul-slide:hover {
   z-index: 30;
   transform: scale(1.03);
   box-shadow: 0px 28px 81px -7px rgba(0, 0, 0, 0.44);
 }
 
-/* line 29717, ../../app/styles/main.scss */
+/* line 29726, ../../app/styles/main.scss */
 .paul-title {
   text-align: center;
   margin-top: 2%;
@@ -44367,14 +44377,14 @@ label.checkbox {
 
 @media only screen and (min-width: 1920px) {
   /* styles for browsers larger than 1920px; */
-  /* line 29728, ../../app/styles/main.scss */
+  /* line 29737, ../../app/styles/main.scss */
   .paul-title {
     margin-top: 22%;
     margin-bottom: 22%;
     font-size: 4.8rem;
   }
 }
-/* line 29735, ../../app/styles/main.scss */
+/* line 29744, ../../app/styles/main.scss */
 .text:before {
   content: "";
   position: absolute;
@@ -44387,7 +44397,7 @@ label.checkbox {
   border-bottom: 15px solid transparent;
 }
 
-/* line 29747, ../../app/styles/main.scss */
+/* line 29756, ../../app/styles/main.scss */
 .text:after {
   content: "";
   position: absolute;
@@ -44400,7 +44410,7 @@ label.checkbox {
   border-bottom: 15px solid transparent;
 }
 
-/* line 29760, ../../app/styles/main.scss */
+/* line 29769, ../../app/styles/main.scss */
 .paul-slideshow {
   margin: 0 auto;
   position: relative;
@@ -44408,7 +44418,7 @@ label.checkbox {
   transform: translate3d(0, 0, 0);
 }
 
-/* line 29768, ../../app/styles/main.scss */
+/* line 29777, ../../app/styles/main.scss */
 .paul-slideshow .mover-1 {
   animation: moveSlideshow 6s linear infinite;
 }
