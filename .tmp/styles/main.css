@@ -44418,5 +44418,57 @@ label.checkbox {
     transform: translateX(-66.6666%);
   }
 }
+/* line 29782, ../../app/styles/main.scss */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+}
+
+/* line 29788, ../../app/styles/main.scss */
+.edge {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  height: 100%;
+  display: block;
+}
+
+/* line 29797, ../../app/styles/main.scss */
+.edge:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  background: -webkit-linear-gradient(left, white 10%, transparent 100%);
+  width: 25%;
+  height: 100%;
+}
+
+/* line 29805, ../../app/styles/main.scss */
+.edge:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  background: -webkit-linear-gradient(right, white 10%, transparent 100%);
+  width: 25%;
+  height: 100%;
+}
+
+/* line 29813, ../../app/styles/main.scss */
+.slideContainer {
+  overflow: hidden;
+  width: 1000%;
+  margin: 0;
+}
+
+/* line 29818, ../../app/styles/main.scss */
+.slideItem {
+  list-style: none;
+  display: inline-block;
+  padding: 0 50px;
+}
 
 /*# sourceMappingURL=main.css.map */

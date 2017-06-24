@@ -8,10 +8,32 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('HomeCtrl', function ($scope, $timeout, mockRemoteSvc, $document) {
+  .controller('HomeCtrl', function ($scope, $timeout, mockRemoteSvc, $document, $window) {
+
+    $window.requestAnimationFrame = (function () {
+      return $window.requestAnimationFrame ||
+        $window.webkitRequestAnimationFrame ||
+        $window.mozRequestAnimationFrame ||
+        function (callback) {
+          $window.setTimeout(callback);
+        };
+    })();
+
+    var speed = 5000;
+    (function currencySlide() {
+      var currencyPairWidth = $('.slideItem:first-child').outerWidth();
+      $(".slideContainer").animate({
+        marginLeft: -currencyPairWidth
+      }, speed, 'linear', function () {
+        $(this).css({
+          marginLeft: 0
+        }).find("li:last").after($(this).find("li:first"));
+      });
+      requestAnimationFrame(currencySlide);
+    })();
 
 
-   
+
 
     $scope.getHomePageContent = function () {
       mockRemoteSvc.getHomePageContent().then(function (response) {
@@ -34,7 +56,7 @@ angular.module('wanderwagon-webapp')
 
 
 
-     $scope.$watch('header.isOpen', function (isOpen) {
+    $scope.$watch('header.isOpen', function (isOpen) {
       if (isOpen) {
         var someElement = angular.element(document.getElementById('accordion1'));
         $document.scrollToElement(someElement, 50, 800);
