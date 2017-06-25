@@ -10,6 +10,8 @@
 angular.module('wanderwagon-webapp')
   .controller('HomeCtrl', function ($scope, $timeout, mockRemoteSvc, $document, $window) {
 
+    
+
     $window.requestAnimationFrame = (function () {
       return $window.requestAnimationFrame ||
         $window.webkitRequestAnimationFrame ||
