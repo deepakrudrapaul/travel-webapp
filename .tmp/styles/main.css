@@ -20380,7 +20380,7 @@ button.close {
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-header:after,
+.modal-header:after, ce
 .modal-footer:after {
   clear: both;
 }
