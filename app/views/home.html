@@ -386,19 +386,7 @@
     </h2>
   </div>
 
-  <!--<marquee  behavior="scroll" direction="left" loop="infinite">
-    <img ng-repeat="image in destinations" style="margin:2%;" ng-src="{{image.imageUrl}}" width="200" height="150" alt="Instafeed">
-  </marquee>-->
-
-  <div class='marquee'>
-    <div class="edge"></div>
-<ul class="slideContainer" id="money_start">
-        <li ng-repeat="image in destinations"  class="slideItem" >
-                <img style="margin:2%;" ng-src="{{image.imageUrl}}" width="200" height="150" alt="Instafeed">
-        </li>
-</ul>
-</div>
-
-
-
+  <marquee behavior="scroll" direction="left">
+    <img ng-repeat="image in destinations" style="margin:0.5%;" ng-src="{{image.imageUrl}}" width="300" height="200" alt="Instafeed">
+  </marquee>
 </section>
