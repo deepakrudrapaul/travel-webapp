@@ -1,6 +1,3 @@
-
-
-
 <div style="background-color:#000;background-image: url('images/home-bg.jpg');background-size: cover; height:100vh;">
   <div class="container clearfix">
     <div class="slider-caption-center">
@@ -18,8 +15,7 @@
 </div>
 
 
-
-<section id="content" style="padding:0 6% 10% 6%;">
+<section id="content" style="padding:2% 6% 0% 6%;">
 
   <div style="height:100vh;">
     <h2 class="paul-title">
@@ -78,20 +74,20 @@
         <!-- Wrapper for slides <-->
 
         <div class="carousel-inner">
-          <div class="item active" style="padding:2% 2% 2% 0">
+          <div class="item active" style="padding:2% 0 2% 2%">
             <div class="row">
 
               <div class="col-sm-3 nopadding">
 
-                <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[0].id)" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[0].imageUrl}}" class="img-responsive" alt="a" />
-                  </div>
+                  <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[0].id)" style="cursor:pointer;">
+                    <div class="paul-slide">
+                      <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[0].imageUrl}}" class="img-responsive" alt="a" />
+                    </div>
 
-                  <span class="paul-slider-caption">
+                    <span class="paul-slider-caption">
                     {{slider[0].text}}</span>
 
-                </div>
+                  </div>
 
               </div>
 
@@ -194,53 +190,7 @@
   </div>
 </section>
 
-<div id="accordion1" class="container">
-  <uib-accordion>
-    <uib-accordion-group is-open="header.isOpen">
-      <div class="container">
-        <div class="row row-centered">
-          <div style="margin-bottom:2%;" ng-repeat="inspiration in inspirations" class="col-xs-4 col-centered col-fixed">
 
-            <a ui-sref="destination.detail({id: inspiration.id})">
-              <div class="photo" style="cursor:pointer; width: 100%;
-    height: 100%;
-    float: left;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    margin: 10px 0;">
-                <img class="img-responsive" style="height:250px; display: block;
-    position: relative;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    margin: 0 auto;" ng-src="{{inspiration.imageUrl}}">
-                <div class="overlay" style="width: 100%;
-    height: 100%;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out">
-                  <h2 style="color: #fff;
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    bottom: 10%;
-    font-size: 20px;
-    font-weight: 400;
-    padding: 10px;
-    background: rgba(0,0,0,0.6);" class="ng-binding">{{inspiration.name}}</h2>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </uib-accordion-group>
-  </uib-accordion>
-
-</div>
 
 
 <section id="content" class="container">
@@ -316,7 +266,7 @@
     padding: 10px 20px;
     position: relative;">
       <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
-        {{blog[1].title}}</h3>
+         {{blog[1].title}}</h3>
 
 
       <div class="entry-content">
