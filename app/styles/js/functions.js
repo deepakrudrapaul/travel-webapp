@@ -1,5 +1,4 @@
 var $ = jQuery.noConflict();
-
 $.fn.inlineStyle = function (prop) {
 	return this.prop("style")[$.camelCase(prop)];
 };
