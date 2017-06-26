@@ -6714,7 +6714,7 @@ button.close {
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-header:after,
+.modal-header:after,ce
 .modal-footer:after {
   clear: both;
 }
@@ -29699,6 +29699,15 @@ label.checkbox {
   letter-spacing: -0.08px;
 }
 
+.paul-slide-new{
+  max-height: 400px;
+  height: 50vw;
+  position: relative;
+  box-shadow: none;
+  z-index: 10;
+  transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
+}
+
 .paul-slide {
   max-height: 500px;
   height: 69vw;
@@ -29758,7 +29767,7 @@ label.checkbox {
 
 
 .paul-slideshow {
- 
+
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -29770,10 +29779,11 @@ label.checkbox {
 }
 
 @keyframes moveSlideshow {
-  100% { 
-    transform: translateX(-66.6666%);  
+  100% {
+    transform: translateX(-66.6666%);
   }
 }
+
 
 
 
