@@ -29828,3 +29828,13 @@ label.checkbox {
     display:inline-block;
     padding:0 50px;
 }
+
+
+
+.carousel-control.left, .carousel-control.right {
+  background: transparent !important;
+  filter:none !important;
+  background-image:none;
+  outline: 0;
+  opacity: 1;
+ }
