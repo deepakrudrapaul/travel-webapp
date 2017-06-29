@@ -45,7 +45,7 @@
 <!-- #header end -->
 
 <section id="about">
-  <div class=" container clearfix" style="height:80vh;">
+  <div class=" container clearfix" style="height:100vh;">
     <div>
       <h2 style="text-align:center;margin:6rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
         About
@@ -90,7 +90,7 @@
 </section>
 
 <section id="howToReach">
-  <div class="container clearfix" style="height:75vh;">
+  <div class="container clearfix" style="height:100vh;">
     <div style="margin-top:1px; ">
       <h2 style="text-align:center;margin:8rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
         How to reach
@@ -133,7 +133,7 @@
 
 
 <section id="places">
-  <div class=" container clearfix" style="height:80vh;">
+  <div class=" container clearfix" style="height:100vh;">
     <div>
       <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
         Places to visit
@@ -524,7 +524,7 @@
 
               <div class="col-sm-3 padding:0 1% 0 1%">
                 <div ng-click="header2.isOpen = !header2.isOpen ; getTravelInspirationDetail(activitiesData[6].id)" style="cursor:pointer;">
-                  <div class="paul-slide-new>
+                  <div class="paul-slide-new">
                     <img style=" object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[6].imageUrl}}
                     " class="img-responsive " alt="a "
                     />
@@ -562,57 +562,63 @@
 
     <uib-accordion>
       <uib-accordion-group is-open="header2.isOpen ">
-        <div class="center-block " style="width:80%; " ng-show="header2.isOpen ">
-          <div>
-            <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem; "><br />
-              Name
-              <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px; ">
+       <div>
+          <carousel interval="myInterval">
+            <slide ng-repeat="detail in placeDetails" >
+
+              <div class="center-block" style="width:80%;" ng-show="header2.isOpen">
+                <div>
+                  <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{detail.name}}
+                    <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+                    </div>
+                  </h2>
+                </div>
+
+                <div class="pull-left" style="width:30%;">
+                  <a href="images/blog3.jpg"><img height="350px" width="100%" ng-src="{{detail.imageUrl}}" alt="Standard Post with Image"></a>
+                </div>
+
+                <div class="pull-right" style="width:70%; padding-left:10px; text-align:left;">
+
+                  <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                    What is it.....</h4>
+
+                  <p>{{detail.description}}
+                  </p>
+
+                  <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                    Overview</h4>
+
+                  <p>{{detail.overview}}
+                  </p>
+
+                  <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                    How to reach</h4>
+                  <p>{{detail.howToReach}}
+                  </p>
+
+                  <div>
+                    <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                      Timings - <span>{{detail.timings}}</span></h4>
+
+                    <h4 class="pull-right" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                      Pricing - <span>{{detail.price}}</span></h4>
+                    <br /><br /><br /><br />
+                  </div>
+
+                  <!--<center>
+                    <span style="font-size:48px; padding-right:2%; " class="icon-line2-arrow-left"></span>
+                    <span style="font-size:48px; padding-left:2%; " class="icon-line2-arrow-right"></span>
+                  </center>-->
+
+                </div>
               </div>
-            </h2>
-          </div>
-
-          <div class="pull-left " style="width:30%; ">
-            <a href="images/blog3.jpg "><img height="350px " width="100% " src="images/blog3.jpg " alt="Standard Post with
-                    Image "></a>
-          </div>
-
-          <div class="pull-right " style="width:70%; padding-left:10px; ">
-
-            <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643; ">
-              What is it.....</h4>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
-              deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus
-              officia eos rerum.
-            </p>
-
-            <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643; ">
-              Overview</h4>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
-              deserunt.
-            </p>
 
 
-            <center>
-            <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;text-align:center; ">
-              How to reach</h4>
-              </center>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi,
-              deserunt.
-            </p>
 
-            <div>
-              <h4 class="pull-left " style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643; ">
-                Timings - <span>8am - 6pm</span></h4>
-
-              <h4 class="pull-right " style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643; ">
-                Pricing - <span>₹7999</span></h4>
-            </div>
-
-
-          </div>
-        </div>
+            </slide>
+          </carousel>
+        </div
       </uib-accordion-group>
     </uib-accordion>
 
