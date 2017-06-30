@@ -90,14 +90,14 @@ angular.module('wanderwagon-webapp')
 
      $scope.$watch('header1.isOpen', function (isOpen) {
       if (isOpen) {
-        var someElement = angular.element(document.getElementById('accordion'));
+        var someElement = angular.element(document.getElementById('accordion1'));
         $document.scrollToElement(someElement, 40, 800);
       }
     });
 
-    $scope.$watch('header2.isOpen', function (isOpen) {
+    $scope.$watch('accordion2.isOpen', function (isOpen) {
       if (isOpen) {
-        var someElement = angular.element(document.getElementById('accordion1'));
+        var someElement = angular.element(document.getElementById('accordion2'));
         $document.scrollToElement(someElement, 40, 800);
       }
     });
