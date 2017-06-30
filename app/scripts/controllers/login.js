@@ -14,8 +14,8 @@ angular.module('wanderwagon-webapp')
     $scope.authenticate = function (provider) {
       $auth.authenticate(provider)
         .then(function (response) {
+               console.log(response.access_token);
           if (provider == 'google') {
-            console.log(response);
             auth.googleLogin(response.access_token)
               .then(function (data) {
                 console.log(data);
@@ -27,7 +27,8 @@ angular.module('wanderwagon-webapp')
           } else {
             auth.facebookLogin(response.access_token)
               .then(function (data) {
-                $location.path('/home');
+                // $location.path('/home');
+                console.log(data);
               })
               .catch(function (error) {
                 console.log(error);
