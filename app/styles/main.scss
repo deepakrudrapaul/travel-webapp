@@ -4724,9 +4724,11 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 
 .pager {
   padding-left: 0;
-  margin: 20px 0;
   list-style: none;
   text-align: center;
+  float: right;
+  width: 80%;
+  margin-bottom: 5%;
 }
 
 .pager li {
@@ -6714,8 +6716,8 @@ button.close {
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-header:after,ce
-.modal-footer:after {
+.modal-header:after,
+ce .modal-footer:after {
   clear: both;
 }
 
@@ -29654,7 +29656,7 @@ label.checkbox {
   font-size: 1.5rem;
   line-height: 1.8;
   margin-right: 10px;
-  text-align:center;
+  text-align: center;
 }
 
 .panel-group .panel-heading+.panel-collapse .panel-body {
@@ -29699,7 +29701,7 @@ label.checkbox {
   letter-spacing: -0.08px;
 }
 
-.paul-slide-new{
+.paul-slide-new {
   max-height: 400px;
   height: 50vw;
   position: relative;
@@ -29715,6 +29717,12 @@ label.checkbox {
   box-shadow: none;
   z-index: 10;
   transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
+}
+
+.paul-slide-new:hover {
+  z-index: 30;
+  transform: scale(1.03);
+  box-shadow: 0px 28px 81px -7px rgba(0, 0, 0, 0.44);
 }
 
 .paul-slide:hover {
@@ -29765,9 +29773,7 @@ label.checkbox {
   border-bottom: 15px solid transparent;
 }
 
-
 .paul-slideshow {
-
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -29784,57 +29790,102 @@ label.checkbox {
   }
 }
 
-
 // ******** MARQUEE CSS ********** //
-
-.marquee{
-    width:100%;
-    overflow:hidden;
-    position:relative;
-    margin:0;
-}
-.edge{
-    left:0;
-    right:0;
-    top:0;
-    bottom:0;
-    position:absolute;
-    height:100%;
-    display:block;
-}
-.edge:before{
-    content:'';
-    position:absolute;
-    left:0;
-    background:-webkit-linear-gradient(left, white 10%, rgba(0,0,0,0) 100%);
-    width:25%;
-    height:100%;
-}
-.edge:after{
-    content:'';
-    position:absolute;
-    right:0;
-    background:-webkit-linear-gradient(right, white 10%, rgba(0,0,0,0) 100%);
-    width:25%;
-    height:100%;
-}
-.slideContainer{
-    overflow:hidden;
-    width:1000%;
-    margin:0;
-}
-.slideItem{
-    list-style:none;
-    display:inline-block;
-    padding:0 50px;
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
 }
 
+.edge {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  height: 100%;
+  display: block;
+}
+
+.edge:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  background: -webkit-linear-gradient(left, white 10%, rgba(0, 0, 0, 0) 100%);
+  width: 25%;
+  height: 100%;
+}
+
+.edge:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  background: -webkit-linear-gradient(right, white 10%, rgba(0, 0, 0, 0) 100%);
+  width: 25%;
+  height: 100%;
+}
+
+.slideContainer {
+  overflow: hidden;
+  width: 1000%;
+  margin: 0;
+}
+
+.slideItem {
+  list-style: none;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.carousel-control.left {
+  background-color: rgb(255, 255, 255);
+  border: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  font-size: 9px;
+  line-height: 1;
+  transition: color 400ms, box-shadow 400ms;
+  height: 4.44444em;
+  width: 4.44444em;
+  box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: auto;
+  margin-top: auto;
+  top: 0px;
+  z-index: 20;
+  left: -2.22222em;
+}
+
+.carousel-control.right {
+  background-color: rgb(255, 255, 255);
+  border: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  font-size: 9px;
+  line-height: 1;
+  transition: color 400ms, box-shadow 400ms;
+  height: 4.44444em;
+  width: 4.44444em;
+  box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: auto;
+  margin-top: auto;
+  top: 0;
+  z-index: 20;
+  right: -2.22222em;
+}
 
 
-.carousel-control.left, .carousel-control.right {
-  background: transparent !important;
-  filter:none !important;
-  background-image:none;
-  outline: 0;
-  opacity: 1;
- }
+.glyphicon-chevron-right:before {
+        font-family: "FontAwesome";
+        content: "\f054";
+    }
+    .glyphicon-chevron-left:before {
+        font-family: "FontAwesome";
+        content: "\f053";
+    }
