@@ -29839,53 +29839,21 @@ label.checkbox {
 }
 
 .carousel-control.left {
-  background-color: rgb(255, 255, 255);
-  border: 0px;
-  border-radius: 50%;
+  background: none !important;
   cursor: pointer;
-  display: block;
-  font-size: 9px;
-  line-height: 1;
-  transition: color 400ms, box-shadow 400ms;
-  height: 4.44444em;
-  width: 4.44444em;
-  box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-  position: absolute;
-  bottom: 0px;
-  margin-bottom: auto;
-  margin-top: auto;
-  top: 0px;
-  z-index: 20;
-  left: -2.22222em;
 }
 
 .carousel-control.right {
-  background-color: rgb(255, 255, 255);
-  border: 0px;
-  border-radius: 50%;
+  background: none !important;
   cursor: pointer;
-  display: block;
-  font-size: 9px;
-  line-height: 1;
-  transition: color 400ms, box-shadow 400ms;
-  height: 4.44444em;
-  width: 4.44444em;
-  box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-  position: absolute;
-  bottom: 0px;
-  margin-bottom: auto;
-  margin-top: auto;
-  top: 0;
-  z-index: 20;
-  right: -2.22222em;
 }
 
 
 .glyphicon-chevron-right:before {
         font-family: "FontAwesome";
-        content: "\f054";
+        content: "\f138";
     }
     .glyphicon-chevron-left:before {
         font-family: "FontAwesome";
-        content: "\f053";
+        content: "\f137";
     }
