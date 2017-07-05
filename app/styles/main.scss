@@ -29610,6 +29610,11 @@ label.checkbox {
   border-color: transparent;
 }
 
+
+.panel-default > .panel-heading {
+  display:none;
+}
+
 .photo img {
   max-width: 100%;
   -moz-transition: all 0.3s ease-in-out;
