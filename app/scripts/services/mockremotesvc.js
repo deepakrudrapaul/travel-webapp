@@ -118,102 +118,104 @@ angular.module('wanderwagon-webapp')
     ];
 
     var destinations = [{
-        imageUrl: 'images/himachal.jpg',
-        name: 'Himachal',
+        imageUrl: 'images/nainital-cover.jpg',
+        name: 'Nainital',
         id: 1,
         data: {
-          name: 'Himachal',
-          title: 'is a stunning tapestry',
-          about: "Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.",
+          imageUrl: 'images/nainital-cover.jpg',
+          name: 'Nainital',
+          title: 'The Lake District Of India',
+          about: "Among the reigning queens of North Indian hill stations, Nainital's crowning glory is its tranquil blue lake earning her the title of Lake District of India. What comes to mind when we talk about Nainital are images of glistening lakes, forested hills, and meandering trails.The crescent shaped lake, bustling roads of Nainital, beautified with Victorian lamp posts, radiate a vintage charm. It is Kumaon’s largest town and favorite hill resort. It is located in the enchanting state of Uttarakhand and is a peaceful destination to get away from the ho-hum of life. It has a myriad of bustling bazaars and a cobweb of walking tracks that cover the sites overlooking the distant Himalayan peaks. Apart from the sparkling blue waters and mountain ranges, one can enjoy views of nature at its full bloom.",
           overview: {
             bestTimeToVisit: 'All Seasons',
-            daysRequired: '4-5 Days',
-            category: 'Hills'
+            daysRequired: '1-2 days',
+            category: 'Hills/Adventure/Wildlife/Trekking/Nature'
           },
           howToReach: {
-            airport: 'Not Available',
-            railways: 'An overnight train journey is a good option to reach Dharamshala. The nearest major railway station is at Pathankot, 85 kilometres away. There are numerous trains that go to Jammu and Kashmir that stop by in Pathankot.',
-            roadways: 'You can take a taxi or bus from Pathankot to reach Dharamshala.'
+            airport: 'Pantnagar is the nearest airport which is 65 km. away from the district. Taxis are easily available from here to Nainital. There is no direct connectivity to Nainital by air. However, unless you opt for privately chartered flights, this is not the ideal arrival spot either. Dehradun is 173 km from Nainital.',
+            railways: 'Kathgodam is the nearest railway station which is 35 km. away from the district.Plenty of trains connect Nainital with Delhi and Dehradun.',
+            roadways: 'Nainital enjoys excellent road connectivity with several cities and small towns of North India. Daily bus service to Nainital is available from Delhi and Kathgodam. Boarding an overnight bus from Delhi is the most convenient way to reach Nainital. Visitors commuting to Nainital by road can take the National Highway 87. If driving from Delhi, take the Noida road, proceed to Muradabad and thereon to Haldwani. From Haldwani, take the road to Kathgodam and continue to Nainital.'
           },
           places: [{
-              imageUrl: 'images/home-bg.jpg',
-              name: 'Dharamshala',
+              imageUrl: 'images/naini-lake.JPG',
+              name: 'Naini Lake',
               id: 7
             },
             {
-              imageUrl: 'images/destination-bg.jpg',
-              name: 'Shimla',
+              imageUrl: 'images/governor.jpg',
+              name: 'Governor’s House',
               id: 8
             },
             {
-              imageUrl: 'images/destination-bg.jpg',
-              name: 'Manali',
+              imageUrl: 'images/tiffin-top.jpg',
+              name: 'Tiffin Top',
               id: 9
             },
             {
-              imageUrl: 'images/home-bg.jpg',
-              name: 'Kasol',
+              imageUrl: 'images/china-peak.jpg',
+              name: 'China Peak',
               id: 9
             },
             {
-              imageUrl: 'images/home-bg.jpg',
-              name: 'Dharamshala',
+              imageUrl: 'images/zoo.jpg',
+              name: 'Nainital Zoo',
               id: 7
             },
             {
-              imageUrl: 'images/destination-bg.jpg',
-              name: 'Shimla',
+              imageUrl: 'images/eco-cave.jpg',
+              name: 'Eco Cave Gardens',
               id: 8
             },
             {
-              imageUrl: 'images/destination-bg.jpg',
-              name: 'Manali',
+              imageUrl: 'images/nanda-devi.jpg',
+              name: 'Nanda Devi Temple',
               id: 9
             },
             {
-              imageUrl: 'images/home-bg.jpg',
-              name: 'Kasol',
+              imageUrl: 'images/snow-view.jpg',
+              name: 'Snow View',
               id: 9
             }
           ],
-          activities: [{
-              imageUrl: 'images/home-bg.jpg',
-              name: 'Rafting',
+          activities: [
+            {
+              imageUrl: 'images/boating.jpg',
+              name: 'Boating',
               id: 7
             },
             {
-              imageUrl: 'images/destination-bg.jpg',
-              name: 'Kayaking',
+              imageUrl: 'images/cablecar.jpg',
+              name: 'Cable Car',
               id: 8
             },
             {
-              imageUrl: 'images/destination-bg.jpg',
-              name: 'Trekking',
+              imageUrl: 'images/horse-riding.JPG',
+              name: 'Horse Riding',
               id: 9
             },
             {
-              imageUrl: 'images/home-bg.jpg',
-              name: 'Rafting',
+              imageUrl: 'images/rock-climbing.jpg',
+              name: 'Rock Climbing',
               id: 9
             },
-            {
-              imageUrl: 'images/home-bg.jpg',
-              name: 'Mountaineering',
+             {
+              imageUrl: 'images/boating.jpg',
+              name: 'Boating',
               id: 7
             },
             {
-              imageUrl: 'images/destination-bg.jpg',
-              name: 'Bungee Jumping',
+              imageUrl: 'images/cablecar.jpg',
+              name: 'Cable Car',
               id: 8
             },
             {
-              imageUrl: 'images/destination-bg.jpg',
-              name: 'Sky Diving',
+              imageUrl: 'images/horse-riding.JPG',
+              name: 'Horse Riding',
               id: 9
             },
             {
-              imageUrl: 'images/home-bg.jpg',
-              name: 'Trekking',
+              imageUrl: 'images/rock-climbing.jpg',
+              name: 'Rock Climbing',
               id: 9
             }
           ]
@@ -221,42 +223,42 @@ angular.module('wanderwagon-webapp')
       },
       {
         imageUrl: 'images/uttarakhand.jpg',
-        name: 'Uttarakhand',
+        name: 'Mussoorie',
         id: 2
       },
       {
         imageUrl: 'images/kashmir.jpg',
-        name: 'Kashmir',
+        name: 'Dehradun',
         id: 3
       },
       {
         imageUrl: 'images/meghalaya.jpg',
-        name: 'Meghalaya',
+        name: 'Shimla',
         id: 4
       },
       {
         imageUrl: 'images/arunachal.jpg',
-        name: 'Arunachal',
+        name: 'Mcleodganj',
         id: 5
       },
       {
         imageUrl: 'images/sikkim.jpg',
-        name: 'Sikkim',
+        name: 'Rishikesh',
         id: 6
       },
       {
         imageUrl: 'images/manipur.jpg',
-        name: 'Manipur',
+        name: 'Manali',
         id: 7
       },
       {
         imageUrl: 'images/assam.jpg',
-        name: 'Assam',
+        name: 'Kasol',
         id: 8
       },
       {
         imageUrl: 'images/darjeeling.jpg',
-        name: 'Darjeeling',
+        name: 'Haridwar',
         id: 9
       }
     ];

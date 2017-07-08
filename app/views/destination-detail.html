@@ -1,4 +1,4 @@
-<div style="background-color:#000;background-image: url('images/destination-detail-bg.jpg');background-size: cover; height:100vh;">
+<div style="background-color:#000;background-image: url({{detail.imageUrl}});background-size: cover; height:100vh;">
   <div class="container clearfix">
     <div class="center-block slider-caption-center">
       <h2 class="text-center" style="font-size:68px;letter-spacing:0px;font-weight:600;color:#fff; margin-top:23%;" data-caption-animate="fadeInUp">{{detail.name}}</h2>
@@ -106,7 +106,7 @@
           <i class="icon-plane i-alt"></i>
         </div>
         <span style="font:bold; font-size:20px;">Airport</span>
-        <p>{{detail.howToReach.railways}}
+        <p>{{detail.howToReach.airport}}
         </p>
       </div>
 
@@ -124,7 +124,7 @@
           <i class="icon-road i-alt"></i>
         </div>
         <span style="font:bold; font-size:20px;">Roadways</span>
-        <p>{{detail.howToReach.railways}}
+        <p>{{detail.howToReach.roadways}}
         </p>
       </div>
     </div>
@@ -493,7 +493,7 @@
               </div>
             </div>
           </div>
-          <div class="item" style="padding:2% 2% 2% 0%">
+          <div ng-show="activitiesData.length > 4" class="item" style="padding:2% 2% 2% 0%">
             <div class="row">
 
               <div class="col-sm-3 padding:0 1% 0 1%">
