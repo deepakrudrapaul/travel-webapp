@@ -25480,6 +25480,19 @@ body:not(.device-touch) .social-icon i {
   padding: 10px 0 10px 20px;
 }
 
+.acctitle-login {
+  display: block;
+  position: relative;
+  line-height: 24px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  border-top: 1px dotted #DDD;
+  padding: 10px 0 10px 20px;
+}
+
 .acctitlec {
   cursor: auto;
 }
