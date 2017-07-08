@@ -44342,7 +44342,7 @@ label.checkbox {
 
 /* line 29706, ../../app/styles/main.scss */
 .paul-slide-new {
-  max-height: 400px;
+  max-height: 350px;
   height: 50vw;
   position: relative;
   box-shadow: none;
@@ -44457,58 +44457,38 @@ label.checkbox {
 }
 
 /* line 29813, ../../app/styles/main.scss */
-.edge:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  background: -webkit-linear-gradient(left, white 10%, transparent 100%);
-  width: 25%;
-  height: 100%;
-}
-
-/* line 29822, ../../app/styles/main.scss */
-.edge:after {
-  content: '';
-  position: absolute;
-  right: 0;
-  background: -webkit-linear-gradient(right, white 10%, transparent 100%);
-  width: 25%;
-  height: 100%;
-}
-
-/* line 29831, ../../app/styles/main.scss */
 .slideContainer {
   overflow: hidden;
   width: 1000%;
   margin: 0;
 }
 
-/* line 29837, ../../app/styles/main.scss */
+/* line 29819, ../../app/styles/main.scss */
 .slideItem {
   list-style: none;
   display: inline-block;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
-/* line 29843, ../../app/styles/main.scss */
+/* line 29825, ../../app/styles/main.scss */
 .carousel-control.left {
   background: none !important;
   cursor: pointer;
 }
 
-/* line 29848, ../../app/styles/main.scss */
+/* line 29830, ../../app/styles/main.scss */
 .carousel-control.right {
   background: none !important;
   cursor: pointer;
 }
 
-/* line 29854, ../../app/styles/main.scss */
+/* line 29836, ../../app/styles/main.scss */
 .glyphicon-chevron-right:before {
   font-family: "FontAwesome";
   content: "\f138";
 }
 
-/* line 29858, ../../app/styles/main.scss */
+/* line 29840, ../../app/styles/main.scss */
 .glyphicon-chevron-left:before {
   font-family: "FontAwesome";
   content: "\f137";
