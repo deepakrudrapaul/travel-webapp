@@ -8,7 +8,7 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('BlogDetailCtrl', function ($scope, $stateParams, remoteSvc) {
+  .controller('BlogDetailCtrl', function ($scope, $stateParams, remoteSvc, $window) {
 
     var postId = $stateParams.postId;
 
@@ -33,6 +33,10 @@ angular.module('wanderwagon-webapp')
       description: "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis",
       imageUrl: "images/manipur.jpg"
     };
+
+     $scope.openSocialProfile = function(){
+        $window.open('https://www.facebook.com/deepak.rudra.paul', ' _blank');
+    }
 
 
     var popularPosts = [{

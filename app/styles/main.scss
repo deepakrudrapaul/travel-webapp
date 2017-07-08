@@ -4724,9 +4724,11 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 
 .pager {
   padding-left: 0;
-  margin: 20px 0;
   list-style: none;
   text-align: center;
+  float: right;
+  width: 80%;
+  margin-bottom: 5%;
 }
 
 .pager li {
@@ -6715,7 +6717,7 @@ button.close {
 .pager:after,
 .panel-body:after,
 .modal-header:after,
-.modal-footer:after {
+ce .modal-footer:after {
   clear: both;
 }
 
@@ -29603,12 +29605,14 @@ label.checkbox {
   border-radius: 50%;
 }
 
-.panel-default>.panel-heading {
-  display: none;
-}
 
 .panel-default {
   border-color: transparent;
+}
+
+
+.panel-default > .panel-heading {
+  display:none;
 }
 
 .photo img {
@@ -29654,7 +29658,7 @@ label.checkbox {
   font-size: 1.5rem;
   line-height: 1.8;
   margin-right: 10px;
-  text-align:center;
+  text-align: center;
 }
 
 .panel-group .panel-heading+.panel-collapse .panel-body {
@@ -29699,6 +29703,15 @@ label.checkbox {
   letter-spacing: -0.08px;
 }
 
+.paul-slide-new {
+  max-height: 350px;
+  height: 50vw;
+  position: relative;
+  box-shadow: none;
+  z-index: 10;
+  transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
+}
+
 .paul-slide {
   max-height: 500px;
   height: 69vw;
@@ -29706,6 +29719,12 @@ label.checkbox {
   box-shadow: none;
   z-index: 10;
   transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
+}
+
+.paul-slide-new:hover {
+  z-index: 30;
+  transform: scale(1.03);
+  box-shadow: 0px 28px 81px -7px rgba(0, 0, 0, 0.44);
 }
 
 .paul-slide:hover {
@@ -29756,9 +29775,7 @@ label.checkbox {
   border-bottom: 15px solid transparent;
 }
 
-
 .paul-slideshow {
- 
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -29770,7 +29787,57 @@ label.checkbox {
 }
 
 @keyframes moveSlideshow {
-  100% { 
-    transform: translateX(-66.6666%);  
+  100% {
+    transform: translateX(-66.6666%);
   }
 }
+
+// ******** MARQUEE CSS ********** //
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+}
+
+.edge {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  height: 100%;
+  display: block;
+}
+
+.slideContainer {
+  overflow: hidden;
+  width: 1000%;
+  margin: 0;
+}
+
+.slideItem {
+  list-style: none;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.carousel-control.left {
+  background: none !important;
+  cursor: pointer;
+}
+
+.carousel-control.right {
+  background: none !important;
+  cursor: pointer;
+}
+
+
+.glyphicon-chevron-right:before {
+        font-family: "FontAwesome";
+        content: "\f138";
+    }
+    .glyphicon-chevron-left:before {
+        font-family: "FontAwesome";
+        content: "\f137";
+    }

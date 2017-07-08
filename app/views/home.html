@@ -1,13 +1,13 @@
-<div style="background-color:#000;background-image: url('images/home-bg.jpg');background-size: cover; height:100vh;">
+<div style="background-color:#000;background-image: url('images/home.jpg');background-size: cover; height:100vh;">
   <div class="container clearfix">
     <div class="slider-caption-center">
       <h2 class="text-center" style="margin-bottom:0px;font-size:32px;letter-spacing:1px;font-weight:600;color:#fff;margin-top:25%;">
-        WANDERWAGON MAKES YOUR GROUP TRIP</h2>
+        WITH WANDERWAGON YOU ARE FREE </h2>
       <h2 class="text-center" style="margin-bottom:0px;font-size:32px;letter-spacing:1px;font-weight:600;color:#fff;">
         {{changingText}}</h2>
-      <p style="font-size:2.5rem; margin-bottom:50px; color:#fff;" class="text-center">
+      <!--<p style="font-size:2.5rem; margin-bottom:50px; color:#fff;" class="text-center">
         "Wanderwagon is the perfect partner to plan that much awaited trip with your buddies"
-      </p>
+      </p>-->
       <a href="#content" du-smooth-scroll="" du-scrollspy="" duration="800" class="custom-button center-block text-center">
         <span>Let's Wander</span> <i style="margin-left:10px;" class="icon-angle-right"></i></a>
     </div>
@@ -15,8 +15,7 @@
 </div>
 
 
-
-<section id="content" style="padding:0 6% 10% 6%;">
+<section id="content" style="padding:2% 6% 2% 6%;">
 
   <div style="height:100vh;">
     <h2 class="paul-title">
@@ -80,16 +79,16 @@
 
               <div class="col-sm-3 nopadding">
 
-                  <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[0].id)" style="cursor:pointer;">
-                    <div class="paul-slide">
-                      <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[0].imageUrl}}" class="img-responsive" alt="a" />
-                    </div>
+                <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[0].id)" style="cursor:pointer;">
+                  <div class="paul-slide">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[0].imageUrl}}" class="img-responsive" alt="a" />
+                  </div>
 
-                    <span class="paul-slider-caption">
+                  <span class="paul-slider-caption">
                     {{slider[0].text}}</span>
 
-                  </div>
-          
+                </div>
+
               </div>
 
               <div class="col-sm-3 nopadding">
@@ -129,7 +128,7 @@
               </div>
             </div>
           </div>
-          <div class="item" style="padding:2% 2% 2% 0%">
+          <div class="item" style="padding:2% 0% 2% 0%">
             <div class="row">
 
               <div class="col-sm-3 nopadding">
@@ -185,13 +184,10 @@
         </div>
       </div>
     </div>
-
-
-
   </div>
 </section>
 
-<div id="accordion1" class="container">
+<div id="accordion1"  class="container topmargin">
   <uib-accordion>
     <uib-accordion-group is-open="header.isOpen">
       <div class="container">
@@ -238,6 +234,8 @@
   </uib-accordion>
 
 </div>
+
+
 
 
 <section id="content" class="container">
@@ -313,7 +311,7 @@
     padding: 10px 20px;
     position: relative;">
       <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
-         {{blog[1].title}}</h3>
+        {{blog[1].title}}</h3>
 
 
       <div class="entry-content">
@@ -426,6 +424,7 @@
   </div>
 </section>
 
+
 <section>
   <div class="topmargin">
     <h2 class="instaText" style="text-align:center;margin-bottom:4rem;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
@@ -433,9 +432,18 @@
     </h2>
   </div>
 
-  <marquee behavior="scroll" direction="left">
+  <!--<marquee  behavior="scroll" direction="left" loop="infinite">
     <img ng-repeat="image in destinations" style="margin:2%;" ng-src="{{image.imageUrl}}" width="200" height="150" alt="Instafeed">
-  </marquee>
+  </marquee>-->
+
+  <div class='marquee'>
+    <div class="edge"></div>
+    <ul class="slideContainer" id="money_start">
+      <li ng-repeat="image in destinations" class="slideItem">
+        <img style="margin:1%;" ng-src="{{image.imageUrl}}" width="200" height="150" alt="Instafeed">
+      </li>
+    </ul>
+  </div>
 
 
 
