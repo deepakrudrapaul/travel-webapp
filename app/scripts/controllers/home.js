@@ -70,11 +70,10 @@ angular.module('wanderwagon-webapp')
 
 
     var textArr = [
-      'Hassle Free',
-      'Lively',
-      'Comfortable',
-      'Memorable',
-      'Wondrous'
+      'To Dream and Live it',
+      'To Think and See it',
+      'To Want and Chase it',
+      'To be There and Do that'
     ];
 
     $scope.changingText = {};
