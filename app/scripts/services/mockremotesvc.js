@@ -338,10 +338,10 @@ angular.module('wanderwagon-webapp')
 
     var blogs = [
       {
-        title: 'For rivers, seas and slopes at their most inviting',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus',
+        title: 'Tips for solo travellers',
+        description: 'Traveling alone may seem scary at first, But , The number of reasons why one should travel alone at least once outnumbers why one should not by a considerable margin. One reason is that after a solo adventure you wouldn’t be the same person as you were before, I can bet on that. The solitude that you get while traveling solo gives a new dimension to your thought process. ',
         dateTime: '02 Jun 2017',
-        imageUrl: 'images/manipur.jpg',
+        imageUrl: 'images/tips-cover.jpg',
         author: 'Zoe Bennett',
         id: 1,
         comments: 2
