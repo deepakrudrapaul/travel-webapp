@@ -44494,4 +44494,9 @@ label.checkbox {
   content: "\f137";
 }
 
+/* line 29846, ../../app/styles/main.scss */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 /*# sourceMappingURL=main.css.map */
