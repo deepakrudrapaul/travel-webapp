@@ -8,8 +8,14 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('LoginCtrl', function ($scope, $cookies, auth, $location, ngProgressFactory, $auth) {
+  .controller('LoginCtrl', function ($scope, $cookies, auth, $location, $auth) {
 
+
+    $scope.showModal = function(messageType, message) {
+      angular.element(document.querySelectorAll('#loginModal')).modal('show');
+      $scope.messageType = messageType;
+      $scope.message = message;
+    };
 
     $scope.authenticate = function (provider) {
       $auth.authenticate(provider)
@@ -18,6 +24,7 @@ angular.module('wanderwagon-webapp')
           if (provider == 'google') {
             auth.googleLogin(response.access_token)
               .then(function (data) {
+                    $location.path('/home');
                 console.log(data);
               })
               .catch(function (error) {
@@ -27,7 +34,7 @@ angular.module('wanderwagon-webapp')
           } else {
             auth.facebookLogin(response.access_token)
               .then(function (data) {
-                // $location.path('/home');
+                $location.path('/home');
                 console.log(data);
               })
               .catch(function (error) {
@@ -43,15 +50,13 @@ angular.module('wanderwagon-webapp')
 
 
 
-    $scope.progressbar = ngProgressFactory.createInstance();
 
     $scope.signUpObj = {};
     $scope.onSignUpFormSubmit = function (form) {
-      $scope.progressbar.start();
       if (form.$valid) {
         $scope.obj = {};
         if ($scope.signUpObj.password == $scope.signUpObj.confirmPassword) {
-          $scope.obj.emailId = $scope.signUpObj.email;
+          $scope.obj.email = $scope.signUpObj.email;
           $scope.obj.password = $scope.signUpObj.password;
           $scope.obj.name = $scope.signUpObj.name;
           $scope.obj.phone = $scope.signUpObj.phone;
@@ -59,33 +64,19 @@ angular.module('wanderwagon-webapp')
 
           console.log($scope.obj);
 
-          // auth.signUp($scope.obj)
-          //   .then(function (data) {
-          //     console.log(data);
-          //     $scope.signUpObj = {};
-          //     $scope.progressbar.complete();
+          auth.signUp($scope.obj)
+            .then(function (data) {
+              console.log(data);
+             $scope.showModal("Success", "Congratulations " + $scope.$scope.signUpObj.name + " ! You Have Signed Up Successfully. Login Now");
+              $scope.signUpObj = {};
+            })
+            .catch(function (error) {
+              console.log(error);
+             $scope.showModal("Error", error,message);
 
-          //     $scope.message = {
-          //       type: 'Success',
-          //       msg: 'Sucessfully Signed Up ! Login Now'
-          //     };
-          //   })
-          //   .catch(function (error) {
-          //     console.log(error);
-          //     $scope.progressbar.complete();
-          //     $scope.message = {
-          //       type: 'Error',
-          //       msg: error
-          //     };
-
-          // });
+          });
         } else {
-          $scope.message = {
-            type: 'Error',
-            msg: 'Password does not match'
-          };
-          angular.element(document.querySelectorAll('#signUpModel')).modal('show');
-          $scope.progressbar.complete();
+              $scope.showModal("Error", "Password Doesn't Match !");
         }
       }
     };
@@ -107,7 +98,16 @@ angular.module('wanderwagon-webapp')
     $scope.onLoginFormSubmit = function (form) {
       if (form.$valid) {
         $scope.loginObj.accountType = 3;
-        login($scope.loginObj);
+         auth.login($scope.loginObj)
+            .then(function (data) {
+                  $location.path('/home');
+              console.log(data);
+            })
+            .catch(function (error) {
+              console.log(error);
+             $scope.showModal("Error", error,message);
+
+          });
       }
     };
   });

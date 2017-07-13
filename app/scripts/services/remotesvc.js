@@ -11,8 +11,6 @@ angular.module('wanderwagon-webapp')
   .factory('remoteSvc', function (auth, $http, ENV, $location) {
 
     var homePageData;
-
-
     var remoteAddr = ENV.endPoint;
 
     return {

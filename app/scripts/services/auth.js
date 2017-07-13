@@ -23,7 +23,7 @@ angular.module('wanderwagon-webapp')
         var deferred = $q.defer();
 
         $http
-          .post(remoteAddr + '/consumer/account/signup', reqObj)
+          .post(remoteAddr + '/auth/signup', reqObj)
           .success(function (data, status) {
             deferred.resolve(data);
             return cb();
@@ -42,7 +42,7 @@ angular.module('wanderwagon-webapp')
         var deferred = $q.defer();
 
         $http
-          .post(remoteAddr + '/consumer/account/login', reqObj)
+          .post(remoteAddr + '/auth/login', reqObj)
           .success(function (data, status) {
             $cookies.put('token', data.response.token);
             $cookies.put('tokenTime', (new Date()).getTime());

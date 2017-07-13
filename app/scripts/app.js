@@ -20,7 +20,6 @@ angular
     'ngCsv',
     'ui.router',
     'config',
-    'ngProgress',
     'ae-datetimepicker',
     'ngMap',
     'sticky',

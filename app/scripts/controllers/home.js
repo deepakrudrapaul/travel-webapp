@@ -10,8 +10,6 @@
 angular.module('wanderwagon-webapp')
   .controller('HomeCtrl', function ($scope, $timeout, mockRemoteSvc, $document, $window) {
 
-    
-
     $window.requestAnimationFrame = (function () {
       return $window.requestAnimationFrame ||
         $window.webkitRequestAnimationFrame ||
@@ -39,6 +37,7 @@ angular.module('wanderwagon-webapp')
 
     $scope.getHomePageContent = function () {
       mockRemoteSvc.getHomePageContent().then(function (response) {
+        console.log(response);
         $scope.slider = response.slider;
         $scope.destinations = response.destinations;
         $scope.blog = response.homePageBlog;
