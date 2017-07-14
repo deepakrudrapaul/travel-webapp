@@ -10,12 +10,32 @@
 angular.module('wanderwagon-webapp')
   .controller('LoginCtrl', function ($scope, $cookies, auth, $location, $auth) {
 
+    var verificationToken = $location.search().token;
+    var userId = $location.search().userId;
 
-    $scope.showModal = function(messageType, message) {
+     $scope.showModal = function(messageType, message) {
       angular.element(document.querySelectorAll('#loginModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
     };
+
+    if(verificationToken != undefined) {
+      console.log("Verified");
+      $scope.showModal("Verify", "Verifying Email ...");
+      auth.verifyEmail(verificationToken, userId)
+        .then(function (data){
+          console.log(data);
+          $scope.showModal("Success", "Email verified successfully. Login Now");
+        })
+        .catch(function (error){
+          console.log(error);
+          $scope.showModal("Error", "Error Message");
+        })
+    } else{
+      console.log("Undefined Token");
+    }
+
+   
 
     $scope.authenticate = function (provider) {
       $auth.authenticate(provider)

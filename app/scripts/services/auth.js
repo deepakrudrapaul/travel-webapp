@@ -111,6 +111,25 @@ angular.module('wanderwagon-webapp')
         return deferred.promise;
       },
 
+      verifyEmail: function(token, userId, callback) {
+        var cb = callback || angular.noop;
+        var deferred = $q.defer();
+
+        $http
+          .post(remoteAddr + '/auth/verifymail?token='+ token + '&userId=' + userId)
+          .success(function (data, status) {
+            deferred.resolve(data);
+            return cb();
+          })
+          .error(function (error, status) {
+            console.log(error, status);
+            deferred.reject(error);
+            return cb(error);
+          }.bind(this));
+
+        return deferred.promise;
+      },
+
 
 
       logout: function () {
