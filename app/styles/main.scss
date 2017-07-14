@@ -22137,7 +22137,7 @@ body:not(.device-xs):not(.device-xxs) .countdown.countdown-large.coming-soon .co
   font-size: 14px;
   height: 40px;
   line-height: 40px;
-  background-color: #1ABC9C;
+  background-color: #444444;
   color: #FFF;
   font-weight: 600;
   text-transform: uppercase;
@@ -25480,6 +25480,19 @@ body:not(.device-touch) .social-icon i {
   padding: 10px 0 10px 20px;
 }
 
+.acctitle-login {
+  display: block;
+  position: relative;
+  line-height: 24px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  border-top: 1px dotted #DDD;
+  padding: 10px 0 10px 20px;
+}
+
 .acctitlec {
   cursor: auto;
 }
@@ -27733,7 +27746,7 @@ input[type=checkbox]:not(:checked)+label.error {
 #google-map {
   position: relative;
   width: 100%;
-  height: 450px;
+
 }
 
 .gmap img {
@@ -28748,7 +28761,7 @@ button.toast-close-button {
 .footer {
   background-color: #333;
   color: #CCC;
-  border-top-color: rgba(0, 0, 0, 0.2);
+  border-top: 5px solid rgba(0, 0, 0, 0.2 );
 }
 
 #footer {
@@ -29527,6 +29540,7 @@ label.checkbox {
   transition: bottom .4s ease;
 }
 
+.cookie-noti-btn {}
 
 
 /* ----------------------------------------------------------------
@@ -29657,9 +29671,8 @@ label.checkbox {
   font-size: 1.5rem;
   line-height: 1.8;
   margin-right: 10px;
-  text-align: justify;
+  text-align: center;
 }
-
 
 .panel-group .panel-heading+.panel-collapse .panel-body {
   border: none;
@@ -29833,6 +29846,7 @@ label.checkbox {
 }
 
 
+
 .glyphicon-chevron-right:before {
         font-family: "FontAwesome";
         content: "\f138";
@@ -29841,3 +29855,8 @@ label.checkbox {
         font-family: "FontAwesome";
         content: "\f137";
     }
+
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
