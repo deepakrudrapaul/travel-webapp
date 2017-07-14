@@ -142,6 +142,11 @@ angular
         templateUrl: 'views/testimonials.html',
         controller: 'ContactCtrl'
       })
+      .state('emailVerify', {
+        url: '/emailVerify',
+        templateUrl: 'views/email-verification.html',
+        controller: 'EmailVerificationCtrl'
+      })
 
   }])
   .run(function ($rootScope, $location, auth, $anchorScroll) {

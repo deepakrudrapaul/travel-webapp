@@ -10,32 +10,11 @@
 angular.module('wanderwagon-webapp')
   .controller('LoginCtrl', function ($scope, $cookies, auth, $location, $auth) {
 
-    var verificationToken = $location.search().token;
-    var userId = $location.search().userId;
-
-     $scope.showModal = function(messageType, message) {
-      angular.element(document.querySelectorAll('#loginModal')).modal('show');
+    $scope.showModal = function(messageType, message) {
+      angular.element(document.querySelectorAll('#verificationModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
     };
-
-    if(verificationToken != undefined) {
-      console.log("Verified");
-      $scope.showModal("Verify", "Verifying Email ...");
-      auth.verifyEmail(verificationToken, userId)
-        .then(function (data){
-          console.log(data);
-          $scope.showModal("Success", "Email verified successfully. Login Now");
-        })
-        .catch(function (error){
-          console.log(error);
-          $scope.showModal("Error", "Error Message");
-        })
-    } else{
-      console.log("Undefined Token");
-    }
-
-   
 
     $scope.authenticate = function (provider) {
       $auth.authenticate(provider)
@@ -87,7 +66,7 @@ angular.module('wanderwagon-webapp')
           auth.signUp($scope.obj)
             .then(function (data) {
               console.log(data);
-             $scope.showModal("Success", "Congratulations " + $scope.$scope.signUpObj.name + " ! You Have Signed Up Successfully. Login Now");
+             $scope.showModal("Confirm Your Email Address", "A confirmation email has been sent to " + $scope.signUpObj.email + ". Click on the confirmation link in the email to activate your account.");
               $scope.signUpObj = {};
             })
             .catch(function (error) {
