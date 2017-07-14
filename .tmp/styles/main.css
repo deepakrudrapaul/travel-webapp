@@ -44495,16 +44495,21 @@ label.checkbox {
   cursor: pointer;
 }
 
-/* line 29849, ../../app/styles/main.scss */
+/* line 29850, ../../app/styles/main.scss */
 .glyphicon-chevron-right:before {
   font-family: "FontAwesome";
   content: "\f138";
 }
 
-/* line 29853, ../../app/styles/main.scss */
+/* line 29854, ../../app/styles/main.scss */
 .glyphicon-chevron-left:before {
   font-family: "FontAwesome";
   content: "\f137";
+}
+
+/* line 29860, ../../app/styles/main.scss */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }
 
 /*# sourceMappingURL=main.css.map */
