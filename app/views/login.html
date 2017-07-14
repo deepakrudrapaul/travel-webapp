@@ -1,15 +1,18 @@
-<section id="content" style="background-image: linear-gradient(to bottom,#654a86,#534292);
-    background-color: #534292;">
+<section id="content" style="background-color:#000;background-size: cover;background-image: url('images/login-bg.jpg');">
 
+<!--background-size: cover; height:100vh;
+
+background-image: linear-gradient(to bottom,#654a86,#534292);
+    background-color: #534292;-->
 
   <div class="container clearfix" style="margin:8%;">
 
-    <div class="center-block clearfix" style="max-width: 550px; background-color:#fff; padding: 30px; border-radius:1%;">
+    <div class="center-block clearfix" style="max-width: 550px; background-color:transparent; padding: 30px; border-radius:1%;">
       <v-accordion id="accordionA" class="vAccordion--default" control="accordionA">
-
+<!--<v-pane id="pane1" expanded>-->
         <v-pane id="pane1" expanded>
           <v-pane-header id="pane1-header">
-            <h3 class="acctitle"><i class="acc-closed icon-lock3"></i><i class="acc-open icon-unlock"></i>Login to your Account</h3>
+            <h3 class="acctitle"><font color="white"><i class="acc-closed icon-lock3"></font></i><i class="acc-open icon-unlock"></i><font color="white">Login to your Account</font></h3>
           </v-pane-header>
 
           <v-pane-content id="pane1-content">
@@ -33,31 +36,31 @@
 
             </form>-->
 
-            <form class="form-horizontal" name="loginForm"  ng-submit="onLoginFormSubmit(loginForm)">
+            <form class="form-horizontal" name="loginForm" ng-submit="onLoginFormSubmit(loginForm)">
               <div class="col_full">
-                <label for="loginEmail">Email</label>
+                <label for="loginEmail"><font color="white">Email</font></label>
                 <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder="Email" ng-model="loginObj.email"
                   required />
               </div>
               <div class="col_full">
-                <label for="loginPass"> Password</label>
+                <label for="loginPass"> <font color="white">Password</font></label>
                 <input type="password" class="form-control" id="loginPass" name="loginPass" placeholder="Password" ng-model="loginObj.password"
                   required />
               </div>
 
               <div class="col_full nobottommargin">
-                <button type="submit" class="button background-primary">Login</button>
-                <a href="#" class="fright">Forgot Password?</a>
+                <button type="submit" class="button background-primary"><font color="white">Login</font></button>
+                <a href="#" class="fright"><font color="white">Forgot Password?</font></a>
               </div>
             </form>
 
             <div class="line line-sm"></div>
 
             <div class="center">
-              <h4 style="margin-bottom: 15px;"> Login with:</h4>
+              <p style="margin-bottom: 15px;"> <font color="white" size="3">Login with:</font></p>
               <button class="button button-rounded si-facebook si-colored" ng-click="authenticate('facebook')"><i class="icon-facebook"></i>Facebook</button>
 
-              <span class="hidden-xs">or</span>
+              <span class="hidden-xs"><font color="white">or</font></span>
               <button class="button button-rounded si-google si-colored" ng-click="authenticate('google')"><i class="icon-facebook"></i>Google</button>
             </div>
           </v-pane-content>
@@ -65,38 +68,38 @@
 
         <v-pane id="pane2">
           <v-pane-header id="pane2-header">
-            <h3 class="acctitle"><i class="acc-closed icon-user4"></i><i class="acc-open icon-ok-sign"></i>New Signup? Register for an Account</h3>
+            <h3 class="acctitle"><font color="white"><i class="acc-closed icon-user4"></font></i><i class="acc-open icon-ok-sign"></i><font color="white">New Signup? Register for an Account</font></h3>
           </v-pane-header>
 
           <v-pane-content id="pane2-content">
             <form name="signUpForm" class="nobottommargin" ng-submit="onSignUpFormSubmit(signUpForm)">
               <div class="col_full">
-                <label for="register-form-name">Name:</label>
-                <input type="text" id="register-form-name" name="register-form-name" ng-model="signUpObj.name" value="" class="form-control" required />
+                <label for="register-form-name"><font color="white">Name:</font></label>
+                <input type="text" id="register-form-name" name="register-form-name" ng-model="signUpObj.name" value="" class="form-control" required/>
               </div>
 
               <div class="col_full">
-                <label for="register-form-email">Email Address:</label>
-                <input type="email" id="register-form-email" name="register-form-email" ng-model="signUpObj.email" value="" class="form-control" required />
+                <label for="register-form-email"><font color="white">Email Address:</font></label>
+                <input type="email" id="register-form-email" name="register-form-email" ng-model="signUpObj.email" value="" class="form-control" required/>
               </div>
 
               <div class="col_full">
-                <label for="register-form-phone">Phone:</label>
-                <input type="text" id="register-form-phone" name="register-form-phone" ng-model="signUpObj.phone" value="" class="form-control" required />
+                <label for="register-form-phone"><font color="white">Phone:</font></label>
+                <input type="text" id="register-form-phone" name="register-form-phone" ng-model="signUpObj.phone" value="" class="form-control" required/>
               </div>
 
               <div class="col_full">
-                <label for="register-form-password">Choose Password:</label>
-                <input type="password" id="register-form-password" name="register-form-password" ng-model="signUpObj.password" value="" class="form-control" required />
+                <label for="register-form-password"><font color="white">Choose Password:</font></label>
+                <input type="password" id="register-form-password" name="register-form-password" ng-model="signUpObj.password" value="" class="form-control" required/>
               </div>
 
               <div class="col_full">
-                <label for="register-form-repassword">Re-enter Password:</label>
-                <input type="password" id="register-form-repassword" name="register-form-repassword" ng-model="signUpObj.confirmPassword" value="" class="form-control" required />
+                <label for="register-form-repassword"><font color="white">Re-enter Password:</font></label>
+                <input type="password" id="register-form-repassword" name="register-form-repassword" ng-model="signUpObj.confirmPassword" value="" class="form-control" required/>
               </div>
 
               <div class="col_full nobottommargin">
-                 <button type="submit" class="button background-primary">Sign Up</button>
+                 <button type="submit" class="button background-primary"><font color="white">Sign Up</font></button>
               </div>
             </form>
           </v-pane-content>
@@ -108,28 +111,4 @@
   </div>
 
 </section>
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="loginModallabel">{{messageType}}</h4>
-			</div>
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-md-6 col-sm-6 col-xs-6">
-						{{message}}
-					</div>
-					<!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
-            Its button
-					</div>-->
-				</div>
-			</div>
-			<!--<div class="modal-body" ng-show="error">
-				<div class="row filter-remove text-center">
-					<p>Error</p>
-				</div>
-			</div>-->
-		</div>
-	</div>
-</div>
+<!-- #content end -->
