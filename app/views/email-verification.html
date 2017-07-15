@@ -15,7 +15,6 @@
     </div>
 
     <a style="cursor:pointer;"  ng-click="sendVerificationLink()" class="button button-3d button-small button-rounded button-brown">Resend Verification Link</a>
-    <a style="cursor:pointer;"  ng-click="changeEmailAddress()" class="button button-3d button-small button-rounded button-brown">Change Email Address</a>
 
   </div>
 
@@ -49,31 +48,4 @@
   </div>
 </div>
 
-<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="emailModallabel">New Email Address</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-6 col-sm-6 col-xs-6">
-                
-                <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder="Email" ng-model="loginObj.email"
-                  required />
-              </div>
-              <a style="cursor:pointer;"  ng-click="sendVerificationLink()" class="button button-3d button-small button-rounded button-brown">Done</a>
-          <!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
-            Its button
-					</div>-->
-        </div>
-      </div>
-      <!--<div class="modal-body" ng-show="error">
-				<div class="row filter-remove text-center">
-					<p>Error</p>
-				</div>
-			</div>-->
-    </div>
-  </div>
-</div>
+

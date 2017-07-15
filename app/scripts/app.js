@@ -147,6 +147,11 @@ angular
         templateUrl: 'views/email-verification.html',
         controller: 'EmailVerificationCtrl'
       })
+      .state('changePassword', {
+        url: '/changePassword',
+        templateUrl: 'views/change-password.html',
+        controller: 'ChangePasswordCtrl'
+      })
 
   }])
   .run(function ($rootScope, $location, auth, $anchorScroll) {
