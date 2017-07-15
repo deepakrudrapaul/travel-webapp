@@ -11,7 +11,7 @@ angular.module('wanderwagon-webapp')
   .controller('LoginCtrl', function ($scope, $cookies, auth, $location, $auth) {
 
     $scope.showModal = function(messageType, message) {
-      angular.element(document.querySelectorAll('#verificationModal')).modal('show');
+      angular.element(document.querySelectorAll('#loginModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
     };
