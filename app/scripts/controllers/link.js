@@ -12,18 +12,17 @@ angular.module('wanderwagon-webapp')
 
         if (auth.isLoggedIn()) {
             $rootScope.loggedIn = true;
+            console.log($rootScope.loggedIn);
         } else {
             $rootScope.loggedIn = false;
+            console.log($rootScope.loggedIn);
         }
       
-        $scope.checkHomePage = function() {
-            if($location.path() === '/home'){
-                return true;
-            } else{
-                return false;
-            }
-        };
-        console.log(remoteSvc.getCurrentUri());
+      $rootScope.$on('social-login', function (event, data){
+        $rootScope.loggedIn = data;
+            console.log($rootScope.loggedIn);
+      });
+    
 
         $rootScope.onLogOut = function () {
 

@@ -8,12 +8,11 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('DestinationCtrl', function ($scope, mockRemoteSvc) {
+  .controller('DestinationCtrl', function ($scope, remoteSvc) {
 
     $scope.getDestinationsList = function() {
-      mockRemoteSvc.getDestinationsList().then(function(response){
-        console.log(response);
-        $scope.destinations = response;
+      remoteSvc.getDestinationsList().then(function(data){
+        $scope.destinations = data.response;
       });
     };
 

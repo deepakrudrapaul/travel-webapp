@@ -56,7 +56,7 @@
 
 
     <div class="center-block custom-para">
-      <p>{{detail.about}}</p>
+      <p>{{detail.description}}</p>
       <br>
 
 
@@ -70,18 +70,18 @@
       </h2>
       <div style="margin: 30px;">
         <h5 class="pull-left"><i style="padding-right:10px;" class="icon-calendar i-alt"></i>Best Time To Visit</h5>
-        <p style="margin-right: 40px;" class="pull-right">{{detail.overview.bestTimeToVisit}}</p>
+        <p style="margin-right: 40px;" class="pull-right">{{detail.bestTimeToVisit}}</p>
       </div>
       <span class="clearfix"></span>
       <div style="margin: 0 30px 30px 30px;">
         <h5 class="pull-left"><i style="padding-right:10px;" class="icon-calendar i-alt"></i>Days Required</h5>
-        <p style="margin-right: 40px;" class="pull-right">{{detail.overview.daysRequired}}</p>
+        <p style="margin-right: 40px;" class="pull-right">{{detail.daysToVisit}}</p>
       </div>
 
       <span class="clearfix"></span>
       <div style="margin: 0 30px 30px 30px;">
         <h5 class="pull-left"><i style="padding-right:10px;" class="icon-folder i-alt"></i>Category</h5>
-        <p style="margin-right: 40px;" class="pull-right">{{detail.overview.category}}</p>
+        <p style="margin-right: 40px;" class="pull-right">{{detail.category}}</p>
       </div>
 
     </div>
@@ -107,7 +107,7 @@
           <img src="images/plane.png" />
         </div>
         <span style="font:bold; font-size:20px;">Airport</span>
-        <p>{{detail.howToReach.airport}}
+        <p>{{detail.airPath}}
         </p>
       </div>
 
@@ -116,7 +116,7 @@
           <img src="images/train.png" />
         </div>
         <span style="font:bold; font-size:20px;">Railways</span>
-        <p>{{detail.howToReach.railways}}
+        <p>{{detail.railway}}
         </p>
       </div>
 
@@ -125,7 +125,7 @@
           <img src="images/road.png" />
         </div>
         <span style="font:bold; font-size:20px;">Roadways</span>
-        <p>{{detail.howToReach.roadways}}
+        <p>{{detail.roadway}}
         </p>
       </div>
     </div>
@@ -631,16 +631,14 @@
 <section>
   <div class="topmargin ">
     <h2 style="text-align:center;margin:8rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem; ">
-      Why we love Destination ?
+      Why we love {{detail.name}} ?
       <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px; ">
       </div>
     </h2>
   </div>
   <p style="color: #67747c; font-family: Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 1.8rem; font-style:
                     italic; line-height: 1.8; margin: 0 auto 5.5rem; text-align: center; width:70%; ">
-    " Known for its old temple, a fresh water spring, water falls and slate quarries. Bhagsunag can be approached by road.
-                    The Bhagsu fall is one of the main attractions of Mcleodganj. You can take a dip in the chilly water of
-                    fall.... "
+    " {{detail.reasonToLoveDest}} "
   </p>
 
   <div ui-sref="travel-plan " class="center-block " style=" width:70%; cursor:pointer; ">

@@ -37,8 +37,8 @@
 
           <div ng-repeat="post in posts" class="entry clearfix">
             <div class="entry-timeline">
-              <!--10<span>{{post.date | date:'MMM'}}</span>-->
-              10<span>May</span>
+          {{post.date | date:'dd'}}<span>{{post.date | date:'MMM'}}</span>
+          
               <div class="timeline-divider"></div>
             </div>
 

@@ -1,7 +1,7 @@
-<div style="background-color:#000;background-image: url('images/tips-cover.jpg');background-size: cover; height:100vh;">
+<div style="background-color:#000;background-image: url({{postDetail.imageUrl}});background-size: cover; height:100vh;">
   <div class="container clearfix">
     <div class="slider-caption-center">
-      <h2 class="text-center" style="font-size:48px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:200px;" data-caption-animate="fadeInUp">Welcome to Blog Details Page</h2>
+      <h2 class="text-center" style="font-size:48px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:200px;" data-caption-animate="fadeInUp">{{postDetail.title}}</h2>
       <!--<a class="custom-button center-block text-center">
          <span>Let's Wander</span> <i style="margin-left:10px;" class="icon-angle-right"></i></a>-->
 
@@ -10,21 +10,15 @@
 </div>
 
 <div class="si-sticky visible-md visible-lg">
-  <a href="https://www.facebook.com/wanderwagon/" target="_blank" class="social-icon si-facebook" data-animate="bounceInLeft">
+  <a href=""  ng-click="onShareButtonClicked(postDetail.id)" class="social-icon si-facebook" data-animate="bounceInLeft">
     <i class="icon-facebook"></i>
     <i class="icon-facebook"></i>
   </a>
-
-  <a href="https://www.instagram.com/wanderwagon" target="_blank" class="social-icon si-gplus" data-animate="bounceInLeft"
-    data-delay="100">
-    <i class="icon-instagram"></i>
-    <i class="icon-instagram"></i>
-  </a>
-  <a href="#" class="social-icon si-linkedin" data-animate="bounceInLeft" data-delay="600">
-    <i class="icon-linkedin"></i>
-    <i class="icon-linkedin"></i>
-  </a>
-  <a href="#" class="social-icon si-twitter" data-animate="bounceInLeft" data-delay="600">
+  <a socialshare socialshare-provider="twitter" socialshare-text="For rivers, seas and slopes at their most inviting" socialshare-hashtags="wanderwagon"
+                    socialshare-description="Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere
+                erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
+                quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus.
+                Vestibulum id ligula porta felis euismod semper." socialshare-media="images/home-bg.jpg" socialshare-url="http://wanderwagon.com/" class="social-icon si-twitter" data-animate="bounceInLeft" data-delay="600">
     <i class="icon-twitter"></i>
     <i class="icon-twitter"></i>
   </a>
@@ -32,10 +26,7 @@
     <i class="icon-gplus"></i>
     <i class="icon-gplus"></i>
   </a>
-  <a href="#" class="social-icon si-pinterest">
-    <i class="icon-pinterest"></i>
-    <i class="icon-pinterest"></i>
-  </a>
+
 
 </div>
 
@@ -67,7 +58,7 @@
             <!-- Entry Meta
 							============================================= -->
             <ul class="entry-meta clearfix">
-              <li><i class="icon-calendar3"></i> 10th July 2014</li>
+              <li><i class="icon-calendar3"></i> {{postDetail.createdAt | date:'dd/MM/yy'}}</li>
               <li><a href="#"><i class="icon-user"></i> {{postDetail.author.name}}</a></li>
               <li><i class="icon-folder-open"></i> <a href="#">General</a></li>
               <li><a href="#"><i class="icon-comments"></i> 43 Comments</a></li>
@@ -89,26 +80,31 @@
                   {{postDetail.title}}</h2>
               </div>
 
-              <p ng-repeat="para in postDetail.paragraphArray">
-                {{para.para}}
+              <p>
+                {{postDetail.description}}
               </p>
 
-              <div class="custom-para" ng-repeat="point in postDetail.points">
+              <div class="custom-para" ng-repeat="point in postDetail.blogSections">
                 <h3 style="line-height:1.2142857142857142;margin-top:5%;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
                 {{point.title}}
                 </h3>
-                <p ng-repeat="para in point.paragraphArray">
-                  {{para.para}}
+
+                <div ng-repeat="para in point.paragraphs">
+                  <p>
+                  {{para.text}}
                 </p>
 
-                <p>{{point.bulletsTitle}}</p>
+                <!--<p>{{para.bulletPoints}}</p>-->
                 <ul style="margin-left:5%;">
                   <li style="color: #67747c;
   font-family: Benton Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
   line-height: 1.8;
-  text-align: justify;" ng-repeat="bullet in point.bulletsData">{{bullet.bullet}}</li>
+  text-align: justify;" ng-repeat="bullet in para.bulletPoints">{{bullet.text}}</li>
                 </ul>
+
+                </div>
+                
 
                 <div>
                   <img ng-src="{{point.imageUrl}}" alt="Blog Single" width="auto" height="auto">
@@ -120,60 +116,12 @@
 
               <div class="clear"></div>
 
-              <!-- Post Single - Share
-								============================================= -->
-              <div class="si-share noborder clearfix">
-
-                <div>
-                  <a socialshare socialshare-provider="facebook" socialshare-text="For rivers, seas and slopes at their most inviting" socialshare-hashtags="wanderwagon"
-                    socialshare-description="Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere
-                erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
-                quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus.
-                Vestibulum id ligula porta felis euismod semper." socialshare-media="images/home-bg.jpg" socialshare-url="http://wanderwagon.com/"
-                    class="social-icon si-borderless si-facebook">
-                    <i class="icon-facebook"></i>
-                    <i class="icon-facebook"></i>
-                  </a>
-                  <a socialshare socialshare-provider="twitter" socialshare-text="For rivers, seas and slopes at their most inviting" socialshare-hashtags="wanderwagon"
-                    socialshare-description="Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere
-                erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
-                quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus.
-                Vestibulum id ligula porta felis euismod semper." socialshare-media="images/home-bg.jpg" socialshare-url="http://wanderwagon.com/"
-                    class="social-icon si-borderless si-twitter">
-                    <i class="icon-twitter"></i>
-                    <i class="icon-twitter"></i>
-                  </a>
-                  <a socialshare socialshare-provider="google" socialshare-text="For rivers, seas and slopes at their most inviting" socialshare-hashtags="wanderwagon"
-                    socialshare-description="Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere
-                erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget
-                quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus.
-                Vestibulum id ligula porta felis euismod semper." socialshare-media="images/home-bg.jpg" socialshare-url="http://wanderwagon.com/"
-                    class="social-icon si-borderless si-gplus">
-                    <i class="icon-gplus"></i>
-                    <i class="icon-gplus"></i>
-                  </a>
-                  <!--<a href="#" class="social-icon si-borderless si-pinterest">
-                    <i class="icon-pinterest"></i>
-                    <i class="icon-pinterest"></i>
-                  </a>
-
-                  <a href="#" class="social-icon si-borderless si-rss">
-                    <i class="icon-rss"></i>
-                    <i class="icon-rss"></i>
-                  </a>
-                  <a href="#" class="social-icon si-borderless si-email3">
-                    <i class="icon-email3"></i>
-                    <i class="icon-email3"></i>
-                  </a>-->
-                </div>
-              </div>
-              <!-- Post Single - Share End -->
-
             </div>
           </div>
           <!-- .entry end -->
           <!-- Post Author Info
 						============================================= -->
+
           <div class="panel panel-default">
             <div style="padding:1%; color: #333333;
     background-color: #dddddd !important;
@@ -626,10 +574,32 @@
     </div>
   </div>-->
   <div class="clear"></div>
-
-
-
-
-
 </section>
 <!-- #content end -->
+
+
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="shareModallabel">{{messageType}}</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div style="padding:5%;" class="col-full">
+						{{message}}
+					</div>
+					<!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
+            Its button
+					</div>-->
+				</div>
+			</div>
+			<!--<div class="modal-body" ng-show="error">
+				<div class="row filter-remove text-center">
+					<p>Error</p>
+				</div>
+			</div>-->
+	</div>
+	</div>
+</div>

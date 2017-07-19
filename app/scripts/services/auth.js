@@ -66,14 +66,11 @@ angular.module('wanderwagon-webapp')
         var deferred = $q.defer();
 
         $http
-          .post(remoteAddr + '/auth/facebook-login', {
-            params: {
-              'access-token': token
-            }
-          })
+          .post(remoteAddr + '/auth/facebook-login?access-token='+ token)
           .success(function (data, status) {
             $cookies.put('token', data.response.token);
             $cookies.put('tokenTime', (new Date()).getTime());
+            $cookies.put('fb-token', token);
             deferred.resolve(data);
             return cb();
           })
@@ -111,12 +108,12 @@ angular.module('wanderwagon-webapp')
         return deferred.promise;
       },
 
-      verifyEmail: function(token, userId, callback) {
+      verifyEmail: function (token, userId, callback) {
         var cb = callback || angular.noop;
         var deferred = $q.defer();
 
         $http
-          .post(remoteAddr + '/auth/verifymail?token='+ token + '&userId=' + userId)
+          .post(remoteAddr + '/auth/verifymail?token=' + token + '&userId=' + userId)
           .success(function (data, status) {
             deferred.resolve(data);
             return cb();
@@ -137,6 +134,7 @@ angular.module('wanderwagon-webapp')
         $cookies.remove('tokenTime');
         $cookies.remove('currUser');
         $cookies.remove('role');
+        $cookies.remove('fb-token');
         currentUser = {};
       },
       getCurrentUser: function () {

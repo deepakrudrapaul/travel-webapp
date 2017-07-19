@@ -8,7 +8,7 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('LoginCtrl', function ($scope, $cookies, auth, $location, $auth) {
+  .controller('LoginCtrl', function ($scope, $rootScope, $window, $cookies, auth, $location, $auth) {
 
     $scope.showModal = function(messageType, message) {
       angular.element(document.querySelectorAll('#loginModal')).modal('show');
@@ -19,26 +19,23 @@ angular.module('wanderwagon-webapp')
     $scope.authenticate = function (provider) {
       $auth.authenticate(provider)
         .then(function (response) {
-               console.log(response.access_token);
           if (provider == 'google') {
             auth.googleLogin(response.access_token)
               .then(function (data) {
                     $location.path('/home');
-                console.log(data);
+                    $rootScope.$emit('social-login', 'true');                    
               })
               .catch(function (error) {
-                console.log(error);
-                $scope.error = error;
+                $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
               });
           } else {
             auth.facebookLogin(response.access_token)
               .then(function (data) {
                 $location.path('/home');
-                console.log(data);
+                 $rootScope.$emit('social-login', 'true'); 
               })
               .catch(function (error) {
-                console.log(error);
-                $scope.error = error;
+                $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
               });
           }
         })
@@ -46,6 +43,7 @@ angular.module('wanderwagon-webapp')
           console.log("Something went Wrong");
         })
     };
+
 
 
 
@@ -66,12 +64,12 @@ angular.module('wanderwagon-webapp')
           auth.signUp($scope.obj)
             .then(function (data) {
               console.log(data);
-             $scope.showModal("Confirm Your Email Address", "A confirmation email has been sent to " + $scope.signUpObj.email + ". Click on the confirmation link in the email to activate your account.");
+             $scope.showModal("Confirm Your Email Address", "A confirmation email has been sent to " + $scope.signUpObj.email + ". Click on the confirmation link in the email to verify your email address.");
               $scope.signUpObj = {};
             })
-            .catch(function (error) {
-              console.log(error);
-             $scope.showModal("Error", error,message);
+            .catch(function (data) {
+              console.log(data.error.message);
+             $scope.showModal("Error", data.error.message);
 
           });
         } else {

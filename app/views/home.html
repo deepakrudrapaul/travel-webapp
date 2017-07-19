@@ -81,11 +81,11 @@
 
                 <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[0].id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[0].imageUrl}}" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[0].imageUrl}}" class="img-responsive" alt="{{slider[0].text}}" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slider[0].text}}</span>
+                    {{slider[0].title}}</span>
 
                 </div>
 
@@ -94,11 +94,11 @@
               <div class="col-sm-3 nopadding">
                 <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[1].id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[1].imageUrl}}" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[1].imageUrl}}" class="img-responsive" alt="{{slider[1].text}}" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slider[1].text}}</span>
+                    {{slider[1].title}}</span>
 
                 </div>
               </div>
@@ -106,11 +106,11 @@
               <div class="col-sm-3 nopadding">
                 <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[2].id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[2].imageUrl}}" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[2].imageUrl}}" class="img-responsive" alt="{{slider[2].text}}" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slider[2].text}}</span>
+                    {{slider[2].title}}</span>
 
                 </div>
               </div>
@@ -118,11 +118,11 @@
               <div class="col-sm-3 nopadding">
                 <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[3].id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[3].imageUrl}}" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[3].imageUrl}}" class="img-responsive" alt="{{slider[3].text}}" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slider[3].text}}</span>
+                    {{slider[3].title}}</span>
 
                 </div>
               </div>
@@ -134,11 +134,11 @@
               <div class="col-sm-3 nopadding">
                 <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[4].id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[4].imageUrl}}" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[4].imageUrl}}" class="img-responsive" alt="{{slider[4].text}}" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slider[4].text}}</span>
+                    {{slider[4].title}}</span>
 
                 </div>
               </div>
@@ -146,11 +146,11 @@
               <div class="col-sm-3 nopadding">
                 <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[5].id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[5].imageUrl}}" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[5].imageUrl}}" class="img-responsive" alt="{{slider[5].text}}" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slider[5].text}}</span>
+                    {{slider[5].title}}</span>
 
                 </div>
               </div>
@@ -158,11 +158,11 @@
               <div class="col-sm-3 nopadding">
                 <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[6].id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[6].imageUrl}}" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[6].imageUrl}}" class="img-responsive" alt="{{slider[6].text}}" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slider[6].text}}</span>
+                    {{slider[6].title}}</span>
 
                 </div>
               </div>
@@ -170,11 +170,11 @@
               <div class="col-sm-3 nopadding">
                 <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[7].id)" style="cursor:pointer;">
                   <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[7].imageUrl}}" class="img-responsive" alt="a" />
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[7].imageUrl}}" class="img-responsive" alt="{{slider[7].text}}" />
                   </div>
 
                   <span class="paul-slider-caption">
-                    {{slider[7].text}}</span>
+                    {{slider[7].title}}</span>
 
                 </div>
               </div>
@@ -336,6 +336,7 @@
     <div style="width:40%; height:100vh; float:left; position:absolute; left:0px; top:0px; z-index:1; background-color: rgba(0,0,0,.66); padding:5px; color: #FFF; font-weight:bold;">
       <div style="padding:18% 5% 17% 5%">
         <div>
+
           <div>
             <h3 style="margin: 0;font-size: 25px;font-weight: 600;
     line-height: normal;
@@ -344,22 +345,22 @@
             <p style="color:#FFF; font-size:15px;">Complete this form &amp; we'll get right back to you!</p>
           </div>
         </div>
-        <form id="">
+        <form name="inquiryForm" class="nobottommargin" ng-submit="onFormSubmit(inquiryForm)">
           <div style="padding:0px;" class="col-sm-6">
             <label style="color:#FFF; text-transform:capitalize">First Name<span class="asterisk">*</span></label>
-            <input class="form-control" id="{{inquireFirstName}}" type="text" placeholder="*Required" value="{{firstName}}" data-parsley-trim-value="true"
+            <input ng-model="inquiryObj.firstName" class="form-control" id="{{inquireFirstName}}" type="text" placeholder="*Required" value="{{firstName}}" data-parsley-trim-value="true"
               required data-prefill="firstName" />
           </div>
 
           <div class="col-sm-6">
             <label style="color:#FFF; text-transform:capitalize">Last Name</label>
-            <input class="form-control" id="{{inquireLastName}}" type="text" value="{{lastName}}" data-parsley-trim-value="true" data-prefill="lastName"
+            <input ng-model="inquiryObj.lastName" class="form-control" id="{{inquireLastName}}" type="text" value="{{lastName}}" data-parsley-trim-value="true" data-prefill="lastName"
             />
           </div>
 
           <div style="padding:10px 0 0 0;" class="col-sm-6">
             <label style="color:#FFF; text-transform:capitalize">Email<span class="asterisk">*</span></label>
-            <input class="form-control" id="{{inquireEmail}}" type="email" value="{{email}}" placeholder="*Required" data-parsley-trim-value="true"
+            <input ng-model="inquiryObj.email" class="form-control" id="{{inquireEmail}}" type="email" value="{{email}}" placeholder="*Required" data-parsley-trim-value="true"
               required data-prefill="email" />
           </div>
 
@@ -367,7 +368,7 @@
           <div style="padding-top:10px;" class="col-sm-6">
             <label style="color:#FFF; text-transform:capitalize">Phone Number<span class="asterisk">*</span></label>
             <div class="inquireTelContainer">
-              <input class="form-control" id="{{inquireTel}}" placeholder="*Required" value="{{tel}}" type="tel" data-parsley-intphone="{{inquireTel}}"
+              <input ng-model="inquiryObj.phone" class="form-control" id="{{inquireTel}}" placeholder="*Required" value="{{tel}}" type="tel" data-parsley-intphone="{{inquireTel}}"
                 data-parsley-cnic required data-prefill="phone" />
               <input id="{{inquireCountry}}" type="hidden" data-prefill="country" />
             </div>
@@ -375,13 +376,13 @@
 
           <div style="padding:10px 0 0 0;" class="col-sm-6">
             <label style="color:#FFF; text-transform:capitalize" for="form-condition-10">I would like to go to...</label>
-            <select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
+            <select ng-model="inquiryObj.destination" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
 									<option value=""> Select One </option>
-									<option value="5K"> Rishikesh</option>
-									<option value="5K to 10K">Manali</option>
-									<option value="10K to 15K">Dharamshala</option>
-									<option value="15K to 20K">Ladakh</option>
-									<option value="more than 20K">Shimla</option>
+									<option value="Rishikesh">Rishikesh</option>
+									<option value="Manali">Manali</option>
+									<option value="Dharamshala">Dharamshala</option>
+									<option value="Ladakh">Ladakh</option>
+									<option value="Shimla">Shimla</option>
 								</select>
           </div>
 
@@ -390,31 +391,31 @@
 
           <div style="padding-top:10px;" class="col-sm-6">
             <label style="color:#FFF; text-transform:capitalize" for="form-condition-10">In the month of...</label>
-            <select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
+            <select ng-model="inquiryObj.travelMonth" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
 									<option value="">Travel Dates TBC</option>
-									<option value="5K">January</option>
-									<option value="5K to 10K">February</option>
-									<option value="10K to 15K">March</option>
-									<option value="15K to 20K">April</option>
-									<option value="more than 20K">May</option>
-                  <option value="5K">June</option>
-									<option value="5K to 10K">July</option>
-									<option value="10K to 15K">August</option>
-									<option value="15K to 20K">September</option>
-									<option value="more than 20K">October</option>
-                  <option value="10K to 15K">November</option>
-									<option value="15K to 20K">December</option>
+									<option value="January">January</option>
+									<option value="February">February</option>
+									<option value="March">March</option>
+									<option value="April">April</option>
+									<option value="May">May</option>
+                  <option value="June">June</option>
+									<option value="July">July</option>
+									<option value="August">August</option>
+									<option value="September">September</option>
+									<option value="October">October</option>
+                  <option value="November">November</option>
+									<option value="December">December</option>
 								</select>
           </div>
 
 
           <div style="width:97%;">
             <label style="padding-top: 10px; color:#FFF; text-transform:capitalize">What's the occasion?<span class="asterisk">*</span></label>
-            <textarea style="max-width:425px; max-height:500px;" class="form-control" placeholder="Tell us a little bit about what you're looking for."></textarea>
+            <textarea ng-model="inquiryObj.occasion" style="max-width:100%; max-height:10%;" class="form-control" placeholder="Tell us a little bit about what you're looking for."></textarea>
           </div>
 
           <div style="padding:20px 0 0 0; text-transform:capitalize" class="col-sm-12">
-            <button style="margin:0px !important; width:97%; height:70px;" id="{{inquireSubmit}}" class="button button-blue ">Submit Inquiry</button>
+            <button type="submit" style="margin:0px !important; width:97%; height:70px;" id="{{inquireSubmit}}" class="button button-blue ">Submit Inquiry</button>
           </div>
         </form>
       </div>
@@ -440,7 +441,7 @@
     <div class="edge"></div>
     <ul class="slideContainer" id="money_start">
       <li ng-repeat="image in destinations" class="slideItem">
-        <img style="margin:1%;" ng-src="{{image.imageUrl}}" width="200" height="150" alt="Instafeed">
+        <img ng-click="openInstaProfile()" style="margin:1%;" ng-src="{{image.imageUrl}}" width="200" height="150" alt="Instafeed">
       </li>
     </ul>
   </div>

@@ -45,9 +45,10 @@ angular.module('wanderwagon-webapp')
           method: 'GET',
           url: remoteAddr + '/blogs/all'
         }).then(function (data, status){
+          console.log(data);
            var posts = [];
-          for (var i = 0; i < data.response.length; i++) {
-            var post = data.response[i];
+          for (var i = 0; i < data.data.response.length; i++) {
+            var post = data.data.response[i];
             posts[i] = {};
             posts[i].title = post.title;
             posts[i].author = post.user.name;
@@ -57,8 +58,9 @@ angular.module('wanderwagon-webapp')
             posts[i].comments = post.comments;
             posts[i].date = new Date(new Date("2017-12-09").getTime());
           }
+          return posts;
         }, function (error, status) {
-
+          return error.data;
         })
       },
 
@@ -74,16 +76,17 @@ angular.module('wanderwagon-webapp')
       },
 
 
-      getHomePageContent: function () {
+      getTravelInspirations : function () {
         return $http({
           method: 'GET',
-          url: remoteAddr + '/home'
+          url: remoteAddr + '/home/travelInspirations'
         }).then(function (data, status) {
-          return data.data;
+          return data.data.response;
         }, function (error, status) {
-          return error.data;
+          return error.data.error;
         });
       },
+
 
       getTravelInspirationDetail: function(id) {
         return $http({
@@ -110,7 +113,7 @@ angular.module('wanderwagon-webapp')
       getDestinationsList: function() {
         return $http({
           method: 'GET',
-          url: remoteAddr + '/destinations'
+          url: remoteAddr + '/destination'
         }).then(function (data, status){
           return data.data;
         }, function (error, status){
@@ -121,11 +124,39 @@ angular.module('wanderwagon-webapp')
       getDestinationDetailById : function(id) {
         return $http({
           method: 'GET',
-          url: remoteAddr + '/destinations/' + id
+          url: remoteAddr + '/destination/' + id
         }).then(function (data, status){
           return data.data;
         }, function (error, status){
           return error.data;
+        })
+      },
+
+      quickQuery : function(queryObj) {
+        return $http({
+          method: 'POST',
+          data: queryObj,
+          url: remoteAddr + '/travelplans/quickquery'
+        }).then(function (data, status){
+          return data.response;
+        }), function (error, status) {
+          return error.error;
+        }
+      },
+
+      shareOnFacebook : function(shareObj) {
+        return $http({
+          method: 'POST',
+          data: shareObj,
+          url: remoteAddr + '/blogs/share'
+        })
+      },
+
+      shareOnGoglePlus : function(shareObj) {
+        return $http({
+          method: 'POST',
+          data: shareObj,
+          url: remoteAddr + '/blogs/google-share'
         })
       }
 

@@ -8,7 +8,7 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('HomeCtrl', function ($scope, $timeout, mockRemoteSvc, $document, $window) {
+  .controller('HomeCtrl', function ($scope, $timeout, remoteSvc, $document, $window) {
 
     $window.requestAnimationFrame = (function () {
       return $window.requestAnimationFrame ||
@@ -18,6 +18,12 @@ angular.module('wanderwagon-webapp')
           $window.setTimeout(callback);
         };
     })();
+
+
+     $scope.openInstaProfile = function () {
+      $window.open('https://www.instagram.com/wanderwagon/', ' _blank');
+    }
+
 
     var speed = 5000;
     (function currencySlide() {
@@ -35,20 +41,17 @@ angular.module('wanderwagon-webapp')
 
 
 
-    $scope.getHomePageContent = function () {
-      mockRemoteSvc.getHomePageContent().then(function (response) {
+    $scope.getTravelInspirations = function () {
+      remoteSvc.getTravelInspirations().then(function (response) {
         console.log(response);
-        $scope.slider = response.slider;
-        $scope.destinations = response.destinations;
-        $scope.blog = response.homePageBlog;
-        $scope.instaImages = response.instaImages;
+        $scope.slider = response;
       });
     };
 
-    $scope.getHomePageContent();
+    $scope.getTravelInspirations();
 
     $scope.getTravelInspirationDetail = function (id) {
-      mockRemoteSvc.getTravelInspirationDetail(id).then(function (response) {
+      remoteSvc.getTravelInspirationDetail(id).then(function (response) {
         console.log(response);
         $scope.inspirations = response;
       });
@@ -87,6 +90,16 @@ angular.module('wanderwagon-webapp')
       });
     };
     textChangeFunc();
+
+
+
+    $scope.onFormSubmit = function (form) {
+      if (form.$valid) {
+        remoteSvc.quickQuery().then(function (response) {
+          console.log(response);
+        })
+      }
+    };
 
 
   });

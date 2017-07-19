@@ -29292,15 +29292,15 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content {
 #primary-menu ul li .mega-menu-content {
   display: none;
   position: absolute;
-  width: 220px;
+  width: 150px;
   background-color: #FFF;
   box-shadow: 0px 13px 42px 11px rgba(0, 0, 0, 0.05);
   border: 1px solid #EEE;
   border-top: 2px solid #1ABC9C;
   height: auto;
   z-index: 199;
-  top: 100%;
-  left: 0;
+  top: 70%;
+  left: 10%;
   margin: 0;
 }
 
@@ -44503,6 +44503,11 @@ label.checkbox {
 /* line 29856, ../../app/styles/main.scss */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+/* line 29862, ../../app/styles/main.scss */
+#primary-menu ul li:hover > ul {
+  display: block;
 }
 
 /*# sourceMappingURL=main.css.map */
