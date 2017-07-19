@@ -29732,8 +29732,11 @@ label.checkbox {
 
 .paul-slide-new:hover {
   z-index: 30;
-  transform: scale(1.03);
-  box-shadow: 0px 28px 81px -7px rgba(0, 0, 0, 0.44);
+  -moz-transform: translate(0px, -5px);
+    -ms-transform: translate(0px, -5px);
+    -o-transform: translate(0px, -5px);
+    -webkit-transform: translate(0px, -5px);
+    transform: translate(0px, -5px)
 }
 
 .paul-slide:hover {

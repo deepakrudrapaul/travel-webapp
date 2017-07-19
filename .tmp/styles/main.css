@@ -44369,18 +44369,17 @@ label.checkbox {
 /* line 29733, ../../app/styles/main.scss */
 .paul-slide-new:hover {
   z-index: 30;
-  transform: scale(1.03);
-  box-shadow: 0px 28px 81px -7px rgba(0, 0, 0, 0.44);
+  transform: translate(0px, -5px);
 }
 
-/* line 29739, ../../app/styles/main.scss */
+/* line 29742, ../../app/styles/main.scss */
 .paul-slide:hover {
   z-index: 30;
   transform: scale(1.03);
   box-shadow: 0px 28px 81px -7px rgba(0, 0, 0, 0.44);
 }
 
-/* line 29745, ../../app/styles/main.scss */
+/* line 29748, ../../app/styles/main.scss */
 .paul-title {
   text-align: center;
   margin-top: 2%;
@@ -44392,14 +44391,14 @@ label.checkbox {
 
 @media only screen and (min-width: 1920px) {
   /* styles for browsers larger than 1920px; */
-  /* line 29756, ../../app/styles/main.scss */
+  /* line 29759, ../../app/styles/main.scss */
   .paul-title {
     margin-top: 22%;
     margin-bottom: 22%;
     font-size: 4.8rem;
   }
 }
-/* line 29763, ../../app/styles/main.scss */
+/* line 29766, ../../app/styles/main.scss */
 .text:before {
   content: "";
   position: absolute;
@@ -44412,7 +44411,7 @@ label.checkbox {
   border-bottom: 15px solid transparent;
 }
 
-/* line 29775, ../../app/styles/main.scss */
+/* line 29778, ../../app/styles/main.scss */
 .text:after {
   content: "";
   position: absolute;
@@ -44425,7 +44424,7 @@ label.checkbox {
   border-bottom: 15px solid transparent;
 }
 
-/* line 29787, ../../app/styles/main.scss */
+/* line 29790, ../../app/styles/main.scss */
 .paul-slideshow {
   margin: 0 auto;
   position: relative;
@@ -44433,7 +44432,7 @@ label.checkbox {
   transform: translate3d(0, 0, 0);
 }
 
-/* line 29794, ../../app/styles/main.scss */
+/* line 29797, ../../app/styles/main.scss */
 .paul-slideshow .mover-1 {
   animation: moveSlideshow 6s linear infinite;
 }
@@ -44443,7 +44442,7 @@ label.checkbox {
     transform: translateX(-66.6666%);
   }
 }
-/* line 29805, ../../app/styles/main.scss */
+/* line 29808, ../../app/styles/main.scss */
 .marquee {
   width: 100%;
   overflow: hidden;
@@ -44451,7 +44450,7 @@ label.checkbox {
   margin: 0;
 }
 
-/* line 29812, ../../app/styles/main.scss */
+/* line 29815, ../../app/styles/main.scss */
 .edge {
   left: 0;
   right: 0;
@@ -44462,50 +44461,50 @@ label.checkbox {
   display: block;
 }
 
-/* line 29822, ../../app/styles/main.scss */
+/* line 29825, ../../app/styles/main.scss */
 .slideContainer {
   overflow: hidden;
   width: 1000%;
   margin: 0;
 }
 
-/* line 29828, ../../app/styles/main.scss */
+/* line 29831, ../../app/styles/main.scss */
 .slideItem {
   list-style: none;
   display: inline-block;
   padding: 0 10px;
 }
 
-/* line 29834, ../../app/styles/main.scss */
+/* line 29837, ../../app/styles/main.scss */
 .carousel-control.left {
   background: none !important;
   cursor: pointer;
 }
 
-/* line 29839, ../../app/styles/main.scss */
+/* line 29842, ../../app/styles/main.scss */
 .carousel-control.right {
   background: none !important;
   cursor: pointer;
 }
 
-/* line 29846, ../../app/styles/main.scss */
+/* line 29849, ../../app/styles/main.scss */
 .glyphicon-chevron-right:before {
   font-family: "FontAwesome";
   content: "\f138";
 }
 
-/* line 29850, ../../app/styles/main.scss */
+/* line 29853, ../../app/styles/main.scss */
 .glyphicon-chevron-left:before {
   font-family: "FontAwesome";
   content: "\f137";
 }
 
-/* line 29856, ../../app/styles/main.scss */
+/* line 29859, ../../app/styles/main.scss */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
 
-/* line 29862, ../../app/styles/main.scss */
+/* line 29865, ../../app/styles/main.scss */
 #primary-menu ul li:hover > ul {
   display: block;
 }
