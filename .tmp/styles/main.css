@@ -19013,7 +19013,7 @@ button.list-group-item-danger.active:focus {
 .panel {
   margin-bottom: 20px;
   background-color: #ffffff;
-  border: 1px solid transparent;
+  border: 0px solid transparent;
   border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -27747,7 +27747,7 @@ body {
 /* line 14561, ../../app/styles/main.scss */
 a {
   text-decoration: none !important;
-  color: #1ABC9C;
+  color: #107a66;
 }
 
 /* line 14566, ../../app/styles/main.scss */
