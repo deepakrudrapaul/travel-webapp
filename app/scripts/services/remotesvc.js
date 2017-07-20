@@ -76,6 +76,15 @@ angular.module('wanderwagon-webapp')
       },
 
 
+      postComment: function (commentObj) {
+        return $http({
+          method: 'POST',
+          data: commentObj,
+          url: remoteAddr + '/blogs/comment'
+        })
+      },
+
+
       getTravelInspirations : function () {
         return $http({
           method: 'GET',
@@ -157,6 +166,30 @@ angular.module('wanderwagon-webapp')
           method: 'POST',
           data: shareObj,
           url: remoteAddr + '/blogs/google-share'
+        })
+      },
+
+      submitPlanMyTripForm : function(formObj) {
+        return $http({
+          method: 'POST',
+          data: formObj,
+          url: remoteAddr + '/travelplans/query'
+        })
+      },
+
+      submitContactForm : function(contactObj) {
+        return $http({
+          method: 'POST',
+          data: contactObj,
+          url: remoteAddr + "/contact/form"
+        })
+      },
+
+      submitTravelEnquiryForm : function(enquiryFormObj) {
+        return $http({
+          method: 'POST',
+          data: enquiryFormObj,
+          url: remoteAddr + "/travelplans/travelinquery"
         })
       }
 

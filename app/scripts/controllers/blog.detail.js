@@ -8,7 +8,7 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('BlogDetailCtrl', function ($q, $scope, $cookies, $stateParams, remoteSvc, $window, $auth, $location) {
+  .controller('BlogDetailCtrl', function ($q, $scope, $cookies, $stateParams, remoteSvc, $window, $auth, $location, auth) {
 
     var postId = $stateParams.postId;
 
@@ -66,62 +66,36 @@ angular.module('wanderwagon-webapp')
         })
     };
 
+    $scope.commentObj = {};
+    $scope.postComment = function (blogId) {
+      $scope.commentObj.blodId = blogId;
 
-
-   
-
-
-    var popularPosts = [{
-        authorImage: "http://lorempixel.com/100/100/people/",
-        postTitle: "This is the most popular post of this month",
-        numberOfComments: 29
-      },
-      {
-        authorImage: "http://lorempixel.com/100/100/people/",
-        postTitle: "This is the most popular post of this month",
-        numberOfComments: 10
-      },
-      {
-        authorImage: "http://lorempixel.com/100/100/people/",
-        postTitle: "This is the most popular post of this month",
-        numberOfComments: 9
-      }
-    ];
-
-    $scope.popularPosts = popularPosts;
-
-
-    $scope.onImageClicked = function () {
-      console.log("CLICKED");
+      remoteSvc.postComment($scope.commentObj)
+        .success(function (data){
+          console.log(data);
+        })
+        .error(function (error){
+          console.log(error);
+        })
     };
 
 
-    $scope.images = [{
-        imageUrl: 'images/backpacking.jpg',
-        text: 'Backpacking'
-      },
-      {
-        imageUrl: 'images/roadtrip.jpg',
-        text: 'Road Trip'
-      },
-      {
-        imageUrl: 'images/adventure.jpg',
-        text: 'Adventure'
-      },
-      {
-        imageUrl: 'images/nature.jpg',
-        text: 'Nature'
-      },
-      {
-        imageUrl: 'images/adventure.jpg',
-        text: 'Family'
-      },
-      {
-        imageUrl: 'images/backpacking.jpg',
-        text: 'Couple'
-      },
+    $scope.showForm = false;
+    $scope.showCommentForm = function() {
+        if (auth.isLoggedIn()) {
+           $scope.showForm = true;
+        } else {
+           $scope.showForm = false;
+            $scope.showModal("Log In", "Please Login to comment on this post");
+        }
+    };  
+   
 
-    ];
+
+  
+
+
+   
 
 
   });

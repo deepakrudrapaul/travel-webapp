@@ -8,7 +8,13 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('PlanTripCtrl', function ($scope) {
+  .controller('PlanTripCtrl', function ($scope, remoteSvc) {
+
+     $scope.showModal = function (messageType, message) {
+      angular.element(document.querySelectorAll('#tripModal')).modal('show');
+      $scope.messageType = messageType;
+      $scope.message = message;
+    };
 
     $scope.today = function () {
       $scope.dt = new Date();
@@ -76,4 +82,21 @@ angular.module('wanderwagon-webapp')
         status: 'partially'
       }
     ];
+
+
+
+    $scope.submitTravelPlanForm = function(form) {
+      console.log($scope.formObj);
+      if (form.$valid) {
+        remoteSvc.submitPlanMyTripForm($scope.formObj)
+          .success(function (data){
+            console.log(data);
+            $scope.showModal("Success !", "Your query has been submitted successfully ! Will get back to you within 24 Hours.");
+          })
+          .error(function (error){
+            console.log(error);
+            $scope.showModal("Error", error.error.message);
+          })
+      }
+    };
   });

@@ -8,46 +8,39 @@
 
   <h3>MOST IMPORTANT *</h3>
 
-  <form id="">
+  <form id="" name="enquiryForm" class="nobottommargin" ng-submit="submitTravelEnquiryForm(enquiryForm)">
     <div style="padding:0px;" class="col-sm-6">
       <label style=" text-transform:capitalize">Your name<span class="asterisk">*</span></label>
-      <input class="form-control" id="{{inquireFirstName}}" type="text" placeholder="*Required" value="{{firstName}}" data-parsley-trim-value="true"
-        required data-prefill="firstName" />
+      <input ng-model="travelEnqObj.name" class="form-control" id="{{inquireFirstName}}" type="text" placeholder="*Required" value="{{firstName}}"
+        data-parsley-trim-value="true" required data-prefill="firstName" />
     </div>
 
     <div class="col-sm-6">
       <label style=" text-transform:capitalize">Your email address<span class="asterisk">*</span></label>
-      <input class="form-control" id="{{inquireEmail}}" type="email" value="{{email}}" placeholder="*Required" data-parsley-trim-value="true"
-        required data-prefill="email" />
+      <input ng-model="travelEnqObj.email" class="form-control" id="{{inquireEmail}}" type="email" value="{{email}}" placeholder="*Required"
+        data-parsley-trim-value="true" required data-prefill="email" />
     </div>
 
 
 
     <div style="padding:10px 0 0 0;" class="col-sm-6">
       <label style=" text-transform:capitalize">Which country are you from ?<span class="asterisk">*</span></label>
-      <input class="form-control" id="{{inquireFirstName}}" type="text" placeholder="*Required" value="{{firstName}}" data-parsley-trim-value="true"
-        required data-prefill="firstName" />
+      <input ng-model="travelEnqObj.country" class="form-control" id="{{inquireFirstName}}" type="text" placeholder="*Required"
+        value="{{firstName}}" data-parsley-trim-value="true" required data-prefill="firstName" />
     </div>
 
 
     <div style="padding-top:10px;" class="col-sm-6">
       <label style=" text-transform:capitalize">How many people are travelling ? <span class="asterisk">*</span></label>
-      <input class="form-control" id="{{inquireFirstName}}" type="number" placeholder="*Required" value="{{firstName}}" data-parsley-trim-value="true"
-        required data-prefill="firstName" />
+      <input ng-model="travelEnqObj.totalPerson" class="form-control" id="{{inquireFirstName}}" type="number" placeholder="*Required"
+        value="{{firstName}}" data-parsley-trim-value="true" required data-prefill="firstName" />
     </div>
 
     <h3>GETTING TO KNOW YOU A LITTLE BETTER</h3>
     <div style="padding:0 0 0 0;" class="col-sm-6">
       <label style=" text-transform:capitalize" for="form-condition-10">Tell us more about your travel companions</label>
-      <!--<select class="selectpicker" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required sm-form-control">
-									<option value="">0 Selected</option>
-									<option value="5K"> 1</option>
-									<option value="5K to 10K">2</option>
-									<option value="10K to 15K">3</option>
-									<option value="15K to 20K">4</option>
-									<option value="more than 20K">5</option>
-								</select>-->
-                <select class="form-control">
+
+      <select ng-model="travelEnqObj.travelCompanion" class="form-control">
   <option>Mustard</option>
   <option>Ketchup</option>
   <option>Relish</option>
@@ -60,7 +53,7 @@
 
     <div class="col-sm-6">
       <label style=" text-transform:capitalize" for="form-condition-10">What age group do you and your travel companions belong to ?</label>
-      <select  ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
+      <select ng-model="travelEnqObj.ageGroup" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
 									<option value="">0 Selected</option>
 									<option value="5K">15 - 20</option>
 									<option value="5K to 10K">20 - 25</option>
@@ -71,13 +64,13 @@
 
     <div style="padding:10px 0 0 0;" class="col-sm-6">
       <label style=" text-transform:capitalize" for="form-condition-10">How many days would you be travelling for ?</label>
-      <select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
+      <select ng-model="travelEnqObj.tarvellingDays" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
 									<option value="">0 Selected</option>
-									<option value="5K"> 1</option>
-									<option value="5K to 10K">2</option>
-									<option value="10K to 15K">3</option>
-									<option value="15K to 20K">4</option>
-									<option value="more than 20K">5</option>
+									<option value="1"> 1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
 								</select>
     </div>
 
@@ -86,7 +79,7 @@
 
     <div style="padding-top:10px;" class="col-sm-6">
       <label style=" text-transform:capitalize" for="form-condition-10">Where did you hear about us ?</label>
-      <select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
+      <select ng-model="travelEnqObj.infoSource" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
 									<option value="">Select option</option>
 									<option value="5K">Yes</option>
 									<option value="5K to 10K">No</option>
@@ -99,7 +92,7 @@
 
     <div style="padding:10px 0 0 0;" class="col-sm-6">
       <label style=" text-transform:capitalize" for="form-condition-10">What kind of traveller do you think you are ?</label>
-      <select ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
+      <select ng-model="travelEnqObj.tarvellerType"  ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
 									<option value="">Select One</option>
 									<option value="5K"> 1</option>
 									<option value="5K to 10K">2</option>
@@ -114,38 +107,55 @@
 
     <div style="padding-top:10px;" class="col-sm-6">
       <label style=" text-transform:capitalize" for="form-condition-10">Do you have exact dates ?</label>
-      <input class="form-control" id="{{inquireFirstName}}" type="text" value="{{firstName}}" data-parsley-trim-value="true" data-prefill="firstName"
+      <input  ng-model="travelEnqObj.exactDates" class="form-control" id="{{inquireFirstName}}" type="text" value="{{firstName}}" data-parsley-trim-value="true" data-prefill="firstName"
       />
     </div>
 
 
-   
+
 
 
     <div style="padding:10px 0 0 0;" class="col-sm-12">
       <label style=" text-transform:capitalize" for="form-condition-10">Things you want to tell us ?</label>
-      <textarea style="width:100%; height:205px;" class="form-control" placeholder="Tell us a little bit about what you're looking for."></textarea>
+      <textarea  ng-model="travelEnqObj.message" style="width:100%; height:205px;" class="form-control" placeholder="Tell us a little bit about what you're looking for."></textarea>
     </div>
 
 
 
 
-  
+
 
 
     <div style="padding:20px 0 20px 0;" class="col-sm-12">
-      <button style="width:50%; height:70px; display:block; margin: 0 auto" id="{{inquireSubmit}}" class="button buttonPrimary">Submit Inquiry</button>
+      <button style="width:50%; height:70px; display:block; margin: 0 auto" id="{{inquireSubmit}}" class="button button-blue">Submit Inquiry</button>
     </div>
-
-
 </div>
-
-
-
-
-
-
-
-
-
 </form>
+
+
+
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="contactModallabel">{{messageType}}</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div style="padding:5%;" class="col-full">
+						{{message}}
+					</div>
+					<!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
+            Its button
+					</div>-->
+				</div>
+			</div>
+			<!--<div class="modal-body" ng-show="error">
+				<div class="row filter-remove text-center">
+					<p>Error</p>
+				</div>
+			</div>-->
+	</div>
+	</div>
+</div>

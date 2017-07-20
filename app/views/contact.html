@@ -43,35 +43,35 @@
 
           <div class="contact-form-result"></div>
 
-          <form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post">
+          <form class="nobottommargin" id="contactform" name="contactform"  ng-submit="submitContactForm(contactform)">
 
             <div class="form-process"></div>
 
             <div class="col_one_third">
               <label for="template-contactform-name">Name <small>*</small></label>
-              <input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="form-control required show-error-msg" />
+              <input required ng-model="contactObj.name" type="text" id="template-contactform-name" name="template-contactform-name" value="" class="form-control required show-error-msg" />
             </div>
 
             <div class="col_one_third">
               <label for="template-contactform-email">Email <small>*</small></label>
-              <input type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email form-control" />
+              <input required ng-model="contactObj.email" type="email" id="template-contactform-email" name="template-contactform-email" value="" class="required email form-control" />
             </div>
 
             <div class="col_one_third col_last">
               <label for="template-contactform-phone">Phone</label>
-              <input type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="form-control" />
+              <input required ng-model="contactObj.phone" type="text" id="template-contactform-phone" name="template-contactform-phone" value="" class="form-control" />
             </div>
 
             <div class="clear"></div>
 
             <div class="col_two_third">
               <label for="template-contactform-subject">Origin <small>*</small></label>
-              <input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required form-control" />
+              <input required ng-model="contactObj.origin" type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required form-control" />
             </div>
 
             <div class="col_one_third col_last">
               <label for="template-contactform-service">Destination</label>
-              <select id="template-contactform-service" name="template-contactform-service" class="form-control">
+              <select required ng-model="contactObj.destination" id="template-contactform-service" name="template-contactform-service" class="form-control">
                 <option value=""> Select One </option>
                 <option value="Wordpress">Leh</option>
                 <option value="PHP / MySQL">Shimla</option>
@@ -84,12 +84,10 @@
 
             <div class="col_full">
               <label for="template-contactform-message">Message <small>*</small></label>
-              <textarea class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
+              <textarea required ng-model="contactObj.message" class="required sm-form-control" id="template-contactform-message" name="template-contactform-message" rows="6" cols="30"></textarea>
             </div>
 
-            <div class="col_full hidden">
-              <input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" class="form-control" />
-            </div>
+  
 
             <div class="col_full">
               <button class="button button-3d button-blue" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
@@ -168,3 +166,28 @@ New Delhi
   </div>
 
 </section><!-- #content end -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="contactModallabel">{{messageType}}</h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div style="padding:5%;" class="col-full">
+						{{message}}
+					</div>
+					<!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
+            Its button
+					</div>-->
+				</div>
+			</div>
+			<!--<div class="modal-body" ng-show="error">
+				<div class="row filter-remove text-center">
+					<p>Error</p>
+				</div>
+			</div>-->
+	</div>
+	</div>
+</div>

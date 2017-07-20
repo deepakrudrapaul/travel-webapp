@@ -79,9 +79,6 @@ angular.module('wanderwagon-webapp')
     };
 
 
-
-
-
     $scope.redirected = $cookies.getObject('redirected');
     $scope.loginObj = {};
     $scope.pwdObj = {};
@@ -98,11 +95,10 @@ angular.module('wanderwagon-webapp')
          auth.login($scope.loginObj)
             .then(function (data) {
                   $location.path('/home');
-              console.log(data);
+                  $rootScope.$emit('social-login', 'true'); 
             })
             .catch(function (error) {
-              console.log(error);
-             $scope.showModal("Error", error,message);
+             $scope.showModal("Error", error.error.message);
 
           });
       }
