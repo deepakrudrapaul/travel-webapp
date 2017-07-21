@@ -45,7 +45,7 @@
 <!-- #header end -->
 
 <section id="about">
-  <div class=" container clearfix" >
+  <div class=" container clearfix">
     <div>
       <h2 style="text-align:center;margin:6rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
         About
@@ -100,8 +100,8 @@
     </div>
 
 
-    <div class="center-block" >
-      <div class="feature-box" >
+    <div class="center-block">
+      <div class="feature-box">
         <div class="custom-fbox-icon">
           <!--<i class="icon-plane i-alt"></i>-->
           <img src="images/plane.png" />
@@ -111,7 +111,7 @@
         </p>
       </div>
 
-      <div class="feature-box" >
+      <div class="feature-box">
         <div class="custom-fbox-icon">
           <img src="images/train.png" />
         </div>
@@ -120,7 +120,7 @@
         </p>
       </div>
 
-      <div class="feature-box" >
+      <div class="feature-box">
         <div class="custom-fbox-icon">
           <img src="images/road.png" />
         </div>
@@ -144,7 +144,7 @@
     </div>
 
     <div class="row">
-      <div id="carousel-example-generic1" class="carousel slide hidden-xs" data-ride="carousel">
+      <div id="place-carousel" class="carousel slide hidden-xs" data-ride="carousel">
         <a style="    background-color: rgb(255, 255, 255);
     border: 0px;
     border-radius: 50%;
@@ -162,7 +162,7 @@
     margin-top: auto;
     top: 0px;
     z-index: 5;
-    left: -2.22222em;" class="btn" href="#carousel-example-generic1" data-slide="prev">
+    left: -2.22222em;" class="btn" href="" data-target="#place-carousel" data-slide="prev">
           <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
         </a>
         <a style="background-color: rgb(255, 255, 255);
@@ -182,13 +182,13 @@
     margin-top: auto;
     top: 0;
     z-index: 5;
-    right: -2.22222em;" class="btn" href="#carousel-example-generic1" data-slide="next">
+    right: -2.22222em;" class="btn" href="" data-target="#place-carousel"  data-slide="next">
           <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
 
         <!-- Wrapper for slides <-->
 
         <div class="carousel-inner">
-          <div class="item active" style="padding:2% 0 2% 2%">
+          <div class="item active" style="padding:2% 0 2% 0">
             <div class="row">
 
               <div class="col-sm-3 padding:0 1% 0 1%">
@@ -246,7 +246,7 @@
               </div>
             </div>
           </div>
-          <div class="item" style="padding:2% 2% 2% 0%">
+          <div class="item" style="padding:2% 0 2% 0%">
             <div class="row">
 
               <div class="col-sm-3 padding:0 1% 0 1%">
@@ -281,11 +281,11 @@
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[6].imageUrl}}" class="img-responsive" alt="a"
                     />
                   </div>
-
+        
                   <span class="paul-slider-caption">
                     {{placesData[6].text}}</span>
 
-                </div>
+                </div>  
               </div>
 
               <div class="col-sm-3 padding:0 1% 0 1%">
@@ -312,12 +312,56 @@
 
     <uib-accordion>
       <uib-accordion-group is-open="header1.isOpen">
+    
 
-        <div>
-          <carousel interval="myInterval">
-            <slide ng-repeat="detail in placeDetails" >
+        <div id="placeDetail-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
+  <a style="background-color: #12edd0;
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0px;
+    z-index: 5;
+    left: 3em;" class="btn" href="" data-target="#placeDetail-carousel" data-slide="prev">
+          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
+        </a>
+        <a style="background-color: #12edd0;
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0;
+    z-index: 5;
+    right: 3em;" class="btn" href="" data-target="#placeDetail-carousel" data-slide="next">
+          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
 
-              <div class="center-block" style="width:80%;">
+          <!--<ol class="carousel-indicators">
+            <li data-target="#dynamiccontentcarousel" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}" data-slide-to="{{$index}}"></li>
+          </ol>-->
+
+          <div class="carousel-inner" role="listbox">
+            <div class="item" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}">
+                          <div class="center-block" style="width:80%;">
                 <div>
                   <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{detail.name}}
                     <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
@@ -329,8 +373,8 @@
                   <a href="images/blog3.jpg"><img height="350px" width="100%" ng-src="{{detail.imageUrl}}" alt="Standard Post with Image"></a>
                 </div>
 
-                <div class="pull-right" style="width:70%; padding-left:10px; text-align:left;">
-                   <span ng-click="header1.isOpen=! header1.isOpen" style="top:0; right:20%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
+                <div class="pull-right" style="width:70%; padding-left:2%; text-align:left;">
+                   <span ng-click="header1.isOpen=! header1.isOpen" style="top:0; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
 
                   <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
                     What is it.....</h4>
@@ -365,11 +409,8 @@
 
                 </div>
               </div>
-
-
-
-            </slide>
-          </carousel>
+            </div>
+          </div>
         </div>
 
       </uib-accordion-group>
@@ -393,7 +434,7 @@
     </div>
 
     <div class="row">
-      <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
+      <div id="activities-carousel" class="carousel slide hidden-xs" data-ride="carousel">
         <a style="    background-color: rgb(255, 255, 255);
     border: 0px;
     border-radius: 50%;
@@ -411,7 +452,7 @@
     margin-top: auto;
     top: 0px;
     z-index: 5;
-    left: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="prev">
+    left: -2.22222em;" class="btn" href="" data-target="#activities-carousel" data-slide="prev">
           <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
         </a>
         <a style="background-color: rgb(255, 255, 255);
@@ -431,13 +472,13 @@
     margin-top: auto;
     top: 0;
     z-index: 5;
-    right: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="next">
+    right: -2.22222em;" class="btn" href="" data-target="#activities-carousel" data-slide="next">
           <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
 
         <!-- Wrapper for slides <-->
 
         <div class="carousel-inner">
-          <div class="item active" style="padding:2% 0 2% 2%">
+          <div class="item active" style="padding:2% 0 2% 0">
             <div class="row">
 
               <div class="col-sm-3 padding:0 1% 0 1%">
@@ -495,7 +536,7 @@
               </div>
             </div>
           </div>
-          <div ng-show="activitiesData.length > 4" class="item" style="padding:2% 2% 2% 0%">
+          <div  class="item" style="padding:2% 0 2% 0%">
             <div class="row">
 
               <div class="col-sm-3 padding:0 1% 0 1%">
@@ -528,8 +569,7 @@
                 <div ng-click="accordion2.isOpen = !accordion2.isOpen ; getTravelInspirationDetail(activitiesData[6].id)" style="cursor:pointer;">
                   <div class="paul-slide-new">
                     <img style=" object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[6].imageUrl}}
-                    " class="img-responsive " alt="a "
-                    />
+                    " class="img-responsive " alt="a " />
                   </div>
 
                   <span class="paul-slider-caption ">
@@ -543,8 +583,7 @@
                     " style="cursor:pointer; ">
                   <div class="paul-slide-new ">
                     <img style="object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[7].imageUrl}}
-                    " class="img-responsive " alt="a "
-                    />
+                    " class="img-responsive " alt="a " />
                   </div>
 
                   <span class="paul-slider-caption ">
@@ -564,14 +603,55 @@
 
     <uib-accordion>
       <uib-accordion-group is-open="accordion2.isOpen ">
-       <div>
 
-          <carousel interval="myInterval">
+         <div id="activityDetail-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
+  <a style="background-color: #12edd0;
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0px;
+    z-index: 5;
+    left: 3em;" class="btn" href="" data-target="#activityDetail-carousel" data-slide="prev">
+          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
+        </a>
+        <a style="background-color: #12edd0;
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0;
+    z-index: 5;
+    right: 3em;" class="btn" href="" data-target="#activityDetail-carousel" data-slide="next">
+          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
 
-            <slide ng-repeat="detail in placeDetails" >
+          <!--<ol class="carousel-indicators">
+            <li data-target="#dynamiccontentcarousel" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}" data-slide-to="{{$index}}"></li>
+          </ol>-->
 
-              <div class="center-block" style="width:80%;">
-
+          <div class="carousel-inner" role="listbox">
+            <div class="item" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}">
+                          <div class="center-block" style="width:80%;">
                 <div>
                   <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{detail.name}}
                     <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
@@ -583,8 +663,8 @@
                   <a href="images/blog3.jpg"><img height="350px" width="100%" ng-src="{{detail.imageUrl}}" alt="Standard Post with Image"></a>
                 </div>
 
-                <div class="pull-right" style="width:70%; padding-left:10px; text-align:left;">
-                  <span ng-click="accordion2.isOpen=! accordion2.isOpen" style="top:0; right:20%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
+                <div class="pull-right" style="width:70%; padding-left:2%; text-align:left;">
+                   <span ng-click="header1.isOpen=! header1.isOpen" style="top:0; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
 
                   <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
                     What is it.....</h4>
@@ -612,14 +692,17 @@
                     <br /><br /><br /><br />
                   </div>
 
+                  <!--<center>
+                    <span style="font-size:48px; padding-right:2%; " class="icon-line2-arrow-left"></span>
+                    <span style="font-size:48px; padding-left:2%; " class="icon-line2-arrow-right"></span>
+                  </center>-->
+
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
-
-
-            </slide>
-          </carousel>
-        </div
       </uib-accordion-group>
     </uib-accordion>
 
@@ -642,7 +725,8 @@
   </p>
 
   <div ui-sref="travel-plan " class="center-block " style=" width:70%; cursor:pointer; ">
-    <a style="width:100%; height:70px;  padding:2%; text-align:center;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:2.8rem; " class="button button-3d button-rounded button-blue"> Loved it ? We got plans for you !</a>
+    <a style="width:100%; height:70px;  padding:2%; text-align:center;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:2.8rem; "
+      class="button button-3d button-rounded button-blue"> Loved it ? We got plans for you !</a>
   </div>
 
 
@@ -654,124 +738,143 @@
       </h2>
     </div>
 
-   <div class="row ">
-      <div id="carousel-example-generic " class="carousel slide hidden-xs " data-ride="carousel ">
-        <a style=" background-color: rgb(255, 255, 255); border: 0px; border-radius: 50%; cursor: pointer; display: block;
-                    font-size: 9px; line-height: 1; transition: color 400ms, box-shadow 400ms; height: 4.44444em; width: 4.44444em;
-                    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em; position: absolute; bottom: 0px; margin-bottom:
-                    auto; margin-top: auto; top: 0px; z-index: 5; left: -2.22222em; " class="btn " href="#carousel-example-generic
-                    " data-slide="prev ">
-          <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600; " class="icon-angle-left "></i>
+     <div class="row">
+      <div id="activities-carousel1" class="carousel slide hidden-xs" data-ride="carousel">
+        <a style="    background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0px;
+    z-index: 5;
+    left: -2.22222em;" class="btn" href="" data-target="#activities-carousel1" data-slide="prev">
+          <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
         </a>
-        <a style="background-color: rgb(255, 255, 255); border: 0px; border-radius: 50%; cursor: pointer; display: block;
-                    font-size: 9px; line-height: 1; transition: color 400ms, box-shadow 400ms; height: 4.44444em; width: 4.44444em;
-                    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em; position: absolute; bottom: 0px; margin-bottom:
-                    auto; margin-top: auto; top: 0; z-index: 5; right: -2.22222em; " class="btn " href="#carousel-example-generic
-                    " data-slide="next ">
-          <i style="margin:7px 0 0 0; font-size:15px; font-weight:600; " class="icon-angle-right "></i></a>
+        <a style="background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0;
+    z-index: 5;
+    right: -2.22222em;" class="btn" href="" data-target="#activities-carousel1" data-slide="next">
+          <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
 
         <!-- Wrapper for slides <-->
 
-        <div class="carousel-inner ">
-          <div class="item active " style="padding:2% 0 2% 2% ">
-            <div class="row ">
+        <div class="carousel-inner">
+          <div class="item active" style="padding:2% 0 2% 0">
+            <div class="row">
 
-              <div class="col-sm-3 padding:0 1% 0 1% ">
+              <div class="col-sm-3 padding:0 1% 0 1%">
 
-                <div ui-sref="travel-plan " style="cursor:pointer; ">
-                  <div class="paul-slide-new ">
-                    <img style="object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[0].imageUrl}}
-                    " class="img-responsive " alt="a "
+                <div ng-click="accordion2.isOpen = !accordion2.isOpen ; getTravelInspirationDetail(activitiesData[0].id)" style="cursor:pointer;">
+                  <div class="paul-slide-new">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[0].imageUrl}}" class="img-responsive" alt="a"
                     />
                   </div>
 
-                  <span class="paul-slider-caption ">
+                  <span class="paul-slider-caption">
                     {{activitiesData[0].text}}</span>
 
                 </div>
 
               </div>
 
-              <div class="col-sm-3 padding:0 1% 0 1% ">
-                <div ui-sref="travel-plan " style="cursor:pointer; ">
-                  <div class="paul-slide-new ">
-                    <img style="object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[1].imageUrl}}
-                    " class="img-responsive " alt="a "
+              <div class="col-sm-3 padding:0 1% 0 1%">
+                <div ng-click="accordion2.isOpen = !accordion2.isOpen ; getTravelInspirationDetail(activitiesData[1].id)" style="cursor:pointer;">
+                  <div class="paul-slide-new">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[1].imageUrl}}" class="img-responsive" alt="a"
                     />
                   </div>
 
-                  <span class="paul-slider-caption ">
+                  <span class="paul-slider-caption">
                     {{activitiesData[1].text}}</span>
 
                 </div>
               </div>
 
-              <div class="col-sm-3 padding:0 1% 0 1% ">
-                <div ui-sref="travel-plan " style="cursor:pointer; ">
-                  <div class="paul-slide-new ">
-                    <img style="object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[2].imageUrl}}
-                    " class="img-responsive " alt="a "
+              <div class="col-sm-3 padding:0 1% 0 1%">
+                <div ng-click="accordion2.isOpen = !accordion2.isOpen ; getTravelInspirationDetail(activitiesData[2].id)" style="cursor:pointer;">
+                  <div class="paul-slide-new">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[2].imageUrl}}" class="img-responsive" alt="a"
                     />
                   </div>
 
-                  <span class="paul-slider-caption ">
+                  <span class="paul-slider-caption">
                     {{activitiesData[2].text}}</span>
 
                 </div>
               </div>
 
-              <div class="col-sm-3 padding:0 1% 0 1% ">
-                <div ui-sref="travel-plan " style="cursor:pointer; ">
-                  <div class="paul-slide-new ">
-                    <img style="object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[3].imageUrl}}
-                    " class="img-responsive " alt="a "
+              <div class="col-sm-3 padding:0 1% 0 1%">
+                <div ng-click="accordion2.isOpen = !accordion2.isOpen ; getTravelInspirationDetail(activitiesData[3].id)" style="cursor:pointer;">
+                  <div class="paul-slide-new">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[3].imageUrl}}" class="img-responsive" alt="a"
                     />
                   </div>
 
-                  <span class="paul-slider-caption ">
+                  <span class="paul-slider-caption">
                     {{activitiesData[3].text}}</span>
 
                 </div>
               </div>
             </div>
           </div>
-          <div class="item " style="padding:2% 2% 2% 0% ">
-            <div class="row ">
+          <div  class="item" style="padding:2% 0 2% 0%">
+            <div class="row">
 
-              <div class="col-sm-3 padding:0 1% 0 1% ">
-                <div ui-sref="travel-plan " style="cursor:pointer; ">
-                  <div class="paul-slide-new ">
-                    <img style="object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[4].imageUrl}}
-                    " class="img-responsive " alt="a "
+              <div class="col-sm-3 padding:0 1% 0 1%">
+                <div ng-click="accordion2.isOpen = !accordion2.isOpen ; getTravelInspirationDetail(activitiesData[4].id)" style="cursor:pointer;">
+                  <div class="paul-slide-new">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[4].imageUrl}}" class="img-responsive" alt="a"
                     />
                   </div>
 
-                  <span class="paul-slider-caption ">
+                  <span class="paul-slider-caption">
                     {{activitiesData[4].text}}</span>
 
                 </div>
               </div>
 
-              <div class="col-sm-3 padding:0 1% 0 1% ">
-                <div ui-sref="travel-plan " style="cursor:pointer; ">
-                  <div class="paul-slide-new ">
-                    <img style="object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[5].imageUrl}}
-                    " class="img-responsive " alt="a "
+              <div class="col-sm-3 padding:0 1% 0 1%">
+                <div ng-click="accordion2.isOpen = !accordion2.isOpen ; getTravelInspirationDetail(activitiesData[5].id)" style="cursor:pointer;">
+                  <div class="paul-slide-new">
+                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[5].imageUrl}}" class="img-responsive" alt="a"
                     />
                   </div>
 
-                  <span class="paul-slider-caption ">
+                  <span class="paul-slider-caption">
                     {{activitiesData[5].text}}</span>
 
                 </div>
               </div>
 
-              <div class="col-sm-3 padding:0 1% 0 1% ">
-                <div ui-sref="travel-plan " style="cursor:pointer; ">
-                  <div class="paul-slide-new ">
-                    <img style="object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[6].imageUrl}}
-                    " class="img-responsive " alt="a "
-                    />
+              <div class="col-sm-3 padding:0 1% 0 1%">
+                <div ng-click="accordion2.isOpen = !accordion2.isOpen ; getTravelInspirationDetail(activitiesData[6].id)" style="cursor:pointer;">
+                  <div class="paul-slide-new">
+                    <img style=" object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[6].imageUrl}}
+                    " class="img-responsive " alt="a " />
                   </div>
 
                   <span class="paul-slider-caption ">
@@ -781,11 +884,11 @@
               </div>
 
               <div class="col-sm-3 padding:0 1% 0 1% ">
-                <div ui-sref="travel-plan " style="cursor:pointer; ">
+                <div ng-click="accordion2.isOpen=! accordion2.isOpen ; getTravelInspirationDetail(activitiesData[7].id)
+                    " style="cursor:pointer; ">
                   <div class="paul-slide-new ">
                     <img style="object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[7].imageUrl}}
-                    " class="img-responsive " alt="a "
-                    />
+                    " class="img-responsive " alt="a " />
                   </div>
 
                   <span class="paul-slider-caption ">
@@ -799,5 +902,6 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>

@@ -146,11 +146,7 @@ angular.module('wanderwagon-webapp')
           method: 'POST',
           data: queryObj,
           url: remoteAddr + '/travelplans/quickquery'
-        }).then(function (data, status){
-          return data.response;
-        }), function (error, status) {
-          return error.error;
-        }
+        })
       },
 
       shareOnFacebook : function(shareObj) {

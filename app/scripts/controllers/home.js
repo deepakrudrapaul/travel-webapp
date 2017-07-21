@@ -95,11 +95,58 @@ angular.module('wanderwagon-webapp')
 
     $scope.onFormSubmit = function (form) {
       if (form.$valid) {
-        remoteSvc.quickQuery().then(function (response) {
-          console.log(response);
-        })
+        remoteSvc.quickQuery()
+          .success(function (data){
+            
+          })
+          .error(function (error){
+
+          })
       }
     };
+
+
+    $scope.slider = [{
+        imageUrl: 'images/backpacking.jpg',
+        text: 'Backpacking',
+        id: 1
+      },
+      {
+        imageUrl: 'images/roadtrip.jpg',
+        text: 'Road Trip',
+        id: 2
+      },
+      {
+        imageUrl: 'images/adventure.jpg',
+        text: 'Adventure',
+        id: 3
+      },
+      {
+        imageUrl: 'images/nature.jpg',
+        text: 'Nature',
+        id: 4
+      },
+      {
+        imageUrl: 'images/adventure.jpg',
+        text: 'Family',
+        id: 5
+      },
+      {
+        imageUrl: 'images/backpacking.jpg',
+        text: 'Couple',
+        id: 6
+      },
+      {
+        imageUrl: 'images/adventure.jpg',
+        text: 'Family',
+        id: 7
+      },
+      {
+        imageUrl: 'images/backpacking.jpg',
+        text: 'Couple',
+        id: 8
+      },
+    ];
 
 
   });

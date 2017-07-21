@@ -43363,7 +43363,7 @@ button.toast-close-button {
 /* line 28812, ../../app/styles/main.scss */
 .footer .footer-widgets-wrap {
   position: relative;
-  padding: 20px 0;
+  padding: 5px 0;
 }
 
 /* line 28817, ../../app/styles/main.scss */
@@ -43384,7 +43384,7 @@ button.toast-close-button {
 
 /* line 28832, ../../app/styles/main.scss */
 #copyrights {
-  padding: 40px 0;
+  padding: 5px 0;
   background-color: #DDD;
   font-size: 14px;
   line-height: 1.8;

@@ -14,86 +14,22 @@ angular.module('wanderwagon-webapp')
     var slider = [{
         imageUrl: 'images/backpacking.jpg',
         text: 'Backpacking',
-        id: 1,
-        data: [{
-            imageUrl: 'images/himachal.jpg',
-            name: 'Himachal',
-            id: 1
-          },
-          {
-            imageUrl: 'images/uttarakhand.jpg',
-            name: 'Uttarakhand',
-            id: 2
-          },
-          {
-            imageUrl: 'images/arunachal.jpg',
-            name: 'Arunachal',
-            id: 5
-          }
-        ]
+        id: 1
       },
       {
         imageUrl: 'images/roadtrip.jpg',
         text: 'Road Trip',
-        id: 2,
-        data: [{
-            imageUrl: 'images/manipur.jpg',
-            name: 'Manipur',
-            id: 7
-          },
-          {
-            imageUrl: 'images/assam.jpg',
-            name: 'Assam',
-            id: 8
-          },
-          {
-            imageUrl: 'images/darjeeling.jpg',
-            name: 'Darjeeling',
-            id: 9
-          }
-        ]
+        id: 2
       },
       {
         imageUrl: 'images/adventure.jpg',
         text: 'Adventure',
-        id: 3,
-        data: [{
-            imageUrl: 'images/meghalaya.jpg',
-            name: 'Meghalaya',
-            id: 4
-          },
-          {
-            imageUrl: 'images/arunachal.jpg',
-            name: 'Arunachal',
-            id: 5
-          },
-          {
-            imageUrl: 'images/sikkim.jpg',
-            name: 'Sikkim',
-            id: 6
-          }
-        ]
+        id: 3
       },
       {
         imageUrl: 'images/nature.jpg',
         text: 'Nature',
-        id: 4,
-        data: [{
-            imageUrl: 'images/manipur.jpg',
-            name: 'Manipur',
-            id: 7
-          },
-          {
-            imageUrl: 'images/assam.jpg',
-            name: 'Assam',
-            id: 8
-          },
-          {
-            imageUrl: 'images/darjeeling.jpg',
-            name: 'Darjeeling',
-            id: 9
-          }
-        ]
+        id: 4
       },
       {
         imageUrl: 'images/adventure.jpg',
