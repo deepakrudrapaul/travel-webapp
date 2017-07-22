@@ -127,7 +127,30 @@ angular.module('wanderwagon-webapp')
         return deferred.promise;
       },
 
+      forgotPassword: function (email, callback) {
+        var cb = callback || angular.noop;
+        var deferred = $q.defer();
 
+        $http.get(remoteAddr + '/auth/forget-password?email=' + email)
+          .success(function (data, status){
+            deferred.resolve(data);
+            return cb();
+          })
+          .error(function (error, status) {
+            console.log(error, status);
+            deferred.reject(error);
+            return cb(error);
+          }.bind(this));
+          return deferred.promise;
+      },
+
+      updatePassword: function (updatePassObj) {
+        return $http({
+          method:'PUT',
+          data: updatePassObj,
+          url: remoteAddr + '/auth/updatePassword'
+        })
+      },
 
       logout: function () {
         $cookies.remove('token');

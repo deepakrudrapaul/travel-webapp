@@ -107,7 +107,6 @@ angular.module('wanderwagon-webapp')
 
 
     $scope.showPasswordModal = function () {
-      console.log("CLICKED");
        angular.element(document.querySelectorAll('#passwordModal')).modal('show');
     };
 
