@@ -257,7 +257,7 @@
         <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
         <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">-->
 
-        <img ng-src="{{articles[0].imageUrl}}" alt="{{articles[0].title}}">
+        <img ng-src="{{blog[0].imageUrl}}" alt="{{blog[0].title}}">
       </picture>
     </div>
 
@@ -267,14 +267,14 @@
     padding: 10px 20px;
     position: relative;">
       <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
-        {{articles[0].title}}</h3>
+        {{blog[0].title}}</h3>
 
 
       <div class="entry-content">
-        <p>{{articles[0].description}}...
+        <p>{{blog[0].description}}...
         </p>
         <div class="feature-info">
-          <span class="icon-calendar3"> {{articles[0].dateTime}} • {{articles[0].author}}</span>
+          <span class="icon-calendar3"> {{blog[0].time }} • {{blog[0].user.name}}</span>
         </div>
       </div>
 
@@ -294,7 +294,7 @@
         <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
         <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">-->
 
-        <img ng-src="{{articles[1].imageUrl}}" alt="{{articles[1].title}}">
+        <img ng-src="{{blog[1].imageUrl}}" alt="{{blog[1].title}}">
       </picture>
     </div>
 
@@ -304,14 +304,14 @@
     padding: 10px 20px;
     position: relative;">
       <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
-        {{articles[1].title}}</h3>
+        {{blog[1].title}}</h3>
 
 
       <div class="entry-content">
-        <p>{{articles[1].description}}...
+        <p>{{blog[1].description}}...
         </p>
         <div class="feature-info">
-          <span class="icon-calendar3"> {{articles[1].dateTime}} • {{articles[1].author}}</span>
+          <span class="icon-calendar3"> {{blog[1].time}} • {{blog[1].user.name}}</span>
         </div>
       </div>
 

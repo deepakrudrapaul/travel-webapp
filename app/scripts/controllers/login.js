@@ -111,5 +111,22 @@ angular.module('wanderwagon-webapp')
     };
 
 
+    $scope.emailSubmit = false;
+
+    $scope.onEmailFormSubmit = function () {
+      var email = $scope.emailObj.email;
+
+      auth.forgotPassword(email)
+        .success(function (data) {
+          console.log(data);
+          $scope.emailSubmit = true;
+          $scope.message = "Password reset link has been sent to email " + email ;
+        })
+        .error(function (error){
+          console.log(error);
+        })
+    };
+
+
 
   });

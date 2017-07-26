@@ -253,16 +253,16 @@
                   <div class="tab-content clearfix">
                     <div id="popular-post-list-sidebar">
 
-                      <div ng-repeat="post in popularPosts" class="spost clearfix">
+                      <div ng-repeat="post in similarPosts" class="spost clearfix">
                         <div class="entry-image">
                           <a href="#" class="nobg"><img class="img-circle" ng-src="{{post.authorImage}}" alt=""></a>
                         </div>
                         <div class="entry-c">
                           <div class="entry-title">
-                            <h4><a href="#">{{post.postTitle}}</a></h4>
+                            <h4><a href="#">{{post.title}}</a></h4>
                           </div>
                           <ul class="entry-meta">
-                            <li><i class="icon-comments-alt"></i> {{post.numberOfComments}} Comments</li>
+                            <li><i class="icon-comments-alt"></i> {{post.comments}} Comments</li>
                           </ul>
                         </div>
                       </div>

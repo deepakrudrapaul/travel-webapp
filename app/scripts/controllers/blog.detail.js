@@ -26,6 +26,19 @@ angular.module('wanderwagon-webapp')
     };
     $scope.getPostDetail();
 
+
+    var getSimilarPosts = function(blogId) {
+      remoteSvc.getSimilarBlogs(blogId)
+          .success(function (data){
+            $scope.instaPhotos = data.response;
+          })
+          .error(function (error){
+
+          })
+    };
+
+    getSimilarPosts(postId);
+
     $scope.onShareButtonClicked = function (blogId) {
       $scope.shareObj = {};
       $scope.shareObj.blogUrl = $location.absUrl();

@@ -1,9 +1,9 @@
 <div style="background-color:#000;background-image: url('images/home.jpg');background-size: cover; height:100vh;">
   <div class="container clearfix">
     <div class="slider-caption-center">
-      <h2 class="text-center" style="margin-bottom:0px;font-size:32px;letter-spacing:1px;font-weight:600;color:#fff;margin-top:25%;">
+      <h2 class="text-center primary-title">
         WITH WANDERWAGON YOU ARE FREE </h2>
-      <h2 class="text-center" style="margin-bottom:0px;font-size:32px;letter-spacing:1px;font-weight:600;color:#fff;">
+      <h2 class="text-center primary-title-1" >
         {{changingText}}</h2>
       <!--<p style="font-size:2.5rem; margin-bottom:50px; color:#fff;" class="text-center">
         "Wanderwagon is the perfect partner to plan that much awaited trip with your buddies"
@@ -254,11 +254,7 @@
 
   <div style="overflow:hidden; margin-bottom:-5%;">
 
-    <div ui-sref="blog.list" class="image" style="height: 350px; width: 50%;
-    float: left;background-size: cover;
-    background-position: 50%;
-    transition: .4s;
-    overflow: hidden;">
+    <div ui-sref="blog.list" class="image blog-image-left">
       <picture>
         <!--<source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
         <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
@@ -269,10 +265,7 @@
     </div>
 
 
-    <div class="text" style="margin-top:70px; height: 350px; width: 50%;
-    float: left;text-align: left;
-    padding: 10px 20px;
-    position: relative;">
+    <div class="text blog-content-left" >
       <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
         {{blog[0].title}}</h3>
 
@@ -281,7 +274,7 @@
         <p>{{blog[0].description}}...
         </p>
         <div class="feature-info">
-          <span class="icon-calendar3"> {{blog[0].dateTime}} • {{blog[0].author}}</span>
+          <span class="icon-calendar3"> {{blog[0].time | date:'dd-MM-yy'}} • {{blog[0].user.name}}</span>
         </div>
       </div>
 
@@ -291,11 +284,7 @@
 
   <div style="overflow:hidden;">
 
-    <div ui-sref="blog.list" class="image" style="height: 350px; width: 50%;
-    float: right;background-size: cover;
-    background-position: 50%;
-    transition: .4s;
-    overflow: hidden;">
+    <div ui-sref="blog.list" class="image blog-image-right">
       <picture>
         <!--<source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
         <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
@@ -306,10 +295,7 @@
     </div>
 
 
-    <div class="text" style="margin-top:70px; height: 350px; width: 50%;
-    float: right;text-align: right;
-    padding: 10px 20px;
-    position: relative;">
+    <div class="text blog-content-right">
       <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
         {{blog[1].title}}</h3>
 
@@ -318,7 +304,7 @@
         <p>{{blog[1].description}}...
         </p>
         <div class="feature-info">
-          <span class="icon-calendar3"> {{blog[1].dateTime}} • {{blog[1].author}}</span>
+          <span class="icon-calendar3"> {{blog[1].time | date:'dd-MM-yy'}} • {{blog[1].user.name}}</span>
         </div>
       </div>
 
@@ -328,12 +314,12 @@
 </section>
 
 <section>
-  <div style="background-color:#000;background-image: url('https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg');background-size: cover;position:relative; width:100%;  height:100vh;">
+  <div class="home-form-bg">
 
     <!--<div class="text_over_image">
         {{postDetail.title}}
       </div>-->
-    <div style="width:40%; height:100vh; float:left; position:absolute; left:0px; top:0px; z-index:1; background-color: rgba(0,0,0,.66); padding:5px; color: #FFF; font-weight:bold;">
+    <div class="home-form">
       <div style="padding:18% 5% 17% 5%">
         <div>
 
@@ -346,26 +332,26 @@
           </div>
         </div>
         <form name="inquiryForm" class="nobottommargin" ng-submit="onFormSubmit(inquiryForm)">
-          <div style="padding:0px;" class="col-sm-6">
+          <div  class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">First Name<span class="asterisk">*</span></label>
             <input ng-model="inquiryObj.firstName" class="form-control" id="{{inquireFirstName}}" type="text" placeholder="*Required" value="{{firstName}}" data-parsley-trim-value="true"
               required data-prefill="firstName" />
           </div>
 
-          <div class="col-sm-6">
+          <div class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">Last Name</label>
             <input ng-model="inquiryObj.lastName" class="form-control" id="{{inquireLastName}}" type="text" value="{{lastName}}" data-parsley-trim-value="true" data-prefill="lastName"
             />
           </div>
 
-          <div style="padding:10px 0 0 0;" class="col-sm-6">
+          <div class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">Email<span class="asterisk">*</span></label>
             <input ng-model="inquiryObj.email" class="form-control" id="{{inquireEmail}}" type="email" value="{{email}}" placeholder="*Required" data-parsley-trim-value="true"
               required data-prefill="email" />
           </div>
 
 
-          <div style="padding-top:10px;" class="col-sm-6">
+          <div  class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">Phone Number<span class="asterisk">*</span></label>
             <div class="inquireTelContainer">
               <input ng-model="inquiryObj.phone" class="form-control" id="{{inquireTel}}" placeholder="*Required" value="{{tel}}" type="tel" data-parsley-intphone="{{inquireTel}}"
@@ -374,7 +360,7 @@
             </div>
           </div>
 
-          <div style="padding:10px 0 0 0;" class="col-sm-6">
+          <div  class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize" for="form-condition-10">I would like to go to...</label>
             <select ng-model="inquiryObj.destination" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
 									<option value=""> Select One </option>
@@ -389,7 +375,7 @@
 
 
 
-          <div style="padding-top:10px;" class="col-sm-6">
+          <div  class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize" for="form-condition-10">In the month of...</label>
             <select ng-model="inquiryObj.travelMonth" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
 									<option value="">Travel Dates TBC</option>
@@ -409,13 +395,13 @@
           </div>
 
 
-          <div style="width:97%;">
-            <label style="padding-top: 10px; color:#FFF; text-transform:capitalize">What's the occasion?<span class="asterisk">*</span></label>
+          <div style="width:100%;" class="col-sm-12 toppadding">
+            <label style="color:#FFF; text-transform:capitalize">What's the occasion?<span class="asterisk">*</span></label>
             <textarea ng-model="inquiryObj.occasion" style="max-width:100%; max-height:10%;" class="form-control" placeholder="Tell us a little bit about what you're looking for."></textarea>
           </div>
 
-          <div style="padding:20px 0 0 0; text-transform:capitalize" class="col-sm-12">
-            <button type="submit" style="margin:0px !important; width:97%; height:70px;" id="{{inquireSubmit}}" class="button button-blue ">Submit Inquiry</button>
+          <div style="text-transform:capitalize; padding-top:20px;" class="col-sm-12">
+            <button type="submit" style="margin:0px !important; width:100%; height:70px;" id="{{inquireSubmit}}" class="button button-blue ">Submit Inquiry</button>
           </div>
         </form>
       </div>
@@ -426,25 +412,34 @@
 </section>
 
 
+
 <section>
   <div class="topmargin">
-    <h2 class="instaText" style="text-align:center;margin-bottom:4rem;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+    <h2 class="instaText">
       On Instagram @ wanderwagon
     </h2>
   </div>
 
   <!--<marquee  behavior="scroll" direction="left" loop="infinite">
-    <img ng-repeat="image in destinations" style="margin:2%;" ng-src="{{image.imageUrl}}" width="200" height="150" alt="Instafeed">
+    <img ng-click="openInstaProfile()" ng-repeat="image in instaPhotos" style="margin:2%;" ng-src="{{image.imageUrl}}" width="200" height="150" alt="Instafeed">
   </marquee>-->
 
-  <div class='marquee'>
+  <!--<div class="marque">
     <div class="edge"></div>
     <ul class="slideContainer" id="money_start">
-      <li ng-repeat="image in destinations" class="slideItem">
-        <img ng-click="openInstaProfile()" style="margin:1%;" ng-src="{{image.imageUrl}}" width="200" height="150" alt="Instafeed">
+      <li ng-repeat="photo in instaPhotos" class="slideItem">
+        <img ng-click="openInstaProfile()" style="margin:1%;" ng-src="{{photo.imageUrl}}" width="200" height="150" alt="Instafeed">
       </li>
     </ul>
-  </div>
+  </div>-->
+<div class="marque">
+ 
+   <ul class="slideContainer" id="money_start">
+      <li ng-repeat="photo in instaPhotos" class="slideItem">
+        <img ng-click="openInstaProfile()" style="margin:1%;" ng-src="{{photo.imageUrl}}" width="200" height="150" alt="Instafeed">
+      </li>
+    </ul>
+</div>
 
 
 

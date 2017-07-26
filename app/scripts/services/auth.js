@@ -113,7 +113,7 @@ angular.module('wanderwagon-webapp')
         var deferred = $q.defer();
 
         $http
-          .post(remoteAddr + '/auth/verifymail?token=' + token + '&userId=' + userId)
+          .get(remoteAddr + '/auth/verify-email?token=' + token + '&userId=' + userId)
           .success(function (data, status) {
             deferred.resolve(data);
             return cb();
@@ -127,12 +127,13 @@ angular.module('wanderwagon-webapp')
         return deferred.promise;
       },
 
-      forgotPassword: function (email, callback) {
+      forgotPassword: function (token, email, callback) {
         var cb = callback || angular.noop;
         var deferred = $q.defer();
 
-        $http.get(remoteAddr + '/auth/forget-password?email=' + email)
-          .success(function (data, status){
+        $http
+          .get(remoteAddr + '/auth/forget-password?token=' + token + '&email=' + email)
+          .success(function (data, status) {
             deferred.resolve(data);
             return cb();
           })
@@ -141,7 +142,8 @@ angular.module('wanderwagon-webapp')
             deferred.reject(error);
             return cb(error);
           }.bind(this));
-          return deferred.promise;
+
+        return deferred.promise;
       },
 
       updatePassword: function (updatePassObj) {

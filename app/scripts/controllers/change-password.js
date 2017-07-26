@@ -11,7 +11,7 @@ angular.module('wanderwagon-webapp')
   .controller('ChangePasswordCtrl', function ($location, auth, $scope) {
 
     var verificationToken = $location.search().token;
-    var userId = $location.search().userId;
+    var email = $location.search().email;
 
     $scope.showModal = function(messageType, message) {
       angular.element(document.querySelectorAll('#changePasswordModal')).modal('show');
@@ -19,13 +19,19 @@ angular.module('wanderwagon-webapp')
       $scope.message = message;
     };
 
-
-
-
+    $scope.verified = false;
 
     if(verificationToken != undefined) {
-      $scope.verified = true;
-      $scope.success = "Change Password";
+      auth.forgotPassword(verificationToken, email)
+        .then(function (data){
+          $scope.verified = true;
+          $scope.messageType = "Change Password ";
+        })
+        .catch(function (error){
+           $scope.verified = false;
+           $scope.messageType = "Error";
+            $scope.errorMessage = "Password reset link is expired";
+        })
 
     } else{
       $location.path('/home');

@@ -28,21 +28,15 @@ angular.module('wanderwagon-webapp')
  
 
     if(verificationToken != undefined) {
-      console.log("Verified");
-      $scope.success ="Email verified !"
-      $scope.successMessage = "Your email has been successfully verified !";
-      $scope.verified = false;
-       $scope.error ="Email not verified !"
-      $scope.errorMessage = "Email verification link is expired !";
-      // auth.verifyEmail(verificationToken, userId)
-      //   .then(function (data){
-      //     console.log(data);
-      //     $scope.showModal("Success", "Email verified successfully. Login Now");
-      //   })
-      //   .catch(function (error){
-      //     console.log(error);
-      //     $scope.error.message;
-      //   })
+     
+      auth.verifyEmail(verificationToken, userId)
+        .then(function (data){
+          $scope.showModal("Success", "Email verified successfully. Login Now");
+        })
+        .catch(function (error){
+           $scope.verified = false;
+          $scope.showModal("Error", "Email verification link is expired !");
+        })
     } else{
       $location.path('/home');
     }

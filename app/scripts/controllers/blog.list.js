@@ -19,10 +19,18 @@ angular.module('wanderwagon-webapp')
         // $scope.recentPosts = response.recentPosts;
       })
     };
-   
-
     $scope.getBlogList();
 
+    $scope.getBlogInstaPhotos = function() {
+        remoteSvc.getInstaPhotos()
+          .success(function (data){
+            $scope.instaPhotos = data.response;
+          })
+          .error(function (error){
+
+          })
+    };
+    $scope.getBlogInstaPhotos();
 
 
 

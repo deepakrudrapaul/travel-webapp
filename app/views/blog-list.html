@@ -104,8 +104,8 @@
             </div>-->
             <!--</div>-->
             <div class="row">
-              <div ng-repeat="image in instaImages" class="col-sm-6" style="padding: 2px;">
-                <img  width="200" height="100" class="image_fade" ng-src="{{image.image}}" alt="Standard Post with Image">
+              <div ng-repeat="image in instaPhotos" class="col-sm-6" style="padding: 2px;">
+                <img  width="200" height="100" class="image_fade" ng-src="{{image.imageUrl}}" alt="Standard Post with Image">
               </div>
             </div>
           </div>
@@ -119,16 +119,16 @@
                   <div class="tab-content clearfix">
                     <div id="popular-post-list-sidebar">
 
-                      <div ng-repeat="post in popularPosts" class="spost clearfix">
+                      <div ng-repeat="post in posts" class="spost clearfix">
                         <div class="entry-image">
                           <a href="#" class="nobg"><img class="img-circle" ng-src="{{post.authorImage}}" alt=""></a>
                         </div>
                         <div class="entry-c">
                           <div class="entry-title">
-                            <h4><a href="#">{{post.postTitle}}</a></h4>
+                            <h4><a href="#">{{post.title}}</a></h4>
                           </div>
                           <ul class="entry-meta">
-                            <li><i class="icon-comments-alt"></i> {{post.numberOfComments}} Comments</li>
+                            <li><i class="icon-comments-alt"></i> {{post.comments}} Comments</li>
                           </ul>
                         </div>
                       </div>
@@ -140,16 +140,16 @@
                   <div class="tab-content clearfix">
                     <div id="recent-post-list-sidebar">
 
-                      <div ng-repeat="post in recentPosts" class="spost clearfix">
+                      <div ng-repeat="post in posts" class="spost clearfix">
                         <div class="entry-image">
                           <a href="#" class="nobg"><img class="img-circle" ng-src="{{post.authorImage}}" alt=""></a>
                         </div>
                         <div class="entry-c">
                           <div class="entry-title">
-                            <h4><a href="#">{{post.postTitle}}</a></h4>
+                            <h4><a href="#">{{post.title}}</a></h4>
                           </div>
                           <ul class="entry-meta">
-                            <li>{{post.date}}</li>
+                            <li>{{post.time}}</li>
                           </ul>
                         </div>
                       </div>

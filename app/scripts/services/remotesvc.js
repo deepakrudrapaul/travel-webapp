@@ -75,6 +75,20 @@ angular.module('wanderwagon-webapp')
         });
       },
 
+      getBlogInstaPhotos : function() {
+        return $({
+          method: 'GET',
+          url: remoteAddr + '/blogs/instaPhotos'
+        })
+      },
+
+      getSimilarBlogs : function(blogId) {
+        return $({
+          method: 'GET',
+          url: remoteAddr + '/blogs/similarBlogs/' + blogId
+        })
+      },
+
 
       postComment: function (commentObj) {
         return $http({
@@ -105,6 +119,21 @@ angular.module('wanderwagon-webapp')
           return data.data;
         }, function (error, status) {
           return error.data;
+        })
+      },
+
+
+      getInstaPhotos : function() {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + "/home/instagramPhotos"
+        })
+      },
+
+      getHomeBlogs : function() {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + "/home/blog"
         })
       },
 

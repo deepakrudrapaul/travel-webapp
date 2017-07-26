@@ -164,16 +164,29 @@ background-image: linear-gradient(to bottom,#654a86,#534292);
       </div>
       <div class="modal-body">
         <div class="row" style="padding:5%;">
-          <form ng-show="" name="emailForm" class="nobottommargin" ng-submit="onEmailFormSubmit(emailForm)">
+          <form ng-hide="emailSubmit" name="emailForm" class="nobottommargin" ng-submit="onEmailFormSubmit(emailForm)">
             <div class="col_full">
               <label for="loginEmail"><font color="white">Email</font></label>
-              <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder="Email" ng-model="loginObj.email"
+              <input type="email" class="form-control" id="loginEmail" name="loginEmail" placeholder="Email" ng-model="emailObj.email"
                 required />
             </div>
             <div class="col_full nobottommargin">
               <button type="submit" class="button button-blue"><font color="white">Submit</font></button>
             </div>
           </form>
+
+
+          <div ng-show="emailSubmit" class="modal-body">
+            <div class="row">
+              <div style="padding:5%;" class="col-full">
+                {{message}}
+              </div>
+              <!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
+            Its button
+					</div>-->
+            </div>
+          </div>
+
           <!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
             Its button
 					</div>-->

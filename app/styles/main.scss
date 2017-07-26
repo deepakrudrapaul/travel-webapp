@@ -14147,8 +14147,6 @@ body #side-panel.dark #side-panel-trigger-close a {
 }
 
 @media (max-width: 479px) {
-  .container,
-  #header.full-header .container,
   .container-fullwidth {
     width: 310px !important;
   }
@@ -15791,6 +15789,7 @@ body.stretched #header.full-header .container {
 #logo img {
   display: block;
   max-width: 100%;
+  margin-left: 20%;
 }
 
 #logo a.standard-logo {
@@ -24099,8 +24098,6 @@ body:not(.device-touch) .button.button-full strong {
   margin-bottom: 20px;
 }
 
-
-
 .successmsg {
   background: #C5EBD4;
   color: #184B21;
@@ -27742,7 +27739,6 @@ input[type=checkbox]:not(:checked)+label.error {
 #google-map {
   position: relative;
   width: 100%;
-
 }
 
 .gmap img {
@@ -28757,7 +28753,7 @@ button.toast-close-button {
 .footer {
   background-color: #333;
   color: #CCC;
-  border-top: 5px solid rgba(0, 0, 0, 0.2 );
+  border-top: 5px solid rgba(0, 0, 0, 0.2);
 }
 
 #footer {
@@ -29614,14 +29610,12 @@ label.checkbox {
   border-radius: 50%;
 }
 
-
 .panel-default {
   border-color: transparent;
 }
 
-
-.panel-default > .panel-heading {
-  display:none;
+.panel-default>.panel-heading {
+  display: none;
 }
 
 .photo img {
@@ -29642,6 +29636,10 @@ label.checkbox {
   content: '\00a0\00a0\00a0\00a0';
   text-decoration: line-through;
   margin: auto 0.5em;
+}
+
+.instaText {
+  text-align:center;margin-bottom:4rem;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;
 }
 
 .cover {
@@ -29733,10 +29731,10 @@ label.checkbox {
 .paul-slide-new:hover {
   z-index: 30;
   -moz-transform: translate(0px, -5px);
-    -ms-transform: translate(0px, -5px);
-    -o-transform: translate(0px, -5px);
-    -webkit-transform: translate(0px, -5px);
-    transform: translate(0px, -5px)
+  -ms-transform: translate(0px, -5px);
+  -o-transform: translate(0px, -5px);
+  -webkit-transform: translate(0px, -5px);
+  transform: translate(0px, -5px)
 }
 
 .paul-slide:hover {
@@ -29804,6 +29802,36 @@ label.checkbox {
   }
 }
 
+.blog-image-left {
+  height: 350px; width: 50%;
+    float: left;background-size: cover;
+    background-position: 50%;
+    transition: .4s;
+    overflow: hidden;
+}
+
+.blog-content-left {
+  margin-top:70px; height: 350px; width: 50%;
+    float: left;text-align: left;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.blog-image-right {
+  height: 350px; width: 50%;
+    float: right;background-size: cover;
+    background-position: 50%;
+    transition: .4s;
+    overflow: hidden;
+}
+
+.blog-content-right {
+  margin-top:50px; height: 350px; width: 50%;
+    float: right;text-align: right;
+    padding: 10px 20px;
+    position: relative;
+}
+
 // ******** MARQUEE CSS ********** //
 .marquee {
   width: 100%;
@@ -29844,24 +29872,170 @@ label.checkbox {
   cursor: pointer;
 }
 
-
-
 .glyphicon-chevron-right:before {
-        font-family: "FontAwesome";
-        content: "\f138";
-    }
-    .glyphicon-chevron-left:before {
-        font-family: "FontAwesome";
-        content: "\f137";
-    }
+  font-family: "FontAwesome";
+  content: "\f138";
+}
 
+.glyphicon-chevron-left:before {
+  font-family: "FontAwesome";
+  content: "\f137";
+}
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
   display: none !important;
 }
 
 // Sub Menu Hover
+#primary-menu ul li:hover>ul {
+  display: block;
+}
 
-#primary-menu ul li:hover > ul {
-  display:block;
-} 
+.primary-title {
+  margin-bottom: 0px;
+  font-size: 32px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 25%;
+}
+
+.primary-title-1 {
+  margin-bottom: 0px;
+  font-size: 32px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.home-form-bg {
+  background-color:#000;
+  background-image: url('https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg');
+  background-size: cover;
+  position:relative; 
+  width:100%;
+  height:100vh;
+}
+
+.home-form {
+  width:40%; height:100vh; float:left; position:absolute; left:0px; top:0px; z-index:1; background-color: rgba(0,0,0,.66); padding:5px; color: #FFF; font-weight:bold;
+}
+
+.toppadding {
+  padding-top: 10px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .custom-button {
+    text-transform: uppercase;
+    width: 60%;
+    font-size: 16px;
+    letter-spacing: 0px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 0px;
+    border: 2px solid #fff;
+    padding: 4px;
+    border-radius: 5px;
+  }
+  .primary-title {
+    margin-bottom: 0px;
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 40%;
+  }
+  .primary-title-1 {
+    margin-bottom: 0px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #fff;
+  }
+  .paul-title {
+    text-align: center;
+    margin-top: 2%;
+    letter-spacing: -0.45px;
+    line-height: 1;
+    font-weight: 300;
+    font-size: 2.8rem;
+  }
+  .container {
+    width: 100%;
+  }
+  .blog-image-left {
+    height:auto;
+    width: 80%;
+    background-size: cover;
+    background-position: 50%;
+    transition: .4s;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float:none;
+  }
+  .blog-content-left {
+    margin-top:10px;
+    height:auto;
+    width: 80%;
+    text-align: center;
+    padding: 10px 20px;
+    position: relative;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float:none;
+  }
+
+  .blog-image-right {
+  height: auto; width: 80%;
+    float: none;background-size: cover;
+    background-position: 50%;
+    transition: .4s;
+    overflow: hidden;
+     display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-content-right {
+  margin-top:10px; height: auto; width: 80%;
+    float: none;text-align:center;
+    padding: 10px 20px;
+    position: relative;
+     display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-form-bg {
+  background-color:#000;
+  background-image: url('https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg');
+  background-size: cover;
+  position:relative; 
+  width:100%;
+  height:900px;
+}
+
+.home-form {
+  width:100%; height:900px; float:none; position:absolute; left:0px; top:0px; z-index:1; background-color: rgba(0,0,0,.66); padding:5px; color: #FFF; font-weight:bold;
+}
+
+
+.instaText {
+  text-align:center;margin-bottom:4rem;letter-spacing:-0.45px;line-height:1;font-weight:200;font-size:2rem;
+}
+
+.footer-logo {
+  margin:20px;
+}
+
+
+
+}
