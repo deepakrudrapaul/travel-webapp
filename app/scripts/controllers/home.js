@@ -10,6 +10,27 @@
 angular.module('wanderwagon-webapp')
   .controller('HomeCtrl', function ($scope, $timeout, remoteSvc, $document, $window) {
 
+$window.requestAnimationFrame = (function () {
+      return $window.requestAnimationFrame ||
+        $window.webkitRequestAnimationFrame ||
+        $window.mozRequestAnimationFrame ||
+        function (callback) {
+          $window.setTimeout(callback);
+        };
+    })();
+
+     var speed = 5000;
+    (function currencySlide() {
+      var currencyPairWidth = $('.slideItem:first-child').outerWidth();
+      $(".slideContainer").animate({
+        marginLeft: -currencyPairWidth
+      }, speed, 'linear', function () {
+        $(this).css({
+          marginLeft: 0
+        }).find("li:last").after($(this).find("li:first"));
+      });
+      requestAnimationFrame(currencySlide);
+    })();
 
     $scope.getInstaPhotos = function() {
         remoteSvc.getInstaPhotos()
