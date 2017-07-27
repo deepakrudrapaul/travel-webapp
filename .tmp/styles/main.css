@@ -24296,7 +24296,7 @@ body #side-panel.dark #side-panel-trigger-close a {
     pointer-events: auto;
     top: 25px;
     margin-top: 0;
-    left: 0;
+    right: 0;
     z-index: 1;
   }
 
@@ -43124,6 +43124,7 @@ label.checkbox {
   /* line 29942, ../../app/styles/main.scss */
   .blog-content-left {
     margin-top: 10px;
+    margin-bottom: 30px;
     height: auto;
     width: 80%;
     text-align: center;
@@ -43135,7 +43136,7 @@ label.checkbox {
     float: none;
   }
 
-  /* line 29954, ../../app/styles/main.scss */
+  /* line 29955, ../../app/styles/main.scss */
   .blog-image-right {
     height: auto;
     width: 80%;
@@ -43149,7 +43150,7 @@ label.checkbox {
     margin-right: auto;
   }
 
-  /* line 29966, ../../app/styles/main.scss */
+  /* line 29967, ../../app/styles/main.scss */
   .blog-content-right {
     margin-top: 10px;
     height: auto;
@@ -43163,7 +43164,7 @@ label.checkbox {
     margin-right: auto;
   }
 
-  /* line 29978, ../../app/styles/main.scss */
+  /* line 29979, ../../app/styles/main.scss */
   .home-form-bg {
     background-color: #000;
     background-image: url("https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg");
@@ -43173,7 +43174,7 @@ label.checkbox {
     height: 900px;
   }
 
-  /* line 29986, ../../app/styles/main.scss */
+  /* line 29987, ../../app/styles/main.scss */
   .home-form {
     width: 100%;
     height: 900px;
@@ -43188,7 +43189,7 @@ label.checkbox {
     font-weight: bold;
   }
 
-  /* line 29999, ../../app/styles/main.scss */
+  /* line 30000, ../../app/styles/main.scss */
   .instaText {
     text-align: center;
     margin-bottom: 4rem;
@@ -43198,12 +43199,12 @@ label.checkbox {
     font-size: 2rem;
   }
 
-  /* line 30007, ../../app/styles/main.scss */
+  /* line 30008, ../../app/styles/main.scss */
   .footer-logo {
     margin: 0px;
   }
 
-  /* line 30010, ../../app/styles/main.scss */
+  /* line 30011, ../../app/styles/main.scss */
   .col_one_third {
     width: 100%;
     float: none;
@@ -43213,17 +43214,17 @@ label.checkbox {
     margin-bottom: 20px !important;
   }
 
-  /* line 30019, ../../app/styles/main.scss */
+  /* line 30020, ../../app/styles/main.scss */
   .col_two_third {
     width: 100%;
   }
 
-  /* line 30023, ../../app/styles/main.scss */
+  /* line 30024, ../../app/styles/main.scss */
   .col_half {
     width: 100%;
   }
 
-  /* line 30029, ../../app/styles/main.scss */
+  /* line 30030, ../../app/styles/main.scss */
   .make-invisible {
     display: none;
   }

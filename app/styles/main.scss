@@ -12807,7 +12807,7 @@ body #side-panel.dark #side-panel-trigger-close a {
     pointer-events: auto;
     top: 25px;
     margin-top: 0;
-    left: 0;
+    right: 0;
     z-index: 1;
   }
   #primary-menu .container #primary-menu-trigger {
@@ -29941,6 +29941,7 @@ label.checkbox {
   }
   .blog-content-left {
     margin-top: 10px;
+    margin-bottom: 30px;
     height: auto;
     width: 80%;
     text-align: center;
