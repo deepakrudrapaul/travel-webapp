@@ -76,14 +76,14 @@ angular.module('wanderwagon-webapp')
       },
 
       getBlogInstaPhotos : function() {
-        return $({
+        return $http({
           method: 'GET',
           url: remoteAddr + '/blogs/instaPhotos'
         })
       },
 
       getSimilarBlogs : function(blogId) {
-        return $({
+        return $http({
           method: 'GET',
           url: remoteAddr + '/blogs/similarBlogs/' + blogId
         })

@@ -26,7 +26,8 @@ angular
     'duScroll',
     'vAccordion',
     'satellizer',
-    '720kb.socialshare'
+    '720kb.socialshare',
+    'ngHamburger'
   ])
   .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', '$authProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider) {
 

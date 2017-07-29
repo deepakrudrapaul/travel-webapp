@@ -10,6 +10,8 @@
 angular.module('wanderwagon-webapp')
     .controller('LinkCtrl', function ($scope, $window, $location, $rootScope, auth, remoteSvc) {
 
+        $scope.checked = true;
+
         if (auth.isLoggedIn()) {
             $rootScope.loggedIn = true;
             console.log($rootScope.loggedIn);
