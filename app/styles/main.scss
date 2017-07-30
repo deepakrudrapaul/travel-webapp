@@ -29903,7 +29903,76 @@ label.checkbox {
 //   }
 // }
 
+.overview {
+  width:40%; border:1px solid #F5F5F5; border-radius:2%;
+}
+
+#howToReach {
+  height:100vh;
+}
+
+.loved-it-button {
+  width:100%; height:10%;  padding:2%; text-align:center;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:2.8rem; 
+}
+
+.secondary-title {
+  margin-bottom: 0px;
+  font-size: 32px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #fff;
+}
+
+
+.custom-width {
+  width:100%;
+}
+
+
+.pull-right1 {
+  float:right;
+  width:40%; 
+}
+
+.pull-left1 {
+  float:left;
+
+  width:50%; 
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+  .pull-right1 {
+    width:100%;
+  float:none;
+}
+
+.pull-left1 {
+  float:none;
+  width:100%; 
+}
+
+  .secondary-title {
+    margin-bottom: 0px;
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #fff;  
+  }
+
+
+  .loved-it-button {
+  width:100%; height:10%;  padding:2%; text-align:center;letter-spacing:-0.45px;line-height:1;font-weight:400;font-size:1.5rem; 
+}
+
+  #howToReach {
+    height:auto;
+  }
+
+  .overview {
+  width:100%; border:1px solid #F5F5F5; border-radius:2%;
+}
+
   .custom-button {
     text-transform: uppercase;
     width: 60%;
@@ -30049,6 +30118,8 @@ label.checkbox {
     width: 50%;
   }
 }
+
+
 
 
 /* ----------------------------------------------------------------
@@ -30230,6 +30301,17 @@ label.checkbox {
 }
 
 @media (max-width: 767px) {
+
+   .pull-right1 {
+    width:100%;
+  float:none;
+}
+
+.pull-left1 {
+  float:none;
+  width:100%; 
+}
+
   body {
     padding: 0 !important;
   }
@@ -30349,7 +30431,7 @@ label.checkbox {
     margin-bottom: 25px !important;
   }
   #page-title {
-    padding: 20px 0 25px;
+    padding: 50px 0;
     text-align: center;
   }
   #page-title h1 {
