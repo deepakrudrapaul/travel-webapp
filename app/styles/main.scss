@@ -29648,7 +29648,6 @@ label.checkbox {
   position: absolute;
   font-weight: 700;
   letter-spacing: -0.08px;
-  background-image: linear-gradient(-180deg, rgba(0,0,0, 0) 53%, #000 100%);
 }
 
 .paul-slide-new {
@@ -29947,9 +29946,20 @@ label.checkbox {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
 
+  .paul-slider-caption {
+  font-size: 2rem;
+  left: 40%;
+  top: 45%;
+  color: #fff;
+  z-index: 30;
+  position: absolute;
+  font-weight: 700;
+  letter-spacing: -0.08px;
+}
+
   #logo img {
       height:70px;
-      margin:20%;
+      margin:20% 0 0 0;
   }
 
   .pull-right1 {
