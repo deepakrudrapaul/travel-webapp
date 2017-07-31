@@ -42815,7 +42815,7 @@ label.checkbox {
   box-shadow: none;
   z-index: 10;
   transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
-  background-image: linear-gradient(-180deg, transparent 53%, #000 100%);
+  background-color: #000000;
 }
 
 /* line 29663, ../../app/styles/main.scss */
@@ -42826,22 +42826,23 @@ label.checkbox {
   box-shadow: none;
   z-index: 10;
   transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
+  background-color: #000000;
 }
 
-/* line 29672, ../../app/styles/main.scss */
+/* line 29673, ../../app/styles/main.scss */
 .paul-slide-new:hover {
   z-index: 30;
   transform: translate(0px, -5px);
 }
 
-/* line 29681, ../../app/styles/main.scss */
+/* line 29682, ../../app/styles/main.scss */
 .paul-slide:hover {
   z-index: 30;
   transform: scale(1.03);
   box-shadow: 0px 28px 81px -7px rgba(0, 0, 0, 0.44);
 }
 
-/* line 29687, ../../app/styles/main.scss */
+/* line 29688, ../../app/styles/main.scss */
 .paul-title {
   text-align: center;
   margin-top: 2%;
@@ -42851,7 +42852,7 @@ label.checkbox {
   font-size: 3.8rem;
 }
 
-/* line 29704, ../../app/styles/main.scss */
+/* line 29705, ../../app/styles/main.scss */
 .text:before {
   content: "";
   position: absolute;
@@ -42864,7 +42865,7 @@ label.checkbox {
   border-bottom: 15px solid transparent;
 }
 
-/* line 29716, ../../app/styles/main.scss */
+/* line 29717, ../../app/styles/main.scss */
 .text:after {
   content: "";
   position: absolute;
@@ -42877,7 +42878,7 @@ label.checkbox {
   border-bottom: 15px solid transparent;
 }
 
-/* line 29728, ../../app/styles/main.scss */
+/* line 29729, ../../app/styles/main.scss */
 .paul-slideshow {
   margin: 0 auto;
   position: relative;
@@ -42885,7 +42886,7 @@ label.checkbox {
   transform: translate3d(0, 0, 0);
 }
 
-/* line 29735, ../../app/styles/main.scss */
+/* line 29736, ../../app/styles/main.scss */
 .paul-slideshow .mover-1 {
   animation: moveSlideshow 6s linear infinite;
 }
@@ -42895,7 +42896,7 @@ label.checkbox {
     transform: translateX(-66.6666%);
   }
 }
-/* line 29745, ../../app/styles/main.scss */
+/* line 29746, ../../app/styles/main.scss */
 .blog-image-left {
   height: 350px;
   width: 50%;
@@ -42906,7 +42907,7 @@ label.checkbox {
   overflow: hidden;
 }
 
-/* line 29755, ../../app/styles/main.scss */
+/* line 29756, ../../app/styles/main.scss */
 .blog-content-left {
   margin-top: 70px;
   height: 350px;
@@ -42917,7 +42918,7 @@ label.checkbox {
   position: relative;
 }
 
-/* line 29765, ../../app/styles/main.scss */
+/* line 29766, ../../app/styles/main.scss */
 .blog-image-right {
   height: 350px;
   width: 50%;
@@ -42928,7 +42929,7 @@ label.checkbox {
   overflow: hidden;
 }
 
-/* line 29775, ../../app/styles/main.scss */
+/* line 29776, ../../app/styles/main.scss */
 .blog-content-right {
   margin-top: 50px;
   height: 350px;
@@ -42939,7 +42940,7 @@ label.checkbox {
   position: relative;
 }
 
-/* line 29786, ../../app/styles/main.scss */
+/* line 29787, ../../app/styles/main.scss */
 .marquee {
   width: 100%;
   overflow: hidden;
@@ -42947,7 +42948,7 @@ label.checkbox {
   margin: 0;
 }
 
-/* line 29793, ../../app/styles/main.scss */
+/* line 29794, ../../app/styles/main.scss */
 .edge {
   left: 0;
   right: 0;
@@ -42958,45 +42959,45 @@ label.checkbox {
   display: block;
 }
 
-/* line 29803, ../../app/styles/main.scss */
+/* line 29804, ../../app/styles/main.scss */
 .slideContainer {
   overflow: hidden;
   width: 1000%;
   margin: 0;
 }
 
-/* line 29809, ../../app/styles/main.scss */
+/* line 29810, ../../app/styles/main.scss */
 .slideItem {
   list-style: none;
   display: inline-block;
   padding: 0 10px;
 }
 
-/* line 29815, ../../app/styles/main.scss */
+/* line 29816, ../../app/styles/main.scss */
 .carousel-control.left {
   background: none !important;
   cursor: pointer;
 }
 
-/* line 29820, ../../app/styles/main.scss */
+/* line 29821, ../../app/styles/main.scss */
 .carousel-control.right {
   background: none !important;
   cursor: pointer;
 }
 
-/* line 29825, ../../app/styles/main.scss */
+/* line 29826, ../../app/styles/main.scss */
 .glyphicon-chevron-right:before {
   font-family: "FontAwesome";
   content: "\f138";
 }
 
-/* line 29830, ../../app/styles/main.scss */
+/* line 29831, ../../app/styles/main.scss */
 .glyphicon-chevron-left:before {
   font-family: "FontAwesome";
   content: "\f137";
 }
 
-/* line 29835, ../../app/styles/main.scss */
+/* line 29836, ../../app/styles/main.scss */
 [ng\:cloak],
 [ng-cloak],
 [data-ng-cloak],
@@ -43006,12 +43007,12 @@ label.checkbox {
   display: none !important;
 }
 
-/* line 29845, ../../app/styles/main.scss */
+/* line 29846, ../../app/styles/main.scss */
 #primary-menu ul li:hover > ul {
   display: block;
 }
 
-/* line 29849, ../../app/styles/main.scss */
+/* line 29850, ../../app/styles/main.scss */
 .primary-title {
   margin-bottom: 0px;
   font-size: 32px;
@@ -43021,7 +43022,7 @@ label.checkbox {
   margin-top: 25%;
 }
 
-/* line 29858, ../../app/styles/main.scss */
+/* line 29859, ../../app/styles/main.scss */
 .primary-title-1 {
   margin-bottom: 0px;
   font-size: 32px;
@@ -43030,7 +43031,7 @@ label.checkbox {
   color: #fff;
 }
 
-/* line 29866, ../../app/styles/main.scss */
+/* line 29867, ../../app/styles/main.scss */
 .home-form-bg {
   background-color: #000;
   background-image: url("https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg");
@@ -43040,7 +43041,7 @@ label.checkbox {
   height: 100vh;
 }
 
-/* line 29875, ../../app/styles/main.scss */
+/* line 29876, ../../app/styles/main.scss */
 .home-form {
   width: 40%;
   height: 100vh;
@@ -43055,17 +43056,17 @@ label.checkbox {
   font-weight: bold;
 }
 
-/* line 29889, ../../app/styles/main.scss */
+/* line 29890, ../../app/styles/main.scss */
 .toppadding {
   padding-top: 10px;
 }
 
-/* line 29893, ../../app/styles/main.scss */
+/* line 29894, ../../app/styles/main.scss */
 .login-margin {
   margin-top: 10%;
 }
 
-/* line 29897, ../../app/styles/main.scss */
+/* line 29898, ../../app/styles/main.scss */
 .instaWidth {
   width: 30%;
 }
@@ -43077,12 +43078,12 @@ label.checkbox {
   border-radius: 2%;
 }
 
-/* line 29911, ../../app/styles/main.scss */
+/* line 29913, ../../app/styles/main.scss */
 #howToReach {
   height: 100vh;
 }
 
-/* line 29915, ../../app/styles/main.scss */
+/* line 29917, ../../app/styles/main.scss */
 .loved-it-button {
   width: 100%;
   height: 10%;
@@ -43094,7 +43095,7 @@ label.checkbox {
   font-size: 2.8rem;
 }
 
-/* line 29919, ../../app/styles/main.scss */
+/* line 29928, ../../app/styles/main.scss */
 .secondary-title {
   margin-bottom: 0px;
   font-size: 32px;
@@ -43103,32 +43104,94 @@ label.checkbox {
   color: #fff;
 }
 
-/* line 29928, ../../app/styles/main.scss */
+/* line 29936, ../../app/styles/main.scss */
 .custom-width {
   width: 100%;
 }
 
-/* line 29933, ../../app/styles/main.scss */
+/* line 29940, ../../app/styles/main.scss */
 .pull-right1 {
   float: right;
   width: 40%;
 }
 
-/* line 29938, ../../app/styles/main.scss */
+/* line 29945, ../../app/styles/main.scss */
 .pull-left1 {
   float: left;
   width: 50%;
 }
 
-/* line 29943, ../../app/styles/main.scss */
+/* line 29950, ../../app/styles/main.scss */
 .bootstrap-carousel {
   display: none;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
-  /* line 29949, ../../app/styles/main.scss */
+/* line 29954, ../../app/styles/main.scss */
+.sticky-ul {
+  margin-left: 25% !important;
+  margin-right: 25% !important;
+}
+
+/* line 29959, ../../app/styles/main.scss */
+#sticky-nav {
+  display: block;
+  float: none;
+}
+
+/* line 29964, ../../app/styles/main.scss */
+#sticky-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 29972, ../../app/styles/main.scss */
+#sticky-nav ul li {
+  float: left;
+}
+
+/* line 29976, ../../app/styles/main.scss */
+#sticky-nav ul li > a {
+  display: block;
+  line-height: 22px;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: Raleway, sans-serif;
+  padding: 39px 15px;
+  transition: margin 0.4s ease, padding 0.4s ease;
+}
+
+/* ----------------------------------------------------------------
+	Responsive CSS
+-----------------------------------------------------------------*/
+@media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
+  /* line 29995, ../../app/styles/main.scss */
+  .sticky-ul {
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+  }
+
+  /* line 30000, ../../app/styles/main.scss */
+  #sticky-nav ul li > a {
+    display: block;
+    line-height: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 10 px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: Raleway, sans-serif;
+    padding: 25px 5px;
+    transition: margin 0.4s ease, padding 0.4s ease;
+  }
+
+  /* line 30013, ../../app/styles/main.scss */
   .paul-slider-caption {
-    font-size: 1.6rem;
+    font-size: 2rem;
     left: 40%;
     top: 45%;
     color: #fff;
@@ -43138,25 +43201,25 @@ label.checkbox {
     letter-spacing: -0.08px;
   }
 
-  /* line 29960, ../../app/styles/main.scss */
+  /* line 30023, ../../app/styles/main.scss */
   #logo img {
     height: 70px;
     margin: 20% 0 0 0;
   }
 
-  /* line 29965, ../../app/styles/main.scss */
+  /* line 30027, ../../app/styles/main.scss */
   .pull-right1 {
     width: 100%;
     float: none;
   }
 
-  /* line 29970, ../../app/styles/main.scss */
+  /* line 30031, ../../app/styles/main.scss */
   .pull-left1 {
     float: none;
     width: 100%;
   }
 
-  /* line 29975, ../../app/styles/main.scss */
+  /* line 30035, ../../app/styles/main.scss */
   .secondary-title {
     margin-bottom: 0px;
     font-size: 24px;
@@ -43165,7 +43228,7 @@ label.checkbox {
     color: #fff;
   }
 
-  /* line 29984, ../../app/styles/main.scss */
+  /* line 30042, ../../app/styles/main.scss */
   .loved-it-button {
     width: 100%;
     height: 10%;
@@ -43177,19 +43240,19 @@ label.checkbox {
     font-size: 1.5rem;
   }
 
-  /* line 29988, ../../app/styles/main.scss */
+  /* line 30052, ../../app/styles/main.scss */
   #howToReach {
     height: auto;
   }
 
-  /* line 29992, ../../app/styles/main.scss */
+  /* line 30055, ../../app/styles/main.scss */
   .overview {
     width: 100%;
     border: 1px solid #F5F5F5;
     border-radius: 2%;
   }
 
-  /* line 29996, ../../app/styles/main.scss */
+  /* line 30060, ../../app/styles/main.scss */
   .custom-button {
     text-transform: uppercase;
     width: 60%;
@@ -43203,7 +43266,7 @@ label.checkbox {
     border-radius: 5px;
   }
 
-  /* line 30008, ../../app/styles/main.scss */
+  /* line 30072, ../../app/styles/main.scss */
   .primary-title {
     margin-bottom: 0px;
     font-size: 24px;
@@ -43213,7 +43276,7 @@ label.checkbox {
     margin-top: 60%;
   }
 
-  /* line 30016, ../../app/styles/main.scss */
+  /* line 30080, ../../app/styles/main.scss */
   .primary-title-1 {
     margin-bottom: 0px;
     font-size: 20px;
@@ -43222,7 +43285,7 @@ label.checkbox {
     color: #fff;
   }
 
-  /* line 30023, ../../app/styles/main.scss */
+  /* line 30087, ../../app/styles/main.scss */
   .paul-title {
     text-align: center;
     margin-top: 2%;
@@ -43232,12 +43295,12 @@ label.checkbox {
     font-size: 2.8rem;
   }
 
-  /* line 30031, ../../app/styles/main.scss */
+  /* line 30095, ../../app/styles/main.scss */
   .container {
     width: 100%;
   }
 
-  /* line 30034, ../../app/styles/main.scss */
+  /* line 30098, ../../app/styles/main.scss */
   .blog-image-left {
     height: auto;
     width: 80%;
@@ -43250,7 +43313,7 @@ label.checkbox {
     float: none;
   }
 
-  /* line 30045, ../../app/styles/main.scss */
+  /* line 30109, ../../app/styles/main.scss */
   .blog-content-left {
     margin-top: 10px;
     margin-bottom: 30px;
@@ -43265,7 +43328,7 @@ label.checkbox {
     float: none;
   }
 
-  /* line 30058, ../../app/styles/main.scss */
+  /* line 30122, ../../app/styles/main.scss */
   .blog-image-right {
     height: auto;
     width: 80%;
@@ -43279,7 +43342,7 @@ label.checkbox {
     margin-right: auto;
   }
 
-  /* line 30070, ../../app/styles/main.scss */
+  /* line 30134, ../../app/styles/main.scss */
   .blog-content-right {
     margin-top: 10px;
     height: auto;
@@ -43293,7 +43356,7 @@ label.checkbox {
     margin-right: auto;
   }
 
-  /* line 30082, ../../app/styles/main.scss */
+  /* line 30146, ../../app/styles/main.scss */
   .home-form-bg {
     background-color: #000;
     background-image: url("https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg");
@@ -43303,7 +43366,7 @@ label.checkbox {
     height: 900px;
   }
 
-  /* line 30090, ../../app/styles/main.scss */
+  /* line 30154, ../../app/styles/main.scss */
   .home-form {
     width: 100%;
     height: 900px;
@@ -43318,7 +43381,7 @@ label.checkbox {
     font-weight: bold;
   }
 
-  /* line 30103, ../../app/styles/main.scss */
+  /* line 30167, ../../app/styles/main.scss */
   .instaText {
     text-align: center;
     margin-bottom: 4rem;
@@ -43328,12 +43391,12 @@ label.checkbox {
     font-size: 2rem;
   }
 
-  /* line 30111, ../../app/styles/main.scss */
+  /* line 30175, ../../app/styles/main.scss */
   .footer-logo {
     margin: 0px;
   }
 
-  /* line 30114, ../../app/styles/main.scss */
+  /* line 30178, ../../app/styles/main.scss */
   .col_one_third {
     width: 100%;
     float: none;
@@ -43343,161 +43406,158 @@ label.checkbox {
     margin-bottom: 20px !important;
   }
 
-  /* line 30122, ../../app/styles/main.scss */
+  /* line 30186, ../../app/styles/main.scss */
   .col_two_third {
     width: 100%;
   }
 
-  /* line 30125, ../../app/styles/main.scss */
+  /* line 30189, ../../app/styles/main.scss */
   .col_half {
     width: 100%;
   }
 
-  /* line 30128, ../../app/styles/main.scss */
+  /* line 30192, ../../app/styles/main.scss */
   .make-invisible {
     display: none;
   }
 
-  /* line 30131, ../../app/styles/main.scss */
+  /* line 30195, ../../app/styles/main.scss */
   #header-wrap {
     height: auto !important;
   }
 
-  /* line 30134, ../../app/styles/main.scss */
+  /* line 30198, ../../app/styles/main.scss */
   .login-margin {
     margin-top: 20%;
   }
 
-  /* line 30137, ../../app/styles/main.scss */
+  /* line 30201, ../../app/styles/main.scss */
   .instaWidth {
     width: 50%;
   }
 }
-/* ----------------------------------------------------------------
-	Responsive CSS
------------------------------------------------------------------*/
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 30150, ../../app/styles/main.scss */
+  /* line 30207, ../../app/styles/main.scss */
   #wrapper {
     width: 1000px;
   }
 
-  /* line 30153, ../../app/styles/main.scss */
+  /* line 30210, ../../app/styles/main.scss */
   #header.transparent-header.floating-header .container {
     width: 1030px;
     padding: 0 30px;
   }
 
-  /* line 30157, ../../app/styles/main.scss */
+  /* line 30214, ../../app/styles/main.scss */
   #header.transparent-header.floating-header.sticky-header .container {
     width: 970px;
     padding: 0 15px;
   }
 
-  /* line 30161, ../../app/styles/main.scss */
+  /* line 30218, ../../app/styles/main.scss */
   #primary-menu.sub-title ul > li > a {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 30165, ../../app/styles/main.scss */
+  /* line 30222, ../../app/styles/main.scss */
   #primary-menu ul li.mega-menu .mega-menu-content,
   .floating-header.sticky-header #primary-menu ul li.mega-menu .mega-menu-content {
     width: 940px;
   }
 
-  /* line 30169, ../../app/styles/main.scss */
+  /* line 30226, ../../app/styles/main.scss */
   .floating-header #primary-menu ul li.mega-menu .mega-menu-content {
     width: 1030px;
   }
 
-  /* line 30172, ../../app/styles/main.scss */
+  /* line 30229, ../../app/styles/main.scss */
   .ei-slider {
     height: 450px;
   }
 
-  /* line 30175, ../../app/styles/main.scss */
+  /* line 30232, ../../app/styles/main.scss */
   .postcontent {
     width: 690px;
   }
 
-  /* line 30178, ../../app/styles/main.scss */
+  /* line 30235, ../../app/styles/main.scss */
   .postcontent.bothsidebar {
     width: 440px;
   }
 
-  /* line 30181, ../../app/styles/main.scss */
+  /* line 30238, ../../app/styles/main.scss */
   .sidebar {
     width: 210px;
   }
 
   /* Blog - Small
 	-----------------------------------------------------------------*/
-  /* line 30186, ../../app/styles/main.scss */
+  /* line 30243, ../../app/styles/main.scss */
   .postcontent .small-thumbs .entry-image {
     width: 200px;
   }
 
-  /* line 30189, ../../app/styles/main.scss */
+  /* line 30246, ../../app/styles/main.scss */
   .bothsidebar .small-thumbs .entry-image {
     width: 120px;
   }
 
   /* Blog - Grid
 	-----------------------------------------------------------------*/
-  /* line 30194, ../../app/styles/main.scss */
+  /* line 30251, ../../app/styles/main.scss */
   .post-grid .entry {
     width: 214px;
   }
 
   /* Blog - Grid - 3 Columns
 	-----------------------------------------------------------------*/
-  /* line 30199, ../../app/styles/main.scss */
+  /* line 30256, ../../app/styles/main.scss */
   .post-grid.grid-3 .entry {
     width: 293px;
   }
 
   /* Blog - Grid - 3 Columns - Sidebar
 	-----------------------------------------------------------------*/
-  /* line 30204, ../../app/styles/main.scss */
+  /* line 30261, ../../app/styles/main.scss */
   .postcontent .post-grid.grid-3 .entry {
     width: 213px;
   }
 
   /* Blog - Grid - 2 Columns
 	-----------------------------------------------------------------*/
-  /* line 30209, ../../app/styles/main.scss */
+  /* line 30266, ../../app/styles/main.scss */
   .post-grid.grid-2 .entry {
     width: 450px;
   }
 
   /* Blog - Grid - 2 Columns - Sidebar
 	-----------------------------------------------------------------*/
-  /* line 30214, ../../app/styles/main.scss */
+  /* line 30271, ../../app/styles/main.scss */
   .postcontent .post-grid.grid-2 .entry {
     width: 325px;
   }
 
   /* Blog - Grid - 2 Columns - Both Sidebar
 	-----------------------------------------------------------------*/
-  /* line 30219, ../../app/styles/main.scss */
+  /* line 30276, ../../app/styles/main.scss */
   .bothsidebar .post-grid.grid-2 .entry {
     width: 200px;
   }
 
-  /* line 30222, ../../app/styles/main.scss */
+  /* line 30279, ../../app/styles/main.scss */
   .post-timeline .entry {
     width: 400px !important;
   }
 
-  /* line 30225, ../../app/styles/main.scss */
+  /* line 30282, ../../app/styles/main.scss */
   .post-timeline .entry.entry-date-section {
     width: 100% !important;
   }
 
   /* Blog - Medium Post List
 	-----------------------------------------------------------------*/
-  /* line 30230, ../../app/styles/main.scss */
+  /* line 30287, ../../app/styles/main.scss */
   .mpost .entry-image,
   .mpost .entry-image a,
   .mpost .entry-image img,
@@ -43506,35 +43566,35 @@ label.checkbox {
     height: 90px;
   }
 
-  /* line 30237, ../../app/styles/main.scss */
+  /* line 30294, ../../app/styles/main.scss */
   .mpost .entry-image a i {
     line-height: 90px;
   }
 
-  /* line 30240, ../../app/styles/main.scss */
+  /* line 30297, ../../app/styles/main.scss */
   .col_one_third .landing-wide-form .heading-block h2 {
     font-size: 32px;
   }
 
-  /* line 30243, ../../app/styles/main.scss */
+  /* line 30300, ../../app/styles/main.scss */
   .col_one_third .landing-wide-form .heading-block span {
     font-size: 17px;
   }
 
-  /* line 30246, ../../app/styles/main.scss */
+  /* line 30303, ../../app/styles/main.scss */
   .col_one_third .landing-wide-form {
     padding: 36px 30px;
   }
 }
 @media (max-width: 991px) {
-  /* line 30252, ../../app/styles/main.scss */
+  /* line 30309, ../../app/styles/main.scss */
   #wrapper {
     width: 100%;
     margin: 0;
     box-shadow: none;
   }
 
-  /* line 30257, ../../app/styles/main.scss */
+  /* line 30314, ../../app/styles/main.scss */
   #header.full-header .container,
   .container-fullwidth {
     padding: 0 15px !important;
@@ -43542,12 +43602,12 @@ label.checkbox {
     width: 750px !important;
   }
 
-  /* line 30263, ../../app/styles/main.scss */
+  /* line 30320, ../../app/styles/main.scss */
   .container.vertical-middle {
     width: 100% !important;
   }
 
-  /* line 30266, ../../app/styles/main.scss */
+  /* line 30323, ../../app/styles/main.scss */
   .vertical-middle + .video-wrap {
     position: absolute;
     width: 100%;
@@ -43556,7 +43616,7 @@ label.checkbox {
     left: 0;
   }
 
-  /* line 30273, ../../app/styles/main.scss */
+  /* line 30330, ../../app/styles/main.scss */
   .postcontent,
   .postcontent.bothsidebar,
   .sidebar {
@@ -43568,7 +43628,7 @@ label.checkbox {
     border-bottom: 1px solid #EEE;
   }
 
-  /* line 30283, ../../app/styles/main.scss */
+  /* line 30340, ../../app/styles/main.scss */
   .sidebar.col_last {
     float: none;
     margin-bottom: 0 !important;
@@ -43578,12 +43638,12 @@ label.checkbox {
 
   /* Blog - Grid
 	-----------------------------------------------------------------*/
-  /* line 30291, ../../app/styles/main.scss */
+  /* line 30348, ../../app/styles/main.scss */
   .post-grid {
     margin-right: -20px;
   }
 
-  /* line 30294, ../../app/styles/main.scss */
+  /* line 30351, ../../app/styles/main.scss */
   .post-grid .entry {
     width: 226px;
     margin-right: 20px;
@@ -43591,149 +43651,149 @@ label.checkbox {
 
   /* Blog - Grid - 3 Columns
 	-----------------------------------------------------------------*/
-  /* line 30300, ../../app/styles/main.scss */
+  /* line 30357, ../../app/styles/main.scss */
   .post-grid.grid-2,
   .post-grid.grid-3 {
     margin-right: -30px;
   }
 
-  /* line 30304, ../../app/styles/main.scss */
+  /* line 30361, ../../app/styles/main.scss */
   .post-grid.grid-2 .entry,
   .post-grid.grid-3 .entry {
     width: 345px;
     margin-right: 30px;
   }
 
-  /* line 30309, ../../app/styles/main.scss */
+  /* line 30366, ../../app/styles/main.scss */
   .post-masonry-full .entry {
     width: 33.30% !important;
   }
 
-  /* line 30312, ../../app/styles/main.scss */
+  /* line 30369, ../../app/styles/main.scss */
   .post-masonry-full.grid-3 .entry {
     width: 50% !important;
   }
 
-  /* line 30315, ../../app/styles/main.scss */
+  /* line 30372, ../../app/styles/main.scss */
   .post-timeline .entry {
     width: 290px !important;
   }
 
-  /* line 30318, ../../app/styles/main.scss */
+  /* line 30375, ../../app/styles/main.scss */
   .post-timeline .entry.entry-date-section {
     width: 100% !important;
   }
 }
 @media (max-width: 767px) {
-  /* line 30325, ../../app/styles/main.scss */
+  /* line 30381, ../../app/styles/main.scss */
   .bootstrap-carousel {
     display: block;
   }
 
-  /* line 30329, ../../app/styles/main.scss */
+  /* line 30384, ../../app/styles/main.scss */
   .custom-paul-slider {
     display: none;
   }
 
-  /* line 30333, ../../app/styles/main.scss */
+  /* line 30387, ../../app/styles/main.scss */
   .pull-right1 {
     width: 100%;
     float: none;
   }
 
-  /* line 30338, ../../app/styles/main.scss */
+  /* line 30391, ../../app/styles/main.scss */
   .pull-left1 {
     float: none;
     width: 100%;
   }
 
-  /* line 30343, ../../app/styles/main.scss */
+  /* line 30395, ../../app/styles/main.scss */
   body {
     padding: 0 !important;
   }
 
-  /* line 30346, ../../app/styles/main.scss */
+  /* line 30398, ../../app/styles/main.scss */
   #wrapper {
     width: 100% !important;
   }
 
-  /* line 30349, ../../app/styles/main.scss */
+  /* line 30401, ../../app/styles/main.scss */
   .container-fullwidth {
     margin: 0 auto;
     padding: 0 15px !important;
   }
 
-  /* line 30353, ../../app/styles/main.scss */
+  /* line 30405, ../../app/styles/main.scss */
   h1 {
     font-size: 28px;
   }
 
-  /* line 30356, ../../app/styles/main.scss */
+  /* line 30408, ../../app/styles/main.scss */
   h2 {
     font-size: 24px;
   }
 
-  /* line 30359, ../../app/styles/main.scss */
+  /* line 30411, ../../app/styles/main.scss */
   h3 {
     font-size: 20px;
   }
 
-  /* line 30362, ../../app/styles/main.scss */
+  /* line 30414, ../../app/styles/main.scss */
   h4 {
     font-size: 16px;
   }
 
-  /* line 30365, ../../app/styles/main.scss */
+  /* line 30417, ../../app/styles/main.scss */
   .one-page-arrow {
     display: none !important;
   }
 
-  /* line 30368, ../../app/styles/main.scss */
+  /* line 30420, ../../app/styles/main.scss */
   #top-bar {
     height: auto;
   }
 
-  /* line 30371, ../../app/styles/main.scss */
+  /* line 30423, ../../app/styles/main.scss */
   #top-bar .col_half {
     width: 100%;
     margin-bottom: 0 !important;
   }
 
-  /* line 30375, ../../app/styles/main.scss */
+  /* line 30427, ../../app/styles/main.scss */
   .top-links,
   .top-links > ul > li {
     float: none !important;
   }
 
-  /* line 30379, ../../app/styles/main.scss */
+  /* line 30431, ../../app/styles/main.scss */
   .top-links > ul {
     text-align: center;
   }
 
-  /* line 30382, ../../app/styles/main.scss */
+  /* line 30434, ../../app/styles/main.scss */
   .top-links > ul > li {
     display: inline-block;
   }
 
-  /* line 30385, ../../app/styles/main.scss */
+  /* line 30437, ../../app/styles/main.scss */
   .top-links > ul > li {
     margin-right: -4px;
   }
 
-  /* line 30388, ../../app/styles/main.scss */
+  /* line 30440, ../../app/styles/main.scss */
   .top-links ul ul,
   .top-links ul div.top-link-section {
     text-align: left;
   }
 
-  /* line 30392, ../../app/styles/main.scss */
+  /* line 30444, ../../app/styles/main.scss */
   .top-links ul div.top-link-section {
     left: auto;
     right: 0;
     padding: 20px 15px;
   }
 
-  /* line 30397, ../../app/styles/main.scss */
+  /* line 30449, ../../app/styles/main.scss */
   #top-social,
   #slider:not(.swiper_wrapper) .slider-caption,
   .nivo-caption,
@@ -43747,22 +43807,22 @@ label.checkbox {
     display: none !important;
   }
 
-  /* line 30409, ../../app/styles/main.scss */
+  /* line 30461, ../../app/styles/main.scss */
   .slider-caption h2 {
     margin-bottom: 0 !important;
   }
 
-  /* line 30412, ../../app/styles/main.scss */
+  /* line 30464, ../../app/styles/main.scss */
   .flex-control-nav li {
     opacity: 1 !important;
   }
 
-  /* line 30415, ../../app/styles/main.scss */
+  /* line 30467, ../../app/styles/main.scss */
   .fslider:not(.flex-thumb-grid) .flex-control-nav.flex-control-thumbs {
     height: 60px;
   }
 
-  /* line 30418, ../../app/styles/main.scss */
+  /* line 30470, ../../app/styles/main.scss */
   .fslider:not(.flex-thumb-grid) .flex-control-nav.flex-control-thumbs li,
   .fslider:not(.flex-thumb-grid) .flex-control-nav.flex-control-thumbs li img {
     display: block;
@@ -43770,7 +43830,7 @@ label.checkbox {
     height: 60px !important;
   }
 
-  /* line 30424, ../../app/styles/main.scss */
+  /* line 30476, ../../app/styles/main.scss */
   .postcontent,
   .postcontent.bothsidebar,
   .sidebar,
@@ -43792,12 +43852,12 @@ label.checkbox {
     margin-bottom: 50px !important;
   }
 
-  /* line 30444, ../../app/styles/main.scss */
+  /* line 30496, ../../app/styles/main.scss */
   .sidebar.col_last {
     margin-bottom: 0 !important;
   }
 
-  /* line 30447, ../../app/styles/main.scss */
+  /* line 30499, ../../app/styles/main.scss */
   form .col_full,
   form .col_half,
   form .col_one_third,
@@ -43813,19 +43873,19 @@ label.checkbox {
     margin-bottom: 25px !important;
   }
 
-  /* line 30461, ../../app/styles/main.scss */
+  /* line 30513, ../../app/styles/main.scss */
   #page-title {
     padding: 50px 0;
     text-align: center;
   }
 
-  /* line 30465, ../../app/styles/main.scss */
+  /* line 30517, ../../app/styles/main.scss */
   #page-title h1 {
     line-height: 1.5;
     font-size: 24px;
   }
 
-  /* line 30469, ../../app/styles/main.scss */
+  /* line 30521, ../../app/styles/main.scss */
   #page-title .breadcrumb {
     position: relative !important;
     top: 0 !important;
@@ -43834,7 +43894,7 @@ label.checkbox {
     margin: 15px 0 0 !important;
   }
 
-  /* line 30476, ../../app/styles/main.scss */
+  /* line 30528, ../../app/styles/main.scss */
   #page-title #portfolio-navigation,
   #portfolio-ajax-title #portfolio-navigation {
     position: relative;
@@ -43843,14 +43903,14 @@ label.checkbox {
     margin: 15px auto 0;
   }
 
-  /* line 30483, ../../app/styles/main.scss */
+  /* line 30535, ../../app/styles/main.scss */
   #portfolio-ajax-title {
     text-align: center;
   }
 
   /* Blog
 	-----------------------------------------------------------------*/
-  /* line 30488, ../../app/styles/main.scss */
+  /* line 30540, ../../app/styles/main.scss */
   .small-thumbs .entry-image,
   .ievent .entry-image {
     float: none !important;
@@ -43858,36 +43918,36 @@ label.checkbox {
     margin: 0 0 20px !important;
   }
 
-  /* line 30494, ../../app/styles/main.scss */
+  /* line 30546, ../../app/styles/main.scss */
   .entry-title h2,
   .post-grid .entry-title h2 {
     font-size: 18px !important;
     font-weight: 600;
   }
 
-  /* line 30499, ../../app/styles/main.scss */
+  /* line 30551, ../../app/styles/main.scss */
   .entry-meta li {
     font-size: 11px;
     margin: 0 10px 10px 0;
   }
 
-  /* line 30503, ../../app/styles/main.scss */
+  /* line 30555, ../../app/styles/main.scss */
   #posts .entry-meta li i {
     display: none;
   }
 
-  /* line 30506, ../../app/styles/main.scss */
+  /* line 30558, ../../app/styles/main.scss */
   #posts.post-grid .entry-meta li i,
   #posts .entry-meta li:last-child i {
     display: inline-block;
   }
 
-  /* line 30510, ../../app/styles/main.scss */
+  /* line 30562, ../../app/styles/main.scss */
   .post-grid {
     margin-right: 0 !important;
   }
 
-  /* line 30513, ../../app/styles/main.scss */
+  /* line 30565, ../../app/styles/main.scss */
   .post-grid .entry,
   .post-masonry-full.grid-3 .entry {
     float: none !important;
@@ -43896,23 +43956,23 @@ label.checkbox {
     border-right: 0 !important;
   }
 
-  /* line 30520, ../../app/styles/main.scss */
+  /* line 30572, ../../app/styles/main.scss */
   .post-timeline .entry.entry-date-section {
     margin-left: 0;
   }
 
-  /* line 30523, ../../app/styles/main.scss */
+  /* line 30575, ../../app/styles/main.scss */
   .timeline-border,
   .post-timeline .entry-timeline {
     display: none !important;
   }
 
-  /* line 30527, ../../app/styles/main.scss */
+  /* line 30579, ../../app/styles/main.scss */
   .postcontent .post-timeline {
     padding-left: 0;
   }
 
-  /* line 30530, ../../app/styles/main.scss */
+  /* line 30582, ../../app/styles/main.scss */
   .post-masonry-full .entry {
     padding: 40px !important;
   }
