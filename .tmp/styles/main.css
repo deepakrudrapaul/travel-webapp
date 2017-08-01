@@ -43175,17 +43175,22 @@ label.checkbox {
 -----------------------------------------------------------------*/
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
   /* line 30000, ../../app/styles/main.scss */
+  #place {
+    margin-bottom: 5%;
+  }
+
+  /* line 30004, ../../app/styles/main.scss */
   .custom-height {
     height: auto;
   }
 
-  /* line 30003, ../../app/styles/main.scss */
+  /* line 30007, ../../app/styles/main.scss */
   .sticky-ul {
     margin-left: 5% !important;
     margin-right: 5% !important;
   }
 
-  /* line 30008, ../../app/styles/main.scss */
+  /* line 30012, ../../app/styles/main.scss */
   #sticky-nav ul li > a {
     display: block;
     line-height: 10px;
@@ -43199,7 +43204,7 @@ label.checkbox {
     transition: margin 0.4s ease, padding 0.4s ease;
   }
 
-  /* line 30021, ../../app/styles/main.scss */
+  /* line 30025, ../../app/styles/main.scss */
   .paul-slider-caption {
     font-size: 2rem;
     left: 40%;
@@ -43211,25 +43216,25 @@ label.checkbox {
     letter-spacing: -0.08px;
   }
 
-  /* line 30031, ../../app/styles/main.scss */
+  /* line 30035, ../../app/styles/main.scss */
   #logo img {
     height: 70px;
     margin: 20% 0 0 0;
   }
 
-  /* line 30035, ../../app/styles/main.scss */
+  /* line 30039, ../../app/styles/main.scss */
   .pull-right1 {
     width: 100%;
     float: none;
   }
 
-  /* line 30039, ../../app/styles/main.scss */
+  /* line 30043, ../../app/styles/main.scss */
   .pull-left1 {
     float: none;
     width: 100%;
   }
 
-  /* line 30043, ../../app/styles/main.scss */
+  /* line 30047, ../../app/styles/main.scss */
   .secondary-title {
     margin-bottom: 0px;
     font-size: 24px;
@@ -43238,7 +43243,7 @@ label.checkbox {
     color: #fff;
   }
 
-  /* line 30050, ../../app/styles/main.scss */
+  /* line 30054, ../../app/styles/main.scss */
   .loved-it-button {
     width: 100%;
     height: 10%;
@@ -43250,19 +43255,19 @@ label.checkbox {
     font-size: 1.5rem;
   }
 
-  /* line 30060, ../../app/styles/main.scss */
+  /* line 30064, ../../app/styles/main.scss */
   #howToReach {
     height: auto;
   }
 
-  /* line 30063, ../../app/styles/main.scss */
+  /* line 30067, ../../app/styles/main.scss */
   .overview {
     width: 100%;
     border: 1px solid #F5F5F5;
     border-radius: 2%;
   }
 
-  /* line 30068, ../../app/styles/main.scss */
+  /* line 30072, ../../app/styles/main.scss */
   .custom-button {
     text-transform: uppercase;
     width: 60%;
@@ -43276,7 +43281,7 @@ label.checkbox {
     border-radius: 5px;
   }
 
-  /* line 30080, ../../app/styles/main.scss */
+  /* line 30084, ../../app/styles/main.scss */
   .primary-title {
     margin-bottom: 0px;
     font-size: 24px;
@@ -43286,7 +43291,7 @@ label.checkbox {
     margin-top: 60%;
   }
 
-  /* line 30088, ../../app/styles/main.scss */
+  /* line 30092, ../../app/styles/main.scss */
   .primary-title-1 {
     margin-bottom: 0px;
     font-size: 20px;
@@ -43295,7 +43300,7 @@ label.checkbox {
     color: #fff;
   }
 
-  /* line 30095, ../../app/styles/main.scss */
+  /* line 30099, ../../app/styles/main.scss */
   .paul-title {
     text-align: center;
     margin-top: 2%;
@@ -43305,12 +43310,12 @@ label.checkbox {
     font-size: 2.8rem;
   }
 
-  /* line 30103, ../../app/styles/main.scss */
+  /* line 30107, ../../app/styles/main.scss */
   .container {
     width: 100%;
   }
 
-  /* line 30106, ../../app/styles/main.scss */
+  /* line 30110, ../../app/styles/main.scss */
   .blog-image-left {
     height: auto;
     width: 80%;
@@ -43323,7 +43328,7 @@ label.checkbox {
     float: none;
   }
 
-  /* line 30117, ../../app/styles/main.scss */
+  /* line 30121, ../../app/styles/main.scss */
   .blog-content-left {
     margin-top: 10px;
     margin-bottom: 30px;
@@ -43338,7 +43343,7 @@ label.checkbox {
     float: none;
   }
 
-  /* line 30130, ../../app/styles/main.scss */
+  /* line 30134, ../../app/styles/main.scss */
   .blog-image-right {
     height: auto;
     width: 80%;
@@ -43352,7 +43357,7 @@ label.checkbox {
     margin-right: auto;
   }
 
-  /* line 30142, ../../app/styles/main.scss */
+  /* line 30146, ../../app/styles/main.scss */
   .blog-content-right {
     margin-top: 10px;
     height: auto;
@@ -43366,7 +43371,7 @@ label.checkbox {
     margin-right: auto;
   }
 
-  /* line 30154, ../../app/styles/main.scss */
+  /* line 30158, ../../app/styles/main.scss */
   .home-form-bg {
     background-color: #000;
     background-image: url("https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg");
@@ -43376,7 +43381,7 @@ label.checkbox {
     height: 900px;
   }
 
-  /* line 30162, ../../app/styles/main.scss */
+  /* line 30166, ../../app/styles/main.scss */
   .home-form {
     width: 100%;
     height: 900px;
@@ -43391,7 +43396,7 @@ label.checkbox {
     font-weight: bold;
   }
 
-  /* line 30175, ../../app/styles/main.scss */
+  /* line 30179, ../../app/styles/main.scss */
   .instaText {
     text-align: center;
     margin-bottom: 4rem;
@@ -43401,12 +43406,12 @@ label.checkbox {
     font-size: 2rem;
   }
 
-  /* line 30183, ../../app/styles/main.scss */
+  /* line 30187, ../../app/styles/main.scss */
   .footer-logo {
     margin: 0px;
   }
 
-  /* line 30186, ../../app/styles/main.scss */
+  /* line 30190, ../../app/styles/main.scss */
   .col_one_third {
     width: 100%;
     float: none;
@@ -43416,158 +43421,158 @@ label.checkbox {
     margin-bottom: 20px !important;
   }
 
-  /* line 30194, ../../app/styles/main.scss */
+  /* line 30198, ../../app/styles/main.scss */
   .col_two_third {
     width: 100%;
   }
 
-  /* line 30197, ../../app/styles/main.scss */
+  /* line 30201, ../../app/styles/main.scss */
   .col_half {
     width: 100%;
   }
 
-  /* line 30200, ../../app/styles/main.scss */
+  /* line 30204, ../../app/styles/main.scss */
   .make-invisible {
     display: none;
   }
 
-  /* line 30203, ../../app/styles/main.scss */
+  /* line 30207, ../../app/styles/main.scss */
   #header-wrap {
     height: auto !important;
   }
 
-  /* line 30206, ../../app/styles/main.scss */
+  /* line 30210, ../../app/styles/main.scss */
   .login-margin {
     margin-top: 20%;
   }
 
-  /* line 30209, ../../app/styles/main.scss */
+  /* line 30213, ../../app/styles/main.scss */
   .instaWidth {
     width: 50%;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 30215, ../../app/styles/main.scss */
+  /* line 30219, ../../app/styles/main.scss */
   #wrapper {
     width: 1000px;
   }
 
-  /* line 30218, ../../app/styles/main.scss */
+  /* line 30222, ../../app/styles/main.scss */
   #header.transparent-header.floating-header .container {
     width: 1030px;
     padding: 0 30px;
   }
 
-  /* line 30222, ../../app/styles/main.scss */
+  /* line 30226, ../../app/styles/main.scss */
   #header.transparent-header.floating-header.sticky-header .container {
     width: 970px;
     padding: 0 15px;
   }
 
-  /* line 30226, ../../app/styles/main.scss */
+  /* line 30230, ../../app/styles/main.scss */
   #primary-menu.sub-title ul > li > a {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 30230, ../../app/styles/main.scss */
+  /* line 30234, ../../app/styles/main.scss */
   #primary-menu ul li.mega-menu .mega-menu-content,
   .floating-header.sticky-header #primary-menu ul li.mega-menu .mega-menu-content {
     width: 940px;
   }
 
-  /* line 30234, ../../app/styles/main.scss */
+  /* line 30238, ../../app/styles/main.scss */
   .floating-header #primary-menu ul li.mega-menu .mega-menu-content {
     width: 1030px;
   }
 
-  /* line 30237, ../../app/styles/main.scss */
+  /* line 30241, ../../app/styles/main.scss */
   .ei-slider {
     height: 450px;
   }
 
-  /* line 30240, ../../app/styles/main.scss */
+  /* line 30244, ../../app/styles/main.scss */
   .postcontent {
     width: 690px;
   }
 
-  /* line 30243, ../../app/styles/main.scss */
+  /* line 30247, ../../app/styles/main.scss */
   .postcontent.bothsidebar {
     width: 440px;
   }
 
-  /* line 30246, ../../app/styles/main.scss */
+  /* line 30250, ../../app/styles/main.scss */
   .sidebar {
     width: 210px;
   }
 
   /* Blog - Small
 	-----------------------------------------------------------------*/
-  /* line 30251, ../../app/styles/main.scss */
+  /* line 30255, ../../app/styles/main.scss */
   .postcontent .small-thumbs .entry-image {
     width: 200px;
   }
 
-  /* line 30254, ../../app/styles/main.scss */
+  /* line 30258, ../../app/styles/main.scss */
   .bothsidebar .small-thumbs .entry-image {
     width: 120px;
   }
 
   /* Blog - Grid
 	-----------------------------------------------------------------*/
-  /* line 30259, ../../app/styles/main.scss */
+  /* line 30263, ../../app/styles/main.scss */
   .post-grid .entry {
     width: 214px;
   }
 
   /* Blog - Grid - 3 Columns
 	-----------------------------------------------------------------*/
-  /* line 30264, ../../app/styles/main.scss */
+  /* line 30268, ../../app/styles/main.scss */
   .post-grid.grid-3 .entry {
     width: 293px;
   }
 
   /* Blog - Grid - 3 Columns - Sidebar
 	-----------------------------------------------------------------*/
-  /* line 30269, ../../app/styles/main.scss */
+  /* line 30273, ../../app/styles/main.scss */
   .postcontent .post-grid.grid-3 .entry {
     width: 213px;
   }
 
   /* Blog - Grid - 2 Columns
 	-----------------------------------------------------------------*/
-  /* line 30274, ../../app/styles/main.scss */
+  /* line 30278, ../../app/styles/main.scss */
   .post-grid.grid-2 .entry {
     width: 450px;
   }
 
   /* Blog - Grid - 2 Columns - Sidebar
 	-----------------------------------------------------------------*/
-  /* line 30279, ../../app/styles/main.scss */
+  /* line 30283, ../../app/styles/main.scss */
   .postcontent .post-grid.grid-2 .entry {
     width: 325px;
   }
 
   /* Blog - Grid - 2 Columns - Both Sidebar
 	-----------------------------------------------------------------*/
-  /* line 30284, ../../app/styles/main.scss */
+  /* line 30288, ../../app/styles/main.scss */
   .bothsidebar .post-grid.grid-2 .entry {
     width: 200px;
   }
 
-  /* line 30287, ../../app/styles/main.scss */
+  /* line 30291, ../../app/styles/main.scss */
   .post-timeline .entry {
     width: 400px !important;
   }
 
-  /* line 30290, ../../app/styles/main.scss */
+  /* line 30294, ../../app/styles/main.scss */
   .post-timeline .entry.entry-date-section {
     width: 100% !important;
   }
 
   /* Blog - Medium Post List
 	-----------------------------------------------------------------*/
-  /* line 30295, ../../app/styles/main.scss */
+  /* line 30299, ../../app/styles/main.scss */
   .mpost .entry-image,
   .mpost .entry-image a,
   .mpost .entry-image img,
@@ -43576,35 +43581,35 @@ label.checkbox {
     height: 90px;
   }
 
-  /* line 30302, ../../app/styles/main.scss */
+  /* line 30306, ../../app/styles/main.scss */
   .mpost .entry-image a i {
     line-height: 90px;
   }
 
-  /* line 30305, ../../app/styles/main.scss */
+  /* line 30309, ../../app/styles/main.scss */
   .col_one_third .landing-wide-form .heading-block h2 {
     font-size: 32px;
   }
 
-  /* line 30308, ../../app/styles/main.scss */
+  /* line 30312, ../../app/styles/main.scss */
   .col_one_third .landing-wide-form .heading-block span {
     font-size: 17px;
   }
 
-  /* line 30311, ../../app/styles/main.scss */
+  /* line 30315, ../../app/styles/main.scss */
   .col_one_third .landing-wide-form {
     padding: 36px 30px;
   }
 }
 @media (max-width: 991px) {
-  /* line 30317, ../../app/styles/main.scss */
+  /* line 30321, ../../app/styles/main.scss */
   #wrapper {
     width: 100%;
     margin: 0;
     box-shadow: none;
   }
 
-  /* line 30322, ../../app/styles/main.scss */
+  /* line 30326, ../../app/styles/main.scss */
   #header.full-header .container,
   .container-fullwidth {
     padding: 0 15px !important;
@@ -43612,12 +43617,12 @@ label.checkbox {
     width: 750px !important;
   }
 
-  /* line 30328, ../../app/styles/main.scss */
+  /* line 30332, ../../app/styles/main.scss */
   .container.vertical-middle {
     width: 100% !important;
   }
 
-  /* line 30331, ../../app/styles/main.scss */
+  /* line 30335, ../../app/styles/main.scss */
   .vertical-middle + .video-wrap {
     position: absolute;
     width: 100%;
@@ -43626,7 +43631,7 @@ label.checkbox {
     left: 0;
   }
 
-  /* line 30338, ../../app/styles/main.scss */
+  /* line 30342, ../../app/styles/main.scss */
   .postcontent,
   .postcontent.bothsidebar,
   .sidebar {
@@ -43638,7 +43643,7 @@ label.checkbox {
     border-bottom: 1px solid #EEE;
   }
 
-  /* line 30348, ../../app/styles/main.scss */
+  /* line 30352, ../../app/styles/main.scss */
   .sidebar.col_last {
     float: none;
     margin-bottom: 0 !important;
@@ -43648,12 +43653,12 @@ label.checkbox {
 
   /* Blog - Grid
 	-----------------------------------------------------------------*/
-  /* line 30356, ../../app/styles/main.scss */
+  /* line 30360, ../../app/styles/main.scss */
   .post-grid {
     margin-right: -20px;
   }
 
-  /* line 30359, ../../app/styles/main.scss */
+  /* line 30363, ../../app/styles/main.scss */
   .post-grid .entry {
     width: 226px;
     margin-right: 20px;
@@ -43661,149 +43666,149 @@ label.checkbox {
 
   /* Blog - Grid - 3 Columns
 	-----------------------------------------------------------------*/
-  /* line 30365, ../../app/styles/main.scss */
+  /* line 30369, ../../app/styles/main.scss */
   .post-grid.grid-2,
   .post-grid.grid-3 {
     margin-right: -30px;
   }
 
-  /* line 30369, ../../app/styles/main.scss */
+  /* line 30373, ../../app/styles/main.scss */
   .post-grid.grid-2 .entry,
   .post-grid.grid-3 .entry {
     width: 345px;
     margin-right: 30px;
   }
 
-  /* line 30374, ../../app/styles/main.scss */
+  /* line 30378, ../../app/styles/main.scss */
   .post-masonry-full .entry {
     width: 33.30% !important;
   }
 
-  /* line 30377, ../../app/styles/main.scss */
+  /* line 30381, ../../app/styles/main.scss */
   .post-masonry-full.grid-3 .entry {
     width: 50% !important;
   }
 
-  /* line 30380, ../../app/styles/main.scss */
+  /* line 30384, ../../app/styles/main.scss */
   .post-timeline .entry {
     width: 290px !important;
   }
 
-  /* line 30383, ../../app/styles/main.scss */
+  /* line 30387, ../../app/styles/main.scss */
   .post-timeline .entry.entry-date-section {
     width: 100% !important;
   }
 }
 @media (max-width: 767px) {
-  /* line 30389, ../../app/styles/main.scss */
+  /* line 30393, ../../app/styles/main.scss */
   .bootstrap-carousel {
     display: block;
   }
 
-  /* line 30392, ../../app/styles/main.scss */
+  /* line 30396, ../../app/styles/main.scss */
   .custom-paul-slider {
     display: none;
   }
 
-  /* line 30395, ../../app/styles/main.scss */
+  /* line 30399, ../../app/styles/main.scss */
   .pull-right1 {
     width: 100%;
     float: none;
   }
 
-  /* line 30399, ../../app/styles/main.scss */
+  /* line 30403, ../../app/styles/main.scss */
   .pull-left1 {
     float: none;
     width: 100%;
   }
 
-  /* line 30403, ../../app/styles/main.scss */
+  /* line 30407, ../../app/styles/main.scss */
   body {
     padding: 0 !important;
   }
 
-  /* line 30406, ../../app/styles/main.scss */
+  /* line 30410, ../../app/styles/main.scss */
   #wrapper {
     width: 100% !important;
   }
 
-  /* line 30409, ../../app/styles/main.scss */
+  /* line 30413, ../../app/styles/main.scss */
   .container-fullwidth {
     margin: 0 auto;
     padding: 0 15px !important;
   }
 
-  /* line 30413, ../../app/styles/main.scss */
+  /* line 30417, ../../app/styles/main.scss */
   h1 {
     font-size: 28px;
   }
 
-  /* line 30416, ../../app/styles/main.scss */
+  /* line 30420, ../../app/styles/main.scss */
   h2 {
     font-size: 24px;
   }
 
-  /* line 30419, ../../app/styles/main.scss */
+  /* line 30423, ../../app/styles/main.scss */
   h3 {
     font-size: 20px;
   }
 
-  /* line 30422, ../../app/styles/main.scss */
+  /* line 30426, ../../app/styles/main.scss */
   h4 {
     font-size: 16px;
   }
 
-  /* line 30425, ../../app/styles/main.scss */
+  /* line 30429, ../../app/styles/main.scss */
   .one-page-arrow {
     display: none !important;
   }
 
-  /* line 30428, ../../app/styles/main.scss */
+  /* line 30432, ../../app/styles/main.scss */
   #top-bar {
     height: auto;
   }
 
-  /* line 30431, ../../app/styles/main.scss */
+  /* line 30435, ../../app/styles/main.scss */
   #top-bar .col_half {
     width: 100%;
     margin-bottom: 0 !important;
   }
 
-  /* line 30435, ../../app/styles/main.scss */
+  /* line 30439, ../../app/styles/main.scss */
   .top-links,
   .top-links > ul > li {
     float: none !important;
   }
 
-  /* line 30439, ../../app/styles/main.scss */
+  /* line 30443, ../../app/styles/main.scss */
   .top-links > ul {
     text-align: center;
   }
 
-  /* line 30442, ../../app/styles/main.scss */
+  /* line 30446, ../../app/styles/main.scss */
   .top-links > ul > li {
     display: inline-block;
   }
 
-  /* line 30445, ../../app/styles/main.scss */
+  /* line 30449, ../../app/styles/main.scss */
   .top-links > ul > li {
     margin-right: -4px;
   }
 
-  /* line 30448, ../../app/styles/main.scss */
+  /* line 30452, ../../app/styles/main.scss */
   .top-links ul ul,
   .top-links ul div.top-link-section {
     text-align: left;
   }
 
-  /* line 30452, ../../app/styles/main.scss */
+  /* line 30456, ../../app/styles/main.scss */
   .top-links ul div.top-link-section {
     left: auto;
     right: 0;
     padding: 20px 15px;
   }
 
-  /* line 30457, ../../app/styles/main.scss */
+  /* line 30461, ../../app/styles/main.scss */
   #top-social,
   #slider:not(.swiper_wrapper) .slider-caption,
   .nivo-caption,
@@ -43817,22 +43822,22 @@ label.checkbox {
     display: none !important;
   }
 
-  /* line 30469, ../../app/styles/main.scss */
+  /* line 30473, ../../app/styles/main.scss */
   .slider-caption h2 {
     margin-bottom: 0 !important;
   }
 
-  /* line 30472, ../../app/styles/main.scss */
+  /* line 30476, ../../app/styles/main.scss */
   .flex-control-nav li {
     opacity: 1 !important;
   }
 
-  /* line 30475, ../../app/styles/main.scss */
+  /* line 30479, ../../app/styles/main.scss */
   .fslider:not(.flex-thumb-grid) .flex-control-nav.flex-control-thumbs {
     height: 60px;
   }
 
-  /* line 30478, ../../app/styles/main.scss */
+  /* line 30482, ../../app/styles/main.scss */
   .fslider:not(.flex-thumb-grid) .flex-control-nav.flex-control-thumbs li,
   .fslider:not(.flex-thumb-grid) .flex-control-nav.flex-control-thumbs li img {
     display: block;
@@ -43840,7 +43845,7 @@ label.checkbox {
     height: 60px !important;
   }
 
-  /* line 30484, ../../app/styles/main.scss */
+  /* line 30488, ../../app/styles/main.scss */
   .postcontent,
   .postcontent.bothsidebar,
   .sidebar,
@@ -43862,12 +43867,12 @@ label.checkbox {
     margin-bottom: 50px !important;
   }
 
-  /* line 30504, ../../app/styles/main.scss */
+  /* line 30508, ../../app/styles/main.scss */
   .sidebar.col_last {
     margin-bottom: 0 !important;
   }
 
-  /* line 30507, ../../app/styles/main.scss */
+  /* line 30511, ../../app/styles/main.scss */
   form .col_full,
   form .col_half,
   form .col_one_third,
@@ -43883,19 +43888,19 @@ label.checkbox {
     margin-bottom: 25px !important;
   }
 
-  /* line 30521, ../../app/styles/main.scss */
+  /* line 30525, ../../app/styles/main.scss */
   #page-title {
     padding: 50px 0;
     text-align: center;
   }
 
-  /* line 30525, ../../app/styles/main.scss */
+  /* line 30529, ../../app/styles/main.scss */
   #page-title h1 {
     line-height: 1.5;
     font-size: 24px;
   }
 
-  /* line 30529, ../../app/styles/main.scss */
+  /* line 30533, ../../app/styles/main.scss */
   #page-title .breadcrumb {
     position: relative !important;
     top: 0 !important;
@@ -43904,7 +43909,7 @@ label.checkbox {
     margin: 15px 0 0 !important;
   }
 
-  /* line 30536, ../../app/styles/main.scss */
+  /* line 30540, ../../app/styles/main.scss */
   #page-title #portfolio-navigation,
   #portfolio-ajax-title #portfolio-navigation {
     position: relative;
@@ -43913,14 +43918,14 @@ label.checkbox {
     margin: 15px auto 0;
   }
 
-  /* line 30543, ../../app/styles/main.scss */
+  /* line 30547, ../../app/styles/main.scss */
   #portfolio-ajax-title {
     text-align: center;
   }
 
   /* Blog
 	-----------------------------------------------------------------*/
-  /* line 30548, ../../app/styles/main.scss */
+  /* line 30552, ../../app/styles/main.scss */
   .small-thumbs .entry-image,
   .ievent .entry-image {
     float: none !important;
@@ -43928,36 +43933,36 @@ label.checkbox {
     margin: 0 0 20px !important;
   }
 
-  /* line 30554, ../../app/styles/main.scss */
+  /* line 30558, ../../app/styles/main.scss */
   .entry-title h2,
   .post-grid .entry-title h2 {
     font-size: 18px !important;
     font-weight: 600;
   }
 
-  /* line 30559, ../../app/styles/main.scss */
+  /* line 30563, ../../app/styles/main.scss */
   .entry-meta li {
     font-size: 11px;
     margin: 0 10px 10px 0;
   }
 
-  /* line 30563, ../../app/styles/main.scss */
+  /* line 30567, ../../app/styles/main.scss */
   #posts .entry-meta li i {
     display: none;
   }
 
-  /* line 30566, ../../app/styles/main.scss */
+  /* line 30570, ../../app/styles/main.scss */
   #posts.post-grid .entry-meta li i,
   #posts .entry-meta li:last-child i {
     display: inline-block;
   }
 
-  /* line 30570, ../../app/styles/main.scss */
+  /* line 30574, ../../app/styles/main.scss */
   .post-grid {
     margin-right: 0 !important;
   }
 
-  /* line 30573, ../../app/styles/main.scss */
+  /* line 30577, ../../app/styles/main.scss */
   .post-grid .entry,
   .post-masonry-full.grid-3 .entry {
     float: none !important;
@@ -43966,23 +43971,23 @@ label.checkbox {
     border-right: 0 !important;
   }
 
-  /* line 30580, ../../app/styles/main.scss */
+  /* line 30584, ../../app/styles/main.scss */
   .post-timeline .entry.entry-date-section {
     margin-left: 0;
   }
 
-  /* line 30583, ../../app/styles/main.scss */
+  /* line 30587, ../../app/styles/main.scss */
   .timeline-border,
   .post-timeline .entry-timeline {
     display: none !important;
   }
 
-  /* line 30587, ../../app/styles/main.scss */
+  /* line 30591, ../../app/styles/main.scss */
   .postcontent .post-timeline {
     padding-left: 0;
   }
 
-  /* line 30590, ../../app/styles/main.scss */
+  /* line 30594, ../../app/styles/main.scss */
   .post-masonry-full .entry {
     padding: 40px !important;
   }
