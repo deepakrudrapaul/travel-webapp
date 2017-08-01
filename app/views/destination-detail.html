@@ -133,8 +133,8 @@
 </section>
 
 
-<section id="places">
-  <div class=" container clearfix" style="height:80vh;">
+<section id="places" style="margin-bottom:10%;">
+  <div class=" container clearfix custom-height" >
     <div>
       <h2 style="text-align:center;margin:6rem 0 10rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
         Places to visit
@@ -475,7 +475,7 @@
 </section>
 
 <section id="activities">
-  <div class=" container clearfix" style="height:80vh;">
+  <div class=" container clearfix custom-height">
     <div>
       <h2 style="text-align:center;margin:6rem 0 10rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
         Activities
@@ -531,7 +531,7 @@
 
           <div class="carousel-inner" >
             <div class="item" ng-click="header1.isOpen = !header1.isOpen" data-ng-repeat="slide in activitiesData" data-ng-class="{active : $first}">
-                          <img style="object-fit:cover; width:100%; height:400px; background-color:#000;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
+                          <img src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/nainital/coverpic/coverpic.jpg" style="object-fit:cover; width:100%; height:400px;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
                           <span class="paul-slider-caption">
                     {{slide.title}}</span>
             </div>
@@ -889,7 +889,7 @@
 
           <div class="carousel-inner" >
             <div class="item" ng-click="header1.isOpen = !header1.isOpen" data-ng-repeat="slide in activitiesData" data-ng-class="{active : $first}">
-                          <img style="object-fit:cover; width:100%; height:400px; " ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
+                          <img src="images/assam.jpg" style="object-fit:cover; width:100%; height:400px; " ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
                           <span class="paul-slider-caption">
                     {{slide.title}}</span>
             </div>
