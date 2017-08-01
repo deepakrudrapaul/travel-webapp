@@ -189,8 +189,8 @@
           </ol>-->
 
           <div class="carousel-inner" >
-            <div class="item" ng-click="header1.isOpen = !header1.isOpen" data-ng-repeat="slide in placesData" data-ng-class="{active : $first}">
-                          <img style="object-fit:cover; width:100%; height:400px; background-color:#000;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
+            <div class="item" data-ng-repeat="slide in placesData" data-ng-class="{active : $first}">
+                          <img ng-click="accordion1.isOpen = !accordion.isOpen" style="object-fit:cover; width:100%; height:400px; background-color:#000;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
                           <span class="paul-slider-caption">
                     {{slide.title}}</span>
             </div>
@@ -247,7 +247,7 @@
 
               <div class="col-sm-3 padding:0 1% 0 1%">
 
-                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[0].id)" style="cursor:pointer;">
+                <div ng-click="accordion1.isOpen = !accordion1.isOpen ; getTravelInspirationDetail(placesData[0].id)" style="cursor:pointer;">
                   <div class="paul-slide-new">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[0].imageUrl}}" class="img-responsive" alt="a"
                     />
@@ -261,7 +261,7 @@
               </div>
 
               <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[1].id)" style="cursor:pointer;">
+                <div ng-click="accordion1.isOpen = !accordion1.isOpen ; getTravelInspirationDetail(placesData[1].id)" style="cursor:pointer;">
                   <div class="paul-slide-new">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[1].imageUrl}}" class="img-responsive" alt="a"
                     />
@@ -274,7 +274,7 @@
               </div>
 
               <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(slideplacesDatar[2].id)" style="cursor:pointer;">
+                <div ng-click="accordion1.isOpen = !accordion1.isOpen ; getTravelInspirationDetail(slideplacesDatar[2].id)" style="cursor:pointer;">
                   <div class="paul-slide-new">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[2].imageUrl}}" class="img-responsive" alt="a"
                     />
@@ -287,7 +287,7 @@
               </div>
 
               <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[3].id)" style="cursor:pointer;">
+                <div ng-click="accordion1.isOpen = !accordion1.isOpen ; getTravelInspirationDetail(placesData[3].id)" style="cursor:pointer;">
                   <div class="paul-slide-new">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[3].imageUrl}}" class="img-responsive" alt="a"
                     />
@@ -304,7 +304,7 @@
             <div class="row">
 
               <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[4].id)" style="cursor:pointer;">
+                <div ng-click="accordion1.isOpen = !accordion1.isOpen ; getTravelInspirationDetail(placesData[4].id)" style="cursor:pointer;">
                   <div class="paul-slide-new">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[4].imageUrl}}" class="img-responsive" alt="a"
                     />
@@ -317,7 +317,7 @@
               </div>
 
               <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[5].id)" style="cursor:pointer;">
+                <div ng-click="accordion1.isOpen = !accordion1.isOpen ; getTravelInspirationDetail(placesData[5].id)" style="cursor:pointer;">
                   <div class="paul-slide-new">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[5].imageUrl}}" class="img-responsive" alt="a"
                     />
@@ -330,7 +330,7 @@
               </div>
 
               <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[6].id)" style="cursor:pointer;">
+                <div ng-click="accordion1.isOpen = !accordion1.isOpen ; getTravelInspirationDetail(placesData[6].id)" style="cursor:pointer;">
                   <div class="paul-slide-new">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[6].imageUrl}}" class="img-responsive" alt="a"
                     />
@@ -343,7 +343,7 @@
               </div>
 
               <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="header1.isOpen = !header1.isOpen ; getTravelInspirationDetail(placesData[7].id)" style="cursor:pointer;">
+                <div ng-click="accordion1.isOpen = !accordion1.isOpen ; getTravelInspirationDetail(placesData[7].id)" style="cursor:pointer;">
                   <div class="paul-slide-new">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[7].imageUrl}}" class="img-responsive" alt="a"
                     />
@@ -365,7 +365,7 @@
   <div id="accordion1" class="clearfix" style="margin-top:8%;">
 
     <uib-accordion>
-      <uib-accordion-group is-open="header1.isOpen">
+      <uib-accordion-group is-open="accordion1.isOpen">
     
 
         <div id="placeDetail-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
@@ -428,7 +428,7 @@
                 </div>
 
                 <div class="pull-right" style="width:70%; padding-left:2%; text-align:left;">
-                   <span ng-click="header1.isOpen=! header1.isOpen" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
+                   <span ng-click="accordion1.isOpen=! accordion1.isOpen" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
 
                   <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
                     What is it.....</h4>
@@ -530,8 +530,8 @@
           </ol>-->
 
           <div class="carousel-inner" >
-            <div class="item" ng-click="header1.isOpen = !header1.isOpen" data-ng-repeat="slide in activitiesData" data-ng-class="{active : $first}">
-                          <img src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/nainital/coverpic/coverpic.jpg" style="object-fit:cover; width:100%; height:400px;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
+            <div class="item"  data-ng-repeat="slide in activitiesData" data-ng-class="{active : $first}">
+                          <img ng-click="accordion2.isOpen = !accordion2.isOpen" src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/nainital/coverpic/coverpic.jpg" style="object-fit:cover; width:100%; height:400px;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
                           <span class="paul-slider-caption">
                     {{slide.title}}</span>
             </div>
@@ -888,7 +888,7 @@
           </ol>-->
 
           <div class="carousel-inner" >
-            <div class="item" ng-click="header1.isOpen = !header1.isOpen" data-ng-repeat="slide in activitiesData" data-ng-class="{active : $first}">
+            <div class="item"  data-ng-repeat="slide in activitiesData" data-ng-class="{active : $first}">
                           <img src="images/assam.jpg" style="object-fit:cover; width:100%; height:400px; " ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
                           <span class="paul-slider-caption">
                     {{slide.title}}</span>

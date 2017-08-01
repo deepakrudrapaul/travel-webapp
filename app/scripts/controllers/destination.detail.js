@@ -25,7 +25,7 @@ angular.module('wanderwagon-webapp')
 
 
 
-    $scope.$watch('header1.isOpen', function (isOpen) {
+    $scope.$watch('accordion1.isOpen', function (isOpen) {
       if (isOpen) {
         var someElement = angular.element(document.getElementById('accordion1'));
         $document.scrollToElement(someElement, 40, 800);
