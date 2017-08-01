@@ -17,6 +17,7 @@ angular.module('wanderwagon-webapp')
         console.log(data);
         $scope.detail = data.response;
         $scope.placesData = data.response.places;
+        
         $scope.activitiesData = data.response.activities;
       });
     };
