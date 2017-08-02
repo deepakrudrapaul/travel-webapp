@@ -13,8 +13,7 @@
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/allmighty-autocomplete/style/autocomplete.css" />
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
-  />
+  <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
   <link rel="stylesheet" href="bower_components/v-accordion/dist/v-accordion.css" />
   <link rel="stylesheet" href="bower_components/angular-hamburger-toggle/dist/angular-hamburger-toggle.css" />
   <!-- endbower -->
@@ -55,14 +54,25 @@
 
       <div class="container clearfix">
        
-        <div class="primary-menu-trigger" ng-touch="openFacebook()"><i class="icon-reorder" style="font-size:30px; color:#FFFFFF"></i></div>
+        <div class="primary-menu-trigger" ng-click="openSideNav()"><i class="icon-reorder" style="font-size:30px; color:#FFFFFF"></i></div>
 
         <div id="mySidenav" class="sidenav">
-          <a href="" class="closebtn" ng-click="closeNav()">&times;</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Clients</a> 
-          <a href="#">Contact</a>
+          <a href="" class="closebtn" ng-click="closeSideNav()">&times;</a>
+          <a href="" ui-sref-active="active-menu" ui-sref="travel-plan">
+                <div><i class="icon-calendar2"></i>Travel Plan</div>
+              </a>
+          <a href="" ui-sref-active="active-menu" ui-sref="destination.list">
+                <div><i class="icon-location"></i>Destination</div>
+              </a>
+         <a href="" ui-sref-active="active-menu" ui-sref="blog.list">
+                <div><i class="icon-comment"></i>Blog</div>
+              </a>
+          <a href="" ui-sref-active="active-menu" ui-sref="plan-trip">
+                <div><i class="icon-plane"></i>Plan My Trip</div>
+              </a>
+               <a href="" ui-sref-active="active-menu" ui-sref="login">
+                <div><i class="icon-lock"></i>Login</div>
+              </a>
         </div>
 
         <!-- Logo
@@ -324,7 +334,7 @@
 
           <div class="col_half col_last tright">
             <div class="fright clearfix">
-              <a href="https://www.facebook.com/wanderwagon/" class="social-icon si-small si-borderless si-facebook">
+              <a href="https://www.facebook.com/wanderwagon/" target="_blank" class="social-icon si-small si-borderless si-facebook">
                 <i class="icon-facebook"></i>
                 <i class="icon-facebook"></i>
               </a>
@@ -416,8 +426,8 @@
 
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>

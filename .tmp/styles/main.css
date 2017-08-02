@@ -27706,7 +27706,7 @@ body.stretched #header.full-header .container {
 .primary-menu-trigger,
 #page-submenu-trigger {
   opacity: 0;
-  pointer-events: none;
+  pointer-events: auto;
   cursor: pointer;
   font-size: 14px;
   position: absolute;
@@ -28325,7 +28325,7 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
   /* line 16369, ../../app/styles/main.scss */
   .overlay-menu #primary-menu > #overlay-menu-close {
     opacity: 0;
-    pointer-events: none;
+    pointer-events: auto;
     position: fixed;
     top: 25px;
     left: auto;
@@ -44004,7 +44004,7 @@ label.checkbox {
   z-index: 1;
   /* Stay on top */
   top: 0;
-  left: 0;
+  right: 0;
   background-color: #111;
   /* Black*/
   overflow-x: hidden;

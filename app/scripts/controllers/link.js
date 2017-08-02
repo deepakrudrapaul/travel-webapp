@@ -18,15 +18,12 @@ angular.module('wanderwagon-webapp')
             $rootScope.loggedIn = false;
         }
 
-        $rootScope.onClick = function() {
-            console.log("CLICKED");
-        }
 
-        // $rootScope.openNav = function() {
+        // $scope.openNav = function() {
         //     console.log("CLICKED");
         //     angular.element(document.getElementById('mySidenav')).css('width','250px');
         // }
-        // $rootScope.closeNav = function() {
+        // $scope.closeNav = function() {
         //     angular.element(document.getElementById('mySidenav')).css('width','0px');
         // }
       
@@ -44,12 +41,15 @@ angular.module('wanderwagon-webapp')
 
 
 
-        $scope.openFacebook = function () {
-            $window.open('https://www.facebook.com/wanderwagon', ' _blank');
+        $scope.openSideNav = function () {
+            console.log("CLICKED");
+
+            angular.element(document.getElementById('mySidenav')).css('width','250px');
+            
         }
 
-        $scope.openTwitter = function () {
-            $window.open('https://www.twitter.com', ' _blank');
+        $scope.closeSideNav = function () {
+            angular.element(document.getElementById('mySidenav')).css('width','0px');
         }
 
         $scope.openInstagram = function () {
