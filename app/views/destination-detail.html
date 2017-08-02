@@ -143,60 +143,6 @@
       </h2>
     </div>
 
-     <div id="place-sm-carousel" class="carousel slide bootstrap-carousel" data-ride="carousel" data-interval="0">
-  <a style="background-color: #000000;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 00%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0%;
-    z-index: 5;
-    left: 1em;" class="btn" href="" data-target="#place-sm-carousel" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: #000000;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0%;
-    z-index: 5;
-    right: 1em;" class="btn" href="" data-target="#place-sm-carousel" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
-
-          <!--<ol class="carousel-indicators">
-            <li data-target="#dynamiccontentcarousel" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}" data-slide-to="{{$index}}"></li>
-          </ol>-->
-
-          <div class="carousel-inner" >
-            <div class="item" data-ng-repeat="slide in placesData" data-ng-class="{active : $first}">
-                          <img ng-touch="accordion1.isOpen = !accordion.isOpen" ng-click="accordion1.isOpen = !accordion.isOpen" style="object-fit:cover; width:100%; height:400px; background-color:#000;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
-                          <span class="paul-slider-caption">
-                    {{slide.title}}</span>
-            </div>
-          </div>
-        </div>
-
     <div class="row custom-paul-slider">
       <div id="place-carousel" class="carousel slide hidden-xs" data-ride="carousel">
         <a style="    background-color: rgb(255, 255, 255);
@@ -360,6 +306,56 @@
         </div>
       </div>
     </div>
+
+    <div id="place-sm-carousel" class="carousel slide bootstrap-carousel" data-ride="carousel" data-interval="0">
+  <a style="background-color: #000000;
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 00%;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0%;
+    z-index: 5;
+    left: 1em;" class="btn" href="" data-target="#place-sm-carousel" data-slide="prev">
+          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
+        </a>
+        <a style="background-color: #000000;
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0%;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0%;
+    z-index: 5;
+    right: 1em;" class="btn" href="" data-target="#place-sm-carousel" data-slide="next">
+          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
+
+          <div class="carousel-inner" >
+            <div ng-touch="openInstagram(); accordion1.isOpen = !accordion1.isOpen" ng-click="accordion1.isOpen = !accordion1.isOpen" class="item" data-ng-repeat="slide in placesData" data-ng-class="{active : $first}">
+                          <img  style="object-fit:cover; width:100%; height:400px; background-color:#000;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
+                          <span class="paul-slider-caption">
+                    {{slide.title}}</span>
+            </div>
+          </div>
+        </div>
   </div>
 
   <div id="accordion1" class="clearfix" style="margin-top:8%;">
@@ -483,60 +479,6 @@
         </div>
       </h2>
     </div>
-
-    <div id="activities-sm-carousel" class="carousel slide bootstrap-carousel" data-ride="carousel" data-interval="0">
-  <a style="background-color: #000000;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 00%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0%;
-    z-index: 5;
-    left: 1em;" class="btn" href="" data-target="#activities-sm-carousel" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: #000000;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0%;
-    z-index: 5;
-    right: 1em;" class="btn" href="" data-target="#activities-sm-carousel" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
-
-          <!--<ol class="carousel-indicators">
-            <li data-target="#dynamiccontentcarousel" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}" data-slide-to="{{$index}}"></li>
-          </ol>-->
-
-          <div class="carousel-inner" >
-            <div class="item"  data-ng-repeat="slide in activitiesData" data-ng-class="{active : $first}">
-                          <img ng-touch="accordion2.isOpen = !accordion2.isOpen" ng-click="accordion2.isOpen = !accordion2.isOpen" src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/nainital/coverpic/coverpic.jpg" style="object-fit:cover; width:100%; height:400px;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
-                          <span class="paul-slider-caption">
-                    {{slide.title}}</span>
-            </div>
-          </div>
-        </div>
 
     <div class="row custom-paul-slider">
       <div id="activities-carousel" class="carousel slide hidden-xs" data-ride="carousel">
@@ -702,10 +644,64 @@
         </div>
       </div>
     </div>
+
+
+    <div id="activities-sm-carousel" class="carousel slide bootstrap-carousel" data-ride="carousel" data-interval="0">
+  <a style="background-color: #000000;
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 00%;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0%;
+    z-index: 5;
+    left: 1em;" class="btn" href="" data-target="#activities-sm-carousel" data-slide="prev">
+          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
+        </a>
+        <a style="background-color: #000000;
+    border: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    font-size: 9px;
+    line-height: 1;
+    transition: color 400ms, box-shadow 400ms;
+    height: 4.44444em;
+    width: 4.44444em;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+    position: absolute;
+    bottom: 0%;
+    margin-bottom: auto;
+    margin-top: auto;
+    top: 0%;
+    z-index: 5;
+    right: 1em;" class="btn" href="" data-target="#activities-sm-carousel" data-slide="next">
+          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
+
+          <!--<ol class="carousel-indicators">
+            <li data-target="#dynamiccontentcarousel" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}" data-slide-to="{{$index}}"></li>
+          </ol>-->
+
+          <div class="carousel-inner" >
+            <div class="item"  data-ng-repeat="slide in activitiesData" data-ng-class="{active : $first}">
+                          <img ng-touch="accordion2.isOpen = !accordion2.isOpen" ng-click="accordion2.isOpen = !accordion2.isOpen" src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/nainital/coverpic/coverpic.jpg" style="object-fit:cover; width:100%; height:400px;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
+                          <span class="paul-slider-caption">
+                    {{slide.title}}</span>
+            </div>
+          </div>
+        </div>
   </div>
 
   <div id="accordion2" class="clearfix" style="margin-top:8%;">
-
     <uib-accordion>
       <uib-accordion-group is-open="accordion2.isOpen ">
 
