@@ -30,7 +30,7 @@
 
           <div ng-style="display" class="col_full" id="form-condition-2-wrap" style="display:none;">
             <label for="form-condition-2">Departure city: From where do you plan to start?</label>
-            <input ng-dblclick="display1={display:'block'}" ng-keypress="display1={display:'block'}" type="text" class="form-control required" id="form-condition-2" name="form-condition-2"
+            <input ng-keydown="display1={display:'block'}" ng-dblclick="display1={display:'block'}" ng-keypress="display1={display:'block'}" type="text" class="form-control required" id="form-condition-2" name="form-condition-2"
               ng-model="formObj.departureCity" required>
           </div>
 
@@ -38,10 +38,10 @@
             <div class="col_full">
               <label for="form-condition-3">Departure date: Your departure date</label>
               <p class="input-group">
-                <input ng-model="formObj.departureTime" ng-dblclick="display2={display:'block'}" ng-click="display2={display:'block'}" type="text" class="form-control" popup-placement="top" show-button-bar="false" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions"
+                <input ng-model="formObj.departureTime" ng-keydown="display2={display:'block'}" ng-dblclick="display2={display:'block'}" ng-click="display2={display:'block'}" type="text" class="form-control" popup-placement="top" show-button-bar="false" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions"
                   ng-required="true"  alt-input-formats="altInputFormats" required/>
                 <span class="input-group-btn">
-            <button type="button" class="btn btn-default" ng-click="open1(); display2={display:'block'}"><i class="glyphicon glyphicon-calendar"></i></button>
+            <button type="button" class="btn btn-default" ng-touch="open1(); display2={display:'block'}" ng-click="open1(); display2={display:'block'}"><i class="glyphicon glyphicon-calendar"></i></button>
           </span>
               </p>
             </div>
@@ -51,18 +51,18 @@
 
           <div ng-style="display2" class="col_full" id="form-condition-4-wrap" style="display:none;">
             <label for="form-condition-4">Duration: How long is your trip?</label>
-            <input required ng-model="formObj.duration" ng-dblclick="display3={display:'block'}" ng-keypress="display3={display:'block'}" type="text" class="form-control required" id="form-condition-4" name="form-condition-4">
+            <input required ng-model="formObj.duration" ng-keydown="display3={display:'block'}" ng-dblclick="display3={display:'block'}" ng-keypress="display3={display:'block'}" type="text" class="form-control required" id="form-condition-4" name="form-condition-4">
           </div>
 
           <div ng-style="display3" class="col_full" id="form-condition-5-wrap" style="display:none;">
             <label for="form-condition-5">Number of fellow wanderlusts!</label>
-            <input required ng-model="formObj.personCount" ng-dblclick="display4={display:'block'}" ng-keypress="display4={display:'block'}" type="text" class="form-control required" id="form-condition-5" name="form-condition-5">
+            <input required ng-model="formObj.personCount" ng-keydown="display4={display:'block'}" ng-dblclick="display4={display:'block'}" ng-keypress="display4={display:'block'}" type="text" class="form-control required" id="form-condition-5" name="form-condition-5">
           </div>
 
 
           <div ng-style="display4" class="col_full" id="form-condition-10-wrap" style="display:none;">
             <label for="form-condition-10">Per person budget for your trip:</label>
-            <select required ng-model="formObj.perPersonBudget" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
+            <select required ng-model="formObj.perPersonBudget" ng-touch="display5={display:'block'}" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
 									<option value=""> Select One </option>
 									<option value="<5K"> < 5K</option>
 									<option value="5K to 10K">5K to 10K</option>
@@ -75,7 +75,7 @@
 
           <div ng-style="display5" class="col_full" id="form-condition-12-wrap" style="display:none;">
             <label for="form-condition-12">Stage in Planning</label>
-            <select required ng-model="formObj.planningStage" ng-click="display6={display:'block'}" id="form-condition-12" name="form-condition-12" class="required form-control">
+            <select required ng-model="formObj.planningStage" ng-touch="display5={display:'block'}" ng-click="display6={display:'block'}" id="form-condition-12" name="form-condition-12" class="required form-control">
 									<option value=""> Select One </option>
 									<option value="Still dreaming...not sure I'm going to this trip">Still dreaming...not sure I'm going to this trip</option>
 									<option value="I know I am going somewhere, but not sure about the places">I know I am going somewhere, but not sure about the places </option>
@@ -85,30 +85,30 @@
 
           <div ng-style="display6" class="col_full" id="form-condition-13-wrap" style="display:none;">
             <label for="form-condition-13">What Would You Like To See And Do?</label>
-            <textarea required ng-model="formObj.message" ng-dblclick="display7={display:'block'}" ng-keypress="display7={display:'block'}" class="form-control required" id="form-condition-13" name="form-condition-13"
+            <textarea required ng-model="formObj.message" ng-keydown="display7={display:'block'}" ng-dblclick="display7={display:'block'}" ng-keypress="display7={display:'block'}" class="form-control required" id="form-condition-13" name="form-condition-13"
               rows="5" col="20" placeholder="Message to us"></textarea>
           </div>
 
           <div ng-style="display7" class="col_full" id="form-condition-14-wrap" style="display:none;">
             <label for="form-condition-14">Enter Name</label>
-            <input required ng-model="formObj.name" ng-dblclick="display8={display:'block'}" ng-keypress="display8={display:'block'}" type="text" class="form-control required" id="form-condition-14" name="form-condition-14"
+            <input required ng-model="formObj.name" ng-keydown="display7={display:'block'}" ng-dblclick="display8={display:'block'}" ng-keypress="display8={display:'block'}" type="text" class="form-control required" id="form-condition-14" name="form-condition-14"
               value="">
           </div>
 
           <div ng-style="display8" class="col_full" id="form-condition-15-wrap" style="display:none;">
             <label for="form-condition-15">Enter Email</label>
-            <input required ng-model="formObj.email" ng-dblclick="display9={display:'block'}" ng-keypress="display9={display:'block'}" type="email" class="form-control required email" id="form-condition-15"
+            <input required ng-model="formObj.email" ng-keydown="display7={display:'block'}" ng-dblclick="display9={display:'block'}" ng-keypress="display9={display:'block'}" type="email" class="form-control required email" id="form-condition-15"
               name="form-condition-15" value="">
           </div>
 
           <div ng-style="display9" class="col_full" id="form-condition-16-wrap" style="display:none;">
             <label for="form-condition-16">Phone No.</label>
-            <input required ng-model="formObj.phone" ng-dblclick="display10={display:'block'}" ng-keypress="display10={display:'block'}" type="text" class="form-control required" id="form-condition-16" name="form-condition-16"
+            <input required ng-model="formObj.phone" ng-keydown="display7={display:'block'}" ng-dblclick="display10={display:'block'}" ng-keypress="display10={display:'block'}" type="text" class="form-control required" id="form-condition-16" name="form-condition-16"
               value="">
           </div>
 
           <div ng-style="display10" class="col_full" id="form-condition-submit" style="display:none;">
-            <button ng-keypress="display10={display:'block'}" class="button button-3d nomargin" type="submit">Plan My Trip</button>
+            <button ng-keydown="display7={display:'block'}" ng-keypress="display10={display:'block'}" class="button button-3d nomargin" type="submit">Plan My Trip</button>
           </div>
 
         </form>
