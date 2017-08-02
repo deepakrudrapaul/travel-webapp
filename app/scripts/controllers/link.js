@@ -14,15 +14,24 @@ angular.module('wanderwagon-webapp')
 
         if (auth.isLoggedIn()) {
             $rootScope.loggedIn = true;
-            console.log($rootScope.loggedIn);
         } else {
             $rootScope.loggedIn = false;
-            console.log($rootScope.loggedIn);
         }
+
+        $rootScope.onClick = function() {
+            console.log("CLICKED");
+        }
+
+        // $rootScope.openNav = function() {
+        //     console.log("CLICKED");
+        //     angular.element(document.getElementById('mySidenav')).css('width','250px');
+        // }
+        // $rootScope.closeNav = function() {
+        //     angular.element(document.getElementById('mySidenav')).css('width','0px');
+        // }
       
       $rootScope.$on('social-login', function (event, data){
         $rootScope.loggedIn = data;
-            console.log($rootScope.loggedIn);
       });
     
 

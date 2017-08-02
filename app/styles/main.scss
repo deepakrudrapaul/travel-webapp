@@ -12802,7 +12802,7 @@ body #side-panel.dark #side-panel-trigger-close a {
     display: block;
     float: none;
   }
-  #primary-menu-trigger {
+  .primary-menu-trigger {
     opacity: 1;
     pointer-events: auto;
     top: 25px;
@@ -12810,7 +12810,7 @@ body #side-panel.dark #side-panel-trigger-close a {
     right: 0;
     z-index: 1;
   }
-  #primary-menu .container #primary-menu-trigger {
+  #primary-menu .container .primary-menu-trigger {
     top: 5px;
     left: 0;
   }
@@ -12828,13 +12828,13 @@ body #side-panel.dark #side-panel-trigger-close a {
   #primary-menu>div>ul {
     margin-top: 60px !important;
   }
-  body:not(.top-search-open) #primary-menu-trigger {
+  body:not(.top-search-open) .primary-menu-trigger {
     opacity: 1;
     -webkit-transition: opacity .2s .2s ease, top .4s ease;
     -o-transition: opacity .2s .2s ease, top .4s ease;
     transition: opacity .2s .2s ease, top .4s ease;
   }
-  body.top-search-open #primary-menu-trigger {
+  body.top-search-open .primary-menu-trigger {
     opacity: 0;
   }
   body.side-push-panel #side-panel-trigger-close a {
@@ -13187,7 +13187,7 @@ body #side-panel.dark #side-panel-trigger-close a {
   .sticky-responsive-menu.device-touch #logo,
   .sticky-responsive-menu.device-touch #logo img,
   .sticky-responsive-menu.device-touch #top-search a,
-  .sticky-responsive-menu.device-touch #primary-menu-trigger,
+  .sticky-responsive-menu.device-touch .primary-menu-trigger,
   .sticky-responsive-menu.device-touch #top-cart,
   .sticky-responsive-menu.device-touch #side-panel-trigger,
   .sticky-responsive-menu.device-touch #top-account {
@@ -13212,7 +13212,7 @@ body #side-panel.dark #side-panel-trigger-close a {
   .responsive-sticky-header:not(.static-sticky) #logo img {
     height: 60px;
   }
-  .responsive-sticky-header:not(.static-sticky) #primary-menu-trigger {
+  .responsive-sticky-header:not(.static-sticky) .primary-menu-trigger {
     top: 5px;
   }
   .responsive-sticky-header #primary-menu>ul,
@@ -15802,7 +15802,7 @@ body.stretched #header.full-header .container {
   border-right-color: rgba(0, 0, 0, 0.1);
 }
 
-#primary-menu-trigger,
+.primary-menu-trigger,
 #page-submenu-trigger {
   opacity: 0;
   pointer-events: none;
@@ -16353,7 +16353,7 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 -----------------------------------------------------------------*/
 
 @media (min-width: 992px) {
-  .overlay-menu:not(.top-search-open) #primary-menu-trigger {
+  .overlay-menu:not(.top-search-open) .primary-menu-trigger {
     opacity: 1;
     pointer-events: auto;
     left: auto;
@@ -16363,7 +16363,7 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
     line-height: 20px;
     margin-top: -10px;
   }
-  .overlay-menu:not(.top-search-open) .full-header #primary-menu-trigger {
+  .overlay-menu:not(.top-search-open) .full-header .primary-menu-trigger {
     right: 90px;
   }
   .overlay-menu #primary-menu>#overlay-menu-close {
@@ -30594,4 +30594,55 @@ label.checkbox {
   .post-masonry-full .entry {
     padding: 40px !important;
   }
+}
+
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
 }

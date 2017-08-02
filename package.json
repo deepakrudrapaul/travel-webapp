@@ -44,7 +44,6 @@
     "test": "karma start test\\karma.conf.js"
   },
   "dependencies": {
-    "angular-ui-carousel": "^0.1.7",
     "v-accordion": "^1.6.0"
   }
 }
