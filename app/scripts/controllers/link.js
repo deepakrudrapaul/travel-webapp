@@ -42,10 +42,7 @@ angular.module('wanderwagon-webapp')
 
 
         $scope.openSideNav = function () {
-            console.log("CLICKED");
-
             angular.element(document.getElementById('mySidenav')).css('width','250px');
-            
         }
 
         $scope.closeSideNav = function () {
