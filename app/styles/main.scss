@@ -30600,7 +30600,7 @@ label.checkbox {
 /* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
+    width: 0; /* 0 width - change this with Angular JS */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
@@ -30643,10 +30643,10 @@ label.checkbox {
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-}
+// #main {
+//     transition: margin-left .5s;
+//     padding: 20px;
+// }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {

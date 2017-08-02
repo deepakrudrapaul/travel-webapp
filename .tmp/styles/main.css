@@ -43998,7 +43998,7 @@ label.checkbox {
   height: 100%;
   /* 100% Full-height */
   width: 0;
-  /* 0 width - change this with JavaScript */
+  /* 0 width - change this with Angular JS */
   position: fixed;
   /* Stay in place */
   z-index: 1;
@@ -44050,12 +44050,6 @@ label.checkbox {
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-/* line 30646, ../../app/styles/main.scss */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}
-
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   /* line 30653, ../../app/styles/main.scss */
