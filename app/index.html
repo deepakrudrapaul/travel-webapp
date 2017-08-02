@@ -58,28 +58,28 @@
 
         <div id="mySidenav" class="sidenav">
           <a href="" class="closebtn" ng-touch="closeSideNav()" ng-click="closeSideNav()">&times;</a>
-          <a  href="" ui-sref-active="active-menu" ui-sref="travel-plan">
+          <a  href="" ui-sref-active="active-menu" ui-sref="travel-plan" ng-touch="closeSideNav()" ng-click="closeSideNav()">
                 <div><i class="icon-calendar2"></i>Travel Plan</div>
               </a>
-          <a href="" ui-sref-active="active-menu" ui-sref="destination.list">
+          <a href="" ui-sref-active="active-menu" ui-sref="destination.list" ng-touch="closeSideNav()" ng-click="closeSideNav()">
                 <div><i class="icon-location"></i>Destination</div>
               </a>
-         <a href="" ui-sref-active="active-menu" ui-sref="blog.list">
+         <a href="" ui-sref-active="active-menu" ui-sref="blog.list" ng-touch="closeSideNav()" ng-click="closeSideNav()">
                 <div><i class="icon-comment"></i>Blog</div>
               </a>
-          <a href="" ui-sref-active="active-menu" ui-sref="plan-trip">
+          <a href="" ui-sref-active="active-menu" ui-sref="plan-trip" ng-touch="closeSideNav()" ng-click="closeSideNav()">
                 <div><i class="icon-plane"></i>Plan My Trip</div>
               </a>
-               <a ng-hide="loggedIn" href="" ui-sref-active="active-menu" ui-sref="login">
+               <a ng-hide="loggedIn" href="" ui-sref-active="active-menu" ui-sref="login" ng-touch="closeSideNav()" ng-click="closeSideNav()">
                 <div><i class="icon-lock"></i>Login</div>
               </a>
               <div ng-show="loggedIn">
-              <a href="" ui-sref-active="active-menu">
+              <a href="" ui-sref-active="active-menu" >
                 <div><i class="icon-user"></i>Welcome User</div>
               </a>
               <ul>
                 <li>
-                  <a href="" ng-click="onLogOut()">
+                  <a href="" ng-click="onLogOut()" ng-touch="closeSideNav()" ng-click="closeSideNav()">
                     <div>LOG OUT</div>
                   </a>
                 </li>
