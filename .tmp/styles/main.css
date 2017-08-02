@@ -44018,32 +44018,39 @@ label.checkbox {
 /* The navigation menu links */
 /* line 30615, ../../app/styles/main.scss */
 .sidenav a {
-  padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
   display: block;
   transition: 0.3s;
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+  display: block;
+  line-height: 22px;
+  padding: 19px 15px;
+  font-weight: bold;
+  font-size: 13px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* When you mouse over the navigation links, change their color */
-/* line 30625, ../../app/styles/main.scss */
+/* line 30632, ../../app/styles/main.scss */
 .sidenav a:hover, .offcanvas a:focus {
   color: #f1f1f1;
 }
 
 /* Position and style the close button (top right corner) */
-/* line 30630, ../../app/styles/main.scss */
+/* line 30637, ../../app/styles/main.scss */
 .sidenav .closebtn {
   position: absolute;
-  top: 0;
+  top: 15px;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-/* line 30639, ../../app/styles/main.scss */
+/* line 30646, ../../app/styles/main.scss */
 #main {
   transition: margin-left .5s;
   padding: 20px;
@@ -44051,12 +44058,12 @@ label.checkbox {
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  /* line 30646, ../../app/styles/main.scss */
+  /* line 30653, ../../app/styles/main.scss */
   .sidenav {
     padding-top: 15px;
   }
 
-  /* line 30647, ../../app/styles/main.scss */
+  /* line 30654, ../../app/styles/main.scss */
   .sidenav a {
     font-size: 18px;
   }

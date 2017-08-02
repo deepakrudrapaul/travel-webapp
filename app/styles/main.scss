@@ -30613,12 +30613,19 @@ label.checkbox {
 
 /* The navigation menu links */
 .sidenav a {
-    padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
     display: block;
-    transition: 0.3s
+    transition: 0.3s;
+    border-top-color: rgba(255,255,255,0.1) !important;
+    display: block;
+    line-height: 22px;
+    padding: 19px 15px;
+    font-weight: bold;
+    font-size: 13px;
+    color:#FFFFFF;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -30629,7 +30636,7 @@ label.checkbox {
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
     position: absolute;
-    top: 0;
+    top: 15px;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
