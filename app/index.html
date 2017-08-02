@@ -54,11 +54,11 @@
 
       <div class="container clearfix">
        
-        <div class="primary-menu-trigger" ng-mobile-click="openSideNav()" ng-click="openSideNav()"><i class="icon-reorder" style="font-size:30px; color:#FFFFFF"></i></div>
+        <div class="primary-menu-trigger" ng-touch="openInstagram()" ng-mobile-click="openInstagram()" ng-click="openInstagram()"><i class="icon-reorder" style="font-size:30px; color:#FFFFFF"></i></div>
 
         <div id="mySidenav" class="sidenav">
           <a href="" class="closebtn" ng-click="closeSideNav()">&times;</a>
-          <a href="" ui-sref-active="active-menu" ui-sref="travel-plan">
+          <a sty href="" ui-sref-active="active-menu" ui-sref="travel-plan">
                 <div><i class="icon-calendar2"></i>Travel Plan</div>
               </a>
           <a href="" ui-sref-active="active-menu" ui-sref="destination.list">
@@ -426,8 +426,8 @@
 
   <!-- build:js(.) scripts/vendor.js -->
   <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
