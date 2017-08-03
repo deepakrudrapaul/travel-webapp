@@ -29990,12 +29990,37 @@ label.checkbox {
   height:80vh;
 }
 
+.dropdown-slider-image {
+  float:left;
+  width:30%;
+}
+
+.dropdown-slider-content {
+  float:right;
+  width:70%;
+  padding-left:2%;
+  text-align:left;
+}
+
 
 /* ----------------------------------------------------------------
 	Responsive CSS
 -----------------------------------------------------------------*/
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
+
+  .dropdown-slider-image {
+  float:none;
+  width:100%;
+}
+
+.dropdown-slider-content {
+  float:none;
+  width:100%;
+  padding-left:0%;
+  text-align:left;
+}
+
 
   #place {
     margin-bottom:5%;
