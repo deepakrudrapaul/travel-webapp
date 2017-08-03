@@ -23,8 +23,14 @@ angular.module('wanderwagon-webapp')
     };
     $scope.getDestinationDetailById(destinationId);
 
-    $scope.openInstagram = function () {
-            $window.open('https://www.instagram.com/wanderwagon', ' _blank');
+    $scope.openAccordion = false;
+
+    $scope.openOrCloseAccordion = function () {
+            if($scope.openAccordion === true) {
+              $scope.openAccordion = false;
+            } else{
+              $scope.openAccordion = true;
+            }
         };
 
 

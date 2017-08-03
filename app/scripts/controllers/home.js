@@ -43,6 +43,10 @@ $window.requestAnimationFrame = (function () {
     };
     $scope.getInstaPhotos();
 
+      $scope.openInstagram = function () {
+            $window.open('https://www.instagram.com/wanderwagon', ' _blank');
+        };
+
   
     $scope.getBlogs = function() {
       remoteSvc.getHomeBlogs()

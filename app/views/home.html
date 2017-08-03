@@ -76,7 +76,7 @@
 
           <div class="carousel-inner" >
             <div class="item" data-ng-repeat="slide in slider" data-ng-class="{active : $first}">
-                          <img style="object-fit:cover; width:100%; height:400px;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
+                          <img ng-click="openInstagram()" ng-touch="openInstagram()" style="object-fit:cover; width:100%; height:400px;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
                           <span class="paul-slider-caption">
                     {{slide.title}}</span>
             </div>

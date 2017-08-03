@@ -349,8 +349,8 @@
           <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
 
           <div class="carousel-inner" >
-            <div ng-touch="openInstagram(); accordion1.isOpen = !accordion1.isOpen" ng-click="accordion1.isOpen = !accordion1.isOpen" class="item" data-ng-repeat="slide in placesData" data-ng-class="{active : $first}">
-                          <img  style="object-fit:cover; width:100%; height:400px; background-color:#000;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
+            <div class="item" data-ng-repeat="slide in placesData" data-ng-class="{active : $first}">
+                          <img ng-click="openOrCloseAccordion()" ng-touch="openOrCloseAccordion()"  style="object-fit:cover; width:100%; height:400px; background-color:#000;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
                           <span class="paul-slider-caption">
                     {{slide.title}}</span>
             </div>
@@ -361,7 +361,7 @@
   <div id="accordion1" class="clearfix" style="margin-top:8%;">
 
     <uib-accordion>
-      <uib-accordion-group is-open="accordion1.isOpen">
+      <uib-accordion-group is-open="openAccordion">
     
 
         <div id="placeDetail-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
