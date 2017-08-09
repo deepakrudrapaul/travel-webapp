@@ -377,10 +377,10 @@
     width: 4.44444em;
     box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
     position: absolute;
-    bottom: 10%;
+    bottom: 0%;
     margin-bottom: auto;
     margin-top: auto;
-    top: 0%;
+    top: 20%;
     z-index: 5;
     left: 3em;" class="btn" href="" data-target="#placeDetail-carousel" data-slide="prev">
           <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
@@ -397,10 +397,10 @@
     width: 4.44444em;
     box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
     position: absolute;
-    bottom: 10%;
+    bottom: 0%;
     margin-bottom: auto;
     margin-top: auto;
-    top: 0%;
+    top: 20%;
     z-index: 5;
     right: 3em;" class="btn" href="" data-target="#placeDetail-carousel" data-slide="next">
           <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
@@ -410,46 +410,46 @@
           </ol>-->
 
           <div class="carousel-inner" role="listbox">
-            <div class="item" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}">
+            <div class="item" data-ng-repeat="place in placesData" data-ng-class="{active : $first}">
                           <div class="center-block" style="width:80%;">
                 <div>
-                  <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{detail.name}}
+                  <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{place.placeName}}
                     <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
                     </div>
                   </h2>
                 </div>
 
                 <div class="dropdown-slider-image">
-                  <a href="images/blog3.jpg"><img height="350px" width="100%" ng-src="{{detail.imageUrl}}" alt="Standard Post with Image"></a>
+                  <a href="images/blog3.jpg"><img height="350px" width="100%" ng-src="{{place.imageUrl}}" alt="Standard Post with Image"></a>
                 </div>
 
                 <div class="dropdown-slider-content">
-                   <span ng-click="closeAccordion()" ng-touch="closeAccordion()" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
+                   <span ng-click="closeAccordion()" ng-touch="closeAccordion()"  class="glyphicon glyphicon-remove-circle dropdown-slider-button"></span>
 
                   <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
                     What is it.....</h4>
 
-                  <p>{{detail.description}}
+                  <p>{{place.description}}
                   </p>
 
-                  <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                  <!--<h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
                     Overview</h4>
 
                   <p>{{detail.overview}}
-                  </p>
+                  </p>-->
 
                   <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
                     How to reach</h4>
-                  <p>{{detail.howToReach}}
+                  <p>{{place.howToReachDesc}}
                   </p>
 
                   <div>
                     <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                      Timings - <span>{{detail.timings}}</span></h4>
-
+                      Timings - <span>{{place.timing}}</span></h4>
+<!--
                     <h4 class="pull-right" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                      Pricing - <span>{{detail.price}}</span></h4>
-                    <br /><br /><br /><br />
+                      Pricing - <span>{{place.price}}</span></h4>
+                    <br /><br /><br /><br />-->
                   </div>
 
                   <!--<center>
@@ -717,10 +717,10 @@
     width: 4.44444em;
     box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
     position: absolute;
-    bottom: 10%;
+    bottom: 0%;
     margin-bottom: auto;
     margin-top: auto;
-    top: 0;
+    top: 10%;
     z-index: 5;
     left: 3em;" class="btn" href="" data-target="#activityDetail-carousel" data-slide="prev">
           <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
@@ -737,10 +737,10 @@
     width: 4.44444em;
     box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
     position: absolute;
-    bottom: 10%;
+    bottom: 0%;
     margin-bottom: auto;
     margin-top: auto;
-    top: 0;
+    top: 10%;
     z-index: 5;
     right: 3em;" class="btn" href="" data-target="#activityDetail-carousel" data-slide="next">
           <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
@@ -750,10 +750,10 @@
           </ol>-->
 
           <div class="carousel-inner" role="listbox">
-            <div class="item" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}">
+            <div class="item" data-ng-repeat="activity in activitiesData" data-ng-class="{active : $first}">
                           <div class="center-block" style="width:80%;">
                 <div>
-                  <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{detail.name}}
+                  <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{activity.activityName}}
                     <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
                     </div>
                   </h2>
@@ -769,26 +769,21 @@
                   <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
                     What is it.....</h4>
 
-                  <p>{{detail.description}}
-                  </p>
-
-                  <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                    Overview</h4>
-
-                  <p>{{detail.overview}}
+                  <p>{{activity.description}}
                   </p>
 
                   <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
                     How to reach</h4>
-                  <p>{{detail.howToReach}}
+                  <p>{{activity.placeOfConduct}}
                   </p>
+
 
                   <div>
                     <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                      Timings - <span>{{detail.timings}}</span></h4>
+                      Timings - <span>{{activity.timing}}</span></h4>
 
                     <h4 class="pull-right" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                      Pricing - <span>{{detail.price}}</span></h4>
+                      Duration - <span>{{activity.duration}}</span></h4>
                     <br /><br /><br /><br />
                   </div>
 

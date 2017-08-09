@@ -14,10 +14,9 @@ angular.module('wanderwagon-webapp')
 
     $scope.getDestinationDetailById = function (destinationId) {
       remoteSvc.getDestinationDetailById(destinationId).then(function (data) {
-        console.log(data);
+        console.log(data.response);
         $scope.detail = data.response;
         $scope.placesData = data.response.places;
-
         $scope.activitiesData = data.response.activities;
       });
     };
@@ -76,73 +75,6 @@ angular.module('wanderwagon-webapp')
     //         "http://www.woostercollective.com/mattmm2.jpg",
     //         "http://mwmgraphics.com/TYPOGRAPHY/alphafont_2/mwm_alphafont_2.jpg"
     //     ];
-
-    // $scope.images=data;
-    $scope.placeDetails = [{
-        imageUrl: 'images/naini-lake.JPG',
-        name: 'Naini Lake',
-        id: 7,
-        description: "Some random description",
-        overview: "OverView",
-        howToReach: "By Airport, By Train, By Car"
-      },
-      {
-        imageUrl: 'images/governor.jpg',
-        name: 'Governor’s House',
-        id: 8,
-        description: "Some random description",
-        overview: "OverView",
-        howToReach: "By Airport, By Train, By Car"
-      },
-      {
-        imageUrl: 'images/tiffin-top.jpg',
-        name: 'Tiffin Top',
-        id: 9,
-        description: "Some random description",
-        overview: "OverView",
-        howToReach: "By Airport, By Train, By Car"
-      },
-      {
-        imageUrl: 'images/china-peak.jpg',
-        name: 'China Peak',
-        id: 9,
-        description: "Some random description",
-        overview: "OverView",
-        howToReach: "By Airport, By Train, By Car"
-      },
-      {
-        imageUrl: 'images/zoo.jpg',
-        name: 'Nainital Zoo',
-        id: 7,
-        description: "Some random description",
-        overview: "OverView",
-        howToReach: "By Airport, By Train, By Car"
-      },
-      {
-        imageUrl: 'images/eco-cave.jpg',
-        name: 'Eco Cave Gardens',
-        id: 8,
-        description: "Some random description",
-        overview: "OverView",
-        howToReach: "By Airport, By Train, By Car"
-      },
-      {
-        imageUrl: 'images/nanda-devi.jpg',
-        name: 'Nanda Devi Temple',
-        id: 9,
-        description: "Some random description",
-        overview: "OverView",
-        howToReach: "By Airport, By Train, By Car"
-      },
-      {
-        imageUrl: 'images/snow-view.jpg',
-        name: 'Snow View',
-        id: 9,
-        description: "Some random description",
-        overview: "OverView",
-        howToReach: "By Airport, By Train, By Car"
-      }
-    ];
 
 
   });
