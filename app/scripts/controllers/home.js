@@ -60,27 +60,7 @@ $window.requestAnimationFrame = (function () {
     };
     $scope.getBlogs();
 
-    $window.requestAnimationFrame = (function () {
-      return $window.requestAnimationFrame ||
-        $window.webkitRequestAnimationFrame ||
-        $window.mozRequestAnimationFrame ||
-        function (callback) {
-          $window.setTimeout(callback);
-        };
-    })();
-
-     var speed = 5000;
-    (function currencySlide() {
-      var currencyPairWidth = $('.slideItem:first-child').outerWidth();
-      $(".slideContainer").animate({
-        marginLeft: -currencyPairWidth
-      }, speed, 'linear', function () {
-        $(this).css({
-          marginLeft: 0
-        }).find("li:last").after($(this).find("li:first"));
-      });
-      requestAnimationFrame(currencySlide);
-    })();
+   
 
 
      $scope.openInstaProfile = function () {
@@ -138,60 +118,25 @@ $window.requestAnimationFrame = (function () {
     };
     textChangeFunc();
 
+     $scope.showModal = function(messageType, message) {
+      angular.element(document.querySelectorAll('#messageModal')).modal('show');
+      $scope.messageType = messageType;
+      $scope.message = message;
+    };
+
 
 
     $scope.onFormSubmit = function (form) {
       if (form.$valid) {
-        remoteSvc.quickQuery()
+        console.log($scope.inquiryObj);
+        remoteSvc.quickQuery($scope.inquiryObj)
           .success(function (data){
-            
+               $scope.showModal('Success', "Successfully Submitted Your Request");
           })
           .error(function (error){
-
+               $scope.showModal('Error', "Error While Submitting Your Request");
           })
       }
     };
 
-
-    // $scope.slider = [{
-    //     imageUrl: 'images/backpacking.jpg',
-    //     text: 'Backpacking',
-    //     id: 1
-    //   },
-    //   {
-    //     imageUrl: 'images/roadtrip.jpg',
-    //     text: 'Road Trip',
-    //     id: 2
-    //   },
-    //   {
-    //     imageUrl: 'images/adventure.jpg',
-    //     text: 'Adventure',
-    //     id: 3
-    //   },
-    //   {
-    //     imageUrl: 'images/nature.jpg',
-    //     text: 'Nature',
-    //     id: 4
-    //   },
-    //   {
-    //     imageUrl: 'images/adventure.jpg',
-    //     text: 'Family',
-    //     id: 5
-    //   },
-    //   {
-    //     imageUrl: 'images/backpacking.jpg',
-    //     text: 'Couple',
-    //     id: 6
-    //   },
-    //   {
-    //     imageUrl: 'images/adventure.jpg',
-    //     text: 'Family',
-    //     id: 7
-    //   },
-    //   {
-    //     imageUrl: 'images/backpacking.jpg',
-    //     text: 'Couple',
-    //     id: 8
-    //   },
-    // ];
   });
