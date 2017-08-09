@@ -216,6 +216,14 @@ angular.module('wanderwagon-webapp')
           data: enquiryFormObj,
           url: remoteAddr + "/travelplans/travelinquery"
         })
+      },
+
+      submitNewsletterEmail : function(emailObj) {
+        return $http({
+          method: 'POST',
+          data: emailObj,
+          url: remoteAddr + "/newsLatter/subscribe"
+        })
       }
 
 

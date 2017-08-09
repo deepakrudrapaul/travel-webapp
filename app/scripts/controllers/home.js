@@ -131,7 +131,7 @@ $window.requestAnimationFrame = (function () {
         console.log($scope.inquiryObj);
         remoteSvc.quickQuery($scope.inquiryObj)
           .success(function (data){
-               $scope.showModal('Success', "Successfully Submitted Your Request");
+               $scope.showModal('Success', "Successfully Submitted Your Inquiry !");
           })
           .error(function (error){
                $scope.showModal('Error', "Error While Submitting Your Request");
