@@ -43073,7 +43073,7 @@ label.checkbox {
 
 /* line 29907, ../../app/styles/main.scss */
 .overview {
-  min-width: 40%;
+  width: 60%;
   border: 1px solid #F5F5F5;
   border-radius: 2%;
 }
@@ -43146,12 +43146,12 @@ label.checkbox {
   width: 100%;
 }
 
-/* line 29972, ../../app/styles/main.scss */
+/* line 29971, ../../app/styles/main.scss */
 #sticky-nav ul li {
   float: left;
 }
 
-/* line 29976, ../../app/styles/main.scss */
+/* line 29975, ../../app/styles/main.scss */
 #sticky-nav ul li > a {
   display: block;
   line-height: 22px;
@@ -43165,18 +43165,18 @@ label.checkbox {
   transition: margin 0.4s ease, padding 0.4s ease;
 }
 
-/* line 29989, ../../app/styles/main.scss */
+/* line 29988, ../../app/styles/main.scss */
 .custom-height {
   height: 80vh;
 }
 
-/* line 29993, ../../app/styles/main.scss */
+/* line 29992, ../../app/styles/main.scss */
 .dropdown-slider-image {
   float: left;
   width: 30%;
 }
 
-/* line 29998, ../../app/styles/main.scss */
+/* line 29997, ../../app/styles/main.scss */
 .dropdown-slider-content {
   float: right;
   width: 70%;
@@ -43184,7 +43184,7 @@ label.checkbox {
   text-align: left;
 }
 
-/* line 30005, ../../app/styles/main.scss */
+/* line 30004, ../../app/styles/main.scss */
 .dropdown-slider-button {
   margin-top: 4%;
   right: 3%;
@@ -43193,11 +43193,21 @@ label.checkbox {
   font-size: 3rem;
 }
 
+/* line 30012, ../../app/styles/main.scss */
+.custom-padding {
+  padding: 2% 6% 2% 6%;
+}
+
 /* ----------------------------------------------------------------
 	Responsive CSS
 -----------------------------------------------------------------*/
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
-  /* line 30016, ../../app/styles/main.scss */
+  /* line 30022, ../../app/styles/main.scss */
+  .custom-padding {
+    padding: 0%;
+  }
+
+  /* line 30025, ../../app/styles/main.scss */
   .dropdown-slider-button {
     margin-top: 5%;
     right: 4%;
@@ -43206,13 +43216,13 @@ label.checkbox {
     font-size: 3rem;
   }
 
-  /* line 30020, ../../app/styles/main.scss */
+  /* line 30032, ../../app/styles/main.scss */
   .dropdown-slider-image {
     float: none;
     width: 100%;
   }
 
-  /* line 30025, ../../app/styles/main.scss */
+  /* line 30036, ../../app/styles/main.scss */
   .dropdown-slider-content {
     float: none;
     width: 100%;
@@ -43220,23 +43230,23 @@ label.checkbox {
     text-align: left;
   }
 
-  /* line 30033, ../../app/styles/main.scss */
+  /* line 30042, ../../app/styles/main.scss */
   #place {
     margin-bottom: 5%;
   }
 
-  /* line 30037, ../../app/styles/main.scss */
+  /* line 30045, ../../app/styles/main.scss */
   .custom-height {
     height: auto;
   }
 
-  /* line 30040, ../../app/styles/main.scss */
+  /* line 30048, ../../app/styles/main.scss */
   .sticky-ul {
     margin-left: 5% !important;
     margin-right: 5% !important;
   }
 
-  /* line 30045, ../../app/styles/main.scss */
+  /* line 30052, ../../app/styles/main.scss */
   #sticky-nav ul li > a {
     display: block;
     line-height: 10px;
@@ -43250,7 +43260,7 @@ label.checkbox {
     transition: margin 0.4s ease, padding 0.4s ease;
   }
 
-  /* line 30058, ../../app/styles/main.scss */
+  /* line 30064, ../../app/styles/main.scss */
   .paul-slider-caption {
     font-size: 2rem;
     left: 40%;
@@ -43262,25 +43272,25 @@ label.checkbox {
     letter-spacing: -0.08px;
   }
 
-  /* line 30068, ../../app/styles/main.scss */
+  /* line 30074, ../../app/styles/main.scss */
   #logo img {
     height: 70px;
     margin: 20% 0 0 0;
   }
 
-  /* line 30072, ../../app/styles/main.scss */
+  /* line 30078, ../../app/styles/main.scss */
   .pull-right1 {
     width: 100%;
     float: none;
   }
 
-  /* line 30076, ../../app/styles/main.scss */
+  /* line 30082, ../../app/styles/main.scss */
   .pull-left1 {
     float: none;
     width: 100%;
   }
 
-  /* line 30080, ../../app/styles/main.scss */
+  /* line 30086, ../../app/styles/main.scss */
   .secondary-title {
     margin-bottom: 0px;
     font-size: 24px;
@@ -43289,7 +43299,7 @@ label.checkbox {
     color: #fff;
   }
 
-  /* line 30087, ../../app/styles/main.scss */
+  /* line 30093, ../../app/styles/main.scss */
   .loved-it-button {
     width: 100%;
     height: 10%;
@@ -43301,19 +43311,19 @@ label.checkbox {
     font-size: 1.5rem;
   }
 
-  /* line 30097, ../../app/styles/main.scss */
+  /* line 30103, ../../app/styles/main.scss */
   #howToReach {
     height: auto;
   }
 
-  /* line 30100, ../../app/styles/main.scss */
+  /* line 30106, ../../app/styles/main.scss */
   .overview {
     width: 100%;
     border: 1px solid #F5F5F5;
     border-radius: 2%;
   }
 
-  /* line 30105, ../../app/styles/main.scss */
+  /* line 30111, ../../app/styles/main.scss */
   .custom-button {
     text-transform: uppercase;
     width: 60%;
@@ -43327,7 +43337,7 @@ label.checkbox {
     border-radius: 5px;
   }
 
-  /* line 30117, ../../app/styles/main.scss */
+  /* line 30123, ../../app/styles/main.scss */
   .primary-title {
     margin-bottom: 0px;
     font-size: 24px;
@@ -43337,7 +43347,7 @@ label.checkbox {
     margin-top: 60%;
   }
 
-  /* line 30125, ../../app/styles/main.scss */
+  /* line 30131, ../../app/styles/main.scss */
   .primary-title-1 {
     margin-bottom: 0px;
     font-size: 20px;
@@ -43346,7 +43356,7 @@ label.checkbox {
     color: #fff;
   }
 
-  /* line 30132, ../../app/styles/main.scss */
+  /* line 30138, ../../app/styles/main.scss */
   .paul-title {
     text-align: center;
     margin-top: 2%;
@@ -43356,12 +43366,12 @@ label.checkbox {
     font-size: 2.8rem;
   }
 
-  /* line 30140, ../../app/styles/main.scss */
+  /* line 30146, ../../app/styles/main.scss */
   .container {
     width: 100%;
   }
 
-  /* line 30143, ../../app/styles/main.scss */
+  /* line 30149, ../../app/styles/main.scss */
   .blog-image-left {
     height: auto;
     width: 80%;
@@ -43374,7 +43384,7 @@ label.checkbox {
     float: none;
   }
 
-  /* line 30154, ../../app/styles/main.scss */
+  /* line 30160, ../../app/styles/main.scss */
   .blog-content-left {
     margin-top: 10px;
     margin-bottom: 30px;
@@ -43389,7 +43399,7 @@ label.checkbox {
     float: none;
   }
 
-  /* line 30167, ../../app/styles/main.scss */
+  /* line 30173, ../../app/styles/main.scss */
   .blog-image-right {
     height: auto;
     width: 80%;
@@ -43403,7 +43413,7 @@ label.checkbox {
     margin-right: auto;
   }
 
-  /* line 30179, ../../app/styles/main.scss */
+  /* line 30185, ../../app/styles/main.scss */
   .blog-content-right {
     margin-top: 10px;
     height: auto;
@@ -43417,7 +43427,7 @@ label.checkbox {
     margin-right: auto;
   }
 
-  /* line 30191, ../../app/styles/main.scss */
+  /* line 30197, ../../app/styles/main.scss */
   .home-form-bg {
     background-color: #000;
     background-image: url("https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg");
@@ -43427,7 +43437,7 @@ label.checkbox {
     height: 900px;
   }
 
-  /* line 30199, ../../app/styles/main.scss */
+  /* line 30205, ../../app/styles/main.scss */
   .home-form {
     width: 100%;
     height: 900px;
@@ -43442,7 +43452,7 @@ label.checkbox {
     font-weight: bold;
   }
 
-  /* line 30212, ../../app/styles/main.scss */
+  /* line 30218, ../../app/styles/main.scss */
   .instaText {
     text-align: center;
     margin-bottom: 4rem;
@@ -43452,12 +43462,12 @@ label.checkbox {
     font-size: 2rem;
   }
 
-  /* line 30220, ../../app/styles/main.scss */
+  /* line 30226, ../../app/styles/main.scss */
   .footer-logo {
     margin: 0px;
   }
 
-  /* line 30223, ../../app/styles/main.scss */
+  /* line 30229, ../../app/styles/main.scss */
   .col_one_third {
     width: 100%;
     float: none;
@@ -43467,158 +43477,158 @@ label.checkbox {
     margin-bottom: 20px !important;
   }
 
-  /* line 30231, ../../app/styles/main.scss */
+  /* line 30237, ../../app/styles/main.scss */
   .col_two_third {
     width: 100%;
   }
 
-  /* line 30234, ../../app/styles/main.scss */
+  /* line 30240, ../../app/styles/main.scss */
   .col_half {
     width: 100%;
   }
 
-  /* line 30237, ../../app/styles/main.scss */
+  /* line 30243, ../../app/styles/main.scss */
   .make-invisible {
     display: none;
   }
 
-  /* line 30240, ../../app/styles/main.scss */
+  /* line 30246, ../../app/styles/main.scss */
   #header-wrap {
     height: auto !important;
   }
 
-  /* line 30243, ../../app/styles/main.scss */
+  /* line 30249, ../../app/styles/main.scss */
   .login-margin {
     margin-top: 20%;
   }
 
-  /* line 30246, ../../app/styles/main.scss */
+  /* line 30252, ../../app/styles/main.scss */
   .instaWidth {
     width: 50%;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 30252, ../../app/styles/main.scss */
+  /* line 30258, ../../app/styles/main.scss */
   #wrapper {
     width: 1000px;
   }
 
-  /* line 30255, ../../app/styles/main.scss */
+  /* line 30261, ../../app/styles/main.scss */
   #header.transparent-header.floating-header .container {
     width: 1030px;
     padding: 0 30px;
   }
 
-  /* line 30259, ../../app/styles/main.scss */
+  /* line 30265, ../../app/styles/main.scss */
   #header.transparent-header.floating-header.sticky-header .container {
     width: 970px;
     padding: 0 15px;
   }
 
-  /* line 30263, ../../app/styles/main.scss */
+  /* line 30269, ../../app/styles/main.scss */
   #primary-menu.sub-title ul > li > a {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 30267, ../../app/styles/main.scss */
+  /* line 30273, ../../app/styles/main.scss */
   #primary-menu ul li.mega-menu .mega-menu-content,
   .floating-header.sticky-header #primary-menu ul li.mega-menu .mega-menu-content {
     width: 940px;
   }
 
-  /* line 30271, ../../app/styles/main.scss */
+  /* line 30277, ../../app/styles/main.scss */
   .floating-header #primary-menu ul li.mega-menu .mega-menu-content {
     width: 1030px;
   }
 
-  /* line 30274, ../../app/styles/main.scss */
+  /* line 30280, ../../app/styles/main.scss */
   .ei-slider {
     height: 450px;
   }
 
-  /* line 30277, ../../app/styles/main.scss */
+  /* line 30283, ../../app/styles/main.scss */
   .postcontent {
     width: 690px;
   }
 
-  /* line 30280, ../../app/styles/main.scss */
+  /* line 30286, ../../app/styles/main.scss */
   .postcontent.bothsidebar {
     width: 440px;
   }
 
-  /* line 30283, ../../app/styles/main.scss */
+  /* line 30289, ../../app/styles/main.scss */
   .sidebar {
     width: 210px;
   }
 
   /* Blog - Small
 	-----------------------------------------------------------------*/
-  /* line 30288, ../../app/styles/main.scss */
+  /* line 30294, ../../app/styles/main.scss */
   .postcontent .small-thumbs .entry-image {
     width: 200px;
   }
 
-  /* line 30291, ../../app/styles/main.scss */
+  /* line 30297, ../../app/styles/main.scss */
   .bothsidebar .small-thumbs .entry-image {
     width: 120px;
   }
 
   /* Blog - Grid
 	-----------------------------------------------------------------*/
-  /* line 30296, ../../app/styles/main.scss */
+  /* line 30302, ../../app/styles/main.scss */
   .post-grid .entry {
     width: 214px;
   }
 
   /* Blog - Grid - 3 Columns
 	-----------------------------------------------------------------*/
-  /* line 30301, ../../app/styles/main.scss */
+  /* line 30307, ../../app/styles/main.scss */
   .post-grid.grid-3 .entry {
     width: 293px;
   }
 
   /* Blog - Grid - 3 Columns - Sidebar
 	-----------------------------------------------------------------*/
-  /* line 30306, ../../app/styles/main.scss */
+  /* line 30312, ../../app/styles/main.scss */
   .postcontent .post-grid.grid-3 .entry {
     width: 213px;
   }
 
   /* Blog - Grid - 2 Columns
 	-----------------------------------------------------------------*/
-  /* line 30311, ../../app/styles/main.scss */
+  /* line 30317, ../../app/styles/main.scss */
   .post-grid.grid-2 .entry {
     width: 450px;
   }
 
   /* Blog - Grid - 2 Columns - Sidebar
 	-----------------------------------------------------------------*/
-  /* line 30316, ../../app/styles/main.scss */
+  /* line 30322, ../../app/styles/main.scss */
   .postcontent .post-grid.grid-2 .entry {
     width: 325px;
   }
 
   /* Blog - Grid - 2 Columns - Both Sidebar
 	-----------------------------------------------------------------*/
-  /* line 30321, ../../app/styles/main.scss */
+  /* line 30327, ../../app/styles/main.scss */
   .bothsidebar .post-grid.grid-2 .entry {
     width: 200px;
   }
 
-  /* line 30324, ../../app/styles/main.scss */
+  /* line 30330, ../../app/styles/main.scss */
   .post-timeline .entry {
     width: 400px !important;
   }
 
-  /* line 30327, ../../app/styles/main.scss */
+  /* line 30333, ../../app/styles/main.scss */
   .post-timeline .entry.entry-date-section {
     width: 100% !important;
   }
 
   /* Blog - Medium Post List
 	-----------------------------------------------------------------*/
-  /* line 30332, ../../app/styles/main.scss */
+  /* line 30338, ../../app/styles/main.scss */
   .mpost .entry-image,
   .mpost .entry-image a,
   .mpost .entry-image img,
@@ -43627,35 +43637,35 @@ label.checkbox {
     height: 90px;
   }
 
-  /* line 30339, ../../app/styles/main.scss */
+  /* line 30345, ../../app/styles/main.scss */
   .mpost .entry-image a i {
     line-height: 90px;
   }
 
-  /* line 30342, ../../app/styles/main.scss */
+  /* line 30348, ../../app/styles/main.scss */
   .col_one_third .landing-wide-form .heading-block h2 {
     font-size: 32px;
   }
 
-  /* line 30345, ../../app/styles/main.scss */
+  /* line 30351, ../../app/styles/main.scss */
   .col_one_third .landing-wide-form .heading-block span {
     font-size: 17px;
   }
 
-  /* line 30348, ../../app/styles/main.scss */
+  /* line 30354, ../../app/styles/main.scss */
   .col_one_third .landing-wide-form {
     padding: 36px 30px;
   }
 }
 @media (max-width: 991px) {
-  /* line 30354, ../../app/styles/main.scss */
+  /* line 30360, ../../app/styles/main.scss */
   #wrapper {
     width: 100%;
     margin: 0;
     box-shadow: none;
   }
 
-  /* line 30359, ../../app/styles/main.scss */
+  /* line 30365, ../../app/styles/main.scss */
   #header.full-header .container,
   .container-fullwidth {
     padding: 0 15px !important;
@@ -43663,12 +43673,12 @@ label.checkbox {
     width: 750px !important;
   }
 
-  /* line 30365, ../../app/styles/main.scss */
+  /* line 30371, ../../app/styles/main.scss */
   .container.vertical-middle {
     width: 100% !important;
   }
 
-  /* line 30368, ../../app/styles/main.scss */
+  /* line 30374, ../../app/styles/main.scss */
   .vertical-middle + .video-wrap {
     position: absolute;
     width: 100%;
@@ -43677,7 +43687,7 @@ label.checkbox {
     left: 0;
   }
 
-  /* line 30375, ../../app/styles/main.scss */
+  /* line 30381, ../../app/styles/main.scss */
   .postcontent,
   .postcontent.bothsidebar,
   .sidebar {
@@ -43689,7 +43699,7 @@ label.checkbox {
     border-bottom: 1px solid #EEE;
   }
 
-  /* line 30385, ../../app/styles/main.scss */
+  /* line 30391, ../../app/styles/main.scss */
   .sidebar.col_last {
     float: none;
     margin-bottom: 0 !important;
@@ -43699,12 +43709,12 @@ label.checkbox {
 
   /* Blog - Grid
 	-----------------------------------------------------------------*/
-  /* line 30393, ../../app/styles/main.scss */
+  /* line 30399, ../../app/styles/main.scss */
   .post-grid {
     margin-right: -20px;
   }
 
-  /* line 30396, ../../app/styles/main.scss */
+  /* line 30402, ../../app/styles/main.scss */
   .post-grid .entry {
     width: 226px;
     margin-right: 20px;
@@ -43712,149 +43722,149 @@ label.checkbox {
 
   /* Blog - Grid - 3 Columns
 	-----------------------------------------------------------------*/
-  /* line 30402, ../../app/styles/main.scss */
+  /* line 30408, ../../app/styles/main.scss */
   .post-grid.grid-2,
   .post-grid.grid-3 {
     margin-right: -30px;
   }
 
-  /* line 30406, ../../app/styles/main.scss */
+  /* line 30412, ../../app/styles/main.scss */
   .post-grid.grid-2 .entry,
   .post-grid.grid-3 .entry {
     width: 345px;
     margin-right: 30px;
   }
 
-  /* line 30411, ../../app/styles/main.scss */
+  /* line 30417, ../../app/styles/main.scss */
   .post-masonry-full .entry {
     width: 33.30% !important;
   }
 
-  /* line 30414, ../../app/styles/main.scss */
+  /* line 30420, ../../app/styles/main.scss */
   .post-masonry-full.grid-3 .entry {
     width: 50% !important;
   }
 
-  /* line 30417, ../../app/styles/main.scss */
+  /* line 30423, ../../app/styles/main.scss */
   .post-timeline .entry {
     width: 290px !important;
   }
 
-  /* line 30420, ../../app/styles/main.scss */
+  /* line 30426, ../../app/styles/main.scss */
   .post-timeline .entry.entry-date-section {
     width: 100% !important;
   }
 }
 @media (max-width: 767px) {
-  /* line 30426, ../../app/styles/main.scss */
+  /* line 30432, ../../app/styles/main.scss */
   .bootstrap-carousel {
     display: block;
   }
 
-  /* line 30429, ../../app/styles/main.scss */
+  /* line 30435, ../../app/styles/main.scss */
   .custom-paul-slider {
     display: none;
   }
 
-  /* line 30432, ../../app/styles/main.scss */
+  /* line 30438, ../../app/styles/main.scss */
   .pull-right1 {
     width: 100%;
     float: none;
   }
 
-  /* line 30436, ../../app/styles/main.scss */
+  /* line 30442, ../../app/styles/main.scss */
   .pull-left1 {
     float: none;
     width: 100%;
   }
 
-  /* line 30440, ../../app/styles/main.scss */
+  /* line 30446, ../../app/styles/main.scss */
   body {
     padding: 0 !important;
   }
 
-  /* line 30443, ../../app/styles/main.scss */
+  /* line 30449, ../../app/styles/main.scss */
   #wrapper {
     width: 100% !important;
   }
 
-  /* line 30446, ../../app/styles/main.scss */
+  /* line 30452, ../../app/styles/main.scss */
   .container-fullwidth {
     margin: 0 auto;
     padding: 0 15px !important;
   }
 
-  /* line 30450, ../../app/styles/main.scss */
+  /* line 30456, ../../app/styles/main.scss */
   h1 {
     font-size: 28px;
   }
 
-  /* line 30453, ../../app/styles/main.scss */
+  /* line 30459, ../../app/styles/main.scss */
   h2 {
     font-size: 24px;
   }
 
-  /* line 30456, ../../app/styles/main.scss */
+  /* line 30462, ../../app/styles/main.scss */
   h3 {
     font-size: 20px;
   }
 
-  /* line 30459, ../../app/styles/main.scss */
+  /* line 30465, ../../app/styles/main.scss */
   h4 {
     font-size: 16px;
   }
 
-  /* line 30462, ../../app/styles/main.scss */
+  /* line 30468, ../../app/styles/main.scss */
   .one-page-arrow {
     display: none !important;
   }
 
-  /* line 30465, ../../app/styles/main.scss */
+  /* line 30471, ../../app/styles/main.scss */
   #top-bar {
     height: auto;
   }
 
-  /* line 30468, ../../app/styles/main.scss */
+  /* line 30474, ../../app/styles/main.scss */
   #top-bar .col_half {
     width: 100%;
     margin-bottom: 0 !important;
   }
 
-  /* line 30472, ../../app/styles/main.scss */
+  /* line 30478, ../../app/styles/main.scss */
   .top-links,
   .top-links > ul > li {
     float: none !important;
   }
 
-  /* line 30476, ../../app/styles/main.scss */
+  /* line 30482, ../../app/styles/main.scss */
   .top-links > ul {
     text-align: center;
   }
 
-  /* line 30479, ../../app/styles/main.scss */
+  /* line 30485, ../../app/styles/main.scss */
   .top-links > ul > li {
     display: inline-block;
   }
 
-  /* line 30482, ../../app/styles/main.scss */
+  /* line 30488, ../../app/styles/main.scss */
   .top-links > ul > li {
     margin-right: -4px;
   }
 
-  /* line 30485, ../../app/styles/main.scss */
+  /* line 30491, ../../app/styles/main.scss */
   .top-links ul ul,
   .top-links ul div.top-link-section {
     text-align: left;
   }
 
-  /* line 30489, ../../app/styles/main.scss */
+  /* line 30495, ../../app/styles/main.scss */
   .top-links ul div.top-link-section {
     left: auto;
     right: 0;
     padding: 20px 15px;
   }
 
-  /* line 30494, ../../app/styles/main.scss */
+  /* line 30500, ../../app/styles/main.scss */
   #top-social,
   #slider:not(.swiper_wrapper) .slider-caption,
   .nivo-caption,
@@ -43868,22 +43878,22 @@ label.checkbox {
     display: none !important;
   }
 
-  /* line 30506, ../../app/styles/main.scss */
+  /* line 30512, ../../app/styles/main.scss */
   .slider-caption h2 {
     margin-bottom: 0 !important;
   }
 
-  /* line 30509, ../../app/styles/main.scss */
+  /* line 30515, ../../app/styles/main.scss */
   .flex-control-nav li {
     opacity: 1 !important;
   }
 
-  /* line 30512, ../../app/styles/main.scss */
+  /* line 30518, ../../app/styles/main.scss */
   .fslider:not(.flex-thumb-grid) .flex-control-nav.flex-control-thumbs {
     height: 60px;
   }
 
-  /* line 30515, ../../app/styles/main.scss */
+  /* line 30521, ../../app/styles/main.scss */
   .fslider:not(.flex-thumb-grid) .flex-control-nav.flex-control-thumbs li,
   .fslider:not(.flex-thumb-grid) .flex-control-nav.flex-control-thumbs li img {
     display: block;
@@ -43891,7 +43901,7 @@ label.checkbox {
     height: 60px !important;
   }
 
-  /* line 30521, ../../app/styles/main.scss */
+  /* line 30527, ../../app/styles/main.scss */
   .postcontent,
   .postcontent.bothsidebar,
   .sidebar,
@@ -43913,12 +43923,12 @@ label.checkbox {
     margin-bottom: 50px !important;
   }
 
-  /* line 30541, ../../app/styles/main.scss */
+  /* line 30547, ../../app/styles/main.scss */
   .sidebar.col_last {
     margin-bottom: 0 !important;
   }
 
-  /* line 30544, ../../app/styles/main.scss */
+  /* line 30550, ../../app/styles/main.scss */
   form .col_full,
   form .col_half,
   form .col_one_third,
@@ -43934,19 +43944,19 @@ label.checkbox {
     margin-bottom: 25px !important;
   }
 
-  /* line 30558, ../../app/styles/main.scss */
+  /* line 30564, ../../app/styles/main.scss */
   #page-title {
     padding: 50px 0;
     text-align: center;
   }
 
-  /* line 30562, ../../app/styles/main.scss */
+  /* line 30568, ../../app/styles/main.scss */
   #page-title h1 {
     line-height: 1.5;
     font-size: 24px;
   }
 
-  /* line 30566, ../../app/styles/main.scss */
+  /* line 30572, ../../app/styles/main.scss */
   #page-title .breadcrumb {
     position: relative !important;
     top: 0 !important;
@@ -43955,7 +43965,7 @@ label.checkbox {
     margin: 15px 0 0 !important;
   }
 
-  /* line 30573, ../../app/styles/main.scss */
+  /* line 30579, ../../app/styles/main.scss */
   #page-title #portfolio-navigation,
   #portfolio-ajax-title #portfolio-navigation {
     position: relative;
@@ -43964,14 +43974,14 @@ label.checkbox {
     margin: 15px auto 0;
   }
 
-  /* line 30580, ../../app/styles/main.scss */
+  /* line 30586, ../../app/styles/main.scss */
   #portfolio-ajax-title {
     text-align: center;
   }
 
   /* Blog
 	-----------------------------------------------------------------*/
-  /* line 30585, ../../app/styles/main.scss */
+  /* line 30591, ../../app/styles/main.scss */
   .small-thumbs .entry-image,
   .ievent .entry-image {
     float: none !important;
@@ -43979,36 +43989,36 @@ label.checkbox {
     margin: 0 0 20px !important;
   }
 
-  /* line 30591, ../../app/styles/main.scss */
+  /* line 30597, ../../app/styles/main.scss */
   .entry-title h2,
   .post-grid .entry-title h2 {
     font-size: 18px !important;
     font-weight: 600;
   }
 
-  /* line 30596, ../../app/styles/main.scss */
+  /* line 30602, ../../app/styles/main.scss */
   .entry-meta li {
     font-size: 11px;
     margin: 0 10px 10px 0;
   }
 
-  /* line 30600, ../../app/styles/main.scss */
+  /* line 30606, ../../app/styles/main.scss */
   #posts .entry-meta li i {
     display: none;
   }
 
-  /* line 30603, ../../app/styles/main.scss */
+  /* line 30609, ../../app/styles/main.scss */
   #posts.post-grid .entry-meta li i,
   #posts .entry-meta li:last-child i {
     display: inline-block;
   }
 
-  /* line 30607, ../../app/styles/main.scss */
+  /* line 30613, ../../app/styles/main.scss */
   .post-grid {
     margin-right: 0 !important;
   }
 
-  /* line 30610, ../../app/styles/main.scss */
+  /* line 30616, ../../app/styles/main.scss */
   .post-grid .entry,
   .post-masonry-full.grid-3 .entry {
     float: none !important;
@@ -44017,29 +44027,29 @@ label.checkbox {
     border-right: 0 !important;
   }
 
-  /* line 30617, ../../app/styles/main.scss */
+  /* line 30623, ../../app/styles/main.scss */
   .post-timeline .entry.entry-date-section {
     margin-left: 0;
   }
 
-  /* line 30620, ../../app/styles/main.scss */
+  /* line 30626, ../../app/styles/main.scss */
   .timeline-border,
   .post-timeline .entry-timeline {
     display: none !important;
   }
 
-  /* line 30624, ../../app/styles/main.scss */
+  /* line 30630, ../../app/styles/main.scss */
   .postcontent .post-timeline {
     padding-left: 0;
   }
 
-  /* line 30627, ../../app/styles/main.scss */
+  /* line 30633, ../../app/styles/main.scss */
   .post-masonry-full .entry {
     padding: 40px !important;
   }
 }
 /* The side navigation menu */
-/* line 30634, ../../app/styles/main.scss */
+/* line 30641, ../../app/styles/main.scss */
 .sidenav {
   height: 100%;
   /* 100% Full-height */
@@ -44062,7 +44072,7 @@ label.checkbox {
 }
 
 /* The navigation menu links */
-/* line 30648, ../../app/styles/main.scss */
+/* line 30665, ../../app/styles/main.scss */
 .sidenav a {
   text-decoration: none;
   display: block;
@@ -44080,13 +44090,14 @@ label.checkbox {
 }
 
 /* When you mouse over the navigation links, change their color */
-/* line 30665, ../../app/styles/main.scss */
-.sidenav a:hover, .offcanvas a:focus {
+/* line 30684, ../../app/styles/main.scss */
+.sidenav a:hover,
+.offcanvas a:focus {
   color: #f1f1f1;
 }
 
 /* Position and style the close button (top right corner) */
-/* line 30670, ../../app/styles/main.scss */
+/* line 30692, ../../app/styles/main.scss */
 .sidenav .closebtn {
   position: absolute;
   top: 15px;
@@ -44098,15 +44109,46 @@ label.checkbox {
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  /* line 30686, ../../app/styles/main.scss */
+  /* line 30711, ../../app/styles/main.scss */
   .sidenav {
     padding-top: 15px;
   }
 
-  /* line 30687, ../../app/styles/main.scss */
+  /* line 30714, ../../app/styles/main.scss */
   .sidenav a {
     font-size: 18px;
   }
+}
+/* line 30719, ../../app/styles/main.scss */
+.vrepeatContainer {
+  overflow-x: hidden;
+}
+
+/* line 30723, ../../app/styles/main.scss */
+.vrepeatContainer #horizontal-container {
+  height: 100px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* line 30730, ../../app/styles/main.scss */
+.vrepeatContainer .repeated-item-horizontal {
+  border-right: 1px solid #ddd;
+  display: inline-block;
+  height: 84px;
+  padding-top: 35px;
+  text-align: center;
+  width: 50px;
+}
+
+/* line 30739, ../../app/styles/main.scss */
+.vrepeatContainer md-content {
+  margin: 16px;
+}
+
+/* line 30743, ../../app/styles/main.scss */
+.vrepeatContainer md-virtual-repeat-container {
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -60,12 +60,18 @@ angular.module('wanderwagon-webapp')
       if (openAccordion) {
         var someElement = angular.element(document.getElementById('accordion1'));
         $document.scrollToElement(someElement, 30, 800);
+      } else{
+        var someElement = angular.element(document.getElementById('places'));
+        $document.scrollToElement(someElement, 30, 800);
       }
     });
 
     $scope.$watch('openAccordion1', function (openAccordion1) {
       if (openAccordion1) {
         var someElement = angular.element(document.getElementById('accordion2'));
+        $document.scrollToElement(someElement, 30, 800);
+      } else{
+         var someElement = angular.element(document.getElementById('activities'));
         $document.scrollToElement(someElement, 30, 800);
       }
     });

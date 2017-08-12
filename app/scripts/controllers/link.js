@@ -67,12 +67,8 @@ angular.module('wanderwagon-webapp')
       angular.element(document.getElementById('mySidenav')).css('width', '0px');
     }
 
-    $scope.openInstagram = function () {
-      $window.open('https://www.instagram.com/wanderwagon', ' _blank');
-    }
-
-    $scope.openYoutube = function () {
-      $window.open('https://www.youtube.com', ' _blank');
+    $scope.openSocialSite = function (name) {
+      $window.open('https://www.' + name + '.com/wanderwagon', ' _blank');
     }
 
   });

@@ -10,7 +10,7 @@
 angular.module('wanderwagon-webapp')
   .controller('HomeCtrl', function ($scope, $timeout, remoteSvc, $document, $window) {
 
-$window.requestAnimationFrame = (function () {
+    $window.requestAnimationFrame = (function () {
       return $window.requestAnimationFrame ||
         $window.webkitRequestAnimationFrame ||
         $window.mozRequestAnimationFrame ||
@@ -19,7 +19,7 @@ $window.requestAnimationFrame = (function () {
         };
     })();
 
-     var speed = 5000;
+    var speed = 5000;
     (function currencySlide() {
       var currencyPairWidth = $('.slideItem:first-child').outerWidth();
       $(".slideContainer").animate({
@@ -32,39 +32,56 @@ $window.requestAnimationFrame = (function () {
       requestAnimationFrame(currencySlide);
     })();
 
-    $scope.getInstaPhotos = function() {
-        remoteSvc.getInstaPhotos()
-          .success(function (data){
-            $scope.instaPhotos = data.response;
-          })
-          .error(function (error){
+    $scope.getInstaPhotos = function () {
+      remoteSvc.getInstaPhotos()
+        .success(function (data) {
+          $scope.instaPhotos = data.response;
+        })
+        .error(function (error) {
 
-          })
+        })
     };
     $scope.getInstaPhotos();
 
-      $scope.openInstagram = function () {
-            $window.open('https://www.instagram.com/wanderwagon', ' _blank');
-        };
+    $scope.openInstagram = function () {
+      $window.open('https://www.instagram.com/wanderwagon', ' _blank');
+    };
 
-  
-    $scope.getBlogs = function() {
+
+    $scope.getBlogs = function () {
       remoteSvc.getHomeBlogs()
-        .success(function (data){
+        .success(function (data) {
           console.log(data.response);
           $scope.blog = data.response;
         })
-        .error(function (error){
+        .error(function (error) {
 
         })
     };
     $scope.getBlogs();
 
-   
+    $('.carousel[data-type="multi"] .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+  
+  for (var i=0;i<2;i++) {
+    next=next.next();
+    if (!next.length) {
+    	next = $(this).siblings(':first');
+  	}
+    
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
 
 
-     $scope.openInstaProfile = function () {
-       console.log("CLICKED");
+
+
+    $scope.openInstaProfile = function () {
+      console.log("CLICKED");
       $window.open('https://www.instagram.com/wanderwagon/', ' _blank');
     }
 
@@ -118,7 +135,7 @@ $window.requestAnimationFrame = (function () {
     };
     textChangeFunc();
 
-     $scope.showModal = function(messageType, message) {
+    $scope.showModal = function (messageType, message) {
       angular.element(document.querySelectorAll('#messageModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
@@ -130,11 +147,11 @@ $window.requestAnimationFrame = (function () {
       if (form.$valid) {
         console.log($scope.inquiryObj);
         remoteSvc.quickQuery($scope.inquiryObj)
-          .success(function (data){
-               $scope.showModal('Success', "Successfully Submitted Your Inquiry !");
+          .success(function (data) {
+            $scope.showModal('Success', "Successfully Submitted Your Inquiry !");
           })
-          .error(function (error){
-               $scope.showModal('Error', "Error While Submitting Your Request");
+          .error(function (error) {
+            $scope.showModal('Error', "Error While Submitting Your Request");
           })
       }
     };

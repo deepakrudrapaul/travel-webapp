@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
   <link rel="stylesheet" href="bower_components/v-accordion/dist/v-accordion.css" />
   <link rel="stylesheet" href="bower_components/angular-hamburger-toggle/dist/angular-hamburger-toggle.css" />
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
   <!-- endbower -->
   <!-- endbuild <-->
   </-->
@@ -310,18 +311,18 @@
               <h5><strong>Our social media handles:</strong><br /></h5>
               <div class="col-md-6 clearfix bottommargin-sm">
 
-                <a href="https://www.facebook.com/wanderwagon/" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+                <a ng-click="openSocialSite('facebook')" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
                   <i class="icon-facebook"></i>
                   <i class="icon-facebook"></i>
                 </a>
-                <a href="https://www.facebook.com/wanderwagon/"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+                <a ng-click="openSocialSite('facebook')"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
               </div>
               <div class="col-md-6 clearfix">
-                <a href="https://www.instagram.com/wanderwagon" class="social-icon si-dark si-colored si-instagram nobottommargin" style="margin-right: 10px;">
+                <a ng-click="openSocialSite('instagram')" class="social-icon si-dark si-colored si-instagram nobottommargin" style="margin-right: 10px;">
                   <i class="icon-instagram"></i>
                   <i class="icon-instagram"></i>
                 </a>
-                <a href="https://www.instagram.com/wanderwagon"><small style="display: block; margin-top: 3px;"><strong>Follow</strong><br>on Instagram</small></a>
+                <a ng-click="openSocialSite('instagram')"><small style="display: block; margin-top: 3px;"><strong>Follow</strong><br>on Instagram</small></a>
               </div>
 
 
@@ -333,7 +334,6 @@
         </div>
 
       </div>
-
 
       <!-- Copyrights
 			============================================= -->
@@ -348,32 +348,32 @@
 
           <div class="col_half col_last tright">
             <div class="fright clearfix">
-              <a href="https://www.facebook.com/wanderwagon/" target="_blank" class="social-icon si-small si-borderless si-facebook">
+              <a ng-click="openSocialSite('facebook')" class="social-icon si-small si-borderless si-facebook">
                 <i class="icon-facebook"></i>
                 <i class="icon-facebook"></i>
               </a>
 
-              <a href="#" class="social-icon si-small si-borderless si-twitter">
+              <a ng-click="openSocialSite('twitter')" class="social-icon si-small si-borderless si-twitter">
                 <i class="icon-twitter"></i>
                 <i class="icon-twitter"></i>
               </a>
 
 
-              <a href='https://www.instagram.com/wanderwagon' class="social-icon si-small si-borderless si-instagram">
+              <a ng-click="openSocialSite('instagram')" class="social-icon si-small si-borderless si-instagram">
                 <i class="icon-instagram"></i>
                 <i class="icon-instagram"></i>
               </a>
 
 
-              <a href="#" class="social-icon si-small si-borderless si-gplus">
+              <a ng-click="openSocialSite('plus.google')" class="social-icon si-small si-borderless si-gplus">
                 <i class="icon-gplus"></i>
                 <i class="icon-gplus"></i>
               </a>
 
-              <a href="#" class="social-icon si-small si-borderless si-pinterest">
+              <!--<a href="#" class="social-icon si-small si-borderless si-pinterest">
                 <i class="icon-pinterest"></i>
                 <i class="icon-pinterest"></i>
-              </a>
+              </a>-->
 
               <!--<a href="#" class="social-icon si-small si-borderless si-vimeo">
               <i class="icon-vimeo"></i>
@@ -390,10 +390,10 @@
               <i class="icon-yahoo"></i>
             </a> -->
 
-              <a href="#" class="social-icon si-small si-borderless si-linkedin">
+              <!--<a href="#" class="social-icon si-small si-borderless si-linkedin">
                 <i class="icon-linkedin"></i>
                 <i class="icon-linkedin"></i>
-              </a>
+              </a>-->
             </div>
 
             <div class="clear"></div>
@@ -422,32 +422,6 @@
 
 
 
-  <!--<div id="gotoTop" class="icon-angle-up"></div>
-  <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="messageModalLabel">{{messageType}}</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div style="padding:5%;" class="col-full">
-            {{message}}
-          </div>
-          <!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
-            Its button
-					</div>-->
-        </div>
-      </div>
-      <!--<div class="modal-body" ng-show="error">
-				<div class="row filter-remove text-center">
-					<p>Error</p>
-				</div>
-			</div>-->
-    </div>
-  </div>
-</div>-->
 
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -501,7 +475,6 @@
   <script src="bower_components/v-accordion/dist/v-accordion.js"></script>
   <script src="bower_components/satellizer/dist/satellizer.js"></script>
   <script src="bower_components/angular-socialshare/dist/angular-socialshare.min.js"></script>
-  <script src="bower_components/angular-hamburger-toggle/dist/angular-hamburger-toggle.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
