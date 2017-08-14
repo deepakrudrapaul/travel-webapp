@@ -30716,30 +30716,47 @@ label.checkbox {
   }
 }
 
-.vrepeatContainer {
-  overflow-x: hidden;
-}
-
-.vrepeatContainer #horizontal-container {
-  height: 100px;
+#news_strip {
   width: 100%;
-  overflow-x: hidden;
-  ;
+  border-bottom: 1px dotted #cccccc;
+  display: block;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
 }
 
-.vrepeatContainer .repeated-item-horizontal {
-  border-right: 1px solid #ddd;
-  display: inline-block;
-  height: 84px;
-  padding-top: 35px;
-  text-align: center;
-  width: 50px;
+#news_strip a {
+  display: inline;
+  text-decoration: none;
+  margin-right: 0px;
+  z-index: 1;
+  position: absolute;
+  top: 0px;
 }
 
-.vrepeatContainer md-content {
-  margin: 16px;
+
+
+/* The shadow DIVs of the sides are decorative and optional, but they add a very nice effect :) */
+
+#news_strip div.shadow{
+  position: absolute;
+  top: 0px;
+  width: 30px;
+  height: 100%;
+  z-index: 5;
+  background: #ffffff;
 }
 
-.vrepeatContainer md-virtual-repeat-container {
-  overflow-x: hidden;
-}
+// #news_strip div.shadow.left{
+//   left: 0px;
+//   -webkit-box-shadow: 10px 0px 10px #fff;
+//   -moz-box-shadow: 10px 0px 10px #fff;
+//   box-shadow: 10px 0px 10px #fff;
+// }
+
+// #news_strip div.shadow.right{
+//   right: 0px;
+//   -webkit-box-shadow: -10px 0px 10px #fff;
+//   -moz-box-shadow: -10px 0px 10px #fff;
+//   box-shadow: -10px 0px 10px #fff;
+// }

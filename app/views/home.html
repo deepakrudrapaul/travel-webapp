@@ -424,28 +424,19 @@
     </h2>
   </div>
 
-  <!--<marquee  behavior="scroll" direction="left" loop="infinite">
-    <img ng-click="openInstaProfile()" ng-repeat="image in instaPhotos" style="margin:2%;" ng-src="{{image.imageUrl}}" width="200" height="150" alt="Instafeed">
-  </marquee>-->
-
-  <!--<div class="marque">
-    <div class="edge"></div>
-    <ul class="slideContainer" id="money_start">
-      <li ng-repeat="photo in instaPhotos" class="slideItem">
-        <img ng-click="openInstaProfile()" style="margin:1%;" ng-src="{{photo.imageUrl}}" width="200" height="150" alt="Instafeed">
-      </li>
-    </ul>
-  </div>-->
-<div class="marque">
- 
+<!--<div class="marque">
    <ul class="slideContainer" id="money_start">
       <li ng-repeat="photo in instaPhotos" class="slideItem">
-        <img ng-click="openInstaProfile()" style="margin:1%;" ng-src="{{photo.imageUrl}}" width="200" height="150" alt="Instafeed">
+        <img style="cursor:pointer;" ng-click="openInstaProfile()" style="margin:1%;" ng-src="{{photo.imageUrl}}" width="200" height="150" alt="Instafeed">
       </li>
     </ul>
-</div>
+</div>-->
 
-
+ <div id="news_strip" ng-init="init()">
+            <a ng-repeat="(k, n) in news track by $index" ng-style="{'right': get_news_right($index)}" id="news_{{$index}}" ng-mouseover="conf.news_move_flag=false" ng-mouseout="conf.news_move_flag=true">
+                <img style="cursor:pointer;" ng-click="openInstaProfile()" style="margin:1%;" ng-src="{{n.imageUrl}}" width="200" height="150" alt="Instafeed">
+            </a>
+        </div>
 
 </section>
 

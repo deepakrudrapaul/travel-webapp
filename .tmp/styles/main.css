@@ -44120,35 +44120,34 @@ label.checkbox {
   }
 }
 /* line 30719, ../../app/styles/main.scss */
-.vrepeatContainer {
-  overflow-x: hidden;
-}
-
-/* line 30723, ../../app/styles/main.scss */
-.vrepeatContainer #horizontal-container {
-  height: 100px;
+#news_strip {
   width: 100%;
-  overflow-x: hidden;
+  border-bottom: 1px dotted #cccccc;
+  display: block;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* line 30730, ../../app/styles/main.scss */
-.vrepeatContainer .repeated-item-horizontal {
-  border-right: 1px solid #ddd;
-  display: inline-block;
-  height: 84px;
-  padding-top: 35px;
-  text-align: center;
-  width: 50px;
+/* line 30728, ../../app/styles/main.scss */
+#news_strip a {
+  display: inline;
+  text-decoration: none;
+  margin-right: 0px;
+  z-index: 1;
+  position: absolute;
+  top: 0px;
 }
 
-/* line 30739, ../../app/styles/main.scss */
-.vrepeatContainer md-content {
-  margin: 16px;
-}
-
-/* line 30743, ../../app/styles/main.scss */
-.vrepeatContainer md-virtual-repeat-container {
-  overflow-x: hidden;
+/* The shadow DIVs of the sides are decorative and optional, but they add a very nice effect :) */
+/* line 30741, ../../app/styles/main.scss */
+#news_strip div.shadow {
+  position: absolute;
+  top: 0px;
+  width: 30px;
+  height: 100%;
+  z-index: 5;
+  background: #ffffff;
 }
 
 /*# sourceMappingURL=main.css.map */
