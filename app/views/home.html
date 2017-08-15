@@ -432,7 +432,7 @@
     </ul>
 </div>-->
 
- <div id="news_strip" ng-init="init()">
+ <div id="news_strip">
             <a ng-repeat="(k, n) in news track by $index" ng-style="{'right': get_news_right($index)}" id="news_{{$index}}" ng-mouseover="conf.news_move_flag=false" ng-mouseout="conf.news_move_flag=true">
                 <img style="cursor:pointer;" ng-click="openInstaProfile()" style="margin:1%;" ng-src="{{n.imageUrl}}" width="200" height="150" alt="Instafeed">
             </a>

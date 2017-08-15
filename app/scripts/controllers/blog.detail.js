@@ -8,12 +8,18 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('BlogDetailCtrl', function ($q, $scope, $cookies, $stateParams, remoteSvc, $window, $auth, $location, auth) {
+  .controller('BlogDetailCtrl', function ($q, $scope, $rootScope, $cookies, $stateParams, remoteSvc, $window, $auth, $location, auth) {
 
     var postId = $stateParams.postId;
 
     $scope.showModal = function (messageType, message) {
       angular.element(document.querySelectorAll('#shareModal')).modal('show');
+      $scope.messageType = messageType;
+      $scope.message = message;
+    };
+
+     $scope.loginModal = function (messageType, message) {
+      angular.element(document.querySelectorAll('#cloginModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
     };
@@ -99,16 +105,10 @@ angular.module('wanderwagon-webapp')
            $scope.showForm = true;
         } else {
            $scope.showForm = false;
-            $scope.showModal("Log In", "Please Login to comment on this post");
+             $location.path('/login');
+            $rootScope.$emit('show-login', 'Login to comment !');   
         }
     };  
-   
-
-
-  
-
-
-   
 
 
   });

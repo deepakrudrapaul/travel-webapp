@@ -8,7 +8,7 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('HomeCtrl', function ($scope, $timeout, remoteSvc, $document, $window, $interval) {
+  .controller('HomeCtrl', function ($scope, $timeout, remoteSvc, $document, $window, $interval, $location) {
 
     // $window.requestAnimationFrame = (function () {
     //   return $window.requestAnimationFrame ||
@@ -33,7 +33,7 @@ angular.module('wanderwagon-webapp')
     // })();
 
     $scope.instaPhotos = [];
-     $scope.initInstaPhotos = function () {
+    $scope.initInstaPhotos = function () {
       remoteSvc.getInstaPhotos()
         .success(function (data) {
           $scope.instaPhotos = data.response;
@@ -48,7 +48,7 @@ angular.module('wanderwagon-webapp')
 
 
 
-   
+
 
     $scope.openInstagram = function () {
       $window.open('https://www.instagram.com/wanderwagon', ' _blank');
@@ -150,42 +150,46 @@ angular.module('wanderwagon-webapp')
 
     $scope.news = [];
     $scope.conf = {
-        news_length: false,
-        news_pos: 200, // the starting position from the right in the news container
-        news_margin: 20,
-        news_move_flag: true
+      news_length: false,
+      news_pos: 200, // the starting position from the right in the news container
+      news_margin: 20,
+      news_move_flag: true
     };
-    
-    $scope.init = function() {
+
+    $scope.getInstaPhotos = function () {
       remoteSvc.getInstaPhotos()
         .success(function (data) {
           $scope.news = data.response;
-                $interval($scope.news_move ,50);
+          $interval($scope.news_move, 50);
         })
         .error(function (error) {
 
         })
     };
-    
-    $scope.get_news_right = function(idx) {
-        var $right = $scope.conf.news_pos;
-        for (var ri=0; ri < idx; ri++) {
-            if (document.getElementById('news_'+ri)) {
-                $right += $scope.conf.news_margin + angular.element(document.getElementById('news_'+ri))[0].offsetWidth;
-            }
+    $scope.getInstaPhotos();
+
+    $scope.get_news_right = function (idx) {
+      var $right = $scope.conf.news_pos;
+      for (var ri = 0; ri < idx; ri++) {
+        if (document.getElementById('news_' + ri)) {
+          $right += $scope.conf.news_margin + angular.element(document.getElementById('news_' + ri))[0].offsetWidth;
         }
-        return $right+'px';
+      }
+      return $right + 'px';
     };
-    
-    $scope.news_move = function() {
+
+
+      $scope.news_move = function () {
         if ($scope.conf.news_move_flag) {
-            $scope.conf.news_pos--;
-            if ( angular.element(document.getElementById('news_0'))[0].offsetLeft > angular.element(document.getElementById('news_strip'))[0].offsetWidth + $scope.conf.news_margin ) {
-                var first_new = $scope.news[0];
-                $scope.news.push(first_new);
-                $scope.news.shift();
-                $scope.conf.news_pos += angular.element(document.getElementById('news_0'))[0].offsetWidth + $scope.conf.news_margin;
-            }
+          $scope.conf.news_pos--;
+          if (angular.element(document.getElementById('news_0'))[0].offsetLeft > angular.element(document.getElementById('news_strip'))[0].offsetWidth + $scope.conf.news_margin) {
+            var first_new = $scope.news[0];
+            $scope.news.push(first_new);
+            $scope.news.shift();
+            $scope.conf.news_pos += angular.element(document.getElementById('news_0'))[0].offsetWidth + $scope.conf.news_margin;
+          }
         }
-    };
+      };
+    
+
   });

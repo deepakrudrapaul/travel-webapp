@@ -1,4 +1,4 @@
-<section id="content" style="background-color:#000;background-size: cover;background-image: url('images/login-bg.jpg');">
+<section id="content" style="background-color:#000;background-size: cover;background-image: url('images/login-bg.jpg'); height:100vh;">
 
   <!--background-size: cover; height:100vh;
 
@@ -7,9 +7,18 @@ background-image: linear-gradient(to bottom,#654a86,#534292);
 
   <div class="container clearfix login-margin">
 
-    <div class="center-block clearfix" style="max-width: 550px; background-color:transparent; padding: 30px; border-radius:1%;">
-      <v-accordion id="accordionA" class="vAccordion--default" control="accordionA">
-        <!--<v-pane id="pane1" expanded>-->
+    <div class="center-block clearfix" style="max-width: 550px;background:rgba(255,255,255,0.5);; padding: 50px; border-radius:1%;">
+
+       <div class="center">
+          <p style="margin-bottom: 15px;">
+            <font color="white" size="3">Login with:</font>
+          </p>
+          <button class="button button-rounded si-facebook si-colored" ng-click="authenticate('facebook')"><i class="icon-facebook"></i>Facebook</button>
+
+          <span class="hidden-xs"><font color="white">or</font></span>
+          <button class="button button-rounded si-google si-colored" ng-click="authenticate('google')"><i class="icon-google"></i>Google</button>
+        </div>
+      <!--<v-accordion id="accordionA" class="vAccordion--default" control="accordionA">
         <v-pane id="pane1" expanded>
           <v-pane-header id="pane1-header">
             <h3 class="acctitle">
@@ -19,25 +28,6 @@ background-image: linear-gradient(to bottom,#654a86,#534292);
           </v-pane-header>
 
           <v-pane-content id="pane1-content">
-            <!--<form name="loginForm" class="nobottommargin" ng-submit="onLogin(loginObj)">
-              <div class="col_full">
-                <label for="loginForm-username">Email:</label>
-                <input ng-model="loginObj.emailId" type="email" id="loginForm-username" name="loginForm-username" class="form-control"
-                />
-              </div>
-
-              <div class="col_full">
-                <label for="loginForm-password">Password:</label>
-                <input ng-model="loginObj.password" type="password" id="loginForm-password" name="loginForm-password" class="form-control"
-                />
-              </div>
-
-              <div class="col_full nobottommargin">
-                <button type="submit" class="button background-primary">Login</button>
-                <a href="#" class="fright">Forgot Password?</a>
-              </div>
-
-            </form>-->
 
             <form class="form-horizontal" name="loginForm" ng-submit="onLoginFormSubmit(loginForm)">
               <div class="col_full">
@@ -60,15 +50,7 @@ background-image: linear-gradient(to bottom,#654a86,#534292);
 
             <div class="line line-sm"></div>
 
-            <div class="center">
-              <p style="margin-bottom: 15px;">
-                <font color="white" size="3">Login with:</font>
-              </p>
-              <button class="button button-rounded si-facebook si-colored" ng-click="authenticate('facebook')"><i class="icon-facebook"></i>Facebook</button>
-
-              <span class="hidden-xs"><font color="white">or</font></span>
-              <button class="button button-rounded si-google si-colored" ng-click="authenticate('google')"><i class="icon-facebook"></i>Google</button>
-            </div>
+            
           </v-pane-content>
         </v-pane>
 
@@ -119,7 +101,9 @@ background-image: linear-gradient(to bottom,#654a86,#534292);
           </v-pane-content>
         </v-pane>
 
-      </v-accordion>
+      </v-accordion>-->
+     
+
     </div>
 
   </div>

@@ -19,14 +19,6 @@ angular.module('wanderwagon-webapp')
     }
 
 
-    // $scope.openNav = function() {
-    //     console.log("CLICKED");
-    //     angular.element(document.getElementById('mySidenav')).css('width','250px');
-    // }
-    // $scope.closeNav = function() {
-    //     angular.element(document.getElementById('mySidenav')).css('width','0px');
-    // }
-
     $rootScope.$on('social-login', function (event, data) {
       $rootScope.loggedIn = data;
     });

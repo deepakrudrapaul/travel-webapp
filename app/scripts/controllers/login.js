@@ -16,6 +16,12 @@ angular.module('wanderwagon-webapp')
       $scope.message = message;
     };
 
+    $rootScope.$on('show-login', function (event, data) {
+      $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
+      console.log(data);
+    });
+
+
     $scope.authenticate = function (provider) {
       $auth.authenticate(provider)
         .then(function (response) {
