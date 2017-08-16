@@ -29605,7 +29605,7 @@ label.checkbox {
   font-size: 1.5rem;
   line-height: 1.8;
   margin-right: 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .panel-group .panel-heading+.panel-collapse .panel-body {
@@ -30011,6 +30011,10 @@ label.checkbox {
 
 .custom-padding {
   padding: 2% 6% 2% 6%;
+}
+
+.border-right {
+  border-right: 1px solid #000;
 }
 
 

@@ -103,6 +103,21 @@ angular
         templateUrl: 'views/blog-detail.html',
         controller: 'BlogDetailCtrl'
       })
+      .state('travel-plan', {
+        url: '/travel-plan',
+        abstract: true,
+        template: "<ui-view></ui-view>"
+      })
+      .state('travel-plan.list', {
+        url: '',
+        templateUrl: 'views/travel-plan.html',
+        controller: 'TravelPlanCtrl'
+      })
+      .state('travel-plan.detail', {
+        url: '/:id',
+        templateUrl: 'views/travel-plan-detail.html',
+        controller: 'TravelPlanDetailCtrl'
+      })
       .state('about', {
         url: '/about',
         templateUrl: 'views/about.html',
@@ -117,11 +132,6 @@ angular
         url: '/contact/plan-trip-form',
         templateUrl: 'views/plan-trip-form.html',
         controller: 'ContactCtrl'
-      })
-      .state('travel-plan', {
-        url: '/travel-plan',
-        templateUrl: 'views/travel-plan.html',
-        controller: 'TravelPlanCtrl'
       })
       .state('cancellation', {
         url: '/cancellation',
