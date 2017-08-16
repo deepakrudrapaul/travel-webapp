@@ -18,10 +18,14 @@ angular.module('wanderwagon-webapp')
       $scope.message = message;
     };
 
-     $scope.loginModal = function (messageType, message) {
-      angular.element(document.querySelectorAll('#cloginModal')).modal('show');
+     $scope.showLoginModal = function (messageType, message) {
+      angular.element(document.querySelectorAll('#loginModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
+    };
+
+    var closeLoginModal = function () {
+      angular.element(document.querySelectorAll('#loginModal')).modal('hide');
     };
 
     $scope.getPostDetail = function () {
@@ -105,10 +109,40 @@ angular.module('wanderwagon-webapp')
            $scope.showForm = true;
         } else {
            $scope.showForm = false;
-             $location.path('/login');
-            $rootScope.$emit('show-login', 'Login to comment !');   
+           $scope.showLoginModal("Log In", "");
         }
     };  
+
+
+    $scope.authenticate = function (provider) {
+      $auth.authenticate(provider)
+        .then(function (response) {
+          if (provider == 'google') {
+            auth.googleLogin(response.access_token)
+              .then(function (data) {
+                 closeLoginModal();
+                 $rootScope.$emit('social-login', 'true');
+                  $scope.showForm = true;                    
+              })
+              .catch(function (error) {
+                $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
+              });
+          } else {
+            auth.facebookLogin(response.access_token)
+              .then(function (data) {
+                closeLoginModal();
+                 $rootScope.$emit('social-login', 'true'); 
+                  $scope.showForm = true;
+              })
+              .catch(function (error) {
+                $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
+              });
+          }
+        })
+        .catch(function (response) {
+          console.log("Something went Wrong");
+        })
+    };
 
 
   });
