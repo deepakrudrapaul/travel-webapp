@@ -9,9 +9,9 @@
  */
 angular.module('wanderwagon-webapp')
   .controller('TravelPlanDetailCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+
+
+    
+    
   });
