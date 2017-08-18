@@ -8,7 +8,7 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('LinkCtrl', function ($scope, $window, $location, $rootScope, auth, remoteSvc) {
+  .controller('LinkCtrl', function ($scope, $window, $location, $rootScope, $auth, auth, remoteSvc) {
 
     $scope.checked = true;
 
@@ -34,6 +34,46 @@ angular.module('wanderwagon-webapp')
       angular.element(document.querySelectorAll('#messageModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
+    };
+
+     $scope.showLoginModal = function(messageType, message) {
+      angular.element(document.querySelectorAll('#loginModal')).modal('show');
+      $scope.messageType = messageType;
+      $scope.message = message;
+    };
+
+     var closeLoginModal = function () {
+      angular.element(document.querySelectorAll('#loginModal')).modal('hide');
+    };
+
+
+    $rootScope.authenticate = function (provider) {
+      $auth.authenticate(provider)
+        .then(function (response) {
+          if (provider == 'google') {
+            auth.googleLogin(response.access_token)
+              .then(function (data) {
+                 closeLoginModal();
+                 $rootScope.$emit('social-login', 'true');
+                                    
+              })
+              .catch(function (error) {
+                $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
+              });
+          } else {
+            auth.facebookLogin(response.access_token)
+              .then(function (data) {
+                closeLoginModal();
+                 $rootScope.$emit('social-login', 'true'); 
+              })
+              .catch(function (error) {
+                $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
+              });
+          }
+        })
+        .catch(function (response) {
+          console.log("Something went Wrong");
+        })
     };
 
 

@@ -52,11 +52,11 @@ angular
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
-      .state('login', {
-        url: '/login',
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
-      })
+      // .state('login', {
+      //   url: '/login',
+      //   templateUrl: 'views/login.html',
+      //   controller: 'LoginCtrl',
+      // })
       .state('signUp', {
         url: '/signUp',
         templateUrl: 'views/signUp.html',
