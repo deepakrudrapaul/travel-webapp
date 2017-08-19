@@ -20,6 +20,17 @@ angular.module('wanderwagon-webapp')
 
 
         $('#flipbook').turn('peel', 'br');
+
+
+        $("#prev").click(function (e) {
+          e.preventDefault();
+          $('#flipbook').turn("previous");
+        });
+
+        $("#next").click(function (e) {
+          e.preventDefault();
+           $('#flipbook').turn("next");
+        });
       }
     };
   });
