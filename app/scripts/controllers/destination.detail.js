@@ -34,8 +34,8 @@ angular.module('wanderwagon-webapp')
         } else if ($scope.openAccordion === false) {
           $scope.openAccordion = true;
         }
-      } else if(param === 'activity'){
-         console.log(param);
+      } else if (param === 'activity') {
+        console.log(param);
         if ($scope.openAccordion1 === true) {
           $scope.closeAccordion();
         } else if ($scope.openAccordion1 === false) {
@@ -47,11 +47,15 @@ angular.module('wanderwagon-webapp')
 
     $scope.closeAccordion = function () {
       $scope.openAccordion = false;
+      var someElement = angular.element(document.getElementById('places'));
+      $document.scrollToElement(someElement, 30, 800);
     };
 
 
     $scope.closeAccordion1 = function () {
       $scope.openAccordion1 = false;
+      var someElement = angular.element(document.getElementById('activities'));
+      $document.scrollToElement(someElement, 30, 800);
     };
 
 
@@ -60,18 +64,12 @@ angular.module('wanderwagon-webapp')
       if (openAccordion) {
         var someElement = angular.element(document.getElementById('accordion1'));
         $document.scrollToElement(someElement, 30, 800);
-      } else{
-        var someElement = angular.element(document.getElementById('places'));
-        $document.scrollToElement(someElement, 30, 800);
       }
     });
 
     $scope.$watch('openAccordion1', function (openAccordion1) {
       if (openAccordion1) {
         var someElement = angular.element(document.getElementById('accordion2'));
-        $document.scrollToElement(someElement, 30, 800);
-      } else{
-         var someElement = angular.element(document.getElementById('activities'));
         $document.scrollToElement(someElement, 30, 800);
       }
     });
