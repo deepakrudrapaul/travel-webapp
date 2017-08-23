@@ -13,9 +13,12 @@ angular.module('wanderwagon-webapp')
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
         $('#flipbook').turn({
-          width: '90%',
+          width: '100%',
           height: '450px',
-          pages: 8
+          pages: 8,
+          autoCenter: true,
+          display: 'single',
+          duration: 1000
         });
 
 
