@@ -29,6 +29,7 @@
       </div>
     </p>
 
+
     <div id="home-sm-carousel" class="carousel slide bootstrap-carousel" data-ride="carousel" data-interval="0">
   <a style="background-color: #000000;
     border: 0px;
@@ -74,7 +75,7 @@
 
           <div class="carousel-inner" >
             <div class="item" data-ng-repeat="slide in slider" data-ng-class="{active : $first}">
-                          <img ng-click="openInstagram()" ng-touch="openInstagram()" style="object-fit:cover; width:100%; height:400px;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
+                          <img ui-sref="travel-plan.detail" style="object-fit:cover; width:100%; height:400px;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
                           <span class="paul-slider-caption">
                     {{slide.title}}</span>
             </div>
@@ -132,7 +133,7 @@
 
               <div class="col-sm-3 nopadding">
 
-                <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[0].id)" style="cursor:pointer;">
+                <div ui-sref="travel-plan.detail" style="cursor:pointer;">
                   <div class="paul-slide">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[0].imageUrl}}" class="img-responsive" alt="{{slider[0].text}}" />
                   </div>
@@ -145,7 +146,7 @@
               </div>
 
               <div class="col-sm-3 nopadding">
-                <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[1].id)" style="cursor:pointer;">
+                <div ui-sref="travel-plan.detail"  style="cursor:pointer;">
                   <div class="paul-slide">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[1].imageUrl}}" class="img-responsive" alt="{{slider[1].text}}" />
                   </div>
@@ -157,7 +158,7 @@
               </div>
 
               <div class="col-sm-3 nopadding">
-                <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[2].id)" style="cursor:pointer;">
+                <div ui-sref="travel-plan.detail" style="cursor:pointer;">
                   <div class="paul-slide">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[2].imageUrl}}" class="img-responsive" alt="{{slider[2].text}}" />
                   </div>
@@ -169,7 +170,7 @@
               </div>
 
               <div class="col-sm-3 nopadding">
-                <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[3].id)" style="cursor:pointer;">
+                <div ui-sref="travel-plan.detail" style="cursor:pointer;">
                   <div class="paul-slide">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[3].imageUrl}}" class="img-responsive" alt="{{slider[3].text}}" />
                   </div>
@@ -185,7 +186,7 @@
             <div class="row">
 
               <div class="col-sm-3 nopadding">
-                <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[4].id)" style="cursor:pointer;">
+                <div ui-sref="travel-plan.detail" style="cursor:pointer;">
                   <div class="paul-slide">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[4].imageUrl}}" class="img-responsive" alt="{{slider[4].text}}" />
                   </div>
@@ -197,7 +198,7 @@
               </div>
 
               <div class="col-sm-3 nopadding">
-                <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[5].id)" style="cursor:pointer;">
+                <div ui-sref="travel-plan.detail" style="cursor:pointer;">
                   <div class="paul-slide">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[5].imageUrl}}" class="img-responsive" alt="{{slider[5].text}}" />
                   </div>
@@ -209,7 +210,7 @@
               </div>
 
               <div class="col-sm-3 nopadding">
-                <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[6].id)" style="cursor:pointer;">
+                <div ui-sref="travel-plan.detail" style="cursor:pointer;">
                   <div class="paul-slide">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[6].imageUrl}}" class="img-responsive" alt="{{slider[6].text}}" />
                   </div>
@@ -221,7 +222,7 @@
               </div>
 
               <div class="col-sm-3 nopadding">
-                <div ng-click="header.isOpen = !header.isOpen ; getTravelInspirationDetail(slider[7].id)" style="cursor:pointer;">
+                <div ui-sref="travel-plan.detail" style="cursor:pointer;">
                   <div class="paul-slide">
                     <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[7].imageUrl}}" class="img-responsive" alt="{{slider[7].text}}" />
                   </div>
@@ -260,13 +261,8 @@
   <div style="overflow:hidden; margin-bottom:-5%;">
 
     <div ui-sref="blog.list" class="image blog-image-left">
-      <picture>
-        <!--<source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
-        <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
-        <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">-->
-
+    
         <img ng-src="{{blog[0].imageUrl}}" alt="{{blog[0].title}}">
-      </picture>
     </div>
 
 
@@ -290,13 +286,8 @@
   <div style="overflow:hidden;">
 
     <div ui-sref="blog.list" class="image blog-image-right">
-      <picture>
-        <!--<source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
-        <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
-        <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">-->
-
         <img ng-src="{{blog[1].imageUrl}}" alt="{{blog[1].title}}">
-      </picture>
+
     </div>
 
 
