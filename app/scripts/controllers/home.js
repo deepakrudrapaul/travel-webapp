@@ -10,27 +10,7 @@
 angular.module('wanderwagon-webapp')
   .controller('HomeCtrl', function ($scope, $timeout, remoteSvc, $document, $window, $interval, $location) {
 
-    // $window.requestAnimationFrame = (function () {
-    //   return $window.requestAnimationFrame ||
-    //    window.webkitRequestAnimationFrame ||
-    //       window.mozRequestAnimationFrame    ||
-    //       function( callback ){
-    //         window.setTimeout(callback, 1000 / 60);
-    //       };
-    // })();
 
-    // var speed = 5000;
-    // (function currencySlide() {
-    //   var currencyPairWidth = $('.slideItem:first-child').outerWidth();
-    //   $(".slideContainer").animate({
-    //     marginLeft: -currencyPairWidth
-    //   }, speed, 'linear', function () {
-    //     $(this).css({
-    //       marginLeft: 0
-    //     }).find("li:last").after($(this).find("li:first"));
-    //   });
-    //   requestAnimationFrame(currencySlide);
-    // })();
 
     $scope.instaPhotos = [];
     $scope.initInstaPhotos = function () {
@@ -91,16 +71,67 @@ angular.module('wanderwagon-webapp')
       });
     };
 
+    $scope.inspirationData = [
+      {
+        "id":1,
+        "name":"Dharamshala",
+        "imageUrl":"images/himachal.jpg",
+        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
+      },
+      {
+        "id":2,
+        "name":"Nainital",
+        "imageUrl":"images/himachal.jpg",
+        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
+      },
+      {
+        "id":3,
+        "name":"Kasol",
+        "imageUrl":"images/himachal.jpg",
+        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
+      },
+      {
+        "id":4,
+        "name":"Manali",
+        "imageUrl":"images/himachal.jpg",
+        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
+      },
+      {
+        "id":5,
+        "name":"Dzuko Valley",
+        "imageUrl":"images/himachal.jpg",
+        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
+      },
+      {
+        "id":6, 
+        "name":"Dharamshala",
+        "imageUrl":"images/himachal.jpg",
+        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
+      },
 
+    ];
 
+    $scope.openAccordion = false;
+    $scope.openOrCloseAccordion = function () {
+      if ($scope.openAccordion === true) {
+        $scope.closeAccordion();
+      } else if ($scope.openAccordion === false) {
+        $scope.openAccordion = true;
+      }
+    };
 
-    $scope.$watch('header.isOpen', function (isOpen) {
-      if (isOpen) {
-        var someElement = angular.element(document.getElementById('accordion1'));
-        $document.scrollToElement(someElement, 50, 800);
+    $scope.closeAccordion = function () {
+      $scope.openAccordion = false;
+      var someElement = angular.element(document.getElementById('travel'));
+      $document.scrollToElement(someElement, 30, 800);
+    };
+
+ $scope.$watch('openAccordion', function (openAccordion) {
+      if (openAccordion) {
+        var someElement = angular.element(document.getElementById('accordion'));
+        $document.scrollToElement(someElement, 30, 800);
       }
     });
-
 
 
 
@@ -179,17 +210,18 @@ angular.module('wanderwagon-webapp')
     };
 
 
-      $scope.news_move = function () {
-        if ($scope.conf.news_move_flag) {
-          $scope.conf.news_pos--;
-          if (angular.element(document.getElementById('news_0'))[0].offsetLeft > angular.element(document.getElementById('news_strip'))[0].offsetWidth + $scope.conf.news_margin) {
-            var first_new = $scope.news[0];
-            $scope.news.push(first_new);
-            $scope.news.shift();
-            $scope.conf.news_pos += angular.element(document.getElementById('news_0'))[0].offsetWidth + $scope.conf.news_margin;
-          }
+    $scope.news_move = function () {
+      if ($scope.conf.news_move_flag) {
+        $scope.conf.news_pos--;
+        if (angular.element(document.getElementById('news_0'))[0].offsetLeft > angular.element(document.getElementById('news_strip'))[0].offsetWidth + $scope.conf.news_margin) {
+          var first_new = $scope.news[0];
+          $scope.news.push(first_new);
+          $scope.news.shift();
+          $scope.conf.news_pos += angular.element(document.getElementById('news_0'))[0].offsetWidth + $scope.conf.news_margin;
         }
-      };
-    
+      }
+    };
+
+
 
   });

@@ -28,13 +28,7 @@
   <div class="container">
     <div class="row row-centered">
       <div style="margin-bottom:2%;" ng-repeat="destination in destinations" class="col-sm-4 col-centered col-fixed">
-        <!--<div class="item" style="width:100%;">
-          <div style="cursor:pointer;" ui-sref="destination.detail({id: destination.id})">
-            <img  width="380" height="255" ng-src="{{destination.imageUrl}}" />
-            <div style="background-color: rgba(0,0,0,.66); width:100%;" >
-                      <span class="paul-slider-caption">{{destination.name}}</span></div>
-          </div>
-        </div>-->
+       
 
         <a ui-sref="destination.detail({id: destination.id})">
           <div class="photo" style="cursor:pointer; width: 100%;

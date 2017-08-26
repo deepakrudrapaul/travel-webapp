@@ -56,26 +56,27 @@
        
         <div class="primary-menu-trigger" ng-touch="openSideNav()" ng-click="openSideNav()"><i class="icon-reorder" style="font-size:30px; color:#FFFFFF"></i></div>
 
-        <div id="mySidenav" class="sidenav">
+        <div id="mySidenav" class="sidenav" style="background-image: url('images/login-bg.jpg');
+  background-size: cover;">
           <a href="" class="closebtn" ng-touch="closeSideNav()" ng-click="closeSideNav()">&times;</a>
           <a  href="" ui-sref-active="active-menu" ui-sref="travel-plan.list" ng-touch="closeSideNav()" ng-click="closeSideNav()">
-                <div><i class="icon-calendar2"></i>Travel Plan</div>
+                <div><i style="padding:5%;" class="icon-calendar2"></i>Travel Plan</div>
               </a>
           <a href="" ui-sref-active="active-menu" ui-sref="destination.list" ng-touch="closeSideNav()" ng-click="closeSideNav()">
-                <div><i class="icon-location"></i>Destination</div>
+                <div><i style="padding:5%;" class="icon-location"></i>Destination</div>
               </a>
          <a href="" ui-sref-active="active-menu" ui-sref="blog.list" ng-touch="closeSideNav()" ng-click="closeSideNav()">
-                <div><i class="icon-comment"></i>Blog</div>
+                <div><i style="padding:5%;" class="icon-comment"></i>Blog</div>
               </a>
           <a href="" ui-sref-active="active-menu" ui-sref="plan-trip" ng-touch="closeSideNav()" ng-click="closeSideNav()">
-                <div><i class="icon-plane"></i>Plan My Trip</div>
+                <div><i style="padding:5%;" class="icon-plane"></i>Plan My Trip</div>
               </a>
                <a ng-hide="loggedIn" href=""  ng-touch="closeSideNav()" ng-click="closeSideNav(); showLoginModal()">
-                <div><i class="icon-lock"></i>Login</div>
+                <div><i style="padding:5%;" class="icon-lock"></i>Login</div>
               </a>
               <div ng-show="loggedIn">
               <a href="" ui-sref-active="active-menu" >
-                <div><i class="icon-user"></i>Welcome User</div>
+                <div><i style="padding:5%;" class="icon-user"></i>Welcome User</div>
               </a>
               <ul>
                 <li>
