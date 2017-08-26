@@ -259,11 +259,11 @@
         <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
 
       <div class="carousel-inner">
-        <div class="item" data-ng-repeat="slide in placesData" data-ng-class="{active : $first}">
+        <div class="item" data-ng-repeat="slide in inspirationData" data-ng-class="{active : $first}">
           <img ng-click="openOrCloseAccordion()" ng-touch="openOrCloseAccordion()" style="object-fit:cover; width:100%; height:400px; background-color:#000;"
             ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
           <span class="paul-slider-caption">
-                    {{slide.title}}</span>
+                    {{slide.name}}</span>
         </div>
       </div>
     </div>
@@ -321,10 +321,10 @@
           </ol>-->
 
           <div class="carousel-inner" role="listbox">
-            <div class="item" data-ng-repeat="place in placesData" data-ng-class="{active : $first}">
+            <div class="item" data-ng-repeat="place in inspirationData" data-ng-class="{active : $first}">
               <div class="center-block" style="width:80%;">
                 <div>
-                  <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{place.placeName}}
+                  <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{place.name}}
                     <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
                     </div>
                   </h2>

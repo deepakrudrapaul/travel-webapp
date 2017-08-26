@@ -34,6 +34,48 @@ angular.module('wanderwagon-webapp')
 
 
 
+      $scope.inspirationData = [
+      {
+        "id":1,
+        "name":"Dharamshala",
+        "imageUrl":"images/himachal.jpg",
+        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
+      },
+      {
+        "id":2,
+        "name":"Nainital",
+        "imageUrl":"images/himachal.jpg",
+        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
+      },
+      {
+        "id":3,
+        "name":"Kasol",
+        "imageUrl":"images/himachal.jpg",
+        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
+      },
+      {
+        "id":4,
+        "name":"Manali",
+        "imageUrl":"images/himachal.jpg",
+        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
+      },
+      {
+        "id":5,
+        "name":"Dzuko Valley",
+        "imageUrl":"images/himachal.jpg",
+        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
+      },
+      {
+        "id":6, 
+        "name":"Dharamshala",
+        "imageUrl":"images/himachal.jpg",
+        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
+      },
+
+    ];
+
+
+
 
 
   });
