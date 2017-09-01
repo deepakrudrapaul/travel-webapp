@@ -62,8 +62,8 @@ angular
         templateUrl: 'views/signUp.html',
         controller: 'LoginCtrl',
       })
-      .state('account', {
-        url: '/account',
+      .state('user-profile', {
+        url: '/user-profile',
         templateUrl: 'views/account.html',
         controller: 'AccountCtrl'
       })

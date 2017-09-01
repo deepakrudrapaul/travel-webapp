@@ -79,6 +79,11 @@
             </a>
             <ul>
               <li>
+                <a href="" ui-sref="user=profile" ng-touch="closeSideNav()" ng-click="closeSideNav()">
+                  <div>PROFILE</div>
+                </a>
+              </li>
+              <li>
                 <a href="" ng-click="onLogOut()" ng-touch="closeSideNav()" ng-click="closeSideNav()">
                   <div>LOG OUT</div>
                 </a>
@@ -135,6 +140,11 @@
                 <div><i class="icon-user"></i>Welcome User</div>
               </a>
               <ul>
+                  <li>
+                      <a href="" ui-sref="user-profile" ng-touch="closeSideNav()" ng-click="closeSideNav()">
+                        <div>PROFILE</div>
+                      </a>
+                    </li>
                 <li>
                   <a href="" ng-click="onLogOut()">
                     <div>LOG OUT</div>
@@ -248,7 +258,7 @@
               <h5><strong>ABOUT US</strong><br /></h5>
               <p><strong>We firmly believe that stories are powerful and that they can be used too inspire, 
                 thrill, entertain and educate. We are the storytellers. <br />We help people live their passion by helping them in planning their trips.
-                <br /><a style="cursor:pointer; color:#1265A8;">Learn more about us</a>
+                <br /><a ui-sref="about" style="cursor:pointer; color:#1265A8;">Learn more about us</a>
               </strong></p>
               <br />
               <br />
