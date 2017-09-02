@@ -61,6 +61,8 @@ angular.module('wanderwagon-webapp')
       });
     };
 
+    $scope.getTravelInspirations();
+
    
 
     $scope.getTravelInspirationDetail = function (id) {

@@ -29,7 +29,7 @@
 
   <ng-owl-carousel class="owl-theme" owl-items="sliderData" owl-properties="properties" owl-ready="ready($api)">
 
-    <div ng-click="openOrCloseAccordion()" class="paul-slide" style="padding:2% 0 2% 0%" data-ng-repeat="item in slider">
+    <div ng-click="openOrCloseAccordion()" class="paul-slide" style="padding:2% 0 2% 0%" data-ng-repeat="item in sliderData">
       <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
       <span class="paul-slider-caption">
         {{item.title}}</span>
