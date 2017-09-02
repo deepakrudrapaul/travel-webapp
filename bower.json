@@ -31,7 +31,9 @@
     "angular-scroll": "^1.0.2",
     "v-accordion": "^1.6.0",
     "satellizer": "^0.15.5",
-    "angular-socialshare": "angularjs-socialshare#^2.3.8"
+    "angular-socialshare": "angularjs-socialshare#^2.3.8",
+    "angular-owl-carousel2": "*",
+    "angular-picturefill": "*"
   },
   "devDependencies": {},
   "appPath": "app",

@@ -103,6 +103,68 @@ angular.module('wanderwagon-webapp')
     });
 
 
+    var owlAPi;
+    
+     $scope.properties = {
+       // autoHeight:true,
+       animateIn: 'fadeIn',
+       lazyLoad: true,
+       items: 4,
+       margin: 0,
+       mouseDrag: true,
+       touchDrag: true,
+       dots: false,
+       nav: true,
+       responsiveClass:true,
+       navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+       responsive:{
+           0:{
+               items:1,
+               nav:true
+           },
+           600:{
+               items:3,
+               nav:true
+           },
+           1000:{
+             items:4,
+             nav:true
+         }
+         }
+   };
+ 
+   $scope.ready = function ($api) {
+     owlAPi = $api;
+ };
+ 
+ $scope.nestedCarouselproperties = {
+   // autoHeight:true,
+   animateIn: 'fadeIn',
+   lazyLoad: true,
+   items: 3,
+   margin: 10,
+   mouseDrag: true,
+   touchDrag: true,
+   dots: false,
+   nav: true,
+   responsiveClass:true,
+   navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+   responsive:{
+       0:{
+           items:1,
+           nav:true
+       },
+       600:{
+           items:2,
+           nav:true
+       },
+       1000:{
+         items:3,
+         nav:true
+     }
+     }
+ };
+
 
 
   });

@@ -26,7 +26,9 @@ angular
     'duScroll',
     'vAccordion',
     'satellizer',
-    '720kb.socialshare'
+    '720kb.socialshare',
+    'angular-owl-carousel-2',
+    'ng.picturefill'
   ])
   .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', '$authProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider) {
 

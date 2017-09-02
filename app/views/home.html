@@ -3,7 +3,7 @@
     <div class="slider-caption-center">
       <h2 class="text-center primary-title">
         WITH WANDERWAGON YOU ARE FREE </h2>
-      <h2 class="text-center primary-title-1" >
+      <h2 class="text-center primary-title-1">
         {{changingText}}</h2>
       <!--<p style="font-size:2.5rem; margin-bottom:50px; color:#fff;" class="text-center">
         "Wanderwagon is the perfect partner to plan that much awaited trip with your buddies"
@@ -15,339 +15,53 @@
 </div>
 
 
-<section id="travel" style="margin-top:3%;" class="custom-padding" >
+<section id="travel" style="margin-top:3%;" class="custom-padding">
+  <h2 class="paul-title">
+    Travel Inspiration
 
-  <div>
-    <h2 class="paul-title">
-      Travel Inspiration
+  </h2>
 
-    </h2>
-
-    <p style="font-size:2rem;" class="text-center"> 
-      Your choices, Your friends, Your travel plans
-      <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;">
-      </div>
-    </p>
-
-
-    <div id="home-sm-carousel" class="carousel slide bootstrap-carousel" style="height:500px;" data-ride="carousel" data-interval="0">
-  <a style="background-color: #000000;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 00%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0%;
-    z-index: 5;
-    left: 1em;" class="btn" href="" data-target="#home-sm-carousel" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: #000000;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0%;
-    z-index: 5;
-    right: 1em;" class="btn" href="" data-target="#home-sm-carousel" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
-
-    
-
-          <div class="carousel-inner" >
-            <div style="height:500px;" class="item" data-ng-repeat="slide in slider" data-ng-class="{active : $first}">
-                          <img ng-click="openOrCloseAccordion()" ng-touch="openOrCloseAccordion()" style="object-fit:cover; width:100%; height:500px;" src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/blogs/solotravel/cover.jpg" class="img-responsive" alt="{{slide.text}}" />
-                          <span class="paul-slider-caption">
-                    {{slide.title}}</span>
-            </div>
-          </div>
-        </div>
-
-    <div class="row custom-paul-slider">
-      <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel" data-interval="false">
-        <a style="background-color: rgb(255, 255, 255);
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-
-    margin-bottom: auto;
-    margin-top: auto;
-        bottom: 0px;
-    top: 0px;
-    z-index: 20;
-    left: -2.22222em;" class="btn" href="" data-target="#carousel-example-generic" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: rgb(255, 255, 255);
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0;
-    z-index: 20;
-    right: -2.22222em;" class="btn" href="" data-target="#carousel-example-generic" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
-
-    
-
-        <div class="carousel-inner">
-          <div class="item active" style="padding:1% 0 1% 0%">
-            <div class="row">
-
-              <div class="col-sm-3 nopadding">
-
-                <div ng-click="openOrCloseAccordion()" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[0].imageUrl}}" class="img-responsive" alt="{{slider[0].text}}" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[0].title}}</span>
-
-                </div>
-
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="openOrCloseAccordion()" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[1].imageUrl}}" class="img-responsive" alt="{{slider[1].text}}" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[1].title}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="openOrCloseAccordion()" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[2].imageUrl}}" class="img-responsive" alt="{{slider[2].text}}" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[2].title}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="openOrCloseAccordion()" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[3].imageUrl}}" class="img-responsive" alt="{{slider[3].text}}" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[3].title}}</span>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item" style="padding:1% 0% 1% 0%">
-            <div class="row">
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="openOrCloseAccordion()" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[4].imageUrl}}" class="img-responsive" alt="{{slider[4].text}}" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[4].title}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="openOrCloseAccordion()" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[5].imageUrl}}" class="img-responsive" alt="{{slider[5].text}}" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[5].title}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="openOrCloseAccordion()" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[6].imageUrl}}" class="img-responsive" alt="{{slider[6].text}}" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[6].title}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 nopadding">
-                <div ng-click="openOrCloseAccordion()" style="cursor:pointer;">
-                  <div class="paul-slide">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{slider[7].imageUrl}}" class="img-responsive" alt="{{slider[7].text}}" />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{slider[7].title}}</span>
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
+  <p style="font-size:2rem;" class="text-center">
+    Your choices, Your friends, Your travel plans
+    <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;">
     </div>
-  </div>
+  </p>
 
-   <div id="accordion" class="clearfix topmargin">
-    <uib-accordion >
+  <ng-owl-carousel class="owl-theme" owl-items="sliderData" owl-properties="properties" owl-ready="ready($api)">
+
+    <div ng-click="openOrCloseAccordion()" class="paul-slide" style="padding:2% 0 2% 0%" data-ng-repeat="item in slider">
+      <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
+      <span class="paul-slider-caption">
+        {{item.title}}</span>
+    </div>
+
+  </ng-owl-carousel>
+
+
+
+  <div id="accordion" class="clearfix topmargin">
+    <uib-accordion>
       <uib-accordion-group is-open="openAccordion">
-
-         <div id="activityDetail-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
-  <a style="background-color: #12edd0;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 10%;
-    z-index: 5;
-    left: 3em;" class="btn" href="" data-target="#activityDetail-carousel" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: #12edd0;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 10%;
-    z-index: 5;
-    right: 3em;" class="btn" href="" data-target="#activityDetail-carousel" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
-
-          <!--<ol class="carousel-indicators">
-            <li data-target="#dynamiccontentcarousel" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}" data-slide-to="{{$index}}"></li>
-          </ol>-->
-
-          <div class="carousel-inner" role="listbox">
-            <div class="item" data-ng-repeat="inspiration in inspirationData" data-ng-class="{active : $first}">
-                          <div class="center-block" style="width:80%;">
-                <div >
-                  <h2  ui-sref="travel-plan.detail({id: inspiration.id})" style="cursor:pointer; text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{inspiration.name}}
-                    <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
-                    </div>
-                  </h2>
-                </div>
-
-                <div class="dropdown-slider-image">
-                  <a ui-sref="travel-plan.detail({id: inspiration.id})" ><img height="350px" width="100%" ng-src="{{inspiration.imageUrl}}" alt="Standard Post with Image"></a>
-                </div>
-
-                <div class="dropdown-slider-content">
-                   <span ng-click="closeAccordion()" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
-
-                  <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                    What is it.....</h4>
-
-                  <p>{{inspiration.description}}
-                  </p>
-
-                  <!--<h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                    How to reach</h4>
-                  <p>{{inspiration.placeOfConduct}}
-                  </p>
-
-
-                  <div>
-                    <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                      Timings - <span>{{activity.timing}}</span></h4>
-
-                    <h4 class="pull-right" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                      Duration - <span>{{activity.duration}}</span></h4>
-                    <br /><br /><br /><br />-->
-                  </div>
-
-                  <!--<center>
-                    <span style="font-size:48px; padding-right:2%; " class="icon-line2-arrow-left"></span>
-                    <span style="font-size:48px; padding-left:2%; " class="icon-line2-arrow-right"></span>
-                  </center>-->
-
-                </div>
+        <div ng-click="closeAccordion()" style="cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></div>
+        <ng-owl-carousel class="owl-theme" owl-items="inspirationData" owl-properties="nestedCarouselproperties" owl-ready="ready($api)">
+          
+              <div ui-sref="travel-plan.detail({id: inspiration.id})" class="paul-slide-new" style="padding:2% 0 2% 0" data-ng-repeat="item in inspirationData">
+                <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
+                <span class="paul-slider-caption">
+                  {{item.name}}</span>
               </div>
-            </div>
-          </div>
-        
+          
+            </ng-owl-carousel>
+
 
       </uib-accordion-group>
     </uib-accordion>
-    </div>
-
   </div>
 </section>
 
 
 
-<section id="articles" class="custom-padding" >
+<section id="articles" class="custom-padding">
 
   <div class="topmargin">
     <h2 ui-sref="blog.list" style="cursor:pointer;" class="paul-title">
@@ -364,12 +78,12 @@
   <div style="overflow:hidden; margin-bottom:-5%;">
 
     <div ui-sref="blog.list" class="image blog-image-left">
-    
-        <img ng-src="{{blog[0].imageUrl}}" alt="{{blog[0].title}}">
+
+      <img ng-src="{{blog[0].imageUrl}}" alt="{{blog[0].title}}">
     </div>
 
 
-    <div class="text-center blog-content-left" >
+    <div class="text-center blog-content-left">
       <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
         {{blog[0].title}}</h3>
 
@@ -389,7 +103,7 @@
   <div style="overflow:hidden;">
 
     <div ui-sref="blog.list" class="image blog-image-right">
-        <img ng-src="{{blog[1].imageUrl}}" alt="{{blog[1].title}}">
+      <img ng-src="{{blog[1].imageUrl}}" alt="{{blog[1].title}}">
 
     </div>
 
@@ -431,37 +145,38 @@
           </div>
         </div>
         <form name="inquiryForm" class="nobottommargin" ng-submit="onFormSubmit(inquiryForm)">
-          <div  class="col-sm-6 toppadding">
+          <div class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">First Name<span class="asterisk">*</span></label>
-            <input ng-model="inquiryObj.firstName" class="form-control" id="{{inquireFirstName}}" type="text" placeholder="*Required" value="{{firstName}}" data-parsley-trim-value="true"
-              required data-prefill="firstName" />
+            <input ng-model="inquiryObj.firstName" class="form-control" id="{{inquireFirstName}}" type="text" placeholder="*Required"
+              value="{{firstName}}" data-parsley-trim-value="true" required data-prefill="firstName" />
           </div>
 
           <div class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">Last Name</label>
-            <input ng-model="inquiryObj.lastName" class="form-control" id="{{inquireLastName}}" type="text" value="{{lastName}}" data-parsley-trim-value="true" data-prefill="lastName"
-            />
+            <input ng-model="inquiryObj.lastName" class="form-control" id="{{inquireLastName}}" type="text" value="{{lastName}}" data-parsley-trim-value="true"
+              data-prefill="lastName" />
           </div>
 
           <div class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">Email<span class="asterisk">*</span></label>
-            <input ng-model="inquiryObj.email" class="form-control" id="{{inquireEmail}}" type="email" value="{{email}}" placeholder="*Required" data-parsley-trim-value="true"
-              required data-prefill="email" />
+            <input ng-model="inquiryObj.email" class="form-control" id="{{inquireEmail}}" type="email" value="{{email}}" placeholder="*Required"
+              data-parsley-trim-value="true" required data-prefill="email" />
           </div>
 
 
-          <div  class="col-sm-6 toppadding">
+          <div class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">Phone Number<span class="asterisk">*</span></label>
             <div class="inquireTelContainer">
-              <input ng-model="inquiryObj.phone" class="form-control" id="{{inquireTel}}" placeholder="*Required" value="{{tel}}" type="tel" data-parsley-intphone="{{inquireTel}}"
-                data-parsley-cnic required data-prefill="phone" />
+              <input ng-model="inquiryObj.phone" class="form-control" id="{{inquireTel}}" placeholder="*Required" value="{{tel}}" type="tel"
+                data-parsley-intphone="{{inquireTel}}" data-parsley-cnic required data-prefill="phone" />
               <input id="{{inquireCountry}}" type="hidden" data-prefill="country" />
             </div>
           </div>
 
-          <div  class="col-sm-6 toppadding">
+          <div class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize" for="form-condition-10">I would like to go to...</label>
-            <select ng-model="inquiryObj.destination" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
+            <select ng-model="inquiryObj.destination" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10"
+              class="required form-control">
 									<option value=""> Select One </option>
 									<option value="Rishikesh">Rishikesh</option>
 									<option value="Manali">Manali</option>
@@ -473,9 +188,10 @@
 
 
 
-          <div  class="col-sm-6 toppadding">
+          <div class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize" for="form-condition-10">In the month of...</label>
-            <select ng-model="inquiryObj.travelMonth" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10" class="required form-control">
+            <select ng-model="inquiryObj.travelMonth" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10"
+              class="required form-control">
 									<option value="">Travel Dates TBC</option>
 									<option value="January">January</option>
 									<option value="February">February</option>
@@ -518,7 +234,7 @@
     </h2>
   </div>
 
-<!--<div class="marque">
+  <!--<div class="marque">
    <ul class="slideContainer" id="money_start">
       <li ng-repeat="photo in instaPhotos" class="slideItem">
         <img style="cursor:pointer;" ng-click="openInstaProfile()" style="margin:1%;" ng-src="{{photo.imageUrl}}" width="200" height="150" alt="Instafeed">
@@ -526,11 +242,12 @@
     </ul>
 </div>-->
 
- <div id="news_strip">
-            <a ng-repeat="(k, n) in news track by $index" ng-style="{'right': get_news_right($index)}" id="news_{{$index}}" ng-mouseover="conf.news_move_flag=false" ng-mouseout="conf.news_move_flag=true">
+  <div id="news_strip">
+    <a ng-repeat="(k, n) in news track by $index" ng-style="{'right': get_news_right($index)}" id="news_{{$index}}" ng-mouseover="conf.news_move_flag=false"
+      ng-mouseout="conf.news_move_flag=true">
                 <img style="cursor:pointer;" ng-click="openInstaProfile()" style="margin:1%;" ng-src="{{n.imageUrl}}" width="200" height="150" alt="Instafeed">
             </a>
-        </div>
+  </div>
 
 </section>
 

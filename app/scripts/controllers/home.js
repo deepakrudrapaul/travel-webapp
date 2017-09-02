@@ -49,7 +49,6 @@ angular.module('wanderwagon-webapp')
 
 
 
-
     $scope.openInstaProfile = function () {
       console.log("CLICKED");
       $window.open('https://www.instagram.com/wanderwagon/', ' _blank');
@@ -58,11 +57,11 @@ angular.module('wanderwagon-webapp')
     $scope.getTravelInspirations = function () {
       remoteSvc.getTravelInspirations().then(function (response) {
         console.log(response);
-        $scope.slider = response;
+        $scope.sliderData = response;
       });
     };
 
-    $scope.getTravelInspirations();
+   
 
     $scope.getTravelInspirationDetail = function (id) {
       remoteSvc.getTravelInspirationDetail(id).then(function (response) {
@@ -71,16 +70,20 @@ angular.module('wanderwagon-webapp')
       });
     };
 
+    $scope.ready = function ($api) {
+      owlAPi = $api;
+  };
+
     $scope.inspirationData = [
       {
         "id":1,
-        "name":"Dharamshala",
+        "name":"Road Trip",
         "imageUrl":"images/himachal.jpg",
         "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
       },
       {
         "id":2,
-        "name":"Nainital",
+        "name":"Backpacking",
         "imageUrl":"images/himachal.jpg",
         "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
       },
@@ -221,6 +224,68 @@ angular.module('wanderwagon-webapp')
         }
       }
     };
+
+
+
+    var owlAPi;
+   
+    $scope.properties = {
+      // autoHeight:true,
+      animateIn: 'fadeIn',
+      lazyLoad: true,
+      items: 4,
+      margin: 0,
+      mouseDrag: true,
+      touchDrag: true,
+      dots: false,
+      nav: true,
+      responsiveClass:true,
+      navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+      responsive:{
+          0:{
+              items:1,
+              nav:true
+          },
+          600:{
+              items:3,
+              nav:true
+          },
+          1000:{
+            items:4,
+            nav:true
+        }
+        }
+  };
+
+ 
+
+$scope.nestedCarouselproperties = {
+  // autoHeight:true,
+  animateIn: 'fadeIn',
+  lazyLoad: true,
+  items: 3,
+  margin: 10,
+  mouseDrag: true,
+  touchDrag: true,
+  dots: false,
+  nav: true,
+  responsiveClass:true,
+  navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+  responsive:{
+      0:{
+          items:1,
+          nav:true
+      },
+      600:{
+          items:2,
+          nav:true
+      },
+      1000:{
+        items:3,
+        nav:true
+    }
+    }
+};
 
 
 

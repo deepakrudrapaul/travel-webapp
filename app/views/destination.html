@@ -38,11 +38,22 @@
     position: relative;
     text-align: center;
     margin: 10px 0;">
-            <img class="img-responsive" style="height:300px; display: block;
+
+    <span class="img-responsive" style="height:300px; display: block;
     position: relative;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
-    margin: 0 auto;" ng-src="{{destination.imageUrl}}">
+    margin: 0 auto;" picture-fill>
+      <span pf-src="{{destination.mobileImageUrl | trimExt}}.jpg" data-media="(max-width: 768px)"></span>
+      <span pf-src="{{destination.imageUrl | trimExt}}.jpg" data-media="(min-width: 768px)"></span>
+    </span>
+            <!-- <img class="img-responsive" style="height:300px; display: block;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    margin: 0 auto;" ng-srcset="{{destination.mobileImageUrl}} 580w, {{destination.imageUrl}} 1400w"> -->
+
+
             <div class="overlay" style="width: 100%;
     height: 100%;
     position: absolute;

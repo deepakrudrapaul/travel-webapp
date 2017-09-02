@@ -29655,23 +29655,25 @@ label.checkbox {
 }
 
 .paul-slide-new {
+  cursor:pointer;
   max-height: 350px;
   height: 50vw;
   position: relative;
   box-shadow: none;
   z-index: 10;
   transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
-  background-color: #000000;
+  background-color: #FFF;
 }
 
 .paul-slide {
+  cursor:pointer;
   max-height: 500px;
   height: 69vw;
   position: relative;
   box-shadow: none;
   z-index: 10;
   transition: box-shadow 400ms ease, transform 400ms ease, z-index 400ms ease;
-  background-color: #000000;
+  background-color: #FFF;
 }
 
 .paul-slide-new:hover {
