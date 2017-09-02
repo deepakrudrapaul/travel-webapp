@@ -163,6 +163,11 @@ angular
         templateUrl: 'views/change-password.html',
         controller: 'ChangePasswordCtrl'
       })
+      .state('privacy-policy', {
+        url: '/privacy-policy',
+        templateUrl: 'views/privacy-policy.html',
+        controller: 'ContactCtrl'
+      })
 
   }])
   .run(function ($rootScope, $location, auth, $anchorScroll) {
