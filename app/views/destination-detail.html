@@ -202,7 +202,7 @@
       </h2>
 
       <ng-owl-carousel class="owl-theme" owl-items="activitiesData" owl-properties="sliderProperties" owl-ready="ready($api)">
-          <div ng-click="openOrCloseAccordion('activity')" class="paul-slide-new" style="padding:2% 2% 2% 2%;" data-ng-repeat="item in activitiesData">
+          <div ng-click="openOrCloseAccordion('activity') ; gotoCarousel($index)" class="paul-slide-new" style="padding:2% 2% 2% 2%;" data-ng-repeat="item in activitiesData">
             <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
             <span class="paul-slider-caption">
                     {{item.activityName}}</span>
@@ -213,7 +213,7 @@
     <uib-accordion>
       <uib-accordion-group is-open="openAccordion1">
 
-          <ng-owl-carousel class="owl-theme" owl-items="activitiesData" owl-properties="accordionProperties" owl-ready="ready($api)">
+          <ng-owl-carousel class="owl-theme" owl-items="activitiesData" owl-properties="accordionProperties" owl-ready="readyAccordion($api)">
               <div data-ng-repeat="item in activitiesData">
                   <div class="center-block" style="width:80%;">
                       <div>
