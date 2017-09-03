@@ -11,7 +11,6 @@
   </div>
 </div>
 
-
 <section id="travel" style="margin-top:3%;" class="custom-padding">
   <h2 class="paul-title">
     Travel Inspiration
@@ -24,12 +23,12 @@
     </div>
   </p>
 
-  <ng-owl-carousel class="owl-theme" owl-items="inspirationData" owl-properties="properties" owl-ready="ready($api)">
+  <ng-owl-carousel class="owl-theme" owl-items="sliderData" owl-properties="properties" owl-ready="ready($api)">
 
-    <div ng-click="openOrCloseAccordion()" class="paul-slide" style="padding:2% 0 2% 0%" data-ng-repeat="item in inspirationData">
+    <div ng-click="openOrCloseAccordion()" class="paul-slide" style="padding:2% 0 2% 0%" data-ng-repeat="item in sliderData">
       <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
       <span class="paul-slider-caption">
-        {{item.name}}</span>
+        {{item.title}}</span>
     </div>
 
   </ng-owl-carousel>

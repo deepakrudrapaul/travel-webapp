@@ -13,7 +13,7 @@ angular.module('wanderwagon-webapp')
      $scope.getTravelInspirations = function () {
       remoteSvc.getTravelInspirations().then(function (response) {
         console.log(response);
-        $scope.slider = response;
+        $scope.sliderData = response;
       });
     };
 
@@ -30,13 +30,6 @@ angular.module('wanderwagon-webapp')
         })
     };
     $scope.getBlogs();
-
-
-    $scope.getTravelInspirationDetail = function (id) {
-      mockRemoteSvc.getTravelInspirationDetail(id).then(function (response) {
-        $scope.inspirations = response;
-      });
-    };
 
 
     $scope.inspirationData = [
