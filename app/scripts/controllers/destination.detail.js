@@ -38,7 +38,7 @@ angular.module('wanderwagon-webapp')
       } else if (param === 'activity') {
         console.log(param);
         if ($scope.openAccordion1 === true) {
-          $scope.closeAccordion();
+          $scope.closeAccordion1();
         } else if ($scope.openAccordion1 === false) {
           $scope.openAccordion1 = true;
         }
@@ -79,8 +79,18 @@ angular.module('wanderwagon-webapp')
     var owlAPi;
     $scope.ready = function ($api) {
       owlAPi = $api;
-  };
-   
+    };
+
+    var accordionOwlAPi;
+    $scope.readyAccordion = function ($api) {
+      accordionOwlAPi = $api;
+    };
+
+
+    $scope.gotoCarousel = function (param) {
+      accordionOwlAPi.trigger('to.owl.carousel', [param, 1]);
+    };
+
     $scope.sliderProperties = {
       // autoHeight:true,
       animateIn: 'fadeIn',
@@ -91,38 +101,40 @@ angular.module('wanderwagon-webapp')
       touchDrag: true,
       dots: false,
       nav: true,
-      responsiveClass:true,
-      navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
-      responsive:{
-          0:{
-              items:1,
-              nav:true
-          },
-          600:{
-              items:3,
-              nav:true
-          },
-          1000:{
-            items:4,
-            nav:true
+      responsiveClass: true,
+      navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1,
+          nav: true
+        },
+        600: {
+          items: 3,
+          nav: true
+        },
+        1000: {
+          items: 4,
+          nav: true
         }
-        }
-  };
-$scope.accordionProperties = {
-  // autoHeight:true,
-  animateIn: 'fadeIn',
-  lazyLoad: true,
-  items: 1,
-  margin: 10,
-  mouseDrag: true,
-  touchDrag: true,
-  dots: false,
-  nav: true,
-  responsiveClass:true,
-  navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"]
-};
+      }
+    };
+    $scope.accordionProperties = {
+      // autoHeight:true,
+      animateIn: 'fadeIn',
+      lazyLoad: true,
+      items: 1,
+      margin: 10,
+      mouseDrag: true,
+      touchDrag: true,
+      dots: false,
+      nav: true,
+      responsiveClass: true,
+      navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
+    };
 
-  
+
+
+
 
 
   });
