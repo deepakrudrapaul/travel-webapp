@@ -81,14 +81,23 @@ angular.module('wanderwagon-webapp')
       owlAPi = $api;
     };
 
-    var accordionOwlAPi;
-    $scope.readyAccordion = function ($api) {
-      accordionOwlAPi = $api;
+    var placeAccordionOwlAPi;
+    $scope.readyPlaceAccordion = function ($api) {
+      placeAccordionOwlAPi = $api;
+    };
+
+    var activityAccordionOwlAPi;
+    $scope.readyActivityAccordion = function ($api) {
+      activityAccordionOwlAPi = $api;
     };
 
 
-    $scope.gotoCarousel = function (param) {
-      accordionOwlAPi.trigger('to.owl.carousel', [param, 1]);
+    $scope.gotoCarouselPlace = function (param) {
+      placeAccordionOwlAPi.trigger('to.owl.carousel', [param, 1]);
+    };
+
+    $scope.gotoCarouselActivity = function (param) {
+      activityAccordionOwlAPi.trigger('to.owl.carousel', [param, 1]);
     };
 
     $scope.sliderProperties = {
