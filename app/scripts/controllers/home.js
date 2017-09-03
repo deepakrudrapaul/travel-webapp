@@ -72,9 +72,7 @@ angular.module('wanderwagon-webapp')
       });
     };
 
-    $scope.ready = function ($api) {
-      owlAPi = $api;
-  };
+  
 
     $scope.inspirationData = [
       {
@@ -230,6 +228,9 @@ angular.module('wanderwagon-webapp')
 
 
     var owlAPi;
+    $scope.ready = function ($api) {
+      owlAPi = $api;
+  };
    
     $scope.properties = {
       // autoHeight:true,

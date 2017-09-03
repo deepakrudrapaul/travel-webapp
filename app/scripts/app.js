@@ -35,7 +35,7 @@ angular
     // $locationProvider.html5Mode(true);
     $authProvider.baseUrl = null;
     $authProvider.facebook({
-      clientId: '1663340057314711',
+      clientId: '1758555154405794',
       responseType: 'token',
       scope: ['publish_actions', 'email']
     });

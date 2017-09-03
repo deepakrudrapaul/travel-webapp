@@ -13,33 +13,33 @@
 		============================================= -->
 <header style="height:50px; background-color:#FFFFFF" sticky id="header" class="full-header">
 
-    <!-- Primary Navigation
+  <!-- Primary Navigation
 					============================================= -->
-    <nav  id="primary-menu" style="margin-left:20%; margin-right:25%;" >
-      <ul class="one-page-menu">
-        <li>
-          <a href="#about" du-smooth-scroll="" du-scrollspy="" duration="800" style="cursor:pointer;color:#444;padding:10px 15px;">
-            <div>About</div>
-          </a>
-        </li>
-        <li>
-          <a href="#howToReach" du-smooth-scroll="" du-scrollspy="" duration="800" style="cursor:pointer;color:#444;padding:10px 15px;">
-            <div>How to reach</div>
-          </a>
-        </li>
-        <li>
-          <a href="#places" du-smooth-scroll="" du-scrollspy="" duration="800" style="cursor:pointer;color:#444;padding:10px 15px;">
-            <div>Places to visit</div>
-          </a>
-        </li>
-        <li>
-          <a href="#activities" du-smooth-scroll="" du-scrollspy="" duration="800" style="cursor:pointer;color:#444;padding:10px 15px;">
-            <div>Activities</div>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <!-- #primary-menu end -->
+  <nav id="primary-menu" style="margin-left:20%; margin-right:25%;">
+    <ul class="one-page-menu">
+      <li>
+        <a href="#about" du-smooth-scroll="" du-scrollspy="" duration="800" style="cursor:pointer;color:#444;padding:10px 15px;">
+          <div>About</div>
+        </a>
+      </li>
+      <li>
+        <a href="#howToReach" du-smooth-scroll="" du-scrollspy="" duration="800" style="cursor:pointer;color:#444;padding:10px 15px;">
+          <div>How to reach</div>
+        </a>
+      </li>
+      <li>
+        <a href="#places" du-smooth-scroll="" du-scrollspy="" duration="800" style="cursor:pointer;color:#444;padding:10px 15px;">
+          <div>Places to visit</div>
+        </a>
+      </li>
+      <li>
+        <a href="#activities" du-smooth-scroll="" du-scrollspy="" duration="800" style="cursor:pointer;color:#444;padding:10px 15px;">
+          <div>Activities</div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- #primary-menu end -->
 
 </header>
 <!-- #header end -->
@@ -89,7 +89,7 @@
   </div>
 </section>
 
-<section id="howToReach" >
+<section id="howToReach">
   <div class="container clearfix">
     <div style="margin-top:5%; ">
       <h2 style="text-align:center;margin:8rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
@@ -133,670 +133,134 @@
 </section>
 
 
-<section id="places" >
-  <div class=" container clearfix custom-height" >
-    <div>
-      <h2 style="text-align:center;margin:6rem 0 10rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
-        Places to visit
-        <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
-        </div>
-      </h2>
+<section class=" container clearfix custom-height" id="places">
+
+
+  <h2 style="text-align:center;margin:6rem 0 10rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
+    Places to visit
+    <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
     </div>
+  </h2>
 
-    <div class="row custom-paul-slider">
-      <div id="place-carousel" class="carousel slide hidden-xs" data-ride="carousel">
-        <a style="    background-color: rgb(255, 255, 255);
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0px;
-    z-index: 5;
-    left: -2.22222em;" class="btn" href="" data-target="#place-carousel" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: rgb(255, 255, 255);
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0;
-    z-index: 5;
-    right: -2.22222em;" class="btn" href="" data-target="#place-carousel"  data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
-
-        <!-- Wrapper for slides <-->
-
-        <div class="carousel-inner">
-          <div class="item active" style="padding:2% 0 2% 0">
-            <div class="row">
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-
-                <div ng-click="openOrCloseAccordion('place')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[0].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{placesData[0].text}}</span>
-
-                </div>
-
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('place')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[1].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{placesData[1].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('place')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[2].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{placesData[2].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('place')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[3].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{placesData[3].text}}</span>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item" style="padding:2% 0 2% 0%">
-            <div class="row">
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('place')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[4].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{placesData[4].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('place')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[5].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{placesData[5].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('place')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[6].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-        
-                  <span class="paul-slider-caption">
-                    {{placesData[6].text}}</span>
-
-                </div>  
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('place')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{placesData[7].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{placesData[7].text}}</span>
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
+  <ng-owl-carousel class="owl-theme" owl-items="placesData" owl-properties="sliderProperties" owl-ready="ready($api)">
+    <div ng-click="openOrCloseAccordion('place')" class="paul-slide-new" style="padding:2% 2% 2% 2%;" data-ng-repeat="item in placesData">
+      <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
+      <span class="paul-slider-caption">
+              {{item.placeName}}</span>
     </div>
-
-    <div id="place-sm-carousel" class="carousel slide bootstrap-carousel" data-ride="carousel" data-interval="0">
-  <a style="background-color: #000000;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 00%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0%;
-    z-index: 5;
-    left: 1em;" class="btn" href="" data-target="#place-sm-carousel" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: #000000;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0%;
-    z-index: 5;
-    right: 1em;" class="btn" href="" data-target="#place-sm-carousel" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
-
-          <div class="carousel-inner" >
-            <div class="item" data-ng-repeat="slide in placesData" data-ng-class="{active : $first}">
-                          <img ng-click="openOrCloseAccordion('place')" ng-touch="openOrCloseAccordion('place')"  style="object-fit:cover; width:100%; height:400px; background-color:#000;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
-                          <span class="paul-slider-caption">
-                    {{slide.title}}</span>
-            </div>
-          </div>
-        </div>
-  </div>
+  </ng-owl-carousel>
 
   <div id="accordion1" class="clearfix" style="margin-top:8%;">
-
     <uib-accordion>
       <uib-accordion-group is-open="openAccordion">
-    
+        <ng-owl-carousel class="owl-theme" owl-items="placesData" owl-properties="accordionProperties" owl-ready="ready($api)">
 
-        <div id="placeDetail-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
-  <a style="background-color: #12edd0;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 20%;
-    z-index: 5;
-    left: 3em;" class="btn" href="" data-target="#placeDetail-carousel" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: #12edd0;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 20%;
-    z-index: 5;
-    right: 3em;" class="btn" href="" data-target="#placeDetail-carousel" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
-
-          <!--<ol class="carousel-indicators">
-            <li data-target="#dynamiccontentcarousel" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}" data-slide-to="{{$index}}"></li>
-          </ol>-->
-
-          <div class="carousel-inner" role="listbox">
-            <div class="item" data-ng-repeat="place in placesData" data-ng-class="{active : $first}">
-                          <div class="center-block" style="width:80%;">
-                <div>
-                  <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{place.placeName}}
-                    <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
-                    </div>
-                  </h2>
-                </div>
-
-                <div class="dropdown-slider-image">
-                  <a href="images/blog3.jpg"><img height="350px" width="100%" ng-src="{{place.imageUrl}}" alt="Standard Post with Image"></a>
-                </div>
-
-                <div class="dropdown-slider-content">
-                   <span ng-click="closeAccordion()" ng-touch="closeAccordion()"  class="glyphicon glyphicon-remove-circle dropdown-slider-button"></span>
-
-                  <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                    What is it.....</h4>
-
-                  <p>{{place.description}}
-                  </p>
-
-                  <!--<h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                    Overview</h4>
-
-                  <p>{{detail.overview}}
-                  </p>-->
-
-                  <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                    How to reach</h4>
-                  <p>{{place.howToReachDesc}}
-                  </p>
-
-                  <div>
-                    <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                      Timings - <span>{{place.timing}}</span></h4>
-<!--
-                    <h4 class="pull-right" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                      Pricing - <span>{{place.price}}</span></h4>
-                    <br /><br /><br /><br />-->
+          <div data-ng-repeat="item in placesData">
+            <div class="center-block" style="width:80%;">
+              <div>
+                <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{item.placeName}}
+                  <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
                   </div>
+                </h2>
+              </div>
 
-                  <!--<center>
-                    <span style="font-size:48px; padding-right:2%; " class="icon-line2-arrow-left"></span>
-                    <span style="font-size:48px; padding-left:2%; " class="icon-line2-arrow-right"></span>
-                  </center>-->
+              <div class="dropdown-slider-image">
+                <a><img height="350px" width="100%" ng-src="{{item.imageUrl}}" alt="{{item.placeName}}"></a>
+              </div>
 
+              <div class="dropdown-slider-content">
+                <span ng-click="closeAccordion()" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
+
+                <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                  What is it.....</h4>
+
+                <p>{{item.description}}
+                </p>
+
+                <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                  How to reach</h4>
+                <p>{{item.howToReachDesc}}
+                </p>
+
+                <div>
+                  <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                    Timings - <span>{{item.timing}}</span></h4>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
+        </ng-owl-carousel>
       </uib-accordion-group>
     </uib-accordion>
-
   </div>
-
 </section>
 
-<section id="activities">
-  <div class=" container clearfix custom-height">
-    <div>
+<section class=" container clearfix custom-height" id="activities">
       <h2 style="text-align:center;margin:6rem 0 10rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
         Activities
         <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
         </div>
       </h2>
-    </div>
 
-    <div class="row custom-paul-slider">
-      <div id="activities-carousel" class="carousel slide hidden-xs" data-ride="carousel">
-        <a style="    background-color: rgb(255, 255, 255);
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0px;
-    z-index: 5;
-    left: -2.22222em;" class="btn" href="" data-target="#activities-carousel" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: rgb(255, 255, 255);
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0;
-    z-index: 5;
-    right: -2.22222em;" class="btn" href="" data-target="#activities-carousel" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
-
-        <!-- Wrapper for slides <-->
-
-        <div class="carousel-inner">
-          <div class="item active" style="padding:2% 0 2% 0">
-            <div class="row">
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-
-                <div ng-click="openOrCloseAccordion('activity')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[0].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{activitiesData[0].text}}</span>
-
-                </div>
-
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('activity')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[1].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{activitiesData[1].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('activity')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[2].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{activitiesData[2].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('activity')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[3].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{activitiesData[3].text}}</span>
-
-                </div>
-              </div>
-            </div>
+      <ng-owl-carousel class="owl-theme" owl-items="activitiesData" owl-properties="sliderProperties" owl-ready="ready($api)">
+          <div ng-click="openOrCloseAccordion('activity')" class="paul-slide-new" style="padding:2% 2% 2% 2%;" data-ng-repeat="item in activitiesData">
+            <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
+            <span class="paul-slider-caption">
+                    {{item.activityName}}</span>
           </div>
-          <div  class="item" style="padding:2% 0 2% 0%">
-            <div class="row">
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('activity')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[4].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{activitiesData[4].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('activity')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[5].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{activitiesData[5].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ng-click="openOrCloseAccordion('activity')" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style=" object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[6].imageUrl}}
-                    " class="img-responsive " alt="a " />
-                  </div>
-
-                  <span class="paul-slider-caption ">
-                    {{activitiesData[6].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1% ">
-                <div ng-click="openOrCloseAccordion('activity')" style="cursor:pointer; ">
-                  <div class="paul-slide-new ">
-                    <img style="object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[7].imageUrl}}
-                    " class="img-responsive " alt="a " />
-                  </div>
-
-                  <span class="paul-slider-caption ">
-                    {{activitiesData[7].text}}</span>
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div id="activities-sm-carousel" class="carousel slide bootstrap-carousel" data-ride="carousel" data-interval="0">
-  <a style="background-color: #000000;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 00%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0%;
-    z-index: 5;
-    left: 1em;" class="btn" href="" data-target="#activities-sm-carousel" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: #000000;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0%;
-    z-index: 5;
-    right: 1em;" class="btn" href="" data-target="#activities-sm-carousel" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
-
-          <!--<ol class="carousel-indicators">
-            <li data-target="#dynamiccontentcarousel" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}" data-slide-to="{{$index}}"></li>
-          </ol>-->
-
-          <div class="carousel-inner" >
-            <div class="item"  data-ng-repeat="slide in activitiesData" data-ng-class="{active : $first}">
-                          <img ng-click="openOrCloseAccordion('activity')" ng-touch="openOrCloseAccordion('activity')" src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/nainital/coverpic/coverpic.jpg" style="object-fit:cover; width:100%; height:400px;" ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
-                          <span class="paul-slider-caption">
-                    {{slide.title}}</span>
-            </div>
-          </div>
-        </div>
-  </div>
+        </ng-owl-carousel>
 
   <div id="accordion2" class="clearfix" style="margin-top:8%;">
     <uib-accordion>
       <uib-accordion-group is-open="openAccordion1">
 
-         <div id="activityDetail-carousel" class="carousel slide" data-ride="carousel" data-interval="0">
-  <a style="background-color: #12edd0;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 10%;
-    z-index: 5;
-    left: 3em;" class="btn" href="" data-target="#activityDetail-carousel" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: #12edd0;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 10%;
-    z-index: 5;
-    right: 3em;" class="btn" href="" data-target="#activityDetail-carousel" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
-
-          <!--<ol class="carousel-indicators">
-            <li data-target="#dynamiccontentcarousel" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}" data-slide-to="{{$index}}"></li>
-          </ol>-->
-
-          <div class="carousel-inner" role="listbox">
-            <div class="item" data-ng-repeat="activity in activitiesData" data-ng-class="{active : $first}">
-                          <div class="center-block" style="width:80%;">
-                <div>
-                  <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{activity.activityName}}
-                    <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+          <ng-owl-carousel class="owl-theme" owl-items="activitiesData" owl-properties="accordionProperties" owl-ready="ready($api)">
+              <div data-ng-repeat="item in activitiesData">
+                  <div class="center-block" style="width:80%;">
+                      <div>
+                        <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;"><br /> {{item.activityName}}
+                          <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+                          </div>
+                        </h2>
+                      </div>
+        
+                      <div class="dropdown-slider-image">
+                        <a><img height="350px" width="100%" ng-src="{{item.imageUrl}}" alt="{{item.activityName}}"></a>
+                      </div>
+        
+                      <div class="dropdown-slider-content">
+                        <span ng-click="closeAccordion1()" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
+        
+                        <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                          What is it.....</h4>
+        
+                        <p>{{item.description}}
+                        </p>
+        
+                        <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                          How to reach</h4>
+                        <p>{{item.placeOfConduct}}
+                        </p>
+        
+        
+                        <div>
+                          <!-- <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                            Timings - <span>{{item.timing}}</span></h4> -->
+        
+                          <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                            Duration - <span>{{item.duration}}</span></h4>
+                          <br /><br /><br /><br />
+                        </div>
+        
+                        <!--<center>
+                          <span style="font-size:48px; padding-right:2%; " class="icon-line2-arrow-left"></span>
+                          <span style="font-size:48px; padding-left:2%; " class="icon-line2-arrow-right"></span>
+                        </center>-->
+        
+                      </div>
                     </div>
-                  </h2>
-                </div>
-
-                <div class="dropdown-slider-image">
-                  <a href="images/blog3.jpg"><img height="350px" width="100%" ng-src="{{detail.imageUrl}}" alt="Standard Post with Image"></a>
-                </div>
-
-                <div class="dropdown-slider-content">
-                   <span ng-click="closeAccordion1()" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
-
-                  <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                    What is it.....</h4>
-
-                  <p>{{activity.description}}
-                  </p>
-
-                  <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                    How to reach</h4>
-                  <p>{{activity.placeOfConduct}}
-                  </p>
-
-
-                  <div>
-                    <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                      Timings - <span>{{activity.timing}}</span></h4>
-
-                    <h4 class="pull-right" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
-                      Duration - <span>{{activity.duration}}</span></h4>
-                    <br /><br /><br /><br />
-                  </div>
-
-                  <!--<center>
-                    <span style="font-size:48px; padding-right:2%; " class="icon-line2-arrow-left"></span>
-                    <span style="font-size:48px; padding-left:2%; " class="icon-line2-arrow-right"></span>
-                  </center>-->
-
-                </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </ng-owl-carousel>
 
       </uib-accordion-group>
     </uib-accordion>
@@ -828,228 +292,19 @@
   <div class="container " style="padding-bottom:2%; ">
     <div class="center-block " style=" width:70%; ">
       <h2 style="text-align:center; color:#000;" class="secondary-title">
-        After Dharamshala, Where Next ?
+        After {{detail.name}}, Where Next ?
       </h2>
     </div>
-<div class="row">
-    <div id="destination-sm-carousel" class="carousel slide bootstrap-carousel" data-ride="carousel" data-interval="0">
-  <a style="background-color: #000000;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 00%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0%;
-    z-index: 5;
-    left: 1em;" class="btn" href="" data-target="#destination-sm-carousel" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: #000000;
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0%;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0%;
-    z-index: 5;
-    right: 1em;" class="btn" href="" data-target="#destination-sm-carousel" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; color:white; font-weight:600;" class="icon-angle-right"></i></a>
+   
 
-          <!--<ol class="carousel-indicators">
-            <li data-target="#dynamiccontentcarousel" data-ng-repeat="place in placeDetails" data-ng-class="{active : $first}" data-slide-to="{{$index}}"></li>
-          </ol>-->
-
-          <div class="carousel-inner" >
-            <div class="item"  data-ng-repeat="slide in activitiesData" data-ng-class="{active : $first}">
-                          <img src="images/assam.jpg" style="object-fit:cover; width:100%; height:400px; " ng-src="{{slide.imageUrl}}" class="img-responsive" alt="{{slide.text}}" />
-                          <span class="paul-slider-caption">
-                    {{slide.title}}</span>
-            </div>
-          </div>
+    <ng-owl-carousel class="owl-theme" owl-items="placesData" owl-properties="sliderProperties" owl-ready="ready($api)">
+        <div  class="paul-slide-new" style="padding:2% 2% 2% 2%;" data-ng-repeat="item in placesData">
+          <img ui-sref="destination.detail({id: item.placeId})" style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
+          <span class="paul-slider-caption">
+                  {{item.placeName}}</span>
         </div>
-</div>
-
-     <div class="row custom-paul-slider">
-      <div id="activities-carousel1" class="carousel slide hidden-xs" data-ride="carousel">
-        <a style="background-color: rgb(255, 255, 255);
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0px;
-    z-index: 5;
-    left: -2.22222em;" class="btn" href="" data-target="#activities-carousel1" data-slide="prev">
-          <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
-        </a>
-        <a style="background-color: rgb(255, 255, 255);
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0;
-    z-index: 5;
-    right: -2.22222em;" class="btn" href="" data-target="#activities-carousel1" data-slide="next">
-          <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>
-
-        <!-- Wrapper for slides <-->
-
-        <div class="carousel-inner">
-          <div class="item active" style="padding:2% 0 2% 0">
-            <div class="row">
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-
-                <div ui-sref="destination.detail({id: 3})" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[0].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{activitiesData[0].text}}</span>
-
-                </div>
-
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ui-sref="destination.detail({id: 3})" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[1].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{activitiesData[1].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ui-sref="destination.detail({id: 3})" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[2].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{activitiesData[2].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ui-sref="destination.detail({id: 3})" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[3].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{activitiesData[3].text}}</span>
-
-                </div>
-              </div>
-            </div>
-          </div>
-          <div  class="item" style="padding:2% 0 2% 0%">
-            <div class="row">
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ui-sref="destination.detail({id: 3})" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[4].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{activitiesData[4].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ui-sref="destination.detail({id: 3})" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style="object-fit:cover; width:100%; height:100%;" ng-src="{{activitiesData[5].imageUrl}}" class="img-responsive" alt="a"
-                    />
-                  </div>
-
-                  <span class="paul-slider-caption">
-                    {{activitiesData[5].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1%">
-                <div ui-sref="destination.detail({id: 3})" style="cursor:pointer;">
-                  <div class="paul-slide-new">
-                    <img style=" object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[6].imageUrl}}
-                    " class="img-responsive " alt="a " />
-                  </div>
-
-                  <span class="paul-slider-caption ">
-                    {{activitiesData[6].text}}</span>
-
-                </div>
-              </div>
-
-              <div class="col-sm-3 padding:0 1% 0 1% ">
-                <div ui-sref="destination.detail({id: 3})" style="cursor:pointer; ">
-                  <div class="paul-slide-new ">
-                    <img style="object-fit:cover; width:100%; height:100%; " ng-src="{{activitiesData[7].imageUrl}}
-                    " class="img-responsive " alt="a " />
-                  </div>
-
-                  <span class="paul-slider-caption ">
-                    {{activitiesData[7].text}}</span>
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </ng-owl-carousel>
+ 
 
   </div>
 </section>
