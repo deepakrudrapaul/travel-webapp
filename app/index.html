@@ -141,11 +141,11 @@
                 <div><i class="icon-user"></i>Welcome User</div>
               </a>
               <ul>
-                  <li>
-                      <a href="" ui-sref="user-profile" ng-touch="closeSideNav()" ng-click="closeSideNav()">
-                        <div>PROFILE</div>
-                      </a>
-                    </li>
+                <li>
+                  <a href="" ui-sref="user-profile" ng-touch="closeSideNav()" ng-click="closeSideNav()">
+                    <div>PROFILE</div>
+                  </a>
+                </li>
                 <li>
                   <a href="" ng-click="onLogOut()">
                     <div>LOG OUT</div>
@@ -182,7 +182,63 @@
 		============================================= -->
   <footer ng-controller="LinkCtrl" ng-cloak class="dark footer">
 
-    <div style="background-size: cover;background-image: url('images/footer-bg.png');">
+    <div class="mobile-footer">
+
+      <div style="padding:10% 10% 0 10%;">
+        <form id="widget-subscribe-form" name="subscribeForm" ng-submit="onSubscribeFormSubmit(subscribeForm)">
+          <input type="hidden" name="csrfmiddlewaretoken" value="LCfHxgbOJUDkGtFNKKu4xlDC6ozsA20k">
+          <div class="input-group divcenter">
+            <span class="input-group-addon"><i class="icon-email2"></i></span>
+            <input type="email" class="form-control" id="subscribeEmail" name="loginEmail" placeholder="Email Address" ng-model="emailObj.email"
+              required />
+            <span class="input-group-btn">
+                                    <button class="btn btn-success" type="submit">Subscribe</button>
+                                  </span>
+          </div>
+        </form>
+      </div>
+
+      <div class="widget clearfix">
+        <h5 ui-sref="about" style="text-align:center; padding: 0 0 5% 0; border-bottom:1px solid black;margin:0 10%;color:#666; cursor:pointer;"><strong>DISCOVER MORE ABOUT WANDERWAGON</strong></h5>
+
+        <h5  ui-sref="contact" style="text-align:center; padding: 5% 0; color:#666; cursor:pointer;"><strong>CONTACT</strong></h5>
+
+        <h5 ui-sref="faq" style="text-align:center; padding: 5% 0; color:#666; cursor:pointer;"><strong>FAQS</strong></h5>
+
+        <h5 ui-sref="cancellation" style="text-align:center; padding: 5% 0; color:#666; cursor:pointer;"><strong>CANCELLATION POLICY</strong></h5>
+
+      
+
+        <div style="display:block; width:200px; margin:0 auto; padding-bottom:10%;">
+
+          <a ng-click="openSocialSite('facebook')" class="social-icon si-colored si-rounded si-facebook nobottommargin" style="margin-right: 10px;">
+                                                <i class="icon-facebook"></i>
+                                                <i class="icon-facebook"></i>
+                                              </a>
+
+          <a ng-click="openSocialSite('instagram')" class="social-icon si-colored si-rounded si-instagram nobottommargin" style="margin-right: 10px;">
+                                                  <i class="icon-instagram"></i>
+                                                  <i class="icon-instagram"></i>
+                                                </a>
+
+          <a ng-click="openSocialSite('instagram')" class="social-icon si-colored si-rounded si-twitter nobottommargin" style="margin-right: 10px;">
+                                                    <i class="icon-twitter"></i>
+                                                    <i class="icon-twitter"></i>
+                                                  </a>
+
+          <a ng-click="openSocialSite('instagram')" class="social-icon si-colored si-rounded si-youtube nobottommargin" style="margin-right: 10px;">
+                                                      <i class="icon-youtube"></i>
+                                                      <i class="icon-youtube"></i>
+                                                    </a>
+
+        </div>
+
+        <p style="text-align:center; padding-top: 10%; color:#666;"><strong>&copy; 2017. WANDERWAGON PVT. LTD.</strong></p>
+        <p ui-sref="tnc" style="text-align:center; color:#666; cursor:pointer;"><strong>TERMS & CONDITIONS</strong></p>
+      </div>
+    </div>
+
+    <div class="web-footer" style="background-size: cover;background-image: url('images/footer-bg.png');">
 
       <div class="container footer-widgets-wrap clearfix">
 
@@ -206,41 +262,30 @@
               </form>
               <br />
               <br />
-          
-              <div class="col-md-3 clearfix bottommargin-sm">
 
-                <a ng-click="openSocialSite('facebook')" class="social-icon si-colored si-rounded si-facebook nobottommargin" style="margin-right: 10px;">
-                                    <i class="icon-facebook"></i>
-                                    <i class="icon-facebook"></i>
-                                  </a>
-
-              </div>
-
-              <div class="col-md-3 clearfix">
-                <a ng-click="openSocialSite('instagram')" class="social-icon si-colored si-rounded si-twitter nobottommargin" style="margin-right: 10px;">
-                                      <i class="icon-twitter"></i>
-                                      <i class="icon-twitter"></i>
-                                    </a>
-
-              </div>
-
-              <div class="col-md-3 clearfix">
-                <a ng-click="openSocialSite('instagram')" class="social-icon si-colored si-rounded si-instagram nobottommargin" style="margin-right: 10px;">
-                                    <i class="icon-instagram"></i>
-                                    <i class="icon-instagram"></i>
-                                  </a>
-
-              </div>
-
-
-
-              <div class="col-md-3 clearfix">
-                <a ng-click="openSocialSite('instagram')" class="social-icon si-colored si-rounded si-youtube nobottommargin" style="margin-right: 10px;">
-                                        <i class="icon-youtube"></i>
-                                        <i class="icon-youtube"></i>
-                                      </a>
-
-              </div>
+              <div style="display:block; width:200px; margin:0 auto; padding-bottom:10%;">
+                
+                          <a ng-click="openSocialSite('facebook')" class="social-icon si-colored si-rounded si-facebook nobottommargin" style="margin-right: 10px;">
+                                                                <i class="icon-facebook"></i>
+                                                                <i class="icon-facebook"></i>
+                                                              </a>
+                
+                          <a ng-click="openSocialSite('instagram')" class="social-icon si-colored si-rounded si-instagram nobottommargin" style="margin-right: 10px;">
+                                                                  <i class="icon-instagram"></i>
+                                                                  <i class="icon-instagram"></i>
+                                                                </a>
+                
+                          <a ng-click="openSocialSite('instagram')" class="social-icon si-colored si-rounded si-twitter nobottommargin" style="margin-right: 10px;">
+                                                                    <i class="icon-twitter"></i>
+                                                                    <i class="icon-twitter"></i>
+                                                                  </a>
+                
+                          <a ng-click="openSocialSite('instagram')" class="social-icon si-colored si-rounded si-youtube nobottommargin" style="margin-right: 10px;">
+                                                                      <i class="icon-youtube"></i>
+                                                                      <i class="icon-youtube"></i>
+                                                                    </a>
+                
+                        </div>
 
 
 
@@ -303,7 +348,7 @@
 
       </div>
 
- 
+
       <div id="copyrights">
 
         <div class="container clearfix">

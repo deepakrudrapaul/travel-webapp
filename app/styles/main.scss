@@ -30028,12 +30028,33 @@ label.checkbox {
   font-size:18px;
 }
 
+.mobile-footer {
+  display:none;
+}
+
 
 /* ----------------------------------------------------------------
 	Responsive CSS
 -----------------------------------------------------------------*/
 
+@media only screen and (min-device-width: 0px) and (max-device-width: 468px) {
+
+  .web-footer {
+    display:none;
+  }
+
+  .mobile-footer {
+    display:block;
+  }
+
+}
+
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
+
+  .col-md-3 {
+    width:10%;
+  }
+  
   .custom-padding {
     padding: 0%;
   }
@@ -30230,6 +30251,7 @@ label.checkbox {
     color: #FFF;
     font-weight: bold;
   }
+
   .instaText {
     text-align: center;
     margin-bottom: 4rem;
