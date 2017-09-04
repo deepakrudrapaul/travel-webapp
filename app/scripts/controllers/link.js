@@ -72,7 +72,7 @@ angular.module('wanderwagon-webapp')
           }
         })
         .catch(function (response) {
-          console.log("Something went Wrong");
+          console.log("Something went Wrong: " + response);
         })
     };
 
