@@ -90,6 +90,7 @@ angular.module('wanderwagon-webapp')
     };
 
 
+    
     $scope.showForm = false;
     $scope.showCommentForm = function() {
         if (auth.isLoggedIn()) {

@@ -8,10 +8,16 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('PlanTripCtrl', function ($scope, remoteSvc) {
+  .controller('PlanTripCtrl', function ($scope, remoteSvc, auth) {
 
-     $scope.showModal = function (messageType, message) {
+    $scope.showModal = function (messageType, message) {
       angular.element(document.querySelectorAll('#tripModal')).modal('show');
+      $scope.messageType = messageType;
+      $scope.message = message;
+    };
+
+    $scope.showLoginModal = function (messageType, message) {
+      angular.element(document.querySelectorAll('#loginModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
     };
@@ -85,18 +91,22 @@ angular.module('wanderwagon-webapp')
 
 
 
-    $scope.submitTravelPlanForm = function(form) {
+    $scope.submitTravelPlanForm = function (form) {
       console.log($scope.formObj);
-      if (form.$valid) {
-        remoteSvc.submitPlanMyTripForm($scope.formObj)
-          .success(function (data){
-            console.log(data);
-            $scope.showModal("Success !", "Your query has been submitted successfully ! Will get back to you within 24 Hours.");
-          })
-          .error(function (error){
-            console.log(error);
-            $scope.showModal("Error", error.error.message);
-          })
+      if (auth.isLoggedIn()) {
+        if (form.$valid) {
+          remoteSvc.submitPlanMyTripForm($scope.formObj)
+            .success(function (data) {
+              console.log(data);
+              $scope.showModal("Success !", "Your query has been submitted successfully ! Will get back to you within 24 Hours.");
+            })
+            .error(function (error) {
+              console.log(error);
+              $scope.showModal("Error", error.error.message);
+            })
+        }
+      } else{
+        $scope.showLoginModal("Log In", "");
       }
     };
   });
