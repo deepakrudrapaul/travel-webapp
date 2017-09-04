@@ -33,9 +33,12 @@
     "satellizer": "^0.15.5",
     "angular-socialshare": "angularjs-socialshare#^2.3.8",
     "angular-owl-carousel2": "*",
-    "angular-picturefill": "*"
+    "angular-picturefill": "*",
+    "angular-read-more": "^1.0.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    
+  },
   "appPath": "app",
   "moduleName": "wanderwagon-webapp",
   "overrides": {

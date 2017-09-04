@@ -14,24 +14,9 @@ angular.module('wanderwagon-webapp')
       remoteSvc.getBlogList().then(function (response){
         console.log(response);
         $scope.posts = response;
-        // $scope.instaImages = response.instaImages;
-        // $scope.popularPosts = response.popularPosts;
-        // $scope.recentPosts = response.recentPosts;
       })
     };
     $scope.getBlogList();
-
-    $scope.getBlogInstaPhotos = function() {
-        remoteSvc.getInstaPhotos()
-          .success(function (data){
-            $scope.instaPhotos = data.response;
-          })
-          .error(function (error){
-
-          })
-    };
-    $scope.getBlogInstaPhotos();
-
 
 
   });

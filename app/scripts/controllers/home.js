@@ -10,50 +10,14 @@
 angular.module('wanderwagon-webapp')
   .controller('HomeCtrl', function ($scope, $timeout, remoteSvc, $document, $window, $interval, $location) {
 
-
-
-    $scope.instaPhotos = [];
-    $scope.initInstaPhotos = function () {
-      remoteSvc.getInstaPhotos()
-        .success(function (data) {
-          $scope.instaPhotos = data.response;
-          // $interval($scope.insta_move ,50);
-        })
-        .error(function (error) {
-
-        })
-    };
-    $scope.initInstaPhotos();
-
-
-
-
-
-
-    $scope.openInstagram = function () {
-      $window.open('https://www.instagram.com/wanderwagon', ' _blank');
-    };
-
-
     $scope.getBlogs = function () {
-      remoteSvc.getHomeBlogs()
-        .success(function (data) {
-          console.log(data.response);
-          $scope.blog = data.response;
-        })
-        .error(function (error) {
-
-        })
+      remoteSvc.getHomeBlogs().then(function (response) {
+        console.log(response);
+        $scope.blog = response;
+      })
     };
-    $scope.getBlogs();
 
-
-
-    $scope.openInstaProfile = function () {
-      console.log("CLICKED");
-      $window.open('https://www.instagram.com/wanderwagon/', ' _blank');
-    }
-
+    
     $scope.getTravelInspirations = function () {
       remoteSvc.getTravelInspirations().then(function (response) {
         console.log(response);
@@ -61,16 +25,15 @@ angular.module('wanderwagon-webapp')
       });
     };
 
-    $scope.getTravelInspirations();
-
-   
-
     $scope.getTravelInspirationDetail = function (id) {
       remoteSvc.getTravelInspirationDetail(id).then(function (response) {
         console.log(response);
         $scope.inspirations = response;
       });
     };
+
+    $scope.getTravelInspirations();
+    $scope.getBlogs();
 
   
 
@@ -190,18 +153,6 @@ angular.module('wanderwagon-webapp')
       news_move_flag: true
     };
 
-    $scope.getInstaPhotos = function () {
-      remoteSvc.getInstaPhotos()
-        .success(function (data) {
-          $scope.news = data.response;
-          $interval($scope.news_move, 50);
-        })
-        .error(function (error) {
-
-        })
-    };
-    $scope.getInstaPhotos();
-
     $scope.get_news_right = function (idx) {
       var $right = $scope.conf.news_pos;
       for (var ri = 0; ri < idx; ri++) {
@@ -224,6 +175,15 @@ angular.module('wanderwagon-webapp')
         }
       }
     };
+
+
+    $scope.getInstaPhotos = function () {
+      remoteSvc.getInstaPhotos().then(function (response) {
+        $scope.news = response;
+        $interval($scope.news_move, 50);
+      });
+    };
+    $scope.getInstaPhotos();
 
 
 

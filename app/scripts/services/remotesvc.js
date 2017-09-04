@@ -127,14 +127,22 @@ angular.module('wanderwagon-webapp')
         return $http({
           method: 'GET',
           url: remoteAddr + "/home/instagramPhotos"
-        })
+        }).then(function (data, status) {
+          return data.data.response;
+        }, function (error, status) {
+          return error.data.error;
+        });
       },
 
       getHomeBlogs : function() {
         return $http({
           method: 'GET',
           url: remoteAddr + "/home/blog"
-        })
+        }).then(function (data, status) {
+          return data.data.response;
+        }, function (error, status) {
+          return error.data.error;
+        });
       },
 
       getTravelPlanContent: function() {

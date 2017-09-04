@@ -28,7 +28,8 @@ angular
     'satellizer',
     '720kb.socialshare',
     'angular-owl-carousel-2',
-    'ng.picturefill'
+    'ng.picturefill',
+    'hm.readmore'
   ])
   .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', '$authProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider) {
 

@@ -17,18 +17,14 @@ angular.module('wanderwagon-webapp')
       });
     };
 
-    $scope.getTravelInspirations();
-
-    $scope.getBlogs = function() {
-      remoteSvc.getHomeBlogs()
-        .success(function (data){
-          console.log(data.response);
-          $scope.blog = data.response;
-        })
-        .error(function (error){
-
-        })
+    $scope.getBlogs = function () {
+      remoteSvc.getHomeBlogs().then(function (response) {
+        console.log(response);
+        $scope.blog = response;
+      })
     };
+
+    $scope.getTravelInspirations();
     $scope.getBlogs();
 
 
