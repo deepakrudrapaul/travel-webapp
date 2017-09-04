@@ -42799,7 +42799,7 @@ label.checkbox {
   color: #444;
 }
 
-/* line 29646, ../../app/styles/main.scss */
+/* line 29647, ../../app/styles/main.scss */
 .paul-slider-caption {
   font-size: 1.6rem;
   bottom: 2.4rem;
@@ -42812,7 +42812,7 @@ label.checkbox {
   text-transform: capitalize;
 }
 
-/* line 29658, ../../app/styles/main.scss */
+/* line 29659, ../../app/styles/main.scss */
 .paul-slide-new {
   cursor: pointer;
   max-height: 350px;
@@ -42824,7 +42824,7 @@ label.checkbox {
   background-color: #FFF;
 }
 
-/* line 29669, ../../app/styles/main.scss */
+/* line 29670, ../../app/styles/main.scss */
 .paul-slide {
   cursor: pointer;
   max-height: 500px;
@@ -42836,20 +42836,20 @@ label.checkbox {
   background-color: #FFF;
 }
 
-/* line 29680, ../../app/styles/main.scss */
+/* line 29681, ../../app/styles/main.scss */
 .paul-slide-new:hover {
   z-index: 30;
   transform: translate(0px, -5px);
 }
 
-/* line 29689, ../../app/styles/main.scss */
+/* line 29690, ../../app/styles/main.scss */
 .paul-slide:hover {
   z-index: 30;
   transform: scale(1.03);
   box-shadow: 0px 28px 81px -7px rgba(0, 0, 0, 0.44);
 }
 
-/* line 29695, ../../app/styles/main.scss */
+/* line 29696, ../../app/styles/main.scss */
 .paul-title {
   text-align: center;
   margin-top: 2%;
@@ -42859,7 +42859,7 @@ label.checkbox {
   font-size: 3.8rem;
 }
 
-/* line 29712, ../../app/styles/main.scss */
+/* line 29713, ../../app/styles/main.scss */
 .text:before {
   content: "";
   position: absolute;
@@ -42872,7 +42872,7 @@ label.checkbox {
   border-bottom: 15px solid transparent;
 }
 
-/* line 29724, ../../app/styles/main.scss */
+/* line 29725, ../../app/styles/main.scss */
 .text:after {
   content: "";
   position: absolute;
@@ -42885,7 +42885,7 @@ label.checkbox {
   border-bottom: 15px solid transparent;
 }
 
-/* line 29736, ../../app/styles/main.scss */
+/* line 29737, ../../app/styles/main.scss */
 .paul-slideshow {
   margin: 0 auto;
   position: relative;
@@ -42893,7 +42893,7 @@ label.checkbox {
   transform: translate3d(0, 0, 0);
 }
 
-/* line 29743, ../../app/styles/main.scss */
+/* line 29744, ../../app/styles/main.scss */
 .paul-slideshow .mover-1 {
   animation: moveSlideshow 6s linear infinite;
 }
@@ -42903,7 +42903,7 @@ label.checkbox {
     transform: translateX(-66.6666%);
   }
 }
-/* line 29753, ../../app/styles/main.scss */
+/* line 29754, ../../app/styles/main.scss */
 .blog-image-left {
   height: 350px;
   width: 50%;
@@ -42914,7 +42914,7 @@ label.checkbox {
   overflow: hidden;
 }
 
-/* line 29763, ../../app/styles/main.scss */
+/* line 29764, ../../app/styles/main.scss */
 .blog-content-left {
   margin-top: 70px;
   height: 350px;
@@ -42925,7 +42925,7 @@ label.checkbox {
   position: relative;
 }
 
-/* line 29773, ../../app/styles/main.scss */
+/* line 29774, ../../app/styles/main.scss */
 .blog-image-right {
   height: 350px;
   width: 50%;
@@ -42936,7 +42936,7 @@ label.checkbox {
   overflow: hidden;
 }
 
-/* line 29783, ../../app/styles/main.scss */
+/* line 29784, ../../app/styles/main.scss */
 .blog-content-right {
   margin-top: 50px;
   height: 350px;
@@ -42947,7 +42947,7 @@ label.checkbox {
   position: relative;
 }
 
-/* line 29794, ../../app/styles/main.scss */
+/* line 29795, ../../app/styles/main.scss */
 .marquee {
   width: 100%;
   overflow: hidden;
@@ -42955,7 +42955,7 @@ label.checkbox {
   margin: 0;
 }
 
-/* line 29801, ../../app/styles/main.scss */
+/* line 29802, ../../app/styles/main.scss */
 .edge {
   left: 0;
   right: 0;
@@ -42966,45 +42966,45 @@ label.checkbox {
   display: block;
 }
 
-/* line 29811, ../../app/styles/main.scss */
+/* line 29812, ../../app/styles/main.scss */
 .slideContainer {
   overflow: hidden;
   width: 1000%;
   margin: 0;
 }
 
-/* line 29817, ../../app/styles/main.scss */
+/* line 29818, ../../app/styles/main.scss */
 .slideItem {
   list-style: none;
   display: inline-block;
   padding: 0 10px;
 }
 
-/* line 29823, ../../app/styles/main.scss */
+/* line 29824, ../../app/styles/main.scss */
 .carousel-control.left {
   background: none !important;
   cursor: pointer;
 }
 
-/* line 29828, ../../app/styles/main.scss */
+/* line 29829, ../../app/styles/main.scss */
 .carousel-control.right {
   background: none !important;
   cursor: pointer;
 }
 
-/* line 29833, ../../app/styles/main.scss */
+/* line 29834, ../../app/styles/main.scss */
 .glyphicon-chevron-right:before {
   font-family: "FontAwesome";
   content: "\f138";
 }
 
-/* line 29838, ../../app/styles/main.scss */
+/* line 29839, ../../app/styles/main.scss */
 .glyphicon-chevron-left:before {
   font-family: "FontAwesome";
   content: "\f137";
 }
 
-/* line 29843, ../../app/styles/main.scss */
+/* line 29844, ../../app/styles/main.scss */
 [ng\:cloak],
 [ng-cloak],
 [data-ng-cloak],
@@ -43014,12 +43014,12 @@ label.checkbox {
   display: none !important;
 }
 
-/* line 29853, ../../app/styles/main.scss */
+/* line 29854, ../../app/styles/main.scss */
 #primary-menu ul li:hover > ul {
   display: block;
 }
 
-/* line 29857, ../../app/styles/main.scss */
+/* line 29858, ../../app/styles/main.scss */
 .primary-title {
   margin-bottom: 0px;
   font-size: 32px;
@@ -43029,7 +43029,7 @@ label.checkbox {
   margin-top: 25%;
 }
 
-/* line 29866, ../../app/styles/main.scss */
+/* line 29867, ../../app/styles/main.scss */
 .primary-title-1 {
   margin-bottom: 0px;
   font-size: 32px;
@@ -43038,7 +43038,7 @@ label.checkbox {
   color: #fff;
 }
 
-/* line 29874, ../../app/styles/main.scss */
+/* line 29875, ../../app/styles/main.scss */
 .home-form-bg {
   background-color: #000;
   background-image: url("https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg");
@@ -43048,7 +43048,7 @@ label.checkbox {
   height: 100vh;
 }
 
-/* line 29883, ../../app/styles/main.scss */
+/* line 29884, ../../app/styles/main.scss */
 .home-form {
   width: 40%;
   height: 100vh;
@@ -43063,34 +43063,34 @@ label.checkbox {
   font-weight: bold;
 }
 
-/* line 29897, ../../app/styles/main.scss */
+/* line 29898, ../../app/styles/main.scss */
 .toppadding {
   padding-top: 10px;
 }
 
-/* line 29901, ../../app/styles/main.scss */
+/* line 29902, ../../app/styles/main.scss */
 .login-margin {
   margin-top: 10%;
 }
 
-/* line 29905, ../../app/styles/main.scss */
+/* line 29906, ../../app/styles/main.scss */
 .instaWidth {
   width: 30%;
 }
 
-/* line 29914, ../../app/styles/main.scss */
+/* line 29915, ../../app/styles/main.scss */
 .overview {
   width: 60%;
   border: 1px solid #F5F5F5;
   border-radius: 2%;
 }
 
-/* line 29920, ../../app/styles/main.scss */
+/* line 29921, ../../app/styles/main.scss */
 #howToReach {
   height: 100vh;
 }
 
-/* line 29924, ../../app/styles/main.scss */
+/* line 29925, ../../app/styles/main.scss */
 .loved-it-button {
   width: 100%;
   height: 10%;
@@ -43102,7 +43102,7 @@ label.checkbox {
   font-size: 2.8rem;
 }
 
-/* line 29935, ../../app/styles/main.scss */
+/* line 29936, ../../app/styles/main.scss */
 .secondary-title {
   margin-bottom: 0px;
   font-size: 32px;
@@ -43111,41 +43111,41 @@ label.checkbox {
   color: #fff;
 }
 
-/* line 29943, ../../app/styles/main.scss */
+/* line 29944, ../../app/styles/main.scss */
 .custom-width {
   width: 100%;
 }
 
-/* line 29947, ../../app/styles/main.scss */
+/* line 29948, ../../app/styles/main.scss */
 .pull-right1 {
   float: right;
   width: 40%;
 }
 
-/* line 29952, ../../app/styles/main.scss */
+/* line 29953, ../../app/styles/main.scss */
 .pull-left1 {
   float: left;
   width: 50%;
 }
 
-/* line 29957, ../../app/styles/main.scss */
+/* line 29958, ../../app/styles/main.scss */
 .bootstrap-carousel {
   display: none;
 }
 
-/* line 29961, ../../app/styles/main.scss */
+/* line 29962, ../../app/styles/main.scss */
 .sticky-ul {
   margin-left: 25% !important;
   margin-right: 25% !important;
 }
 
-/* line 29966, ../../app/styles/main.scss */
+/* line 29967, ../../app/styles/main.scss */
 #sticky-nav {
   display: block;
   float: none;
 }
 
-/* line 29971, ../../app/styles/main.scss */
+/* line 29972, ../../app/styles/main.scss */
 #sticky-nav ul {
   list-style: none;
   margin: 0;
@@ -43153,12 +43153,12 @@ label.checkbox {
   width: 100%;
 }
 
-/* line 29978, ../../app/styles/main.scss */
+/* line 29979, ../../app/styles/main.scss */
 #sticky-nav ul li {
   float: left;
 }
 
-/* line 29982, ../../app/styles/main.scss */
+/* line 29983, ../../app/styles/main.scss */
 #sticky-nav ul li > a {
   display: block;
   line-height: 22px;
@@ -43172,18 +43172,18 @@ label.checkbox {
   transition: margin 0.4s ease, padding 0.4s ease;
 }
 
-/* line 29995, ../../app/styles/main.scss */
+/* line 29996, ../../app/styles/main.scss */
 .custom-height {
   height: 80vh;
 }
 
-/* line 29999, ../../app/styles/main.scss */
+/* line 30000, ../../app/styles/main.scss */
 .dropdown-slider-image {
   float: left;
   width: 30%;
 }
 
-/* line 30004, ../../app/styles/main.scss */
+/* line 30005, ../../app/styles/main.scss */
 .dropdown-slider-content {
   float: right;
   width: 70%;
@@ -43191,7 +43191,7 @@ label.checkbox {
   text-align: left;
 }
 
-/* line 30011, ../../app/styles/main.scss */
+/* line 30012, ../../app/styles/main.scss */
 .dropdown-slider-button {
   margin-top: 4%;
   right: 3%;
@@ -43200,22 +43200,22 @@ label.checkbox {
   font-size: 3rem;
 }
 
-/* line 30019, ../../app/styles/main.scss */
+/* line 30020, ../../app/styles/main.scss */
 .custom-padding {
   padding: 0% 6% 0% 6%;
 }
 
-/* line 30023, ../../app/styles/main.scss */
+/* line 30024, ../../app/styles/main.scss */
 .border-right {
   border-right: 1px solid #000;
 }
 
-/* line 30027, ../../app/styles/main.scss */
+/* line 30028, ../../app/styles/main.scss */
 .table-font {
   font-size: 18px;
 }
 
-/* line 30031, ../../app/styles/main.scss */
+/* line 30032, ../../app/styles/main.scss */
 .mobile-footer {
   display: none;
 }
@@ -43224,28 +43224,28 @@ label.checkbox {
 	Responsive CSS
 -----------------------------------------------------------------*/
 @media only screen and (min-device-width: 0px) and (max-device-width: 468px) {
-  /* line 30042, ../../app/styles/main.scss */
+  /* line 30043, ../../app/styles/main.scss */
   .web-footer {
     display: none;
   }
 
-  /* line 30046, ../../app/styles/main.scss */
+  /* line 30047, ../../app/styles/main.scss */
   .mobile-footer {
     display: block;
   }
 }
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
-  /* line 30054, ../../app/styles/main.scss */
+  /* line 30055, ../../app/styles/main.scss */
   .col-md-3 {
     width: 10%;
   }
 
-  /* line 30058, ../../app/styles/main.scss */
+  /* line 30059, ../../app/styles/main.scss */
   .custom-padding {
     padding: 0%;
   }
 
-  /* line 30061, ../../app/styles/main.scss */
+  /* line 30062, ../../app/styles/main.scss */
   .dropdown-slider-button {
     margin-top: 5%;
     right: 4%;
@@ -43254,13 +43254,13 @@ label.checkbox {
     font-size: 3rem;
   }
 
-  /* line 30068, ../../app/styles/main.scss */
+  /* line 30069, ../../app/styles/main.scss */
   .dropdown-slider-image {
     float: none;
     width: 100%;
   }
 
-  /* line 30072, ../../app/styles/main.scss */
+  /* line 30073, ../../app/styles/main.scss */
   .dropdown-slider-content {
     float: none;
     width: 100%;
@@ -43268,23 +43268,23 @@ label.checkbox {
     text-align: left;
   }
 
-  /* line 30078, ../../app/styles/main.scss */
+  /* line 30079, ../../app/styles/main.scss */
   #place {
     margin-bottom: 5%;
   }
 
-  /* line 30081, ../../app/styles/main.scss */
+  /* line 30082, ../../app/styles/main.scss */
   .custom-height {
     height: auto;
   }
 
-  /* line 30084, ../../app/styles/main.scss */
+  /* line 30085, ../../app/styles/main.scss */
   .sticky-ul {
     margin-left: 5% !important;
     margin-right: 5% !important;
   }
 
-  /* line 30088, ../../app/styles/main.scss */
+  /* line 30089, ../../app/styles/main.scss */
   #sticky-nav ul li > a {
     display: block;
     line-height: 10px;
@@ -43298,7 +43298,7 @@ label.checkbox {
     transition: margin 0.4s ease, padding 0.4s ease;
   }
 
-  /* line 30100, ../../app/styles/main.scss */
+  /* line 30101, ../../app/styles/main.scss */
   .paul-slider-caption {
     font-size: 2rem;
     left: 40%;
@@ -43310,25 +43310,25 @@ label.checkbox {
     letter-spacing: -0.08px;
   }
 
-  /* line 30110, ../../app/styles/main.scss */
+  /* line 30111, ../../app/styles/main.scss */
   #logo img {
     height: 70px;
     margin: 20% 0 0 0;
   }
 
-  /* line 30114, ../../app/styles/main.scss */
+  /* line 30115, ../../app/styles/main.scss */
   .pull-right1 {
     width: 100%;
     float: none;
   }
 
-  /* line 30118, ../../app/styles/main.scss */
+  /* line 30119, ../../app/styles/main.scss */
   .pull-left1 {
     float: none;
     width: 100%;
   }
 
-  /* line 30122, ../../app/styles/main.scss */
+  /* line 30123, ../../app/styles/main.scss */
   .secondary-title {
     margin-bottom: 0px;
     font-size: 24px;
@@ -43337,7 +43337,7 @@ label.checkbox {
     color: #fff;
   }
 
-  /* line 30129, ../../app/styles/main.scss */
+  /* line 30130, ../../app/styles/main.scss */
   .loved-it-button {
     width: 100%;
     height: 10%;
@@ -43349,19 +43349,19 @@ label.checkbox {
     font-size: 1.5rem;
   }
 
-  /* line 30139, ../../app/styles/main.scss */
+  /* line 30140, ../../app/styles/main.scss */
   #howToReach {
     height: auto;
   }
 
-  /* line 30142, ../../app/styles/main.scss */
+  /* line 30143, ../../app/styles/main.scss */
   .overview {
     width: 100%;
     border: 1px solid #F5F5F5;
     border-radius: 2%;
   }
 
-  /* line 30147, ../../app/styles/main.scss */
+  /* line 30148, ../../app/styles/main.scss */
   .custom-button {
     text-transform: uppercase;
     width: 60%;
@@ -43375,7 +43375,7 @@ label.checkbox {
     border-radius: 5px;
   }
 
-  /* line 30159, ../../app/styles/main.scss */
+  /* line 30160, ../../app/styles/main.scss */
   .primary-title {
     margin-bottom: 0px;
     font-size: 24px;
@@ -43385,7 +43385,7 @@ label.checkbox {
     margin-top: 60%;
   }
 
-  /* line 30167, ../../app/styles/main.scss */
+  /* line 30168, ../../app/styles/main.scss */
   .primary-title-1 {
     margin-bottom: 0px;
     font-size: 20px;
@@ -43394,7 +43394,7 @@ label.checkbox {
     color: #fff;
   }
 
-  /* line 30174, ../../app/styles/main.scss */
+  /* line 30175, ../../app/styles/main.scss */
   .paul-title {
     text-align: center;
     margin-top: 2%;
@@ -43404,12 +43404,12 @@ label.checkbox {
     font-size: 2.8rem;
   }
 
-  /* line 30182, ../../app/styles/main.scss */
+  /* line 30183, ../../app/styles/main.scss */
   .container {
     width: 100%;
   }
 
-  /* line 30185, ../../app/styles/main.scss */
+  /* line 30186, ../../app/styles/main.scss */
   .blog-image-left {
     height: auto;
     width: 100%;
@@ -43422,7 +43422,7 @@ label.checkbox {
     float: none;
   }
 
-  /* line 30196, ../../app/styles/main.scss */
+  /* line 30197, ../../app/styles/main.scss */
   .blog-content-left {
     margin-top: 10px;
     margin-bottom: 30px;
@@ -43437,7 +43437,7 @@ label.checkbox {
     float: none;
   }
 
-  /* line 30209, ../../app/styles/main.scss */
+  /* line 30210, ../../app/styles/main.scss */
   .blog-image-right {
     height: auto;
     width: 100%;
@@ -43451,7 +43451,7 @@ label.checkbox {
     margin-right: auto;
   }
 
-  /* line 30221, ../../app/styles/main.scss */
+  /* line 30222, ../../app/styles/main.scss */
   .blog-content-right {
     margin-top: 10px;
     height: auto;
@@ -43465,7 +43465,7 @@ label.checkbox {
     margin-right: auto;
   }
 
-  /* line 30233, ../../app/styles/main.scss */
+  /* line 30234, ../../app/styles/main.scss */
   .home-form-bg {
     background-color: #000;
     background-image: url("https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg");
@@ -43475,7 +43475,7 @@ label.checkbox {
     height: 900px;
   }
 
-  /* line 30241, ../../app/styles/main.scss */
+  /* line 30242, ../../app/styles/main.scss */
   .home-form {
     width: 100%;
     height: 900px;
@@ -43490,7 +43490,7 @@ label.checkbox {
     font-weight: bold;
   }
 
-  /* line 30255, ../../app/styles/main.scss */
+  /* line 30256, ../../app/styles/main.scss */
   .instaText {
     text-align: center;
     margin-bottom: 4rem;
@@ -43500,12 +43500,12 @@ label.checkbox {
     font-size: 2rem;
   }
 
-  /* line 30263, ../../app/styles/main.scss */
+  /* line 30264, ../../app/styles/main.scss */
   .footer-logo {
     margin: 0px;
   }
 
-  /* line 30266, ../../app/styles/main.scss */
+  /* line 30267, ../../app/styles/main.scss */
   .col_one_fourth {
     width: 100%;
     float: none;
@@ -43515,158 +43515,158 @@ label.checkbox {
     margin-bottom: 20px !important;
   }
 
-  /* line 30274, ../../app/styles/main.scss */
+  /* line 30275, ../../app/styles/main.scss */
   .col_two_third {
     width: 100%;
   }
 
-  /* line 30277, ../../app/styles/main.scss */
+  /* line 30278, ../../app/styles/main.scss */
   .col_half {
     width: 100%;
   }
 
-  /* line 30280, ../../app/styles/main.scss */
+  /* line 30281, ../../app/styles/main.scss */
   .make-invisible {
     display: none;
   }
 
-  /* line 30283, ../../app/styles/main.scss */
+  /* line 30284, ../../app/styles/main.scss */
   #header-wrap {
     height: auto !important;
   }
 
-  /* line 30286, ../../app/styles/main.scss */
+  /* line 30287, ../../app/styles/main.scss */
   .login-margin {
     margin-top: 20%;
   }
 
-  /* line 30289, ../../app/styles/main.scss */
+  /* line 30290, ../../app/styles/main.scss */
   .instaWidth {
     width: 50%;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 30295, ../../app/styles/main.scss */
+  /* line 30296, ../../app/styles/main.scss */
   #wrapper {
     width: 1000px;
   }
 
-  /* line 30298, ../../app/styles/main.scss */
+  /* line 30299, ../../app/styles/main.scss */
   #header.transparent-header.floating-header .container {
     width: 1030px;
     padding: 0 30px;
   }
 
-  /* line 30302, ../../app/styles/main.scss */
+  /* line 30303, ../../app/styles/main.scss */
   #header.transparent-header.floating-header.sticky-header .container {
     width: 970px;
     padding: 0 15px;
   }
 
-  /* line 30306, ../../app/styles/main.scss */
+  /* line 30307, ../../app/styles/main.scss */
   #primary-menu.sub-title ul > li > a {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  /* line 30310, ../../app/styles/main.scss */
+  /* line 30311, ../../app/styles/main.scss */
   #primary-menu ul li.mega-menu .mega-menu-content,
   .floating-header.sticky-header #primary-menu ul li.mega-menu .mega-menu-content {
     width: 940px;
   }
 
-  /* line 30314, ../../app/styles/main.scss */
+  /* line 30315, ../../app/styles/main.scss */
   .floating-header #primary-menu ul li.mega-menu .mega-menu-content {
     width: 1030px;
   }
 
-  /* line 30317, ../../app/styles/main.scss */
+  /* line 30318, ../../app/styles/main.scss */
   .ei-slider {
     height: 450px;
   }
 
-  /* line 30320, ../../app/styles/main.scss */
+  /* line 30321, ../../app/styles/main.scss */
   .postcontent {
     width: 690px;
   }
 
-  /* line 30323, ../../app/styles/main.scss */
+  /* line 30324, ../../app/styles/main.scss */
   .postcontent.bothsidebar {
     width: 440px;
   }
 
-  /* line 30326, ../../app/styles/main.scss */
+  /* line 30327, ../../app/styles/main.scss */
   .sidebar {
     width: 210px;
   }
 
   /* Blog - Small
 	-----------------------------------------------------------------*/
-  /* line 30331, ../../app/styles/main.scss */
+  /* line 30332, ../../app/styles/main.scss */
   .postcontent .small-thumbs .entry-image {
     width: 200px;
   }
 
-  /* line 30334, ../../app/styles/main.scss */
+  /* line 30335, ../../app/styles/main.scss */
   .bothsidebar .small-thumbs .entry-image {
     width: 120px;
   }
 
   /* Blog - Grid
 	-----------------------------------------------------------------*/
-  /* line 30339, ../../app/styles/main.scss */
+  /* line 30340, ../../app/styles/main.scss */
   .post-grid .entry {
     width: 214px;
   }
 
   /* Blog - Grid - 3 Columns
 	-----------------------------------------------------------------*/
-  /* line 30344, ../../app/styles/main.scss */
+  /* line 30345, ../../app/styles/main.scss */
   .post-grid.grid-3 .entry {
     width: 293px;
   }
 
   /* Blog - Grid - 3 Columns - Sidebar
 	-----------------------------------------------------------------*/
-  /* line 30349, ../../app/styles/main.scss */
+  /* line 30350, ../../app/styles/main.scss */
   .postcontent .post-grid.grid-3 .entry {
     width: 213px;
   }
 
   /* Blog - Grid - 2 Columns
 	-----------------------------------------------------------------*/
-  /* line 30354, ../../app/styles/main.scss */
+  /* line 30355, ../../app/styles/main.scss */
   .post-grid.grid-2 .entry {
     width: 450px;
   }
 
   /* Blog - Grid - 2 Columns - Sidebar
 	-----------------------------------------------------------------*/
-  /* line 30359, ../../app/styles/main.scss */
+  /* line 30360, ../../app/styles/main.scss */
   .postcontent .post-grid.grid-2 .entry {
     width: 325px;
   }
 
   /* Blog - Grid - 2 Columns - Both Sidebar
 	-----------------------------------------------------------------*/
-  /* line 30364, ../../app/styles/main.scss */
+  /* line 30365, ../../app/styles/main.scss */
   .bothsidebar .post-grid.grid-2 .entry {
     width: 200px;
   }
 
-  /* line 30367, ../../app/styles/main.scss */
+  /* line 30368, ../../app/styles/main.scss */
   .post-timeline .entry {
     width: 400px !important;
   }
 
-  /* line 30370, ../../app/styles/main.scss */
+  /* line 30371, ../../app/styles/main.scss */
   .post-timeline .entry.entry-date-section {
     width: 100% !important;
   }
 
   /* Blog - Medium Post List
 	-----------------------------------------------------------------*/
-  /* line 30375, ../../app/styles/main.scss */
+  /* line 30376, ../../app/styles/main.scss */
   .mpost .entry-image,
   .mpost .entry-image a,
   .mpost .entry-image img,
@@ -43675,35 +43675,35 @@ label.checkbox {
     height: 90px;
   }
 
-  /* line 30382, ../../app/styles/main.scss */
+  /* line 30383, ../../app/styles/main.scss */
   .mpost .entry-image a i {
     line-height: 90px;
   }
 
-  /* line 30385, ../../app/styles/main.scss */
+  /* line 30386, ../../app/styles/main.scss */
   .col_one_third .landing-wide-form .heading-block h2 {
     font-size: 32px;
   }
 
-  /* line 30388, ../../app/styles/main.scss */
+  /* line 30389, ../../app/styles/main.scss */
   .col_one_third .landing-wide-form .heading-block span {
     font-size: 17px;
   }
 
-  /* line 30391, ../../app/styles/main.scss */
+  /* line 30392, ../../app/styles/main.scss */
   .col_one_third .landing-wide-form {
     padding: 36px 30px;
   }
 }
 @media (max-width: 991px) {
-  /* line 30397, ../../app/styles/main.scss */
+  /* line 30398, ../../app/styles/main.scss */
   #wrapper {
     width: 100%;
     margin: 0;
     box-shadow: none;
   }
 
-  /* line 30402, ../../app/styles/main.scss */
+  /* line 30403, ../../app/styles/main.scss */
   #header.full-header .container,
   .container-fullwidth {
     padding: 0 15px !important;
@@ -43711,12 +43711,12 @@ label.checkbox {
     width: 750px !important;
   }
 
-  /* line 30408, ../../app/styles/main.scss */
+  /* line 30409, ../../app/styles/main.scss */
   .container.vertical-middle {
     width: 100% !important;
   }
 
-  /* line 30411, ../../app/styles/main.scss */
+  /* line 30412, ../../app/styles/main.scss */
   .vertical-middle + .video-wrap {
     position: absolute;
     width: 100%;
@@ -43725,7 +43725,7 @@ label.checkbox {
     left: 0;
   }
 
-  /* line 30418, ../../app/styles/main.scss */
+  /* line 30419, ../../app/styles/main.scss */
   .postcontent,
   .postcontent.bothsidebar,
   .sidebar {
@@ -43737,7 +43737,7 @@ label.checkbox {
     border-bottom: 1px solid #EEE;
   }
 
-  /* line 30428, ../../app/styles/main.scss */
+  /* line 30429, ../../app/styles/main.scss */
   .sidebar.col_last {
     float: none;
     margin-bottom: 0 !important;
@@ -43747,12 +43747,12 @@ label.checkbox {
 
   /* Blog - Grid
 	-----------------------------------------------------------------*/
-  /* line 30436, ../../app/styles/main.scss */
+  /* line 30437, ../../app/styles/main.scss */
   .post-grid {
     margin-right: -20px;
   }
 
-  /* line 30439, ../../app/styles/main.scss */
+  /* line 30440, ../../app/styles/main.scss */
   .post-grid .entry {
     width: 226px;
     margin-right: 20px;
@@ -43760,149 +43760,149 @@ label.checkbox {
 
   /* Blog - Grid - 3 Columns
 	-----------------------------------------------------------------*/
-  /* line 30445, ../../app/styles/main.scss */
+  /* line 30446, ../../app/styles/main.scss */
   .post-grid.grid-2,
   .post-grid.grid-3 {
     margin-right: -30px;
   }
 
-  /* line 30449, ../../app/styles/main.scss */
+  /* line 30450, ../../app/styles/main.scss */
   .post-grid.grid-2 .entry,
   .post-grid.grid-3 .entry {
     width: 345px;
     margin-right: 30px;
   }
 
-  /* line 30454, ../../app/styles/main.scss */
+  /* line 30455, ../../app/styles/main.scss */
   .post-masonry-full .entry {
     width: 33.30% !important;
   }
 
-  /* line 30457, ../../app/styles/main.scss */
+  /* line 30458, ../../app/styles/main.scss */
   .post-masonry-full.grid-3 .entry {
     width: 50% !important;
   }
 
-  /* line 30460, ../../app/styles/main.scss */
+  /* line 30461, ../../app/styles/main.scss */
   .post-timeline .entry {
     width: 290px !important;
   }
 
-  /* line 30463, ../../app/styles/main.scss */
+  /* line 30464, ../../app/styles/main.scss */
   .post-timeline .entry.entry-date-section {
     width: 100% !important;
   }
 }
 @media (max-width: 767px) {
-  /* line 30469, ../../app/styles/main.scss */
+  /* line 30470, ../../app/styles/main.scss */
   .bootstrap-carousel {
     display: block;
   }
 
-  /* line 30472, ../../app/styles/main.scss */
+  /* line 30473, ../../app/styles/main.scss */
   .custom-paul-slider {
     display: none;
   }
 
-  /* line 30475, ../../app/styles/main.scss */
+  /* line 30476, ../../app/styles/main.scss */
   .pull-right1 {
     width: 100%;
     float: none;
   }
 
-  /* line 30479, ../../app/styles/main.scss */
+  /* line 30480, ../../app/styles/main.scss */
   .pull-left1 {
     float: none;
     width: 100%;
   }
 
-  /* line 30483, ../../app/styles/main.scss */
+  /* line 30484, ../../app/styles/main.scss */
   body {
     padding: 0 !important;
   }
 
-  /* line 30486, ../../app/styles/main.scss */
+  /* line 30487, ../../app/styles/main.scss */
   #wrapper {
     width: 100% !important;
   }
 
-  /* line 30489, ../../app/styles/main.scss */
+  /* line 30490, ../../app/styles/main.scss */
   .container-fullwidth {
     margin: 0 auto;
     padding: 0 15px !important;
   }
 
-  /* line 30493, ../../app/styles/main.scss */
+  /* line 30494, ../../app/styles/main.scss */
   h1 {
     font-size: 28px;
   }
 
-  /* line 30496, ../../app/styles/main.scss */
+  /* line 30497, ../../app/styles/main.scss */
   h2 {
     font-size: 24px;
   }
 
-  /* line 30499, ../../app/styles/main.scss */
+  /* line 30500, ../../app/styles/main.scss */
   h3 {
     font-size: 20px;
   }
 
-  /* line 30502, ../../app/styles/main.scss */
+  /* line 30503, ../../app/styles/main.scss */
   h4 {
     font-size: 16px;
   }
 
-  /* line 30505, ../../app/styles/main.scss */
+  /* line 30506, ../../app/styles/main.scss */
   .one-page-arrow {
     display: none !important;
   }
 
-  /* line 30508, ../../app/styles/main.scss */
+  /* line 30509, ../../app/styles/main.scss */
   #top-bar {
     height: auto;
   }
 
-  /* line 30511, ../../app/styles/main.scss */
+  /* line 30512, ../../app/styles/main.scss */
   #top-bar .col_half {
     width: 100%;
     margin-bottom: 0 !important;
   }
 
-  /* line 30515, ../../app/styles/main.scss */
+  /* line 30516, ../../app/styles/main.scss */
   .top-links,
   .top-links > ul > li {
     float: none !important;
   }
 
-  /* line 30519, ../../app/styles/main.scss */
+  /* line 30520, ../../app/styles/main.scss */
   .top-links > ul {
     text-align: center;
   }
 
-  /* line 30522, ../../app/styles/main.scss */
+  /* line 30523, ../../app/styles/main.scss */
   .top-links > ul > li {
     display: inline-block;
   }
 
-  /* line 30525, ../../app/styles/main.scss */
+  /* line 30526, ../../app/styles/main.scss */
   .top-links > ul > li {
     margin-right: -4px;
   }
 
-  /* line 30528, ../../app/styles/main.scss */
+  /* line 30529, ../../app/styles/main.scss */
   .top-links ul ul,
   .top-links ul div.top-link-section {
     text-align: left;
   }
 
-  /* line 30532, ../../app/styles/main.scss */
+  /* line 30533, ../../app/styles/main.scss */
   .top-links ul div.top-link-section {
     left: auto;
     right: 0;
     padding: 20px 15px;
   }
 
-  /* line 30537, ../../app/styles/main.scss */
+  /* line 30538, ../../app/styles/main.scss */
   #top-social,
   #slider:not(.swiper_wrapper) .slider-caption,
   .nivo-caption,
@@ -43916,22 +43916,22 @@ label.checkbox {
     display: none !important;
   }
 
-  /* line 30549, ../../app/styles/main.scss */
+  /* line 30550, ../../app/styles/main.scss */
   .slider-caption h2 {
     margin-bottom: 0 !important;
   }
 
-  /* line 30552, ../../app/styles/main.scss */
+  /* line 30553, ../../app/styles/main.scss */
   .flex-control-nav li {
     opacity: 1 !important;
   }
 
-  /* line 30555, ../../app/styles/main.scss */
+  /* line 30556, ../../app/styles/main.scss */
   .fslider:not(.flex-thumb-grid) .flex-control-nav.flex-control-thumbs {
     height: 60px;
   }
 
-  /* line 30558, ../../app/styles/main.scss */
+  /* line 30559, ../../app/styles/main.scss */
   .fslider:not(.flex-thumb-grid) .flex-control-nav.flex-control-thumbs li,
   .fslider:not(.flex-thumb-grid) .flex-control-nav.flex-control-thumbs li img {
     display: block;
@@ -43939,7 +43939,7 @@ label.checkbox {
     height: 60px !important;
   }
 
-  /* line 30564, ../../app/styles/main.scss */
+  /* line 30565, ../../app/styles/main.scss */
   .postcontent,
   .postcontent.bothsidebar,
   .sidebar,
@@ -43961,12 +43961,12 @@ label.checkbox {
     margin-bottom: 50px !important;
   }
 
-  /* line 30584, ../../app/styles/main.scss */
+  /* line 30585, ../../app/styles/main.scss */
   .sidebar.col_last {
     margin-bottom: 0 !important;
   }
 
-  /* line 30587, ../../app/styles/main.scss */
+  /* line 30588, ../../app/styles/main.scss */
   form .col_full,
   form .col_half,
   form .col_one_third,
@@ -43982,19 +43982,19 @@ label.checkbox {
     margin-bottom: 25px !important;
   }
 
-  /* line 30601, ../../app/styles/main.scss */
+  /* line 30602, ../../app/styles/main.scss */
   #page-title {
     padding: 50px 0;
     text-align: center;
   }
 
-  /* line 30605, ../../app/styles/main.scss */
+  /* line 30606, ../../app/styles/main.scss */
   #page-title h1 {
     line-height: 1.5;
     font-size: 24px;
   }
 
-  /* line 30609, ../../app/styles/main.scss */
+  /* line 30610, ../../app/styles/main.scss */
   #page-title .breadcrumb {
     position: relative !important;
     top: 0 !important;
@@ -44003,7 +44003,7 @@ label.checkbox {
     margin: 15px 0 0 !important;
   }
 
-  /* line 30616, ../../app/styles/main.scss */
+  /* line 30617, ../../app/styles/main.scss */
   #page-title #portfolio-navigation,
   #portfolio-ajax-title #portfolio-navigation {
     position: relative;
@@ -44012,14 +44012,14 @@ label.checkbox {
     margin: 15px auto 0;
   }
 
-  /* line 30623, ../../app/styles/main.scss */
+  /* line 30624, ../../app/styles/main.scss */
   #portfolio-ajax-title {
     text-align: center;
   }
 
   /* Blog
 	-----------------------------------------------------------------*/
-  /* line 30628, ../../app/styles/main.scss */
+  /* line 30629, ../../app/styles/main.scss */
   .small-thumbs .entry-image,
   .ievent .entry-image {
     float: none !important;
@@ -44027,36 +44027,36 @@ label.checkbox {
     margin: 0 0 20px !important;
   }
 
-  /* line 30634, ../../app/styles/main.scss */
+  /* line 30635, ../../app/styles/main.scss */
   .entry-title h2,
   .post-grid .entry-title h2 {
     font-size: 18px !important;
     font-weight: 600;
   }
 
-  /* line 30639, ../../app/styles/main.scss */
+  /* line 30640, ../../app/styles/main.scss */
   .entry-meta li {
     font-size: 11px;
     margin: 0 10px 10px 0;
   }
 
-  /* line 30643, ../../app/styles/main.scss */
+  /* line 30644, ../../app/styles/main.scss */
   #posts .entry-meta li i {
     display: none;
   }
 
-  /* line 30646, ../../app/styles/main.scss */
+  /* line 30647, ../../app/styles/main.scss */
   #posts.post-grid .entry-meta li i,
   #posts .entry-meta li:last-child i {
     display: inline-block;
   }
 
-  /* line 30650, ../../app/styles/main.scss */
+  /* line 30651, ../../app/styles/main.scss */
   .post-grid {
     margin-right: 0 !important;
   }
 
-  /* line 30653, ../../app/styles/main.scss */
+  /* line 30654, ../../app/styles/main.scss */
   .post-grid .entry,
   .post-masonry-full.grid-3 .entry {
     float: none !important;
@@ -44065,29 +44065,29 @@ label.checkbox {
     border-right: 0 !important;
   }
 
-  /* line 30660, ../../app/styles/main.scss */
+  /* line 30661, ../../app/styles/main.scss */
   .post-timeline .entry.entry-date-section {
     margin-left: 0;
   }
 
-  /* line 30663, ../../app/styles/main.scss */
+  /* line 30664, ../../app/styles/main.scss */
   .timeline-border,
   .post-timeline .entry-timeline {
     display: none !important;
   }
 
-  /* line 30667, ../../app/styles/main.scss */
+  /* line 30668, ../../app/styles/main.scss */
   .postcontent .post-timeline {
     padding-left: 0;
   }
 
-  /* line 30670, ../../app/styles/main.scss */
+  /* line 30671, ../../app/styles/main.scss */
   .post-masonry-full .entry {
     padding: 40px !important;
   }
 }
 /* The side navigation menu */
-/* line 30678, ../../app/styles/main.scss */
+/* line 30679, ../../app/styles/main.scss */
 .sidenav {
   height: 100%;
   /* 100% Full-height */
@@ -44110,7 +44110,7 @@ label.checkbox {
 }
 
 /* The navigation menu links */
-/* line 30702, ../../app/styles/main.scss */
+/* line 30703, ../../app/styles/main.scss */
 .sidenav a {
   text-decoration: none;
   display: block;
@@ -44129,14 +44129,14 @@ label.checkbox {
 }
 
 /* When you mouse over the navigation links, change their color */
-/* line 30722, ../../app/styles/main.scss */
+/* line 30723, ../../app/styles/main.scss */
 .sidenav a:hover,
 .offcanvas a:focus {
   color: #f1f1f1;
 }
 
 /* Position and style the close button (top right corner) */
-/* line 30730, ../../app/styles/main.scss */
+/* line 30731, ../../app/styles/main.scss */
 .sidenav .closebtn {
   position: absolute;
   top: 15px;
@@ -44148,17 +44148,17 @@ label.checkbox {
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  /* line 30749, ../../app/styles/main.scss */
+  /* line 30750, ../../app/styles/main.scss */
   .sidenav {
     padding-top: 15px;
   }
 
-  /* line 30752, ../../app/styles/main.scss */
+  /* line 30753, ../../app/styles/main.scss */
   .sidenav a {
     font-size: 18px;
   }
 }
-/* line 30757, ../../app/styles/main.scss */
+/* line 30758, ../../app/styles/main.scss */
 #news_strip {
   width: 100%;
   border-bottom: 1px dotted #cccccc;
@@ -44168,7 +44168,7 @@ label.checkbox {
   overflow: hidden;
 }
 
-/* line 30766, ../../app/styles/main.scss */
+/* line 30767, ../../app/styles/main.scss */
 #news_strip a {
   display: inline;
   text-decoration: none;
@@ -44178,7 +44178,25 @@ label.checkbox {
   top: 0px;
 }
 
-/* line 30779, ../../app/styles/main.scss */
+/* line 30778, ../../app/styles/main.scss */
+.chip {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 20px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  border-radius: 25px;
+  background-color: #e1e1e1;
+  margin: 2%;
+}
+
+/* line 30790, ../../app/styles/main.scss */
+.selected-button {
+  background-color: #34A0DC;
+}
+
+/* line 30798, ../../app/styles/main.scss */
 #flipbook {
   transition: margin-left 0.2s;
   margin-left: 3%;
@@ -44186,20 +44204,20 @@ label.checkbox {
   white-space: normal;
 }
 
-/* line 30790, ../../app/styles/main.scss */
+/* line 30809, ../../app/styles/main.scss */
 #flipbook .page {
   background-color: #717070;
   font-size: 1em;
 }
 
-/* line 30795, ../../app/styles/main.scss */
+/* line 30814, ../../app/styles/main.scss */
 #flipbook .page-wrapper {
   -ms-perspective: 2000px;
   -o-perspective: 2000px;
   perspective: 2000px;
 }
 
-/* line 30803, ../../app/styles/main.scss */
+/* line 30822, ../../app/styles/main.scss */
 #flipbook .hard {
   color: #333;
   -o-box-shadow: inset 0 0 5px #666;
@@ -44209,7 +44227,7 @@ label.checkbox {
   padding: 0px;
 }
 
-/* line 30814, ../../app/styles/main.scss */
+/* line 30833, ../../app/styles/main.scss */
 #flipbook .odd {
   background: -webkit-gradient(linear, right top, left top, color-stop(0.95, #F5F5F5), color-stop(1, #DADADA));
   background-image: linear-gradient(right, #F5F5F5 95%, #C4C4C4 100%);
@@ -44218,7 +44236,7 @@ label.checkbox {
   box-shadow: inset 0 0 5px #666;
 }
 
-/* line 30828, ../../app/styles/main.scss */
+/* line 30847, ../../app/styles/main.scss */
 #flipbook .even {
   background: -webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
   background-image: linear-gradient(left, #fff 95%, #dadada 100%);
@@ -44227,14 +44245,14 @@ label.checkbox {
   box-shadow: inset 0 0 5px #666;
 }
 
-/* line 30842, ../../app/styles/main.scss */
+/* line 30861, ../../app/styles/main.scss */
 #flipbook.shadow, #flipbook.shadow {
   -ms-box-shadow: 0 4px 10px #666;
   -o-box-shadow: 0 4px 10px #666;
   box-shadow: 0 4px 10px #666;
 }
 
-/* line 30850, ../../app/styles/main.scss */
+/* line 30869, ../../app/styles/main.scss */
 .show-bar #flipbook .shadow {
   -webkit-transition: -webkit-box-shadow 0.5s;
   -moz-transition: -moz-box-shadow 0.5s;
@@ -44245,7 +44263,7 @@ label.checkbox {
   box-shadow: 0 0 10px #999;
 }
 
-/* line 30864, ../../app/styles/main.scss */
+/* line 30883, ../../app/styles/main.scss */
 #flipbook .p1 .side {
   width: 5px;
   height: 600px;
@@ -44259,7 +44277,7 @@ label.checkbox {
   z-index: 100000;
 }
 
-/* line 30893, ../../app/styles/main.scss */
+/* line 30912, ../../app/styles/main.scss */
 #flipbook .depth {
   background-image: url("pages-depth.png");
   position: absolute;
@@ -44268,19 +44286,19 @@ label.checkbox {
   background-size: cover;
 }
 
-/* line 30902, ../../app/styles/main.scss */
+/* line 30921, ../../app/styles/main.scss */
 #flipbook .front-side .depth {
   left: 25px;
   background-position: 0 0;
 }
 
-/* line 30907, ../../app/styles/main.scss */
+/* line 30926, ../../app/styles/main.scss */
 #flipbook .back-side .depth {
   right: 4px;
   background-position: right 0;
 }
 
-/* line 30913, ../../app/styles/main.scss */
+/* line 30932, ../../app/styles/main.scss */
 #flipbook .page-number {
   color: #999;
   width: 100%;
@@ -44292,7 +44310,7 @@ label.checkbox {
   font-size: 11px;
 }
 
-/* line 30924, ../../app/styles/main.scss */
+/* line 30943, ../../app/styles/main.scss */
 .flip-previous-page {
   position: absolute;
   top: 50%;

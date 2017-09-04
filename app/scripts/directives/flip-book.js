@@ -17,7 +17,6 @@ angular.module('wanderwagon-webapp')
           height: '450px',
           pages: 8,
           autoCenter: true,
-          display: 'single',
           duration: 1000
         });
 

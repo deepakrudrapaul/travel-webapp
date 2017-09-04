@@ -29643,6 +29643,7 @@ label.checkbox {
   color: #444;
 }
 
+
 .paul-slider-caption {
   font-size: 1.6rem;
   bottom: 2.4rem;
@@ -30770,6 +30771,24 @@ label.checkbox {
   z-index: 1;
   position: absolute;
   top: 0px;
+}
+
+// CHIPS
+
+.chip {
+  cursor:pointer;
+  display: inline-block;
+  padding: 0 20px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  border-radius: 25px;
+  background-color: #e1e1e1;
+  margin:2%;
+}
+
+.selected-button {
+  background-color: #34A0DC;
 }
 
 
