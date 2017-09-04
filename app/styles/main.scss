@@ -12732,11 +12732,9 @@ body #side-panel.dark #side-panel-trigger-close a {
     padding-bottom: 0;
     border-bottom: 0;
   }
-
   .header-bg {
-    background-color:#34A0DC;
+    background-color: #34A0DC;
   }
-  
   #header,
   #header-wrap,
   #header.sticky-style-2,
@@ -29570,12 +29568,12 @@ label.checkbox {
   transform: scale(1.1);
 }
 
-.instaText:before,
-.instaText:after {
-  content: '\00a0\00a0\00a0\00a0';
-  text-decoration: line-through;
-  margin: auto 0.5em;
-}
+// .instaText:before,
+// .instaText:after {
+//   content: '\00a0\00a0\00a0\00a0';
+//   text-decoration: line-through;
+//   margin: auto 0.5em;
+// }
 
 .instaText {
   text-align: center;
@@ -29643,7 +29641,6 @@ label.checkbox {
   color: #444;
 }
 
-
 .paul-slider-caption {
   font-size: 1.6rem;
   bottom: 2.4rem;
@@ -29657,7 +29654,7 @@ label.checkbox {
 }
 
 .paul-slide-new {
-  cursor:pointer;
+  cursor: pointer;
   max-height: 350px;
   height: 50vw;
   position: relative;
@@ -29668,7 +29665,7 @@ label.checkbox {
 }
 
 .paul-slide {
-  cursor:pointer;
+  cursor: pointer;
   max-height: 500px;
   height: 69vw;
   position: relative;
@@ -30026,11 +30023,11 @@ label.checkbox {
 }
 
 .table-font {
-  font-size:18px;
+  font-size: 18px;
 }
 
 .mobile-footer {
-  display:none;
+  display: none;
 }
 
 
@@ -30039,23 +30036,18 @@ label.checkbox {
 -----------------------------------------------------------------*/
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 468px) {
-
   .web-footer {
-    display:none;
+    display: none;
   }
-
   .mobile-footer {
-    display:block;
+    display: block;
   }
-
 }
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
-
   .col-md-3 {
-    width:10%;
+    width: 10%;
   }
-  
   .custom-padding {
     padding: 0%;
   }
@@ -30252,7 +30244,6 @@ label.checkbox {
     color: #FFF;
     font-weight: bold;
   }
-
   .instaText {
     text-align: center;
     margin-bottom: 4rem;
@@ -30713,7 +30704,7 @@ label.checkbox {
   color: #FFFFFF;
   letter-spacing: 1px;
   text-transform: uppercase;
-  overflow:hidden;
+  overflow: hidden;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -30774,9 +30765,8 @@ label.checkbox {
 }
 
 // CHIPS
-
 .chip {
-  cursor:pointer;
+  cursor: pointer;
   display: inline-block;
   padding: 0 20px;
   height: 40px;
@@ -30784,204 +30774,135 @@ label.checkbox {
   line-height: 40px;
   border-radius: 25px;
   background-color: #e1e1e1;
-  margin:2%;
+  margin: 2%;
 }
 
 .selected-button {
   background-color: #34A0DC;
 }
 
-
 // FLIPBOOK 
-
-
-#flipbook{
-	-webkit-transition:margin-left 0.2s;
-	-moz-transition:margin-left 0.2s;
-	-ms-transition:margin-left 0.2s;
-	-o-transition:margin-left 0.2s;
-	transition:margin-left 0.2s;
-	margin-left: 3%;
-	margin-top: 3%;
-	white-space: normal;
+#flipbook {
+  -webkit-transition: margin-left 0.2s;
+  -moz-transition: margin-left 0.2s;
+  -ms-transition: margin-left 0.2s;
+  -o-transition: margin-left 0.2s;
+  transition: margin-left 0.2s;
+  margin-left: 3%;
+  margin-top: 3%;
+  white-space: normal;
 }
 
-#flipbook .page{
-	background-color: #717070;
-	font-size:1em;
+#flipbook .page {
+  background-color: #717070;
+  font-size: 1em;
 }
 
-#flipbook .page-wrapper{
-	-webkit-perspective:2000px;
-	-moz-perspective:2000px;
-	-ms-perspective:2000px;
-	-o-perspective:2000px;
-	perspective:2000px;
+#flipbook .page-wrapper {
+  -webkit-perspective: 2000px;
+  -moz-perspective: 2000px;
+  -ms-perspective: 2000px;
+  -o-perspective: 2000px;
+  perspective: 2000px;
 }
 
-#flipbook .hard{
-	color:#333;
-	-webkit-box-shadow:inset 0 0 5px #666;
-	-moz-box-shadow:inset 0 0 5px #666;
-	-o-box-shadow:inset 0 0 5px #666;
-	-ms-box-shadow:inset 0 0 5px #666;
-	box-shadow:inset 0 0 5px #666;
-	font-weight:bold;
-	padding: 0px;
+#flipbook .odd {
+  background: -webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
+  background-image: -webkit-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image: -moz-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image: -ms-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image: -o-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image: linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  -webkit-box-shadow: inset 0 0 5px #666;
+  -moz-box-shadow: inset 0 0 5px #666;
+  -o-box-shadow: inset 0 0 5px #666;
+  -ms-box-shadow: inset 0 0 5px #666;
+  box-shadow: inset 0 0 5px #666;
 }
 
-#flipbook .odd{
-	background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #F5F5F5), color-stop(1, #DADADA));
-	background-image:-webkit-linear-gradient(right, #F5F5F5 95%, #C4C4C4 100%);
-	background-image:-moz-linear-gradient(right, #F5F5F5 95%, #C4C4C4 100%);
-	background-image:-ms-linear-gradient(right, #F5F5F5 95%, #C4C4C4 100%);
-	background-image:-o-linear-gradient(right, #F5F5F5 95%, #C4C4C4 100%);
-	background-image:linear-gradient(right, #F5F5F5 95%, #C4C4C4 100%);
-	-webkit-box-shadow:inset 0 0 5px #666;
-	-moz-box-shadow:inset 0 0 5px #666;
-	-o-box-shadow:inset 0 0 5px #666;
-	-ms-box-shadow:inset 0 0 5px #666;
-	box-shadow:inset 0 0 5px #666;
+#flipbook .even {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
+  background-image: -webkit-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image: -moz-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image: -ms-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image: -o-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image: linear-gradient(left, #fff 95%, #dadada 100%);
+  -webkit-box-shadow: inset 0 0 5px #666;
+  -moz-box-shadow: inset 0 0 5px #666;
+  -o-box-shadow: inset 0 0 5px #666;
+  -ms-box-shadow: inset 0 0 5px #666;
+  box-shadow: inset 0 0 5px #666;
 }
 
-#flipbook .even .gradient{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-
-	background:-webkit-gradient(linear, left top, right top, color-stop(0.95, rgba(0,0,0,0)), color-stop(1, rgba(0,0,0,0.2)));
-	background-image:-webkit-linear-gradient(left, rgba(0,0,0,0) 95%, rgba(0,0,0,0.2) 100%);
-	background-image:-moz-linear-gradient(left, rgba(0,0,0,0) 95%, rgba(0,0,0,0.2) 100%);
-	background-image:-ms-linear-gradient(left, rgba(0,0,0,0) 95%, rgba(0,0,0,0.2) 100%);
-	background-image:-o-linear-gradient(left, rgba(0,0,0,0) 95%, rgba(0,0,0,0.2) 100%);
-	background-image:linear-gradient(left, rgba(0,0,0,0) 95%, rgba(0,0,0,0.2) 100%);
+.show-bar #flipbook .shadow {
+  -webkit-transition: -webkit-box-shadow 0.5s;
+  -moz-transition: -moz-box-shadow 0.5s;
+  -o-transition: -webkit-box-shadow 0.5s;
+  -ms-transition: -ms-box-shadow 0.5s;
+  -webkit-box-shadow: 0 0 10px #999;
+  -moz-box-shadow: 0 0 10px #999;
+  -ms-box-shadow: 0 0 10px #999;
+  -o-box-shadow: 0 0 10px #999;
+  box-shadow: 0 0 10px #999;
 }
 
-#flipbook .odd .gradient{
-	position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
-
-	background:-webkit-gradient(linear, right top, left top, color-stop(0.95, rgba(0,0,0,0)), color-stop(1, rgba(0,0,0,0.15)));
-	background-image:-webkit-linear-gradient(right, rgba(0,0,0,0) 95%, rgba(0,0,0,0.15) 100%);
-	background-image:-moz-linear-gradient(right, rgba(0,0,0,0) 95%, rgba(0,0,0,0.15) 100%);
-	background-image:-ms-linear-gradient(right, rgba(0,0,0,0) 95%, rgba(0,0,0,0.15) 100%);
-	background-image:-o-linear-gradient(right, rgba(0,0,0,0) 95%, rgba(0,0,0,0.15) 100%);
-	background-image:linear-gradient(right, rgba(0,0,0,0) 95%, rgba(0,0,0,0.15) 100%);
+#flipbook .p1 .side {
+  width: 5px;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  left: 475px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #bbb), color-stop(0.5, #ddd), color-stop(1, #bbb));
+  background-image: -webkit-linear-gradient(left, #bbb, #ddd, #bbb);
+  background-image: -moz-linear-gradient(left, #bbb, #ddd, #bbb);
+  background-image: -ms-linear-gradient(left, #bbb, #ddd, #bbb);
+  background-image: -o-linear-gradient(left, #bbb, #ddd, #bbb);
+  background-image: linear-gradient(left, #bbb, #ddd, #bbb);
+  -webkit-transform: rotateY(-90deg);
+  -moz-transform: rotateY(-90deg);
+  -o-transform: rotateY(-90deg);
+  -ms-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+  -webkit-transform-origin: top right;
+  -moz-transform-origin: top right;
+  -o-transform-origin: top right;
+  -ms-transform-origin: top right;
+  transform-origin: top right;
+  z-index: 100000;
 }
 
-
-#flipbook .even{
-	background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
-	background-image:-webkit-linear-gradient(left, #fff 95%, #dadada 100%);
-	background-image:-moz-linear-gradient(left, #fff 95%, #dadada 100%);
-	background-image:-ms-linear-gradient(left, #fff 95%, #dadada 100%);
-	background-image:-o-linear-gradient(left, #fff 95%, #dadada 100%);
-	background-image:linear-gradient(left, #fff 95%, #dadada 100%);
-	-webkit-box-shadow:inset 0 0 5px #666;
-	-moz-box-shadow:inset 0 0 5px #666;
-	-o-box-shadow:inset 0 0 5px #666;
-	-ms-box-shadow:inset 0 0 5px #666;
-	box-shadow:inset 0 0 5px #666;
+#flipbook .front-side .depth {
+  left: 25px;
+  background-position: 0 0;
 }
 
-#flipbook.shadow, #flipbook.shadow{
-  -webkit-box-shadow: 0 4px 10px #666;
-  -moz-box-shadow: 0 4px 10px #666;
-  -ms-box-shadow: 0 4px 10px #666;
-  -o-box-shadow: 0 4px 10px #666;
-  box-shadow: 0 4px 10px #666;
+#flipbook .back-side .depth {
+  right: 4px;
+  background-position: right 0;
 }
 
-.show-bar #flipbook .shadow{
-	-webkit-transition: -webkit-box-shadow 0.5s;
-	-moz-transition: -moz-box-shadow 0.5s;
-	-o-transition: -webkit-box-shadow 0.5s;
-	-ms-transition: -ms-box-shadow 0.5s;
-
-	-webkit-box-shadow:0 0 10px #999;
-	-moz-box-shadow:0 0 10px #999;
-	-ms-box-shadow:0 0 10px #999;
-	-o-box-shadow:0 0 10px #999;
-	box-shadow:0 0 10px #999;
-}
-
-
-#flipbook .p1 .side{
-	width:5px;
-	height:600px;
-	position:absolute;
-	top:0;
-	left:475px;
-
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #bbb), color-stop(0.5,  #ddd), color-stop(1,  #bbb));
-	background-image:-webkit-linear-gradient(left, #bbb, #ddd, #bbb);
-	background-image:-moz-linear-gradient(left, #bbb, #ddd, #bbb);
-	background-image:-ms-linear-gradient(left, #bbb, #ddd, #bbb);
-	background-image:-o-linear-gradient(left, #bbb, #ddd, #bbb);
-	background-image:linear-gradient(left, #bbb, #ddd, #bbb);
-
-	-webkit-transform:rotateY(-90deg);
-	-moz-transform:rotateY(-90deg);
-	-o-transform:rotateY(-90deg);
-	-ms-transform:rotateY(-90deg);
-	transform:rotateY(-90deg);
-
-	-webkit-transform-origin:top right;
-	-moz-transform-origin:top right;
-	-o-transform-origin:top right;
-	-ms-transform-origin:top right;
-	transform-origin:top right;
-	
-	z-index:100000;
-}
-
-#flipbook .depth{
-	background-image: url("pages-depth.png");
-	position: absolute;
-	top: 15px;
-	width: 16px;
-	background-size: cover;
-}
-
-
-#flipbook .front-side .depth{
-	left: 25px;
-	background-position:0 0;
-}
-
-#flipbook .back-side .depth{
-	right:4px;
-	background-position:right 0;
-}
-
-
-#flipbook .page-number{
-	color:#999;
-	width:100%;
-	bottom:25px;
-	position:absolute;
-	display:block;
-	text-align: center;
-	line-height:30px;
-	font-size:11px;
+#flipbook .page-number {
+  color: #999;
+  width: 100%;
+  bottom: 25px;
+  position: absolute;
+  display: block;
+  text-align: center;
+  line-height: 30px;
+  font-size: 11px;
 }
 
 .flip-previous-page {
-      position: absolute;
-    top: 50%;
-    z-index: 100;
-    max-width: 100%;
-    height: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    transition: opacity .2s ease;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+  max-width: 100%;
+  height: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  transition: opacity .2s ease;
+  cursor: pointer;
 }
