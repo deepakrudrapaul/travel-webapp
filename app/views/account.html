@@ -8,21 +8,67 @@
       src="images/profile.jpg">
 
     <div style="background-color:#FFF; padding:2% 0 2% 25%;">
-      <h4>John Smith</h4>
-      <p>
-        <span style="padding:0 2% 0 0;">99 years old</span> •
-        <span style="padding:0 2%;"> India </span> •
-        <span style="padding:0 2%;">Male</span>
-      </p>
-      <p>This is the bio text that users can customize by editing thier profile. As an admin you can set a maximum character
-        limit for the bio. </p>
+      <h4>John Smith <span ng-click="showModal()" class="pull-right"><i class="i-rounded icon-edit"></i></h4> 
+      </span>
+        <p>
+          <span style="padding:0 2% 0 0;">99 years old</span> •
+          <span style="padding:0 2%;"> India </span> •
+          <span style="padding:0 2%;">Male</span>
+        </p>
+        <p>This is the bio text that users can customize by editing thier profile. As an admin you can set a maximum character
+          limit for the bio. </p>
 
-      <div>
-        <h4>Favourite Travel Activities</h4>
-        <div ng-style="{{}}" ng-repeat="item in favouriteActivities" class="chip">
-          {{item.name}}
+        <div>
+          <h4>Favourite Travel Activities</h4>
+          <div ng-style="{{}}" ng-repeat="item in favouriteActivities" class="chip">
+            {{item.name}}
+          </div>
         </div>
-      </div>
     </div>
   </div>
 </section>
+
+<div class="modal fade" id="profileEditModal" tabindex="-1" role="dialog" aria-labelledby="profileEditModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="profileEditModallabel">Edit Profile</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row" style="padding:0 2%;">
+          <form name="profileForm" class="nobottommargin" ng-submit="onFormSubmit(profileForm)">
+            <div class="col-sm-6 toppadding">
+              <input ng-model="profileObj.name" class="form-control" type="text" value="{{name}}" placeholder="Name" />
+            </div>
+
+            <div class="col-sm-6 toppadding">
+              <input ng-model="profileObj.age" class="form-control" type="text" value="{{age}}" placeholder="Age" />
+            </div>
+
+            <div class="col-sm-6 toppadding">
+              <input ng-model="profileObj.place" class="form-control" type="text" value="{{place}}" placeholder="Place" />
+            </div>
+
+            <div class="col-sm-6 toppadding">
+              <input ng-model="profileObj.gender" class="form-control" type="text" value="{{gender}}" placeholder="Gender" />
+            </div>
+
+            <div class="col-sm-12 toppadding">
+
+              <textarea ng-model="profileObj.bio" style="max-width:100%; max-height:200px;" class="form-control" placeholder="Bio"></textarea>
+            </div>
+
+            <div style="text-transform:capitalize; padding-top:20px;" class="col-sm-6">
+              <button type="submit" style="margin:0px !important; width:100%; height:70px;" class="button button-blue ">Save</button>
+            </div>
+          </form>
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

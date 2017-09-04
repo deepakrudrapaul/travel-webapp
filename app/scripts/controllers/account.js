@@ -25,7 +25,11 @@ angular.module('wanderwagon-webapp')
     ];
 
     
+    $scope.showModal = function() {
+      angular.element(document.querySelectorAll('#profileEditModal')).modal('show');
+      
+    };
 
-    
+  
    
   });
