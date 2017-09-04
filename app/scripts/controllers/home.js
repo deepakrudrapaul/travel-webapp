@@ -234,6 +234,7 @@ angular.module('wanderwagon-webapp')
    
     $scope.properties = {
       // autoHeight:true,
+
       animateIn: 'fadeIn',
       lazyLoad: true,
       items: 4,
