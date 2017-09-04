@@ -14,25 +14,27 @@ angular.module('wanderwagon-webapp')
       link: function postLink(scope, element, attrs) {
         $('#flipbook').turn({
           width: '100%',
-          height: '450px',
+          height: '550px',
           pages: 8,
           autoCenter: true,
-          duration: 1000
+          duration: 1000,
+          gradients: true,
+          elevation: 50,
         });
 
 
         $('#flipbook').turn('peel', 'br');
 
 
-        $("#prev").click(function (e) {
-          e.preventDefault();
-          $('#flipbook').turn("previous");
-        });
+        // $("#prev").click(function (e) {
+        //   e.preventDefault();
+        //   $('#flipbook').turn("previous");
+        // });
 
-        $("#next").click(function (e) {
-          e.preventDefault();
-           $('#flipbook').turn("next");
-        });
+        // $("#next").click(function (e) {
+        //   e.preventDefault();
+        //    $('#flipbook').turn("next");
+        // });
       }
     };
   });

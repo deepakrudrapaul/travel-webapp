@@ -44237,6 +44237,28 @@ label.checkbox {
 }
 
 /* line 30847, ../../app/styles/main.scss */
+#flipbook .even .gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0.95, transparent), color-stop(1, rgba(0, 0, 0, 0.2)));
+  background-image: linear-gradient(left, transparent 95%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+/* line 30862, ../../app/styles/main.scss */
+#flipbook .odd .gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, right top, left top, color-stop(0.95, transparent), color-stop(1, rgba(0, 0, 0, 0.15)));
+  background-image: linear-gradient(right, transparent 95%, rgba(0, 0, 0, 0.15) 100%);
+}
+
+/* line 30878, ../../app/styles/main.scss */
 #flipbook .even {
   background: -webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
   background-image: linear-gradient(left, #fff 95%, #dadada 100%);
@@ -44245,14 +44267,14 @@ label.checkbox {
   box-shadow: inset 0 0 5px #666;
 }
 
-/* line 30861, ../../app/styles/main.scss */
+/* line 30892, ../../app/styles/main.scss */
 #flipbook.shadow, #flipbook.shadow {
   -ms-box-shadow: 0 4px 10px #666;
   -o-box-shadow: 0 4px 10px #666;
   box-shadow: 0 4px 10px #666;
 }
 
-/* line 30869, ../../app/styles/main.scss */
+/* line 30900, ../../app/styles/main.scss */
 .show-bar #flipbook .shadow {
   -webkit-transition: -webkit-box-shadow 0.5s;
   -moz-transition: -moz-box-shadow 0.5s;
@@ -44263,7 +44285,7 @@ label.checkbox {
   box-shadow: 0 0 10px #999;
 }
 
-/* line 30883, ../../app/styles/main.scss */
+/* line 30914, ../../app/styles/main.scss */
 #flipbook .p1 .side {
   width: 5px;
   height: 600px;
@@ -44277,7 +44299,7 @@ label.checkbox {
   z-index: 100000;
 }
 
-/* line 30912, ../../app/styles/main.scss */
+/* line 30943, ../../app/styles/main.scss */
 #flipbook .depth {
   background-image: url("pages-depth.png");
   position: absolute;
@@ -44286,19 +44308,19 @@ label.checkbox {
   background-size: cover;
 }
 
-/* line 30921, ../../app/styles/main.scss */
+/* line 30952, ../../app/styles/main.scss */
 #flipbook .front-side .depth {
   left: 25px;
   background-position: 0 0;
 }
 
-/* line 30926, ../../app/styles/main.scss */
+/* line 30957, ../../app/styles/main.scss */
 #flipbook .back-side .depth {
   right: 4px;
   background-position: right 0;
 }
 
-/* line 30932, ../../app/styles/main.scss */
+/* line 30963, ../../app/styles/main.scss */
 #flipbook .page-number {
   color: #999;
   width: 100%;
@@ -44310,7 +44332,7 @@ label.checkbox {
   font-size: 11px;
 }
 
-/* line 30943, ../../app/styles/main.scss */
+/* line 30974, ../../app/styles/main.scss */
 .flip-previous-page {
   position: absolute;
   top: 50%;
