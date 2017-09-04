@@ -14,7 +14,7 @@ angular.module('wanderwagon-webapp')
       link: function postLink(scope, element, attrs) {
         $('#flipbook').turn({
           width: '100%',
-          height: '550px',
+          height: '600px',
           pages: 8,
           autoCenter: true,
           duration: 1000,
