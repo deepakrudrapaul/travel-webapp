@@ -29,7 +29,6 @@
 
 
 </div>
-
 </div>
 
 <section id="content">
@@ -38,11 +37,9 @@
 
     <div class="container clearfix">
 
-      <!-- Post Content
-					============================================= -->
-      <div class="postcontent nobottommargin clearfix">
+      
 
-        <div class="single-post nobottommargin">
+        <div style="width:70%;" class="single-post nobottommargin center-block">
 
           <!-- Single Post
 						============================================= -->
@@ -107,7 +104,7 @@
                 
 
                 <div>
-                  <img ng-src="{{point.imageUrl}}" alt="Blog Single" width="auto" height="auto">
+                  <img ng-src="{{point.imageUrl}}" alt="Blog Single" width="100%;">
                 </div>
               </div>
 
@@ -230,289 +227,8 @@
 
 
         </div>
-      </div>
-      <!-- .postcontent end -->
+    
 
-      <!-- Sidebar
-					============================================= -->
-      <div class="sidebar nobottommargin col_last clearfix">
-        <div class="sidebar-widgets-wrap">
-
-          <!--<div class="widget widget-twitter-feed clearfix">
-
-								<h4>Twitter Feed</h4>
-								<ul class="iconlist twitter-feed" data-username="envato" data-count="2">
-									<li></li>
-								</ul>
-
-								<a href="#" class="btn btn-default btn-sm fright">Follow Us on Twitter</a>
-
-							</div>-->
-
-          <div class="widget clearfix">
-
-            <div class="tabs nobottommargin clearfix" id="sidebar-tabs">
-
-              <uib-tabset active="activeJustified" justified="true">
-                <uib-tab index="0" heading="Similar Posts">
-                  <div class="tab-content clearfix">
-                    <div id="popular-post-list-sidebar">
-
-                      <div ng-repeat="post in similarPosts" class="spost clearfix">
-                        <div class="entry-image">
-                          <a href="#" class="nobg"><img class="img-circle" ng-src="{{post.authorImage}}" alt=""></a>
-                        </div>
-                        <div class="entry-c">
-                          <div class="entry-title">
-                            <h4><a href="#">{{post.title}}</a></h4>
-                          </div>
-                          <ul class="entry-meta">
-                            <li><i class="icon-comments-alt"></i> {{post.comments}} Comments</li>
-                          </ul>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </uib-tab>
-              </uib-tabset>
-
-            </div>
-
-          </div>
-
-          <!--<div class="widget clearfix">
-
-            <h4>Portfolio Carousel</h4>
-            <div id="oc-portfolio-sidebar" class="owl-carousel carousel-widget" data-items="1" data-margin="10" data-loop="true" data-nav="false"
-              data-autoplay="5000">
-
-              <div class="oc-item">
-                <div class="iportfolio">
-                  <div class="portfolio-image">
-                    <a href="#">
-                      <img src="images/portfolio/4/3.jpg" alt="Mac Sunglasses">
-                    </a>
-                    <div class="portfolio-overlay">
-                      <a href="http://vimeo.com/89396394" class="center-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-                    </div>
-                  </div>
-                  <div class="portfolio-desc center nobottompadding">
-                    <h3><a href="portfolio-single-video.html">Mac Sunglasses</a></h3>
-                    <span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="oc-item">
-                <div class="iportfolio">
-                  <div class="portfolio-image">
-                    <a href="portfolio-single.html">
-                      <img src="images/portfolio/4/1.jpg" alt="Open Imagination">
-                    </a>
-                    <div class="portfolio-overlay">
-                      <a href="images/blog/full/1.jpg" class="center-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-                    </div>
-                  </div>
-                  <div class="portfolio-desc center nobottompadding">
-                    <h3><a href="portfolio-single.html">Open Imagination</a></h3>
-                    <span><a href="#">Media</a>, <a href="#">Icons</a></span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>-->
-
-          <!--<div class="widget clearfix">
-
-            <h4>Tag Cloud</h4>
-            <div class="tagcloud">
-              <a href="#">general</a>
-              <a href="#">videos</a>
-              <a href="#">music</a>
-              <a href="#">media</a>
-              <a href="#">photography</a>
-              <a href="#">parallax</a>
-              <a href="#">ecommerce</a>
-              <a href="#">terms</a>
-              <a href="#">coupons</a>
-              <a href="#">modern</a>
-            </div>
-
-          </div>-->
-
-        </div>
-
-      </div>
-      <!-- .sidebar end -->
-
-
-    </div>
-  </div>
-  <!--
-  <div class="container">
-    <div class="fancy-title title-center title-dotted-border topmargin">
-      <h3>Looking for similar experiences ?</h3>
-    </div>
-
-    <div class="entry clearfix">
-      <div class="row">
-        <div id="carousel-example-generic" class="carousel slide hidden-xs" data-ride="carousel">
-          <a style="    background-color: rgb(255, 255, 255);
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0px;
-    z-index: 20;
-    left: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="prev">
-            <i style="margin:7px 0 0 0px; font-size:15px; font-weight:600;" class="icon-angle-left"></i>
-          </a>
-          <a style="background-color: rgb(255, 255, 255);
-    border: 0px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: block;
-    font-size: 9px;
-    line-height: 1;
-    transition: color 400ms, box-shadow 400ms;
-    height: 4.44444em;
-    width: 4.44444em;
-    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: auto;
-    margin-top: auto;
-    top: 0;
-    z-index: 20;
-    right: -2.22222em;" class="btn" href="#carousel-example-generic" data-slide="next">
-            <i style="margin:7px 0 0 0; font-size:15px; font-weight:600;" class="icon-angle-right"></i></a>-->
-
-  <!-- Wrapper for slides <-->
-  <!--
-          <div class="carousel-inner">
-            <div class="item active" style="padding:2% 0 2% 2%">
-              <div class="row">
-
-                <div class="col-sm-3 nopadding">
-                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                    <div class="paul-slide-new">
-                      <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
-                    </div>
-
-                    <span class="paul-slider-caption">
-                    {{images[0].text}}</span>
-
-                  </div>
-                </div>
-
-                <div class="col-sm-3 nopadding">
-                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                    <div class="paul-slide-new">
-                      <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-bg.jpg" class="img-responsive" alt="a" />
-                    </div>
-
-                    <span class="paul-slider-caption">
-                    {{images[1].text}}</span>
-
-                  </div>
-                </div>
-
-                <div class="col-sm-3 nopadding">
-                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                    <div class="paul-slide-new">
-                      <img style="object-fit:cover; width:100%; height:100%;" src="images/manipur.jpg" class="img-responsive" alt="a" />
-                    </div>
-
-                    <span class="paul-slider-caption">
-                    {{images[2].text}}</span>
-
-                  </div>
-                </div>
-
-                <div class="col-sm-3 nopadding">
-                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                    <div class="paul-slide-new">
-                      <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-detail-bg.jpg" class="img-responsive" alt="a"
-                      />
-                    </div>
-
-                    <span class="paul-slider-caption">
-                    {{images[3].text}}</span>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item" style="padding:2% 0% 2% 0%">
-              <div class="row">
-
-                <div class="col-sm-3 nopadding">
-                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                    <div class="paul-slide-new">
-                      <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
-                    </div>
-
-                    <span class="paul-slider-caption">
-                    {{images[4].text}}</span>
-
-                  </div>
-                </div>
-
-                <div class="col-sm-3 nopadding">
-                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                    <div class="paul-slide-new">
-                      <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
-                    </div>
-
-                    <span class="paul-slider-caption">
-                    {{images[5].text}}</span>
-
-                  </div>
-                </div>
-
-                <div class="col-sm-3 nopadding">
-                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                    <div class="paul-slide-new">
-                      <img style="object-fit:cover; width:100%; height:100%;" src="images/home-bg.jpg" class="img-responsive" alt="a" />
-                    </div>
-
-                    <span class="paul-slider-caption">
-                    {{images[5].text}}</span>
-
-                  </div>
-                </div>
-
-                <div class="col-sm-3 nopadding">
-                  <div ng-click="heading1.isOpen = !heading1.isOpen" style="cursor:pointer;">
-                    <div class="paul-slide-new">
-                      <img style="object-fit:cover; width:100%; height:100%;" src="images/destination-bg.jpg" class="img-responsive" alt="a" />
-                    </div>
-
-                    <span class="paul-slider-caption">
-                    {{images[0].text}}</span>
-
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>-->
   <div class="clear"></div>
 </section>
 <!-- #content end -->
