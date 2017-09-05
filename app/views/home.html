@@ -32,8 +32,8 @@
 
   <ng-owl-carousel class="owl-theme" owl-items="sliderData" owl-properties="properties" owl-ready="ready($api)">
 
-    <div ng-click="openOrCloseAccordion()" class="paul-slide" style="padding:2% 0 2% 0%" data-ng-repeat="item in sliderData">
-      <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
+    <div  class="paul-slide" style="padding:2% 0 2% 0%" data-ng-repeat="item in sliderData">
+      <img ng-click="openOrCloseAccordion(); getTravelPlans(item.id)" style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
     </div>
 
   </ng-owl-carousel>
@@ -44,12 +44,11 @@
     <uib-accordion>
       <uib-accordion-group is-open="openAccordion">
         <div ng-click="closeAccordion()" style="cursor:pointer; font-size:3rem; margin-left:95%;" class="glyphicon glyphicon-remove-circle"></div>
-        <ng-owl-carousel class="owl-theme" owl-items="inspirationData" owl-properties="nestedCarouselproperties" owl-ready="ready($api)">
-          
-              <div ui-sref="travel-plan.detail({id: inspiration.id})" class="paul-slide-new" style="padding:2% 0 2% 0" data-ng-repeat="item in inspirationData">
-                <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
+        <ng-owl-carousel class="owl-theme" owl-items="travelPlanData" owl-properties="nestedCarouselproperties" owl-ready="ready($api)">
+              <div  class="paul-slide-new" style="padding:2% 0 2% 0" data-ng-repeat="item in travelPlanData">
+                <img ui-sref="travel-plan.detail({id: item.id})" style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
                 <span class="paul-slider-caption">
-                  {{item.name}}</span>
+                  {{item.title}}</span>
               </div>
           
             </ng-owl-carousel>

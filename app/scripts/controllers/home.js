@@ -25,39 +25,26 @@ angular.module('wanderwagon-webapp')
       });
     };
 
-    $scope.getTravelInspirationDetail = function (id) {
-      remoteSvc.getTravelInspirationDetail(id).then(function (response) {
-        console.log(response);
-        $scope.inspirations = response;
-      });
+    $scope.travelPlanData = [];
+    $scope.getTravelPlans = function (id) {
+      remoteSvc.getTravelPlans(id)
+        .success(function (data){
+          $scope.travelPlanData = data.response;
+          console.log($scope.travelPlanData);
+        })
+        .error(function(error){
+
+        })
     };
+
+   
 
     $scope.getTravelInspirations();
     $scope.getBlogs();
 
   
 
-    $scope.inspirationData = [
-      {
-        "id":1,
-        "name":"Dharamshala",
-        "imageUrl":"images/himachal.jpg",
-        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
-      },
-      {
-        "id":2,
-        "name":"Tawang",
-        "imageUrl":"images/arunachal.jpg",
-        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
-      },
-      {
-        "id":3,
-        "name":"Shillong",
-        "imageUrl":"images/meghalaya.jpg",
-        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
-      }
 
-    ];
 
     $scope.openAccordion = false;
     $scope.openOrCloseAccordion = function () {
@@ -69,6 +56,7 @@ angular.module('wanderwagon-webapp')
     };
 
     $scope.closeAccordion = function () {
+      $scope.travelPlanData = [];
       $scope.openAccordion = false;
       var someElement = angular.element(document.getElementById('travel'));
       $document.scrollToElement(someElement, 30, 800);

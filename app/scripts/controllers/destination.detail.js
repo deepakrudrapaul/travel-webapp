@@ -75,7 +75,6 @@ angular.module('wanderwagon-webapp')
       }
     });
 
-
     var owlAPi;
     $scope.ready = function ($api) {
       owlAPi = $api;

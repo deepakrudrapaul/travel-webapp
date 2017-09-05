@@ -8,7 +8,66 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('TravelPlanDetailCtrl', function ($scope, $document) {
+  .controller('TravelPlanDetailCtrl', function ($scope, $document, $stateParams, remoteSvc) {
+
+    var id = $stateParams.id; 
+
+
+    var getTravelInspirationDetail = function () {
+      remoteSvc.getTravelInspirationDetail(id).then(function (response) {
+        console.log(response.response);
+        $scope.planDetail = response.response;
+      });
+    };
+    getTravelInspirationDetail();
+
+
+    var owlAPi;
+    $scope.ready = function ($api) {
+      owlAPi = $api;
+    };
+
+
+    $scope.sliderProperties = {
+      // autoHeight:true,
+      animateIn: 'fadeIn',
+      lazyLoad: true,
+      items: 4,
+      margin: 0,
+      mouseDrag: true,
+      touchDrag: true,
+      dots: false,
+      nav: true,
+      responsiveClass: true,
+      navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1,
+          nav: true
+        },
+        600: {
+          items: 3,
+          nav: true
+        },
+        1000: {
+          items: 4,
+          nav: true
+        }
+      }
+    };
+    $scope.accordionProperties = {
+      // autoHeight:true,
+      animateIn: 'fadeIn',
+      lazyLoad: true,
+      items: 1,
+      margin: 10,
+      mouseDrag: true,
+      touchDrag: true,
+      dots: false,
+      nav: true,
+      responsiveClass: true,
+      navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
+    };
 
     $scope.openAccordion = false;
     $scope.openOrCloseAccordion = function () {
@@ -32,47 +91,6 @@ angular.module('wanderwagon-webapp')
       } 
     });
 
-
-
-      $scope.inspirationData = [
-      {
-        "id":1,
-        "name":"Dharamshala",
-        "imageUrl":"images/himachal.jpg",
-        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
-      },
-      {
-        "id":2,
-        "name":"Nainital",
-        "imageUrl":"images/himachal.jpg",
-        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
-      },
-      {
-        "id":3,
-        "name":"Kasol",
-        "imageUrl":"images/himachal.jpg",
-        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
-      },
-      {
-        "id":4,
-        "name":"Manali",
-        "imageUrl":"images/himachal.jpg",
-        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
-      },
-      {
-        "id":5,
-        "name":"Dzuko Valley",
-        "imageUrl":"images/himachal.jpg",
-        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
-      },
-      {
-        "id":6, 
-        "name":"Dharamshala",
-        "imageUrl":"images/himachal.jpg",
-        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
-      },
-
-    ];
 
 
     $scope.tips = [

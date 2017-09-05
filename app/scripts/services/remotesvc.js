@@ -111,10 +111,18 @@ angular.module('wanderwagon-webapp')
       },
 
 
+      getTravelPlans : function (id) {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + '/travelplans/travelInspiration/' + id
+        })
+      },
+
+
       getTravelInspirationDetail: function(id) {
         return $http({
           method: 'GET',
-          url: remoteAddr + '/inspiration/' + id
+          url: remoteAddr + '/travelplans/' + id
         }).then(function (data, status) {
           return data.data;
         }, function (error, status) {
