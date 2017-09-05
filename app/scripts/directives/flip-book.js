@@ -19,6 +19,7 @@ angular.module('wanderwagon-webapp')
           duration: 1000,
           gradients: true,
           elevation: 100,
+          turnCorners: "br, bl"
         });
 
 
