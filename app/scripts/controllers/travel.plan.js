@@ -17,6 +17,18 @@ angular.module('wanderwagon-webapp')
       });
     };
 
+    $scope.travelPlanData = [];
+    $scope.getTravelPlans = function (id) {
+      remoteSvc.getTravelPlans(id)
+        .success(function (data){
+          $scope.travelPlanData = data.response;
+          console.log($scope.travelPlanData);
+        })
+        .error(function(error){
+
+        })
+    };
+
     $scope.getBlogs = function () {
       remoteSvc.getHomeBlogs().then(function (response) {
         console.log(response);
@@ -27,28 +39,6 @@ angular.module('wanderwagon-webapp')
     $scope.getTravelInspirations();
     $scope.getBlogs();
 
-
-    $scope.inspirationData = [
-      {
-        "id":1,
-        "name":"Dharamshala",
-        "imageUrl":"images/himachal.jpg",
-        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
-      },
-      {
-        "id":2,
-        "name":"Tawang",
-        "imageUrl":"images/arunachal.jpg",
-        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
-      },
-      {
-        "id":3,
-        "name":"Shillong",
-        "imageUrl":"images/meghalaya.jpg",
-        "description":"Dharamshala is a city in the Indian state of Himachal Pradesh. Surrounded by cedar forests on the edge of the Himalayas, this hillside city is home to the Dalai Lama and the Tibetan government-in-exile. The Thekchen Chöling Temple Complex is a spiritual center for Tibetan Buddhism, while the Library of Tibetan Works and Archives houses thousands of precious manuscripts."
-      }
-
-    ];
     
 
     $scope.openAccordion = false;

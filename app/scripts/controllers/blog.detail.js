@@ -76,9 +76,12 @@ angular.module('wanderwagon-webapp')
         })
     };
 
+
     $scope.commentObj = {};
     $scope.postComment = function (blogId) {
       $scope.commentObj.blodId = blogId;
+
+      console.log($scope.commentObj);
 
       remoteSvc.postComment($scope.commentObj)
         .success(function (data){
@@ -100,36 +103,40 @@ angular.module('wanderwagon-webapp')
         }
     };  
 
+    $rootScope.$on('social-login', function (event, data) {
+      $scope.showForm = true;
+    });
 
-    $scope.authenticate = function (provider) {
-      $auth.authenticate(provider)
-        .then(function (response) {
-          if (provider == 'google') {
-            auth.googleLogin(response.access_token)
-              .then(function (data) {
-                 closeLoginModal();
-                 $rootScope.$emit('social-login', 'true');
-                  $scope.showForm = true;                    
-              })
-              .catch(function (error) {
-                $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
-              });
-          } else {
-            auth.facebookLogin(response.access_token)
-              .then(function (data) {
-                closeLoginModal();
-                 $rootScope.$emit('social-login', 'true'); 
-                  $scope.showForm = true;
-              })
-              .catch(function (error) {
-                $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
-              });
-          }
-        })
-        .catch(function (response) {
-          console.log("Something went Wrong");
-        })
-    };
+
+    // $scope.authenticate = function (provider) {
+    //   $auth.authenticate(provider)
+    //     .then(function (response) {
+    //       if (provider == 'google') {
+    //         auth.googleLogin(response.access_token)
+    //           .then(function (data) {
+    //              closeLoginModal();
+    //              $rootScope.$emit('social-login', 'true');
+    //               $scope.showForm = true;                    
+    //           })
+    //           .catch(function (error) {
+    //             $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
+    //           });
+    //       } else {
+    //         auth.facebookLogin(response.access_token)
+    //           .then(function (data) {
+    //             closeLoginModal();
+    //              $rootScope.$emit('social-login', 'true'); 
+    //               $scope.showForm = true;
+    //           })
+    //           .catch(function (error) {
+    //             $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
+    //           });
+    //       }
+    //     })
+    //     .catch(function (response) {
+    //       console.log("Something went Wrong");
+    //     })
+    // };
 
 
   });

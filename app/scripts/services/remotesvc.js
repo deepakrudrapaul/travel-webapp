@@ -91,8 +91,12 @@ angular.module('wanderwagon-webapp')
 
 
       postComment: function (commentObj) {
+        console.log(auth.getToken());
         return $http({
           method: 'POST',
+          headers: {
+            'auth-token': auth.getToken()
+          },
           data: commentObj,
           url: remoteAddr + '/blogs/comment'
         })
