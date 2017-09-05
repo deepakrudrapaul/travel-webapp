@@ -96,7 +96,6 @@ angular.module('wanderwagon-webapp')
         if (auth.isLoggedIn()) {
            $scope.showForm = true;
         } else {
-           $scope.showForm = false;
            $scope.showLoginModal("Log In", "");
         }
     };  
