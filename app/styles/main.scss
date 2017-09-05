@@ -30043,23 +30043,20 @@ a {
   cursor: pointer;
 }
 
+.cover-page {
+  display:block !important;
+}
+
+.mobile-cover-page {
+  display: none !important;
+}
+
 
 /* ----------------------------------------------------------------
 	Responsive CSS
 -----------------------------------------------------------------*/
 
-@media only screen and (min-device-width: 0px) and (max-device-width: 468px) {
-  .web-footer {
-    display: none;
-  }
-  .mobile-footer {
-    display: block;
-  }
 
-  .paul-slide {
-    height:500px;
-  }
-}
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
 
@@ -30755,12 +30752,32 @@ a {
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 
-@media screen and (max-height: 450px) {
+@media only screen and (min-device-width: 0px) and (max-device-width: 468px) {
+
+  .cover-page {
+    display:none !important;
+  }
+
+  .mobile-cover-page {
+    display: block !important;
+  }
+
   .sidenav {
     padding-top: 15px;
   }
   .sidenav a {
     font-size: 18px;
+  }
+
+  .web-footer {
+    display: none;
+  }
+  .mobile-footer {
+    display: block;
+  }
+
+  .paul-slide {
+    height:500px;
   }
 }
 

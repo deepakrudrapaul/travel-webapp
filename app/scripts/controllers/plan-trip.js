@@ -8,7 +8,7 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('PlanTripCtrl', function ($scope, remoteSvc, auth) {
+  .controller('PlanTripCtrl', function ($scope, remoteSvc, auth, $rootScope) {
 
     $scope.showModal = function (messageType, message) {
       angular.element(document.querySelectorAll('#tripModal')).modal('show');
@@ -16,6 +16,7 @@ angular.module('wanderwagon-webapp')
       $scope.message = message;
     };
 
+    
     $scope.showLoginModal = function (messageType, message) {
       angular.element(document.querySelectorAll('#loginModal')).modal('show');
       $scope.messageType = messageType;
@@ -89,6 +90,9 @@ angular.module('wanderwagon-webapp')
       }
     ];
 
+    $rootScope.testing = function() {
+      
+    }
 
 
     $scope.submitTravelPlanForm = function (form) {

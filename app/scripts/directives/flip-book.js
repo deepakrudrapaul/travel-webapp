@@ -18,8 +18,7 @@ angular.module('wanderwagon-webapp')
           autoCenter: true,
           duration: 1000,
           gradients: true,
-          elevation: 100,
-          turnCorners: "br, bl"
+          elevation: 100
         });
 
 

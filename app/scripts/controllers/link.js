@@ -24,6 +24,7 @@ angular.module('wanderwagon-webapp')
     });
 
 
+
     $rootScope.onLogOut = function () {
       auth.logout();
       $location.path('/home');
