@@ -1,4 +1,4 @@
-<div style="background-color:#34A0DC;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/travelplans/cover.jpg');background-size: cover; height:100vh;">
+<div style="background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/travelplans/cover.jpg');background-size: cover; height:100vh;">
   <div class="container clearfix">
    
   </div>
@@ -12,7 +12,7 @@
 
   <p style="font-size:2rem;" class="text-center">
     Your choices, Your friends, Your travel plans
-    <div class="underline">
+    <div class="underline" style="margin-top:15px;">
     </div>
   </p>
 
@@ -29,7 +29,7 @@
   <div id="accordion" class="clearfix topmargin">
     <uib-accordion>
       <uib-accordion-group is-open="openAccordion">
-        <div ng-click="closeAccordion()" style="cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></div>
+        <div ng-click="closeAccordion()" style="cursor:pointer; font-size:3rem; margin-left:95%;" class="glyphicon glyphicon-remove-circle"></div>
         <ng-owl-carousel class="owl-theme" owl-items="inspirationData" owl-properties="nestedCarouselproperties" owl-ready="ready($api)">
           
               <div ui-sref="travel-plan.detail({id: inspiration.id})" class="paul-slide-new" style="padding:2% 0 2% 0" data-ng-repeat="item in inspirationData">

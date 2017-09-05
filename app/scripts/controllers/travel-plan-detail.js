@@ -76,11 +76,11 @@ angular.module('wanderwagon-webapp')
 
 
     $scope.tips = [
-      {tip : '1. Make sure you carry warm clothes irrespective of the fact that what season you are travelling in. '},
-      {tip : '2. Carry your own trekking gear and equipments and be always prepared.'},
-      {tip : '3. Carry a medical aid kit and your usual medicines for the way.'},
-      {tip : '4. A good pair of trekking shoes is a must.'},
-      {tip : '5. Carry raingear no matter if you are travelling during monsoon season.'}
+      {tip : 'Make sure you carry warm clothes irrespective of the fact that what season you are travelling in. '},
+      {tip : 'Carry your own trekking gear and equipments and be always prepared.'},
+      {tip : 'Carry a medical aid kit and your usual medicines for the way.'},
+      {tip : 'A good pair of trekking shoes is a must.'},
+      {tip : 'Carry raingear no matter if you are travelling during monsoon season.'}
     ];
       
 

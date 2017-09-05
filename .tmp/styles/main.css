@@ -24194,7 +24194,7 @@ body #side-panel.dark #side-panel-trigger-close a {
 
   /* line 12735, ../../app/styles/main.scss */
   .header-bg {
-    background-color: #34A0DC;
+    background-color: #14C1E0;
   }
 
   /* line 12738, ../../app/styles/main.scss */
@@ -43216,7 +43216,7 @@ label.checkbox {
   display: block;
   height: 2px;
   width: 30px;
-  background: #34A0DC;
+  background: #14C1E0;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
@@ -44204,7 +44204,7 @@ a {
 
 /* line 30798, ../../app/styles/main.scss */
 .selected-button {
-  background-color: #34A0DC;
+  background-color: #14C1E0;
 }
 
 /* line 30803, ../../app/styles/main.scss */
@@ -44231,7 +44231,7 @@ a {
 /* line 30827, ../../app/styles/main.scss */
 #flipbook .odd {
   background: -webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
-  background-image: linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image: linear-gradient(to left, #FFF 95%, #C4C4C4 100%);
   -o-box-shadow: inset 0 0 5px #666;
   -ms-box-shadow: inset 0 0 5px #666;
   box-shadow: inset 0 0 5px #666;

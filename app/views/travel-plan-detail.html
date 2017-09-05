@@ -1,22 +1,15 @@
-<div style="background-color:#34A0DC;background-image: url('images/travel.jpg');background-size: cover; height:100vh;">
+<div style="background-color:#36353B;background-image: url('images/travel.jpg');background-size: cover; height:100vh;">
   <div class="container clearfix">
-    <div class="slider-caption-center">
-      <h2 class="text-center primary-title">
-        It's time to travel</h2>
-      <!--<a class="custom-button center-block text-center">
-         <span>Let's Wander</span> <i style="margin-left:10px;" class="icon-angle-right"></i></a>-->
-
-
-    </div>
+    
   </div>
 </div>
-
+#36353B
 <section id="about">
   <div class=" container clearfix">
     <div>
       <h2 style="text-align:center;margin:6rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem;">
         Heading
-        <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+        <div class="underline" style="margin-top:15px;">
         </div>
       </h2>
     </div>
@@ -535,10 +528,10 @@
     </h2>
   </div>
 
- <h4 ng-repeat="item in tips">
-{{item.tip}}
- </h4>
 
+  <ul>
+    <li style="font-size:18px;" ng-repeat="item in tips" type="square">{{item.tip}}</li>
+  </ul>
 
   <div ui-sref="plan-trip" class="center-block " style=" width:50%; cursor:pointer; ">
     <a class="button button-3d button-rounded button-blue loved-it-button"> Plan My Trip!</a>
