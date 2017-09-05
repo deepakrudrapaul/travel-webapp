@@ -24,6 +24,7 @@ angular.module('wanderwagon-webapp')
 
 
         $('#flipbook').turn('peel', 'br');
+        $('#flipbook').turn('peel', 'bl');
 
 
         // $("#prev").click(function (e) {
