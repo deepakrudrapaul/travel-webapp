@@ -42722,7 +42722,7 @@ label.checkbox {
   letter-spacing: -0.45px;
   line-height: 1;
   font-weight: 300;
-  font-size: 3.8rem;
+  font-size: 3rem;
 }
 
 /* line 29586, ../../app/styles/main.scss */
@@ -42762,7 +42762,7 @@ label.checkbox {
 
 /* line 29616, ../../app/styles/main.scss */
 .custom-button {
-  text-transform: uppercase;
+  text-transform: capitalize;
   width: 20%;
   font-size: 18px;
   letter-spacing: 0px;

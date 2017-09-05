@@ -1,15 +1,9 @@
 <div style="background-color:#34A0DC;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/home/homepage.jpg');background-size: cover; height:100vh;">
   <div class="container clearfix">
     <div class="slider-caption-center">
-      <h2 class="text-center primary-title">
-        WITH WANDERWAGON YOU ARE FREE </h2>
-      <h2 class="text-center primary-title-1">
-        {{changingText}}</h2>
-      <!--<p style="font-size:2.5rem; margin-bottom:50px; color:#fff;" class="text-center">
-        "Wanderwagon is the perfect partner to plan that much awaited trip with your buddies"
-      </p>-->
-      <a style="margin-top:18%;" href="#travel" du-smooth-scroll="" du-scrollspy="" duration="800" class="custom-button center-block text-center">
-        <span>Take Me There! </span> <i style="margin-left:10px;" class="icon-angle-right"></i></a>
+    
+      <a style="position:absolute; bottom:2%; right:40%;" href="#travel" du-smooth-scroll="" du-scrollspy="" duration="800" class="custom-button center-block text-center">
+        <span>Take Me There  ! </span> <i style="margin-left:10px;" class="icon-angle-right"></i></a>
     </div>
   </div>
 </div>
@@ -40,7 +34,7 @@
   <div id="accordion" class="clearfix topmargin">
     <uib-accordion>
       <uib-accordion-group is-open="openAccordion">
-        <div ng-click="closeAccordion()" style="cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></div>
+        <div ng-click="closeAccordion()" style="cursor:pointer; font-size:3rem; margin-left:95%;" class="glyphicon glyphicon-remove-circle"></div>
         <ng-owl-carousel class="owl-theme" owl-items="inspirationData" owl-properties="nestedCarouselproperties" owl-ready="ready($api)">
           
               <div ui-sref="travel-plan.detail({id: inspiration.id})" class="paul-slide-new" style="padding:2% 0 2% 0" data-ng-repeat="item in inspirationData">
@@ -60,69 +54,78 @@
 
 
 <section id="articles" class="custom-padding">
-
-  <div class="topmargin">
-    <h2 ui-sref="blog.list" style="cursor:pointer;" class="paul-title">
-      The Blog
-    </h2>
-
-    <p style="font-size:2rem;" class="text-center">
-      Live the wanderlust through words
-      <div class="underline">
-      </div>
-    </p>
-  </div>
-
-  <div style="overflow:hidden; margin-bottom:-5%;">
-
-    <div ui-sref="blog.list" class="image blog-image-left">
-
-      <img ng-src="{{blog[0].imageUrl}}" alt="{{blog[0].title}}">
-    </div>
-
-
-    <div class="text-center blog-content-left">
-      <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
-        {{blog[0].title}}</h3>
-
-
-      <div class="entry-content">
-        <p>{{blog[0].description}}...
-        </p>
-        <div class="feature-info">
-          <span class="icon-calendar3"> {{blog[0].time | date:'dd-MM-yy'}} • {{blog[0].user.name}}</span>
+    <div class="topmargin">
+      <h2 ui-sref="blog.list" style="cursor:pointer;" class="paul-title">
+        Recent Articles
+      </h2>
+  
+      <p style="font-size:2rem;" class="text-center">
+        Live the wanderlust through words
+        <div class="underline">
         </div>
+      </p>
+    </div>
+  
+    <div style="overflow:hidden; margin-bottom:-5%;">
+  
+      <div ui-sref="blog.list" class="image blog-image-left">
+        <picture>
+          <!--<source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
+          <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
+          <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">-->
+  
+          <img ng-src="{{blog[0].imageUrl}}" alt="{{blog[0].title}}">
+        </picture>
       </div>
-
-    </div>
-  </div>
-
-
-  <div style="overflow:hidden;">
-
-    <div ui-sref="blog.list" class="image blog-image-right">
-      <img ng-src="{{blog[1].imageUrl}}" alt="{{blog[1].title}}">
-
-    </div>
-
-
-    <div class="text blog-content-right">
-      <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
-        {{blog[1].title}}</h3>
-
-
-      <div class="entry-content">
-        <p>{{blog[1].description}}...
-        </p>
-        <div class="feature-info">
-          <span class="icon-calendar3"> {{blog[1].time | date:'dd-MM-yy'}} • {{blog[1].user.name}}</span>
+  
+  
+      <div class="text blog-content-left">
+        <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
+          {{blog[0].title}}</h3>
+  
+  
+        <div class="entry-content">
+          <p>{{blog[0].description}}...
+          </p>
+          <div class="feature-info">
+            <span class="icon-calendar3"> {{blog[0].time }} • {{blog[0].user.name}}</span>
+          </div>
         </div>
+  
       </div>
-
     </div>
-  </div>
-
-</section>
+  
+  
+    <div style="overflow:hidden;">
+  
+      <div ui-sref="blog.list" class="image blog-image-right">
+        <picture>
+          <!--<source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
+          <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
+          <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">-->
+  
+          <img ng-src="{{blog[1].imageUrl}}" alt="{{blog[1].title}}">
+        </picture>
+      </div>
+  
+  
+      <div class="text blog-content-right">
+        <h3 style="cursor:pointer;" ui-sref="blog.list" style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
+          {{blog[1].title}}</h3>
+  
+  
+        <div class="entry-content">
+          <p>{{blog[1].description}}...
+          </p>
+          <div class="feature-info">
+            <span class="icon-calendar3"> {{blog[1].time}} • {{blog[1].user.name}}</span>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+  </section>
 
 <section>
   <div class="home-form-bg">
@@ -131,7 +134,7 @@
         {{postDetail.title}}
       </div>-->
     <div class="home-form">
-      <div style="padding:5% 5% 17% 5%">
+      <div style="padding:10% 5% 17% 5%">
         <div>
 
           <div>
@@ -143,37 +146,47 @@
           </div>
         </div>
         <form name="inquiryForm" class="nobottommargin" ng-submit="onFormSubmit(inquiryForm)">
-          <div class="col-sm-12 toppadding">
+          <div class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">Name<span class="asterisk">*</span></label>
-            <input ng-model="inquiryObj.name" class="form-control" id="{{name}}" type="text" placeholder="*Required"
+            <input ng-model="inquiryObj.name" class="form-control" id="{{name}}" type="text"
               value="{{name}}"  />
           </div>
 
           <div class="col-sm-6 toppadding">
+            <label style="color:#FFF; text-transform:capitalize">Phone Number<span class="asterisk">*</span></label>
+            <div class="inquireTelContainer">
+              <input ng-model="inquiryObj.phone" class="form-control" id="{{inquireTel}}"  value="{{tel}}" type="tel"
+                data-parsley-intphone="{{inquireTel}}" data-parsley-cnic required data-prefill="phone" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">Email<span class="asterisk">*</span></label>
-            <input ng-model="inquiryObj.email" class="form-control" id="{{inquireEmail}}" type="email" value="{{email}}" placeholder="*Required"
+            <input ng-model="inquiryObj.email" class="form-control" id="{{inquireEmail}}" type="email" value="{{email}}"
               data-parsley-trim-value="true" required data-prefill="email" />
           </div>
 
 
+          
+
           <div class="col-sm-6 toppadding">
-            <label style="color:#FFF; text-transform:capitalize">Phone Number<span class="asterisk">*</span></label>
+            <label style="color:#FFF; text-transform:capitalize">No. of Travellers<span class="asterisk">*</span></label>
             <div class="inquireTelContainer">
-              <input ng-model="inquiryObj.phone" class="form-control" id="{{inquireTel}}" placeholder="*Required" value="{{tel}}" type="tel"
-                data-parsley-intphone="{{inquireTel}}" data-parsley-cnic required data-prefill="phone" />
+              <input ng-model="inquiryObj.noOfTravellers" class="form-control" id="{{inquireTel}}"  value="{{tel}}" type="number"
+                 />
               <input id="{{inquireCountry}}" type="hidden" data-prefill="country" />
             </div>
           </div>
 
-          <div  class="col-sm-12 toppadding">
+          <div  class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">I Would Like To Go To<span class="asterisk">*</span></label>
-            <input ng-model="inquiryObj.destination" class="form-control"  type="text" placeholder="*Required"
+            <input ng-model="inquiryObj.destination" class="form-control"  type="text"
               value="{{destination}}"  />
           </div>
 
 
 
-          <div  class="col-sm-12 toppadding">
+          <div  class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize" for="form-condition-10">In the month of...</label>
             <select ng-model="inquiryObj.travelMonth" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10"
               class="required form-control">
@@ -196,10 +209,10 @@
 
           <div style="width:100%;" class="col-sm-12 toppadding">
             <label style="color:#FFF; text-transform:capitalize">Tell us a little bit about what you're looking for ?<span class="asterisk">*</span></label>
-            <textarea ng-model="inquiryObj.occasion" style="max-width:100%; max-height:10%;" class="form-control" placeholder="Tell us a little bit about what you're looking for."></textarea>
+            <textarea ng-model="inquiryObj.occasion" style="max-width:100%; max-height:10%;" class="form-control" ></textarea>
           </div>
 
-          <div style="text-transform:capitalize; padding-top:20px;" class="col-sm-12">
+          <div style="text-transform:capitalize; padding-top:15%;" class="col-sm-12">
             <button type="submit" style="margin:0px !important; width:100%; height:70px;" id="{{inquireSubmit}}" class="button button-blue ">Submit Inquiry</button>
           </div>
         </form>
