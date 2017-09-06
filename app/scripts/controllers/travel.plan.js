@@ -19,14 +19,9 @@ angular.module('wanderwagon-webapp')
 
     $scope.travelPlanData = [];
     $scope.getTravelPlans = function (id) {
-      remoteSvc.getTravelPlans(id)
-        .success(function (data){
-          $scope.travelPlanData = data.response;
-          console.log($scope.travelPlanData);
-        })
-        .error(function(error){
-
-        })
+      remoteSvc.getTravelPlans(id).then(function (response){
+        $scope.travelPlanData = response;
+      });
     };
 
     $scope.getBlogs = function () {

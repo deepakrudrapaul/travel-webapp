@@ -29601,12 +29601,9 @@ label.checkbox {
 }
 
 .custom-para>p {
-  color: #67747c;
-  font-family: Benton Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
-  line-height: 1.8;
-  margin-right: 10px;
-  text-align: center;
+ 
+  color: #67747c; font-family: Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 1.8rem; font-style:
+  italic; line-height: 1.8; margin: 0 auto 5.5rem; text-align: center;
 }
 
 .panel-group .panel-heading+.panel-collapse .panel-body {
@@ -29938,7 +29935,7 @@ label.checkbox {
   margin-bottom: 0px;
   font-size: 32px;
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: 100;
   color: #fff;
 }
 
@@ -30075,10 +30072,7 @@ a {
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
 
- 
-  .col-md-3 {
-    width: 10%;
-  }
+
   .custom-padding {
     padding: 0%;
   }
@@ -30146,7 +30140,7 @@ a {
     margin-bottom: 0px;
     font-size: 24px;
     letter-spacing: 1px;
-    font-weight: 500;
+    font-weight: 100;
     color: #fff;
   }
   .loved-it-button {
