@@ -1,11 +1,8 @@
 <div style="background-color:#36353B;background-image: url({{postDetail.imageUrl}});background-size: cover; height:100vh;">
   <div class="container clearfix">
-    <div class="slider-caption-center">
+    <!-- <div class="slider-caption-center">
       <h2 class="text-center primary-title">{{postDetail.title}}</h2>
-      <!--<a class="custom-button center-block text-center">
-         <span>Let's Wander</span> <i style="margin-left:10px;" class="icon-angle-right"></i></a>-->
-
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -71,23 +68,23 @@
 
             <!-- Entry Content
 							============================================= -->
-            <div class="custom-para notopmargin">
-              <div class="entry-title">
-                <h2 style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
+            <div class="notopmargin">
+              <div>
+                <h2 style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:1rem;margin-left:0;font-size:3rem;font-weight:300;color:#2c3643;">
                   {{postDetail.title}}</h2>
               </div>
 
-              <p style="text-align:justify;">
+              <p class="blog-content" style="text-align:justify;">
                 {{postDetail.description}}
               </p>
 
-              <div class="custom-para" ng-repeat="point in postDetail.blogSections">
-                <h3 style=" line-height:1.2142857142857142;margin-top:5%;margin-right:0;margin-bottom:0;margin-left:0;font-size:28px;font-weight:600;color:#2c3643;">
+              <div ng-repeat="point in postDetail.blogSections">
+                <h3 style=" line-height:1.2142857142857142;margin-top:5%;margin-right:0;margin-bottom:0;margin-left:0;font-size:2.1rem;font-weight:100;color:#2c3643;">
                 {{point.title}}
                 </h3>
 
                 <div ng-repeat="para in point.paragraphs">
-                  <p style="text-align:justify;">
+                  <p class="blog-content" style="text-align:justify;">
                   {{para.text}}
                 </p>
 
