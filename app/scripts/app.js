@@ -167,7 +167,7 @@ angular
         url: '/privacy-policy',
         templateUrl: 'views/privacy-policy.html',
         controller: 'ContactCtrl'
-      })
+      });
 
   }])
   .run(function ($rootScope, $location, auth, $anchorScroll) {

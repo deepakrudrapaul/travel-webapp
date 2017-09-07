@@ -8,13 +8,13 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('BlogListCtrl', function ($scope, remoteSvc, $location) {
+  .controller('BlogListCtrl', function ($scope, remoteSvc) {
 
     $scope.getBlogList = function () {
       remoteSvc.getBlogList().then(function (response){
         console.log(response);
         $scope.posts = response;
-      })
+      });
     };
     $scope.getBlogList();
 

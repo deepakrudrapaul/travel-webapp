@@ -27,7 +27,7 @@ angular.module('wanderwagon-webapp')
 
  
 
-    if(verificationToken != undefined) {
+    if(verificationToken !== undefined) {
      
       auth.verifyEmail(verificationToken, userId)
         .then(function (data){
@@ -36,7 +36,7 @@ angular.module('wanderwagon-webapp')
         .catch(function (error){
            $scope.verified = false;
           $scope.showModal("Error", "Email verification link is expired !");
-        })
+        });
     } else{
       $location.path('/home');
     }

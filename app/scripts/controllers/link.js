@@ -32,7 +32,7 @@ angular.module('wanderwagon-webapp')
     }
 
       $scope.showModal = function(messageType, message) {
-      angular.element(document.querySelectorAll('#messageModal')).modal('show');
+      angular.element(document.querySelectorAll('#successModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
     };

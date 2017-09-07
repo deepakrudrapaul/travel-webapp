@@ -167,7 +167,7 @@ angular
         url: '/privacy-policy',
         templateUrl: 'views/privacy-policy.html',
         controller: 'ContactCtrl'
-      })
+      });
 
   }])
   .run(["$rootScope", "$location", "auth", "$anchorScroll", function ($rootScope, $location, auth, $anchorScroll) {
@@ -512,7 +512,7 @@ angular.module('wanderwagon-webapp')
       dots: false,
       nav: true,
       responsiveClass:true,
-      navText : ["<span class='glyphicons glyphicons-chevron-right'></span>","<span class='glyphicons glyphicons-chevron-right'></span>"],
+      navText : ["<i class='icon-arrow-left'></i>","<i class='icon-arrow-right'></i>"],
       responsive:{
           0:{
               items:1,
@@ -597,7 +597,7 @@ angular.module('wanderwagon-webapp')
     }
 
       $scope.showModal = function(messageType, message) {
-      angular.element(document.querySelectorAll('#messageModal')).modal('show');
+      angular.element(document.querySelectorAll('#successModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
     };
@@ -803,13 +803,13 @@ angular.module('wanderwagon-webapp')
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('BlogListCtrl', ["$scope", "remoteSvc", "$location", function ($scope, remoteSvc, $location) {
+  .controller('BlogListCtrl', ["$scope", "remoteSvc", function ($scope, remoteSvc) {
 
     $scope.getBlogList = function () {
       remoteSvc.getBlogList().then(function (response){
         console.log(response);
         $scope.posts = response;
-      })
+      });
     };
     $scope.getBlogList();
 
@@ -850,7 +850,7 @@ angular.module('wanderwagon-webapp')
       remoteSvc.getBlogDetail(postId).then(function (response) {
         console.log(response.response);
         $scope.postDetail = response.response;
-      })
+      }); 
     };
     $scope.getPostDetail();
 
@@ -863,7 +863,7 @@ angular.module('wanderwagon-webapp')
       $auth.authenticate(provider)
         .then(function (response) {
           $scope.shareObj.accessToken = response.access_token;
-          if (provider == 'google') {
+          if (provider === 'google') {
             shareOnGooglePlus($scope.shareObj);
           } else {
             shareOnFacebook($scope.shareObj);
@@ -871,7 +871,7 @@ angular.module('wanderwagon-webapp')
         })
         .catch(function (response) {
           console.log("Something went Wrong");
-        })
+        }); 
     };
 
     var shareOnFacebook = function (shareObj) {
@@ -881,7 +881,7 @@ angular.module('wanderwagon-webapp')
         })
         .error(function (error) {
           console.log(error);
-        })
+        }); 
     };
 
     var shareOnGooglePlus = function (shareObj) {
@@ -891,7 +891,7 @@ angular.module('wanderwagon-webapp')
         })
         .error(function (error) {
           console.log(error);
-        })
+        });
     };
 
 
@@ -907,7 +907,7 @@ angular.module('wanderwagon-webapp')
         })
         .error(function (error){
           console.log(error);
-        })
+        });
     };
 
 
@@ -948,7 +948,7 @@ angular.module('wanderwagon-webapp')
     //           })
     //           .catch(function (error) {
     //             $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
-    //           });
+    //           });     
     //       }
     //     })
     //     .catch(function (response) {
@@ -1010,7 +1010,7 @@ angular.module('wanderwagon-webapp')
           .error(function (error) {
             console.log(error);
             $scope.showModal("Error", error.error.message);
-          })
+          });
       }
     };
 
@@ -1025,13 +1025,13 @@ angular.module('wanderwagon-webapp')
           .error(function (error) {
             console.log(error);
             $scope.showModal("Error", error.error.message);
-          })
+          });
       }
     };
 
     $scope.openFacebook = function () {
       $window.open('https://www.facebook.com/wanderwagon', ' _blank');
-    }
+    };
 
 
 
@@ -2338,7 +2338,7 @@ angular.module('wanderwagon-webapp')
 
  
 
-    if(verificationToken != undefined) {
+    if(verificationToken !== undefined) {
      
       auth.verifyEmail(verificationToken, userId)
         .then(function (data){
@@ -2347,7 +2347,7 @@ angular.module('wanderwagon-webapp')
         .catch(function (error){
            $scope.verified = false;
           $scope.showModal("Error", "Email verification link is expired !");
-        })
+        });
     } else{
       $location.path('/home');
     }
@@ -2387,7 +2387,7 @@ angular.module('wanderwagon-webapp')
 
     $scope.verified = false;
 
-    if(verificationToken != undefined) {
+    if(verificationToken !== undefined) {
       auth.forgotPassword(verificationToken, email)
         .then(function (data){
           $scope.verified = true;
@@ -2397,7 +2397,7 @@ angular.module('wanderwagon-webapp')
            $scope.verified = false;
            $scope.messageType = "Error";
             $scope.errorMessage = "Password reset link is expired";
-        })
+        });
 
     } else{
       $location.path('/home');
@@ -2766,7 +2766,7 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "      </div>--> <div class=\"home-form\"> <div style=\"padding:10% 5% 17% 5%\"> <div> <div> <h3 style=\"margin: 0;font-size: 25px;font-weight: 600;\n" +
     "    line-height: normal;\n" +
     "    letter-spacing: 2px;\n" +
-    "    color:#FFF\">Not Sure Where to Begin?</h3> <p style=\"color:#FFF; font-size:15px\">Complete this form &amp; we'll get right back to you!</p> </div> </div> <form name=\"inquiryForm\" class=\"nobottommargin\" ng-submit=\"onFormSubmit(inquiryForm)\"> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Name<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.name\" class=\"form-control\" id=\"{{name}}\" type=\"text\" value=\"{{name}}\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Phone Number<span class=\"asterisk\">*</span></label> <div class=\"inquireTelContainer\"> <input ng-model=\"inquiryObj.phone\" class=\"form-control\" id=\"{{inquireTel}}\" value=\"{{tel}}\" type=\"tel\" data-parsley-intphone=\"{{inquireTel}}\" data-parsley-cnic required data-prefill=\"phone\"> </div> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Email<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.email\" class=\"form-control\" id=\"{{inquireEmail}}\" type=\"email\" value=\"{{email}}\" data-parsley-trim-value=\"true\" required data-prefill=\"email\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">No. of Travellers<span class=\"asterisk\">*</span></label> <div class=\"inquireTelContainer\"> <input ng-model=\"inquiryObj.noOfTravellers\" class=\"form-control\" id=\"{{inquireTel}}\" value=\"{{tel}}\" type=\"number\"> <input id=\"{{inquireCountry}}\" type=\"hidden\" data-prefill=\"country\"> </div> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">I Would Like To Go To<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.destination\" class=\"form-control\" type=\"text\" value=\"{{destination}}\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\" for=\"form-condition-10\">In the month of...</label> <select ng-model=\"inquiryObj.travelMonth\" ng-click=\"display5={display:'block'}\" id=\"form-condition-10\" name=\"form-condition-10\" class=\"required form-control\"> <option value=\"\">Travel Dates TBC</option> <option value=\"January\">January</option> <option value=\"February\">February</option> <option value=\"March\">March</option> <option value=\"April\">April</option> <option value=\"May\">May</option> <option value=\"June\">June</option> <option value=\"July\">July</option> <option value=\"August\">August</option> <option value=\"September\">September</option> <option value=\"October\">October</option> <option value=\"November\">November</option> <option value=\"December\">December</option> </select> </div> <div style=\"width:100%\" class=\"col-sm-12 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Tell us a little bit about what you're looking for ?<span class=\"asterisk\">*</span></label> <textarea ng-model=\"inquiryObj.occasion\" style=\"max-width:100%; max-height:10%\" class=\"form-control\"></textarea> </div> <div style=\"text-transform:capitalize; padding-top:15%\" class=\"col-sm-12\"> <button type=\"submit\" style=\"margin:0px !important; width:100%; height:70px\" id=\"{{inquireSubmit}}\" class=\"button button-blue\">Submit Inquiry</button> </div> </form> </div> </div> </div> </section> <section> <div class=\"topmargin\"> <h2 class=\"instaText\"> On Instagram @ wanderwagon </h2> </div> <!--<div class=\"marque\">\n" +
+    "    color:#FFF\">Not Sure Where to Begin?</h3> <p style=\"color:#FFF; font-size:15px\">Complete this form &amp; we'll get right back to you!</p> </div> </div> <form name=\"inquiryForm\" class=\"nobottommargin\" ng-submit=\"onFormSubmit(inquiryForm)\"> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Name<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.name\" class=\"form-control\" id=\"{{name}}\" type=\"text\" value=\"{{name}}\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Phone Number<span class=\"asterisk\">*</span></label> <div class=\"inquireTelContainer\"> <input ng-model=\"inquiryObj.phone\" class=\"form-control\" id=\"{{inquireTel}}\" value=\"{{phone}}\" type=\"tel\" data-parsley-intphone=\"{{inquireTel}}\" data-parsley-cnic required data-prefill=\"phone\"> </div> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Email<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.email\" class=\"form-control\" id=\"{{inquireEmail}}\" type=\"email\" value=\"{{email}}\" data-parsley-trim-value=\"true\" required data-prefill=\"email\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">No. of Travellers<span class=\"asterisk\">*</span></label> <div class=\"inquireTelContainer\"> <input ng-model=\"inquiryObj.noOfTravellers\" class=\"form-control\" id=\"{{inquireTel}}\" value=\"{{tel}}\" type=\"number\"> <input id=\"{{inquireCountry}}\" type=\"hidden\" data-prefill=\"country\"> </div> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">I Would Like To Go To<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.destination\" class=\"form-control\" type=\"text\" value=\"{{destination}}\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\" for=\"form-condition-10\">In the month of...</label> <select ng-model=\"inquiryObj.travelMonth\" ng-click=\"display5={display:'block'}\" id=\"form-condition-10\" name=\"form-condition-10\" class=\"required form-control\"> <option value=\"\">Travel Dates TBC</option> <option value=\"January\">January</option> <option value=\"February\">February</option> <option value=\"March\">March</option> <option value=\"April\">April</option> <option value=\"May\">May</option> <option value=\"June\">June</option> <option value=\"July\">July</option> <option value=\"August\">August</option> <option value=\"September\">September</option> <option value=\"October\">October</option> <option value=\"November\">November</option> <option value=\"December\">December</option> </select> </div> <div style=\"width:100%\" class=\"col-sm-12 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Tell us a little bit about what you're looking for ?<span class=\"asterisk\">*</span></label> <textarea ng-model=\"inquiryObj.occasion\" style=\"max-width:100%; max-height:10%\" class=\"form-control\"></textarea> </div> <div style=\"text-transform:capitalize; padding-top:15%\" class=\"col-sm-12\"> <button type=\"submit\" style=\"margin:0px !important; width:100%; height:70px\" id=\"{{inquireSubmit}}\" class=\"button button-blue\">Submit Inquiry</button> </div> </form> </div> </div> </div> </section> <section> <div class=\"topmargin\"> <h2 class=\"instaText\"> On Instagram @ wanderwagon </h2> </div> <!--<div class=\"marque\">\n" +
     "   <ul class=\"slideContainer\" id=\"money_start\">\n" +
     "      <li ng-repeat=\"photo in instaPhotos\" class=\"slideItem\">\n" +
     "        <img style=\"cursor:pointer;\" ng-click=\"openInstaProfile()\" style=\"margin:1%;\" ng-src=\"{{photo.imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\">\n" +

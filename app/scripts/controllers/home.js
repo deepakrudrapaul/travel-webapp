@@ -169,7 +169,7 @@ angular.module('wanderwagon-webapp')
       dots: false,
       nav: true,
       responsiveClass:true,
-      navText : ["<span class='glyphicons glyphicons-chevron-right'></span>","<span class='glyphicons glyphicons-chevron-right'></span>"],
+      navText : ["<i class='icon-arrow-left'></i>","<i class='icon-arrow-right'></i>"],
       responsive:{
           0:{
               items:1,

@@ -32,7 +32,7 @@ angular.module('wanderwagon-webapp')
       remoteSvc.getBlogDetail(postId).then(function (response) {
         console.log(response.response);
         $scope.postDetail = response.response;
-      })
+      }); 
     };
     $scope.getPostDetail();
 
@@ -45,7 +45,7 @@ angular.module('wanderwagon-webapp')
       $auth.authenticate(provider)
         .then(function (response) {
           $scope.shareObj.accessToken = response.access_token;
-          if (provider == 'google') {
+          if (provider === 'google') {
             shareOnGooglePlus($scope.shareObj);
           } else {
             shareOnFacebook($scope.shareObj);
@@ -53,7 +53,7 @@ angular.module('wanderwagon-webapp')
         })
         .catch(function (response) {
           console.log("Something went Wrong");
-        })
+        }); 
     };
 
     var shareOnFacebook = function (shareObj) {
@@ -63,7 +63,7 @@ angular.module('wanderwagon-webapp')
         })
         .error(function (error) {
           console.log(error);
-        })
+        }); 
     };
 
     var shareOnGooglePlus = function (shareObj) {
@@ -73,7 +73,7 @@ angular.module('wanderwagon-webapp')
         })
         .error(function (error) {
           console.log(error);
-        })
+        });
     };
 
 
@@ -89,7 +89,7 @@ angular.module('wanderwagon-webapp')
         })
         .error(function (error){
           console.log(error);
-        })
+        });
     };
 
 
@@ -130,7 +130,7 @@ angular.module('wanderwagon-webapp')
     //           })
     //           .catch(function (error) {
     //             $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
-    //           });
+    //           });     
     //       }
     //     })
     //     .catch(function (response) {

@@ -26,7 +26,7 @@ angular.module('wanderwagon-webapp')
           .error(function (error) {
             console.log(error);
             $scope.showModal("Error", error.error.message);
-          })
+          });
       }
     };
 
@@ -41,13 +41,13 @@ angular.module('wanderwagon-webapp')
           .error(function (error) {
             console.log(error);
             $scope.showModal("Error", error.error.message);
-          })
+          });
       }
     };
 
     $scope.openFacebook = function () {
       $window.open('https://www.facebook.com/wanderwagon', ' _blank');
-    }
+    };
 
 
 

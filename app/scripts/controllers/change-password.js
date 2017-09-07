@@ -21,7 +21,7 @@ angular.module('wanderwagon-webapp')
 
     $scope.verified = false;
 
-    if(verificationToken != undefined) {
+    if(verificationToken !== undefined) {
       auth.forgotPassword(verificationToken, email)
         .then(function (data){
           $scope.verified = true;
@@ -31,7 +31,7 @@ angular.module('wanderwagon-webapp')
            $scope.verified = false;
            $scope.messageType = "Error";
             $scope.errorMessage = "Password reset link is expired";
-        })
+        });
 
     } else{
       $location.path('/home');
