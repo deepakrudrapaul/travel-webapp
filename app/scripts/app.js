@@ -38,7 +38,7 @@ angular
 
     $authProvider.baseUrl = null;
     $authProvider.facebook({
-      clientId: '1872872876259517',
+      clientId: '1758555154405794',
       responseType: 'token',
       scope: ['publish_actions', 'email']
     });
