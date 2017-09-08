@@ -17,13 +17,6 @@ angular.module('wanderwagon-webapp')
       });
     };
 
-    $scope.travelPlanData = [];
-    $scope.getTravelPlans = function (id) {
-      remoteSvc.getTravelPlans(id).then(function (response){
-        $scope.travelPlanData = response;
-      });
-    };
-
     $scope.getBlogs = function () {
       remoteSvc.getHomeBlogs().then(function (response) {
         console.log(response);
@@ -34,18 +27,27 @@ angular.module('wanderwagon-webapp')
     $scope.getTravelInspirations();
     $scope.getBlogs();
 
+    $scope.travelPlanData = [];
+    var getTravelPlans = function (id) {
+      remoteSvc.getTravelPlans(id).then(function (response){
+        $scope.travelPlanData = response;
+      });
+    };
+
     
 
     $scope.openAccordion = false;
-    $scope.openOrCloseAccordion = function () {
+    $scope.openOrCloseAccordion = function (id) {
       if ($scope.openAccordion === true) {
         $scope.closeAccordion();
       } else if ($scope.openAccordion === false) {
         $scope.openAccordion = true;
+        getTravelPlans(id);
       }
     };
 
     $scope.closeAccordion = function () {
+      $scope.travelPlanData = undefined;
       $scope.openAccordion = false;
       var someElement = angular.element(document.getElementById('travel'));
       $document.scrollToElement(someElement, 30, 800);
@@ -72,7 +74,7 @@ angular.module('wanderwagon-webapp')
        dots: false,
        nav: true,
        responsiveClass:true,
-       navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+       navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
        responsive:{
            0:{
                items:1,
@@ -104,7 +106,7 @@ angular.module('wanderwagon-webapp')
    dots: false,
    nav: true,
    responsiveClass:true,
-   navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+   navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
    responsive:{
        0:{
            items:1,

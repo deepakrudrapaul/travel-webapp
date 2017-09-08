@@ -12,6 +12,7 @@ angular.module('wanderwagon-webapp')
       templateUrl: 'views/flipbook.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
+
         $('#flipbook').turn({
           width: '100%',
           height: '600px',

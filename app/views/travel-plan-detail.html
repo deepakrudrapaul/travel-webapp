@@ -1,7 +1,7 @@
 <div style="background-color:#36353B;background-image: url({{planDetail.imageUrl}});background-size: cover; height:100vh;">
   <div class="container clearfix">
 
-    
+
   </div>
 </div>
 
@@ -16,12 +16,8 @@
     </div>
 
     <div class="center-block custom-para">
-      <p hm-read-more hm-text="{{planDetail.description}}" 
-      hm-limit="500" 
-      hm-more-text="Read more" 
-      hm-less-text="Read less"
-      hm-dots-class="dots"
-          hm-link-class="links"></p>
+      <p hm-read-more hm-text="{{planDetail.description}}" hm-limit="500" hm-more-text="Read more" hm-less-text="Read less" hm-dots-class="dots"
+        hm-link-class="links"></p>
       <br>
     </div>
 
@@ -31,19 +27,19 @@
 
 <section class=" container clearfix custom-height" id="places">
 
-      <h2 style="text-align:center;margin:6rem 0 10rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;">
-        Key Attractions
-        <div class="underline" style="margin-top:15px;">
-        </div>
-      </h2>
+  <h2 style="text-align:center;margin:6rem 0 10rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;">
+    Key Attractions
+    <div class="underline" style="margin-top:15px;">
+    </div>
+  </h2>
 
 
-    <ng-owl-carousel class="owl-theme" owl-items="planDetail.keyAttractions" owl-properties="sliderProperties" owl-ready="ready($api)">
-      <div  class="paul-slide-new" style="padding:2% 2% 2% 2%; max-height:500px;" data-ng-repeat="item in planDetail.keyAttractions">
-        <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
-    
-      </div>
-    </ng-owl-carousel>
+  <ng-owl-carousel class="owl-theme" owl-items="planDetail.keyAttractions" owl-properties="sliderProperties" owl-ready="ready($api)">
+    <div class="paul-slide-new" style="padding:2% 2% 2% 2%; max-height:500px;" data-ng-repeat="item in planDetail.keyAttractions">
+      <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
+
+    </div>
+  </ng-owl-carousel>
 
 </section>
 
@@ -131,7 +127,7 @@
 
 </section>
 
-<section class="container">
+<section>
   <div>
     <h2 style="text-align:center;margin:6rem 0 0rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;">
       Itinerary
@@ -139,9 +135,15 @@
       </div>
     </h2>
   </div>
+
   <div class="center-block" style="width:80%;">
-    <flip-book  ></flip-book>
+    <flip-book></flip-book>
   </div>
+<!-- 
+  <div class="mobile-cover-page center-block" style="width:100%;">
+    <mobile-flip-book></mobile-flip-book>
+  </div> -->
+
 </section>
 
 

@@ -39,8 +39,7 @@ angular
     $authProvider.baseUrl = null;
     $authProvider.facebook({
       clientId: '1758555154405794',
-      responseType: 'token',
-      scope: ['publish_actions', 'email']
+      responseType: 'token'
     });
 
 
@@ -369,7 +368,7 @@ angular.module('wanderwagon-webapp')
     };
 
     $scope.travelPlanData = [];
-    $scope.getTravelPlans = function (id) {
+    var getTravelPlans = function (id) {
       remoteSvc.getTravelPlans(id).then(function (response){
         $scope.travelPlanData = response;
       });
@@ -385,16 +384,17 @@ angular.module('wanderwagon-webapp')
 
 
     $scope.openAccordion = false;
-    $scope.openOrCloseAccordion = function () {
+    $scope.openOrCloseAccordion = function (id) {
       if ($scope.openAccordion === true) {
         $scope.closeAccordion();
       } else if ($scope.openAccordion === false) {
         $scope.openAccordion = true;
+        getTravelPlans(id);
       }
     };
 
     $scope.closeAccordion = function () {
-      $scope.travelPlanData = [];
+      $scope.travelPlanData = undefined;
       $scope.openAccordion = false;
       var someElement = angular.element(document.getElementById('travel'));
       $document.scrollToElement(someElement, 30, 800);
@@ -451,49 +451,7 @@ angular.module('wanderwagon-webapp')
     };
 
 
-
-
-    $scope.news = [];
-    $scope.conf = {
-      news_length: false,
-      news_pos: 200, // the starting position from the right in the news container
-      news_margin: 20,
-      news_move_flag: true
-    };
-
-    $scope.get_news_right = function (idx) {
-      var $right = $scope.conf.news_pos;
-      for (var ri = 0; ri < idx; ri++) {
-        if (document.getElementById('news_' + ri)) {
-          $right += $scope.conf.news_margin + angular.element(document.getElementById('news_' + ri))[0].offsetWidth;
-        }
-      }
-      return $right + 'px';
-    };
-
-
-    $scope.news_move = function () {
-      if ($scope.conf.news_move_flag) {
-        $scope.conf.news_pos--;
-        if (angular.element(document.getElementById('news_0'))[0].offsetLeft > angular.element(document.getElementById('news_strip'))[0].offsetWidth + $scope.conf.news_margin) {
-          var first_new = $scope.news[0];
-          $scope.news.push(first_new);
-          $scope.news.shift();
-          $scope.conf.news_pos += angular.element(document.getElementById('news_0'))[0].offsetWidth + $scope.conf.news_margin;
-        }
-      }
-    };
-
-
-    $scope.getInstaPhotos = function () {
-      remoteSvc.getInstaPhotos().then(function (response) {
-        $scope.news = response;
-        $interval($scope.news_move, 50);
-      });
-    };
-    $scope.getInstaPhotos();
-
-
+   
 
     var owlAPi;
     $scope.ready = function ($api) {
@@ -501,18 +459,17 @@ angular.module('wanderwagon-webapp')
   };
    
     $scope.properties = {
-      // autoHeight:true,
-
+      autoHeight:true,
       animateIn: 'fadeIn',
       lazyLoad: true,
-      items: 4,
+      items: 3,
       margin: 0,
       mouseDrag: true,
       touchDrag: true,
       dots: false,
       nav: true,
       responsiveClass:true,
-      navText : ["<i class='icon-arrow-left'></i>","<i class='icon-arrow-right'></i>"],
+      navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
       responsive:{
           0:{
               items:1,
@@ -531,8 +488,8 @@ angular.module('wanderwagon-webapp')
 
  
 
-$scope.nestedCarouselproperties = {
-  // autoHeight:true,
+$scope.accordionProperties = {
+  autoHeight:true,
   animateIn: 'fadeIn',
   lazyLoad: true,
   items: 3,
@@ -542,7 +499,7 @@ $scope.nestedCarouselproperties = {
   dots: false,
   nav: true,
   responsiveClass:true,
-  navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+  navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
   responsive:{
       0:{
           items:1,
@@ -658,10 +615,10 @@ angular.module('wanderwagon-webapp')
 
 
     $scope.openSideNav = function () {
-      angular.element(document.getElementById('mySidenav')).css('width', '60%');
+      angular.element(document.getElementById('mySidenav')).css('width', '70%');
     }
 
-    $scope.closeSideNav = function () {
+    $rootScope.closeSideNav = function () {
       angular.element(document.getElementById('mySidenav')).css('width', '0px');
     }
 
@@ -1676,7 +1633,7 @@ angular.module('wanderwagon-webapp')
       dots: false,
       nav: true,
       responsiveClass: true,
-      navText : ["<span class='glyphicons glyphicons-chevron-right'></span>","<span class='glyphicons glyphicons-chevron-right'></span>"],
+      navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
       responsive: {
         0: {
           items: 1,
@@ -1703,7 +1660,7 @@ angular.module('wanderwagon-webapp')
       dots: false,
       nav: true,
       responsiveClass: true,
-      navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
+      navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
     };
 
 
@@ -1732,13 +1689,6 @@ angular.module('wanderwagon-webapp')
       });
     };
 
-    $scope.travelPlanData = [];
-    $scope.getTravelPlans = function (id) {
-      remoteSvc.getTravelPlans(id).then(function (response){
-        $scope.travelPlanData = response;
-      });
-    };
-
     $scope.getBlogs = function () {
       remoteSvc.getHomeBlogs().then(function (response) {
         console.log(response);
@@ -1749,18 +1699,27 @@ angular.module('wanderwagon-webapp')
     $scope.getTravelInspirations();
     $scope.getBlogs();
 
+    $scope.travelPlanData = [];
+    var getTravelPlans = function (id) {
+      remoteSvc.getTravelPlans(id).then(function (response){
+        $scope.travelPlanData = response;
+      });
+    };
+
     
 
     $scope.openAccordion = false;
-    $scope.openOrCloseAccordion = function () {
+    $scope.openOrCloseAccordion = function (id) {
       if ($scope.openAccordion === true) {
         $scope.closeAccordion();
       } else if ($scope.openAccordion === false) {
         $scope.openAccordion = true;
+        getTravelPlans(id);
       }
     };
 
     $scope.closeAccordion = function () {
+      $scope.travelPlanData = undefined;
       $scope.openAccordion = false;
       var someElement = angular.element(document.getElementById('travel'));
       $document.scrollToElement(someElement, 30, 800);
@@ -1787,7 +1746,7 @@ angular.module('wanderwagon-webapp')
        dots: false,
        nav: true,
        responsiveClass:true,
-       navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+       navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
        responsive:{
            0:{
                items:1,
@@ -1819,7 +1778,7 @@ angular.module('wanderwagon-webapp')
    dots: false,
    nav: true,
    responsiveClass:true,
-   navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+   navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
    responsive:{
        0:{
            items:1,
@@ -2452,7 +2411,7 @@ angular.module('wanderwagon-webapp')
       dots: false,
       nav: true,
       responsiveClass: true,
-      navText : ["<span class='glyphicons glyphicons-chevron-right'></span>","<span class='glyphicons glyphicons-chevron-right'></span>"],
+      navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
       responsive: {
         0: {
           items: 1,
@@ -2479,7 +2438,7 @@ angular.module('wanderwagon-webapp')
       dots: false,
       nav: true,
       responsiveClass: true,
-      navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"]
+      navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
     };
 
     $scope.openAccordion = false;
@@ -2534,6 +2493,7 @@ angular.module('wanderwagon-webapp')
       templateUrl: 'views/flipbook.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
+
         $('#flipbook').turn({
           width: '100%',
           height: '600px',
@@ -2560,6 +2520,53 @@ angular.module('wanderwagon-webapp')
       }
     };
   });
+
+'use strict';
+
+/**
+ * @ngdoc directive
+ * @name wanderwagon-webapp.directive:instaPhotoStream
+ * @description
+ * # instaPhotoStream
+ */
+angular.module('wanderwagon-webapp')
+  .directive('instaPhotoStream', ["$interval", "remoteSvc", "$window", function ($interval, remoteSvc, $window) {
+    return {
+      templateUrl: 'views/insta-photo-stream.html',
+      restrict: 'E',
+      link: function postLink(scope, element, attrs) {
+
+        scope.getInstaPhotos = function () {
+          remoteSvc.getInstaPhotos().then(function (response) {
+            scope.instaData = response;
+            console.log(response);
+          });
+        };
+        scope.getInstaPhotos();
+
+        scope.redirectToInstagram = function () {
+          $window.open('https://www.instagram.com/wanderwagon', ' _blank');
+        }
+  
+    
+        window.requestAnimationFrame = (function(){
+          return  window.requestAnimationFrame       ||
+                  window.webkitRequestAnimationFrame ||
+                  window.mozRequestAnimationFrame  
+        })();
+
+        var speed = 5000;
+        (function currencySlide(){
+            var currencyPairWidth = $('.slideItem:first-child').outerWidth();
+            $(".slideContainer").animate({marginLeft:-currencyPairWidth},speed, 'linear', function(){
+                        $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
+                });
+                requestAnimationFrame(currencySlide);
+        })();
+
+      }
+    };
+  }]);
 
 angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCache) {
   'use strict';
@@ -2599,7 +2606,7 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/account.html',
-    "<div style=\"padding-top:100px; background-color:#36353B\"> </div> <section style=\"background-color:#F2F2F2\"> <div class=\"center-block\" style=\"width:70%; padding:2%\"> <img height=\"300\" width=\"100%;\" class=\"cover\" src=\"images/login-bg.jpg\"> <img width=\"150\" height=\"150\" style=\"border: 3px solid #FFF; border-radius: 50%; position:absolute; top:350px; left:20%\" src=\"images/profile.jpg\"> <div style=\"background-color:#FFF; padding:2% 0 2% 25%\"> <h4>John Smith <span ng-click=\"showModal()\" class=\"pull-right\"><i class=\"i-rounded icon-edit\"></i></span></h4>  <p> <span style=\"padding:0 2% 0 0\">99 years old</span> • <span style=\"padding:0 2%\"> India </span> • <span style=\"padding:0 2%\">Male</span> </p> <p>This is the bio text that users can customize by editing thier profile. As an admin you can set a maximum character limit for the bio. </p> <div> <h4>Favourite Travel Activities</h4> <div ng-style=\"{{}}\" ng-repeat=\"item in favouriteActivities\" class=\"chip\"> {{item.name}} </div> </div> </div> </div> </section> <div class=\"modal fade\" id=\"profileEditModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"profileEditModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"profileEditModallabel\">Edit Profile</h4> </div> <div class=\"modal-body\"> <div class=\"row\" style=\"padding:0 2%\"> <form name=\"profileForm\" class=\"nobottommargin\" ng-submit=\"onFormSubmit(profileForm)\"> <div class=\"col-sm-6 toppadding\"> <input ng-model=\"profileObj.name\" class=\"form-control\" type=\"text\" value=\"{{name}}\" placeholder=\"Name\"> </div> <div class=\"col-sm-6 toppadding\"> <input ng-model=\"profileObj.age\" class=\"form-control\" type=\"text\" value=\"{{age}}\" placeholder=\"Age\"> </div> <div class=\"col-sm-6 toppadding\"> <input ng-model=\"profileObj.place\" class=\"form-control\" type=\"text\" value=\"{{place}}\" placeholder=\"Place\"> </div> <div class=\"col-sm-6 toppadding\"> <input ng-model=\"profileObj.gender\" class=\"form-control\" type=\"text\" value=\"{{gender}}\" placeholder=\"Gender\"> </div> <div class=\"col-sm-12 toppadding\"> <textarea ng-model=\"profileObj.bio\" style=\"max-width:100%; max-height:200px\" class=\"form-control\" placeholder=\"Bio\"></textarea> </div> <div style=\"text-transform:capitalize; padding-top:20px\" class=\"col-sm-6\"> <button type=\"submit\" style=\"margin:0px !important; width:100%; height:70px\" class=\"button button-blue\">Save</button> </div> </form> </div> </div> </div> </div> </div> "
+    "<div style=\"padding-top:100px; background-color:#36353B\"> </div> <section style=\"background-color:#F2F2F2\"> <div class=\"center-block\" style=\"width:70%; padding:2%\"> <img height=\"300\" width=\"100%;\" class=\"cover\" src=\"https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/profile/profile_bg.jpg\"> <img width=\"150\" height=\"150\" style=\"border: 3px solid #FFF; border-radius: 50%; position:absolute; top:350px; left:20%\" src=\"images/profile.jpg\"> <div style=\"background-color:#FFF; padding:2% 0 2% 25%\"> <h4>John Smith <span ng-click=\"showModal()\" class=\"pull-right\"><i class=\"i-rounded icon-edit\"></i></span></h4>  <p> <span style=\"padding:0 2% 0 0\">99 years old</span> • <span style=\"padding:0 2%\"> India </span> • <span style=\"padding:0 2%\">Male</span> </p> <p>This is the bio text that users can customize by editing thier profile. As an admin you can set a maximum character limit for the bio. </p> <div> <h4>Favourite Travel Activities</h4> <div ng-style=\"{{}}\" ng-repeat=\"item in favouriteActivities\" class=\"chip\"> {{item.name}} </div> </div> </div> </div> </section> <div class=\"modal fade\" id=\"profileEditModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"profileEditModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"profileEditModallabel\">Edit Profile</h4> </div> <div class=\"modal-body\"> <div class=\"row\" style=\"padding:0 2%\"> <form name=\"profileForm\" class=\"nobottommargin\" ng-submit=\"onFormSubmit(profileForm)\"> <div class=\"col-sm-6 toppadding\"> <input ng-model=\"profileObj.name\" class=\"form-control\" type=\"text\" value=\"{{name}}\" placeholder=\"Name\"> </div> <div class=\"col-sm-6 toppadding\"> <input ng-model=\"profileObj.age\" class=\"form-control\" type=\"text\" value=\"{{age}}\" placeholder=\"Age\"> </div> <div class=\"col-sm-6 toppadding\"> <input ng-model=\"profileObj.place\" class=\"form-control\" type=\"text\" value=\"{{place}}\" placeholder=\"Place\"> </div> <div class=\"col-sm-6 toppadding\"> <input ng-model=\"profileObj.gender\" class=\"form-control\" type=\"text\" value=\"{{gender}}\" placeholder=\"Gender\"> </div> <div class=\"col-sm-12 toppadding\"> <textarea ng-model=\"profileObj.bio\" style=\"max-width:100%; max-height:200px\" class=\"form-control\" placeholder=\"Bio\"></textarea> </div> <div style=\"text-transform:capitalize; padding-top:20px\" class=\"col-sm-6\"> <button type=\"submit\" style=\"margin:0px !important; width:100%; height:70px\" class=\"button button-blue\">Save</button> </div> </form> </div> </div> </div> </div> </div> "
   );
 
 
@@ -2693,8 +2700,8 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
   $templateCache.put('views/destination-detail.html',
     "<div style=\"background-color:#36353B;background-image: url({{detail.imageUrl}});background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"center-block slider-caption-center\"> <h2 class=\"text-center primary-title\">{{detail.name}}</h2> <p class=\"text-center primary-title-1\">{{detail.title}}</p> </div> </div> </div> <!-- Header\n" +
     "		============================================= --> <header style=\"height:50px; background-color:#FFFFFF\" sticky id=\"header\" class=\"full-header\"> <!-- Primary Navigation\n" +
-    "					============================================= --> <nav id=\"primary-menu\" style=\"margin-left:20%; margin-right:25%\"> <ul class=\"one-page-menu\"> <li> <a href=\"#about\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" style=\"cursor:pointer;color:#444;padding:10px 15px\"> <div>About</div> </a> </li> <li> <a href=\"#howToReach\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" style=\"cursor:pointer;color:#444;padding:10px 15px\"> <div>How to reach</div> </a> </li> <li> <a href=\"#places\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" style=\"cursor:pointer;color:#444;padding:10px 15px\"> <div>Places to visit</div> </a> </li> <li> <a href=\"#activities\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" style=\"cursor:pointer;color:#444;padding:10px 15px\"> <div>Activities</div> </a> </li> </ul> </nav> <!-- #primary-menu end --> </header> <!-- #header end --> <section id=\"about\"> <div class=\"container clearfix\"> <div> <h2 style=\"text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> About </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> </div> <div class=\"center-block custom-para\"> <p hm-read-more hm-text=\"{{detail.description}}\" hm-limit=\"500\" hm-more-text=\"Read more\" hm-less-text=\"Read less\" hm-dots-class=\"dots\" hm-link-class=\"links\"></p> <br> </div> <div class=\"center-block overview\"> <h2 style=\"text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:1.8rem\"> Overview </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> <div style=\"margin: 30px\"> <h5 class=\"pull-left\"><i style=\"padding-right:10px\" class=\"icon-calendar i-alt\"></i>Best Time To Visit</h5> <p style=\"margin-right: 40px\" class=\"pull-right\">{{detail.bestTimeToVisit}}</p> </div> <span class=\"clearfix\"></span> <div style=\"margin: 0 30px 30px 30px\"> <h5 class=\"pull-left\"><i style=\"padding-right:10px\" class=\"icon-calendar i-alt\"></i>Days Required</h5> <p style=\"margin-right: 40px\" class=\"pull-right\">{{detail.daysToVisit}}</p> </div> <span class=\"clearfix\"></span> <div style=\"margin: 0 30px 30px 30px\"> <h5 class=\"pull-left\"><i style=\"padding-right:10px\" class=\"icon-folder i-alt\"></i>Category</h5> <p style=\"margin-right: 40px; word-wrap: break-word\" class=\"pull-right\">{{detail.category}}</p> </div> </div> </div> </section> <section id=\"howToReach\"> <div class=\"container clearfix\"> <div style=\"margin-top:5%\"> <h2 style=\"text-align:center;margin:8rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> How to reach </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> </div> <div class=\"center-block\"> <div class=\"feature-box\"> <div class=\"custom-fbox-icon\"> <!--<i class=\"icon-plane i-alt\"></i>--> <img src=\"images/plane.png\"> </div> <span style=\"font:bold; font-size:20px\">Airport</span> <p class=\"blog-content\">{{detail.airPath}} </p> </div> <div class=\"feature-box\"> <div class=\"custom-fbox-icon\"> <img src=\"images/train.png\"> </div> <span style=\"font:bold; font-size:20px\">Railways</span> <p class=\"blog-content\">{{detail.railway}} </p> </div> <div class=\"feature-box\"> <div class=\"custom-fbox-icon\"> <img src=\"images/road.png\"> </div> <span style=\"font:bold; font-size:20px\">Roadways</span> <p class=\"blog-content\">{{detail.roadway}} </p> </div> </div> </div> </section> <section class=\"container clearfix custom-height\" id=\"places\"> <h2 style=\"text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> Places to visit </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"placesData\" owl-properties=\"sliderProperties\" owl-ready=\"ready($api)\"> <div ng-click=\"openOrCloseAccordion('place') ; gotoCarouselPlace($index)\" class=\"paul-slide-new\" style=\"padding:2% 2% 2% 2%\" data-ng-repeat=\"item in placesData\"> <img style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> <span class=\"paul-slider-caption\"> {{item.placeName}}</span> </div> </ng-owl-carousel> <div id=\"accordion1\" class=\"clearfix\" style=\"margin-top:8%\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion\"> <ng-owl-carousel class=\"owl-theme\" owl-items=\"placesData\" owl-properties=\"accordionProperties\" owl-ready=\"readyPlaceAccordion($api)\"> <div data-ng-repeat=\"item in placesData\"> <div class=\"center-block\" style=\"width:80%\"> <div> <h2 style=\"text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"><br> {{item.placeName}} <div style=\"display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px\"> </div> </h2> </div> <div class=\"dropdown-slider-image\"> <a><img height=\"350px\" width=\"100%\" ng-src=\"{{item.imageUrl}}\" alt=\"{{item.placeName}}\"></a> </div> <div class=\"dropdown-slider-content\"> <span ng-click=\"closeAccordion()\" style=\"margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem\" class=\"glyphicon glyphicon-remove-circle\"></span> <h4 style=\"line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643\"> What is it.....</h4> <p>{{item.description}} </p> <h4 style=\"line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643\"> How to reach</h4> <p>{{item.howToReachDesc}} </p> <div> <h4 class=\"pull-left\" style=\"line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643\"> Timings - <span>{{item.timing}}</span></h4> </div> </div> </div> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section class=\"container clearfix custom-height\" id=\"activities\"> <h2 style=\"text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> Activities </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"activitiesData\" owl-properties=\"sliderProperties\" owl-ready=\"ready($api)\"> <div ng-click=\"openOrCloseAccordion('activity') ; gotoCarouselActivity($index)\" class=\"paul-slide-new\" style=\"padding:2% 2% 2% 2%\" data-ng-repeat=\"item in activitiesData\"> <img style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> <span class=\"paul-slider-caption\"> {{item.activityName}}</span> </div> </ng-owl-carousel> <div id=\"accordion2\" class=\"clearfix\" style=\"margin-top:8%\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion1\"> <ng-owl-carousel class=\"owl-theme\" owl-items=\"activitiesData\" owl-properties=\"accordionProperties\" owl-ready=\"readyActivityAccordion($api)\"> <div data-ng-repeat=\"item in activitiesData\"> <div class=\"center-block\" style=\"width:80%\"> <div> <h2 style=\"text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"><br> {{item.activityName}} <div style=\"display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px\"> </div> </h2> </div> <div class=\"dropdown-slider-image\"> <a><img height=\"350px\" width=\"100%\" ng-src=\"{{item.imageUrl}}\" alt=\"{{item.activityName}}\"></a> </div> <div class=\"dropdown-slider-content\"> <span ng-click=\"closeAccordion1()\" style=\"margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem\" class=\"glyphicon glyphicon-remove-circle\"></span> <h4 style=\"line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643\"> What is it.....</h4> <p>{{item.description}} </p> <h4 style=\"line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643\"> How to reach</h4> <p>{{item.placeOfConduct}} </p> <div> <!-- <h4 class=\"pull-left\" style=\"line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;\">\n" +
-    "                            Timings - <span>{{item.timing}}</span></h4> --> <h4 class=\"pull-left\" style=\"line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643\"> Duration - <span>{{item.duration}}</span></h4> <br><br><br><br> </div> <!--<center>\n" +
+    "					============================================= --> <nav id=\"primary-menu\" style=\"margin-left:20%; margin-right:25%\"> <ul class=\"one-page-menu\"> <li> <a href=\"#about\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" style=\"cursor:pointer;color:#444;padding:10px 15px\"> <div>About</div> </a> </li> <li> <a href=\"#howToReach\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" style=\"cursor:pointer;color:#444;padding:10px 15px\"> <div>How to reach</div> </a> </li> <li> <a href=\"#places\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" style=\"cursor:pointer;color:#444;padding:10px 15px\"> <div>Places to visit</div> </a> </li> <li> <a href=\"#activities\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" style=\"cursor:pointer;color:#444;padding:10px 15px\"> <div>Activities</div> </a> </li> </ul> </nav> <!-- #primary-menu end --> </header> <!-- #header end --> <section id=\"about\"> <div class=\"container clearfix\"> <div> <h2 style=\"text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> About </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> </div> <div class=\"center-block custom-para\"> <p hm-read-more hm-text=\"{{detail.description}}\" hm-limit=\"500\" hm-more-text=\"Read more\" hm-less-text=\"Read less\" hm-dots-class=\"dots\" hm-link-class=\"links\"></p> <br> </div> <div class=\"center-block overview\"> <h2 style=\"text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:1.8rem\"> Overview </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> <div style=\"margin: 30px\"> <h5 class=\"pull-left1\"><i style=\"padding-right:10px\" class=\"icon-calendar i-alt\"></i>Best Time To Visit</h5> <p style=\"margin-right: 40px\" class=\"pull-right1\">{{detail.bestTimeToVisit}}</p> </div> <span class=\"clearfix\"></span> <div style=\"margin: 0 30px 30px 30px\"> <h5 class=\"pull-left1\"><i style=\"padding-right:10px\" class=\"icon-calendar i-alt\"></i>Days Required</h5> <p style=\"margin-right: 40px\" class=\"pull-right1\">{{detail.daysToVisit}}</p> </div> <span class=\"clearfix\"></span> <div style=\"margin: 0 30px 30px 30px\"> <h5 class=\"pull-left1\"><i style=\"padding-right:10px\" class=\"icon-folder i-alt\"></i>Category</h5> <p style=\"margin-right: 40px; word-wrap: break-word\" class=\"pull-right1\">{{detail.category}}</p> </div> </div> </div> </section> <section id=\"howToReach\"> <div class=\"container clearfix\"> <div style=\"margin-top:5%\"> <h2 style=\"text-align:center;margin:8rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> How to reach </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> </div> <div class=\"center-block\"> <div class=\"feature-box\"> <div class=\"custom-fbox-icon\"> <!--<i class=\"icon-plane i-alt\"></i>--> <img src=\"images/plane.png\"> </div> <span style=\"font:bold; font-size:20px\">Airport</span> <p class=\"blog-content\">{{detail.airPath}} </p> </div> <div class=\"feature-box\"> <div class=\"custom-fbox-icon\"> <img src=\"images/train.png\"> </div> <span style=\"font:bold; font-size:20px\">Railways</span> <p class=\"blog-content\">{{detail.railway}} </p> </div> <div class=\"feature-box\"> <div class=\"custom-fbox-icon\"> <img src=\"images/road.png\"> </div> <span style=\"font:bold; font-size:20px\">Roadways</span> <p class=\"blog-content\">{{detail.roadway}} </p> </div> </div> </div> </section> <section class=\"clearfix custom-padding\" id=\"places\"> <h2 style=\"text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> Places to visit </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"placesData\" owl-properties=\"sliderProperties\" owl-ready=\"ready($api)\"> <div ng-click=\"openOrCloseAccordion('place') ; gotoCarouselPlace($index)\" class=\"paul-slide-new\" style=\"padding:2% 2% 2% 2%\" data-ng-repeat=\"item in placesData\"> <img style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> <span class=\"paul-slider-caption\"> {{item.placeName}}</span> </div> </ng-owl-carousel> <div id=\"accordion1\" class=\"clearfix\" style=\"margin-top:8%\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion\"> <ng-owl-carousel class=\"owl-theme\" owl-items=\"placesData\" owl-properties=\"accordionProperties\" owl-ready=\"readyPlaceAccordion($api)\"> <div data-ng-repeat=\"item in placesData\"> <div class=\"center-block\"> <div> <h2 style=\"text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"><br> {{item.placeName}} <div style=\"display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px\"> </div> </h2> </div> <div class=\"dropdown-slider-image\"> <a><img height=\"350px\" width=\"100%\" ng-src=\"{{item.imageUrl}}\" alt=\"{{item.placeName}}\"></a> </div> <div class=\"dropdown-slider-content\"> <span ng-click=\"closeAccordion()\" style=\"margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem\" class=\"glyphicon glyphicon-remove-circle\"></span> <h4 style=\"line-height:1.5;font-size:20px;font-weight:400;color:#2c3643\"> What is it.....</h4> <p>{{item.description}} </p> <h4 style=\"line-height:1.5;font-size:20px;font-weight:400;color:#2c3643\"> How to reach</h4> <p>{{item.howToReachDesc}} </p> <div> <h4 class=\"pull-left\" style=\"line-height:1.5;font-size:20px;font-weight:400;color:#2c3643\"> Timings - <span>{{item.timing}}</span></h4> </div> </div> </div> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section class=\"clearfix custom-padding\" id=\"activities\"> <h2 style=\"text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> Activities </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"activitiesData\" owl-properties=\"sliderProperties\" owl-ready=\"ready($api)\"> <div ng-click=\"openOrCloseAccordion('activity') ; gotoCarouselActivity($index)\" class=\"paul-slide-new\" style=\"padding:2% 2% 2% 2%\" data-ng-repeat=\"item in activitiesData\"> <img style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> <span class=\"paul-slider-caption\"> {{item.activityName}}</span> </div> </ng-owl-carousel> <div id=\"accordion2\" class=\"clearfix\" style=\"margin-top:8%\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion1\"> <ng-owl-carousel class=\"owl-theme\" owl-items=\"activitiesData\" owl-properties=\"accordionProperties\" owl-ready=\"readyActivityAccordion($api)\"> <div data-ng-repeat=\"item in activitiesData\"> <div class=\"center-block\"> <div> <h2 style=\"text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"><br> {{item.activityName}} <div style=\"display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px\"> </div> </h2> </div> <div class=\"dropdown-slider-image\"> <a><img height=\"350px\" width=\"100%\" ng-src=\"{{item.imageUrl}}\" alt=\"{{item.activityName}}\"></a> </div> <div class=\"dropdown-slider-content\"> <span ng-click=\"closeAccordion1()\" style=\"margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem\" class=\"glyphicon glyphicon-remove-circle\"></span> <h4 style=\"line-height:1.5;font-size:20px;font-weight:400;color:#2c3643\"> What is it.....</h4> <p>{{item.description}} </p> <h4 style=\"line-height:1.5;font-size:20px;font-weight:400;color:#2c3643\"> How to reach</h4> <p>{{item.placeOfConduct}} </p> <div> <!-- <h4 class=\"pull-left\" style=\"line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;\">\n" +
+    "                            Timings - <span>{{item.timing}}</span></h4> --> <h4 class=\"pull-left\" style=\"line-height:1.5;font-size:20px;font-weight:400;color:#2c3643\"> Duration - <span>{{item.duration}}</span></h4> <br><br><br><br> </div> <!--<center>\n" +
     "                          <span style=\"font-size:48px; padding-right:2%; \" class=\"icon-line2-arrow-left\"></span>\n" +
     "                          <span style=\"font-size:48px; padding-left:2%; \" class=\"icon-line2-arrow-right\"></span>\n" +
     "                        </center>--> </div> </div> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section> <div class=\"topmargin\"> <h2 style=\"text-align:center; color:#000\" class=\"secondary-title\"> Why we love {{detail.name}} ? </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> </div> <p style=\"color: #67747c; font-family: Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 1.8rem; font-style:\n" +
@@ -2757,7 +2764,7 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/home.html',
-    "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/home/homepage.jpg');background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"slider-caption-center\"> <a style=\"position:absolute; bottom:5%; right:40%\" href=\"#travel\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" class=\"custom-button center-block text-center\"> <span>Take Me There ! </span> <i style=\"margin-left:10px\" class=\"icon-angle-right\"></i></a> </div> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/home_cover.jpg') ;background-size:cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"slider-caption-center\"> <a style=\"position:absolute; left:0%; right:0%; bottom:20%\" href=\"#travel\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" class=\"custom-button center-block text-center\"> <span>Take Me There ! </span> <i style=\"margin-left:10px\" class=\"icon-angle-right\"></i></a> </div> </div> </div> <section id=\"travel\" style=\"margin-top:3%\" class=\"custom-padding\"> <h2 class=\"paul-title\"> Travel Inspiration </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Your choices, Your friends, Your travel plans </p><div class=\"underline\"> </div> <p></p> <ng-owl-carousel class=\"owl-theme\" owl-items=\"sliderData\" owl-properties=\"properties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide\" style=\"padding:2% 0 2% 0%\" data-ng-repeat=\"item in sliderData\"> <img ng-click=\"openOrCloseAccordion(); getTravelPlans(item.id)\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> <div id=\"accordion\" class=\"clearfix topmargin\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion\"> <div ng-click=\"closeAccordion()\" style=\"cursor:pointer; font-size:3rem; margin-left:95%\" class=\"glyphicon glyphicon-remove-circle\"></div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"travelPlanData\" owl-properties=\"nestedCarouselproperties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide-new\" style=\"padding:2% 0 2% 0\" data-ng-repeat=\"item in travelPlanData\"> <img ui-sref=\"travel-plan.detail({id: item.id})\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> <span class=\"paul-slider-caption\"> {{item.title}}</span> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section id=\"articles\" class=\"custom-padding\"> <div class=\"topmargin\"> <h2 ui-sref=\"blog.list\" style=\"cursor:pointer\" class=\"paul-title\"> Recent Articles </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Live the wanderlust through words </p><div class=\"underline\"> </div> <p></p> </div> <div style=\"overflow:hidden; margin-bottom:-5%\"> <div ui-sref=\"blog.list\" class=\"image blog-image-left\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
+    "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/home/homepage.jpg');background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"slider-caption-center\"> <a style=\"position:absolute; bottom:5%; right:40%\" href=\"#travel\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" class=\"custom-button center-block text-center\"> <span>Take Me There ! </span> <i style=\"margin-left:10px\" class=\"icon-angle-right\"></i></a> </div> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/home_cover.jpg') ;background-size:cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"slider-caption-center\"> <a style=\"position:absolute; left:0%; right:0%; bottom:20%\" href=\"#travel\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" class=\"custom-button center-block text-center\"> <span>Take Me There ! </span> <i style=\"margin-left:10px\" class=\"icon-angle-right\"></i></a> </div> </div> </div> <section id=\"travel\" style=\"margin-top:3%\" class=\"custom-padding\"> <h2 class=\"paul-title\"> Travel Inspiration </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Your choices, Your friends, Your travel plans </p><div class=\"underline\"> </div> <p></p> <ng-owl-carousel class=\"owl-theme\" owl-items=\"sliderData\" owl-properties=\"properties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide\" style=\"padding:2% 0 2% 0%\" data-ng-repeat=\"item in sliderData\"> <img ng-click=\"openOrCloseAccordion(item.id)\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> <div id=\"accordion\" class=\"clearfix topmargin\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion\"> <div ng-click=\"closeAccordion()\" style=\"cursor:pointer; font-size:3rem; margin-left:95%\" class=\"glyphicon glyphicon-remove-circle\"></div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"travelPlanData\" owl-properties=\"accordionProperties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide-new\" style=\"padding:2% 0 2% 0\" data-ng-repeat=\"item in travelPlanData\"> <img ui-sref=\"travel-plan.detail({id: item.id})\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> <span class=\"paul-slider-caption\"> {{item.title}}</span> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section id=\"articles\" class=\"custom-padding\"> <div class=\"topmargin\"> <h2 ui-sref=\"blog.list\" style=\"cursor:pointer\" class=\"paul-title\"> Recent Articles </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Live the wanderlust through words </p><div class=\"underline\"> </div> <p></p> </div> <div style=\"overflow:hidden; margin-bottom:-5%\"> <div ui-sref=\"blog.list\" class=\"image blog-image-left\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "          <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +
     "          <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[0].imageUrl}}\" alt=\"{{blog[0].title}}\"> </picture> </div> <div class=\"text blog-content-left\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.list\" class=\"blog-title\"> {{blog[0].title}}</h3> <div class=\"blog-content\"> <p>{{blog[0].description}}... </p> <div class=\"feature-info\"> <span class=\"icon-calendar3\"> {{blog[0].time }} • {{blog[0].user.name}}</span> </div> </div> </div> </div> <div style=\"overflow:hidden\"> <div ui-sref=\"blog.list\" class=\"image blog-image-right\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "          <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +
@@ -2766,19 +2773,18 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "      </div>--> <div class=\"home-form\"> <div style=\"padding:10% 5% 17% 5%\"> <div> <div> <h3 style=\"margin: 0;font-size: 25px;font-weight: 600;\n" +
     "    line-height: normal;\n" +
     "    letter-spacing: 2px;\n" +
-    "    color:#FFF\">Not Sure Where to Begin?</h3> <p style=\"color:#FFF; font-size:15px\">Complete this form &amp; we'll get right back to you!</p> </div> </div> <form name=\"inquiryForm\" class=\"nobottommargin\" ng-submit=\"onFormSubmit(inquiryForm)\"> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Name<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.name\" class=\"form-control\" id=\"{{name}}\" type=\"text\" value=\"{{name}}\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Phone Number<span class=\"asterisk\">*</span></label> <div class=\"inquireTelContainer\"> <input ng-model=\"inquiryObj.phone\" class=\"form-control\" id=\"{{inquireTel}}\" value=\"{{phone}}\" type=\"tel\" data-parsley-intphone=\"{{inquireTel}}\" data-parsley-cnic required data-prefill=\"phone\"> </div> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Email<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.email\" class=\"form-control\" id=\"{{inquireEmail}}\" type=\"email\" value=\"{{email}}\" data-parsley-trim-value=\"true\" required data-prefill=\"email\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">No. of Travellers<span class=\"asterisk\">*</span></label> <div class=\"inquireTelContainer\"> <input ng-model=\"inquiryObj.noOfTravellers\" class=\"form-control\" id=\"{{inquireTel}}\" value=\"{{tel}}\" type=\"number\"> <input id=\"{{inquireCountry}}\" type=\"hidden\" data-prefill=\"country\"> </div> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">I Would Like To Go To<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.destination\" class=\"form-control\" type=\"text\" value=\"{{destination}}\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\" for=\"form-condition-10\">In the month of...</label> <select ng-model=\"inquiryObj.travelMonth\" ng-click=\"display5={display:'block'}\" id=\"form-condition-10\" name=\"form-condition-10\" class=\"required form-control\"> <option value=\"\">Travel Dates TBC</option> <option value=\"January\">January</option> <option value=\"February\">February</option> <option value=\"March\">March</option> <option value=\"April\">April</option> <option value=\"May\">May</option> <option value=\"June\">June</option> <option value=\"July\">July</option> <option value=\"August\">August</option> <option value=\"September\">September</option> <option value=\"October\">October</option> <option value=\"November\">November</option> <option value=\"December\">December</option> </select> </div> <div style=\"width:100%\" class=\"col-sm-12 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Tell us a little bit about what you're looking for ?<span class=\"asterisk\">*</span></label> <textarea ng-model=\"inquiryObj.occasion\" style=\"max-width:100%; max-height:10%\" class=\"form-control\"></textarea> </div> <div style=\"text-transform:capitalize; padding-top:15%\" class=\"col-sm-12\"> <button type=\"submit\" style=\"margin:0px !important; width:100%; height:70px\" id=\"{{inquireSubmit}}\" class=\"button button-blue\">Submit Inquiry</button> </div> </form> </div> </div> </div> </section> <section> <div class=\"topmargin\"> <h2 class=\"instaText\"> On Instagram @ wanderwagon </h2> </div> <!--<div class=\"marque\">\n" +
-    "   <ul class=\"slideContainer\" id=\"money_start\">\n" +
-    "      <li ng-repeat=\"photo in instaPhotos\" class=\"slideItem\">\n" +
-    "        <img style=\"cursor:pointer;\" ng-click=\"openInstaProfile()\" style=\"margin:1%;\" ng-src=\"{{photo.imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\">\n" +
-    "      </li>\n" +
-    "    </ul>\n" +
-    "</div>--> <div id=\"news_strip\"> <a ng-repeat=\"(k, n) in news track by $index\" ng-style=\"{'right': get_news_right($index)}\" id=\"news_{{$index}}\" ng-mouseover=\"conf.news_move_flag=false\" ng-mouseout=\"conf.news_move_flag=true\"> <img style=\"cursor:pointer\" ng-click=\"openInstaProfile()\" style=\"margin:1%\" ng-src=\"{{n.imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\"> </a> </div> </section> <div class=\"modal fade\" id=\"messageModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"messageModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"messageModalLabel\">{{messageType}}</h4> </div> <div class=\"modal-body\"> <div class=\"row\"> <div style=\"padding:5%\" class=\"col-full\"> {{message}} </div> <!--<div class=\"col-md-6 col-sm-6 col-xs-6 text-right\">\n" +
+    "    color:#FFF\">Not Sure Where to Begin?</h3> <p style=\"color:#FFF; font-size:15px\">Complete this form &amp; we'll get right back to you!</p> </div> </div> <form name=\"inquiryForm\" class=\"nobottommargin\" ng-submit=\"onFormSubmit(inquiryForm)\"> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Name<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.name\" class=\"form-control\" id=\"{{name}}\" type=\"text\" value=\"{{name}}\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Phone Number<span class=\"asterisk\">*</span></label> <div class=\"inquireTelContainer\"> <input ng-model=\"inquiryObj.phone\" class=\"form-control\" id=\"{{inquireTel}}\" value=\"{{phone}}\" type=\"tel\" data-parsley-intphone=\"{{inquireTel}}\" data-parsley-cnic required data-prefill=\"phone\"> </div> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Email<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.email\" class=\"form-control\" id=\"{{inquireEmail}}\" type=\"email\" value=\"{{email}}\" data-parsley-trim-value=\"true\" required data-prefill=\"email\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">No. of Travellers<span class=\"asterisk\">*</span></label> <div class=\"inquireTelContainer\"> <input ng-model=\"inquiryObj.noOfTravellers\" class=\"form-control\" id=\"{{inquireTel}}\" value=\"{{tel}}\" type=\"number\"> <input id=\"{{inquireCountry}}\" type=\"hidden\" data-prefill=\"country\"> </div> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">I Would Like To Go To<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.destination\" class=\"form-control\" type=\"text\" value=\"{{destination}}\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\" for=\"form-condition-10\">In the month of...</label> <select ng-model=\"inquiryObj.travelMonth\" ng-click=\"display5={display:'block'}\" id=\"form-condition-10\" name=\"form-condition-10\" class=\"required form-control\"> <option value=\"\">Travel Dates TBC</option> <option value=\"January\">January</option> <option value=\"February\">February</option> <option value=\"March\">March</option> <option value=\"April\">April</option> <option value=\"May\">May</option> <option value=\"June\">June</option> <option value=\"July\">July</option> <option value=\"August\">August</option> <option value=\"September\">September</option> <option value=\"October\">October</option> <option value=\"November\">November</option> <option value=\"December\">December</option> </select> </div> <div style=\"width:100%\" class=\"col-sm-12 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Tell us a little bit about what you're looking for ?<span class=\"asterisk\">*</span></label> <textarea ng-model=\"inquiryObj.occasion\" style=\"max-width:100%; max-height:10%\" class=\"form-control\"></textarea> </div> <div style=\"text-transform:capitalize; padding-top:15%\" class=\"col-sm-12\"> <button type=\"submit\" style=\"margin:0px !important; width:100%; height:70px\" id=\"{{inquireSubmit}}\" class=\"button button-blue\">Submit Inquiry</button> </div> </form> </div> </div> </div> </section> <section class=\"bottommargin\"> <div class=\"topmargin\"> <h2 class=\"instaText\"> On Instagram @ wanderwagon </h2> </div> <insta-photo-stream></insta-photo-stream> </section> <div class=\"modal fade\" id=\"messageModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"messageModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"messageModalLabel\">{{messageType}}</h4> </div> <div class=\"modal-body\"> <div class=\"row\"> <div style=\"padding:5%\" class=\"col-full\"> {{message}} </div> <!--<div class=\"col-md-6 col-sm-6 col-xs-6 text-right\">\n" +
     "            Its button\n" +
     "					</div>--> </div> </div> <!--<div class=\"modal-body\" ng-show=\"error\">\n" +
     "				<div class=\"row filter-remove text-center\">\n" +
     "					<p>Error</p>\n" +
     "				</div>\n" +
     "			</div>--> </div> </div> </div> "
+  );
+
+
+  $templateCache.put('views/insta-photo-stream.html',
+    "<div class=\"slider\"> <div class=\"slideContainer\"> <div class=\"slideItem\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[0].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\"> </div> <div class=\"slideItem\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[1].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\"> </div> <div class=\"slideItem\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[2].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\"> </div> <div class=\"slideItem\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[3].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\"> </div> <div class=\"slideItem\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[4].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\"> </div> <div class=\"slideItem\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[5].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\"> </div> <div class=\"slideItem\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[6].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\"> </div> <div class=\"slideItem\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[7].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\"> </div> </div> </div>"
   );
 
 
@@ -3011,12 +3017,15 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "										<li><strong>1 Year</strong> License</li>\n" +
     "										<li>Phone &amp; Email Support</li>\n" +
     "									</ul>\n" +
-    "								</div>--> </div> </div> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Comfort</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>6000<span class=\"price-tenure\">/head</span> </div> </div> </div> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Luxury</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>8000<span class=\"price-tenure\">/head</span> </div> </div> </div> </div> </section> <section class=\"container\"> <div> <h2 style=\"text-align:center;margin:6rem 0 0rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> Itinerary <div style=\"display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px\"> </div> </h2> </div> <div class=\"center-block\" style=\"width:80%\"> <flip-book></flip-book> </div> </section> <section class=\"container\"> <div> <h2 style=\"text-align:center;margin:6rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> Travel Tips <div style=\"display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px\"> </div> </h2> </div> <ul> <li style=\"font-size:18px; padding:1%\" ng-repeat=\"item in tips\" type=\"square\">{{item.tip}}</li> </ul> <div ui-sref=\"plan-trip\" class=\"center-block\" style=\"width:50%; cursor:pointer; padding:2%\"> <a class=\"button button-3d button-rounded button-blue loved-it-button\"> Plan My Trip!</a> </div> </section> "
+    "								</div>--> </div> </div> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Comfort</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>6000<span class=\"price-tenure\">/head</span> </div> </div> </div> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Luxury</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>8000<span class=\"price-tenure\">/head</span> </div> </div> </div> </div> </section> <section> <div> <h2 style=\"text-align:center;margin:6rem 0 0rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> Itinerary <div style=\"display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px\"> </div> </h2> </div> <div class=\"center-block\" style=\"width:80%\"> <flip-book></flip-book> </div> <!-- \n" +
+    "  <div class=\"mobile-cover-page center-block\" style=\"width:100%;\">\n" +
+    "    <mobile-flip-book></mobile-flip-book>\n" +
+    "  </div> --> </section> <section class=\"container\"> <div> <h2 style=\"text-align:center;margin:6rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> Travel Tips <div style=\"display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px\"> </div> </h2> </div> <ul> <li style=\"font-size:18px; padding:1%\" ng-repeat=\"item in tips\" type=\"square\">{{item.tip}}</li> </ul> <div ui-sref=\"plan-trip\" class=\"center-block\" style=\"width:50%; cursor:pointer; padding:2%\"> <a class=\"button button-3d button-rounded button-blue loved-it-button\"> Plan My Trip!</a> </div> </section> "
   );
 
 
   $templateCache.put('views/travel-plan.html',
-    "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/travelplans/cover.jpg');background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/travel_plan_cover.jpg');background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <section id=\"travel\" style=\"margin-top:3%\" class=\"custom-padding\"> <h2 class=\"paul-title\"> Travel Inspiration </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Your choices, Your friends, Your travel plans </p><div class=\"underline\" style=\"margin-top:15px\"> </div> <p></p> <ng-owl-carousel class=\"owl-theme\" owl-items=\"sliderData\" owl-properties=\"properties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide\" style=\"padding:2% 0 2% 0%\" data-ng-repeat=\"item in sliderData\"> <img ng-click=\"openOrCloseAccordion() ; getTravelPlans(item.id)\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> <div id=\"accordion\" class=\"clearfix topmargin\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion\"> <div ng-click=\"closeAccordion()\" style=\"cursor:pointer; font-size:3rem; margin-left:95%\" class=\"glyphicon glyphicon-remove-circle\"></div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"travelPlanData\" owl-properties=\"nestedCarouselproperties\" owl-ready=\"ready($api)\"> <div ui-sref=\"travel-plan.detail({id: item.id})\" class=\"paul-slide-new\" style=\"padding:2% 0 2% 0\" data-ng-repeat=\"item in travelPlanData\"> <img style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> <span class=\"paul-slider-caption\"> {{item.title}}</span> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section id=\"articles\" class=\"custom-padding\"> <div class=\"topmargin\"> <h2 ui-sref=\"blog.list\" style=\"cursor:pointer\" class=\"paul-title\"> Recent Articles </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Live the wanderlust through words </p><div class=\"underline\"> </div> <p></p> </div> <div style=\"overflow:hidden; margin-bottom:-5%\"> <div ui-sref=\"blog.list\" class=\"image blog-image-left\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
+    "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/travelplans/cover.jpg');background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/travel_plan_cover.jpg');background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <section id=\"travel\" style=\"margin-top:3%\" class=\"custom-padding\"> <h2 class=\"paul-title\"> Travel Inspiration </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Your choices, Your friends, Your travel plans </p><div class=\"underline\" style=\"margin-top:15px\"> </div> <p></p> <ng-owl-carousel class=\"owl-theme\" owl-items=\"sliderData\" owl-properties=\"properties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide\" style=\"padding:2% 0 2% 0%\" data-ng-repeat=\"item in sliderData\"> <img ng-click=\"openOrCloseAccordion(item.id)\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> <div id=\"accordion\" class=\"clearfix topmargin\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion\"> <div ng-click=\"closeAccordion()\" style=\"cursor:pointer; font-size:3rem; margin-left:95%\" class=\"glyphicon glyphicon-remove-circle\"></div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"travelPlanData\" owl-properties=\"nestedCarouselproperties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide-new\" style=\"padding:2% 0 2% 0\" data-ng-repeat=\"item in travelPlanData\"> <img ui-sref=\"travel-plan.detail({id: item.id})\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> <span class=\"paul-slider-caption\"> {{item.title}}</span> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section id=\"articles\" class=\"custom-padding\"> <div class=\"topmargin\"> <h2 ui-sref=\"blog.list\" style=\"cursor:pointer\" class=\"paul-title\"> Recent Articles </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Live the wanderlust through words </p><div class=\"underline\"> </div> <p></p> </div> <div style=\"overflow:hidden; margin-bottom:-5%\"> <div ui-sref=\"blog.list\" class=\"image blog-image-left\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "        <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +
     "        <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[0].imageUrl}}\" alt=\"{{blog[0].title}}\"> </picture> </div> <div class=\"text blog-content-left\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.list\" class=\"blog-title\"> {{blog[0].title}}</h3> <div class=\"blog-content\"> <p>{{blog[0].description}}... </p> <div class=\"feature-info\"> <span class=\"icon-calendar3\"> {{blog[0].time }} • {{blog[0].user.name}}</span> </div> </div> </div> </div> <div style=\"overflow:hidden\"> <div ui-sref=\"blog.list\" class=\"image blog-image-right\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "        <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +

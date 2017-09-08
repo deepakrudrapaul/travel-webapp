@@ -93,10 +93,10 @@ angular.module('wanderwagon-webapp')
 
 
     $scope.openSideNav = function () {
-      angular.element(document.getElementById('mySidenav')).css('width', '60%');
+      angular.element(document.getElementById('mySidenav')).css('width', '70%');
     }
 
-    $scope.closeSideNav = function () {
+    $rootScope.closeSideNav = function () {
       angular.element(document.getElementById('mySidenav')).css('width', '0px');
     }
 

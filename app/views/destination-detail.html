@@ -74,19 +74,19 @@
       <div class="underline" style="margin-bottom:2rem;">
         </div>
       <div style="margin: 30px;">
-        <h5 class="pull-left"><i style="padding-right:10px;" class="icon-calendar i-alt"></i>Best Time To Visit</h5>
-        <p style="margin-right: 40px;" class="pull-right">{{detail.bestTimeToVisit}}</p>
+        <h5 class="pull-left1"><i style="padding-right:10px;" class="icon-calendar i-alt"></i>Best Time To Visit</h5>
+        <p style="margin-right: 40px;" class="pull-right1">{{detail.bestTimeToVisit}}</p>
       </div>
       <span class="clearfix"></span>
       <div style="margin: 0 30px 30px 30px;">
-        <h5 class="pull-left"><i style="padding-right:10px;" class="icon-calendar i-alt"></i>Days Required</h5>
-        <p style="margin-right: 40px;" class="pull-right">{{detail.daysToVisit}}</p>
+        <h5 class="pull-left1"><i style="padding-right:10px;" class="icon-calendar i-alt"></i>Days Required</h5>
+        <p style="margin-right: 40px;" class="pull-right1">{{detail.daysToVisit}}</p>
       </div>
 
       <span class="clearfix"></span>
       <div style="margin: 0 30px 30px 30px;">
-        <h5 class="pull-left"><i style="padding-right:10px;" class="icon-folder i-alt"></i>Category</h5>
-        <p style="margin-right: 40px; word-wrap: break-word;" class="pull-right">{{detail.category}}</p>
+        <h5 class="pull-left1"><i style="padding-right:10px;" class="icon-folder i-alt"></i>Category</h5>
+        <p style="margin-right: 40px; word-wrap: break-word;" class="pull-right1">{{detail.category}}</p>
       </div>
 
     </div>
@@ -138,7 +138,7 @@
 </section>
 
 
-<section class=" container clearfix custom-height" id="places">
+<section class="clearfix custom-padding" id="places">
 
   <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;">
     Places to visit
@@ -160,7 +160,7 @@
         <ng-owl-carousel class="owl-theme" owl-items="placesData" owl-properties="accordionProperties" owl-ready="readyPlaceAccordion($api)">
 
           <div data-ng-repeat="item in placesData">
-            <div class="center-block" style="width:80%;">
+            <div class="center-block">
               <div>
                 <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;"><br /> {{item.placeName}}
                   <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
@@ -175,19 +175,19 @@
               <div class="dropdown-slider-content">
                 <span ng-click="closeAccordion()" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
 
-                <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                <h4 style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
                   What is it.....</h4>
 
                 <p>{{item.description}}
                 </p>
 
-                <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                <h4 style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
                   How to reach</h4>
                 <p>{{item.howToReachDesc}}
                 </p>
 
                 <div>
-                  <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                  <h4 class="pull-left" style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
                     Timings - <span>{{item.timing}}</span></h4>
                 </div>
               </div>
@@ -199,7 +199,7 @@
   </div>
 </section>
 
-<section class=" container clearfix custom-height" id="activities">
+<section class="clearfix custom-padding" id="activities">
       <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;">
         Activities
       </h2>
@@ -220,7 +220,7 @@
 
           <ng-owl-carousel class="owl-theme" owl-items="activitiesData" owl-properties="accordionProperties" owl-ready="readyActivityAccordion($api)">
               <div data-ng-repeat="item in activitiesData">
-                  <div class="center-block" style="width:80%;">
+                  <div class="center-block">
                       <div>
                         <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;"><br /> {{item.activityName}}
                           <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
@@ -235,13 +235,13 @@
                       <div class="dropdown-slider-content">
                         <span ng-click="closeAccordion1()" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
         
-                        <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                        <h4 style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
                           What is it.....</h4>
         
                         <p>{{item.description}}
                         </p>
         
-                        <h4 style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                        <h4 style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
                           How to reach</h4>
                         <p>{{item.placeOfConduct}}
                         </p>
@@ -251,7 +251,7 @@
                           <!-- <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
                             Timings - <span>{{item.timing}}</span></h4> -->
         
-                          <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
+                          <h4 class="pull-left" style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
                             Duration - <span>{{item.duration}}</span></h4>
                           <br /><br /><br /><br />
                         </div>

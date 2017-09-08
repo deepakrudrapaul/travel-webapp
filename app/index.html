@@ -39,10 +39,10 @@
 
         <div class="primary-menu-trigger" ng-touch="openSideNav()" ng-click="openSideNav()"><i class="icon-reorder" style="font-size:30px; color:#FFFFFF"></i></div>
 
-        <div id="mySidenav" class="sidenav" style="background-color:darkgray;">
+        <div id="mySidenav" class="sidenav" style="background-color:#36353B;">
           <a href="" class="closebtn" ng-touch="closeSideNav()" ng-click="closeSideNav()">&times;</a>
           <a href="" ui-sref-active="active-menu" ui-sref="travel-plan.list" ng-touch="closeSideNav()" ng-click="closeSideNav()">
-            <div><i style="padding:5%;" class="icon-calendar2"></i>Travel Plans</div>
+            <div><i style="padding:25% 5% 5% 5%;" class="icon-calendar2"></i>Travel Plans</div>
           </a>
           <a href="" ui-sref-active="active-menu" ui-sref="destination.list" ng-touch="closeSideNav()" ng-click="closeSideNav()">
             <div><i style="padding:5%;" class="icon-location"></i>Destinations</div>
@@ -154,7 +154,7 @@
 
 
 
-  <div id="slider" ui-view></div>
+  <div ng-touch="closeSideNav()" ng-click="closeSideNav()" id="slider" ui-view></div>
 
 
 
@@ -476,6 +476,7 @@
   <script src="scripts/controllers/change-password.js"></script>
   <script src="scripts/controllers/travel-plan-detail.js"></script>
   <script src="scripts/directives/flip-book.js"></script>
+  <script src="scripts/directives/insta-photo-stream.js"></script>
   <!-- endbuild -->
 
   <!-- External JavaScripts

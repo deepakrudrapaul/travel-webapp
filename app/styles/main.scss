@@ -12735,14 +12735,7 @@ body #side-panel.dark #side-panel-trigger-close a {
   .header-bg {
     background-color: #14C1E0;
   }
-  #header,
-  #header-wrap,
-  #header.sticky-style-2,
-  #header.sticky-style-3,
-  #header.sticky-style-2 #header-wrap,
-  #header.sticky-style-3 #header-wrap {
-    height: auto !important;
-  }
+ 
   #header.sticky-style-2 #header-wrap,
   #header.sticky-style-3 #header-wrap {
     min-height: 60px;
@@ -29905,11 +29898,6 @@ label.checkbox {
   width: 30%;
 }
 
-// @media (min-width: 286px) {
-//   .col-sm-6 {
-//     width: 50% !important;
-//   }
-// }
 .overview {
   width: 60%;
   border: 1px solid #F5F5F5;
@@ -30116,9 +30104,9 @@ a {
     transition: margin 0.4s ease, padding 0.4s ease;
   }
   .paul-slider-caption {
-    font-size: 2rem;
-    left: 40%;
-    top: 45%;
+    font-size: 1.5rem;
+    left: 10%;
+    bottom: 10%;
     color: #fff;
     z-index: 30;
     position: absolute;
@@ -30131,10 +30119,16 @@ a {
   .pull-right1 {
     width: 100%;
     float: none;
+    margin-left:0px;
+    margin-right:0px;
+    display:block;
   }
   .pull-left1 {
     float: none;
     width: 100%;
+    margin-left:0px;
+    margin-right:0px;
+    display:block;
   }
   .secondary-title {
     margin-bottom: 0px;
@@ -30788,25 +30782,12 @@ a {
   .paul-slide {
     height:500px;
   }
+
+  .paul-slide-new {
+    height: 450px;
+  }
 }
 
-#news_strip {
-  width: 100%;
-  border-bottom: 1px dotted #cccccc;
-  display: block;
-  height: 200px;
-  position: relative;
-  overflow: hidden;
-}
-
-#news_strip a {
-  display: inline;
-  text-decoration: none;
-  margin-right: 0px;
-  z-index: 1;
-  position: absolute;
-  top: 0px;
-}
 
 // CHIPS
 .chip {

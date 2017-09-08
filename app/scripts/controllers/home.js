@@ -26,7 +26,7 @@ angular.module('wanderwagon-webapp')
     };
 
     $scope.travelPlanData = [];
-    $scope.getTravelPlans = function (id) {
+    var getTravelPlans = function (id) {
       remoteSvc.getTravelPlans(id).then(function (response){
         $scope.travelPlanData = response;
       });
@@ -42,16 +42,17 @@ angular.module('wanderwagon-webapp')
 
 
     $scope.openAccordion = false;
-    $scope.openOrCloseAccordion = function () {
+    $scope.openOrCloseAccordion = function (id) {
       if ($scope.openAccordion === true) {
         $scope.closeAccordion();
       } else if ($scope.openAccordion === false) {
         $scope.openAccordion = true;
+        getTravelPlans(id);
       }
     };
 
     $scope.closeAccordion = function () {
-      $scope.travelPlanData = [];
+      $scope.travelPlanData = undefined;
       $scope.openAccordion = false;
       var someElement = angular.element(document.getElementById('travel'));
       $document.scrollToElement(someElement, 30, 800);
@@ -108,49 +109,7 @@ angular.module('wanderwagon-webapp')
     };
 
 
-
-
-    $scope.news = [];
-    $scope.conf = {
-      news_length: false,
-      news_pos: 200, // the starting position from the right in the news container
-      news_margin: 20,
-      news_move_flag: true
-    };
-
-    $scope.get_news_right = function (idx) {
-      var $right = $scope.conf.news_pos;
-      for (var ri = 0; ri < idx; ri++) {
-        if (document.getElementById('news_' + ri)) {
-          $right += $scope.conf.news_margin + angular.element(document.getElementById('news_' + ri))[0].offsetWidth;
-        }
-      }
-      return $right + 'px';
-    };
-
-
-    $scope.news_move = function () {
-      if ($scope.conf.news_move_flag) {
-        $scope.conf.news_pos--;
-        if (angular.element(document.getElementById('news_0'))[0].offsetLeft > angular.element(document.getElementById('news_strip'))[0].offsetWidth + $scope.conf.news_margin) {
-          var first_new = $scope.news[0];
-          $scope.news.push(first_new);
-          $scope.news.shift();
-          $scope.conf.news_pos += angular.element(document.getElementById('news_0'))[0].offsetWidth + $scope.conf.news_margin;
-        }
-      }
-    };
-
-
-    $scope.getInstaPhotos = function () {
-      remoteSvc.getInstaPhotos().then(function (response) {
-        $scope.news = response;
-        $interval($scope.news_move, 50);
-      });
-    };
-    $scope.getInstaPhotos();
-
-
+   
 
     var owlAPi;
     $scope.ready = function ($api) {
@@ -158,18 +117,17 @@ angular.module('wanderwagon-webapp')
   };
    
     $scope.properties = {
-      // autoHeight:true,
-
+      autoHeight:true,
       animateIn: 'fadeIn',
       lazyLoad: true,
-      items: 4,
+      items: 3,
       margin: 0,
       mouseDrag: true,
       touchDrag: true,
       dots: false,
       nav: true,
       responsiveClass:true,
-      navText : ["<i class='icon-arrow-left'></i>","<i class='icon-arrow-right'></i>"],
+      navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
       responsive:{
           0:{
               items:1,
@@ -188,8 +146,8 @@ angular.module('wanderwagon-webapp')
 
  
 
-$scope.nestedCarouselproperties = {
-  // autoHeight:true,
+$scope.accordionProperties = {
+  autoHeight:true,
   animateIn: 'fadeIn',
   lazyLoad: true,
   items: 3,
@@ -199,7 +157,7 @@ $scope.nestedCarouselproperties = {
   dots: false,
   nav: true,
   responsiveClass:true,
-  navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+  navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
   responsive:{
       0:{
           items:1,
