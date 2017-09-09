@@ -1,7 +1,10 @@
-<div style="background-color:#36353B;background-image: url({{detail.imageUrl}});background-size: cover; height:100vh;">
+<div style="background-color:#36353B;background-image: url({{detail.imageUrl}});background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover; height:100vh;">
   <div class="container clearfix">
     <div class="center-block slider-caption-center">
-      <h2 class="text-center primary-title">{{detail.name}}</h2>
+      <h2 class="text-center primary-title" style="font-size:12rem;">{{detail.name}}</h2>
       <p class="text-center primary-title-1">{{detail.title}}</p>
 
     </div>
@@ -44,10 +47,10 @@
 </header>
 <!-- #header end -->
 
-<section id="about">
+<section id="about" style="margin-top:5%;">
   <div class=" container clearfix">
     <div>
-      <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;">
+      <h2 class="paul-title">
         Welcome to {{detail.name}}
       </h2>
       <div class="underline" style="margin-bottom:2rem;">
@@ -105,7 +108,7 @@
     </div>
 
 
-    <div class="center-block">
+    <div class="center-block" style="margin:5% 0">
       <div class="feature-box">
         <div class="custom-fbox-icon">
           <!--<i class="icon-plane i-alt"></i>-->
@@ -116,7 +119,7 @@
         </p>
       </div>
 
-      <div class="feature-box">
+      <div class="feature-box" style="margin:5% 0">
         <div class="custom-fbox-icon">
           <img src="images/train.png" />
         </div>
@@ -140,10 +143,10 @@
 
 <section class="clearfix custom-padding" id="places">
 
-  <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;">
+  <h2 style="margin-top:5%;" class="paul-title">
     Places to visit
   </h2>
-  <div class="underline" style="margin-bottom:2rem;">
+  <div class="underline" style="margin-bottom:5rem;">
     </div>
 
   <ng-owl-carousel class="owl-theme" owl-items="placesData" owl-properties="sliderProperties" owl-ready="ready($api)">
@@ -154,7 +157,7 @@
     </div>
   </ng-owl-carousel>
 
-  <div id="accordion1" class="clearfix" style="margin-top:8%;">
+  <div id="accordion1" class="clearfix" style="margin-top:5%;">
     <uib-accordion>
       <uib-accordion-group is-open="openAccordion">
         <ng-owl-carousel class="owl-theme" owl-items="placesData" owl-properties="accordionProperties" owl-ready="readyPlaceAccordion($api)">
@@ -200,10 +203,10 @@
 </section>
 
 <section class="clearfix custom-padding" id="activities">
-      <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;">
+      <h2 style="margin-top:5%;" class="paul-title">
         Activities
       </h2>
-      <div class="underline" style="margin-bottom:2rem;">
+      <div class="underline" style="margin-bottom:5rem;">
         </div>
 
       <ng-owl-carousel class="owl-theme" owl-items="activitiesData" owl-properties="sliderProperties" owl-ready="ready($api)">
@@ -214,7 +217,7 @@
           </div>
         </ng-owl-carousel>
 
-  <div id="accordion2" class="clearfix" style="margin-top:8%;">
+  <div id="accordion2" class="clearfix" style="margin-top:5%;">
     <uib-accordion>
       <uib-accordion-group is-open="openAccordion1">
 
@@ -275,8 +278,7 @@
 
 
 <section>
-  <div class="topmargin ">
-    <h2 style="text-align:center; color:#000;" class="secondary-title">
+    <h2 class="paul-title">
       Why we love {{detail.name}} ?
     </h2>
     <div class="underline" style="margin-bottom:2rem;">
@@ -293,12 +295,11 @@
 
 
 
-  <div class="container " style="padding-bottom:2%; ">
-    <div class="center-block " style=" width:70%; ">
-      <h2 style="text-align:center; color:#000;" class="secondary-title">
+  <div class="custom-padding" style="margin:4% 0;">
+      <h2 class="paul-title">
         After {{detail.name}}, Where Next ?
       </h2>
-    </div>
+
    
 
     <ng-owl-carousel class="owl-theme" owl-items="placesData" owl-properties="sliderProperties" owl-ready="ready($api)">
