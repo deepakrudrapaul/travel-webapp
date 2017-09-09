@@ -68,7 +68,7 @@ angular.module('wanderwagon-webapp')
                  $rootScope.$emit('social-login', 'true'); 
               })
               .catch(function (error) {
-                $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
+                $scope.showModal('Error', "Error While With Google Login. Please Try After Some Time");
               });
           }
         })
