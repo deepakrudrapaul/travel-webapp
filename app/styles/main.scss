@@ -30787,11 +30787,10 @@ a {
   background-color: #111;
   /* Black*/
   overflow-x: hidden;
+  overflow-y:hidden;
   /* Disable horizontal scroll */
   padding-top: 60px;
   /* Place content 60px from the top */
-  transition: 0.5s;
-  /* 0.5 second transition effect to slide in the sidenav */
 }
 
 
@@ -30805,8 +30804,7 @@ a {
   display: block;
   line-height: 22px;
   padding: 19px 15px;
-  font-weight: bold;
-  font-size: 13px;
+  font-size: 10px;
   color: #FFFFFF;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -30857,7 +30855,7 @@ a {
     padding-top: 15px;
   }
   .sidenav a {
-    font-size: 18px;
+    font-size: 12px;
   }
 
   .web-footer {

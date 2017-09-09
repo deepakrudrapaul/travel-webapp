@@ -44224,15 +44224,14 @@ a {
   background-color: #111;
   /* Black*/
   overflow-x: hidden;
+  overflow-y: hidden;
   /* Disable horizontal scroll */
   padding-top: 60px;
   /* Place content 60px from the top */
-  transition: 0.5s;
-  /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* The navigation menu links */
-/* line 30800, ../../app/styles/main.scss */
+/* line 30799, ../../app/styles/main.scss */
 .sidenav a {
   text-decoration: none;
   display: block;
@@ -44241,8 +44240,7 @@ a {
   display: block;
   line-height: 22px;
   padding: 19px 15px;
-  font-weight: bold;
-  font-size: 13px;
+  font-size: 10px;
   color: #FFFFFF;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -44251,14 +44249,14 @@ a {
 }
 
 /* When you mouse over the navigation links, change their color */
-/* line 30820, ../../app/styles/main.scss */
+/* line 30818, ../../app/styles/main.scss */
 .sidenav a:hover,
 .offcanvas a:focus {
   color: #f1f1f1;
 }
 
 /* Position and style the close button (top right corner) */
-/* line 30828, ../../app/styles/main.scss */
+/* line 30826, ../../app/styles/main.scss */
 .sidenav .closebtn {
   position: absolute;
   top: 15px;
@@ -44270,47 +44268,47 @@ a {
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media only screen and (min-device-width: 0px) and (max-device-width: 468px) {
-  /* line 30848, ../../app/styles/main.scss */
+  /* line 30846, ../../app/styles/main.scss */
   .cover-page {
     display: none !important;
   }
 
-  /* line 30852, ../../app/styles/main.scss */
+  /* line 30850, ../../app/styles/main.scss */
   .mobile-cover-page {
     display: block !important;
   }
 
-  /* line 30856, ../../app/styles/main.scss */
+  /* line 30854, ../../app/styles/main.scss */
   .sidenav {
     padding-top: 15px;
   }
 
-  /* line 30859, ../../app/styles/main.scss */
+  /* line 30857, ../../app/styles/main.scss */
   .sidenav a {
-    font-size: 18px;
+    font-size: 12px;
   }
 
-  /* line 30863, ../../app/styles/main.scss */
+  /* line 30861, ../../app/styles/main.scss */
   .web-footer {
     display: none;
   }
 
-  /* line 30866, ../../app/styles/main.scss */
+  /* line 30864, ../../app/styles/main.scss */
   .mobile-footer {
     display: block;
   }
 
-  /* line 30870, ../../app/styles/main.scss */
+  /* line 30868, ../../app/styles/main.scss */
   .paul-slide {
     height: 500px;
   }
 
-  /* line 30874, ../../app/styles/main.scss */
+  /* line 30872, ../../app/styles/main.scss */
   .paul-slide-new {
     height: 450px;
   }
 }
-/* line 30881, ../../app/styles/main.scss */
+/* line 30879, ../../app/styles/main.scss */
 .chip {
   cursor: pointer;
   display: inline-block;
@@ -44323,12 +44321,12 @@ a {
   margin: 2%;
 }
 
-/* line 30893, ../../app/styles/main.scss */
+/* line 30891, ../../app/styles/main.scss */
 .selected-button {
   background-color: #14C1E0;
 }
 
-/* line 30898, ../../app/styles/main.scss */
+/* line 30896, ../../app/styles/main.scss */
 #flipbook {
   transition: margin-left 0.2s;
   margin-left: 3%;
@@ -44336,20 +44334,20 @@ a {
   white-space: normal;
 }
 
-/* line 30909, ../../app/styles/main.scss */
+/* line 30907, ../../app/styles/main.scss */
 #flipbook .page {
   background-color: #717070;
   font-size: 1em;
 }
 
-/* line 30914, ../../app/styles/main.scss */
+/* line 30912, ../../app/styles/main.scss */
 #flipbook .page-wrapper {
   -ms-perspective: 2000px;
   -o-perspective: 2000px;
   perspective: 2000px;
 }
 
-/* line 30922, ../../app/styles/main.scss */
+/* line 30920, ../../app/styles/main.scss */
 #flipbook .odd {
   background: -webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
   background-image: linear-gradient(to left, #FFF 95%, #C4C4C4 100%);
@@ -44358,7 +44356,7 @@ a {
   box-shadow: inset 0 0 5px #666;
 }
 
-/* line 30936, ../../app/styles/main.scss */
+/* line 30934, ../../app/styles/main.scss */
 #flipbook .even {
   background: -webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
   background-image: linear-gradient(left, #fff 95%, #dadada 100%);
@@ -44367,7 +44365,7 @@ a {
   box-shadow: inset 0 0 5px #666;
 }
 
-/* line 30950, ../../app/styles/main.scss */
+/* line 30948, ../../app/styles/main.scss */
 .show-bar #flipbook .shadow {
   -webkit-transition: -webkit-box-shadow 0.5s;
   -moz-transition: -moz-box-shadow 0.5s;
@@ -44378,7 +44376,7 @@ a {
   box-shadow: 0 0 10px #999;
 }
 
-/* line 30962, ../../app/styles/main.scss */
+/* line 30960, ../../app/styles/main.scss */
 #flipbook .p1 .side {
   width: 5px;
   height: 600px;
@@ -44392,19 +44390,19 @@ a {
   z-index: 100000;
 }
 
-/* line 30987, ../../app/styles/main.scss */
+/* line 30985, ../../app/styles/main.scss */
 #flipbook .front-side .depth {
   left: 25px;
   background-position: 0 0;
 }
 
-/* line 30992, ../../app/styles/main.scss */
+/* line 30990, ../../app/styles/main.scss */
 #flipbook .back-side .depth {
   right: 4px;
   background-position: right 0;
 }
 
-/* line 30997, ../../app/styles/main.scss */
+/* line 30995, ../../app/styles/main.scss */
 #flipbook .page-number {
   color: #999;
   width: 100%;
@@ -44416,7 +44414,7 @@ a {
   font-size: 11px;
 }
 
-/* line 31008, ../../app/styles/main.scss */
+/* line 31006, ../../app/styles/main.scss */
 .flip-previous-page {
   position: absolute;
   top: 50%;
