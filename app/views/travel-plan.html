@@ -31,6 +31,7 @@
 
 
 
+
   <div id="accordion" class="clearfix topmargin">
     <uib-accordion>
       <uib-accordion-group is-open="openAccordion">
@@ -38,8 +39,8 @@
         <ng-owl-carousel class="owl-theme" owl-items="travelPlanData" owl-properties="nestedCarouselproperties" owl-ready="ready($api)">
               <div  class="paul-slide-new" style="padding:2% 0 2% 0" data-ng-repeat="item in travelPlanData">
                 <img ui-sref="travel-plan.detail({id: item.id})" style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
-                <span class="paul-slider-caption">
-                  {{item.title}}</span>
+                <p style="text-align:center;" class="paul-slider-caption-new">
+                  {{item.title}}</p>
               </div>
           
             </ng-owl-carousel>
@@ -53,11 +54,11 @@
 <section id="articles" class="custom-padding">
   <div class="topmargin">
     <h2 ui-sref="blog.list" style="cursor:pointer;" class="paul-title">
-      Recent Articles
+      The Guide
     </h2>
 
     <p style="font-size:2rem;" class="text-center">
-      Live the wanderlust through words
+      Two cents on the journeys ahead
       <div class="underline">
       </div>
     </p>

@@ -34,9 +34,9 @@ angular.module('wanderwagon-webapp')
 
         var speed = 5000;
         (function currencySlide(){
-            var currencyPairWidth = $('.slideItem:first-child').outerWidth();
+            var currencyPairWidth = $('.slideItem:last-child').outerWidth();
             $(".slideContainer").animate({marginLeft:-currencyPairWidth},speed, 'linear', function(){
-                        $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
+                        $(this).css({marginLeft:0}).find("li:first").after($(this).find("li:last"));
                 });
                 requestAnimationFrame(currencySlide);
         })();

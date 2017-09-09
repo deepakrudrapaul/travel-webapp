@@ -123,11 +123,11 @@
                 <div><i class="icon-user"></i>Welcome User</div>
               </a>
               <ul>
-                <li>
+                <!-- <li>
                   <a href="" ui-sref="user-profile" ng-touch="closeSideNav()" ng-click="closeSideNav()">
                     <div>PROFILE</div>
                   </a>
-                </li>
+                </li> -->
                 <li>
                   <a href="" ng-click="onLogOut()">
                     <div>LOG OUT</div>
@@ -164,6 +164,32 @@
 		============================================= -->
   <footer ng-controller="LinkCtrl" ng-cloak class="dark footer">
 
+      <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="successModalLabel">{{messageType}}</h4>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div style="padding:5%;" class="col-full">
+                    {{message}}
+                  </div>
+                  <!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                    Its button
+                  </div>-->
+                </div>
+              </div>
+              <!--<div class="modal-body" ng-show="error">
+                <div class="row filter-remove text-center">
+                  <p>Error</p>
+                </div>
+              </div>-->
+            </div>
+          </div>
+        </div>
+
     <div class="mobile-footer">
 
       <div style="padding:10% 10% 0 10%;">
@@ -193,7 +219,7 @@
 
         <h5 ui-sref="privacy-policy" style="text-align:center; padding: 5% 0; color:#666; cursor:pointer;"><strong>PRIVACY POLICY</strong></h5>
 
-        <div style="display:block; width:200px; margin:0 auto; padding-bottom:10%;">
+        <div class="col-sm2" style="padding:0 0 10% 40%;">
 
           <a ng-click="openSocialSite('facebook')" class="social-icon si-colored si-rounded si-facebook nobottommargin" style="margin-right: 10px;">
                                                 <i class="icon-facebook"></i>
@@ -204,16 +230,6 @@
                                                   <i class="icon-instagram"></i>
                                                   <i class="icon-instagram"></i>
                                                 </a>
-
-          <a ng-click="openSocialSite('instagram')" class="social-icon si-colored si-rounded si-twitter nobottommargin" style="margin-right: 10px;">
-                                                    <i class="icon-twitter"></i>
-                                                    <i class="icon-twitter"></i>
-                                                  </a>
-
-          <a ng-click="openSocialSite('instagram')" class="social-icon si-colored si-rounded si-youtube nobottommargin" style="margin-right: 10px;">
-                                                      <i class="icon-youtube"></i>
-                                                      <i class="icon-youtube"></i>
-                                                    </a>
 
         </div>
 
@@ -368,31 +384,7 @@
       </div>
     </div>
   </div>
-  <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="successModalLabel">{{messageType}}</h4>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div style="padding:5%;" class="col-full">
-                {{message}}
-              </div>
-              <!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                Its button
-              </div>-->
-            </div>
-          </div>
-          <!--<div class="modal-body" ng-show="error">
-            <div class="row filter-remove text-center">
-              <p>Error</p>
-            </div>
-          </div>-->
-        </div>
-      </div>
-    </div>
+ 
 
 
 

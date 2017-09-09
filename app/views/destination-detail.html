@@ -48,7 +48,7 @@
   <div class=" container clearfix">
     <div>
       <h2 style="text-align:center;margin:6rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;">
-        About
+        Welcome to {{detail.name}}
       </h2>
       <div class="underline" style="margin-bottom:2rem;">
         </div>
@@ -111,7 +111,7 @@
           <!--<i class="icon-plane i-alt"></i>-->
           <img src="images/plane.png" />
         </div>
-        <span style="font:bold; font-size:20px;">Airport</span>
+        <span style="font:bold; font-size:20px;">Via Air</span>
         <p class="blog-content">{{detail.airPath}}
         </p>
       </div>
@@ -120,7 +120,7 @@
         <div class="custom-fbox-icon">
           <img src="images/train.png" />
         </div>
-        <span style="font:bold; font-size:20px;">Railways</span>
+        <span style="font:bold; font-size:20px;">Via Rail</span>
         <p class="blog-content">{{detail.railway}}
         </p>
       </div>
@@ -129,7 +129,7 @@
         <div class="custom-fbox-icon">
           <img src="images/road.png" />
         </div>
-        <span style="font:bold; font-size:20px;">Roadways</span>
+        <span style="font:bold; font-size:20px;">Via Road</span>
         <p class="blog-content">{{detail.roadway}}
         </p>
       </div>
@@ -176,7 +176,7 @@
                 <span ng-click="closeAccordion()" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
 
                 <h4 style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
-                  What is it.....</h4>
+                  About {{item.placeName}}</h4>
 
                 <p>{{item.description}}
                 </p>
@@ -236,7 +236,7 @@
                         <span ng-click="closeAccordion1()" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
         
                         <h4 style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
-                          What is it.....</h4>
+                          About {{item.activityName}}</h4>
         
                         <p>{{item.description}}
                         </p>

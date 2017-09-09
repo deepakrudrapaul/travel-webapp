@@ -29642,6 +29642,18 @@ label.checkbox {
   text-transform: capitalize;
 }
 
+
+.paul-slider-caption-new {
+  font-size: 1.6rem;
+  left: 0; bottom: 40%; right: 0;
+  color: #fff;
+  z-index: 30;
+  position: absolute;
+  font-weight: 700;
+  letter-spacing: -0.08px;
+  text-transform: capitalize;
+}
+
 .paul-slide-new {
   cursor: pointer;
   max-height: 350px;
@@ -30052,6 +30064,62 @@ a {
   font-weight: 500; line-height: 1.8; font-size: 1.4rem;color: rgb(126, 131, 139);
 }
 
+.custom-container {
+  width:80%;
+}
+
+.flipbook-next-button {
+  background-color: #12edd0;
+  border: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  font-size: 9px;
+  line-height: 1;
+  transition: color 400ms, box-shadow 400ms;
+  height: 4.44444em;
+  width: 4.44444em;
+  box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+  position: absolute;
+  bottom: 0%;
+  margin-bottom: auto;
+  margin-top: auto;
+  top: 50%;
+  z-index: 10;
+  right: 2em;
+}
+
+.flipbook-prev-button {
+  background-color: #12edd0;
+  border: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  font-size: 9px;
+  line-height: 1;
+  transition: color 400ms, box-shadow 400ms;
+  height: 4.44444em;
+  width: 4.44444em;
+  box-shadow: rgba(0, 0, 0, 0.0980392) 0px 0.222222em 0.888889em;
+  position: absolute;
+  bottom: 0%;
+  margin-bottom: auto;
+  margin-top: auto;
+  top: 50%;
+  z-index: 10;
+  left: 2em;
+}
+
+.custom-margin {
+  margin-left:10%;
+}
+
+.custom-blog-detail {
+  width:70%;
+}
+
+
+
 /* ----------------------------------------------------------------
 	Responsive CSS
 -----------------------------------------------------------------*/
@@ -30060,6 +30128,26 @@ a {
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
 
+  .custom-blog-detail {
+    width:95%;
+  }
+  
+
+  .custom-margin {
+    margin-left:0%;
+  }
+
+  .flipbook-next-button {
+   display:none;
+  }
+  
+  .flipbook-prev-button {
+    display:none;
+  }
+
+  .custom-container {
+    width:98%;
+  }
 
   .custom-padding {
     padding: 0%;
@@ -30931,3 +31019,4 @@ a {
   transition: opacity .2s ease;
   cursor: pointer;
 }
+

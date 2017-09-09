@@ -98,7 +98,7 @@ angular.module('wanderwagon-webapp')
       })
       .error(function (error) {
         console.log(error);
-        $scope.showModal("Error", error.message);
+        $scope.showModal("Error", error.error.message);
       })
     });
 

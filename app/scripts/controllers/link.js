@@ -35,6 +35,7 @@ angular.module('wanderwagon-webapp')
       angular.element(document.querySelectorAll('#successModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
+      console.log(messageType, message);
     };
 
      $scope.showLoginModal = function(messageType, message) {
@@ -56,7 +57,6 @@ angular.module('wanderwagon-webapp')
               .then(function (data) {
                  closeLoginModal();
                  $rootScope.$emit('social-login', 'true');
-                                    
               })
               .catch(function (error) {
                 $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
@@ -82,9 +82,11 @@ angular.module('wanderwagon-webapp')
       if (form.$valid) {
         remoteSvc.submitNewsletterEmail($scope.emailObj)
           .success(function (data) {
+            console.log(data);
             $scope.showModal("Success", "You have successfully subscribed to our newsletter !");
           })
           .error(function (error) {
+            console.log(data);
             $scope.showModal("Error", "Error while submitting your request !");
           })
       }

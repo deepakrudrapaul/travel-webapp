@@ -61,11 +61,11 @@ angular
         templateUrl: 'views/signUp.html',
         controller: 'LoginCtrl',
       })
-      .state('user-profile', {
-        url: '/user-profile',
-        templateUrl: 'views/account.html',
-        controller: 'AccountCtrl'
-      })
+      // .state('user-profile', {
+      //   url: '/user-profile',
+      //   templateUrl: 'views/account.html',
+      //   controller: 'AccountCtrl'
+      // })
       .state('plan-trip', {
         url: '/plan-trip',
         templateUrl: 'views/plan-trip.html',

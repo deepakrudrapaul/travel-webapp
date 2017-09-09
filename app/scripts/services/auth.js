@@ -88,11 +88,7 @@ angular.module('wanderwagon-webapp')
         var deferred = $q.defer();
 
         $http
-          .post(remoteAddr + '/auth/google-login', {
-            params: {
-              'access-token': token
-            }
-          })
+          .post(remoteAddr + '/auth/google-login?access-token='+token)
           .success(function (data, status) {
             $cookies.put('token', data.response.token);
             $cookies.put('tokenTime', (new Date()).getTime());
