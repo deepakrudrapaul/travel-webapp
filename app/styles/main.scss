@@ -29864,6 +29864,15 @@ label.checkbox {
   margin-top: 20%;
 }
 
+.big-title {
+  margin-bottom: 0px;
+  font-size: 10rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 20%;
+}
+
 .primary-title-1 {
   font-family: Miller Daily,Georgia,Times,Times New Roman,serif;
   font-size: 2rem;
@@ -30145,6 +30154,15 @@ a {
 
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
+
+  .big-title {
+    margin-bottom: 0px;
+    font-size: 4rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 50%;
+  }
 
   .blog-title {
     font-size:2rem;
