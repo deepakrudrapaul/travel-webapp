@@ -43253,7 +43253,7 @@ a {
   margin-right: 0;
   margin-bottom: 0;
   margin-left: 0;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 600;
   color: #2c3643;
   padding-bottom: 1rem !important;
@@ -43265,7 +43265,7 @@ a {
 .blog-content {
   font-weight: 300;
   line-height: 1.8;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #2c3643;
   text-align: justify;
 }
@@ -43331,7 +43331,7 @@ a {
 
 /* line 30122, ../../app/styles/main.scss */
 .common-font {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.8;
   color: #2c3643 !important;
   font-family: Miller Daily,Georgia,Times,Times New Roman,serif;
