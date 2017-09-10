@@ -67,7 +67,7 @@ background-size: cover; height:100vh;">
     </p>
   </div>
 
-  <div style="overflow:hidden; margin-bottom:-5%;">
+  <div style="overflow:hidden; margin-bottom:0%;">
 
     <div ui-sref="blog.list" class="image blog-image-left">
       <picture>
@@ -80,15 +80,15 @@ background-size: cover; height:100vh;">
     </div>
 
 
-    <div class="text blog-content-left">
+    <div class="text blog-content-left" style="font-size:3rem;">
       <h3 style="cursor:pointer;" ui-sref="blog.list" class="blog-title">
         {{blog[0].title}}</h3>
 
 
-      <div class="blog-content">
+      <div class="blog-content" style="font-size:1.5rem;">
         <p>{{blog[0].description}}...
         </p>
-        <div class="feature-info">
+        <div class="feature-info" style="font-size:1.5rem;">
           <span class="icon-calendar3"> {{blog[0].time }} • {{blog[0].user.name}}</span>
         </div>
       </div>
@@ -110,16 +110,16 @@ background-size: cover; height:100vh;">
     </div>
 
 
-    <div class="text blog-content-right">
+    <div class="text blog-content-right" style="font-size:3rem;">
       <h3 style="cursor:pointer;" ui-sref="blog.list" class="blog-title">
         {{blog[1].title}}</h3>
 
 
-      <div class="blog-content">
+      <div class="blog-content" style="font-size:1.5rem;">
         <p>{{blog[1].description}}...
         </p>
         <div class="feature-info">
-          <span class="icon-calendar3"> {{blog[1].time}} • {{blog[1].user.name}}</span>
+          <span class="icon-calendar3" style="font-size:1.5rem;"> {{blog[1].time}} • {{blog[1].user.name}}</span>
         </div>
       </div>
 

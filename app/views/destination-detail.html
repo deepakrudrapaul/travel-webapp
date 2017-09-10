@@ -71,7 +71,7 @@ background-size: cover; height:100vh;">
     </div>
 
     <div class="center-block overview">
-      <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:1.8rem;">
+      <h2 style="text-align:center;" class="common-title">
         Overview
       </h2>
       <div class="underline" style="margin-bottom:2rem;">
@@ -114,8 +114,8 @@ background-size: cover; height:100vh;">
           <!--<i class="icon-plane i-alt"></i>-->
           <img src="images/plane.png" />
         </div>
-        <span style="font:bold; font-size:20px;">Via Air</span>
-        <p class="blog-content">{{detail.airPath}}
+        <span class="common-title" style="font-size:2.1rem;">Via Air</span>
+        <p class="common-font">{{detail.airPath}}
         </p>
       </div>
 
@@ -123,8 +123,8 @@ background-size: cover; height:100vh;">
         <div class="custom-fbox-icon">
           <img src="images/train.png" />
         </div>
-        <span style="font:bold; font-size:20px;">Via Rail</span>
-        <p class="blog-content">{{detail.railway}}
+        <span class="common-title" style="font-size:2.1rem;">Via Rail</span>
+        <p class="common-font">{{detail.railway}}
         </p>
       </div>
 
@@ -132,8 +132,8 @@ background-size: cover; height:100vh;">
         <div class="custom-fbox-icon">
           <img src="images/road.png" />
         </div>
-        <span style="font:bold; font-size:20px;">Via Road</span>
-        <p class="blog-content">{{detail.roadway}}
+        <span class="common-title" style="font-size:2.1rem;">Via Road</span>
+        <p class="common-font">{{detail.roadway}}
         </p>
       </div>
     </div>
@@ -143,7 +143,7 @@ background-size: cover; height:100vh;">
 
 <section class="clearfix custom-padding" id="places">
 
-  <h2 style="margin-top:5%;" class="paul-title">
+  <h2 style="margin-top:10%;" class="paul-title">
     Places to visit
   </h2>
   <div class="underline" style="margin-bottom:5rem;">
@@ -157,7 +157,7 @@ background-size: cover; height:100vh;">
     </div>
   </ng-owl-carousel>
 
-  <div id="accordion1" class="clearfix" style="margin-top:5%;">
+  <div id="accordion1" class="clearfix" >
     <uib-accordion>
       <uib-accordion-group is-open="openAccordion">
         <ng-owl-carousel class="owl-theme" owl-items="placesData" owl-properties="accordionProperties" owl-ready="readyPlaceAccordion($api)">
@@ -166,32 +166,32 @@ background-size: cover; height:100vh;">
             <div class="center-block">
               <div>
                 <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;"><br /> {{item.placeName}}
-                  <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+                  <div class="underline" style="margin-top:2rem;">
                   </div>
                 </h2>
               </div>
 
               <div class="dropdown-slider-image">
-                <a><img height="350px" width="100%" ng-src="{{item.imageUrl}}" alt="{{item.placeName}}"></a>
+                <a><img height="450px" width="100%" ng-src="{{item.imageUrl}}" alt="{{item.placeName}}"></a>
               </div>
 
               <div class="dropdown-slider-content">
                 <span ng-click="closeAccordion()" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
 
-                <h4 style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
-                  About {{item.placeName}}</h4>
+                <h3 class="common-title" style="margin-top:0;">
+                  About {{item.placeName}}</h3>
 
-                <p>{{item.description}}
+                <p class="common-font">{{item.description}}
                 </p>
 
-                <h4 style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
-                  How to reach</h4>
-                <p>{{item.howToReachDesc}}
+                <h3 class="common-title" style="margin-top:0;">
+                  How to reach</h3>
+                <p class="common-font">{{item.howToReachDesc}}
                 </p>
 
                 <div>
-                  <h4 class="pull-left" style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
-                    Timings - <span>{{item.timing}}</span></h4>
+                  <h3 class="pull-left common-title" style="margin-top:0;">
+                    Timings - <span>{{item.timing}}</span></h3>
                 </div>
               </div>
             </div>
@@ -203,7 +203,7 @@ background-size: cover; height:100vh;">
 </section>
 
 <section class="clearfix custom-padding" id="activities">
-      <h2 style="margin-top:5%;" class="paul-title">
+      <h2 class="paul-title">
         Activities
       </h2>
       <div class="underline" style="margin-bottom:5rem;">
@@ -217,36 +217,35 @@ background-size: cover; height:100vh;">
           </div>
         </ng-owl-carousel>
 
-  <div id="accordion2" class="clearfix" style="margin-top:5%;">
+  <div id="accordion2" class="clearfix" style="margin-bottom:0%;">
     <uib-accordion>
       <uib-accordion-group is-open="openAccordion1">
-
           <ng-owl-carousel class="owl-theme" owl-items="activitiesData" owl-properties="accordionProperties" owl-ready="readyActivityAccordion($api)">
               <div data-ng-repeat="item in activitiesData">
                   <div class="center-block">
                       <div>
                         <h2 style="text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem;"><br /> {{item.activityName}}
-                          <div style="display:block;height:2px;width:30px;background:#dc221a;margin-left:auto;margin-right:auto;margin-bottom:0;margin-top:15px;">
+                          <div class="underline" style="margin-top:2rem;">
                           </div>
                         </h2>
                       </div>
         
                       <div class="dropdown-slider-image">
-                        <a><img height="350px" width="100%" ng-src="{{item.imageUrl}}" alt="{{item.activityName}}"></a>
+                        <a><img height="450px" width="100%" ng-src="{{item.imageUrl}}" alt="{{item.activityName}}"></a>
                       </div>
         
                       <div class="dropdown-slider-content">
                         <span ng-click="closeAccordion1()" style="margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem;" class="glyphicon glyphicon-remove-circle"></span>
         
-                        <h4 style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
-                          About {{item.activityName}}</h4>
+                        <h3 class="common-title" style="margin-top:0;">
+                          About {{item.activityName}}</h3>
         
-                        <p>{{item.description}}
+                        <p class="common-font">{{item.description}}
                         </p>
         
-                        <h4 style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
-                          How to reach</h4>
-                        <p>{{item.placeOfConduct}}
+                        <h3 class="content-title" style="margin-top:0;">
+                          How to reach</h3>
+                        <p class="common-font">{{item.placeOfConduct}}
                         </p>
         
         
@@ -254,15 +253,12 @@ background-size: cover; height:100vh;">
                           <!-- <h4 class="pull-left" style="line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;">
                             Timings - <span>{{item.timing}}</span></h4> -->
         
-                          <h4 class="pull-left" style="line-height:1.5;font-size:20px;font-weight:400;color:#2c3643;">
-                            Duration - <span>{{item.duration}}</span></h4>
+                          <h3 class="pull-left" class="common-title" style="margin-top:0;">
+                            Duration - <span>{{item.duration}}</span></h3>
                           <br /><br /><br /><br />
                         </div>
         
-                        <!--<center>
-                          <span style="font-size:48px; padding-right:2%; " class="icon-line2-arrow-left"></span>
-                          <span style="font-size:48px; padding-left:2%; " class="icon-line2-arrow-right"></span>
-                        </center>-->
+            
         
                       </div>
                     </div>
@@ -278,10 +274,10 @@ background-size: cover; height:100vh;">
 
 
 <section>
-    <h2 class="paul-title">
+    <h2 class="paul-title" style="margin-top:5%">
       Why we love {{detail.name}} ?
     </h2>
-    <div class="underline" style="margin-bottom:2rem;">
+    <div class="underline" style="margin-bottom:5rem;">
       </div>
   </div>
   <p style="color: #67747c; font-family: Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 1.8rem; font-style:
@@ -295,8 +291,8 @@ background-size: cover; height:100vh;">
 
 
 
-  <div class="custom-padding" style="margin:4% 0;">
-      <h2 class="paul-title">
+  <div class="custom-padding" style="margin:5% 0;">
+      <h2 class="paul-title" style="margin-bottom:5rem;">
         After {{detail.name}}, Where Next ?
       </h2>
 

@@ -80,9 +80,7 @@ angular.module('wanderwagon-webapp')
     $scope.commentObj = {};
     $scope.postComment = function (blogId) {
       $scope.commentObj.blodId = blogId;
-
       console.log($scope.commentObj);
-
       remoteSvc.postComment($scope.commentObj)
         .success(function (data){
           console.log(data);

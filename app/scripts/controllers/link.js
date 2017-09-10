@@ -35,7 +35,6 @@ angular.module('wanderwagon-webapp')
       angular.element(document.querySelectorAll('#successModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
-      console.log(messageType, message);
     };
 
      $scope.showLoginModal = function(messageType, message) {
@@ -59,7 +58,8 @@ angular.module('wanderwagon-webapp')
                  $rootScope.$emit('social-login', 'true');
               })
               .catch(function (error) {
-                $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
+                closeLoginModal();
+                $scope.showModal('Error', "Error While With Google Login. Please Try After Some Time");
               });
           } else {
             auth.facebookLogin(response.access_token)
@@ -68,12 +68,14 @@ angular.module('wanderwagon-webapp')
                  $rootScope.$emit('social-login', 'true'); 
               })
               .catch(function (error) {
-                $scope.showModal('Error', "Error While With Google Login. Please Try After Some Time");
+                closeLoginModal();
+                $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
               });
           }
         })
         .catch(function (response) {
-          console.log("Something went Wrong: " + response);
+          closeLoginModal();
+          $scope.showModal('Something went Wrong: ', "Please Try After Some Time");
         })
     };
 
@@ -82,11 +84,9 @@ angular.module('wanderwagon-webapp')
       if (form.$valid) {
         remoteSvc.submitNewsletterEmail($scope.emailObj)
           .success(function (data) {
-            console.log(data);
             $scope.showModal("Success", "You have successfully subscribed to our newsletter !");
           })
           .error(function (error) {
-            console.log(data);
             $scope.showModal("Error", "Error while submitting your request !");
           })
       }

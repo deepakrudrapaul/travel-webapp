@@ -162,33 +162,7 @@
 
   <!-- Footer
 		============================================= -->
-  <footer ng-controller="LinkCtrl" ng-cloak class="dark footer">
-
-      <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModal">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="successModalLabel">{{messageType}}</h4>
-              </div>
-              <div class="modal-body">
-                <div class="row">
-                  <div style="padding:5%;" class="col-full">
-                    {{message}}
-                  </div>
-                  <!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                    Its button
-                  </div>-->
-                </div>
-              </div>
-              <!--<div class="modal-body" ng-show="error">
-                <div class="row filter-remove text-center">
-                  <p>Error</p>
-                </div>
-              </div>-->
-            </div>
-          </div>
-        </div>
+  <footer ng-controller="LinkCtrl" ng-cloak class="footer">
 
     <div class="mobile-footer">
 
@@ -314,15 +288,15 @@
 
         <div style="width:20%; float:right; margin-top:5%;">
 
-          <div class="widget clearfix" style="margin-bottom: -20px;">
+          <div class="widget clearfix" style="margin-bottom: -20px;color:#CCC">
 
             <div class="row"><br />
-              <h5><strong>NAVIGATE</strong><br /></h5>
-              <div style="cursor:pointer; margin-bottom:3%;"><strong><a ui-sref="faq">FAQs</a></strong> <br /></div>
-              <div style="cursor:pointer; margin-bottom:3%;"><strong><a ui-sref="contact">CONTACT US</a></strong> <br /></div>
-              <div style="cursor:pointer; margin-bottom:3%;"><strong><a ui-sref="testimonials">TESTIMONIALS</a></strong> <br /></div>
-              <div style="cursor:pointer; margin-bottom:3%;"><strong><a ui-sref="tnc">TERMS & CONDITIONS</a></strong> <br /></div>
-              <div style="cursor:pointer; margin-bottom:3%;"><strong><a ui-sref="cancellation">CANCELLATION POLICY</a></strong> <br /></div>
+              <h5 style="color:#CCC"><strong>NAVIGATE</strong><br /></h5>
+              <div style="cursor:pointer; margin-bottom:3%;"><strong><a style="color:#CCC;" ui-sref="faq">FAQs</a></strong> <br /></div>
+              <div style="cursor:pointer; margin-bottom:3%;"><strong><a style="color:#CCC;" ui-sref="contact">CONTACT US</a></strong> <br /></div>
+              <div style="cursor:pointer; margin-bottom:3%;"><strong><a style="color:#CCC;" ui-sref="testimonials">TESTIMONIALS</a></strong> <br /></div>
+              <div style="cursor:pointer; margin-bottom:3%;"><strong><a style="color:#CCC;" ui-sref="tnc">TERMS & CONDITIONS</a></strong> <br /></div>
+              <div style="cursor:pointer; margin-bottom:3%;"><strong><a style="color:#CCC;" ui-sref="cancellation">CANCELLATION POLICY</a></strong> <br /></div>
 
               <br />
               <br />
@@ -335,7 +309,9 @@
       </div>
 
 
-      <div id="copyrights">
+      <div id="copyrights" style="background-color: rgba(0, 0, 0, 0.2);
+      color: rgba(255, 255, 255, 0.25);
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);">
 
         <div class="container clearfix">
 
@@ -357,6 +333,27 @@
       </div>
 
 
+    </div>
+
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="successModalLabel">{{messageType}}</h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div style="padding:5%;" class="col-full">
+                {{message}}
+              </div>
+              <!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                Its button
+              </div>-->
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 

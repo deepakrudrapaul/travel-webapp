@@ -73,7 +73,7 @@ background-size: cover; height:100vh;">
 							============================================= -->
             <div class="notopmargin">
               <div>
-                <h2 style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:1rem;margin-left:0;font-size:3rem;font-weight:300;color:#2c3643;">
+                <h2 style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:1rem;margin-left:0;font-size:3rem;font-weight:700;color:#2c3643;">
                   {{postDetail.title}}</h2>
               </div>
 
@@ -82,7 +82,7 @@ background-size: cover; height:100vh;">
               </p>
 
               <div ng-repeat="point in postDetail.blogSections">
-                <h3 style=" line-height:1.2142857142857142;margin-top:5%;margin-right:0;margin-bottom:0;margin-left:0;font-size:2.1rem;font-weight:100;color:#2c3643;">
+                <h3 class="common-title">
                 {{point.title}}
                 </h3>
 
@@ -118,18 +118,17 @@ background-size: cover; height:100vh;">
           <!-- .entry end -->
           <!-- Post Author Info
 						============================================= -->
-
           <div class="panel panel-default">
             <div style="padding:1%; color: #333333;
     background-color: #dddddd !important;
     border: 0px solid #000; margin-top:5%;">
-              <p style="cursor:pointer;" class="panel-title">Posted by <span><a ng-click="openSocialProfile()">Author</a></span></p>
+              <p style="cursor:pointer; margin-top:0; margin-bottom:0;" class="common-title">Posted by <span><a ng-click="openSocialProfile()">Author</a></span></p>
             </div>
             <div class="panel-body" style="border: 0px solid #000;">
               <div style="cursor:pointer;" class="author-image">
                 <img ng-click="openSocialProfile()" ng-src="http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60" alt="" class="img-circle">
               </div>
-             <p style="text-align:justify;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eveniet, eligendi et nobis neque minus mollitia sit repudiandae
+             <p style="text-align:justify;" class="common-font"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eveniet, eligendi et nobis neque minus mollitia sit repudiandae
               ad repellendus recusandae blanditiis praesentium vitae ab sint earum voluptate velit beatae alias fugit accusantium
               laboriosam nisi reiciendis deleniti tenetur molestiae maxime id quaerat consequatur fugiat aliquam laborum
               nam aliquid. Consectetur, perferendis?
@@ -140,7 +139,7 @@ background-size: cover; height:100vh;">
 
           <div class="center-block " style="background-color: #1265A8; padding:2%;text-align:center; cursor:pointer; ">
             <a style="margin-bottom: 0px;
-    font-size: 20px;
+    font-size: 2rem;
     letter-spacing: 1px;
     font-weight: 300;
     color: #fff;" href="mailto:contact@wanderwagon.com" >

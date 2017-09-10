@@ -29762,12 +29762,12 @@ label.checkbox {
 }
 
 .blog-content-left {
-  margin-top: 70px;
+  margin-top: 2%;
   height: 350px;
   width: 50%;
   float: left;
   text-align: left;
-  padding: 10px 20px;
+  padding: 0px 20px;
   position: relative;
 }
 
@@ -29782,12 +29782,12 @@ label.checkbox {
 }
 
 .blog-content-right {
-  margin-top: 50px;
+  margin-top: 2%;
   height: 350px;
   width: 50%;
   float: right;
   text-align: right;
-  padding: 10px 20px;
+  padding: 0px 20px;
   position: relative;
 }
 
@@ -30055,13 +30055,14 @@ a {
 
 
 .blog-title {
-  margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:2.4rem;font-weight:700;color:#2c3643;
+  margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:3.5rem;font-weight:600;color:#2c3643;
   padding-bottom: 1rem !important;
-  line-height: 1.4 !important;
+  line-height: 1.16667 !important;
+  letter-spacing: -.1rem;
 }
 
 .blog-content {
-  font-weight: 500; line-height: 1.8; font-size: 1.4rem;color: rgb(126, 131, 139);text-align:justify;
+  font-weight: 300; line-height: 1.8; font-size: 2rem;color: #2c3643;text-align:justify;
 }
 
 .custom-container {
@@ -30118,6 +30119,23 @@ a {
   width:70%;
 }
 
+.common-font {
+  font-size: 2rem;
+  line-height: 1.8;
+  color:#2c3643 !important;
+  font-family: Miller Daily,Georgia,Times,Times New Roman,serif;
+}
+
+.common-title {
+  font-size: 2rem;
+  line-height: 1.4;
+  color: #2c3643 !important;
+  font-weight: 600;
+  letter-spacing: -.02rem;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+}
+
 
 
 /* ----------------------------------------------------------------
@@ -30127,6 +30145,10 @@ a {
 
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
+
+  .blog-title {
+    font-size:2rem;
+  }
 
   .custom-blog-detail {
     width:95%;
