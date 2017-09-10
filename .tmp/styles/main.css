@@ -43635,7 +43635,7 @@ a {
   /* line 30372, ../../app/styles/main.scss */
   .home-form-bg {
     background-color: #000;
-    background-image: url("https://resources.luxuryretreats.com/www/images/vr5/home_inquire.jpg");
+    background-image: url("https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/home/home_form.jpg");
     background-size: cover;
     position: relative;
     width: 100%;
