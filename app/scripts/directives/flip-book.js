@@ -15,7 +15,7 @@ angular.module('wanderwagon-webapp')
 
         $('#flipbook').turn({
           width: '100%',
-          height: '600px',
+          height: '700px',
           autoCenter: true,
           duration: 1000,
           gradients: true,

@@ -155,7 +155,20 @@ angular.module('wanderwagon-webapp')
           method: 'GET',
           url: remoteAddr + "/home/blog"
         }).then(function (data, status) {
-          return data.data.response;
+          console.log(data);
+          var posts = [];
+         for (var i = 0; i < data.data.response.length; i++) {
+           var post = data.data.response[i];
+           posts[i] = {};
+           posts[i].title = post.title;
+           posts[i].author = post.user.name;
+           posts[i].description = post.description;
+           posts[i].imageUrl = post.imageUrl;
+           posts[i].id = post.id;
+           posts[i].date = post.time;
+          //  posts[i].date = new Date(new Date("2017-12-09").getTime());
+         }
+         return posts;
         }, function (error, status) {
           return error.data.error;
         });
