@@ -103,17 +103,22 @@ angular.module('wanderwagon-webapp')
     });
 
     $scope.submitTravelPlanForm = function (form) {
-      console.log($scope.formObj);
+      
       if (auth.isLoggedIn()) {
-          remoteSvc.submitPlanMyTripForm($scope.formObj)
-            .success(function (data) {
-              console.log(data);
-              $scope.showModal("Success !", "Your query has been submitted successfully ! Will get back to you within 24 Hours.");
-            })
-            .error(function (error) {
-              console.log(error);
-              $scope.showModal("Error", error.error.message);
-            })
+        // if(form.$valid) {
+          console.log($scope.formObj);
+          // remoteSvc.submitPlanMyTripForm($scope.formObj)
+          // .success(function (data) {
+          //   console.log(data);
+          //   $scope.showModal("Success !", "Your query has been submitted successfully ! Will get back to you within 24 Hours.");
+          // })
+          // .error(function (error) {
+          //   console.log(error);
+          //   $scope.showModal("Error", error.error.message);
+          // })
+        // } else{
+        //   $scope.showModal("Error", "Please enter details correctly !");
+        // }
       } else{
         $scope.showLoginModal("Log In", "");
       }

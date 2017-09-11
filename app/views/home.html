@@ -49,8 +49,8 @@ background-size: cover; height:100vh;">
         <ng-owl-carousel class="owl-theme" owl-items="travelPlanData" owl-properties="accordionProperties" owl-ready="ready($api)">
               <div  class="paul-slide-new" style="padding:2% 0 2% 0; text-align:center;" data-ng-repeat="item in travelPlanData">
                 <img ui-sref="travel-plan.detail({id: item.id})" style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
-                <p style="text-align:center;" class="paul-slider-caption-new">
-                  {{item.title}}</p>
+                <span style="text-align:center;" class="paul-slider-caption">
+                  {{item.title}}</span>
               </div>
           
             </ng-owl-carousel>
@@ -96,7 +96,7 @@ background-size: cover; height:100vh;">
           <p>{{blog[0].description}}...
           </p>
           <div class="blog-content">
-            <span class="icon-calendar3"> {{blog[0].time | date:'dd'}} • {{blog[0].user.name}}</span>
+            <span class="icon-calendar3"> {{blog[0].time }} • {{blog[0].user.name}}</span>
           </div>
         </div>
   

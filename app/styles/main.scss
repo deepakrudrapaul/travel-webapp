@@ -20599,11 +20599,11 @@ body:not(.device-touch) .entry-link {
   font-weight: normal;
 }
 
-.post-timeline .entry:hover .entry-timeline,
-.post-timeline .entry:hover .timeline-divider {
-  border-color: #1ABC9C;
-  color: #1ABC9C;
-}
+// .post-timeline .entry:hover .entry-timeline,
+// .post-timeline .entry:hover .timeline-divider {
+//   border-color: #1ABC9C;
+//   color: #1ABC9C;
+// }
 
 
 /* Blog - Timeline - Sidebar
@@ -20692,15 +20692,12 @@ body:not(.device-touch) .entry-link {
 
 .more-link {
   display: inline-block;
-  border-bottom: 1px solid #1ABC9C;
+  border-bottom: 1px solid #14C1E0;
   padding: 0 2px;
   font-family: 'Crete Round', serif;
   font-style: italic;
 }
 
-.more-link:hover {
-  border-bottom-color: #555;
-}
 
 
 /* Related Posts
@@ -29631,13 +29628,13 @@ label.checkbox {
 }
 
 .paul-slider-caption {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   bottom: 2.4rem;
   left: 3.2rem;
   color: #fff;
   z-index: 30;
   position: absolute;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: -0.08px;
   text-transform: capitalize;
 }

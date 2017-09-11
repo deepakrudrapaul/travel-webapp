@@ -33,53 +33,17 @@ background-size: cover; height:100vh;">
 </div>
 </div>
 
-<section id="content">
-
-  <div class="content-wrap">
-
-    <div class="clearfix">
-
-      
+<section id="content">     
 
         <div class="custom-blog-detail single-post nobottommargin center-block">
 
           <!-- Single Post
 						============================================= -->
-          <div class=" clearfix">
+          <div class=" clearfix"> 
 
-            <!-- Entry Title
-							============================================= -->
-            <!--<div class="entry-title">
-            <h2>{{postDetail.title}}</h2>
-          </div>-->
-            <!-- .entry-title end -->
+            <div class="topmargin">
 
-            <!-- Entry Meta
-							============================================= -->
-            <ul class="entry-meta clearfix">
-              <li><i class="icon-calendar3"></i> {{postDetail.createdAt | date:'dd/MM/yy'}}</li>
-              <li><a href="#"><i class="icon-user"></i> {{postDetail.author.name}}</a></li>
-              <li><i class="icon-folder-open"></i> <a href="#">General</a></li>
-              <li><a href="#"><i class="icon-comments"></i> 43 Comments</a></li>
-            </ul>
-            <!-- .entry-meta end -->
-
-            <!-- Entry Image
-							============================================= -->
-            <!--<div class="entry-image bottommargin">
-            <a href="#"><img ng-src="{{postDetail.imageUrl}}" alt="Blog Single"></a>
-          </div>-->
-            <!-- .entry-image end -->
-
-            <!-- Entry Content
-							============================================= -->
-            <div class="notopmargin">
-              <div>
-                <h2 style="line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:1rem;margin-left:0;font-size:3rem;font-weight:700;color:#2c3643;">
-                  {{postDetail.title}}</h2>
-              </div>
-
-              <p class="blog-content" style="text-align:justify;">
+              <p class="blog-content" style="text-align:justify;font-size:1.5rem;">
                 {{postDetail.description}}
               </p>
 
@@ -89,7 +53,7 @@ background-size: cover; height:100vh;">
                 </h3>
 
                 <div ng-repeat="para in point.paragraphs">
-                  <p class="blog-content" style="text-align:justify;">
+                  <p class="blog-content" style="text-align:justify; font-size:1.5rem;">
                   {{para.text}}
                 </p>
 
@@ -229,9 +193,6 @@ background-size: cover; height:100vh;">
 
 
         </div>
-    
-
-  <div class="clear"></div>
 </section>
 <!-- #content end -->
 
