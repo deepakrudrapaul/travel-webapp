@@ -235,6 +235,9 @@ angular.module('wanderwagon-webapp')
         return $http({
           method: 'POST',
           data: formObj,
+          headers: {
+            'auth-token': auth.getToken()
+          },
           url: remoteAddr + '/travelplans/query'
         })
       },
@@ -243,7 +246,7 @@ angular.module('wanderwagon-webapp')
         return $http({
           method: 'POST',
           data: contactObj,
-          url: remoteAddr + "/contact/form"
+          url: remoteAddr + "/travelplans/contactUs"
         })
       },
 

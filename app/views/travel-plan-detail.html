@@ -126,7 +126,9 @@ background-size: cover; height:100vh;">
   </div>
 
   <div class="center-block custom-container">
-    <flip-book></flip-book>
+   
+    <flip-book data="itineraries"></flip-book>
+
   </div>
 
 
@@ -144,10 +146,10 @@ background-size: cover; height:100vh;">
 
 
   <ul style="padding-left:5%;">
-    <li style="padding:1%;" class="common-font" ng-repeat="item in tips" type="square">{{item.tip}}</li>
+    <li style="padding:1%;" class="common-font" ng-repeat="item in planDetail.tips" type="square">{{item}}</li>
   </ul>
 
-  <div ui-sref="plan-trip" class="center-block " style=" width:50%; cursor:pointer; padding:5%;">
+  <div ui-sref="plan-trip" class="center-block " style=" width:60%; cursor:pointer; padding:10%;">
     <a class="button button-3d button-rounded button-blue loved-it-button"> Plan My Trip!</a>
   </div>
 

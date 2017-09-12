@@ -15,12 +15,12 @@ angular.module('wanderwagon-webapp')
 
     var getTravelInspirationDetail = function () {
       remoteSvc.getTravelInspirationDetail(id).then(function (response) {
-        console.log(response.response);
         $scope.planDetail = response.response;
+        $scope.itineraries = response.response.itineraries;
+        console.log($scope.itineraries);
       });
     };
     getTravelInspirationDetail();
-
 
     var owlAPi;
     $scope.ready = function ($api) {
@@ -90,19 +90,4 @@ angular.module('wanderwagon-webapp')
         $document.scrollToElement(someElement, 30, 800);
       } 
     });
-
-
-
-    $scope.tips = [
-      {tip : 'Make sure you carry warm clothes irrespective of the fact that what season you are travelling in. '},
-      {tip : 'Carry your own trekking gear and equipments and be always prepared.'},
-      {tip : 'Carry a medical aid kit and your usual medicines for the way.'},
-      {tip : 'A good pair of trekking shoes is a must.'},
-      {tip : 'Carry raingear no matter if you are travelling during monsoon season.'}
-    ];
-      
-
-
-
-
   });
