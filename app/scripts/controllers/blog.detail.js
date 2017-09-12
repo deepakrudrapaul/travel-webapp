@@ -76,12 +76,9 @@ angular.module('wanderwagon-webapp')
     };
 
     var getComments = function(postId) {
-      remoteSvc.getCommentsByBlogId(postId)
-        .success(function(data) {
-          $scope.comments = data.response;
-        })
-        .error(function (error) {
-        })
+      remoteSvc.getCommentsByBlogId(postId).then(function (response){
+        $scope.comments = response;
+      })
     };
     getComments(postId);
 

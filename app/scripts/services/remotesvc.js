@@ -107,7 +107,18 @@ angular.module('wanderwagon-webapp')
         return $http({
           method: 'GET',
           url: remoteAddr + '/blogs/comments/' + blogId
-        })
+        }).then(function (data, status){
+          var comments = [];
+         for (var i = 0; i < data.data.response.length; i++) {
+           var comment = data.data.response[i];
+           comments[i] = {};
+           comments[i].comment = comment.comment;
+           comments[i].date = new Date(new Date(comment.commentTime).getTime());
+         }
+         return comments;
+       }, function (error, status) {
+         return error.data;
+       })
       },
 
 

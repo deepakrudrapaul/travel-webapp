@@ -24,27 +24,25 @@ angular.module('wanderwagon-webapp')
     };
 
     $scope.travelPlanData = [];
-    $scope.getTravelPlans = function (id) {
+    var getTravelPlans = function (id) {
       remoteSvc.getTravelPlans(id).then(function (response){
+        console.log(response);
         $scope.travelPlanData = response;
       });
     };
 
-   
 
     $scope.getTravelInspirations();
     $scope.getBlogs();
 
-  
-
-
 
     $scope.openAccordion = false;
-    $scope.openOrCloseAccordion = function () {
+    $scope.openOrCloseAccordion = function (id) {
       if ($scope.openAccordion === true) {
         $scope.closeAccordion();
       } else if ($scope.openAccordion === false) {
         $scope.openAccordion = true;
+        getTravelPlans(id);
       }
     };
 

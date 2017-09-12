@@ -153,7 +153,7 @@ background-size: cover; height:100vh;">
 
                   <div class="comment-content clearfix">
 
-                    <div class="comment-author">John Doe<span><a title="Permalink to this comment">{{item.commentTime}}</a></span></div>
+                    <div class="comment-author">John Doe<span><a title="Permalink to this comment">{{item.commentTime | date : 'dd-MM-yyyy'}}</a></span></div>
 
                     <p>{{item.comment}}</p>
 
