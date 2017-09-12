@@ -14,14 +14,15 @@ angular.module('wanderwagon-webapp')
 
     if (auth.isLoggedIn()) {
       $rootScope.loggedIn = true;
-      $scope.userName = auth.getUserName();
     } else {
       $rootScope.loggedIn = false;
     }
+    $scope.userName = auth.getUserName();
 
 
     $rootScope.$on('social-login', function (event, data) {
       $rootScope.loggedIn = data;
+      $scope.userName = auth.getUserName();
     });
 
 
