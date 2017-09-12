@@ -108,9 +108,11 @@ angular.module('wanderwagon-webapp')
         if(form.$valid) {
           remoteSvc.submitPlanMyTripForm($scope.formObj)
           .success(function (data) {
+            $scope.formObj = {};
             $scope.showModal("Success !", "Your query has been submitted successfully ! Will get back to you within 24 Hours.");
           })
           .error(function (error) {
+            $scope.formObj = {};
             $scope.showModal("Error", error.error.message);
           })
         } else{

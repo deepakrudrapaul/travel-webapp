@@ -68,9 +68,9 @@ angular.module('wanderwagon-webapp')
         $http
           .post(remoteAddr + '/auth/facebook-login?access-token='+ token)
           .success(function (data, status) {
-            $cookies.put('token', data.response.token);
+            $cookies.put('token', data.response.signUpResponse.token);
             $cookies.put('tokenTime', (new Date()).getTime());
-            $cookies.put('fb-token', token);
+            $cookies.put('userName', data.response.userProfile.name);
             deferred.resolve(data);
             return cb();
           })
@@ -90,8 +90,9 @@ angular.module('wanderwagon-webapp')
         $http
           .post(remoteAddr + '/auth/google-login?access-token='+token)
           .success(function (data, status) {
-            $cookies.put('token', data.response.token);
+            $cookies.put('token', data.response.signUpResponse.token);
             $cookies.put('tokenTime', (new Date()).getTime());
+            $cookies.put('userName', data.response.userProfile.name);
             deferred.resolve(data);
             return cb();
           })
@@ -180,6 +181,10 @@ angular.module('wanderwagon-webapp')
       },
       getToken: function () {
         return $cookies.get('token');
+      },
+
+      getUserName: function () {
+        return $cookies.get('userName');
       }
     }
   });

@@ -20,11 +20,12 @@ angular.module('wanderwagon-webapp')
       if (form.$valid) {
         remoteSvc.submitContactForm($scope.contactObj)
           .success(function (data) { 
-              console.log(data);
+            $scope.contactObj = {};
               $scope.showModal("Success", "Your message has been successfully sent !");
           })
           .error(function (error) {
             console.log(error);
+            $scope.contactObj = {};
             $scope.showModal("Error", error.error.message);
           });
       }
@@ -35,7 +36,6 @@ angular.module('wanderwagon-webapp')
       if (form.$valid) {
         remoteSvc.submitTravelEnquiryForm($scope.travelEnqObj)
           .success(function (data) { 
-              console.log(data);
               $scope.showModal("Success", "Your message has been successfully sent !");
           })
           .error(function (error) {

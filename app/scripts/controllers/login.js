@@ -18,7 +18,6 @@ angular.module('wanderwagon-webapp')
 
     $rootScope.$on('show-login', function (event, data) {
       $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
-      console.log(data);
     });
 
 
@@ -65,11 +64,9 @@ angular.module('wanderwagon-webapp')
           $scope.obj.phone = $scope.signUpObj.phone;
           $scope.obj.accountType = 3;
 
-          console.log($scope.obj);
 
           auth.signUp($scope.obj)
             .then(function (data) {
-              console.log(data);
              $scope.showModal("Confirm Your Email Address", "A confirmation email has been sent to " + $scope.signUpObj.email + ". Click on the confirmation link in the email to verify your email address.");
               $scope.signUpObj = {};
             })
@@ -92,7 +89,6 @@ angular.module('wanderwagon-webapp')
 
 
     var login = function (loginObj) {
-      console.log(loginObj);
     };
 
     $scope.onLoginFormSubmit = function (form) {
@@ -124,7 +120,7 @@ angular.module('wanderwagon-webapp')
 
       auth.forgotPassword(email)
         .success(function (data) {
-          console.log(data);
+  
           $scope.emailSubmit = true;
           $scope.message = "Password reset link has been sent to email " + email ;
         })

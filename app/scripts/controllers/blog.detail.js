@@ -28,13 +28,12 @@ angular.module('wanderwagon-webapp')
       angular.element(document.querySelectorAll('#loginModal')).modal('hide');
     };
 
-    $scope.getPostDetail = function () {
+    $scope.getBlogDetail = function () {
       remoteSvc.getBlogDetail(postId).then(function (response) {
-        console.log(response.response);
         $scope.postDetail = response.response;
       }); 
     };
-    $scope.getPostDetail();
+    $scope.getBlogDetail();
 
     $scope.onShareButtonClicked = function (blogId) {
       $scope.shareObj = {};
@@ -76,14 +75,23 @@ angular.module('wanderwagon-webapp')
         });
     };
 
+    var getComments = function(postId) {
+      remoteSvc.getCommentsByBlogId(postId)
+        .success(function(data) {
+          $scope.comments = data.response;
+        })
+        .error(function (error) {
+        })
+    };
+    getComments(postId);
 
     $scope.commentObj = {};
     $scope.postComment = function (blogId) {
-      $scope.commentObj.blodId = blogId;
-      console.log($scope.commentObj);
+      $scope.commentObj.blogId = blogId;
       remoteSvc.postComment($scope.commentObj)
         .success(function (data){
-          console.log(data);
+          $scope.commentObj = {};
+          getComments(postId);
         })
         .error(function (error){
           console.log(error);

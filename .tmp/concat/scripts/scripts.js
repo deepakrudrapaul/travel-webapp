@@ -221,7 +221,6 @@ angular.module('wanderwagon-webapp')
 
     $rootScope.$on('show-login', function (event, data) {
       $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
-      console.log(data);
     });
 
 
@@ -268,11 +267,9 @@ angular.module('wanderwagon-webapp')
           $scope.obj.phone = $scope.signUpObj.phone;
           $scope.obj.accountType = 3;
 
-          console.log($scope.obj);
 
           auth.signUp($scope.obj)
             .then(function (data) {
-              console.log(data);
              $scope.showModal("Confirm Your Email Address", "A confirmation email has been sent to " + $scope.signUpObj.email + ". Click on the confirmation link in the email to verify your email address.");
               $scope.signUpObj = {};
             })
@@ -295,7 +292,6 @@ angular.module('wanderwagon-webapp')
 
 
     var login = function (loginObj) {
-      console.log(loginObj);
     };
 
     $scope.onLoginFormSubmit = function (form) {
@@ -327,7 +323,7 @@ angular.module('wanderwagon-webapp')
 
       auth.forgotPassword(email)
         .success(function (data) {
-          console.log(data);
+  
           $scope.emailSubmit = true;
           $scope.message = "Password reset link has been sent to email " + email ;
         })
@@ -354,7 +350,6 @@ angular.module('wanderwagon-webapp')
 
     $scope.getBlogs = function () {
       remoteSvc.getHomeBlogs().then(function (response) {
-        console.log(response);
         $scope.blog = response;
       })
     };
@@ -362,13 +357,12 @@ angular.module('wanderwagon-webapp')
     
     $scope.getTravelInspirations = function () {
       remoteSvc.getTravelInspirations().then(function (response) {
-        console.log(response);
         $scope.sliderData = response;
       });
     };
 
     $scope.travelPlanData = [];
-    var getTravelPlans = function (id) {
+    $scope.getTravelPlans = function (id) {
       remoteSvc.getTravelPlans(id).then(function (response){
         $scope.travelPlanData = response;
       });
@@ -384,12 +378,11 @@ angular.module('wanderwagon-webapp')
 
 
     $scope.openAccordion = false;
-    $scope.openOrCloseAccordion = function (id) {
+    $scope.openOrCloseAccordion = function () {
       if ($scope.openAccordion === true) {
         $scope.closeAccordion();
       } else if ($scope.openAccordion === false) {
         $scope.openAccordion = true;
-        getTravelPlans(id);
       }
     };
 
@@ -439,12 +432,13 @@ angular.module('wanderwagon-webapp')
 
     $scope.onFormSubmit = function (form) {
       if (form.$valid) {
-        console.log($scope.inquiryObj);
         remoteSvc.quickQuery($scope.inquiryObj)
           .success(function (data) {
+            $scope.inquiryObj = {};
             $scope.showModal('Success', "Successfully Submitted Your Inquiry !");
           })
           .error(function (error) {
+            $scope.inquiryObj = {};
             $scope.showModal('Error', "Error While Submitting Your Request");
           })
       }
@@ -536,6 +530,7 @@ angular.module('wanderwagon-webapp')
 
     if (auth.isLoggedIn()) {
       $rootScope.loggedIn = true;
+      $scope.userName = auth.getUserName();
     } else {
       $rootScope.loggedIn = false;
     }
@@ -740,9 +735,11 @@ angular.module('wanderwagon-webapp')
         if(form.$valid) {
           remoteSvc.submitPlanMyTripForm($scope.formObj)
           .success(function (data) {
+            $scope.formObj = {};
             $scope.showModal("Success !", "Your query has been submitted successfully ! Will get back to you within 24 Hours.");
           })
           .error(function (error) {
+            $scope.formObj = {};
             $scope.showModal("Error", error.error.message);
           })
         } else{
@@ -768,7 +765,6 @@ angular.module('wanderwagon-webapp')
 
     $scope.getBlogList = function () {
       remoteSvc.getBlogList().then(function (response){
-        console.log(response);
         $scope.posts = response;
       });
     };
@@ -807,13 +803,12 @@ angular.module('wanderwagon-webapp')
       angular.element(document.querySelectorAll('#loginModal')).modal('hide');
     };
 
-    $scope.getPostDetail = function () {
+    $scope.getBlogDetail = function () {
       remoteSvc.getBlogDetail(postId).then(function (response) {
-        console.log(response.response);
         $scope.postDetail = response.response;
       }); 
     };
-    $scope.getPostDetail();
+    $scope.getBlogDetail();
 
     $scope.onShareButtonClicked = function (blogId) {
       $scope.shareObj = {};
@@ -855,14 +850,23 @@ angular.module('wanderwagon-webapp')
         });
     };
 
+    var getComments = function(postId) {
+      remoteSvc.getCommentsByBlogId(postId)
+        .success(function(data) {
+          $scope.comments = data.response;
+        })
+        .error(function (error) {
+        })
+    };
+    getComments(postId);
 
     $scope.commentObj = {};
     $scope.postComment = function (blogId) {
-      $scope.commentObj.blodId = blogId;
-      console.log($scope.commentObj);
+      $scope.commentObj.blogId = blogId;
       remoteSvc.postComment($scope.commentObj)
         .success(function (data){
-          console.log(data);
+          $scope.commentObj = {};
+          getComments(postId);
         })
         .error(function (error){
           console.log(error);
@@ -963,11 +967,12 @@ angular.module('wanderwagon-webapp')
       if (form.$valid) {
         remoteSvc.submitContactForm($scope.contactObj)
           .success(function (data) { 
-              console.log(data);
+            $scope.contactObj = {};
               $scope.showModal("Success", "Your message has been successfully sent !");
           })
           .error(function (error) {
             console.log(error);
+            $scope.contactObj = {};
             $scope.showModal("Error", error.error.message);
           });
       }
@@ -978,7 +983,6 @@ angular.module('wanderwagon-webapp')
       if (form.$valid) {
         remoteSvc.submitTravelEnquiryForm($scope.travelEnqObj)
           .success(function (data) { 
-              console.log(data);
               $scope.showModal("Success", "Your message has been successfully sent !");
           })
           .error(function (error) {
@@ -1066,9 +1070,9 @@ angular.module('wanderwagon-webapp')
         $http
           .post(remoteAddr + '/auth/facebook-login?access-token='+ token)
           .success(function (data, status) {
-            $cookies.put('token', data.response.token);
+            $cookies.put('token', data.response.signUpResponse.token);
             $cookies.put('tokenTime', (new Date()).getTime());
-            $cookies.put('fb-token', token);
+            $cookies.put('userName', data.response.userProfile.name);
             deferred.resolve(data);
             return cb();
           })
@@ -1088,8 +1092,9 @@ angular.module('wanderwagon-webapp')
         $http
           .post(remoteAddr + '/auth/google-login?access-token='+token)
           .success(function (data, status) {
-            $cookies.put('token', data.response.token);
+            $cookies.put('token', data.response.signUpResponse.token);
             $cookies.put('tokenTime', (new Date()).getTime());
+            $cookies.put('userName', data.response.userProfile.name);
             deferred.resolve(data);
             return cb();
           })
@@ -1178,6 +1183,10 @@ angular.module('wanderwagon-webapp')
       },
       getToken: function () {
         return $cookies.get('token');
+      },
+
+      getUserName: function () {
+        return $cookies.get('userName');
       }
     }
   }]);
@@ -1224,12 +1233,14 @@ angular.module('wanderwagon-webapp')
       },
 
 
+      // **** BLOGS API ******* //
+
+
       getBlogList: function () {
         return $http({
           method: 'GET',
           url: remoteAddr + '/blogs/all'
         }).then(function (data, status){
-          console.log(data);
            var posts = [];
           for (var i = 0; i < data.data.response.length; i++) {
             var post = data.data.response[i];
@@ -1240,7 +1251,7 @@ angular.module('wanderwagon-webapp')
             posts[i].imageUrl = post.imageUrl;
             posts[i].id = post.id;
             posts[i].comments = post.comments;
-            posts[i].date = new Date(new Date("2017-12-09").getTime());
+            posts[i].date = new Date(new Date(post.time).getTime());
           }
           return posts;
         }, function (error, status) {
@@ -1275,7 +1286,6 @@ angular.module('wanderwagon-webapp')
 
 
       postComment: function (commentObj) {
-        console.log(auth.getToken());
         return $http({
           method: 'POST',
           headers: {
@@ -1285,6 +1295,17 @@ angular.module('wanderwagon-webapp')
           url: remoteAddr + '/blogs/comment'
         })
       },
+
+      getCommentsByBlogId : function (blogId) {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + '/blogs/comments/' + blogId
+        })
+      },
+
+
+
+       // **** TRAVEL PLANS API ******* //
 
 
       getTravelInspirations : function () {
@@ -1323,6 +1344,9 @@ angular.module('wanderwagon-webapp')
       },
 
 
+       // **** HOME PAGE API ******* //
+
+
       getInstaPhotos : function() {
         return $http({
           method: 'GET',
@@ -1339,7 +1363,6 @@ angular.module('wanderwagon-webapp')
           method: 'GET',
           url: remoteAddr + "/home/blog"
         }).then(function (data, status) {
-          console.log(data);
           var posts = [];
          for (var i = 0; i < data.data.response.length; i++) {
            var post = data.data.response[i];
@@ -1349,8 +1372,7 @@ angular.module('wanderwagon-webapp')
            posts[i].description = post.description;
            posts[i].imageUrl = post.imageUrl;
            posts[i].id = post.id;
-           posts[i].date = post.time;
-          //  posts[i].date = new Date(new Date("2017-12-09").getTime());
+           posts[i].date = new Date(new Date(post.time).getTime());
          }
          return posts;
         }, function (error, status) {
@@ -1368,6 +1390,11 @@ angular.module('wanderwagon-webapp')
           return error.data;
         })
       },
+
+
+
+
+       // **** DESTINATION API ******* //
 
       getDestinationsList: function() {
         return $http({
@@ -1415,6 +1442,11 @@ angular.module('wanderwagon-webapp')
         })
       },
 
+
+
+       // **** PLAN MY TRIP API ******* //
+
+
       submitPlanMyTripForm : function(formObj) {
         return $http({
           method: 'POST',
@@ -1425,6 +1457,9 @@ angular.module('wanderwagon-webapp')
           url: remoteAddr + '/travelplans/query'
         })
       },
+
+
+       // **** CONATACTS API ******* //
 
       submitContactForm : function(contactObj) {
         return $http({
@@ -1441,6 +1476,10 @@ angular.module('wanderwagon-webapp')
           url: remoteAddr + "/travelplans/travelinquery"
         })
       },
+
+
+
+       // **** SUBSCRIBE API ******* //
 
       submitNewsletterEmail : function(emailObj) {
         return $http({
@@ -1469,35 +1508,13 @@ angular.module('config', [])
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('AboutCtrl', ["$scope", function ($scope) {
-
-     $scope.destinations = [{
-        imageUrl: 'images/himachal.jpg',
-        name: 'Himachal',
-        id: 1
-      },
-      {
-        imageUrl: 'images/uttarakhand.jpg',
-        name: 'Uttarakhand',
-        id: 2
-      },
-      {
-        imageUrl: 'images/kashmir.jpg',
-        name: 'Kashmir',
-        id: 3
-      },
-      {
-        imageUrl: 'images/meghalaya.jpg',
-        name: 'Meghalaya',
-        id: 4
-      }
-    ];
+  .controller('AboutCtrl', function () {
 
 
     
 
 
-  }]);
+  });
 
 'use strict';
 
@@ -1510,27 +1527,7 @@ angular.module('wanderwagon-webapp')
  */
 angular.module('wanderwagon-webapp')
   .controller('AccountCtrl', ["$scope", function ($scope) {
-
-    $scope.favouriteActivities = [
-      {name : 'Adventure'},
-      {name : 'Arts & Events'},
-      {name : 'BackPacking'},
-      {name : 'Beach Holidays'},
-      {name : 'Budget Travel'},
-      {name : 'City Travels'},
-      {name : 'Days Trips'},
-      {name : 'Family Trips'},
-      {name : 'Food & Drinks'},
-      {name : 'Nature'},
-      {name : 'Road Trips'}
-    ];
-
-    
-    $scope.showModal = function() {
-      angular.element(document.querySelectorAll('#profileEditModal')).modal('show');
-      
-    };
-
+  
   
    
   }]);
@@ -1551,7 +1548,6 @@ angular.module('wanderwagon-webapp')
 
     $scope.getDestinationDetailById = function (destinationId) {
       remoteSvc.getDestinationDetailById(destinationId).then(function (data) {
-        console.log(data.response);
         $scope.detail = data.response;
         $scope.placesData = data.response.places;
         $scope.activitiesData = data.response.activities;
@@ -1566,14 +1562,12 @@ angular.module('wanderwagon-webapp')
     $scope.openOrCloseAccordion = function (param) {
 
       if (param === 'place') {
-        console.log(param);
         if ($scope.openAccordion === true) {
           $scope.closeAccordion();
         } else if ($scope.openAccordion === false) {
           $scope.openAccordion = true;
         }
       } else if (param === 'activity') {
-        console.log(param);
         if ($scope.openAccordion1 === true) {
           $scope.closeAccordion1();
         } else if ($scope.openAccordion1 === false) {
@@ -1698,14 +1692,12 @@ angular.module('wanderwagon-webapp')
 
      $scope.getTravelInspirations = function () {
       remoteSvc.getTravelInspirations().then(function (response) {
-        console.log(response);
         $scope.sliderData = response;
       });
     };
 
     $scope.getBlogs = function () {
       remoteSvc.getHomeBlogs().then(function (response) {
-        console.log(response);
         $scope.blog = response;
       })
     };
@@ -1714,7 +1706,7 @@ angular.module('wanderwagon-webapp')
     $scope.getBlogs();
 
     $scope.travelPlanData = [];
-    var getTravelPlans = function (id) {
+    $scope.getTravelPlans = function (id) {
       remoteSvc.getTravelPlans(id).then(function (response){
         $scope.travelPlanData = response;
       });
@@ -1723,12 +1715,11 @@ angular.module('wanderwagon-webapp')
     
 
     $scope.openAccordion = false;
-    $scope.openOrCloseAccordion = function (id) {
+    $scope.openOrCloseAccordion = function () {
       if ($scope.openAccordion === true) {
         $scope.closeAccordion();
       } else if ($scope.openAccordion === false) {
         $scope.openAccordion = true;
-        getTravelPlans(id);
       }
     };
 
@@ -2403,7 +2394,6 @@ angular.module('wanderwagon-webapp')
       remoteSvc.getTravelInspirationDetail(id).then(function (response) {
         $scope.planDetail = response.response;
         $scope.itineraries = response.response.itineraries;
-        console.log($scope.itineraries);
       });
     };
     getTravelInspirationDetail();
@@ -2580,7 +2570,6 @@ angular.module('wanderwagon-webapp')
         scope.getInstaPhotos = function () {
           remoteSvc.getInstaPhotos().then(function (response) {
             scope.instaData = response;
-            console.log(response);
           });
         };
         scope.getInstaPhotos();
@@ -2633,9 +2622,10 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/blog-detail.html',
-    "<div style=\"background-color:#36353B;background-image: url({{postDetail.imageUrl}});background-attachment: fixed;\n" +
+    "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url({{postDetail.imageUrl}});background-attachment: fixed;\n" +
     "background-position: center;\n" +
     "background-repeat: no-repeat;\n" +
+    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"center-block slider-caption-center\"> <h2 class=\"text-center primary-title\">{{postDetail.title}}</h2> <!-- <p class=\"text-center primary-title-1\">{{detail.title}}</p> --> </div> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background: url({{postDetail.imageUrl}}) no-repeat center center fixed;background-attachment: fixed;\n" +
     "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"center-block slider-caption-center\"> <h2 class=\"text-center primary-title\">{{postDetail.title}}</h2> <!-- <p class=\"text-center primary-title-1\">{{detail.title}}</p> --> </div> </div> </div> <div class=\"si-sticky\"> <a href=\"\" ng-click=\"onShareButtonClicked(postDetail.id)\" class=\"social-icon si-facebook\" data-animate=\"bounceInLeft\"> <i class=\"icon-facebook\"></i> <i class=\"icon-facebook\"></i> </a> <a socialshare socialshare-provider=\"twitter\" socialshare-text=\"For rivers, seas and slopes at their most inviting\" socialshare-hashtags=\"wanderwagon\" socialshare-description=\"Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor. Integer posuere\n" +
     "                erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget\n" +
     "                quam. Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus.\n" +
@@ -2653,45 +2643,8 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "    font-weight: 300;\n" +
     "    padding:2%;\n" +
     "    color: #fff\" href=\"mailto:contact@wanderwagon.com\" target=\"_blank\"> Share your story with us at contact@wanderwagon.com</a> </div> <!-- Comments\n" +
-    "						============================================= --> <div id=\"comments\" class=\"clearfix\"> <!-- \n" +
-    "            <h3 id=\"comments-title\"><span>3</span> Comments</h3> --> <!-- Comments List\n" +
-    "							============================================= --> <!-- <ol class=\"commentlist clearfix\">\n" +
-    "\n" +
-    "              <li class=\"comment even thread-even depth-1\" id=\"li-comment-1\">\n" +
-    "\n" +
-    "                <div id=\"comment-1\" class=\"comment-wrap clearfix\">\n" +
-    "\n" +
-    "                  <div class=\"comment-meta\">\n" +
-    "\n" +
-    "                    <div class=\"comment-author vcard\">\n" +
-    "\n" +
-    "                      <span class=\"comment-avatar clearfix\">\n" +
-    "												<img alt='' src='http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60' class='avatar avatar-60 photo avatar-default' height='60' width='60' /></span>\n" +
-    "\n" +
-    "                    </div>\n" +
-    "\n" +
-    "                  </div>\n" +
-    "\n" +
-    "                  <div class=\"comment-content clearfix\">\n" +
-    "\n" +
-    "                    <div class=\"comment-author\">John Doe<span><a href=\"#\" title=\"Permalink to this comment\">April 24, 2012 at 10:46 am</a></span></div>\n" +
-    "\n" +
-    "                    <p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula\n" +
-    "                      ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>\n" +
-    "\n" +
-    "            \n" +
-    "\n" +
-    "                  </div>\n" +
-    "\n" +
-    "                  <div class=\"clear\"></div>\n" +
-    "\n" +
-    "                </div>\n" +
-    "\n" +
-    "              </li>\n" +
-    "\n" +
-    "            \n" +
-    "\n" +
-    "            </ol> --> <!-- .commentlist end --> <div class=\"clear\"></div> <!-- Comment Form\n" +
+    "						============================================= --> <div id=\"comments\" class=\"clearfix\"> <h3 id=\"comments-title\"><span>{{comments.length}}</span> Comments</h3> <!-- Comments List\n" +
+    "							============================================= --> <ol ng-if=\"comments.length > 0\" class=\"commentlist clearfix\"> <li ng-repeat=\"item in comments\" class=\"comment even thread-even depth-1\" id=\"li-comment-1\"> <div id=\"comment-1\" class=\"comment-wrap clearfix\"> <div class=\"comment-meta\"> <div class=\"comment-author vcard\"> <span class=\"comment-avatar clearfix\"> <img alt=\"\" src=\"http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60\" class=\"avatar avatar-60 photo avatar-default\" height=\"60\" width=\"60\"></span> </div> </div> <div class=\"comment-content clearfix\"> <div class=\"comment-author\">John Doe<span><a title=\"Permalink to this comment\">{{item.commentTime}}</a></span></div> <p>{{item.comment}}</p> </div> <div class=\"clear\"></div> </div> </li> </ol> <!-- .commentlist end --> <div class=\"clear\"></div> <!-- Comment Form\n" +
     "							============================================= --> <div id=\"respond\" class=\"clearfix\"> <button style=\"float:right\" ng-click=\"showCommentForm()\" id=\"\" tabindex=\"5\" class=\"button button-blue\">ADD A COMMENT</button> <form ng-if=\"showForm\" class=\"clearfix\" id=\"commentform\"> <div class=\"col_full\"> <label for=\"comment\">Comment</label> <textarea name=\"comment\" ng-model=\"commentObj.comment\" cols=\"58\" rows=\"7\" tabindex=\"4\" class=\"sm-form-control\"></textarea> </div> <div class=\"col_full nobottommargin\"> <button name=\"submit\" ng-click=\"postComment(postDetail.id)\" id=\"submit-button\" tabindex=\"5\" value=\"Submit\" class=\"button button-blue\">Submit</button> </div> </form> </div> <!-- #respond end --> </div> <!-- #comments end --> </div> </section> <!-- #content end --> <div class=\"modal fade\" id=\"shareModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"shareModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"shareModallabel\">{{messageType}}</h4> </div> <div class=\"modal-body\"> <div class=\"row\"> <div style=\"padding:5%\" class=\"col-full\"> {{message}} </div> <!--<div class=\"col-md-6 col-sm-6 col-xs-6 text-right\">\n" +
     "            Its button\n" +
     "					</div>--> </div> </div> <!--<div class=\"modal-body\" ng-show=\"error\">\n" +
@@ -2706,7 +2659,7 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/blogs/cover-pic.jpg');background-attachment: fixed;\n" +
     "background-position: center;\n" +
     "background-repeat: no-repeat;\n" +
-    "background-size: cover; height:100vh\"> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/blog_cover.jpg');background-size: cover; height:100vh\"> </div> <!-- Content\n" +
+    "background-size: cover; height:100vh\"> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/blog_cover.jpg') no-repeat center center fixed;background-size: cover; height:100vh\"> </div> <!-- Content\n" +
     "		============================================= --> <section id=\"content\" style=\"margin-top:5%\"> <div class=\"container\"> <!-- Post Content\n" +
     "					============================================= --> <div class=\"postcontent nobottommargin clearfix center-block custom-margin\"> <!-- Posts\n" +
     "						============================================= --> <div id=\"posts\" class=\"post-timeline clearfix\"> <div class=\"timeline-border\"></div> <div ng-repeat=\"post in posts\" class=\"entry clearfix\"> <div class=\"entry-timeline\" style=\"color: #14C1E0\"> {{post.date | date:'dd'}}<span>{{post.date | date:'MMM'}}</span> <div class=\"timeline-divider\"></div> </div> <div class=\"entry-image\"> <a ui-sref=\"blog.detail({postId: post.id})\" data-lightbox=\"image\"> <span class=\"image_fade\" picture-fill> <span pf-src=\"{{post.imageUrl | trimExt}}.jpg\" data-media=\"(max-width: 768px)\"></span> <span pf-src=\"{{post.imageUrl | trimExt}}.jpg\" data-media=\"(min-width: 768px)\"></span> </span> </a> </div> <div class=\"entry-title\"> <h3 style=\"cursor:pointer\" class=\"blog-title\" ui-sref=\"blog.detail({postId: post.id})\"> {{post.title}}</h3> </div> <ul class=\"entry-meta clearfix\" style=\"margin:1%\"> <li><a href=\"#\"><i class=\"icon-user\"></i> {{post.author}}</a></li> <li><a><i class=\"icon-comments\"></i> {{post.comments}} Comment(s)</a></li> </ul> <div class=\"blog-content clearfix\"> <p>{{post.description}}</p> <a href=\"\" ui-sref=\"blog.detail({postId: post.id})\" class=\"more-link\" style=\"color: #14C1E0\">Read More</a> </div> </div> </div> <!-- #posts end --> <!-- Pagination\n" +
@@ -2757,10 +2710,11 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/destination-detail.html',
-    "<div style=\"background-color:#36353B;background-image: url({{detail.imageUrl}});background-attachment: fixed;\n" +
+    "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url({{detail.imageUrl}});background-attachment: fixed;\n" +
     "background-position: center;\n" +
     "background-repeat: no-repeat;\n" +
-    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"center-block slider-caption-center\"> <h2 class=\"text-center big-title\">{{detail.name}}</h2> <p class=\"text-center primary-title-1\">{{detail.title}}</p> </div> </div> </div> <!-- Header\n" +
+    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"center-block slider-caption-center\"> <h2 class=\"text-center big-title\">{{detail.name}}</h2> <p class=\"text-center primary-title-1\">{{detail.title}}</p> </div> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background: url({{detail.imageUrl}}) no-repeat center center fixed;background-attachment: fixed;\n" +
+    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"center-block slider-caption-center\"> <h2 class=\"text-center primary-title\">{{detail.name}}</h2> <p class=\"text-center primary-title-1\">{{detail.title}}</p> </div> </div> </div> <!-- Header\n" +
     "		============================================= --> <header style=\"height:50px; background-color:#FFFFFF\" sticky id=\"header\" class=\"full-header\"> <!-- Primary Navigation\n" +
     "					============================================= --> <nav id=\"primary-menu\" style=\"margin-left:20%; margin-right:25%\"> <ul class=\"one-page-menu\"> <li> <a href=\"#about\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" style=\"cursor:pointer;color:#444;padding:10px 15px\"> <div>About</div> </a> </li> <li> <a href=\"#howToReach\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" style=\"cursor:pointer;color:#444;padding:10px 15px\"> <div>How to reach</div> </a> </li> <li> <a href=\"#places\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" style=\"cursor:pointer;color:#444;padding:10px 15px\"> <div>Places to visit</div> </a> </li> <li> <a href=\"#activities\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" style=\"cursor:pointer;color:#444;padding:10px 15px\"> <div>Activities</div> </a> </li> </ul> </nav> <!-- #primary-menu end --> </header> <!-- #header end --> <section id=\"about\"> <div class=\"container clearfix\"> <div> <h2 class=\"paul-title\" style=\"margin-top:5%\"> Welcome to {{detail.name}} </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> </div> <div class=\"center-block custom-para\"> <p hm-read-more hm-text=\"{{detail.description}}\" hm-limit=\"500\" hm-more-text=\"Read more\" hm-less-text=\"Read less\" hm-dots-class=\"dots\" hm-link-class=\"links\"></p> <br> </div> <div class=\"center-block overview\"> <h2 style=\"text-align:center\" class=\"common-title\"> Overview </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> <div style=\"margin: 30px\"> <h5 class=\"pull-left1\"><i style=\"padding-right:10px\" class=\"icon-calendar i-alt\"></i>Best Time To Visit</h5> <p style=\"margin-right: 40px\" class=\"pull-right1 common-font\">{{detail.bestTimeToVisit}}</p> </div> <span class=\"clearfix\"></span> <div style=\"margin: 0 30px 30px 30px\"> <h5 class=\"pull-left1\"><i style=\"padding-right:10px\" class=\"icon-calendar i-alt\"></i>Days Required</h5> <p style=\"margin-right: 40px\" class=\"pull-right1 common-font\">{{detail.daysToVisit}}</p> </div> <span class=\"clearfix\"></span> <div style=\"margin: 0 30px 30px 30px\"> <h5 class=\"pull-left1\"><i style=\"padding-right:10px\" class=\"icon-folder i-alt\"></i>Category</h5> <p style=\"margin-right: 40px; word-wrap: break-word\" class=\"pull-right1 common-font\">{{detail.category}}</p> </div> </div> </div> </section> <section id=\"howToReach\"> <div class=\"container clearfix\"> <div style=\"margin-top:5%\"> <h2 class=\"paul-title\"> How to reach </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> </div> <div class=\"center-block\" style=\"margin:5% 0\"> <div class=\"feature-box\"> <div class=\"custom-fbox-icon\"> <!--<i class=\"icon-plane i-alt\"></i>--> <img src=\"images/plane.png\"> </div> <span class=\"common-title\" style=\"font-size:2.1rem\">Via Air</span> <p class=\"common-font\">{{detail.airPath}} </p> </div> <div class=\"feature-box\" style=\"margin:5% 0\"> <div class=\"custom-fbox-icon\"> <img src=\"images/train.png\"> </div> <span class=\"common-title\" style=\"font-size:2.1rem\">Via Rail</span> <p class=\"common-font\">{{detail.railway}} </p> </div> <div class=\"feature-box\"> <div class=\"custom-fbox-icon\"> <img src=\"images/road.png\"> </div> <span class=\"common-title\" style=\"font-size:2.1rem\">Via Road</span> <p class=\"common-font\">{{detail.roadway}} </p> </div> </div> </div> </section> <section class=\"clearfix custom-padding\" id=\"places\"> <h2 style=\"margin-top:5%\" class=\"paul-title\"> Places to visit </h2> <div class=\"underline\" style=\"margin-bottom:5rem\"> </div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"placesData\" owl-properties=\"sliderProperties\" owl-ready=\"ready($api)\"> <div ng-click=\"openOrCloseAccordion('place') ; gotoCarouselPlace($index)\" class=\"paul-slide-new\" style=\"padding:2% 2% 2% 2%\" data-ng-repeat=\"item in placesData\"> <img style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> <span class=\"paul-slider-caption\"> {{item.placeName}}</span> </div> </ng-owl-carousel> <div id=\"accordion1\" class=\"clearfix\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion\"> <ng-owl-carousel class=\"owl-theme\" owl-items=\"placesData\" owl-properties=\"accordionProperties\" owl-ready=\"readyPlaceAccordion($api)\"> <div data-ng-repeat=\"item in placesData\"> <div class=\"center-block\"> <div> <h2 style=\"text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"><br> {{item.placeName}} <div class=\"underline\" style=\"margin-top:2rem\"> </div> </h2> </div> <div class=\"dropdown-slider-image\"> <a><img height=\"450px\" width=\"100%\" ng-src=\"{{item.imageUrl}}\" alt=\"{{item.placeName}}\"></a> </div> <div class=\"dropdown-slider-content\"> <span ng-click=\"closeAccordion()\" style=\"margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem\" class=\"glyphicon glyphicon-remove-circle\"></span> <h3 class=\"common-title\" style=\"margin-top:0\"> About {{item.placeName}}</h3> <p class=\"common-font\">{{item.description}} </p> <h3 class=\"common-title\" style=\"margin-top:0\"> How to reach</h3> <p class=\"common-font\">{{item.howToReachDesc}} </p> <div> <h3 class=\"content-title\" style=\"margin-top:0\"> Timing</h3> <p class=\"common-font\">{{item.timing}} </p> </div> </div> </div> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section class=\"clearfix custom-padding\" id=\"activities\"> <h2 class=\"paul-title\"> Activities </h2> <div class=\"underline\" style=\"margin-bottom:5rem\"> </div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"activitiesData\" owl-properties=\"sliderProperties\" owl-ready=\"ready($api)\"> <div ng-click=\"openOrCloseAccordion('activity') ; gotoCarouselActivity($index)\" class=\"paul-slide-new\" style=\"padding:2% 2% 2% 2%\" data-ng-repeat=\"item in activitiesData\"> <img style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> <span class=\"paul-slider-caption\"> {{item.activityName}}</span> </div> </ng-owl-carousel> <div id=\"accordion2\" class=\"clearfix\" style=\"margin-bottom:0%\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion1\"> <ng-owl-carousel class=\"owl-theme\" owl-items=\"activitiesData\" owl-properties=\"accordionProperties\" owl-ready=\"readyActivityAccordion($api)\"> <div data-ng-repeat=\"item in activitiesData\"> <div class=\"center-block\"> <div> <h2 style=\"text-align:center;margin:2rem 0 2rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"><br> {{item.activityName}} <div class=\"underline\" style=\"margin-top:2rem\"> </div> </h2> </div> <div class=\"dropdown-slider-image\"> <a><img height=\"450px\" width=\"100%\" ng-src=\"{{item.imageUrl}}\" alt=\"{{item.activityName}}\"></a> </div> <div class=\"dropdown-slider-content\"> <span ng-click=\"closeAccordion1()\" style=\"margin-top:4%; right:3%; position: absolute; cursor:pointer; font-size:3rem\" class=\"glyphicon glyphicon-remove-circle\"></span> <h3 class=\"common-title\" style=\"margin-top:0\"> About {{item.activityName}}</h3> <p class=\"common-font\">{{item.description}} </p> <h3 class=\"content-title\" style=\"margin-top:0\"> How to reach</h3> <p class=\"common-font\">{{item.placeOfConduct}} </p> <div> <!-- <h4 class=\"pull-left\" style=\"line-height:1.2142857142857142;font-size:18px;font-weight:200;color:#2c3643;\">\n" +
     "                            Timings - <span>{{item.timing}}</span></h4> --> <h3 class=\"content-title\" style=\"margin-top:0\"> Duration</h3> <p class=\"common-font\">{{item.duration}} </p> </div> </div> </div> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section> <h2 class=\"paul-title\" style=\"margin-top:5%\"> Why we love {{detail.name}} ? </h2> <div class=\"underline\" style=\"margin-bottom:5rem\"> </div>  <p style=\"color: #67747c; font-family: Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 1.8rem; font-style:\n" +
@@ -2772,7 +2726,7 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/destination_cover.jpg');background-attachment: fixed;\n" +
     "background-position: center;\n" +
     "background-repeat: no-repeat;\n" +
-    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/destinations_cover.jpg');background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <!-- Content\n" +
+    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/destinations_cover.jpg') no-repeat center center fixed ;background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <!-- Content\n" +
     "		============================================= --> <section id=\"content\"> <div class=\"topmargin\"> <h2 style=\"text-align:center;margin-bottom:4rem;letter-spacing:-0.45px;line-height:1;font-weight:300;font-size:3.8rem\"> Destinations </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> </div> <div class=\"container\"> <div class=\"row row-centered\"> <div style=\"margin-bottom:2%\" ng-repeat=\"destination in destinations\" class=\"col-sm-4 col-centered col-fixed\"> <a ui-sref=\"destination.detail({id: destination.id})\"> <div class=\"photo\" style=\"cursor:pointer; width: 100%;\n" +
     "    height: 100%;\n" +
     "    float: left;\n" +
@@ -2829,16 +2783,16 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/home/homepage.jpg');background-attachment: fixed;\n" +
     "background-position: center;\n" +
     "background-repeat: no-repeat;\n" +
-    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"slider-caption-center\"> <a style=\"position:absolute; bottom:5%; right:40%\" href=\"#travel\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" class=\"custom-button center-block text-center\"> <span>Take Me There ! </span> <i style=\"margin-left:10px\" class=\"icon-angle-right\"></i></a> </div> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/home_cover.jpg') ;background-size:cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"slider-caption-center\"> <a style=\"position:absolute; left:0%; right:0%; bottom:20%\" href=\"#travel\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" class=\"custom-button center-block text-center\"> <span>Take Me There ! </span> <i style=\"margin-left:10px\" class=\"icon-angle-right\"></i></a> </div> </div> </div> <section id=\"travel\" style=\"margin-top:5%\" class=\"custom-padding\"> <h2 class=\"paul-title\"> Travel Inspiration </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Your choices, Your friends, Your travel plans </p><div class=\"underline\"> </div> <p></p> <ng-owl-carousel class=\"owl-theme\" owl-items=\"sliderData\" owl-properties=\"properties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide\" style=\"padding:2% 0 2% 0%\" data-ng-repeat=\"item in sliderData\"> <img ng-click=\"openOrCloseAccordion(item.id)\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> <div id=\"accordion\" class=\"clearfix\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion\"> <div ng-click=\"closeAccordion()\" style=\"cursor:pointer; font-size:3rem; margin-left:95%\" class=\"glyphicon glyphicon-remove-circle\"></div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"travelPlanData\" owl-properties=\"accordionProperties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide-new\" style=\"padding:2% 0 2% 0; text-align:center\" data-ng-repeat=\"item in travelPlanData\"> <img ui-sref=\"travel-plan.detail({id: item.id})\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> <span style=\"text-align:center\" class=\"paul-slider-caption\"> {{item.title}}</span> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section id=\"articles\" class=\"custom-padding\"> <div class=\"topmargin\"> <h2 ui-sref=\"blog.list\" style=\"cursor:pointer\" class=\"paul-title\"> The Blogs </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Live the wanderlust through words </p><div class=\"underline\"> </div> <p></p> </div> <div style=\"overflow:hidden; margin-bottom:0%\"> <div style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[0].id})\" class=\"image blog-image-left\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
+    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"slider-caption-center\"> <a style=\"position:absolute; bottom:5%; right:40%\" href=\"#travel\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" class=\"custom-button center-block text-center\"> <span>Take Me There ! </span> <i style=\"margin-left:10px\" class=\"icon-angle-right\"></i></a> </div> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/home_cover.jpg') no-repeat center center fixed ;background-size:cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"slider-caption-center\"> <a style=\"position:absolute; left:0%; right:0%; bottom:20%\" href=\"#travel\" du-smooth-scroll=\"\" du-scrollspy=\"\" duration=\"800\" class=\"custom-button center-block text-center\"> <span>Take Me There ! </span> <i style=\"margin-left:10px\" class=\"icon-angle-right\"></i></a> </div> </div> </div> <section id=\"travel\" style=\"margin-top:5%\" class=\"custom-padding\"> <h2 class=\"paul-title\"> Travel Inspiration </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Your choices, Your friends, Your travel plans </p><div class=\"underline\"> </div> <p></p> <ng-owl-carousel class=\"owl-theme\" owl-items=\"sliderData\" owl-properties=\"properties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide\" style=\"padding:2% 0 2% 0%\" data-ng-repeat=\"item in sliderData\"> <img ng-click=\"openOrCloseAccordion(); getTravelPlans(item.id)\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> <div id=\"accordion\" class=\"clearfix\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion\"> <div ng-click=\"closeAccordion()\" style=\"cursor:pointer; font-size:3rem; margin-left:95%\" class=\"glyphicon glyphicon-remove-circle\"></div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"travelPlanData\" owl-properties=\"accordionProperties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide-new\" style=\"padding:2% 0 2% 0; text-align:center\" data-ng-repeat=\"item in travelPlanData\"> <img ui-sref=\"travel-plan.detail({id: item.id})\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section id=\"articles\" class=\"custom-padding\"> <div class=\"topmargin\"> <h2 ui-sref=\"blog.list\" style=\"cursor:pointer\" class=\"paul-title\"> The Blogs </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Live the wanderlust through words </p><div class=\"underline\"> </div> <p></p> </div> <div style=\"overflow:hidden; margin-bottom:2%\"> <div style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[0].id})\" class=\"image blog-image-left\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "          <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +
-    "          <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[0].imageUrl}}\" alt=\"{{blog[0].title}}\"> </picture> </div> <div class=\"text blog-content-left\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[0].id})\" class=\"blog-title\"> {{blog[0].title}}</h3> <div class=\"blog-content\"> <p>{{blog[0].description}}... </p> <div class=\"blog-content\"> <span class=\"icon-calendar3\"> {{blog[0].time }} • {{blog[0].user.name}}</span> </div> </div> </div> </div> <div style=\"overflow:hidden\"> <div style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[1].id})\" class=\"image blog-image-right\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
+    "          <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[0].imageUrl}}\" alt=\"{{blog[0].title}}\"> </picture> </div> <div class=\"text blog-content-left\" style=\"height:auto;margin:0; padding:0 0 0 10px\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[0].id})\" class=\"blog-title\"> {{blog[0].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[0].description}}... </p> <span class=\"icon-calendar3\"> {{blog[0].date | date : 'dd-MM-yyyy' }} • {{blog[0].author}}</span> </div> </div> </div> <div style=\"overflow:hidden\"> <div style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[1].id})\" class=\"image blog-image-right\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "          <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +
-    "          <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[1].imageUrl}}\" alt=\"{{blog[1].title}}\"> </picture> </div> <div class=\"text blog-content-right\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[1].id})\" class=\"blog-title\"> {{blog[1].title}}</h3> <div class=\"blog-content\"> <p>{{blog[1].description}}... </p> <div class=\"blog-content\"> <span class=\"icon-calendar3\"> {{blog[1].time}} • {{blog[1].user.name}}</span> </div> </div> </div> </div> </section> <section style=\"margin-top:5%\"> <div class=\"home-form-bg\"> <!--<div class=\"text_over_image\">\n" +
+    "          <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[1].imageUrl}}\" alt=\"{{blog[1].title}}\"> </picture> </div> <div class=\"text blog-content-right\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[1].id})\" class=\"blog-title\"> {{blog[1].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[1].description}}... </p> <span class=\"icon-calendar3\"> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}}</span> </div> </div> </div> </section> <section style=\"margin-top:5%\"> <div class=\"home-form-bg\"> <!--<div class=\"text_over_image\">\n" +
     "        {{postDetail.title}}\n" +
     "      </div>--> <div class=\"home-form\"> <div style=\"padding:10% 5% 17% 5%\"> <div> <div> <h3 style=\"margin: 0;font-size: 25px;font-weight: 600;\n" +
     "    line-height: normal;\n" +
     "    letter-spacing: 2px;\n" +
-    "    color:#FFF\">Not Sure Where to Begin?</h3> <p style=\"color:#FFF; font-size:15px\">Complete this form &amp; we'll get right back to you!</p> </div> </div> <form name=\"inquiryForm\" class=\"nobottommargin\" ng-submit=\"onFormSubmit(inquiryForm)\"> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Name<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.name\" class=\"form-control\" id=\"{{name}}\" type=\"text\" value=\"{{name}}\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Phone Number<span class=\"asterisk\">*</span></label> <div class=\"inquireTelContainer\"> <input ng-model=\"inquiryObj.phone\" class=\"form-control\" id=\"{{inquireTel}}\" value=\"{{phone}}\" type=\"tel\" data-parsley-intphone=\"{{inquireTel}}\" data-parsley-cnic required data-prefill=\"phone\"> </div> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Email<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.email\" class=\"form-control\" id=\"{{inquireEmail}}\" type=\"email\" value=\"{{email}}\" data-parsley-trim-value=\"true\" required data-prefill=\"email\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">No. of Travellers<span class=\"asterisk\">*</span></label> <div class=\"inquireTelContainer\"> <input ng-model=\"inquiryObj.noOfTravellers\" class=\"form-control\" id=\"{{inquireTel}}\" value=\"{{tel}}\" type=\"number\"> <input id=\"{{inquireCountry}}\" type=\"hidden\" data-prefill=\"country\"> </div> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">I Would Like To Go To<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.destination\" class=\"form-control\" type=\"text\" value=\"{{destination}}\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\" for=\"form-condition-10\">In the month of...</label> <select ng-model=\"inquiryObj.travelMonth\" ng-click=\"display5={display:'block'}\" id=\"form-condition-10\" name=\"form-condition-10\" class=\"required form-control\"> <option value=\"\">Travel Dates TBC</option> <option value=\"January\">January</option> <option value=\"February\">February</option> <option value=\"March\">March</option> <option value=\"April\">April</option> <option value=\"May\">May</option> <option value=\"June\">June</option> <option value=\"July\">July</option> <option value=\"August\">August</option> <option value=\"September\">September</option> <option value=\"October\">October</option> <option value=\"November\">November</option> <option value=\"December\">December</option> </select> </div> <div style=\"width:100%\" class=\"col-sm-12 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Tell us a little bit about what you're looking for ?<span class=\"asterisk\">*</span></label> <textarea ng-model=\"inquiryObj.occasion\" style=\"max-width:100%; max-height:10%\" class=\"form-control\"></textarea> </div> <div style=\"text-transform:capitalize; padding-top:15%\" class=\"col-sm-12\"> <button type=\"submit\" style=\"margin:0px !important; width:100%; height:70px\" id=\"{{inquireSubmit}}\" class=\"button button-blue\">Submit Inquiry</button> </div> </form> </div> </div> </div> </section> <section class=\"bottommargin\" style=\"margin-top:5%\"> <div class=\"topmargin\"> <h2 class=\"instaText\"> On Instagram @ wanderwagon </h2> </div> <insta-photo-stream></insta-photo-stream> </section> <div class=\"modal fade\" id=\"messageModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"messageModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"messageModalLabel\">{{messageType}}</h4> </div> <div class=\"modal-body\"> <div class=\"row\"> <div style=\"padding:5%\" class=\"col-full\"> {{message}} </div> <!--<div class=\"col-md-6 col-sm-6 col-xs-6 text-right\">\n" +
+    "    color:#FFF\">Not Sure Where to Begin?</h3> <p style=\"color:#FFF; font-size:15px\">Complete this form &amp; we'll get right back to you!</p> </div> </div> <form name=\"inquiryForm\" class=\"nobottommargin\" ng-submit=\"onFormSubmit(inquiryForm)\"> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Name<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.name\" class=\"form-control\" id=\"{{name}}\" type=\"text\" value=\"{{name}}\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Phone Number<span class=\"asterisk\">*</span></label> <div class=\"inquireTelContainer\"> <input ng-model=\"inquiryObj.phone\" class=\"form-control\" id=\"{{inquireTel}}\" value=\"{{phone}}\" type=\"tel\" data-parsley-intphone=\"{{inquireTel}}\" data-parsley-cnic required data-prefill=\"phone\"> </div> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Email<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.email\" class=\"form-control\" id=\"{{inquireEmail}}\" type=\"email\" value=\"{{email}}\" data-parsley-trim-value=\"true\" required data-prefill=\"email\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">No. of Travellers<span class=\"asterisk\">*</span></label> <div class=\"inquireTelContainer\"> <input ng-model=\"inquiryObj.noOfTravellers\" class=\"form-control\" id=\"{{inquireTel}}\" type=\"number\"> <input id=\"{{inquireCountry}}\" type=\"hidden\" data-prefill=\"country\"> </div> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">I Would Like To Go To<span class=\"asterisk\">*</span></label> <input ng-model=\"inquiryObj.destination\" class=\"form-control\" type=\"text\" value=\"{{destination}}\"> </div> <div class=\"col-sm-6 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\" for=\"form-condition-10\">In the month of...</label> <select ng-model=\"inquiryObj.travelMonth\" ng-click=\"display5={display:'block'}\" id=\"form-condition-10\" name=\"form-condition-10\" class=\"required form-control\"> <option value=\"\">Travel Dates TBC</option> <option value=\"January\">January</option> <option value=\"February\">February</option> <option value=\"March\">March</option> <option value=\"April\">April</option> <option value=\"May\">May</option> <option value=\"June\">June</option> <option value=\"July\">July</option> <option value=\"August\">August</option> <option value=\"September\">September</option> <option value=\"October\">October</option> <option value=\"November\">November</option> <option value=\"December\">December</option> </select> </div> <div style=\"width:100%\" class=\"col-sm-12 toppadding\"> <label style=\"color:#FFF; text-transform:capitalize\">Tell us a little bit about what you're looking for ?<span class=\"asterisk\">*</span></label> <textarea ng-model=\"inquiryObj.occasion\" style=\"max-width:100%; max-height:10%\" class=\"form-control\"></textarea> </div> <div style=\"text-transform:capitalize; padding-top:15%\" class=\"col-sm-12\"> <button type=\"submit\" style=\"margin:0px !important; width:100%; height:70px\" id=\"{{inquireSubmit}}\" class=\"button button-blue\">Submit Inquiry</button> </div> </form> </div> </div> </div> </section> <section class=\"bottommargin\" style=\"margin-top:5%\"> <div class=\"topmargin\"> <h2 class=\"instaText\"> On Instagram @ wanderwagon </h2> </div> <insta-photo-stream></insta-photo-stream> </section> <div class=\"modal fade\" id=\"messageModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"messageModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"messageModalLabel\">{{messageType}}</h4> </div> <div class=\"modal-body\"> <div class=\"row\"> <div style=\"padding:5%\" class=\"col-full\"> {{message}} </div> <!--<div class=\"col-md-6 col-sm-6 col-xs-6 text-right\">\n" +
     "            Its button\n" +
     "					</div>--> </div> </div> <!--<div class=\"modal-body\" ng-show=\"error\">\n" +
     "				<div class=\"row filter-remove text-center\">\n" +
@@ -2988,7 +2942,7 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/plan-trip/cover.jpg');background-attachment: fixed;\n" +
     "background-position: center;\n" +
     "background-repeat: no-repeat;\n" +
-    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/plan_my_trip_cover.jpg');background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <!-- Content\n" +
+    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/plan_my_trip_cover.jpg') no-repeat center center fixed ;background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <!-- Content\n" +
     "		============================================= --> <section id=\"content\"> <div class=\"content-wrap\"> <div class=\"container clearfix\"> <div style=\"float: none; display: block; margin-right: auto; margin-left: auto\" class=\"col_half nobottommargin\"> <form id=\"conditional-form\" name=\"tripForm\" class=\"nobottommargin\" ng-submit=\"submitTravelPlanForm(tripForm)\"> <input type=\"hidden\" name=\"csrfmiddlewaretoken\" value=\"bajfYtFDAH9kXmH4gfAHVQOPg4DvfBYZ\"> <div class=\"col_full\"> <label for=\"form-condition-1\">Where would you like to go?</label> <input ng-keydown=\"display={display:'block'}\" ng-dblclick=\"display={display:'block'}\" ng-keypress=\"display={display:'block'}\" type=\"text\" class=\"form-control required\" id=\"form-condition-1\" name=\"form-condition-1\" ng-model=\"formObj.destination\" required> <!-- <a href=\"#\" class=\"button button-border button-rounded\"><i class=\"icon-gift\"></i>Button</a> --> </div> <div ng-style=\"display\" class=\"col_full\" id=\"form-condition-2-wrap\" style=\"display:none\"> <label for=\"form-condition-2\">Where would you like to start from?</label> <input ng-keydown=\"display1={display:'block'}\" ng-dblclick=\"display1={display:'block'}\" ng-keypress=\"display1={display:'block'}\" type=\"text\" class=\"form-control required\" id=\"form-condition-2\" name=\"form-condition-2\" ng-model=\"formObj.departureCity\" required> </div> <div ng-style=\"display1\" class=\"input-daterange travel-date-group\" style=\"display:none\"> <div class=\"col_full\"> <label for=\"form-condition-3\">When would you like to go?</label> <p class=\"input-group\"> <input ng-model=\"formObj.departureTime\" ng-keydown=\"display2={display:'block'}\" ng-dblclick=\"display2={display:'block'}\" ng-click=\"display2={display:'block'}\" type=\"text\" class=\"form-control\" popup-placement=\"top\" show-button-bar=\"false\" uib-datepicker-popup=\"{{format}}\" ng-model=\"dt\" is-open=\"popup1.opened\" datepicker-options=\"dateOptions\" ng-required=\"true\" alt-input-formats=\"altInputFormats\" required> <span class=\"input-group-btn\"> <button type=\"button\" class=\"btn btn-default\" ng-touch=\"open1(); display2={display:'block'}\" ng-click=\"open1(); display2={display:'block'}\"><i class=\"glyphicon glyphicon-calendar\"></i></button> </span> </p> </div> </div> <div ng-style=\"display2\" class=\"col_full\" id=\"form-condition-4-wrap\" style=\"display:none\"> <label for=\"form-condition-4\">How long would you like to go for?</label> <input required ng-model=\"formObj.duration\" ng-keydown=\"display3={display:'block'}\" placeholder=\"Enter Duration\" ng-dblclick=\"display3={display:'block'}\" ng-keypress=\"display3={display:'block'}\" type=\"number\" class=\"form-control required\" id=\"form-condition-4\" name=\"form-condition-4\"> </div> <div ng-style=\"display3\" class=\"col_full\" id=\"form-condition-5-wrap\" style=\"display:none\"> <label for=\"form-condition-5\">How many wanderers would accompany you?</label> <input required ng-model=\"formObj.personCount\" ng-keydown=\"display4={display:'block'}\" ng-dblclick=\"display4={display:'block'}\" ng-keypress=\"display4={display:'block'}\" type=\"number\" class=\"form-control required\" id=\"form-condition-5\" name=\"form-condition-5\"> </div> <div ng-style=\"display4\" class=\"col_full\" id=\"form-condition-10-wrap\" style=\"display:none\"> <label for=\"form-condition-10\">What's the budget of your trip? ( per head )</label> <select required ng-model=\"formObj.perPersonBudget\" ng-touch=\"display5={display:'block'}\" ng-click=\"display5={display:'block'}\" id=\"form-condition-10\" name=\"form-condition-10\" class=\"required form-control\"> <option value=\"\"> Select One </option> <option value=\"5K\">5K</option> <option value=\"5K to 10K\">5K to 10K</option> <option value=\"10K to 15K\">10K to 15K</option> <option value=\"15K to 20K\">15K to 20K</option> <option value=\"more than 20K\">more than 20K</option> </select> </div> <div ng-style=\"display5\" class=\"col_full\" id=\"form-condition-12-wrap\" style=\"display:none\"> <label for=\"form-condition-12\">What stage of planning do you find yourself in?</label> <select required ng-model=\"formObj.planningStage\" ng-touch=\"display6={display:'block'}\" ng-click=\"display6={display:'block'}\" id=\"form-condition-12\" name=\"form-condition-12\" class=\"required form-control\"> <option value=\"\"> Select One </option> <option value=\"Still dreaming...not sure I'm going to this trip\">DREAMING - I really want to but haven't planned anything yet</option> <option value=\"I know I am going somewhere, but not sure about the places\">PLANNING - I'm Going somewhere, Not sure where</option> <option value=\"I am definitely going\">BOOKING - I am ready for my next adventure.</option> </select> </div> <div ng-style=\"display6\" class=\"col_full\" id=\"form-condition-13-wrap\" style=\"display:none\"> <label for=\"form-condition-13\">What would you like to see and do ? ( or you can leave it to us )</label> <textarea ng-model=\"formObj.message\" ng-keydown=\"display7={display:'block'}\" ng-dblclick=\"display7={display:'block'}\" ng-keypress=\"display7={display:'block'}\" class=\"form-control required\" id=\"form-condition-13\" name=\"form-condition-13\" rows=\"5\" col=\"20\" placeholder=\"Message to us\"></textarea> </div> <div ng-style=\"display7\" class=\"col_full\" id=\"form-condition-16-wrap\" style=\"display:none\"> <label for=\"form-condition-16\">Phone No.</label> <input required ng-model=\"formObj.phone\" ng-keydown=\"display10={display:'block'}\" ng-dblclick=\"display10={display:'block'}\" ng-keypress=\"display10={display:'block'}\" type=\"tel\" class=\"form-control required\" id=\"form-condition-16\" name=\"form-condition-16\" value=\"\"> </div> <div ng-style=\"display10\" class=\"col_full\" id=\"form-condition-submit\" style=\"display:none\"> <button class=\"button nomargin\" type=\"submit\">Plan My Trip</button> </div> </form> </div> </div> </div> </section> <!-- #content end --> <div class=\"modal fade\" id=\"tripModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"tripModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"tripModallabel\">{{messageType}}</h4> </div> <div class=\"modal-body\"> <div class=\"row\"> <div style=\"padding:5%\" class=\"col-full\"> {{message}} </div> </div> </div> </div> </div> </div> "
   );
 
@@ -3056,7 +3010,13 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/testimonial/testimonial-cover.jpg');background-attachment: fixed;\n" +
     "background-position: center;\n" +
     "background-repeat: no-repeat;\n" +
-    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"center-block\"> <h2 class=\"text-center\" style=\"font-size:48px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:25%\" data-caption-animate=\"fadeInUp\"> You're making us BLUSH! </h2> <p style=\"font-size:3rem; font-style:italic; color:#fff\" class=\"text-center\"> See what people are saying about Wanderwagon. </p> </div> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/testimonial_cover.jpg');background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"center-block\"> <h2 class=\"text-center\" style=\"font-size:48px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:25%\" data-caption-animate=\"fadeInUp\"> You're making us BLUSH! </h2> <p style=\"font-size:3rem; font-style:italic;color:#fff\" class=\"text-center\"> See what people are saying about Wanderwagon. </p> </div> </div> </div> <section> <div class=\"container\"> <div style=\"margin-top:3%\"> <h2 class=\"paul-title\"> Testimonials </h2> <div class=\"underline\" style=\"margin-bottom:5%\"> </div> </div> <div class=\"clearfix\" style=\"border:0px solid #EEE;padding:10px\"> <div class=\"blog-image-left\" style=\"width:40%\"> <a><img height=\"150\" width=\"150\" class=\"center-block img-circle\" src=\"https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/about/ceo.jpg\" alt=\"Standard Post with Image\"></a> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> Full Name</h4> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> About</h4> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:10px;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> <i class=\"icon-location\"></i>From City</h4> </div> <div class=\"blog-content-left\" style=\"width:60%\"> <div class=\"entry-title\"> <h3 class=\"common-title\"> One Liner</h3> </div> <div class=\"common-font\" style=\"margin-top:50px\"> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere. </p> </div> </div> </div> <div class=\"clearfix\" style=\"border:0px solid #EEE;padding:10px; margin:20px 0\"> <div class=\"blog-image-right\" style=\"width:40%\"> <a><img height=\"150\" width=\"150\" class=\"center-block img-circle\" src=\"https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/about/ceo.jpg\" alt=\"Standard Post with Image\"></a> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> Full Name</h4> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> About</h4> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:10px;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> <i class=\"icon-location\"></i>From City</h4> </div> <div class=\"blog-content-right\" style=\"width:60%\"> <div class=\"entry-title\"> <h3 class=\"common-title\"> One liner</h3> </div> <div class=\"common-font\" style=\"margin-top:50px\"> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere. </p> </div> </div> </div> </div> </section> "
+    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"center-block\"> <h2 class=\"text-center\" style=\"font-size:48px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:25%\" data-caption-animate=\"fadeInUp\"> You're making us BLUSH! </h2> <p style=\"font-size:3rem; font-style:italic; color:#fff\" class=\"text-center\"> See what people are saying about Wanderwagon. </p> </div> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/testimonial_cover.jpg');background-size: cover; height:100vh\"> <div class=\"container clearfix\"> <div class=\"center-block\"> <h2 class=\"text-center\" style=\"font-size:32px;letter-spacing:0px;font-weight:600;color:#fff;margin-top:40%\" data-caption-animate=\"fadeInUp\"> You're making us BLUSH! </h2> <p style=\"font-size:2rem; font-style:italic;color:#fff\" class=\"text-center\"> See what people are saying about Wanderwagon. </p> </div> </div> </div> <section> <div class=\"container\"> <div style=\"margin-top:3%\"> <h2 class=\"paul-title\"> Testimonials </h2> <div class=\"underline\" style=\"margin-bottom:5%\"> </div> </div> <div class=\"clearfix\" style=\"border:0px solid #EEE;padding:10px\"> <div class=\"blog-image-left\"> <a><img height=\"150\" width=\"150\" class=\"center-block img-circle\" src=\"https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/testimonial/liene_svarce.jpg\" alt=\"Standard Post with Image\"></a> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> Liene Svarce </h4> <!-- <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643;\">\n" +
+    "            About</h4> --> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:10px;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> <i class=\"icon-location\"></i>Latvia</h4> </div> <div class=\"blog-content-left\"> <div class=\"entry-title\"> <h3 class=\"common-title\"> Very helpful via e-mails, really quick to reply, and super friendly</h3> </div> <div class=\"common-font\" style=\"margin-top:50px\"> <p>I felt very looked after. I would highly recommend using Wanderwagon to book your travels- whatever you have in mind, they can do it! They helped me plan everything that I wanted to do – without feeling like I was on a strict itinerary. I explained that I was a solo female backpacker on a budget and they put together a great itinerary for me that was well within my budget. They were very helpful via e-mails, really quick to reply, and super friendly – I felt like I was just getting help from good friends! They took me out for meals, showed me great local spots, and just made me feel like I was one of their friends. I can’t say enough nice things about Wanderwagon. I would like to thank you again for these moments. Whenever I come back to India I will definitely remember you! </p> </div> </div> </div> <div class=\"clearfix\" style=\"border:0px solid #EEE;padding:10px; margin:20px 0\"> <div class=\"blog-image-right\"> <a><img height=\"150\" width=\"150\" class=\"center-block img-circle\" src=\"https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/testimonial/alok_tiwari+.jpg\" alt=\"Standard Post with Image\"></a> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> Alok Tiwari</h4> <!-- <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643;\">\n" +
+    "            About</h4> --> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:10px;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> <i class=\"icon-location\"></i>Gurugram</h4> </div> <div class=\"blog-content-right\"> <div class=\"entry-title\"> <h3 class=\"common-title\"> Organisers were friendly and obliging</h3> </div> <div class=\"common-font\" style=\"margin-top:50px\"> <p>Someone has rightly said that dreams are made to be followed and life is meant to be lived. And to live a life to its fullest what’s more startling than the adventurous road trips and that too for 5 days. It was the most fun and crazy trip I have ever taken. The road trip challenged my patience and how to be able to stay calm in every new situation. The organisers were so friendly and obliging that we all started living like a family. I feel so fortunate that I got a chance to be a part of this wonderful venture and would like to thank Wanderwagon to make this whole journey worth remembering. They all were so cooperative and fun loving. Have stories to tell not stuff to show. </p> </div> </div> </div> <div class=\"clearfix\" style=\"border:0px solid #EEE;padding:10px\"> <div class=\"blog-image-left\"> <a><img height=\"150\" width=\"150\" class=\"center-block img-circle\" src=\"https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/testimonial/shashank_yadav.jpg\" alt=\"Standard Post with Image\"></a> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> Shashank Yadav </h4> <!-- <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643;\">\n" +
+    "            About</h4> --> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:10px;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> <i class=\"icon-location\"></i>Mumbai</h4> </div> <div class=\"blog-content-left\"> <div class=\"entry-title\"> <h3 class=\"common-title\"> People with best travel plans. </h3> </div> <div class=\"common-font\" style=\"margin-top:50px\"> <p>A team of concerned people providing their customers with high satisfaction and with best travel plans. I planned a trip to Nainital and we were taken care of. They did not prove us wrong anywhere. I went to a number of places and I swear those days were the foremost part of my life. Each and every moment was worth living. </p> </div> </div> </div> <div class=\"clearfix\" style=\"border:0px solid #EEE;padding:10px; margin:20px 0\"> <div class=\"blog-image-right\"> <a><img height=\"150\" width=\"150\" class=\"center-block img-circle\" src=\"https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/testimonial/gulshan_gupta.jpg\" alt=\"Standard Post with Image\"></a> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> Gulshan gupta </h4> <!-- <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643;\">\n" +
+    "            About</h4> --> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:10px;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> <i class=\"icon-location\"></i>Auroville</h4> </div> <div class=\"blog-content-right\"> <div class=\"entry-title\"> <h3 class=\"common-title\"> Wanderwagon is for all the adventure enthusiasts </h3> </div> <div class=\"common-font\" style=\"margin-top:50px\"> <p>If you are the kind of person who would like to have some real life experiences rather than staying in some hotel and visiting the same cliche places then Wanderwagon is for you. I had the opportunity to attend the Rishikesh camp, and I absolutely loved it. The place was very beautiful and the camp area was neat. Although we stayed only for one day, we still were able to cover a lot of activities including- kayaking, flying fox, hike to a waterfall, night trek, bonfires in the night (with fireflies twinkling around). It was amazing, wish we had the time to stay longer. The best of all were the camp organizers, superb people- friendly, fun and adventurous. </p> </div> </div> </div> <div class=\"clearfix\" style=\"border:0px solid #EEE;padding:10px\"> <div class=\"blog-image-left\"> <a><img height=\"150\" width=\"150\" class=\"center-block img-circle\" src=\"https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/testimonial/sahil_trivedi.jpg\" alt=\"Standard Post with Image\"></a> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> Sahil Trivedi </h4> <!-- <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643;\">\n" +
+    "            About</h4> --> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:10px;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> <i class=\"icon-location\"></i>Bangalore</h4> </div> <div class=\"blog-content-left\"> <div class=\"entry-title\"> <h3 class=\"common-title\"> Trek would have been impossible without the travel plans provided by them </h3> </div> <div class=\"common-font\" style=\"margin-top:50px\"> <p>Recently we teamed up with Wanderwagon for the Spiti expedition. To make this plan successful, the kind of support, facility and hospitality given by Wanderwagon members is just amazing and I can't forget in my lifetime. Thanks to the team which has respect towards the local people. This trek would have been impossible without the travel plans provided by them. Looking forward to more and more such expedition with Wanderwagon. We just love you. </p> </div> </div> </div> <div class=\"clearfix\" style=\"border:0px solid #EEE;padding:10px; margin:20px 0\"> <div class=\"blog-image-right\"> <a><img height=\"150\" width=\"150\" class=\"center-block img-circle\" src=\"https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/testimonial/ayushi_khandelwal.jpg\" alt=\"Standard Post with Image\"></a> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> Aayushi Khandelwal </h4> <!-- <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:0;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643;\">\n" +
+    "            About</h4> --> <h4 class=\"text-center\" style=\"line-height:1.2142857142857142;margin-top:10px;margin-right:0;margin-bottom:0;margin-left:0;font-size:18px;color:#2c3643\"> <i class=\"icon-location\"></i>New Delhi</h4> </div> <div class=\"blog-content-right\"> <div class=\"entry-title\"> <h3 class=\"common-title\"> Camping and hotel arrangements were very good. </h3> </div> <div class=\"common-font\" style=\"margin-top:50px\"> <p> These guys made our farewell trip to McLeodganj & Triund awesome.I really enjoyed trekking and camping at triund.Camping and hotel arrangements were very good.I can't forget the acoustic sounds @bonfire.We enjoyed a lot.Keep planning </p> </div> </div> </div> </div> </section> "
   );
 
 
@@ -3066,10 +3026,10 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/travel-plan-detail.html',
-    "<div style=\"background-color:#36353B;background-image: url({{planDetail.imageUrl}});background-attachment: fixed;\n" +
+    "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url({{planDetail.imageUrl}});background-attachment: fixed;\n" +
     "background-position: center;\n" +
     "background-repeat: no-repeat;\n" +
-    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <section class=\"container clearfix\" id=\"about\" style=\"margin-top:5%\"> <div> <h2 class=\"paul-title\"> About the plan <div class=\"underline\" style=\"margin-top:15px\"> </div> </h2> </div> <div class=\"center-block custom-para\"> <p hm-read-more hm-text=\"{{planDetail.description}}\" hm-limit=\"500\" hm-more-text=\"Read more\" hm-less-text=\"Read less\" hm-dots-class=\"dots\" hm-link-class=\"links\"></p> <br> </div> </section> <section class=\"container clearfix custom-height\" id=\"places\"> <h2 class=\"paul-title\"> Key Attractions <div class=\"underline\" style=\"margin-top:15px\"> </div> </h2> <ng-owl-carousel class=\"owl-theme\" owl-items=\"planDetail.keyAttractions\" owl-properties=\"sliderProperties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide-new\" style=\"padding:2% 2% 2% 2%; max-height:500px\" data-ng-repeat=\"item in planDetail.keyAttractions\"> <img style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> </section> <section class=\"container pricing clearfix\" style=\"margin-top:3%\"> <h2 class=\"paul-title\"> Approx Price <div class=\"underline\" style=\"margin-top:15px\"> </div> </h2> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Backpacker</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>2000<span class=\"price-tenure\">/head</span> </div> </div> </div> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Budget</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>4000<span class=\"price-tenure\">/head</span> </div> <!--<div class=\"pricing-features\">\n" +
+    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background: url({{planDetail.mobileImageUrl}}) no-repeat center center fixed ;background-size:cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <section class=\"container clearfix\" id=\"about\" style=\"margin-top:5%\"> <div> <h2 class=\"paul-title\"> About the plan <div class=\"underline\" style=\"margin-top:15px\"> </div> </h2> </div> <div class=\"center-block custom-para\"> <p hm-read-more hm-text=\"{{planDetail.description}}\" hm-limit=\"500\" hm-more-text=\"Read more\" hm-less-text=\"Read less\" hm-dots-class=\"dots\" hm-link-class=\"links\"></p> <br> </div> </section> <section class=\"container clearfix custom-height\" id=\"places\"> <h2 class=\"paul-title\"> Key Attractions <div class=\"underline\" style=\"margin-top:15px\"> </div> </h2> <ng-owl-carousel class=\"owl-theme\" owl-items=\"planDetail.keyAttractions\" owl-properties=\"sliderProperties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide-new\" style=\"padding:2% 2% 2% 2%; max-height:500px\" data-ng-repeat=\"item in planDetail.keyAttractions\"> <img style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> </section> <section class=\"container pricing clearfix\" style=\"margin-top:3%\"> <h2 class=\"paul-title\"> Approx Price <div class=\"underline\" style=\"margin-top:15px\"> </div> </h2> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Backpacker</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>2000<span class=\"price-tenure\">/head</span> </div> </div> </div> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Budget</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>4000<span class=\"price-tenure\">/head</span> </div> <!--<div class=\"pricing-features\">\n" +
     "									<ul>\n" +
     "										<li><strong>Full</strong> Access</li>\n" +
     "										<li><i class=\"icon-code\"></i> Source Files</li>\n" +
@@ -3085,11 +3045,11 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/travelplans/cover.jpg');background-attachment: fixed;\n" +
     "background-position: center;\n" +
     "background-repeat: no-repeat;\n" +
-    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/travel_plan_cover.jpg');background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <section id=\"travel\" style=\"margin-top:5%\" class=\"custom-padding\"> <h2 class=\"paul-title\"> Travel Inspiration </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Your choices, Your friends, Your travel plans </p><div class=\"underline\" style=\"margin-top:15px\"> </div> <p></p> <ng-owl-carousel class=\"owl-theme\" owl-items=\"sliderData\" owl-properties=\"properties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide\" style=\"padding:2% 0 2% 0%\" data-ng-repeat=\"item in sliderData\"> <img ng-click=\"openOrCloseAccordion(item.id)\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> <div id=\"accordion\" class=\"clearfix\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion\"> <div ng-click=\"closeAccordion()\" style=\"cursor:pointer; font-size:3rem; margin-left:95%\" class=\"glyphicon glyphicon-remove-circle\"></div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"travelPlanData\" owl-properties=\"nestedCarouselproperties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide-new\" style=\"padding:2% 0 2% 0\" data-ng-repeat=\"item in travelPlanData\"> <img ui-sref=\"travel-plan.detail({id: item.id})\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> <span style=\"text-align:center\" class=\"paul-slider-caption\"> {{item.title}}</span> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section id=\"articles\" class=\"custom-padding\" style=\"margin-bottom:5%\"> <div class=\"topmargin\"> <h2 ui-sref=\"blog.list\" style=\"cursor:pointer\" class=\"paul-title\"> The Guide </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Two cents on the journeys ahead </p><div class=\"underline\"> </div> <p></p> </div> <div style=\"overflow:hidden; margin-bottom:0%\"> <div ui-sref=\"blog.list\" class=\"image blog-image-left\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
+    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/travel_plan_cover.jpg') no-repeat center center fixed ;background-size:cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <section id=\"travel\" style=\"margin-top:5%\" class=\"custom-padding\"> <h2 class=\"paul-title\"> Travel Inspiration </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Your choices, Your friends, Your travel plans </p><div class=\"underline\" style=\"margin-top:15px\"> </div> <p></p> <ng-owl-carousel class=\"owl-theme\" owl-items=\"sliderData\" owl-properties=\"properties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide\" style=\"padding:2% 0 2% 0%\" data-ng-repeat=\"item in sliderData\"> <img ng-click=\"openOrCloseAccordion(); getTravelPlans(item.id)\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> <div id=\"accordion\" class=\"clearfix\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion\"> <div ng-click=\"closeAccordion()\" style=\"cursor:pointer; font-size:3rem; margin-left:95%\" class=\"glyphicon glyphicon-remove-circle\"></div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"travelPlanData\" owl-properties=\"nestedCarouselproperties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide-new\" style=\"padding:2% 0 2% 0\" data-ng-repeat=\"item in travelPlanData\"> <img ui-sref=\"travel-plan.detail({id: item.id})\" style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> </uib-accordion-group> </uib-accordion> </div> </section> <section id=\"articles\" class=\"custom-padding\" style=\"margin-bottom:5%\"> <div class=\"topmargin\"> <h2 ui-sref=\"blog.list\" style=\"cursor:pointer\" class=\"paul-title\"> The Guide </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Two cents on the journeys ahead </p><div class=\"underline\"> </div> <p></p> </div> <div style=\"overflow:hidden; margin-bottom:2%\"> <div ui-sref=\"blog.list\" class=\"image blog-image-left\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "        <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +
-    "        <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[0].imageUrl}}\" alt=\"{{blog[0].title}}\"> </picture> </div> <div class=\"text blog-content-left\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.list\" class=\"blog-title\"> {{blog[0].title}}</h3> <div class=\"blog-content\"> <p>{{blog[0].description}}... </p> <div class=\"feature-info\"> <span class=\"icon-calendar3\"> {{blog[0].time }} • {{blog[0].user.name}}</span> </div> </div> </div> </div> <div style=\"overflow:hidden\"> <div ui-sref=\"blog.list\" class=\"image blog-image-right\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
+    "        <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[0].imageUrl}}\" alt=\"{{blog[0].title}}\"> </picture> </div> <div class=\"text blog-content-left\" style=\"height:auto;margin:0; padding:0 0 0 10px\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.list\" class=\"blog-title\"> {{blog[0].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[0].description}}... </p> <span class=\"icon-calendar3\"> {{blog[0].date | date : 'dd-MM-yyyy'}} • {{blog[0].author}}</span> </div> </div> </div> <div style=\"overflow:hidden\"> <div ui-sref=\"blog.list\" class=\"image blog-image-right\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "        <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +
-    "        <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[1].imageUrl}}\" alt=\"{{blog[1].title}}\"> </picture> </div> <div class=\"text blog-content-right\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.list\" class=\"blog-title\"> {{blog[1].title}}</h3> <div class=\"blog-content\"> <p>{{blog[1].description}}... </p> <div class=\"feature-info\"> <span class=\"icon-calendar3\"> {{blog[1].time}} • {{blog[1].user.name}}</span> </div> </div> </div> </div> </section> "
+    "        <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[1].imageUrl}}\" alt=\"{{blog[1].title}}\"> </picture> </div> <div class=\"text blog-content-right\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.list\" class=\"blog-title\"> {{blog[1].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[1].description}}... </p> <span class=\"icon-calendar3\"> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}}</span> </div> </div> </div> </section> "
   );
 
 }]);

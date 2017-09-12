@@ -1,4 +1,4 @@
-<div style="background-color:#36353B;background-image: url({{detail.imageUrl}});background-attachment: fixed;
+<div class="cover-page" style="background-color:#36353B;background-image: url({{detail.imageUrl}});background-attachment: fixed;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover; height:100vh;">
@@ -10,6 +10,18 @@ background-size: cover; height:100vh;">
     </div>
   </div>
 </div>
+
+<div class="mobile-cover-page" style="background-color:#36353B;background: url({{detail.imageUrl}}) no-repeat center center fixed;background-attachment: fixed;
+background-size: cover; height:100vh;">
+  <div class="container clearfix">
+    <div class="center-block slider-caption-center">
+      <h2 class="text-center primary-title">{{detail.name}}</h2>
+      <p class="text-center primary-title-1">{{detail.title}}</p>
+
+    </div>
+  </div>
+</div>
+
 
 
 <!-- Header

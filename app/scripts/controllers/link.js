@@ -14,6 +14,7 @@ angular.module('wanderwagon-webapp')
 
     if (auth.isLoggedIn()) {
       $rootScope.loggedIn = true;
+      $scope.userName = auth.getUserName();
     } else {
       $rootScope.loggedIn = false;
     }

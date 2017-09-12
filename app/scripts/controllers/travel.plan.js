@@ -12,14 +12,12 @@ angular.module('wanderwagon-webapp')
 
      $scope.getTravelInspirations = function () {
       remoteSvc.getTravelInspirations().then(function (response) {
-        console.log(response);
         $scope.sliderData = response;
       });
     };
 
     $scope.getBlogs = function () {
       remoteSvc.getHomeBlogs().then(function (response) {
-        console.log(response);
         $scope.blog = response;
       })
     };
@@ -28,7 +26,7 @@ angular.module('wanderwagon-webapp')
     $scope.getBlogs();
 
     $scope.travelPlanData = [];
-    var getTravelPlans = function (id) {
+    $scope.getTravelPlans = function (id) {
       remoteSvc.getTravelPlans(id).then(function (response){
         $scope.travelPlanData = response;
       });
@@ -37,12 +35,11 @@ angular.module('wanderwagon-webapp')
     
 
     $scope.openAccordion = false;
-    $scope.openOrCloseAccordion = function (id) {
+    $scope.openOrCloseAccordion = function () {
       if ($scope.openAccordion === true) {
         $scope.closeAccordion();
       } else if ($scope.openAccordion === false) {
         $scope.openAccordion = true;
-        getTravelPlans(id);
       }
     };
 

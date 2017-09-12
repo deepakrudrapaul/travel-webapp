@@ -14,7 +14,6 @@ angular.module('wanderwagon-webapp')
 
     $scope.getDestinationDetailById = function (destinationId) {
       remoteSvc.getDestinationDetailById(destinationId).then(function (data) {
-        console.log(data.response);
         $scope.detail = data.response;
         $scope.placesData = data.response.places;
         $scope.activitiesData = data.response.activities;
@@ -29,14 +28,12 @@ angular.module('wanderwagon-webapp')
     $scope.openOrCloseAccordion = function (param) {
 
       if (param === 'place') {
-        console.log(param);
         if ($scope.openAccordion === true) {
           $scope.closeAccordion();
         } else if ($scope.openAccordion === false) {
           $scope.openAccordion = true;
         }
       } else if (param === 'activity') {
-        console.log(param);
         if ($scope.openAccordion1 === true) {
           $scope.closeAccordion1();
         } else if ($scope.openAccordion1 === false) {

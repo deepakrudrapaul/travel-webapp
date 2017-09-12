@@ -40,12 +40,14 @@ angular.module('wanderwagon-webapp')
       },
 
 
+      // **** BLOGS API ******* //
+
+
       getBlogList: function () {
         return $http({
           method: 'GET',
           url: remoteAddr + '/blogs/all'
         }).then(function (data, status){
-          console.log(data);
            var posts = [];
           for (var i = 0; i < data.data.response.length; i++) {
             var post = data.data.response[i];
@@ -56,7 +58,7 @@ angular.module('wanderwagon-webapp')
             posts[i].imageUrl = post.imageUrl;
             posts[i].id = post.id;
             posts[i].comments = post.comments;
-            posts[i].date = new Date(new Date("2017-12-09").getTime());
+            posts[i].date = new Date(new Date(post.time).getTime());
           }
           return posts;
         }, function (error, status) {
@@ -91,7 +93,6 @@ angular.module('wanderwagon-webapp')
 
 
       postComment: function (commentObj) {
-        console.log(auth.getToken());
         return $http({
           method: 'POST',
           headers: {
@@ -101,6 +102,17 @@ angular.module('wanderwagon-webapp')
           url: remoteAddr + '/blogs/comment'
         })
       },
+
+      getCommentsByBlogId : function (blogId) {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + '/blogs/comments/' + blogId
+        })
+      },
+
+
+
+       // **** TRAVEL PLANS API ******* //
 
 
       getTravelInspirations : function () {
@@ -139,6 +151,9 @@ angular.module('wanderwagon-webapp')
       },
 
 
+       // **** HOME PAGE API ******* //
+
+
       getInstaPhotos : function() {
         return $http({
           method: 'GET',
@@ -155,7 +170,6 @@ angular.module('wanderwagon-webapp')
           method: 'GET',
           url: remoteAddr + "/home/blog"
         }).then(function (data, status) {
-          console.log(data);
           var posts = [];
          for (var i = 0; i < data.data.response.length; i++) {
            var post = data.data.response[i];
@@ -165,8 +179,7 @@ angular.module('wanderwagon-webapp')
            posts[i].description = post.description;
            posts[i].imageUrl = post.imageUrl;
            posts[i].id = post.id;
-           posts[i].date = post.time;
-          //  posts[i].date = new Date(new Date("2017-12-09").getTime());
+           posts[i].date = new Date(new Date(post.time).getTime());
          }
          return posts;
         }, function (error, status) {
@@ -184,6 +197,11 @@ angular.module('wanderwagon-webapp')
           return error.data;
         })
       },
+
+
+
+
+       // **** DESTINATION API ******* //
 
       getDestinationsList: function() {
         return $http({
@@ -231,6 +249,11 @@ angular.module('wanderwagon-webapp')
         })
       },
 
+
+
+       // **** PLAN MY TRIP API ******* //
+
+
       submitPlanMyTripForm : function(formObj) {
         return $http({
           method: 'POST',
@@ -241,6 +264,9 @@ angular.module('wanderwagon-webapp')
           url: remoteAddr + '/travelplans/query'
         })
       },
+
+
+       // **** CONATACTS API ******* //
 
       submitContactForm : function(contactObj) {
         return $http({
@@ -257,6 +283,10 @@ angular.module('wanderwagon-webapp')
           url: remoteAddr + "/travelplans/travelinquery"
         })
       },
+
+
+
+       // **** SUBSCRIBE API ******* //
 
       submitNewsletterEmail : function(emailObj) {
         return $http({

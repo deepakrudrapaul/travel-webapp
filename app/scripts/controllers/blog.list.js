@@ -12,7 +12,6 @@ angular.module('wanderwagon-webapp')
 
     $scope.getBlogList = function () {
       remoteSvc.getBlogList().then(function (response){
-        console.log(response);
         $scope.posts = response;
       });
     };
