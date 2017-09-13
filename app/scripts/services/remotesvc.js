@@ -49,6 +49,7 @@ angular.module('wanderwagon-webapp')
           url: remoteAddr + '/blogs/all'
         }).then(function (data, status){
            var posts = [];
+           console.log(data.data.response);
           for (var i = 0; i < data.data.response.length; i++) {
             var post = data.data.response[i];
             posts[i] = {};
@@ -108,10 +109,13 @@ angular.module('wanderwagon-webapp')
           method: 'GET',
           url: remoteAddr + '/blogs/comments/' + blogId
         }).then(function (data, status){
+          console.log(data.data.response);
           var comments = [];
          for (var i = 0; i < data.data.response.length; i++) {
            var comment = data.data.response[i];
            comments[i] = {};
+           comments[i].userName = comment.userProfile.name;
+           comments[i].profilePic = comment.userProfile.profilePic;
            comments[i].comment = comment.comment;
            comments[i].date = new Date(new Date(comment.commentTime).getTime());
          }
@@ -133,6 +137,7 @@ angular.module('wanderwagon-webapp')
         }).then(function (data, status) {
           return data.data.response;
         }, function (error, status) {
+          console.log(error);
           return error.data.error;
         });
       },

@@ -77,6 +77,7 @@ angular.module('wanderwagon-webapp')
 
     var getComments = function(postId) {
       remoteSvc.getCommentsByBlogId(postId).then(function (response){
+        console.log(response);
         $scope.comments = response;
       })
     };

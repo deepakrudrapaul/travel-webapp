@@ -22,8 +22,16 @@ background-size: cover; height:100vh;">
 </div>
 </div>
 
-<div class="si-sticky">
-  <a href=""  ng-click="onShareButtonClicked(postDetail.id)" class="social-icon si-facebook" data-animate="bounceInLeft">
+<!-- <div class="si-sticky">
+  <a socialshare
+  socialshare-provider="facebook" 
+  socialshare-via="1758555154405794" 
+  socialshare-type="feed" 
+  socialshare-description="{{postDetail.description}}" 
+  socialshare-media="{{postDetail.imageUrl}}"        
+  socialshare-text="{{postDetail.title}}" 
+  socialshare-caption="#wanderwagon"
+  socialshare-url="http://www.wanderwagon.com" class="social-icon si-facebook" data-animate="bounceInLeft">
     <i class="icon-facebook"></i>
     <i class="icon-facebook"></i>
   </a>
@@ -38,7 +46,7 @@ background-size: cover; height:100vh;">
   <a href="#" class="social-icon si-gplus" data-animate="bounceInLeft" data-delay="600">
     <i class="icon-gplus"></i>
     <i class="icon-gplus"></i>
-  </a>
+  </a> -->
 
 
 </div>
@@ -145,7 +153,7 @@ background-size: cover; height:100vh;">
                     <div class="comment-author vcard">
 
                       <span class="comment-avatar clearfix">
-												<img alt='' src='http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60' class='avatar avatar-60 photo avatar-default' height='60' width='60' /></span>
+												<img alt='' ng-src='{{item.profilePic}}' class='avatar avatar-60 photo avatar-default' height='60' width='60' /></span>
 
                     </div>
 
@@ -153,7 +161,7 @@ background-size: cover; height:100vh;">
 
                   <div class="comment-content clearfix">
 
-                    <div class="comment-author">John Doe<span><a title="Permalink to this comment">{{item.commentTime | date : 'dd-MM-yyyy'}}</a></span></div>
+                    <div class="comment-author">{{item.userName}}<span><a title="Permalink to this comment">{{item.date | date : 'MMM d, y h:mm a'}}</a></span></div>
 
                     <p>{{item.comment}}</p>
 
