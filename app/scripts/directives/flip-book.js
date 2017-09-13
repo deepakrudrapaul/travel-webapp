@@ -49,7 +49,7 @@ angular.module('wanderwagon-webapp')
               $('#flipbook').turn('peel', 'br');
             } else {
               $('#flipbook').turn('display', 'single');
-              $("#flipbook").turn("size", '100%', 450);
+              $("#flipbook").turn("size", '100%', 500);
               $('#flipbook').turn('peel', 'br');
             }
           });
@@ -61,7 +61,7 @@ angular.module('wanderwagon-webapp')
             } else {
               $('#flipbook').turn('display', 'single');
               $("#flipbook").turn("resize");
-              $("#flipbook").turn("size", '100%', 450);
+              $("#flipbook").turn("size", '100%', 500);
               $('#flipbook').turn('peel', 'br');
             }
           });

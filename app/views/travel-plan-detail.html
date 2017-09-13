@@ -32,7 +32,6 @@ background-size: cover; height:100vh;">
 
 </section>
 
-
 <section class="container clearfix custom-height" id="places" >
 
   <h2 class="paul-title">
@@ -43,8 +42,8 @@ background-size: cover; height:100vh;">
 
 
   <ng-owl-carousel class="owl-theme" owl-items="planDetail.keyAttractions" owl-properties="sliderProperties" owl-ready="ready($api)">
-    <div class="paul-slide-new" style="padding:2% 2% 2% 2%; max-height:500px;" data-ng-repeat="item in planDetail.keyAttractions">
-      <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
+    <div class="paul-slide-new" style="padding:2% 2% 2% 2%; max-height:550px;" data-ng-repeat="item in planDetail.keyAttractions">
+      <img style="object-fit:fill; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
 
     </div>
   </ng-owl-carousel>

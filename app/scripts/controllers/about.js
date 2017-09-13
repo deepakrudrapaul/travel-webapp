@@ -8,10 +8,12 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('AboutCtrl', function () {
+  .controller('AboutCtrl', function ($scope, $window) {
 
 
-    
+    $scope.openSocialSite = function (url) {
+      $window.open(url, ' _blank');
+    }
 
 
   });
