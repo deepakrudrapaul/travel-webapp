@@ -3,12 +3,12 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover; height:100vh;">
   <div class="container clearfix">
-   
+
   </div>
 </div>
 <div class="mobile-cover-page" style="background-color:#36353B;background: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/travel_plan_cover.jpg') no-repeat center center fixed ;background-size:cover; height:100vh;">
   <div class="container clearfix">
-   
+
   </div>
 </div>
 
@@ -26,25 +26,31 @@ background-size: cover; height:100vh;">
 
   <ng-owl-carousel class="owl-theme" owl-items="sliderData" owl-properties="properties" owl-ready="ready($api)">
 
-    <div  class="paul-slide" style="padding:2% 0 2% 0%" data-ng-repeat="item in sliderData">
+    <div class="paul-slide" style="padding:2% 0 2% 0%" data-ng-repeat="item in sliderData">
       <img ng-click="openOrCloseAccordion(item.id)" style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
     </div>
 
   </ng-owl-carousel>
 
-
-
-
   <div id="accordion" class="clearfix">
     <uib-accordion>
       <uib-accordion-group is-open="openAccordion">
         <div ng-click="closeAccordion()" style="cursor:pointer; font-size:3rem; margin-left:95%;" class="glyphicon glyphicon-remove-circle"></div>
-        <ng-owl-carousel class="owl-theme" owl-items="travelPlanData" owl-properties="nestedCarouselproperties" owl-ready="ready($api)">
-              <div  class="paul-slide-new" style="padding:2% 0 2% 0" data-ng-repeat="item in travelPlanData">
-                <img ui-sref="travel-plan.detail({id: item.id})" style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
-              </div>
-          
-            </ng-owl-carousel>
+        <!-- <ng-owl-carousel class="owl-theme" owl-items="travelPlanData" owl-properties="nestedCarouselproperties" owl-ready="ready($api)">
+          <div class="paul-slide-new" style="padding:2% 0 2% 0" data-ng-repeat="item in travelPlanData">
+            <img ui-sref="travel-plan.detail({id: item.id})" style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
+          </div>
+
+        </ng-owl-carousel> -->
+        <div class="row row-centered">
+            <div style="margin-bottom:2%;" ng-repeat="item in travelPlanData" class="col-sm-4 col-centered col-fixed">
+                      <img ui-sref="travel-plan.detail({id: item.id})" class="img-responsive" style="cursor:pointer; object-fit:cover; height:300px; display: block;
+              position: relative;
+              -webkit-transition: all 0.3s;
+              transition: all 0.3s;
+              margin: 0 auto;" src="{{item.imageUrl}}">
+            </div>
+          </div>
 
 
       </uib-accordion-group>
@@ -107,7 +113,7 @@ background-size: cover; height:100vh;">
     </div>
 
 
-    <div class="text blog-content-right" >
+    <div class="text blog-content-right">
       <h3 style="cursor:pointer;" ui-sref="blog.list" class="blog-title">
         {{blog[1].title}}</h3>
 
@@ -115,9 +121,9 @@ background-size: cover; height:100vh;">
       <div class="blog-content">
         <p style="margin-bottom:0;">{{blog[1].description}}...
         </p>
-      
-          <span class="icon-calendar3"> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}}</span>
-      
+
+        <span class="icon-calendar3"> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}}</span>
+
       </div>
 
     </div>
