@@ -59,6 +59,20 @@ h4 {
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+@font-face {
+  font-family: "Comic Sans MS";
+  src: url("fonts/ComicSansMS.ttf");
+}
+
+.one-liner-font {
+  font-family: "Comic Sans MS";
+  font-size:16px;
+}
+
+.bucket-list-font {
+  font-family: 'Merriweather', serif;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -30145,6 +30159,10 @@ a {
 
 .links {
   color:#14C1E0;
+}
+
+.font-comic-sans {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 

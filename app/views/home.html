@@ -189,7 +189,7 @@ background-size: cover; height:100vh;">
           <div class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">No. of Travellers<span class="asterisk">*</span></label>
             <div class="inquireTelContainer">
-              <input ng-model="inquiryObj.noOfTravellers" class="form-control" id="{{inquireTel}}"  type="number"
+              <input ng-model="inquiryObj.noOfTravellers" class="form-control" id="{{inquireTel}}" min="1"  type="number"
                  />
               <input id="{{inquireCountry}}" type="hidden" data-prefill="country" />
             </div>
@@ -205,7 +205,7 @@ background-size: cover; height:100vh;">
 
           <div  class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize" for="form-condition-10">In the month of...</label>
-            <select ng-model="inquiryObj.travelMonth" ng-click="display5={display:'block'}" id="form-condition-10" name="form-condition-10"
+            <select ng-model="inquiryObj.travelMonth" ng-click="display5={display:'block'}"  id="form-condition-10" name="form-condition-10"
               class="required form-control">
 									<option value="">Travel Dates TBC</option>
 									<option value="January">January</option>

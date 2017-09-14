@@ -55,12 +55,12 @@ background-size: cover; height:100vh;">
 
           <div ng-style="display2" class="col_full" id="form-condition-4-wrap" style="display:none;">
             <label for="form-condition-4">How long would you like to go for?</label>
-            <input required ng-model="formObj.duration" ng-keydown="display3={display:'block'}" placeholder="Enter Duration" ng-dblclick="display3={display:'block'}" ng-keypress="display3={display:'block'}" type="number" class="form-control required" id="form-condition-4" name="form-condition-4">
+            <input required ng-model="formObj.duration" min="1" ng-keydown="display3={display:'block'}" placeholder="Enter Duration" ng-dblclick="display3={display:'block'}" ng-keypress="display3={display:'block'}" type="number" class="form-control required" id="form-condition-4" name="form-condition-4">
           </div>
 
           <div ng-style="display3" class="col_full" id="form-condition-5-wrap" style="display:none;">
             <label for="form-condition-5">How many wanderers would accompany you?</label>
-            <input required ng-model="formObj.personCount" ng-keydown="display4={display:'block'}" ng-dblclick="display4={display:'block'}" ng-keypress="display4={display:'block'}" type="number" class="form-control required" id="form-condition-5" name="form-condition-5">
+            <input required ng-model="formObj.personCount" min="0" ng-keydown="display4={display:'block'}" ng-dblclick="display4={display:'block'}" ng-keypress="display4={display:'block'}" type="number" class="form-control required" id="form-condition-5" name="form-condition-5">
           </div>
 
 
