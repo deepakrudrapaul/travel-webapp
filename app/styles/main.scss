@@ -59,13 +59,10 @@ h4 {
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
-@font-face {
-  font-family: "Comic Sans MS";
-  src: url("fonts/ComicSansMS.ttf");
-}
 
 .one-liner-font {
-  font-family: "Comic Sans MS";
+  font-family: 'Roboto', sans-serif;
+  font-style:italic;
   font-size:16px;
 }
 
