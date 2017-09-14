@@ -165,7 +165,7 @@ background-size: cover; height:100vh;">
         <form name="inquiryForm" class="nobottommargin" ng-submit="onFormSubmit(inquiryForm)">
           <div class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">Name<span class="asterisk">*</span></label>
-            <input ng-model="inquiryObj.name" class="form-control" id="{{name}}" type="text"
+            <input ng-model="inquiryObj.name" pattern="[a-zA-Z][a-zA-Z ]+" class="form-control" id="{{name}}" type="text"
               value="{{name}}"  />
           </div>
 
@@ -173,7 +173,7 @@ background-size: cover; height:100vh;">
             <label style="color:#FFF; text-transform:capitalize">Phone Number<span class="asterisk">*</span></label>
             <div class="inquireTelContainer">
               <input ng-model="inquiryObj.phone" class="form-control" id="{{inquireTel}}"  value="{{phone}}" type="tel"
-                data-parsley-intphone="{{inquireTel}}" data-parsley-cnic required data-prefill="phone" />
+                data-parsley-intphone="{{inquireTel}}"  pattern="^[0][1-9]\d{9}$|^[1-9]\d{9}$" data-parsley-cnic required data-prefill="phone" />
             </div>
           </div>
 
@@ -197,7 +197,7 @@ background-size: cover; height:100vh;">
 
           <div  class="col-sm-6 toppadding">
             <label style="color:#FFF; text-transform:capitalize">I Would Like To Go To<span class="asterisk">*</span></label>
-            <input ng-model="inquiryObj.destination" class="form-control"  type="text"
+            <input ng-model="inquiryObj.destination" pattern="^[a-zA-Z ]*$" class="form-control"  type="text"
               value="{{destination}}"  />
           </div>
 
@@ -226,7 +226,7 @@ background-size: cover; height:100vh;">
 
           <div style="width:100%;" class="col-sm-12 toppadding">
             <label style="color:#FFF; text-transform:capitalize">Tell us a little bit about what you're looking for ?<span class="asterisk">*</span></label>
-            <textarea ng-model="inquiryObj.occasion" style="max-width:100%; max-height:10%;" class="form-control" ></textarea>
+            <textarea pattern="^[a-zA-Z ]*$" required ng-model="inquiryObj.occasion" style="max-width:100%; max-height:10%;" class="form-control" ></textarea>
           </div>
 
           <div style="text-transform:capitalize; padding-top:15%;" class="col-sm-12">

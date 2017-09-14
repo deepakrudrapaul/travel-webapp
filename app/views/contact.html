@@ -50,7 +50,7 @@
 
               <div class="col_two_third">
                 <label for="template-contactform-name">Name <small>*</small></label>
-                <input required ng-model="contactObj.name" type="text" id="template-contactform-name" name="template-contactform-name" value=""
+                <input pattern="[a-zA-Z][a-zA-Z ]+" required ng-model="contactObj.name" type="text" id="template-contactform-name" name="template-contactform-name" value=""
                   class="form-control required show-error-msg" />
               </div>
 
@@ -62,7 +62,7 @@
 
               <div class="col_two_third col_last">
                 <label for="template-contactform-phone">Phone</label>
-                <input required ng-model="contactObj.phone" type="text" id="template-contactform-phone" name="template-contactform-phone"
+                <input  pattern="^[0][1-9]\d{9}$|^[1-9]\d{9}$" required ng-model="contactObj.phone" type="text" id="template-contactform-phone" name="template-contactform-phone"
                   value="" class="form-control" />
               </div>
 
@@ -72,7 +72,7 @@
 
               <div class="col_full">
                 <label for="template-contactform-message">Message <small>*</small></label>
-                <textarea required ng-model="contactObj.message" class="required sm-form-control" id="template-contactform-message" name="template-contactform-message"
+                <textarea pattern="^[a-zA-Z ]*$" required ng-model="contactObj.message" class="required sm-form-control" id="template-contactform-message" name="template-contactform-message"
                   rows="6" cols="30"></textarea>
               </div>
 

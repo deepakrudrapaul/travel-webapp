@@ -101,6 +101,8 @@ angular.module('wanderwagon-webapp')
             $scope.inquiryObj = {};
             $scope.showModal('Error', "Error While Submitting Your Request");
           })
+      } else {
+        $scope.showModal('Error', "Please Enter Correct Details");
       }
     };
 
