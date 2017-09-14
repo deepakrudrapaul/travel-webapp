@@ -25,20 +25,20 @@ angular.module('wanderwagon-webapp')
         }
   
     
-        window.requestAnimationFrame = (function(){
-          return  window.requestAnimationFrame       ||
-                  window.webkitRequestAnimationFrame ||
-                  window.mozRequestAnimationFrame  
-        })();
+        // window.requestAnimationFrame = (function(){
+        //   return  window.requestAnimationFrame       ||
+        //           window.webkitRequestAnimationFrame ||
+        //           window.mozRequestAnimationFrame  
+        // })();
 
-        var speed = 5000;
-        (function currencySlide(){
-            var currencyPairWidth = $('.slideItem:last-child').outerWidth();
-            $(".slideContainer").animate({marginLeft:-currencyPairWidth},speed, 'linear', function(){
-                        $(this).css({marginLeft:0}).find("li:first").after($(this).find("li:last"));
-                });
-                requestAnimationFrame(currencySlide);
-        })();
+        // var speed = 5000;
+        // (function currencySlide(){
+        //     var currencyPairWidth = $('.slideItem:last-child').outerWidth();
+        //     $(".slideContainer").animate({marginLeft:-currencyPairWidth},speed, 'linear', function(){
+        //                 $(this).css({marginLeft:0}).find("li:first").after($(this).find("li:last"));
+        //         });
+        //         requestAnimationFrame(currencySlide);
+        // })();
 
       }
     };

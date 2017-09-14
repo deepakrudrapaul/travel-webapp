@@ -46197,3 +46197,45 @@ a {
   transition: opacity .2s ease;
   cursor: pointer;
 }
+
+/* Photo Banner */
+/* line 31475, ../../app/styles/main.scss */
+.photo-roll--container {
+  width: 100%;
+  overflow: hidden;
+  margin: 10px auto;
+}
+
+/* line 31481, ../../app/styles/main.scss */
+.photo-roll {
+  height: 233px;
+  width: 3500px;
+  margin-bottom: 5px;
+  font-size: 0;
+}
+/* line 31487, ../../app/styles/main.scss */
+.photo-roll img {
+  margin-bottom: 10px;
+  margin-right: 5px;
+  height: 233px;
+  width: 350px;
+  transition: all 0.5s ease;
+}
+/* line 31494, ../../app/styles/main.scss */
+.photo-roll img:hover {
+  cursor: pointer;
+}
+/* line 31498, ../../app/styles/main.scss */
+.photo-roll img:first-child {
+  animation: bannermove 30s linear infinite;
+}
+
+/* Keyframe animations*/
+@keyframes bannermove {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: -2130px;
+  }
+}
