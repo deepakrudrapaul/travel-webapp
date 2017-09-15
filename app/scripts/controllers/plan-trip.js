@@ -98,7 +98,7 @@ angular.module('wanderwagon-webapp')
       if($scope.formObj != undefined) {
         remoteSvc.submitPlanMyTripForm($scope.formObj)
       .success(function (data) {
-        $scope.showModal("Success !", "Your query has been submitted successfully ! Will get back to you within 24 Hours.");
+        showImageModal();
       })
       .error(function (error) {
         $scope.showModal("Error", error.error.message);

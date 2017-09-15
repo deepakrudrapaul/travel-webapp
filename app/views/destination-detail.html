@@ -300,8 +300,8 @@ background-size: cover; height:100vh;">
                     italic; line-height: 1.8; margin: 0 auto 5.5rem; text-align: center; width:70%; ">
     " {{detail.reasonToLoveDest}} "
   </p>
-
-  <div ui-sref="travel-plan.detail({id: detail.travelPlanId})" class="center-block " style=" width:70%; cursor:pointer; ">
+  
+  <div ui-sref="{{detail.id == 'null' ? 'travel-plan.list' : 'travel-plan.detail({id: detail.travelPlanId})'}}" class="center-block " style=" width:70%; cursor:pointer; ">
     <a class="button button-3d button-rounded button-blue loved-it-button"> Loved it ? We got plans for you !</a>
   </div>
 
