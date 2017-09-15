@@ -19588,7 +19588,7 @@ button.close {
   display: none;
   overflow: hidden;
   position: fixed;
-  top: 0;
+  top: 20%;
   right: 0;
   bottom: 0;
   left: 0;
@@ -46235,4 +46235,10 @@ a {
   100% {
     margin-left: -2130px;
   }
+}
+/* line 31512, ../../app/styles/main.scss */
+.vertical-align-center {
+  /* To center vertically */
+  display: table-cell;
+  vertical-align: middle;
 }

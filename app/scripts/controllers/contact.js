@@ -16,12 +16,16 @@ angular.module('wanderwagon-webapp')
       $scope.message = message;
     };
 
+    var showImageModal = function() {
+      angular.element(document.querySelectorAll('#contactImageModal')).modal('show');
+    };
+
     $scope.submitContactForm = function (form) {
       if (form.$valid) {
         remoteSvc.submitContactForm($scope.contactObj)
           .success(function (data) { 
             $scope.contactObj = {};
-              $scope.showModal("Success", "Your message has been successfully sent !");
+            showImageModal();
           })
           .error(function (error) {
             console.log(error);
@@ -31,12 +35,14 @@ angular.module('wanderwagon-webapp')
       }
     };
 
+   
+
 
     $scope.submitTravelEnquiryForm = function(form) {
       if (form.$valid) {
         remoteSvc.submitTravelEnquiryForm($scope.travelEnqObj)
           .success(function (data) { 
-              $scope.showModal("Success", "Your message has been successfully sent !");
+            showImageModal();
           })
           .error(function (error) {
             console.log(error);

@@ -24,7 +24,7 @@ background-size: cover; height:100vh;">
         <div id="posts" class="post-timeline clearfix">
           <div class="timeline-border"></div>
 
-          <div ng-repeat="post in posts | orderBy:'id'" class="entry clearfix">
+          <div ng-repeat="post in posts | orderBy:'-date'" class="entry clearfix">
             <div class="entry-timeline" style="color: #14C1E0;">
           {{post.date | date:'dd'}}<span>{{post.date | date:'MMM'}}</span>
           

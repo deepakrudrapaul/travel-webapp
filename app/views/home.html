@@ -106,7 +106,7 @@ background-size: cover; height:100vh;">
           <p style="margin-bottom:0;">{{blog[0].description}}...
           </p>
        
-            <span class="icon-calendar3 toppadding"> {{blog[0].date | date : 'dd-MM-yyyy' }} • {{blog[0].author}}</span>
+            <span class="icon-calendar3 toppadding"> <b> {{blog[0].date | date : 'dd-MM-yyyy' }} • {{blog[0].author}} </b></span>
    
         </div>
   
@@ -135,7 +135,7 @@ background-size: cover; height:100vh;">
         <div class="blog-content">
           <p  style="margin-bottom:0;">{{blog[1].description}}...
           </p>
-            <span class="icon-calendar3 toppadding"> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}}</span>
+            <span class="icon-calendar3 toppadding"><b> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}} </b></span>
       
         </div>
   
@@ -256,8 +256,8 @@ background-size: cover; height:100vh;">
 
 </section>
 
-<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModal">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" style="margin-top:40%;" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModal">
+  <div class="modal-dialog vertical-align-center" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -268,16 +268,15 @@ background-size: cover; height:100vh;">
           <div style="padding:5%;" class="col-full">
             {{message}}
           </div>
-          <!--<div class="col-md-6 col-sm-6 col-xs-6 text-right">
-            Its button
-					</div>-->
         </div>
       </div>
-      <!--<div class="modal-body" ng-show="error">
-				<div class="row filter-remove text-center">
-					<p>Error</p>
-				</div>
-			</div>-->
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="homeFormModal" tabindex="-1" role="dialog" aria-labelledby="homeFormModal">
+    <div class="modal-dialog" role="document">
+        <button style="color:#FFF; font-size:20px;" type="button" class="close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+     <img src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/popups/homepage_popup.jpeg">
+    </div>
+  </div>

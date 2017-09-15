@@ -88,6 +88,10 @@ angular.module('wanderwagon-webapp')
       $scope.message = message;
     };
 
+    var showImageModal = function() {
+      angular.element(document.querySelectorAll('#homeFormModal')).modal('show');
+    };
+
 
 
     $scope.onFormSubmit = function (form) {
@@ -95,7 +99,7 @@ angular.module('wanderwagon-webapp')
         remoteSvc.quickQuery($scope.inquiryObj)
           .success(function (data) {
             $scope.inquiryObj = {};
-            $scope.showModal('Success', "Successfully Submitted Your Inquiry !");
+            showImageModal();
           })
           .error(function (error) {
             $scope.inquiryObj = {};
