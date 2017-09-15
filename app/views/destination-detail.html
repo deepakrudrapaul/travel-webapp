@@ -301,7 +301,7 @@ background-size: cover; height:100vh;">
     " {{detail.reasonToLoveDest}} "
   </p>
   
-  <div ui-sref="{{detail.id == 'null' ? 'travel-plan.list' : 'travel-plan.detail({id: detail.travelPlanId})'}}" class="center-block " style=" width:70%; cursor:pointer; ">
+  <div ng-click="redirectToPlans(detail.travelPlanId)" class="center-block " style=" width:70%; cursor:pointer; ">
     <a class="button button-3d button-rounded button-blue loved-it-button"> Loved it ? We got plans for you !</a>
   </div>
 

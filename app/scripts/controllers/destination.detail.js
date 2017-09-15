@@ -8,18 +8,29 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('DestinationDetailCtrl', function ($scope, $stateParams, remoteSvc, $document) {
+  .controller('DestinationDetailCtrl', function ($scope, $stateParams, remoteSvc, $document, $state) {
 
     var destinationId = $stateParams.id;
 
     $scope.getDestinationDetailById = function (destinationId) {
       remoteSvc.getDestinationDetailById(destinationId).then(function (data) {
+        console.log(data.response);
         $scope.detail = data.response;
         $scope.placesData = data.response.places;
         $scope.activitiesData = data.response.activities;
       });
     };
     $scope.getDestinationDetailById(destinationId);
+
+
+    $scope.redirectToPlans = function(travelPlanId) {
+      console.log(travelPlanId)
+      if(travelPlanId != null) {
+        $state.go('travel-plan.detail', {id : travelPlanId});
+      } else{
+        $state.go('travel-plan.list');
+      }
+    }
 
     $scope.openAccordion = false;
     $scope.openAccordion1 = false;
