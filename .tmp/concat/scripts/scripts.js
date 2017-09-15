@@ -735,6 +735,7 @@ angular.module('wanderwagon-webapp')
       if($scope.formObj != undefined) {
         remoteSvc.submitPlanMyTripForm($scope.formObj)
       .success(function (data) {
+        $scope.formObj = {};
         showImageModal();
       })
       .error(function (error) {
