@@ -73,26 +73,26 @@ background-size: cover; height:100vh;">
 
   <div style="overflow:hidden; margin-bottom:2%;">
 
-    <div ui-sref="blog.list" class="image blog-image-left">
+    <div style="cursor:pointer; height:400px;" ui-sref="blog.detail({postId: blog[0].id})" class="image blog-image-left">
       <picture>
         <!--<source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
         <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
         <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">-->
 
-        <img ng-src="{{blog[0].imageUrl}}" alt="{{blog[0].title}}">
+        <img style="height:400px;" ng-src="{{blog[0].imageUrl}}" alt="{{blog[0].title}}">
       </picture>
     </div>
 
 
     <div class="text blog-content-left" style="height:auto;margin:0; padding:0 0 0 10px;">
-      <h3 style="cursor:pointer;" ui-sref="blog.list" class="blog-title">
+      <h3 style="cursor:pointer;" ui-sref="blog.detail({postId: blog[0].id})" class="blog-title">
         {{blog[0].title}}</h3>
 
 
       <div class="blog-content">
         <p style="margin-bottom:0;">{{blog[0].description}}...
         </p>
-        <span class="icon-calendar3"> {{blog[0].date | date : 'dd-MM-yyyy'}} • {{blog[0].author}}</span>
+        <span class="icon-calendar3 toppadding"> {{blog[0].date | date : 'dd-MM-yyyy'}} • {{blog[0].author}}</span>
 
       </div>
 
@@ -102,19 +102,19 @@ background-size: cover; height:100vh;">
 
   <div style="overflow:hidden;">
 
-    <div ui-sref="blog.list" class="image blog-image-right">
+    <div style="cursor:pointer; height:400px;" ui-sref="blog.detail({postId: blog[1].id})" class="image blog-image-right">
       <picture>
         <!--<source media="(min-width: 1280px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w">
         <source media="(min-width: 960px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w">
         <source media="(min-width: 640px)" srcset="https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w">-->
 
-        <img ng-src="{{blog[1].imageUrl}}" alt="{{blog[1].title}}">
+        <img style="height:400px;" ng-src="{{blog[1].imageUrl}}" alt="{{blog[1].title}}">
       </picture>
     </div>
 
 
     <div class="text blog-content-right">
-      <h3 style="cursor:pointer;" ui-sref="blog.list" class="blog-title">
+      <h3 style="cursor:pointer;"  ui-sref="blog.detail({postId: blog[1].id})" class="blog-title">
         {{blog[1].title}}</h3>
 
 
@@ -122,7 +122,7 @@ background-size: cover; height:100vh;">
         <p style="margin-bottom:0;">{{blog[1].description}}...
         </p>
 
-        <span class="icon-calendar3"> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}}</span>
+        <span class="icon-calendar3 toppadding"> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}}</span>
 
       </div>
 

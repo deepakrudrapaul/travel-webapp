@@ -129,6 +129,28 @@ angular.module('wanderwagon-webapp')
 
        // **** TRAVEL PLANS API ******* //
 
+       getTravelPlanBlogs : function() {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + "/travelplans/blogs"
+        }).then(function (data, status) {
+          var posts = [];
+         for (var i = 0; i < data.data.response.length; i++) {
+           var post = data.data.response[i];
+           posts[i] = {};
+           posts[i].title = post.title;
+           posts[i].author = post.user.name;
+           posts[i].description = post.description;
+           posts[i].imageUrl = post.imageUrl;
+           posts[i].id = post.id;
+           posts[i].date = new Date(new Date(post.time).getTime());
+         }
+         return posts;
+        }, function (error, status) {
+          return error.data.error;
+        });
+      },
+
 
       getTravelInspirations : function () {
         return $http({
@@ -168,6 +190,8 @@ angular.module('wanderwagon-webapp')
 
 
        // **** HOME PAGE API ******* //
+
+       
 
 
       getInstaPhotos : function() {

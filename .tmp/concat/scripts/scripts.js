@@ -1321,6 +1321,28 @@ angular.module('wanderwagon-webapp')
 
        // **** TRAVEL PLANS API ******* //
 
+       getTravelPlanBlogs : function() {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + "/travelplans/blogs"
+        }).then(function (data, status) {
+          var posts = [];
+         for (var i = 0; i < data.data.response.length; i++) {
+           var post = data.data.response[i];
+           posts[i] = {};
+           posts[i].title = post.title;
+           posts[i].author = post.user.name;
+           posts[i].description = post.description;
+           posts[i].imageUrl = post.imageUrl;
+           posts[i].id = post.id;
+           posts[i].date = new Date(new Date(post.time).getTime());
+         }
+         return posts;
+        }, function (error, status) {
+          return error.data.error;
+        });
+      },
+
 
       getTravelInspirations : function () {
         return $http({
@@ -1360,6 +1382,8 @@ angular.module('wanderwagon-webapp')
 
 
        // **** HOME PAGE API ******* //
+
+       
 
 
       getInstaPhotos : function() {
@@ -1707,20 +1731,20 @@ angular.module('wanderwagon-webapp')
 angular.module('wanderwagon-webapp')
   .controller('TravelPlanCtrl', ["$scope", "remoteSvc", "$document", function ($scope, remoteSvc, $document) {
 
-     $scope.getTravelInspirations = function () {
+     var getTravelInspirations = function () {
       remoteSvc.getTravelInspirations().then(function (response) {
         $scope.sliderData = response;
       });
     };
 
-    $scope.getBlogs = function () {
-      remoteSvc.getHomeBlogs().then(function (response) {
+    var getTravelBlogs = function () {
+      remoteSvc.getTravelPlanBlogs().then(function (response) {
         $scope.blog = response;
       })
     };
 
-    $scope.getTravelInspirations();
-    $scope.getBlogs();
+    getTravelInspirations();
+    getTravelBlogs();
 
     $scope.travelPlanData = [];
     var getTravelPlans = function (id) {
@@ -2687,7 +2711,7 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "    color: #fff\" href=\"mailto:contact@wanderwagon.com\" target=\"_blank\"> Share your story with us at contact@wanderwagon.com</a> </div> <!-- Comments\n" +
     "						============================================= --> <div id=\"comments\" class=\"clearfix\"> <h3 id=\"comments-title\"><span>{{comments.length}}</span> Comments</h3> <!-- Comments List\n" +
     "							============================================= --> <ol ng-if=\"comments.length > 0\" class=\"commentlist clearfix\"> <li ng-repeat=\"item in comments\" class=\"comment even thread-even depth-1\" id=\"li-comment-1\"> <div id=\"comment-1\" class=\"comment-wrap clearfix\"> <div class=\"comment-meta\"> <div class=\"comment-author vcard\"> <span class=\"comment-avatar clearfix\"> <img alt=\"\" ng-src=\"{{item.profilePic}}\" class=\"avatar avatar-60 photo avatar-default\" height=\"60\" width=\"60\"></span> </div> </div> <div class=\"comment-content clearfix\"> <div class=\"comment-author\">{{item.userName}}<span><a title=\"Permalink to this comment\">{{item.date | date : 'MMM d, y h:mm a'}}</a></span></div> <p>{{item.comment}}</p> </div> <div class=\"clear\"></div> </div> </li> </ol> <!-- .commentlist end --> <div class=\"clear\"></div> <!-- Comment Form\n" +
-    "							============================================= --> <div id=\"respond\" class=\"clearfix\"> <button style=\"float:right\" ng-click=\"showCommentForm()\" id=\"\" tabindex=\"5\" class=\"button button-blue\">ADD A COMMENT</button> <form ng-if=\"showForm\" class=\"clearfix\" id=\"commentform\"> <div class=\"col_full\"> <label for=\"comment\">Comment</label> <textarea name=\"comment\" ng-model=\"commentObj.comment\" cols=\"58\" rows=\"7\" tabindex=\"4\" class=\"sm-form-control\"></textarea> </div> <div class=\"col_full nobottommargin\"> <button name=\"submit\" ng-click=\"postComment(postDetail.id)\" id=\"submit-button\" tabindex=\"5\" value=\"Submit\" class=\"button button-blue\">Submit</button> </div> </form> </div> <!-- #respond end --> </div> <!-- #comments end --> </div> </section> <!-- #content end --> <div class=\"modal fade\" id=\"shareModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"shareModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"shareModallabel\">{{messageType}}</h4> </div> <div class=\"modal-body\"> <div class=\"row\"> <div style=\"padding:5%\" class=\"col-full\"> {{message}} </div> <!--<div class=\"col-md-6 col-sm-6 col-xs-6 text-right\">\n" +
+    "							============================================= --> <div id=\"respond\" class=\"clearfix\"> <button style=\"float:right\" ng-click=\"showCommentForm()\" id=\"\" tabindex=\"5\" class=\"button button-blue\">ADD A COMMENT</button> <form ng-if=\"showForm\" class=\"clearfix\" id=\"commentform\" ng-submit=\"postComment(postDetail.id)\"> <div class=\"col_full\"> <label for=\"comment\">Comment</label> <textarea required name=\"comment\" ng-model=\"commentObj.comment\" cols=\"58\" rows=\"7\" tabindex=\"4\" class=\"sm-form-control\"></textarea> </div> <div class=\"col_full nobottommargin\"> <button type=\"submit\" name=\"submit\" id=\"submit-button\" tabindex=\"5\" class=\"button button-blue\">Submit</button> </div> </form> </div> <!-- #respond end --> </div> <!-- #comments end --> </div> </section> <!-- #content end --> <div class=\"modal fade\" id=\"shareModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"shareModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"shareModallabel\">{{messageType}}</h4> </div> <div class=\"modal-body\"> <div class=\"row\"> <div style=\"padding:5%\" class=\"col-full\"> {{message}} </div> <!--<div class=\"col-md-6 col-sm-6 col-xs-6 text-right\">\n" +
     "            Its button\n" +
     "					</div>--> </div> </div> <!--<div class=\"modal-body\" ng-show=\"error\">\n" +
     "				<div class=\"row filter-remove text-center\">\n" +
@@ -2840,9 +2864,9 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "                transition: all 0.3s;\n" +
     "                margin: 0 auto\" src=\"{{item.imageUrl}}\"> </div> </div> </uib-accordion-group> </uib-accordion> </div> </section> <section id=\"articles\" class=\"custom-padding\"> <div class=\"topmargin\"> <h2 ui-sref=\"blog.list\" style=\"cursor:pointer\" class=\"paul-title\"> The Blogs </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Live the wanderlust through words </p><div class=\"underline\"> </div> <p></p> </div> <div style=\"overflow:hidden; margin-bottom:2%\"> <div style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[0].id})\" class=\"image blog-image-left\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "          <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +
-    "          <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[0].imageUrl}}\" alt=\"{{blog[0].title}}\"> </picture> </div> <div class=\"text blog-content-left\" style=\"height:auto;margin:0; padding:0 0 0 10px\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[0].id})\" class=\"blog-title\"> {{blog[0].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[0].description}}... </p> <span class=\"icon-calendar3\"> {{blog[0].date | date : 'dd-MM-yyyy' }} • {{blog[0].author}}</span> </div> </div> </div> <div style=\"overflow:hidden\"> <div style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[1].id})\" class=\"image blog-image-right\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
+    "          <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[0].imageUrl}}\" alt=\"{{blog[0].title}}\"> </picture> </div> <div class=\"text blog-content-left\" style=\"height:auto;margin:0; padding:0 0 0 10px\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[0].id})\" class=\"blog-title\"> {{blog[0].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[0].description}}... </p> <span class=\"icon-calendar3 toppadding\"> {{blog[0].date | date : 'dd-MM-yyyy' }} • {{blog[0].author}}</span> </div> </div> </div> <div style=\"overflow:hidden\"> <div style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[1].id})\" class=\"image blog-image-right\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "          <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +
-    "          <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[1].imageUrl}}\" alt=\"{{blog[1].title}}\"> </picture> </div> <div class=\"text blog-content-right\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[1].id})\" class=\"blog-title\"> {{blog[1].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[1].description}}... </p> <span class=\"icon-calendar3\"> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}}</span> </div> </div> </div> </section> <section style=\"margin-top:5%\"> <div class=\"home-form-bg\"> <!--<div class=\"text_over_image\">\n" +
+    "          <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[1].imageUrl}}\" alt=\"{{blog[1].title}}\"> </picture> </div> <div class=\"text blog-content-right\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[1].id})\" class=\"blog-title\"> {{blog[1].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[1].description}}... </p> <span class=\"icon-calendar3 toppadding\"> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}}</span> </div> </div> </div> </section> <section style=\"margin-top:5%\"> <div class=\"home-form-bg\"> <!--<div class=\"text_over_image\">\n" +
     "        {{postDetail.title}}\n" +
     "      </div>--> <div class=\"home-form\"> <div style=\"padding:10% 5% 17% 5%\"> <div> <div> <h3 style=\"margin: 0;font-size: 25px;font-weight: 600;\n" +
     "    line-height: normal;\n" +
@@ -3137,11 +3161,11 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "              position: relative;\n" +
     "              -webkit-transition: all 0.3s;\n" +
     "              transition: all 0.3s;\n" +
-    "              margin: 0 auto\" src=\"{{item.imageUrl}}\"> </div> </div> </uib-accordion-group> </uib-accordion> </div> </section> <section id=\"articles\" class=\"custom-padding\" style=\"margin-bottom:5%\"> <div class=\"topmargin\"> <h2 ui-sref=\"blog.list\" style=\"cursor:pointer\" class=\"paul-title\"> The Guide </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Two cents on the journeys ahead </p><div class=\"underline\"> </div> <p></p> </div> <div style=\"overflow:hidden; margin-bottom:2%\"> <div ui-sref=\"blog.list\" class=\"image blog-image-left\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
+    "              margin: 0 auto\" src=\"{{item.imageUrl}}\"> </div> </div> </uib-accordion-group> </uib-accordion> </div> </section> <section id=\"articles\" class=\"custom-padding\" style=\"margin-bottom:5%\"> <div class=\"topmargin\"> <h2 ui-sref=\"blog.list\" style=\"cursor:pointer\" class=\"paul-title\"> The Guide </h2> <p style=\"font-size:2rem\" class=\"text-center\"> Two cents on the journeys ahead </p><div class=\"underline\"> </div> <p></p> </div> <div style=\"overflow:hidden; margin-bottom:2%\"> <div style=\"cursor:pointer; height:400px\" ui-sref=\"blog.detail({postId: blog[0].id})\" class=\"image blog-image-left\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "        <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +
-    "        <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[0].imageUrl}}\" alt=\"{{blog[0].title}}\"> </picture> </div> <div class=\"text blog-content-left\" style=\"height:auto;margin:0; padding:0 0 0 10px\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.list\" class=\"blog-title\"> {{blog[0].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[0].description}}... </p> <span class=\"icon-calendar3\"> {{blog[0].date | date : 'dd-MM-yyyy'}} • {{blog[0].author}}</span> </div> </div> </div> <div style=\"overflow:hidden\"> <div ui-sref=\"blog.list\" class=\"image blog-image-right\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
+    "        <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img style=\"height:400px\" ng-src=\"{{blog[0].imageUrl}}\" alt=\"{{blog[0].title}}\"> </picture> </div> <div class=\"text blog-content-left\" style=\"height:auto;margin:0; padding:0 0 0 10px\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[0].id})\" class=\"blog-title\"> {{blog[0].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[0].description}}... </p> <span class=\"icon-calendar3 toppadding\"> {{blog[0].date | date : 'dd-MM-yyyy'}} • {{blog[0].author}}</span> </div> </div> </div> <div style=\"overflow:hidden\"> <div style=\"cursor:pointer; height:400px\" ui-sref=\"blog.detail({postId: blog[1].id})\" class=\"image blog-image-right\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "        <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +
-    "        <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img ng-src=\"{{blog[1].imageUrl}}\" alt=\"{{blog[1].title}}\"> </picture> </div> <div class=\"text blog-content-right\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.list\" class=\"blog-title\"> {{blog[1].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[1].description}}... </p> <span class=\"icon-calendar3\"> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}}</span> </div> </div> </div> </section> "
+    "        <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img style=\"height:400px\" ng-src=\"{{blog[1].imageUrl}}\" alt=\"{{blog[1].title}}\"> </picture> </div> <div class=\"text blog-content-right\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[1].id})\" class=\"blog-title\"> {{blog[1].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[1].description}}... </p> <span class=\"icon-calendar3 toppadding\"> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}}</span> </div> </div> </div> </section> "
   );
 
 }]);

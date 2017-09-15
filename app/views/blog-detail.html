@@ -186,15 +186,15 @@ background-size: cover; height:100vh;">
 
               <button style="float:right;" ng-click="showCommentForm()" id="" tabindex="5" class="button button-blue">ADD A COMMENT</button>
 
-              <form ng-if="showForm" class="clearfix"  id="commentform">
+              <form ng-if="showForm" class="clearfix"  id="commentform" ng-submit="postComment(postDetail.id)">
 
                 <div class="col_full">
                   <label for="comment">Comment</label>
-                  <textarea name="comment" ng-model="commentObj.comment" cols="58" rows="7" tabindex="4" class="sm-form-control"></textarea>
+                  <textarea required name="comment" ng-model="commentObj.comment" cols="58" rows="7" tabindex="4" class="sm-form-control"></textarea>
                 </div>
 
                 <div class="col_full nobottommargin">
-                  <button name="submit" ng-click="postComment(postDetail.id)" id="submit-button" tabindex="5" value="Submit" class="button button-blue">Submit</button>
+                  <button type="submit" name="submit" id="submit-button" tabindex="5" class="button button-blue">Submit</button>
                 </div>
 
               </form>

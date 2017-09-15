@@ -10,20 +10,20 @@
 angular.module('wanderwagon-webapp')
   .controller('TravelPlanCtrl', function ($scope, remoteSvc, $document) {
 
-     $scope.getTravelInspirations = function () {
+     var getTravelInspirations = function () {
       remoteSvc.getTravelInspirations().then(function (response) {
         $scope.sliderData = response;
       });
     };
 
-    $scope.getBlogs = function () {
-      remoteSvc.getHomeBlogs().then(function (response) {
+    var getTravelBlogs = function () {
+      remoteSvc.getTravelPlanBlogs().then(function (response) {
         $scope.blog = response;
       })
     };
 
-    $scope.getTravelInspirations();
-    $scope.getBlogs();
+    getTravelInspirations();
+    getTravelBlogs();
 
     $scope.travelPlanData = [];
     var getTravelPlans = function (id) {
