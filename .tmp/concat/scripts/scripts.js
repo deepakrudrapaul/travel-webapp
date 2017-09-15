@@ -357,7 +357,6 @@ angular.module('wanderwagon-webapp')
     
     $scope.getTravelInspirations = function () {
       remoteSvc.getTravelInspirations().then(function (response) {
-        console.log(response);
         $scope.sliderData = response;
       });
     };
@@ -866,7 +865,6 @@ angular.module('wanderwagon-webapp')
 
     var getComments = function(postId) {
       remoteSvc.getCommentsByBlogId(postId).then(function (response){
-        console.log(response);
         $scope.comments = response;
       })
     };
@@ -1260,7 +1258,6 @@ angular.module('wanderwagon-webapp')
           url: remoteAddr + '/blogs/all'
         }).then(function (data, status){
            var posts = [];
-           console.log(data.data.response);
           for (var i = 0; i < data.data.response.length; i++) {
             var post = data.data.response[i];
             posts[i] = {};
@@ -1320,7 +1317,7 @@ angular.module('wanderwagon-webapp')
           method: 'GET',
           url: remoteAddr + '/blogs/comments/' + blogId
         }).then(function (data, status){
-          console.log(data.data.response);
+     
           var comments = [];
          for (var i = 0; i < data.data.response.length; i++) {
            var comment = data.data.response[i];
@@ -1608,7 +1605,6 @@ angular.module('wanderwagon-webapp')
 
     $scope.getDestinationDetailById = function (destinationId) {
       remoteSvc.getDestinationDetailById(destinationId).then(function (data) {
-        console.log(data.response);
         $scope.detail = data.response;
         $scope.placesData = data.response.places;
         $scope.activitiesData = data.response.activities;
@@ -1618,7 +1614,6 @@ angular.module('wanderwagon-webapp')
 
 
     $scope.redirectToPlans = function(travelPlanId) {
-      console.log(travelPlanId)
       if(travelPlanId != null) {
         $state.go('travel-plan.detail', {id : travelPlanId});
       } else{
@@ -1779,7 +1774,6 @@ angular.module('wanderwagon-webapp')
     $scope.travelPlanData = [];
     var getTravelPlans = function (id) {
       remoteSvc.getTravelPlans(id).then(function (response){
-        console.log(response);
         $scope.travelPlanData = response;
       });
     };
@@ -2464,7 +2458,6 @@ angular.module('wanderwagon-webapp')
 
     var getTravelInspirationDetail = function () {
       remoteSvc.getTravelInspirationDetail(id).then(function (response) {
-        console.log(response);
         $scope.planDetail = response.response;
         $scope.itineraries = response.response.itineraries;
       });

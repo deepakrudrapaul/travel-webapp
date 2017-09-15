@@ -19,7 +19,6 @@ angular.module('wanderwagon-webapp')
     
     $scope.getTravelInspirations = function () {
       remoteSvc.getTravelInspirations().then(function (response) {
-        console.log(response);
         $scope.sliderData = response;
       });
     };

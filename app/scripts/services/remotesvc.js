@@ -49,7 +49,6 @@ angular.module('wanderwagon-webapp')
           url: remoteAddr + '/blogs/all'
         }).then(function (data, status){
            var posts = [];
-           console.log(data.data.response);
           for (var i = 0; i < data.data.response.length; i++) {
             var post = data.data.response[i];
             posts[i] = {};
@@ -109,7 +108,7 @@ angular.module('wanderwagon-webapp')
           method: 'GET',
           url: remoteAddr + '/blogs/comments/' + blogId
         }).then(function (data, status){
-          console.log(data.data.response);
+     
           var comments = [];
          for (var i = 0; i < data.data.response.length; i++) {
            var comment = data.data.response[i];

@@ -14,7 +14,6 @@ angular.module('wanderwagon-webapp')
 
     $scope.getDestinationDetailById = function (destinationId) {
       remoteSvc.getDestinationDetailById(destinationId).then(function (data) {
-        console.log(data.response);
         $scope.detail = data.response;
         $scope.placesData = data.response.places;
         $scope.activitiesData = data.response.activities;
@@ -24,7 +23,6 @@ angular.module('wanderwagon-webapp')
 
 
     $scope.redirectToPlans = function(travelPlanId) {
-      console.log(travelPlanId)
       if(travelPlanId != null) {
         $state.go('travel-plan.detail', {id : travelPlanId});
       } else{
