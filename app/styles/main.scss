@@ -31465,7 +31465,7 @@ a {
 
 /* Photo Banner */
 
-$photoCount: 10;
+$photoCount: 24;
 $photoWidth: 350px;
 $photoHeight: 233px;
 
@@ -31493,7 +31493,7 @@ $photoHeight: 233px;
       cursor: pointer;
     }
     &:first-child {
-      animation: bannermove 30s linear infinite;
+      animation: bannermove 60s linear infinite;
     }
   }
 }
@@ -31505,7 +31505,7 @@ $photoHeight: 233px;
     margin-left: 0px;
   }
   100% {
-    margin-left: -2130px;
+    margin-left: -6830px;
   }
 }
 

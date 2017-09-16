@@ -16,6 +16,7 @@ angular.module('wanderwagon-webapp')
         scope.getInstaPhotos = function () {
           remoteSvc.getInstaPhotos().then(function (response) {
             scope.instaData = response;
+            console.log(response);
           });
         };
         scope.getInstaPhotos();

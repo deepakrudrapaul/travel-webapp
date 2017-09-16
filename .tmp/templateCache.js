@@ -233,35 +233,7 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/insta-photo-stream.html',
-    "<!-- <div class='slider'>\n" +
-    "    <div class=\"slideContainer\">\n" +
-    "            <div class=\"slideItem\" >\n" +
-    "                    <img style=\"cursor:pointer;\" ng-click=\"redirectToInstagram()\" style=\"margin:1%;\" ng-src=\"{{instaData[0].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\">\n" +
-    "            </div>\n" +
-    "            <div class=\"slideItem\" >\n" +
-    "                    <img style=\"cursor:pointer;\" ng-click=\"redirectToInstagram()\" style=\"margin:1%;\" ng-src=\"{{instaData[1].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\">\n" +
-    "            </div>\n" +
-    "            <div class=\"slideItem\" >\n" +
-    "                    <img style=\"cursor:pointer;\" ng-click=\"redirectToInstagram()\" style=\"margin:1%;\" ng-src=\"{{instaData[2].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\">\n" +
-    "            </div>\n" +
-    "            <div class=\"slideItem\" >\n" +
-    "                    <img style=\"cursor:pointer;\" ng-click=\"redirectToInstagram()\" style=\"margin:1%;\" ng-src=\"{{instaData[3].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\">\n" +
-    "            </div>\n" +
-    "            <div class=\"slideItem\" >\n" +
-    "                    <img style=\"cursor:pointer;\" ng-click=\"redirectToInstagram()\" style=\"margin:1%;\" ng-src=\"{{instaData[4].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\">\n" +
-    "            </div>\n" +
-    "            <div class=\"slideItem\" >\n" +
-    "                    <img style=\"cursor:pointer;\" ng-click=\"redirectToInstagram()\" style=\"margin:1%;\" ng-src=\"{{instaData[5].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\">\n" +
-    "            </div>\n" +
-    "            <div class=\"slideItem\" >\n" +
-    "                    <img style=\"cursor:pointer;\" ng-click=\"redirectToInstagram()\" style=\"margin:1%;\" ng-src=\"{{instaData[6].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\">\n" +
-    "            </div>\n" +
-    "            <div class=\"slideItem\" >\n" +
-    "                    <img style=\"cursor:pointer;\" ng-click=\"redirectToInstagram()\" style=\"margin:1%;\" ng-src=\"{{instaData[7].imageUrl}}\" width=\"200\" height=\"150\" alt=\"Instafeed\">\n" +
-    "            </div>\n" +
-    "\n" +
-    "        </div>\n" +
-    "    </div> --> <div class=\"photo-roll--container\"> <div class=\"photo-roll\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[0].imageUrl}}\" alt=\"Instafeed\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[1].imageUrl}}\" alt=\"Instafeed\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[2].imageUrl}}\" alt=\"Instafeed\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[3].imageUrl}}\" alt=\"Instafeed\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[4].imageUrl}}\" alt=\"Instafeed\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[5].imageUrl}}\" alt=\"Instafeed\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[6].imageUrl}}\" alt=\"Instafeed\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[7].imageUrl}}\" alt=\"Instafeed\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[0].imageUrl}}\" alt=\"Instafeed\"> <img style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{instaData[1].imageUrl}}\" alt=\"Instafeed\"> </div> </div> "
+    " <div class=\"photo-roll--container\"> <div class=\"photo-roll\"> <img ng-repeat=\"item in instaData\" style=\"cursor:pointer\" ng-click=\"redirectToInstagram()\" style=\"margin:1%\" ng-src=\"{{item.imageUrl}}\" alt=\"Instafeed\"> </div> </div> "
   );
 
 

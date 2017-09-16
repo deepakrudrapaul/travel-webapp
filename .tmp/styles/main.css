@@ -46206,7 +46206,7 @@ a {
 /* line 31478, ../../app/styles/main.scss */
 .photo-roll {
   height: 233px;
-  width: 3500px;
+  width: 8400px;
   margin-bottom: 5px;
   font-size: 0;
 }
@@ -46224,7 +46224,7 @@ a {
 }
 /* line 31495, ../../app/styles/main.scss */
 .photo-roll img:first-child {
-  animation: bannermove 30s linear infinite;
+  animation: bannermove 60s linear infinite;
 }
 
 /* Keyframe animations*/
@@ -46233,7 +46233,7 @@ a {
     margin-left: 0px;
   }
   100% {
-    margin-left: -2130px;
+    margin-left: -6830px;
   }
 }
 /* line 31512, ../../app/styles/main.scss */
