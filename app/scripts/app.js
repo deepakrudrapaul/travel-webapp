@@ -36,7 +36,7 @@ angular
     $locationProvider.html5Mode(true);
     // $locationProvider.hashPrefix('');
 
-    $authProvider.baseUrl = null;
+    $authProvider.baseUrl = '/';
     $authProvider.facebook({
       clientId: '1758555154405794',
       responseType: 'token'
