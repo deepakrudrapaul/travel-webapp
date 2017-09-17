@@ -77,7 +77,7 @@ angular.module('wanderwagon-webapp')
         })
         .catch(function (response) {
           closeLoginModal();
-          $scope.showModal('Something went Wrong: ', "Please Try After Some Time");
+          console.log(response);
         })
     };
 
