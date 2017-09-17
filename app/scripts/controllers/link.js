@@ -8,7 +8,10 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('LinkCtrl', function ($scope, $window, $location, $rootScope, $auth, auth, remoteSvc) {
+  .controller('LinkCtrl', function ($scope, $window, $location, $rootScope, $auth, $timeout, auth, remoteSvc) {
+
+
+
 
     $scope.checked = true;
 
@@ -53,17 +56,6 @@ angular.module('wanderwagon-webapp')
     $rootScope.authenticate = function (provider) {
       $auth.authenticate(provider)
         .then(function (response) {
-          if (provider == 'google') {
-            auth.googleLogin(response.access_token)
-              .then(function (data) {
-                 closeLoginModal();
-                 $rootScope.$emit('social-login', 'true');
-              })
-              .catch(function (error) {
-                closeLoginModal();
-                $scope.showModal('Error', "Error While With Google Login. Please Try After Some Time");
-              });
-          } else {
             auth.facebookLogin(response.access_token)
               .then(function (data) {
                 closeLoginModal();
@@ -73,7 +65,6 @@ angular.module('wanderwagon-webapp')
                 closeLoginModal();
                 $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
               });
-          }
         })
         .catch(function (response) {
           closeLoginModal();

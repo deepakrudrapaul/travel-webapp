@@ -182,7 +182,31 @@ angular
     });
 
   }]);
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1758555154405794',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+    FB.AppEvents.logPageView();   
+    triggerLoginCheck();
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+   function triggerLoginCheck() {       
+    FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+    console.log(response);  
+    });
+}
 'use strict';
 
 /**
@@ -527,7 +551,10 @@ $scope.accordionProperties = {
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('LinkCtrl', ["$scope", "$window", "$location", "$rootScope", "$auth", "auth", "remoteSvc", function ($scope, $window, $location, $rootScope, $auth, auth, remoteSvc) {
+  .controller('LinkCtrl', ["$scope", "$window", "$location", "$rootScope", "$auth", "$timeout", "auth", "remoteSvc", function ($scope, $window, $location, $rootScope, $auth, $timeout, auth, remoteSvc) {
+
+
+
 
     $scope.checked = true;
 
@@ -572,17 +599,6 @@ angular.module('wanderwagon-webapp')
     $rootScope.authenticate = function (provider) {
       $auth.authenticate(provider)
         .then(function (response) {
-          if (provider == 'google') {
-            auth.googleLogin(response.access_token)
-              .then(function (data) {
-                 closeLoginModal();
-                 $rootScope.$emit('social-login', 'true');
-              })
-              .catch(function (error) {
-                closeLoginModal();
-                $scope.showModal('Error', "Error While With Google Login. Please Try After Some Time");
-              });
-          } else {
             auth.facebookLogin(response.access_token)
               .then(function (data) {
                 closeLoginModal();
@@ -592,7 +608,6 @@ angular.module('wanderwagon-webapp')
                 closeLoginModal();
                 $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
               });
-          }
         })
         .catch(function (response) {
           closeLoginModal();
