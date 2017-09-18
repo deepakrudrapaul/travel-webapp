@@ -55,6 +55,10 @@ angular.module('wanderwagon-webapp')
       $window.open('https://www.facebook.com/wanderwagon', ' _blank');
     };
 
+    $scope.openInstagram = function () {
+      $window.open('https://www.instagram.com/wanderwagon', ' _blank');
+    };
+
 
 
   });
