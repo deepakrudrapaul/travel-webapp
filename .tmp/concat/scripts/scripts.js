@@ -169,7 +169,7 @@ angular
       });
 
   }])
-  .run(["$rootScope", "$location", "auth", "$anchorScroll", function ($rootScope, $location, auth, $anchorScroll) {
+  .run(["$rootScope", "$location", "$window", "auth", "$anchorScroll", function ($rootScope, $location, $window, auth, $anchorScroll) {
 
     $rootScope.changeLocation = function (path) {
       $rootScope.$evalAsync(function () {
@@ -178,6 +178,7 @@ angular
     };
 
     $rootScope.$on("$locationChangeSuccess", function () {
+      $window.ga('send', 'pageview', $location.path());
       $anchorScroll();
     });
 

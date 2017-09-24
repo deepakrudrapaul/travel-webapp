@@ -46196,21 +46196,21 @@ a {
 }
 
 /* Photo Banner */
-/* line 31472, ../../app/styles/main.scss */
+/* line 31473, ../../app/styles/main.scss */
 .photo-roll--container {
   width: 100%;
   overflow: hidden;
   margin: 10px auto;
 }
 
-/* line 31478, ../../app/styles/main.scss */
+/* line 31479, ../../app/styles/main.scss */
 .photo-roll {
   height: 233px;
   width: 8400px;
   margin-bottom: 5px;
   font-size: 0;
 }
-/* line 31484, ../../app/styles/main.scss */
+/* line 31485, ../../app/styles/main.scss */
 .photo-roll img {
   margin-bottom: 10px;
   margin-right: 5px;
@@ -46218,11 +46218,11 @@ a {
   width: 350px;
   transition: all 0.5s ease;
 }
-/* line 31491, ../../app/styles/main.scss */
+/* line 31492, ../../app/styles/main.scss */
 .photo-roll img:hover {
   cursor: pointer;
 }
-/* line 31495, ../../app/styles/main.scss */
+/* line 31496, ../../app/styles/main.scss */
 .photo-roll img:first-child {
   animation: bannermove 60s linear infinite;
 }
@@ -46236,7 +46236,7 @@ a {
     margin-left: -6830px;
   }
 }
-/* line 31512, ../../app/styles/main.scss */
+/* line 31513, ../../app/styles/main.scss */
 .vertical-align-center {
   /* To center vertically */
   display: table-cell;
