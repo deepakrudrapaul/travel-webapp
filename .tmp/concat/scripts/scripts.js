@@ -37,9 +37,11 @@ angular
     // $locationProvider.hashPrefix('');
 
     $authProvider.baseUrl = '/';
+
     $authProvider.facebook({
       clientId: '1758555154405794',
-      responseType: 'token'
+      responseType: 'token',
+      redirectUri : window.location.origin + '/home'
     });
 
 

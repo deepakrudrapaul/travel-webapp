@@ -17,7 +17,7 @@ module.exports = function (grunt) {
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn',
-ngconstant: 'grunt-ng-constant'
+    ngconstant: 'grunt-ng-constant'
   });
 
   // Configurable paths for the application
@@ -26,6 +26,7 @@ ngconstant: 'grunt-ng-constant'
     dist: 'dist'
   };
 
+  var serveStatic = require('serve-static');
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -68,31 +69,31 @@ ngconstant: 'grunt-ng-constant'
       }
     },
 
-// Loads different environment depending on production or developement
+    // Loads different environment depending on production or developement
     ngconstant: {
-            // Options for all targets
-            options: {
-                name: 'config',
-                dest: '<%= yeoman.app %>/scripts/services/config.js'
-            },
-            // Environment targets
-            dev: {
-                constants: {
-                    ENV: {
-                        name: 'development',
-                        endPoint: 'http://54.179.166.97:8080/api/v1'
-                    }
-                }
-            },
-            prod: {
-                constants: {
-                    ENV: {
-                        name: 'production',
-                        endPoint: 'http://54.179.166.97:8080/api/v1'
-                    }
-                }
-            }
-        },
+      // Options for all targets
+      options: {
+        name: 'config',
+        dest: '<%= yeoman.app %>/scripts/services/config.js'
+      },
+      // Environment targets
+      dev: {
+        constants: {
+          ENV: {
+            name: 'development',
+            endPoint: 'http://54.179.166.97:8080/api/v1'
+          }
+        }
+      },
+      prod: {
+        constants: {
+          ENV: {
+            name: 'production',
+            endPoint: 'http://54.179.166.97:8080/api/v1'
+          }
+        }
+      }
+    },
 
     // The actual grunt server settings
     connect: {
@@ -107,16 +108,16 @@ ngconstant: 'grunt-ng-constant'
           open: true,
           middleware: function (connect) {
             return [
-              connect.static('.tmp'),
+              serveStatic('.tmp'),
               connect().use(
                 '/bower_components',
-                connect.static('./bower_components')
+                serveStatic('./bower_components')
               ),
               connect().use(
                 '/app/styles',
-                connect.static('./app/styles')
+                serveStatic('./app/styles')
               ),
-              connect.static(appConfig.app)
+              serveStatic(appConfig.app)
             ];
           }
         }
@@ -126,13 +127,13 @@ ngconstant: 'grunt-ng-constant'
           port: 9001,
           middleware: function (connect) {
             return [
-              connect.static('.tmp'),
-              connect.static('test'),
+              serveStatic('.tmp'),
+              serveStatic('test'),
               connect().use(
                 '/bower_components',
-                connect.static('./bower_components')
+                serveStatic('./bower_components')
               ),
-              connect.static(appConfig.app)
+              serveStatic(appConfig.app)
             ];
           }
         }
@@ -201,7 +202,9 @@ ngconstant: 'grunt-ng-constant'
     postcss: {
       options: {
         processors: [
-          require('autoprefixer-core')({browsers: ['last 1 version']})
+          require('autoprefixer-core')({
+            browsers: ['last 1 version']
+          })
         ]
       },
       server: {
@@ -229,29 +232,29 @@ ngconstant: 'grunt-ng-constant'
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath: /\.\.\//
       },
-        // test: {
-        //   devDependencies: true,
-        //   src: '<%= karma.unit.configFile %>',
-        //   ignorePath:  /\.\.\//,
-        //   fileTypes:{
-        //     js: {
-        //       block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
-        //         detect: {
-        //           js: /'(.*\.js)'/gi
-        //         },
-        //         replace: {
-        //           js: '\'{{filePath}}\','
-        //         }
-        //       }
-        //     }
-        // },
+      // test: {
+      //   devDependencies: true,
+      //   src: '<%= karma.unit.configFile %>',
+      //   ignorePath:  /\.\.\//,
+      //   fileTypes:{
+      //     js: {
+      //       block: /(([\s\t]*)\/{2}\s*?bower:\s*?(\S*))(\n|\r|.)*?(\/{2}\s*endbower)/gi,
+      //         detect: {
+      //           js: /'(.*\.js)'/gi
+      //         },
+      //         replace: {
+      //           js: '\'{{filePath}}\','
+      //         }
+      //       }
+      //     }
+      // },
       sass: {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
-    }, 
+    },
 
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
@@ -325,7 +328,9 @@ ngconstant: 'grunt-ng-constant'
           '<%= yeoman.dist %>/styles'
         ],
         patterns: {
-          js: [[/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']]
+          js: [
+            [/(images\/[^''""]*\.(png|jpg|jpeg|gif|webp|svg))/g, 'Replacing references to images']
+          ]
         }
       }
     },
@@ -494,7 +499,7 @@ ngconstant: 'grunt-ng-constant'
 
     grunt.task.run([
       'clean:server',
-'ngconstant:prod',
+      'ngconstant:prod',
       'wiredep',
       'concurrent:server',
       'postcss:server',
@@ -510,7 +515,7 @@ ngconstant: 'grunt-ng-constant'
 
   grunt.registerTask('test', [
     'clean:server',
-   'ngconstant:dev',
+    'ngconstant:dev',
     'wiredep',
     'concurrent:test',
     'postcss',
@@ -520,7 +525,7 @@ ngconstant: 'grunt-ng-constant'
 
   grunt.registerTask('build', [
     'clean:dist',
-'ngconstant:prod',
+    'ngconstant:prod',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
