@@ -33,7 +33,7 @@ angular
   ])
   .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', '$authProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider) {
 
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
     // $locationProvider.hashPrefix('');
 
     $authProvider.baseUrl = '/';
@@ -168,6 +168,11 @@ angular
         url: '/privacy-policy',
         templateUrl: 'views/privacy-policy.html',
         controller: 'ContactCtrl'
+      })
+      .state('payment', {
+        url: '/payment',
+        templateUrl: 'views/payment.html',
+        controller: 'PaymentCtrl'
       });
 
   }])
