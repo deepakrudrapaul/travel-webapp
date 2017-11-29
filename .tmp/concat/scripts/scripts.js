@@ -2609,8 +2609,8 @@ angular.module('wanderwagon-webapp')
     $scope.isPaymentDone = false;
 
     var options = {
-      "key": "rzp_test_4aqB2hQu7SmUzA",
-      "amount": 1000000,    
+      "key": "rzp_live_lhuK7gjYSF90ee",
+      "amount": 100,    
       "name": "Wanderwagon Pvt Ltd",
       "image": "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/logo/logo-short.png",        
       "description": "Kheerganga Trek Booking",
@@ -2625,8 +2625,7 @@ angular.module('wanderwagon-webapp')
           "color": "blue"
       },
       handler: function(response) {
-        onSuccess(response);
-        console.log(response.razorpay_payment_id)
+        showPaymentModal();
       }
     };
 
@@ -2637,6 +2636,10 @@ angular.module('wanderwagon-webapp')
 
     var onSuccess = function() {
       
+    };
+
+    var showPaymentModal = function() {
+      angular.element(document.querySelectorAll('#paymentModal')).modal('show');
     };
     
   }]);
@@ -3001,7 +3004,7 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/payment.html',
-    "<section id=\"content\" style=\"background-color:#36353B; height:100vh\"> <div class=\"container clearfix login-margin\"> <div class=\"center-block clearfix\" style=\"max-width: 550px;background:rgba(255,255,255,0.5);margin-top:10%; padding: 50px; border-radius:1%\"> <div class=\"center\"> <button ng-if=\"!isPaymentDone\" class=\"button button-3d button-rounded button-blue\" ng-click=\"pay()\">Pay with Razorpay</button> <button ng-if=\"isPaymentDone\" class=\"button button-3d button-rounded button-blue\">Your Payment was successful!</button> </div> </div> </div> </section> "
+    "<section id=\"content\" style=\"background-color:#36353B; height:100vh\"> <div class=\"container clearfix login-margin\"> <div class=\"center-block clearfix\" style=\"max-width: 550px;background:rgba(255,255,255,0.5);margin-top:10%; padding: 50px; border-radius:1%\"> <div class=\"center\"> <button ng-if=\"!isPaymentDone\" class=\"button button-3d button-rounded button-blue\" ng-click=\"pay()\">Pay with Razorpay</button> <button ng-if=\"isPaymentDone\" class=\"button button-3d button-rounded button-blue\">Your Payment was successful!</button> </div> </div> </div> </section> <div class=\"modal fade\" id=\"paymentModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"paymentModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"paymentModallabel\">Payment</h4> </div> <div class=\"modal-body\"> <div class=\"center\"> <p style=\"margin-bottom: 15px\"> Your payment was successful ! </p> </div> </div> </div> </div> </div> "
   );
 
 

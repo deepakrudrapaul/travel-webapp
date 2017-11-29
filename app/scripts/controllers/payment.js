@@ -13,8 +13,8 @@ angular.module('wanderwagon-webapp')
     $scope.isPaymentDone = false;
 
     var options = {
-      "key": "rzp_test_4aqB2hQu7SmUzA",
-      "amount": 1000000,    
+      "key": "rzp_live_lhuK7gjYSF90ee",
+      "amount": 100,    
       "name": "Wanderwagon Pvt Ltd",
       "image": "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/logo/logo-short.png",        
       "description": "Kheerganga Trek Booking",
@@ -29,8 +29,7 @@ angular.module('wanderwagon-webapp')
           "color": "blue"
       },
       handler: function(response) {
-        onSuccess(response);
-        console.log(response.razorpay_payment_id)
+        showPaymentModal();
       }
     };
 
@@ -41,6 +40,10 @@ angular.module('wanderwagon-webapp')
 
     var onSuccess = function() {
       
+    };
+
+    var showPaymentModal = function() {
+      angular.element(document.querySelectorAll('#paymentModal')).modal('show');
     };
     
   });
