@@ -56,15 +56,26 @@ angular.module('wanderwagon-webapp')
     $rootScope.authenticate = function (provider) {
       $auth.authenticate(provider)
         .then(function (response) {
+          if (provider == 'google') {
+            auth.googleLogin(response.access_token)
+            .then(function (data) {
+                  $location.path('/home');
+                  $rootScope.$emit('social-login', 'true');                    
+            })
+            .catch(function (error) {
+              $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
+            });
+          } else{
             auth.facebookLogin(response.access_token)
-              .then(function (data) {
-                closeLoginModal();
-                 $rootScope.$emit('social-login', 'true'); 
-              })
-              .catch(function (error) {
-                closeLoginModal();
-                $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
-              });
+            .then(function (data) {
+              closeLoginModal();
+               $rootScope.$emit('social-login', 'true'); 
+            })
+            .catch(function (error) {
+              closeLoginModal();
+              $scope.showModal('Error', "Error While With Facebook Login. Please Try After Some Time");
+            });
+          }
         })
         .catch(function (response) {
           closeLoginModal();
