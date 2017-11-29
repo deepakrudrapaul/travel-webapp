@@ -47,7 +47,8 @@ angular
 
     $authProvider.google({
       clientId: '1074764438873-k221gusckcgqaalhqnsqn891kjoigcas.apps.googleusercontent.com',
-      responseType: 'token'
+      responseType: 'token',
+      redirectUri : window.location.origin + '/home'
     });
 
     $urlRouterProvider.otherwise('/home');
