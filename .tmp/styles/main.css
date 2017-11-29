@@ -28681,14 +28681,14 @@ html[xmlns] .slider-wrap {
 #header.transparent-header.floating-header .container {
   width: 1220px;
   background-color: #FFF;
-  padding: 0 40px;
+  padding: 0 20px;
   border-radius: 2px;
 }
 
 /* line 15665, ../../app/styles/main.scss */
 #header.transparent-header.floating-header.sticky-header .container {
-  width: 1170px;
-  padding: 0 15px;
+  width: 1220px;
+  padding: 0 5px;
 }
 
 /* line 15670, ../../app/styles/main.scss */
@@ -28952,7 +28952,7 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content {
 #primary-menu ul li .mega-menu-content {
   display: none;
   position: absolute;
-  width: 150px;
+  width: 200px;
   background-color: #FFF;
   box-shadow: 0px 13px 42px 11px rgba(0, 0, 0, 0.05);
   border: 1px solid #EEE;
@@ -46242,3 +46242,5 @@ a {
   display: table-cell;
   vertical-align: middle;
 }
+
+/*# sourceMappingURL=main.css.map */

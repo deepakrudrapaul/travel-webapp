@@ -113,8 +113,7 @@ angular.module('wanderwagon-webapp')
               id: 9
             }
           ],
-          activities: [
-            {
+          activities: [{
               imageUrl: 'images/boating.jpg',
               name: 'Boating',
               id: 7
@@ -134,7 +133,7 @@ angular.module('wanderwagon-webapp')
               name: 'Rock Climbing',
               id: 9
             },
-             {
+            {
               imageUrl: 'images/boating.jpg',
               name: 'Boating',
               id: 7
@@ -272,8 +271,7 @@ angular.module('wanderwagon-webapp')
     };
 
 
-    var blogs = [
-      {
+    var blogs = [{
         title: 'Tips for solo travellers',
         description: 'Traveling alone may seem scary at first, But , The number of reasons why one should travel alone at least once outnumbers why one should not by a considerable margin. One reason is that after a solo adventure you wouldn’t be the same person as you were before, I can bet on that. The solitude that you get while traveling solo gives a new dimension to your thought process. ',
         dateTime: '02 Jun 2017',
@@ -361,7 +359,7 @@ angular.module('wanderwagon-webapp')
       {
         image: "images/assam.jpg"
       }
-      
+
     ];
 
     var popularPosts = [{
@@ -404,6 +402,82 @@ angular.module('wanderwagon-webapp')
       popularPosts: popularPosts,
       recentPosts: recentPosts
     };
+
+    var eventsData = [{
+        eventId: 1,
+        eventImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/macleodganj/coverpic/cover.jpg",
+        eventName: "New Year Festival",
+        description: "New Year is the time at which a new calendar year begins and the calendar's year count increments by one. Many cultures celebrate the event in some manner and the 1st day of January is often marked as a national holiday.",
+        eventLocations: [{
+            locationName: "Kasol",
+            locationId: 1,
+            locationImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/kasol/coverpic/cover_picture.jpg"
+          },
+          {
+            locationName: "Kasol",
+            locationId: 2,
+            locationImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/kasol/coverpic/cover_picture.jpg"
+          },
+          {
+            locationName: "Kasol",
+            locationId: 3,
+            locationImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/kasol/coverpic/cover_picture.jpg"
+          },
+          {
+            locationName: "Kasol",
+            locationId: 4,
+            locationImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/kasol/coverpic/cover_picture.jpg"
+          },
+          {
+            locationName: "Kasol",
+            locationId: 5,
+            locationImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/kasol/coverpic/cover_picture.jpg"
+          },
+          {
+            locationName: "Kasol",
+            locationId: 6,
+            locationImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/kasol/coverpic/cover_picture.jpg"
+          }
+        ]
+      },
+      {
+        eventId: 2,
+        eventImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/haridwar/coverpic/cover.jpg",
+        eventName: "International Yoga Festival",
+        description: "The annual International Yoga Festival, organized by Parmarth Niketan (Rishikesh) in the sacred and heavenly state of Uttarakhand, the birthplace of Yoga, is grounded in the authentic origin of Yoga.",
+        eventLocations: [{
+            locationName: "Rishikesh",
+            locationId: 1,
+            locationImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/rishikesh/coverpic/cover_picture.jpg"
+          },
+          {
+            locationName: "Rishikesh",
+            locationId: 2,
+            locationImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/rishikesh/coverpic/cover_picture.jpg"
+          },
+          {
+            locationName: "Rishikesh",
+            locationId: 1,
+            locationImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/rishikesh/coverpic/cover_picture.jpg"
+          },
+          {
+            locationName: "Rishikesh",
+            locationId: 1,
+            locationImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/rishikesh/coverpic/cover_picture.jpg"
+          },
+          {
+            locationName: "Rishikesh",
+            locationId: 1,
+            locationImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/rishikesh/coverpic/cover_picture.jpg"
+          },
+          {
+            locationName: "Rishikesh",
+            locationId: 1,
+            locationImage: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/destinations/rishikesh/coverpic/cover_picture.jpg"
+          }
+        ]
+      }
+    ];
 
 
     // Public API here
@@ -448,17 +522,33 @@ angular.module('wanderwagon-webapp')
         return deferred.promise;
       },
 
-      getBlogList: function() {
+      getBlogList: function () {
         var deferred = $q.defer();
         deferred.resolve(blogPageData);
         return deferred.promise;
       },
 
 
-      getBlogDetail: function(id) {
+      getBlogDetail: function (id) {
         var deferred = $q.defer();
         angular.forEach(blogs, function (value, key) {
           if (value.id == id) {
+            deferred.resolve(value);
+          }
+        });
+        return deferred.promise;
+      },
+
+      getAllEvents: function () {
+        var deferred = $q.defer();
+        deferred.resolve(eventsData);
+        return deferred.promise;
+      },
+
+      getEventById: function (id) {
+        var deferred = $q.defer();
+        angular.forEach(eventsData, function (value, key) {
+          if (value.eventId == id) {
             deferred.resolve(value);
           }
         });

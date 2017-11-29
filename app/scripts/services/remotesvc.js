@@ -289,6 +289,31 @@ angular.module('wanderwagon-webapp')
       },
 
 
+      // **** EVENTS API ******* //
+
+      getAllEvents: function() {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + '/events'
+        }).then(function (data, status){
+          return data.data;
+        }, function (error, status){
+          return error.data;
+        })
+      },
+
+      getEventById: function(eventId) {
+        return $http({
+          method: 'GET',
+          url: remoteAddr + '/events/' + id
+        }).then(function (data, status){
+          return data.data;
+        }, function (error, status){
+          return error.data;
+        })
+      },
+
+
 
        // **** PLAN MY TRIP API ******* //
 
