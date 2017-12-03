@@ -8,7 +8,7 @@
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('EventCtrl', function ($scope, $stateParams, remoteSvc, mockRemoteSvc) {
+  .controller('EventCtrl', function ($scope, $stateParams, remoteSvc) {
    
     var eventId = $stateParams.id;
 
@@ -16,8 +16,9 @@ angular.module('wanderwagon-webapp')
     $scope.messageType = "Query Form";
 
     var getEventById = function(eventId) {
-      mockRemoteSvc.getEventById(eventId).then(function(data){
-        $scope.eventDetail = data;
+      remoteSvc.getEventById(eventId).then(function(data){
+        $scope.eventDetail = data.response;
+        console.log(data);
       });
     };
     getEventById(eventId);
@@ -27,6 +28,7 @@ angular.module('wanderwagon-webapp')
 
     $scope.onQueryButtonClicked = function(id) {
       $scope.queryObj.locationId = id;
+      $scope.queryObj.eventId = eventId;
       $scope.formSubmitted = false;
       angular.element(document.querySelectorAll('#eventModal')).modal('show');
     };
@@ -34,13 +36,14 @@ angular.module('wanderwagon-webapp')
 
 
     $scope.onFormSubmit = function(form) {
-      $scope.formSubmitted = true;
-      $scope.messageType = "Success";
-        console.log($scope.queryObj);
-        $scope.queryObj = {};
+      remoteSvc.submitEventForm($scope.queryObj)
+        .success(function(data){
+          $scope.formSubmitted = true;
+          $scope.messageType = "Success";
+            $scope.queryObj = {};
+        })
+        .error(function (error) {
+          console.log(error);
+        })
     }
-
-
-
-
   });

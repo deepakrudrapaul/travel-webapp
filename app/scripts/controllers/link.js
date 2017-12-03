@@ -28,6 +28,10 @@ angular.module('wanderwagon-webapp')
       $scope.userName = auth.getUserName();
     });
 
+    remoteSvc.getAllEvents().then(function (data){
+      $rootScope.eventList = data.response;
+    })
+
 
 
     $rootScope.onLogOut = function () {

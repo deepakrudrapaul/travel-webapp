@@ -43,7 +43,7 @@
         <div class="primary-menu-trigger" ng-touch="openSideNav()" ng-click="openSideNav()"><i class="icon-reorder" style="font-size:30px; color:#FFFFFF"></i></div>
 
         <div id="mySidenav" class="sidenav" style="background-color:#36353B;">
-          <a href="" class="closebtn" ng-touch="closeSideNav()" ng-click="closeSideNav()">&times;</a>
+          <!-- <a href="" class="closebtn" ng-touch="closeSideNav()" ng-click="closeSideNav()">&times;</a> -->
           <a href="" ui-sref-active="active-menu" ui-sref="travel-plan.list" ng-touch="closeSideNav()" ng-click="closeSideNav()">
             <div><i style="padding:25% 5% 5% 5%;" class="icon-calendar2"></i>Travel Plans</div>
           </a>
@@ -54,7 +54,7 @@
             <div><i style="padding:5%;" class="icon-location"></i>Events</div>
           </a>
           <a href="" ui-sref-active="active-menu" ui-sref="blog.list" ng-touch="closeSideNav()" ng-click="closeSideNav()">
-            <div><i style="padding:5%;" class="icon-comment"></i>Blog</div>
+            <div><i style="padding:5%;" class="icon-comment"></i>Blogs</div>
           </a>
           <a href="" ui-sref-active="active-menu" ui-sref="plan-trip" ng-touch="closeSideNav()" ng-click="closeSideNav()">
             <div><i style="padding:5%;" class="icon-plane"></i>Plan My Trip</div>
@@ -115,14 +115,9 @@
               </a>
 
               <ul>
-                <li>
+                <li ng-repeat="item in eventList">
                   <a href="" ui-sref="events({id: 1})" ng-touch="closeSideNav()" ng-click="closeSideNav()">
-                    <div>New Year Festival</div>
-                  </a>
-                </li>
-                <li>
-                  <a href="" ui-sref="events({id: 2})" ng-touch="closeSideNav()" ng-click="closeSideNav()">
-                    <div>International Yoga Festival </div>
+                    <div>{{item.eventName}}</div>
                   </a>
                 </li>
 
@@ -132,7 +127,7 @@
             </li>
             <li>
               <a href="" ui-sref-active="active-menu" ui-sref="blog.list">
-                <div><i class="icon-comment"></i>Blog</div>
+                <div><i class="icon-comment"></i>Blogs</div>
               </a>
             </li>
             <li>

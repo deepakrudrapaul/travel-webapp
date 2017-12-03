@@ -34,7 +34,7 @@ background-size: cover; height:100vh;">
 
 
     <div class="center-block custom-para">
-      <p> {{eventDetail.description}}</p>
+      <p ng-repeat="para in eventDetail.paragraphs">{{para.text}}</p>
     </div>
   </div>
 </section>
@@ -45,7 +45,7 @@ background-size: cover; height:100vh;">
       <div style="margin-bottom:2%;" ng-repeat="location in eventDetail.eventLocations" class="col-sm-4 col-centered col-fixed ">
 
 
-        <a>
+        <a ng-href="{{location.pdfUrl}}">
           <div class="photo" style="cursor:pointer; width: 100%;
     height: 100%;
     float: left;

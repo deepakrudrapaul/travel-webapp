@@ -305,11 +305,19 @@ angular.module('wanderwagon-webapp')
       getEventById: function(eventId) {
         return $http({
           method: 'GET',
-          url: remoteAddr + '/events/' + id
+          url: remoteAddr + '/events/' + eventId
         }).then(function (data, status){
           return data.data;
         }, function (error, status){
           return error.data;
+        })
+      },
+
+      submitEventForm: function(formObj) {
+        return $http({
+          method: 'POST',
+          data: formObj,
+          url: remoteAddr + '/events/query'
         })
       },
 
