@@ -387,16 +387,13 @@
   <!-- #footer end -->
   <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
     <div class="modal-dialog" role="document">
-      <div style="background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/popups/login.jpg'); background-position: center; height:400px;" class="modal-content">
+      <div class="login-modal" style="background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/popups/login_popup.jpg'); background-position: center; " class="modal-content">
        
         <div class="modal-body">
-          <div class="center">
+          <div class="center login-modal-margin" >
             
-            <button class="button button-rounded si-facebook si-colored" ng-click="authenticate('facebook')"><i class="icon-facebook"></i>Facebook</button>
-            <p style="margin: 15px 0;">
-              <font size="3">or</font>
-            </p>
-            <button class="button button-rounded si-google si-colored" ng-click="authenticate('google')"><i class="icon-google"></i>Google</button>
+            <button class="button pull-left  button-rounded si-facebook si-colored" ng-click="authenticate('facebook')"><i class="icon-facebook"></i>Facebook</button>
+            <button class="button pull-right button-rounded si-google si-colored" ng-click="authenticate('google')"><i class="icon-google"></i>Google</button>
           </div>
         </div>
       </div>

@@ -5951,7 +5951,7 @@ button.close {
   display: none;
   overflow: hidden;
   position: fixed;
-  top: 20%;
+  top: 5%;
   right: 0;
   bottom: 0;
   left: 0;
@@ -30174,6 +30174,16 @@ a {
   height:auto;margin:0; padding:0 0 0 10px;
 }
 
+
+.login-modal {
+  height: 500px;
+}
+
+.login-modal-margin {
+  margin-top:420px;
+}
+
+
 /* ----------------------------------------------------------------
 	Responsive CSS
 -----------------------------------------------------------------*/
@@ -30181,6 +30191,15 @@ a {
 
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
+
+  .login-modal-margin {
+    margin-top:450px;
+  }
+  
+
+  .login-modal {
+    height: 550px;
+  }
 
   .web-blog-padding {
 
