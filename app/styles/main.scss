@@ -30162,6 +30162,17 @@ a {
   font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
+#logo .web-logo {
+  display:block;
+}
+
+#logo .mobile-logo {
+  display: none;
+}
+
+.web-blog-padding {
+  height:auto;margin:0; padding:0 0 0 10px;
+}
 
 /* ----------------------------------------------------------------
 	Responsive CSS
@@ -30170,6 +30181,19 @@ a {
 
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
+
+  .web-blog-padding {
+
+  }
+  
+
+  #logo .web-logo {
+    display:none;
+  }
+
+  #logo .mobile-logo {
+    display: block;
+  }
 
   body {
     padding: 0 !important;
@@ -30647,7 +30671,7 @@ a {
     letter-spacing: -0.08px;
   }
   #logo img {
-    height: 70px;
+    height: 35px;
   }
   .pull-right1 {
     width: 100%;

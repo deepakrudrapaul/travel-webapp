@@ -34,12 +34,17 @@ angular.module('wanderwagon-webapp')
     };
 
 
+    var showImageModal = function() {
+      angular.element(document.querySelectorAll('#eventSuccessModal')).modal('show');
+    };
+
 
     $scope.onFormSubmit = function(form) {
       remoteSvc.submitEventForm($scope.queryObj)
         .success(function(data){
-          $scope.formSubmitted = true;
-          $scope.messageType = "Success";
+          angular.element(document.querySelectorAll('#eventModal')).modal('hide');
+          showImageModal();
+          
             $scope.queryObj = {};
         })
         .error(function (error) {

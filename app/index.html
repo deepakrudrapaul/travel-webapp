@@ -91,8 +91,8 @@
         <!-- Logo
 					============================================= -->
         <div id="logo">
-          <a href="" ui-sref="home" class="standard-logo" data-dark-logo="images/logo-dark-font.png"><img style="height:80px;padding-top:15px;" src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/logo/logo.png" alt="Canvas Logo"></a>
-          <a href="" ui-sref="home" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo-dark@2x.png" alt="Canvas Logo"></a>
+          <a class="web-logo" href="" ui-sref="home" class="standard-logo" data-dark-logo="images/logo-dark-font.png"><img style="height:80px;padding-top:15px;" src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/logo/logo.png" alt="Canvas Logo"></a>
+          <a class="mobile-logo" href="" ui-sref="home" class="standard-logo" data-dark-logo="images/logo-dark-font.png"><img style="height:80px;padding-top:15px;" src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/logo/logo-short.png" alt="Canvas Logo"></a>
         </div>
         <!-- #logo end -->
         <!-- #logo end -->
@@ -210,15 +210,15 @@
       <div class="widget clearfix">
         <h5 ui-sref="about" style="text-align:center; padding: 0 0 5% 0; border-bottom:1px solid black;margin:0 10%;color:#666; cursor:pointer;"><strong>DISCOVER MORE ABOUT WANDERWAGON</strong></h5>
 
-        <h5 ui-sref="contact" style="text-align:center; padding: 5% 0; color:#666; cursor:pointer;"><strong>CONTACT</strong></h5>
+        <h5 ui-sref="contact" style="text-align:center; padding: 1% 0; color:#666; cursor:pointer;"><strong>CONTACT</strong></h5>
 
-        <h5 ui-sref="faq" style="text-align:center; padding: 5% 0; color:#666; cursor:pointer;"><strong>FAQS</strong></h5>
+        <h5 ui-sref="faq" style="text-align:center; padding: 1% 0; color:#666; cursor:pointer;"><strong>FAQS</strong></h5>
 
-        <h5 ui-sref="cancellation" style="text-align:center; padding: 5% 0; color:#666; cursor:pointer;"><strong>CANCELLATION POLICY</strong></h5>
+        <h5 ui-sref="cancellation" style="text-align:center; padding: 1% 0; color:#666; cursor:pointer;"><strong>CANCELLATION POLICY</strong></h5>
 
-        <h5 ui-sref="testimonials" style="text-align:center; padding: 5% 0; color:#666; cursor:pointer;"><strong>TESTIMONIALS</strong></h5>
+        <h5 ui-sref="testimonials" style="text-align:center; padding: 1% 0; color:#666; cursor:pointer;"><strong>TESTIMONIALS</strong></h5>
 
-        <h5 ui-sref="privacy-policy" style="text-align:center; padding: 5% 0; color:#666; cursor:pointer;"><strong>PRIVACY POLICY</strong></h5>
+        <h5 ui-sref="privacy-policy" style="text-align:center; padding: 1% 0; color:#666; cursor:pointer;"><strong>PRIVACY POLICY</strong></h5>
 
         <div class="col-sm2" style="padding:0 0 10% 40%;">
 
@@ -377,7 +377,7 @@
     <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModal">
       <div class="modal-dialog" role="document">
         <button style="color:#FFF; font-size:20px;" type="button" class="close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <img src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/popups/newsletter_popup.jpg">
+        <img src="https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/popups/newsletter.jpg">
       </div>
     </div>
 
@@ -387,16 +387,11 @@
   <!-- #footer end -->
   <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="loginModallabel">{{messageType}}</h4>
-        </div>
+      <div style="background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/popups/login.jpg'); background-position: center; height:400px;" class="modal-content">
+       
         <div class="modal-body">
           <div class="center">
-            <p style="margin-bottom: 15px;">
-              <font size="3">Login with:</font>
-            </p>
+            
             <button class="button button-rounded si-facebook si-colored" ng-click="authenticate('facebook')"><i class="icon-facebook"></i>Facebook</button>
             <p style="margin: 15px 0;">
               <font size="3">or</font>
