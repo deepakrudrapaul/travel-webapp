@@ -46017,15 +46017,21 @@ a {
   font-family: 'Raleway', sans-serif;
 }
 
+/* line 31260, ../../app/styles/main.scss */
+.mobile-margin {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
 /* When you mouse over the navigation links, change their color */
-/* line 31263, ../../app/styles/main.scss */
+/* line 31267, ../../app/styles/main.scss */
 .sidenav a:hover,
 .offcanvas a:focus {
   color: #f1f1f1;
 }
 
 /* Position and style the close button (top right corner) */
-/* line 31271, ../../app/styles/main.scss */
+/* line 31275, ../../app/styles/main.scss */
 .sidenav .closebtn {
   position: absolute;
   top: 15px;
@@ -46037,47 +46043,53 @@ a {
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media only screen and (min-device-width: 0px) and (max-device-width: 468px) {
-  /* line 31291, ../../app/styles/main.scss */
+  /* line 31295, ../../app/styles/main.scss */
+  .mobile-margin {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  /* line 31299, ../../app/styles/main.scss */
   .cover-page {
     display: none !important;
   }
 
-  /* line 31295, ../../app/styles/main.scss */
+  /* line 31303, ../../app/styles/main.scss */
   .mobile-cover-page {
     display: block !important;
   }
 
-  /* line 31299, ../../app/styles/main.scss */
+  /* line 31307, ../../app/styles/main.scss */
   .sidenav {
     padding-top: 15px;
   }
 
-  /* line 31302, ../../app/styles/main.scss */
+  /* line 31310, ../../app/styles/main.scss */
   .sidenav a {
     font-size: 12px;
   }
 
-  /* line 31306, ../../app/styles/main.scss */
+  /* line 31314, ../../app/styles/main.scss */
   .web-footer {
     display: none;
   }
 
-  /* line 31309, ../../app/styles/main.scss */
+  /* line 31317, ../../app/styles/main.scss */
   .mobile-footer {
     display: block;
   }
 
-  /* line 31313, ../../app/styles/main.scss */
+  /* line 31321, ../../app/styles/main.scss */
   .paul-slide {
     height: 500px;
   }
 
-  /* line 31317, ../../app/styles/main.scss */
+  /* line 31325, ../../app/styles/main.scss */
   .paul-slide-new {
     height: 500px;
   }
 }
-/* line 31324, ../../app/styles/main.scss */
+/* line 31332, ../../app/styles/main.scss */
 .chip {
   cursor: pointer;
   display: inline-block;
@@ -46090,12 +46102,12 @@ a {
   margin: 2%;
 }
 
-/* line 31336, ../../app/styles/main.scss */
+/* line 31344, ../../app/styles/main.scss */
 .selected-button {
   background-color: #14C1E0;
 }
 
-/* line 31341, ../../app/styles/main.scss */
+/* line 31349, ../../app/styles/main.scss */
 #flipbook {
   transition: margin-left 0.2s;
   margin-left: 3%;
@@ -46103,20 +46115,20 @@ a {
   white-space: normal;
 }
 
-/* line 31352, ../../app/styles/main.scss */
+/* line 31360, ../../app/styles/main.scss */
 #flipbook .page {
   background-color: #717070;
   font-size: 1em;
 }
 
-/* line 31357, ../../app/styles/main.scss */
+/* line 31365, ../../app/styles/main.scss */
 #flipbook .page-wrapper {
   -ms-perspective: 2000px;
   -o-perspective: 2000px;
   perspective: 2000px;
 }
 
-/* line 31365, ../../app/styles/main.scss */
+/* line 31373, ../../app/styles/main.scss */
 #flipbook .odd {
   background: -webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
   background-image: linear-gradient(to left, #FFF 95%, #C4C4C4 100%);
@@ -46125,7 +46137,7 @@ a {
   box-shadow: inset 0 0 5px #666;
 }
 
-/* line 31379, ../../app/styles/main.scss */
+/* line 31387, ../../app/styles/main.scss */
 #flipbook .even {
   background: -webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
   background-image: linear-gradient(left, #fff 95%, #dadada 100%);
@@ -46134,7 +46146,7 @@ a {
   box-shadow: inset 0 0 5px #666;
 }
 
-/* line 31393, ../../app/styles/main.scss */
+/* line 31401, ../../app/styles/main.scss */
 .show-bar #flipbook .shadow {
   -webkit-transition: -webkit-box-shadow 0.5s;
   -moz-transition: -moz-box-shadow 0.5s;
@@ -46145,7 +46157,7 @@ a {
   box-shadow: 0 0 10px #999;
 }
 
-/* line 31405, ../../app/styles/main.scss */
+/* line 31413, ../../app/styles/main.scss */
 #flipbook .p1 .side {
   width: 5px;
   height: 600px;
@@ -46159,19 +46171,19 @@ a {
   z-index: 100000;
 }
 
-/* line 31430, ../../app/styles/main.scss */
+/* line 31438, ../../app/styles/main.scss */
 #flipbook .front-side .depth {
   left: 25px;
   background-position: 0 0;
 }
 
-/* line 31435, ../../app/styles/main.scss */
+/* line 31443, ../../app/styles/main.scss */
 #flipbook .back-side .depth {
   right: 4px;
   background-position: right 0;
 }
 
-/* line 31440, ../../app/styles/main.scss */
+/* line 31448, ../../app/styles/main.scss */
 #flipbook .page-number {
   color: #999;
   width: 100%;
@@ -46183,7 +46195,7 @@ a {
   font-size: 11px;
 }
 
-/* line 31451, ../../app/styles/main.scss */
+/* line 31459, ../../app/styles/main.scss */
 .flip-previous-page {
   position: absolute;
   top: 50%;
@@ -46196,21 +46208,21 @@ a {
 }
 
 /* Photo Banner */
-/* line 31473, ../../app/styles/main.scss */
+/* line 31481, ../../app/styles/main.scss */
 .photo-roll--container {
   width: 100%;
   overflow: hidden;
   margin: 10px auto;
 }
 
-/* line 31479, ../../app/styles/main.scss */
+/* line 31487, ../../app/styles/main.scss */
 .photo-roll {
   height: 233px;
   width: 8400px;
   margin-bottom: 5px;
   font-size: 0;
 }
-/* line 31485, ../../app/styles/main.scss */
+/* line 31493, ../../app/styles/main.scss */
 .photo-roll img {
   margin-bottom: 10px;
   margin-right: 5px;
@@ -46218,11 +46230,11 @@ a {
   width: 350px;
   transition: all 0.5s ease;
 }
-/* line 31492, ../../app/styles/main.scss */
+/* line 31500, ../../app/styles/main.scss */
 .photo-roll img:hover {
   cursor: pointer;
 }
-/* line 31496, ../../app/styles/main.scss */
+/* line 31504, ../../app/styles/main.scss */
 .photo-roll img:first-child {
   animation: bannermove 60s linear infinite;
 }
@@ -46236,11 +46248,9 @@ a {
     margin-left: -6830px;
   }
 }
-/* line 31513, ../../app/styles/main.scss */
+/* line 31521, ../../app/styles/main.scss */
 .vertical-align-center {
   /* To center vertically */
   display: table-cell;
   vertical-align: middle;
 }
-
-/*# sourceMappingURL=main.css.map */

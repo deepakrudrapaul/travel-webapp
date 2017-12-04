@@ -10,10 +10,8 @@
 angular.module('wanderwagon-webapp')
   .controller('LinkCtrl', function ($scope, $window, $location, $rootScope, $auth, $timeout, auth, remoteSvc) {
 
-
-
-
     $scope.checked = true;
+    $scope.isEventOpen = false;
 
     if (auth.isLoggedIn()) {
       $rootScope.loggedIn = true;
@@ -107,13 +105,24 @@ angular.module('wanderwagon-webapp')
     };
 
 
+    $scope.openEvents = function(){
+      if($scope.isEventOpen) {
+        $scope.isEventOpen = false;
+      } else{
+        $scope.isEventOpen = true;
+      }
+      
+    }
+
+
 
     $scope.openSideNav = function () {
-      angular.element(document.getElementById('mySidenav')).css('width', '70%');
+      angular.element(document.getElementById('mySidenav')).css('width', '50%');
     }
 
     $rootScope.closeSideNav = function () {
       angular.element(document.getElementById('mySidenav')).css('width', '0px');
+      $scope.isEventOpen = false;
     }
 
     $scope.openSocialSite = function (name) {

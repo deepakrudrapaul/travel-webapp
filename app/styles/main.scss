@@ -31257,6 +31257,10 @@ a {
   font-family: 'Raleway', sans-serif;
 }
 
+.mobile-margin {
+  margin-left:40px; margin-right:40px;
+}
+
 
 /* When you mouse over the navigation links, change their color */
 
@@ -31287,6 +31291,10 @@ a {
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 468px) {
+
+  .mobile-margin {
+    margin-left:0px; margin-right:0px;
+  }
 
   .cover-page {
     display:none !important;
