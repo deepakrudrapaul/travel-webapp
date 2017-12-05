@@ -10,7 +10,7 @@
 angular.module('wanderwagon-webapp')
   .controller('EventCtrl', function ($scope, $stateParams, remoteSvc) {
    
-    var eventId = $stateParams.id;
+    var eventId = 1 ;
 
     $scope.formSubmitted = false;
     $scope.messageType = "Query Form";

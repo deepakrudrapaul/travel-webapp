@@ -110,9 +110,13 @@ angular.module('wanderwagon-webapp')
         $scope.isEventOpen = false;
       } else{
         $scope.isEventOpen = true;
-      }
-      
+      } 
     }
+
+    $scope.getSlug = function(text){
+      var slug = text.toLowerCase().trim();
+      return slug.replace(/\W+/g, '-');
+    };
 
 
 

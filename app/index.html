@@ -53,7 +53,7 @@
             <div><i style="padding:5% 5% 0 5%;" class="icon-calendar"></i>Events</div>
           </a>
           <div style="margin-left:10%;" ng-if="isEventOpen">
-            <a href="" ui-sref="events({id: item.eventId})" ng-repeat="item in eventList"  ng-touch="closeSideNav()" ng-click="closeSideNav()">
+            <a href="" ui-sref="events({eventSlug: getSlug(item.eventName)})" ng-repeat="item in eventList"  ng-touch="closeSideNav()" ng-click="closeSideNav()">
               <div><i style="padding:2%;" class=""></i>{{item.eventName}}</div>
             </a>
           </div>
@@ -120,11 +120,10 @@
 
               <ul>
                 <li ng-repeat="item in eventList">
-                  <a href="" ui-sref="events({id: item.eventId})" ng-touch="closeSideNav()" ng-click="closeSideNav()">
+                  <a href="" ui-sref="events({eventSlug: getSlug(item.eventName)})" ng-touch="closeSideNav()" ng-click="closeSideNav()">
                     <div>{{item.eventName}}</div>
                   </a>
                 </li>
-
               </ul>
 
 

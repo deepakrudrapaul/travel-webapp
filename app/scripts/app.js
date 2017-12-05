@@ -176,7 +176,7 @@ angular
         controller: 'PaymentCtrl'
       })
       .state('events', {
-        url: '/events/:id',
+        url: '/events/:eventSlug',
         templateUrl: 'views/events.html',
         controller: 'EventCtrl'
       });

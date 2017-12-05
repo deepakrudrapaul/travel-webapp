@@ -176,7 +176,7 @@ angular
         controller: 'PaymentCtrl'
       })
       .state('events', {
-        url: '/events/:id',
+        url: '/events/:eventSlug',
         templateUrl: 'views/events.html',
         controller: 'EventCtrl'
       });
@@ -643,9 +643,13 @@ angular.module('wanderwagon-webapp')
         $scope.isEventOpen = false;
       } else{
         $scope.isEventOpen = true;
-      }
-      
+      } 
     }
+
+    $scope.getSlug = function(text){
+      var slug = text.toLowerCase().trim();
+      return slug.replace(/\W+/g, '-');
+    };
 
 
 
@@ -2811,7 +2815,7 @@ angular.module('wanderwagon-webapp')
 angular.module('wanderwagon-webapp')
   .controller('EventCtrl', ["$scope", "$stateParams", "remoteSvc", function ($scope, $stateParams, remoteSvc) {
    
-    var eventId = $stateParams.id;
+    var eventId = 1 ;
 
     $scope.formSubmitted = false;
     $scope.messageType = "Query Form";
