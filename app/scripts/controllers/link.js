@@ -86,8 +86,8 @@ angular.module('wanderwagon-webapp')
         })
     };
 
-    var showImageModal = function() {
-      angular.element(document.querySelectorAll('#imageModal')).modal('show');
+    var showNewsletterModal = function() {
+      angular.element(document.querySelectorAll('#newsletterModal')).modal('show');
     };
 
 
@@ -96,7 +96,7 @@ angular.module('wanderwagon-webapp')
         remoteSvc.submitNewsletterEmail($scope.emailObj)
           .success(function (data) {
             $scope.emailObj = {};
-            showImageModal();
+            showNewsletterModal();
           })
           .error(function (error) {
             $scope.showModal("Error", "Error while submitting your request !");

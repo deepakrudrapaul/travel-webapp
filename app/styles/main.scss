@@ -30184,21 +30184,108 @@ a {
 }
 
 
+.plantripModal {
+  height:250px;
+  background-size: cover;
+  background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/popups/plantrip.jpg');
+}
+
+.eventSuccessModal {
+  height:250px;
+  background-size: cover;
+  background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/popups/event_query_popup.jpg');
+}
+
+.newsletterModal, .homeFormModal, .contactImageModal {
+  height:250px;
+  background-size: cover;
+  background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/popups/newsletter.jpg');
+}
+
+.mobile-margin {
+  margin-left:40px; margin-right:40px;
+}
+
+
 /* ----------------------------------------------------------------
 	Responsive CSS
 -----------------------------------------------------------------*/
+
+@media only screen and (min-device-width: 0px) and (max-device-width: 468px) {
+
+    .modal {
+      top:20%;
+      left:9%;
+      right:9%;
+    }
+
+    .plantripModal {
+      height:350px;
+      background-size: cover;
+      background-image: url('/images/plantrip_popup.jpg');
+    }
+
+    .eventSuccessModal {
+      height:350px;
+      background-size: cover;
+      background-image: url('/images/event_popup.jpg');
+    }
+  
+    .newsletterModal, .homeFormModal, .contactImageModal {
+      height:350px;
+      background-size: cover;
+      background-image: url('/images/newsletter_popup.jpg');
+    }
+    
+  
+    .mobile-margin {
+      margin-left:0px; margin-right:0px;
+    }
+  
+    .cover-page {
+      display:none !important;
+    }
+  
+    .mobile-cover-page {
+      display: block !important;
+    }
+  
+    .sidenav {
+      padding-top: 15px;
+    }
+    .sidenav a {
+      font-size: 12px;
+    }
+  
+    .web-footer {
+      display: none;
+    }
+    .mobile-footer {
+      display: block;
+    }
+  
+    .paul-slide {
+      height:500px;
+    }
+  
+    .paul-slide-new {
+      height: 500px;
+    }
+  }
 
 
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 767px) {
 
+
+
   .login-modal-margin {
-    margin-top:450px;
+    margin-top:390px;
   }
   
 
   .login-modal {
-    height: 550px;
+    height: 450px;
   }
 
   .web-blog-padding {
@@ -31300,9 +31387,6 @@ a {
   font-family: 'Raleway', sans-serif;
 }
 
-.mobile-margin {
-  margin-left:40px; margin-right:40px;
-}
 
 
 /* When you mouse over the navigation links, change their color */
@@ -31333,42 +31417,7 @@ a {
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 
-@media only screen and (min-device-width: 0px) and (max-device-width: 468px) {
 
-  .mobile-margin {
-    margin-left:0px; margin-right:0px;
-  }
-
-  .cover-page {
-    display:none !important;
-  }
-
-  .mobile-cover-page {
-    display: block !important;
-  }
-
-  .sidenav {
-    padding-top: 15px;
-  }
-  .sidenav a {
-    font-size: 12px;
-  }
-
-  .web-footer {
-    display: none;
-  }
-  .mobile-footer {
-    display: block;
-  }
-
-  .paul-slide {
-    height:500px;
-  }
-
-  .paul-slide-new {
-    height: 500px;
-  }
-}
 
 
 // CHIPS
