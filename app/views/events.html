@@ -34,7 +34,11 @@ background-size: cover; height:100vh;">
 
 
     <div class="center-block custom-para">
-      <p ng-repeat="para in eventDetail.paragraphs">{{para.text}}</p>
+      <p>{{eventDetail.paragraphs[0].text}}</p>
+      <p>{{eventDetail.paragraphs[1].text}}</p>
+      <p>{{eventDetail.paragraphs[2].text}}</p>
+      <p><strong>{{eventDetail.paragraphs[3].text}}</strong></p>
+      <p><strong>{{eventDetail.paragraphs[4].text}}</strong></p>
     </div>
   </div>
 </section>
