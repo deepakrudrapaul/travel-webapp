@@ -2621,6 +2621,48 @@ angular.module('wanderwagon-webapp')
         $document.scrollToElement(someElement, 30, 800);
       } 
     });
+
+
+
+    // Payment
+
+
+    $scope.isPaymentDone = false;
+
+    var options = {
+      "key": "rzp_live_lhuK7gjYSF90ee",
+
+      "name": "Wanderwagon Pvt Ltd",
+      "image": "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/logo/logo-short.png",        
+      "description": "Kheerganga Trek Booking",
+      "prefill": {
+        
+      },
+      "notes": {
+          "address": "Hello World"
+      },
+      "theme": {
+          "color": "blue"
+      },
+      handler: function(response) {
+        showPaymentModal();
+      }
+    };
+
+    $scope.pay = function(amt, desc) {
+      options.amount = amt * 100;
+      options.description = desc;
+      var rzp = new Razorpay(options);
+      rzp.open();
+    };
+
+    var onSuccess = function() {
+      
+    };
+
+    var showPaymentModal = function() {
+      angular.element(document.querySelectorAll('#paymentModal')).modal('show');
+    };
   }]);
 
 'use strict';
@@ -3239,7 +3281,7 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/payment.html',
-    "<section id=\"content\" style=\"background-color:#36353B; height:100vh\"> <div class=\"container clearfix login-margin\"> <div class=\"center-block clearfix\" style=\"max-width: 550px;background:rgba(255,255,255,0.5);margin-top:10%; padding: 50px; border-radius:1%\"> <div class=\"center\"> <button ng-if=\"!isPaymentDone\" class=\"button button-3d button-rounded button-blue\" ng-click=\"pay()\">Pay with Razorpay</button> <button ng-if=\"isPaymentDone\" class=\"button button-3d button-rounded button-blue\">Your Payment was successful!</button> </div> </div> </div> </section> <div class=\"modal fade\" id=\"paymentModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"paymentModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"paymentModallabel\">Payment</h4> </div> <div class=\"modal-body\"> <div class=\"center\"> <p style=\"margin-bottom: 15px\"> Your payment was successful ! </p> </div> </div> </div> </div> </div> "
+    "<section id=\"content\" style=\"background-color:#36353B; height:100vh\"> <div class=\"container clearfix login-margin\"> <div class=\"center-block clearfix\" style=\"max-width: 550px;background:rgba(255,255,255,0.5);margin-top:10%; padding: 50px; border-radius:1%\"> <div class=\"center\"> <button ng-if=\"!isPaymentDone\" class=\"button button-3d button-rounded button-blue\" ng-click=\"pay()\">Pay with Razorpay</button> <button ng-if=\"isPaymentDone\" class=\"button button-3d button-rounded button-blue\">Your Payment was successful!</button> </div> </div> </div> </section> "
   );
 
 
@@ -3345,15 +3387,7 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url({{planDetail.imageUrl}});background-attachment: fixed;\n" +
     "background-position: center;\n" +
     "background-repeat: no-repeat;\n" +
-    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background: url({{planDetail.mobileImageUrl}}) no-repeat center center fixed ;background-size:cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <section class=\"container clearfix\" id=\"about\" style=\"margin-top:5%\"> <div> <h2 class=\"paul-title\"> About the plan <div class=\"underline\" style=\"margin-top:15px\"> </div> </h2> </div> <div class=\"center-block custom-para\"> <p hm-read-more hm-text=\"{{planDetail.description}}\" hm-limit=\"500\" hm-more-text=\"Read more\" hm-less-text=\"Read less\" hm-dots-class=\"dots\" hm-link-class=\"links\"></p> <br> </div> </section> <section class=\"container clearfix custom-height\" id=\"places\"> <h2 class=\"paul-title\"> Key Attractions <div class=\"underline\" style=\"margin-top:15px\"> </div> </h2> <ng-owl-carousel class=\"owl-theme\" owl-items=\"planDetail.keyAttractions\" owl-properties=\"sliderProperties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide-new\" style=\"padding:2% 2% 2% 2%; max-height:550px\" data-ng-repeat=\"item in planDetail.keyAttractions\"> <img style=\"object-fit:fill; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> </section> <section class=\"container pricing clearfix\" style=\"margin-top:3%\"> <h2 class=\"paul-title\"> Approx Price <div class=\"underline\" style=\"margin-top:15px\"> </div> </h2> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Backpacker</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span> {{planDetail.pricing.backPackerPrice}}<span class=\"price-tenure\">/head</span> </div> </div> </div> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Budget</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>{{planDetail.pricing.budgetPrice}}<span class=\"price-tenure\">/head</span> </div> <!--<div class=\"pricing-features\">\n" +
-    "									<ul>\n" +
-    "										<li><strong>Full</strong> Access</li>\n" +
-    "										<li><i class=\"icon-code\"></i> Source Files</li>\n" +
-    "										<li><strong>100</strong> User Accounts</li>\n" +
-    "										<li><strong>1 Year</strong> License</li>\n" +
-    "										<li>Phone &amp; Email Support</li>\n" +
-    "									</ul>\n" +
-    "								</div>--> </div> </div> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Comfort</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>{{planDetail.pricing.comfortPrice}}<span class=\"price-tenure\">/head</span> </div> </div> </div> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Luxury</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>{{planDetail.pricing.luxuryPrice}}<span class=\"price-tenure\">/head</span> </div> </div> </div> </section> <section> <div> <h2 style=\"text-align:center;margin:6rem 0 0rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> Itinerary <div class=\"underline\" style=\"margin-top:2%\"> </div> </h2> </div> <div class=\"center-block custom-container\"> <flip-book data=\"itineraries\"></flip-book> </div> </section> <section> <div> <h2 style=\"text-align:center;margin:6rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> Travel Tips <div class=\"underline\" style=\"margin-top:2%\"> </div> </h2> </div> <ul style=\"padding-left:5%\"> <li style=\"padding:1%\" class=\"common-font\" ng-repeat=\"item in planDetail.tips\" type=\"square\">{{item}}</li> </ul> <div ui-sref=\"plan-trip\" class=\"center-block\" style=\"width:60%; cursor:pointer; padding:10%\"> <a class=\"button button-3d button-rounded button-blue loved-it-button\"> Plan My Trip!</a> </div> </section> "
+    "background-size: cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background: url({{planDetail.mobileImageUrl}}) no-repeat center center fixed ;background-size:cover; height:100vh\"> <div class=\"container clearfix\"> </div> </div> <section class=\"container clearfix\" id=\"about\" style=\"margin-top:5%\"> <div> <h2 class=\"paul-title\"> About the plan <div class=\"underline\" style=\"margin-top:15px\"> </div> </h2> </div> <div class=\"center-block custom-para\"> <p hm-read-more hm-text=\"{{planDetail.description}}\" hm-limit=\"500\" hm-more-text=\"Read more\" hm-less-text=\"Read less\" hm-dots-class=\"dots\" hm-link-class=\"links\"></p> <br> </div> </section> <section class=\"container clearfix custom-height\" id=\"places\"> <h2 class=\"paul-title\"> Key Attractions <div class=\"underline\" style=\"margin-top:15px\"> </div> </h2> <ng-owl-carousel class=\"owl-theme\" owl-items=\"planDetail.keyAttractions\" owl-properties=\"sliderProperties\" owl-ready=\"ready($api)\"> <div class=\"paul-slide-new\" style=\"padding:2% 2% 2% 2%; max-height:550px\" data-ng-repeat=\"item in planDetail.keyAttractions\"> <img style=\"object-fit:fill; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> </section> <section class=\"container pricing clearfix\" style=\"margin-top:3%\"> <h2 class=\"paul-title\"> Approx Price <div class=\"underline\" style=\"margin-top:15px\"> </div> </h2> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Backpacker</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span> {{planDetail.pricing.backPackerPrice}}<span class=\"price-tenure\">/head</span> </div> <div ng-click=\"pay(planDetail.pricing.backPackerPrice,  planDetail.title)\" class=\"center-block\" style=\"width:50%; cursor:pointer\"> <a class=\"button button-3d button-rounded button-blue\">Book Now</a> </div> </div> </div> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Budget</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>{{planDetail.pricing.budgetPrice}}<span class=\"price-tenure\">/head</span> </div> <div ng-click=\"pay(planDetail.pricing.budgetPrice,  planDetail.title)\" class=\"center-block\" style=\"width:50%; cursor:pointer\"> <a class=\"button button-3d button-rounded button-blue\">Book Now</a> </div> </div> </div> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Comfort</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>{{planDetail.pricing.comfortPrice}}<span class=\"price-tenure\">/head</span> </div> <div ng-click=\"pay(planDetail.pricing.comfortPrice,  planDetail.title)\" class=\"center-block\" style=\"width:50%; cursor:pointer\"> <a class=\"button button-3d button-rounded button-blue\">Book Now</a> </div> </div> </div> <div class=\"col-md-3\"> <div class=\"pricing-box\"> <div class=\"pricing-title\"> <h3>Luxury</h3> </div> <div class=\"pricing-price\"> <span class=\"price-unit\">&#8377;</span>{{planDetail.pricing.luxuryPrice}}<span class=\"price-tenure\">/head</span> </div> <div ng-click=\"pay(planDetail.pricing.luxuryPrice,  planDetail.title)\" class=\"center-block\" style=\"width:50%; cursor:pointer\"> <a class=\"button button-3d button-rounded button-blue\">Book Now</a> </div> </div> </div> </section> <section> <div> <h2 style=\"text-align:center;margin:6rem 0 0rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> Itinerary <div class=\"underline\" style=\"margin-top:2%\"> </div> </h2> </div> <div class=\"center-block custom-container\"> <flip-book data=\"itineraries\"></flip-book> </div> </section> <section> <div> <h2 style=\"text-align:center;margin:6rem 0 8rem 0;letter-spacing:-0.45px;line-height:1;font-weight:100;font-size:3.8rem\"> Travel Tips <div class=\"underline\" style=\"margin-top:2%\"> </div> </h2> </div> <ul style=\"padding-left:5%\"> <li style=\"padding:1%\" class=\"common-font\" ng-repeat=\"item in planDetail.tips\" type=\"square\">{{item}}</li> </ul> <div ui-sref=\"plan-trip\" class=\"center-block\" style=\"width:60%; cursor:pointer; padding:10%\"> <a class=\"button button-3d button-rounded button-blue loved-it-button\"> Plan My Trip!</a> </div> </section> <div class=\"modal fade\" id=\"paymentModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"paymentModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button> <h4 class=\"modal-title\" id=\"paymentModallabel\">Payment</h4> </div> <div class=\"modal-body\"> <div class=\"center\"> <p style=\"margin-bottom: 15px\"> Your payment was successful ! </p> </div> </div> </div> </div> </div>"
   );
 
 
