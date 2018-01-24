@@ -27,6 +27,7 @@ angular.module('wanderwagon-webapp')
     });
 
     remoteSvc.getAllEvents().then(function (data){
+      console.log(data.response);
       $rootScope.eventList = data.response;
     })
 

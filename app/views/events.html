@@ -1,25 +1,15 @@
-<div class="cover-page" style="background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/cover_pic.jpg');background-attachment: fixed;
+<div class="cover-page" style="background-color:#36353B;background-image: url({{eventDetail.eventImage}});background-attachment: fixed;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover; height:100vh;">
-  <div class="container clearfix">
-    <div class="center-block slider-caption-center">
-      <!-- <h2 class="text-center big-title">{{detail.name}}</h2>
-      <p class="text-center primary-title-1">{{detail.title}}</p> -->
-
-    </div>
+  <div style="background-color:#36353B; height:100px;"class="clearfix">
   </div>
 </div>
 
-<div class="mobile-cover-page" style="background-color:#36353B;background: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/event_cover_pic.jpg') no-repeat center center fixed;background-attachment: fixed;
+<div class="mobile-cover-page" style="background-color:#36353B;background: url({{mobileImageUrl}}) no-repeat center center fixed;background-attachment: fixed;
 background-size: cover; height:100vh;">
-  <div class="container clearfix">
-    <div class="center-block slider-caption-center">
-      <!-- <h2 class="text-center primary-title">{{detail.name}}</h2>
-      <p class="text-center primary-title-1">{{detail.title}}</p> -->
-
-    </div>
-  </div>
+<div style="background-color:#36353B; height:100px;"class="clearfix">
+</div>
 </div>
 
 <section id="about">
@@ -36,49 +26,122 @@ background-size: cover; height:100vh;">
     <div class="center-block custom-para">
       <p>{{eventDetail.paragraphs[0].text}}</p>
       <p>{{eventDetail.paragraphs[1].text}}</p>
-      <p>{{eventDetail.paragraphs[2].text}}</p>
-      <p><strong>{{eventDetail.paragraphs[3].text}}</strong></p>
-      <p><strong>{{eventDetail.paragraphs[4].text}}</strong></p>
+      <p ng-if="eventDetail.paragraphs[2]">{{eventDetail.paragraphs[2].text}}</p>
+      <p ng-if="eventDetail.paragraphs[2]">
+        <strong>{{eventDetail.paragraphs[3].text}}</strong>
+      </p>
+      <p ng-if="eventDetail.paragraphs[2]">
+        <strong>{{eventDetail.paragraphs[4].text}}</strong>
+      </p>
     </div>
   </div>
 </section>
 
 <section id="content">
-  <div class="container">
-    <div class="row row-centered">
-      <div style="margin-bottom:2%;" ng-repeat="location in eventDetail.eventLocations" class="col-sm-4 col-centered col-fixed ">
 
+  <div class="content-wrap">
 
-        <a ng-href="{{location.pdfUrl}}">
-          <div class="photo" style="cursor:pointer; width: 100%;
-    height: 100%;
-    float: left;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    margin: 10px 0;">
+    <div class="container clearfix">
 
-
-            <img class="img-responsive paul-slide" style="display: block;
-    position: relative;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    margin: 0 auto;" src="{{location.locationImage}}">
-
+      <div style="float: none; display: block; margin-right: auto; margin-left: auto;" class="col_half nobottommargin">
+        <form id="conditional-form" name="tripForm" class="nobottommargin" ng-submit="submitTravelPlanForm(tripForm)">
+          <input type='hidden' name='csrfmiddlewaretoken' value='bajfYtFDAH9kXmH4gfAHVQOPg4DvfBYZ' />
+          <div class="col_full">
+            <label for="form-condition-1">Where would you like to go?</label>
+            <input placeholder="Destination" pattern="^[a-zA-Z ]*$"   type="text" class="form-control required" id="form-condition-1" name="form-condition-1"
+              ng-model="formObj.destination" required>
+            <!-- <a href="#" class="button button-border button-rounded"><i class="icon-gift"></i>Button</a> -->
           </div>
-        </a>
-        <div style="text-align:center;">
-          <button class="button button-3d button-rounded button-blue" ng-click="onQueryButtonClicked(location.locationId)">Send Query</button>
-        </div>
+
+          <div ng-style="display" class="col_full" id="form-condition-2-wrap" >
+            <label for="form-condition-2">Where would you like to start from?</label>
+            <input placeholder="Starting Point" pattern="^[a-zA-Z ]*$"  type="text" class="form-control required" id="form-condition-2" name="form-condition-2"
+              ng-model="formObj.departureCity" required>
+          </div>
+
+          <div ng-style="display1" class="input-daterange travel-date-group" >
+            <div class="col_full">
+              <label for="form-condition-3">When would you like to go?</label>
+              <p class="input-group">
+                <input placeholder="Date" ng-model="formObj.departureTime"  type="text" class="form-control" popup-placement="top" show-button-bar="false" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions"
+                  ng-required="true"  alt-input-formats="altInputFormats" required/>
+                <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-touch="open1();" ng-click="open1(); "><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+              </p>
+            </div>
+          </div>
+
+
+
+          <div ng-style="display2" class="col_full" id="form-condition-4-wrap" >
+            <label for="form-condition-4">How long would you like to go for?</label>
+            <input placeholder="Duration" required ng-model="formObj.duration" min="1"  placeholder="Enter Duration"  type="number" class="form-control required" id="form-condition-4" name="form-condition-4">
+          </div>
+
+          <div ng-style="display3" class="col_full" id="form-condition-5-wrap" >
+            <label for="form-condition-5">How many wanderers would accompany you?</label>
+            <input placeholder="Number of Travellers" required ng-model="formObj.personCount" min="0"  type="number" class="form-control required" id="form-condition-5" name="form-condition-5">
+          </div>
+
+
+          <div ng-style="display4" class="col_full" id="form-condition-10-wrap" >
+            <label for="form-condition-10">What's the budget of your trip? ( per head )</label>
+            <select required ng-model="formObj.perPersonBudget"  id="form-condition-10" name="form-condition-10" class="required form-control">
+									<option value=""> Select One </option>
+									<option value="5K">5K</option>
+									<option value="5K to 10K">5K to 10K</option>
+									<option value="10K to 15K">10K to 15K</option>
+									<option value="15K to 20K">15K to 20K</option>
+									<option value="more than 20K">more than 20K</option>
+								</select>
+          </div>
+
+
+          <div ng-style="display5" class="col_full" id="form-condition-12-wrap" >
+            <label for="form-condition-12">What stage of planning do you find yourself in?</label>
+            <select required ng-model="formObj.planningStage"  id="form-condition-12" name="form-condition-12" class="required form-control">
+									<option value=""> Select One </option>
+									<option value="Still dreaming...not sure I'm going to this trip">DREAMING - I really want to but haven't 
+                    planned anything yet</option>
+									<option value="I know I am going somewhere, but not sure about the places">PLANNING - I'm Going somewhere, Not sure
+                    where</option>
+									<option value="I am definitely going">BOOKING - I am ready for my next
+                    adventure.</option>
+								</select>
+          </div>
+        
+
+          <div ng-style="display6" class="col_full" id="form-condition-13-wrap" >
+            <label for="form-condition-13">What would you like to see and do ? ( or you can leave it to us )</label>
+            <textarea ng-model="formObj.message"  class="form-control required" id="form-condition-13" name="form-condition-13"
+              rows="5" col="20" placeholder="Message to us"></textarea>
+          </div>
+
+          <div ng-style="display7" class="col_full" id="form-condition-16-wrap" >
+            <label for="form-condition-16">Phone No.</label>
+            <input placeholder="Phone Number"  pattern="^[0][1-9]\d{9}$|^[1-9]\d{9}$" required ng-model="formObj.phone"  type="tel" class="form-control required" id="form-condition-16" name="form-condition-16"
+              value="">
+          </div>
+
+          <div ng-style="display10" class="col_full" id="form-condition-submit" >
+            <button  class="button nomargin" type="submit">Plan My Trip</button>
+          </div>
+
+        </form>
       </div>
     </div>
   </div>
 </section>
+
+
 <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
         <h4 class="modal-title" id="eventModallabel">Query Form</h4>
       </div>
       <div class="modal-body">
@@ -86,17 +149,23 @@ background-size: cover; height:100vh;">
           <div style="padding:0 5%;" class="col-full">
             <form name="queryForm" class="nobottommargin" ng-submit="onFormSubmit(queryForm)">
               <div class="col_full">
-                <label for="queryName"><font color="white">Name</font></label>
-                <input type="text" class="form-control" id="queryName" name="queryName" placeholder="Name" ng-model="queryObj.name"
-                  required />
+                <label for="queryName">
+                  <font color="white">Name</font>
+                </label>
+                <input type="text" class="form-control" id="queryName" name="queryName" placeholder="Name" ng-model="queryObj.name" required
+                />
               </div>
               <div class="col_full">
-                <label for="queryPhone"><font color="white">Phone no.</font></label>
-                <input type="tel" class="form-control" id="queryPhone" name="queryPhone" placeholder="Phone" ng-model="queryObj.phone"
-                  required />
+                <label for="queryPhone">
+                  <font color="white">Phone no.</font>
+                </label>
+                <input type="tel" class="form-control" id="queryPhone" name="queryPhone" placeholder="Phone" ng-model="queryObj.phone" required
+                />
               </div>
               <div class="col_full nobottommargin">
-                <button type="submit" class="button button-blue"><font color="white">Submit</font></button>
+                <button type="submit" class="button button-blue">
+                  <font color="white">Submit</font>
+                </button>
               </div>
             </form>
           </div>
@@ -107,14 +176,53 @@ background-size: cover; height:100vh;">
 </div>
 
 
+<div class="modal fade" id="tripModal" tabindex="-1" role="dialog" aria-labelledby="tripModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="tripModallabel">{{messageType}}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div style="padding:5%;" class="col-full">
+            {{message}}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="plantripModal" tabindex="-1" role="dialog" aria-labelledby="plantripModal">
+  <div class="modal-dialog" role="document">
+    <button style="color:#FFF; font-size:40px;" type="button" class="close " data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-content plantripModal">
+
+      <div class="modal-body">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="modal fade" id="eventSuccessModal" tabindex="-1" role="dialog" aria-labelledby="eventSuccessModal">
   <div class="modal-dialog" role="document">
-    <button style="color:#FFF; font-size:40px;" type="button" class="close " data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <div  class="modal-content eventSuccessModal" >
-      
-       <div class="modal-body">
-     
-       </div>
-     </div>
+    <button style="color:#FFF; font-size:40px;" type="button" class="close " data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-content eventSuccessModal">
+
+      <div class="modal-body">
+
+      </div>
+    </div>
   </div>
 </div>

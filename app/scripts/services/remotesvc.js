@@ -158,7 +158,6 @@ angular.module('wanderwagon-webapp')
         }).then(function (data, status) {
           return data.data.response;
         }, function (error, status) {
-          console.log(error);
           return error.data.error;
         });
       },
