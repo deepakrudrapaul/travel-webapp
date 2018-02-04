@@ -33,116 +33,29 @@ angular.module('wanderwagon-webapp')
     getEventById(eventId);
 
   
-    $scope.showModal = function (messageType, message) {
+    var showModal = function (messageType, message) {
       angular.element(document.querySelectorAll('#tripModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
     };
 
     
-    $scope.showLoginModal = function (messageType, message) {
-      angular.element(document.querySelectorAll('#loginModal')).modal('show');
-      $scope.messageType = messageType;
-      $scope.message = message;
-    };
-
     var showImageModal = function() {
       angular.element(document.querySelectorAll('#plantripModal')).modal('show');
     };
 
-    $scope.today = function () {
-      $scope.dt = new Date();
-    };
-    $scope.today();
-
-    $scope.clear = function () {
-      $scope.dt = null;
-    };
-
-    $scope.inlineOptions = {
-      minDate: new Date(),
-      showWeeks: true
-    };
-
-    $scope.dateOptions = {
-      formatYear: 'yy',
-      minDate: new Date(),
-      startingDay: 1
-    };
 
 
-
-    $scope.toggleMin = function () {
-      $scope.inlineOptions.minDate = $scope.inlineOptions.minDate ? null : new Date();
-      $scope.dateOptions.minDate = $scope.inlineOptions.minDate;
-    };
-
-    $scope.toggleMin();
-
-    $scope.open1 = function () {
-      $scope.popup1.opened = true;
-    };
-
-    $scope.open2 = function () {
-      $scope.popup2.opened = true;
-    };
-
-    $scope.setDate = function (year, month, day) {
-      $scope.dt = new Date(year, month, day);
-    };
-
-    $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-    $scope.format = $scope.formats[0];
-    $scope.altInputFormats = ['M!/d!/yyyy'];
-
-    $scope.popup1 = {
-      opened: false
-    };
-
-    $scope.popup2 = {
-      opened: false
-    };
-
-    var tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    var afterTomorrow = new Date();
-    afterTomorrow.setDate(tomorrow.getDate() + 1);
-    $scope.events = [{
-        date: tomorrow,
-        status: 'full'
-      },
-      {
-        date: afterTomorrow,
-        status: 'partially'
-      }
-    ];
-
-    $rootScope.$on('social-login', function (event, data) {
-      if($scope.formObj != undefined) {
-        remoteSvc.submitPlanMyTripForm($scope.formObj)
-      .success(function (data) {
-        $scope.formObj = {};
-        showImageModal();
-      })
-      .error(function (error) {
-        $scope.showModal("Error", error.error.message);
-      })
-      }
-    });
-
-    $scope.submitTravelPlanForm = function (form) {    
-      if (auth.isLoggedIn()) {
-          remoteSvc.submitPlanMyTripForm($scope.formObj)
+    $scope.submitEventForm = function (form) {    
+          remoteSvc.submitEventForm($scope.formObj)
           .success(function (data) {
             $scope.formObj = {};
-            showImageModal();
+            showModal("Success", "We will return the favour soon.");
           })
           .error(function (error) {
             $scope.formObj = {};
             $scope.showModal("Error", error.error.message);
           })
-      } else{
-        $scope.showLoginModal("Log In", "");
-      }
     };
+
   });

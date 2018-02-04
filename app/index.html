@@ -53,9 +53,9 @@
           <a href=""  ng-touch="openEvents()" ng-click="openEvents()">
             <div><i style="padding:5% 5% 0 5%;" class="icon-calendar"></i>Events</div>
           </a>
-          <div style="margin-left:10%;" ng-if="isEventOpen">
-            <a href="" ui-sref="events({eventSlug: getSlug(item.eventName)})" ng-repeat="item in eventList"  ng-touch="closeSideNav()" ng-click="closeSideNav()">
-              <div><i style="padding:2%;" class=""></i>{{item.eventName}}</div>
+          <div style="margin-left:10%;" >
+            <a href="" ui-sref="events({eventSlug: getSlug('valentines day')})"  ng-touch="closeSideNav()" ng-click="closeSideNav()">
+              <div><i style="padding:2%;" class=""></i>Valentine's Day</div>
             </a>
           </div>
           <a href="" ui-sref-active="active-menu" ui-sref="blog.list" ng-touch="closeSideNav()" ng-click="closeSideNav()">
@@ -120,9 +120,9 @@
               </a>
 
               <ul>
-                <li ng-repeat="item in eventList">
-                  <a href="" ui-sref="events({eventSlug: getSlug(item.eventName)})" ng-touch="closeSideNav()" ng-click="closeSideNav()">
-                    <div>{{item.eventName}}</div>
+                <li >
+                  <a href="" ui-sref="events({eventSlug: getSlug('valentines day')})" ng-touch="closeSideNav()" ng-click="closeSideNav()">
+                    <div>Valentine's Day</div>
                   </a>
                 </li>
               </ul>

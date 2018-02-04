@@ -316,9 +316,13 @@ angular.module('wanderwagon-webapp')
         return $http({
           method: 'POST',
           data: formObj,
-          url: remoteAddr + '/events/query'
+          url: remoteAddr + '/events/smallQuery'
         })
       },
+
+
+
+
 
 
 
