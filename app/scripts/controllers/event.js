@@ -50,7 +50,7 @@ angular.module('wanderwagon-webapp')
           remoteSvc.submitEventForm($scope.formObj)
           .success(function (data) {
             $scope.formObj = {};
-            showModal("Success", "We will return the favour soon.");
+            showModal("Cheers", "We will return the favour soon.");
           })
           .error(function (error) {
             $scope.formObj = {};

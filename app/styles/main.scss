@@ -3871,6 +3871,8 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
 
 .nav-justified>li {
   float: none;
+  display: table-cell;
+  width: 1%;
 }
 
 .nav-justified>li>a {
@@ -29603,7 +29605,7 @@ label.checkbox {
 
 .custom-para-event>p {
   color: #67747c; font-family: Benton Sans,Helvetica Neue,Helvetica,Arial,sans-serif; font-size: 1.8rem; font-style:
-  normal; line-height: 1.8; margin: 0 auto 5.5rem; text-align: center;
+  normal; line-height: 1.8; margin: 0 auto 5.5rem; ;
 }
 
 .custom-para>p {

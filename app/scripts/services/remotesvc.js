@@ -12,6 +12,7 @@ angular.module('wanderwagon-webapp')
 
     var homePageData;
     var remoteAddr = ENV.endPoint;
+    var remoteAddrV2 = "http://54.179.166.97:8080/api/v2";
 
     return {
       getConsumerProfile: function () {
@@ -333,10 +334,7 @@ angular.module('wanderwagon-webapp')
         return $http({
           method: 'POST',
           data: formObj,
-          headers: {
-            'auth-token': auth.getToken()
-          },
-          url: remoteAddr + '/travelplans/query'
+          url: remoteAddrV2 + '/travelplan/query'
         })
       },
 

@@ -2,14 +2,14 @@
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover; height:100vh;">
-  <div style="background-color:#36353B; height:100px;"class="clearfix">
+  <div style="background-color:#36353B; height:100px;" class="clearfix">
   </div>
 </div>
 
 <div class="mobile-cover-page" style="background-color:#36353B;background: url({{mobileImageUrl}}) no-repeat center center fixed;background-attachment: fixed;
 background-size: cover; height:100vh;">
-<div style="background-color:#36353B; height:100px;"class="clearfix">
-</div>
+  <div style="background-color:#36353B; height:100px;" class="clearfix">
+  </div>
 </div>
 
 <section id="about">
@@ -23,24 +23,26 @@ background-size: cover; height:100vh;">
     </div>
 
 
-    <div class="center-block custom-para-event">
-      <p>Aren't we all rebels, fighting against the "usual". 
-        Trying to change the roles that people have given us in the stories they make up in their heads. Love is no different, being caged and trapped within the bars of a single definition.
+    <div class="custom-para-event">
+      <p>Aren't we all rebels, fighting against the "usual". Trying to change the roles that people have given us in the stories
+        they make up in their heads. Love is no different, being caged and trapped within the bars of a single definition.
         We have already made these bars weak enough for us to escape, by choosing whom or what to love, in a way we fancy.</p>
 
-        <p>
-          This Valentine's, let's break through and define love in not just one or two but million and trillion ways. 
-Let's start with a journey to celebrate love , togetherness and freedom.
-Allow WanderWagon to give you the travel experiences, that would forever be cherished in your memories.
-        </p>
+      <p>
+        This Valentine's, let's break through and define love in not just one or two but million and trillion ways. Let's start with
+        a journey to celebrate love , togetherness and freedom. Allow WanderWagon to give you the travel experiences, that
+        would forever be cherished in your memories.
+      </p>
+
+      <p>
+        So, Why not Pack your bags and head out for a celebratory journey ?
+      </p>
+      <div class="custom-para-event" style="text-align:center;">
 
         <p>
-          So, Why not Pack your bags and head out for a celebratory journey ?
+          <strong>Remember - This year it's just you and your Valentine against the world.</strong> 
         </p>
-
-        <p>
-          Remember - This year it's just you and your Valentine against the world.
-        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -50,14 +52,14 @@ Allow WanderWagon to give you the travel experiences, that would forever be cher
   <div class="content-wrap">
 
     <div class="container clearfix">
-        
+
       <div style="float: none; display: block; margin-right: auto; margin-left: auto;" class="col_half nobottommargin">
-          <h2 style="margin-bottom:5%;">We would need a little help from you.</h2>
+        <h2 style="margin-bottom:5%;">We would need a little help from you.</h2>
         <form id="conditional-form" name="tripForm" class="nobottommargin" ng-submit="submitEventForm(tripForm)">
-     
+
           <div class="col_full">
             <label for="form-condition-1">Destination</label>
-            <input placeholder="Destination" pattern="^[a-zA-Z ]*$"   type="text" class="form-control required" id="form-condition-1" name="form-condition-1"
+            <input placeholder="Where would you like to go?" pattern="^[a-zA-Z ]*$" type="text" class="form-control required" id="form-condition-1" name="form-condition-1"
               ng-model="formObj.destination" required>
             <!-- <a href="#" class="button button-border button-rounded"><i class="icon-gift"></i>Button</a> -->
           </div>
@@ -65,26 +67,26 @@ Allow WanderWagon to give you the travel experiences, that would forever be cher
 
           <div class="col_full">
             <label for="template-contactform-name">Name </label>
-            <input placeholder="Name" pattern="[a-zA-Z][a-zA-Z ]+" required ng-model="formObj.name" type="text" id="template-contactform-name" name="template-contactform-name" value=""
-              class="form-control required show-error-msg" />
+            <input placeholder="Enter your name" pattern="[a-zA-Z][a-zA-Z ]+" required ng-model="formObj.name" type="text" id="template-contactform-name"
+              name="template-contactform-name" value="" class="form-control required show-error-msg" />
           </div>
 
           <div class="col_full">
             <label for="template-contactform-email">Email </label>
-            <input placeholder="Email" required ng-model="formObj.email" type="email" id="template-contactform-email" name="template-contactform-email"
+            <input placeholder="Enter your email id" required ng-model="formObj.email" type="email" id="template-contactform-email" name="template-contactform-email"
               value="" class="required email form-control" />
           </div>
 
           <div class="col_full col_last">
             <label for="template-contactform-phone">Phone</label>
-            <input placeholder="Phone"  pattern="^[0][1-9]\d{9}$|^[1-9]\d{9}$" required ng-model="formObj.phone" type="text" id="template-contactform-phone" name="template-contactform-phone"
-              value="" class="form-control" />
+            <input placeholder="Enter your mobile no." pattern="^[0][1-9]\d{9}$|^[1-9]\d{9}$" required ng-model="formObj.phone" type="text" id="template-contactform-phone"
+              name="template-contactform-phone" value="" class="form-control" />
           </div>
 
-        
 
-          <div ng-style="display10" class="col_full" id="form-condition-submit" >
-            <button  class="button nomargin" type="submit">Plan My Trip</button>
+
+          <div ng-style="display10" class="col_full" id="form-condition-submit">
+            <button class="button nomargin" type="submit">Plan My Trip</button>
           </div>
 
         </form>
@@ -138,14 +140,15 @@ Allow WanderWagon to give you the travel experiences, that would forever be cher
 <div class="modal fade" id="tripModal" tabindex="-1" role="dialog" aria-labelledby="tripModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style="text-align:center;">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title" id="tripModallabel">{{messageType}}</h4>
+        <h4 class="modal-title" id="tripModallabel">{{messageType}}<img style="margin-left:20px;" height="20" width="20" src="images/cheers.png"></h4>
+        
       </div>
       <div class="modal-body">
-        <div class="row">
+        <div class="row" style="text-align:center;">
           <div style="padding:5%;" class="col-full">
             {{message}}
           </div>

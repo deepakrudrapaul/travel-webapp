@@ -16,14 +16,14 @@ angular.module('wanderwagon-webapp')
       $scope.message = message;
     };
 
-    
+
     $scope.showLoginModal = function (messageType, message) {
       angular.element(document.querySelectorAll('#loginModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
     };
 
-    var showImageModal = function() {
+    var showImageModal = function () {
       angular.element(document.querySelectorAll('#plantripModal')).modal('show');
     };
 
@@ -94,36 +94,40 @@ angular.module('wanderwagon-webapp')
       }
     ];
 
-    $rootScope.$on('social-login', function (event, data) {
-      if($scope.formObj != undefined) {
-        remoteSvc.submitPlanMyTripForm($scope.formObj)
-      .success(function (data) {
-        $scope.formObj = {};
-        showImageModal();
-      })
-      .error(function (error) {
-        $scope.showModal("Error", error.error.message);
-      })
-      }
-    });
+    // $rootScope.$on('social-login', function (event, data) {
+    //   if($scope.formObj != undefined) {
+    //     remoteSvc.submitPlanMyTripForm($scope.formObj)
+    //   .success(function (data) {
+    //     $scope.formObj = {};
+    //     showImageModal();
+    //   })
+    //   .error(function (error) {
+    //     $scope.showModal("Error", error.error.message);
+    //   })
+    //   }
+    // });
 
-    $scope.submitTravelPlanForm = function (form) {    
-      if (auth.isLoggedIn()) {
-        if(form.$valid) {
-          remoteSvc.submitPlanMyTripForm($scope.formObj)
-          .success(function (data) {
-            $scope.formObj = {};
-            showImageModal();
-          })
-          .error(function (error) {
-            $scope.formObj = {};
-            $scope.showModal("Error", error.error.message);
-          })
-        } else{
-          $scope.showModal("Error", "Please enter details correctly !");
-        }
-      } else{
-        $scope.showLoginModal("Log In", "");
-      }
-    };
+    $scope.currentTab = 0;
+
+    $scope.nextTab = function (tab) {
+      $scope.currentTab = tab;
+    }
+
+    $scope.submitTravelPlanForm = function (form) {
+      remoteSvc.submitPlanMyTripForm($scope.formObj)
+        .success(function (data) {
+          $scope.formObj = {};
+          $scope.showModal("Cheers", "Good job there! Leave the rest to us.");
+        })
+        .error(function (error) {
+          $scope.formObj = {};
+          console.log(error);
+          $scope.showModal("Error", error.error.message);
+        })
+    }
+
+
+
+
+
   });
