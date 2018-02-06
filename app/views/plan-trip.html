@@ -23,134 +23,142 @@ background-size: cover; height:100vh;">
 
 
       <div style="float: none; display: block; margin-right: auto; margin-left: auto;" class="col_half nobottommargin">
-        <h5>
-          Let's break the ice because this can't be done without you.</h5>
+        <h4>
+          Let's break the ice because this can't be done without you.</h4>
         <h2>ABOUT THE TRIP</h2>
         <form id="conditional-form" name="tripForm" class="nobottommargin" ng-submit="submitTravelPlanForm(tripForm)">
 
-            <h5>Let's see what you have planned.</h5>
+          <h4>
+            <strong>
+              Let's see what you have planned.
+            </strong>
+          </h4>
 
 
-              <div class="col_full">
-                <label for="form-condition-1">WHERE ARE YOU HEADED?</label>
-                <input placeholder="EX. DELHI" pattern="^[a-zA-Z ]*$" type="text" class="form-control required" id="form-condition-1" name="form-condition-1" ng-model="formObj.departureCity"
-                  required>
-                <!-- <a href="#" class="button button-border button-rounded"><i class="icon-gift"></i>Button</a> -->
-              </div>
+          <div class="col_full">
+            <label for="form-condition-1">WHERE ARE YOU HEADED?</label>
+            <input placeholder="EX. DELHI" pattern="^[a-zA-Z ]*$" type="text" class="form-control required" id="form-condition-1" name="form-condition-1"
+              ng-model="formObj.departureCity" required>
+            <!-- <a href="#" class="button button-border button-rounded"><i class="icon-gift"></i>Button</a> -->
+          </div>
 
-              <div class="col_full" id="form-condition-2-wrap">
-                <label for="form-condition-2">WHERE WOULD YOU START FROM?</label>
-                <input placeholder="EX. MUMBAI" pattern="^[a-zA-Z ]*$" type="text" class="form-control required" id="form-condition-2" name="form-condition-2" ng-model="formObj.destination"
-                  required>
-              </div>
+          <div class="col_full" id="form-condition-2-wrap">
+            <label for="form-condition-2">WHERE WOULD YOU START FROM?</label>
+            <input placeholder="EX. MUMBAI" pattern="^[a-zA-Z ]*$" type="text" class="form-control required" id="form-condition-2" name="form-condition-2"
+              ng-model="formObj.destination" required>
+          </div>
 
-              <div class="input-daterange travel-date-group">
-                <div class="col_full">
-                  <label for="form-condition-3">WHEN DO YOU WANT TO LEAVE?</label>
-                  <p class="input-group">
-                    <input ng-model="formObj.departureTime" ng-click="display2={display:'block'}" type="text" class="form-control" popup-placement="top"
-                      show-button-bar="false" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions"
-                      ng-required="true" alt-input-formats="altInputFormats" required/>
-                    <span class="input-group-btn">
-                      <button type="button" class="btn btn-default" ng-touch="open1(); display2={display:'block'}" ng-click="open1(); display2={display:'block'}">
-                        <i class="glyphicon glyphicon-calendar"></i>
-                      </button>
-                    </span>
-                  </p>
-                </div>
-              </div>
-
-
-
-              <div class="col_full" id="form-condition-4-wrap">
-                <label for="form-condition-4">WHAT WOULD BE THE DURATION OF YOUR TRIP ( In days)?</label>
-                <input required ng-model="formObj.duration" min="1" placeholder="Enter the number of days" type="number" class="form-control required"
-                  id="form-condition-4" name="form-condition-4">
-              </div>
-
-              <div class="col_full" id="form-condition-5-wrap">
-                <label for="form-condition-5">HOW MANY PEOPLE WOULD COME ALONG? NUMBER OF PEOPLE WHO ARE PLANNING THIS TRIP INCLUDING YOU</label>
-                <input required ng-model="formObj.personCount" min="0" type="number" class="form-control required" id="form-condition-5"
-                  name="form-condition-5">
-              </div>
-
-              <div class="col_full" id="form-condition-10-wrap">
-                  <label for="form-condition-10">WHAT SERVICES DO YOU NEED?</label>
-                  <select required ng-model="formObj.servicesNeed" ng-touch="display5={display:'block'}" ng-click="display5={display:'block'}"
-                    id="form-condition-10" name="form-condition-10" class="required form-control">
-                    <option value=""> Select One </option>
-                    <option value="TRANSPORT">TRANSPORT</option>
-                    <option value="STAY">STAY</option>
-                    <option value="ACTIVITIES">ACTIVITIES</option>
-                  </select>
-                </div>
+          <div class="input-daterange travel-date-group">
+            <div class="col_full">
+              <label for="form-condition-3">WHEN DO YOU WANT TO LEAVE?</label>
+              <p class="input-group">
+                <input ng-model="formObj.departureTime" ng-click="display2={display:'block'}" type="text" class="form-control" popup-placement="top"
+                  show-button-bar="false" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions"
+                  ng-required="true" alt-input-formats="altInputFormats" required/>
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-touch="open1(); display2={display:'block'}" ng-click="open1(); display2={display:'block'}">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                  </button>
+                </span>
+              </p>
+            </div>
+          </div>
 
 
-                <h5>Let's see how much you have saved.</h5>
 
-                <div class="col_full" id="form-condition-10-wrap">
-                  <label for="form-condition-10">WHAT'S THE BUDGET OF YOUR TRIP? ( PER HEAD ) </label>
-                  <select required ng-model="formObj.perPersonBudget" ng-touch="display5={display:'block'}" ng-click="display5={display:'block'}"
-                    id="form-condition-10" name="form-condition-10" class="required form-control">
-                    <option value=""> SELECT ONE </option>
-                    <option value="5K">LESS THAN 5K</option>
-                    <option value="5K to 10K">5K TO 10K</option>
-                    <option value="10K to 15K">10K TO 15K</option>
-                    <option value="15K to 20K">15K TO 20K</option>
-                    <option value="more than 20K">MORE THAN 20K</option>
-                  </select>
-                </div>
-  
-  
-                <div class="col_full" id="form-condition-10-wrap">
-                    <label for="form-condition-10">WHAT MATTERS THE MOST TO YOU?</label>
-                    <select required ng-model="formObj.budgetDescription" ng-touch="display5={display:'block'}" ng-click="display5={display:'block'}"
-                      id="form-condition-10" name="form-condition-10" class="required form-control">
-                      <option value=""> Select One </option>
-                      <option value="I would like to stick to my budget">I WOULD LIKE TO STICK TO MY BUDGET</option>
-                      <option value="For a better trip, I won't mind paying a little more">FOR A BETTER TRIP, I WON'T MIND PAYING A LITTLE MORE</option>
-                      <option value="Money won't be an issue, if I get the perfect trip">MONEY WON'T BE AN ISSUE, IF I GET THE PERFECT TRIP</option>
-                    </select>
-                  </div>
-  
-  
-                <div class="col_full" id="form-condition-12-wrap">
-                  <label for="form-condition-12">WHAT STAGE OF PLANNING DO YOU FIND YOURSELF IN?</label>
-                  <select required ng-model="formObj.planningStage" ng-touch="display6={display:'block'}" ng-click="display6={display:'block'}"
-                    id="form-condition-12" name="form-condition-12" class="required form-control">
-                    <option value=""> SELECT ONE </option>
-                    <option value="Still dreaming...not sure I'm going to this trip">DREAMING - I really want to but haven't planned anything yet</option>
-                    <option value="I know I am going somewhere, but not sure about the places">PLANNING - I'm Going somewhere, Not sure where
-                    </option>
-                    <option value="I am definitely going">BOOKING - I am ready for my next adventure.
-                    </option>
-                  </select>
-                </div>
+          <div class="col_full" id="form-condition-4-wrap">
+            <label for="form-condition-4">WHAT WOULD BE THE DURATION OF YOUR TRIP ( In days)?</label>
+            <input required ng-model="formObj.duration" min="1" placeholder="Enter the number of days" type="number" class="form-control required"
+              id="form-condition-4" name="form-condition-4">
+          </div>
+
+          <div class="col_full" id="form-condition-5-wrap">
+            <label for="form-condition-5">HOW MANY PEOPLE WOULD COME ALONG? NUMBER OF PEOPLE WHO ARE PLANNING THIS TRIP INCLUDING YOU</label>
+            <input required ng-model="formObj.personCount" min="0" type="number" class="form-control required" id="form-condition-5"
+              name="form-condition-5">
+          </div>
+
+          <div class="col_full" id="form-condition-10-wrap">
+            <label for="form-condition-10">WHAT SERVICES DO YOU NEED?</label>
+            <select required ng-model="formObj.servicesNeed" ng-touch="display5={display:'block'}" ng-click="display5={display:'block'}"
+              id="form-condition-10" name="form-condition-10" class="required form-control">
+              <option value=""> Select One </option>
+              <option value="TRANSPORT">TRANSPORT</option>
+              <option value="STAY">STAY</option>
+              <option value="ACTIVITIES">ACTIVITIES</option>
+            </select>
+          </div>
 
 
-                <h5>Let's see who you are.</h5>
+          <h4>
+            <strong>Let's see how much you have saved.</strong>
+          </h4>
 
-                <div class="col_full">
-                  <label for="template-contactform-name">NAME </label>
-                  <input placeholder="Enter your name" pattern="[a-zA-Z][a-zA-Z ]+" required ng-model="formObj.name" type="text" id="template-contactform-name"
-                    name="template-contactform-name" value="" class="form-control required show-error-msg" />
-                </div>
-  
-                <div class="col_full">
-                  <label for="template-contactform-email">EMAIL </label>
-                  <input placeholder="Enter your email id" required ng-model="formObj.email" type="email" id="template-contactform-email" name="template-contactform-email"
-                    value="" class="required email form-control" />
-                </div>
-  
-                <div class="col_full col_last">
-                  <label for="template-contactform-phone">PHONE No.</label>
-                  <input placeholder="Enter your mobile no." pattern="^[0][1-9]\d{9}$|^[1-9]\d{9}$" required ng-model="formObj.phone" type="text"
-                    id="template-contactform-phone" name="template-contactform-phone" value="" class="form-control" />
-                </div>
-  
-                <div class="col_full" id="form-condition-submit">
-                  <button class="button nomargin" ng-click="submitTravelPlanForm(form)" type="button">Plan My Trip</button>
-                </div>
+          <div class="col_full" id="form-condition-10-wrap">
+            <label for="form-condition-10">WHAT'S THE BUDGET OF YOUR TRIP? ( PER HEAD ) </label>
+            <select required ng-model="formObj.perPersonBudget" ng-touch="display5={display:'block'}" ng-click="display5={display:'block'}"
+              id="form-condition-10" name="form-condition-10" class="required form-control">
+              <option value=""> SELECT ONE </option>
+              <option value="5K">LESS THAN 5K</option>
+              <option value="5K to 10K">5K TO 10K</option>
+              <option value="10K to 15K">10K TO 15K</option>
+              <option value="15K to 20K">15K TO 20K</option>
+              <option value="more than 20K">MORE THAN 20K</option>
+            </select>
+          </div>
+
+
+          <div class="col_full" id="form-condition-10-wrap">
+            <label for="form-condition-10">WHAT MATTERS THE MOST TO YOU?</label>
+            <select required ng-model="formObj.budgetDescription" ng-touch="display5={display:'block'}" ng-click="display5={display:'block'}"
+              id="form-condition-10" name="form-condition-10" class="required form-control">
+              <option value=""> Select One </option>
+              <option value="I would like to stick to my budget">I WOULD LIKE TO STICK TO MY BUDGET</option>
+              <option value="For a better trip, I won't mind paying a little more">FOR A BETTER TRIP, I WON'T MIND PAYING A LITTLE MORE</option>
+              <option value="Money won't be an issue, if I get the perfect trip">MONEY WON'T BE AN ISSUE, IF I GET THE PERFECT TRIP</option>
+            </select>
+          </div>
+
+
+          <div class="col_full" id="form-condition-12-wrap">
+            <label for="form-condition-12">WHAT STAGE OF PLANNING DO YOU FIND YOURSELF IN?</label>
+            <select required ng-model="formObj.planningStage" ng-touch="display6={display:'block'}" ng-click="display6={display:'block'}"
+              id="form-condition-12" name="form-condition-12" class="required form-control">
+              <option value=""> SELECT ONE </option>
+              <option value="Still dreaming...not sure I'm going to this trip">DREAMING - I really want to but haven't planned anything yet</option>
+              <option value="I know I am going somewhere, but not sure about the places">PLANNING - I'm Going somewhere, Not sure where
+              </option>
+              <option value="I am definitely going">BOOKING - I am ready for my next adventure.
+              </option>
+            </select>
+          </div>
+
+
+          <h4>
+            <strong>Let's see who you are.</strong>
+          </h4>
+
+          <div class="col_full">
+            <label for="template-contactform-name">NAME </label>
+            <input placeholder="Enter your name" pattern="[a-zA-Z][a-zA-Z ]+" required ng-model="formObj.name" type="text" id="template-contactform-name"
+              name="template-contactform-name" value="" class="form-control required show-error-msg" />
+          </div>
+
+          <div class="col_full">
+            <label for="template-contactform-email">EMAIL </label>
+            <input placeholder="Enter your email id" required ng-model="formObj.email" type="email" id="template-contactform-email" name="template-contactform-email"
+              value="" class="required email form-control" />
+          </div>
+
+          <div class="col_full col_last">
+            <label for="template-contactform-phone">PHONE No.</label>
+            <input placeholder="Enter your mobile no." pattern="^[0][1-9]\d{9}$|^[1-9]\d{9}$" required ng-model="formObj.phone" type="text"
+              id="template-contactform-phone" name="template-contactform-phone" value="" class="form-control" />
+          </div>
+
+          <div class="col_full" id="form-condition-submit">
+            <button class="button nomargin" ng-click="submitTravelPlanForm(form)" type="button">Plan My Trip</button>
+          </div>
 
 
         </form>
@@ -172,8 +180,10 @@ background-size: cover; height:100vh;">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title" id="tripModallabel">{{messageType}}<img style="margin-left:20px;" height="20" width="20" src="images/cheers.png"></h4>
-        
+        <h4 class="modal-title" id="tripModallabel">{{messageType}}
+          <img style="margin-left:20px;" height="20" width="20" src="images/cheers.png">
+        </h4>
+
       </div>
       <div class="modal-body">
         <div class="row" style="text-align:center;">
