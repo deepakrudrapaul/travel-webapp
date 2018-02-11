@@ -480,6 +480,342 @@ angular.module('wanderwagon-webapp')
     ];
 
 
+    var travelPlans = [{
+        imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/thumbnail.png",
+        title: "Plan 1",
+        id: 1,
+        itineraries: [
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/1.jpg",
+            id: 1
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/2.jpg",
+            id: 2
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/3.jpg",
+            id: 3
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/4.jpg",
+            id: 4
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/5.jpg",
+            id: 5
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/6.jpg",
+            id: 6
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/7.jpg",
+            id: 7
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/8.jpg",
+            id: 8
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/9.jpg",
+            id: 9
+          }
+        ]
+      },
+
+      {
+        imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/thumbnail.png",
+        title: "Plan 2",
+        id: 2,
+        itineraries: [
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/1.jpg",
+            id: 1
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/2.jpg",
+            id: 2
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/3.jpg",
+            id: 3
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/4.jpg",
+            id: 4
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/5.jpg",
+            id: 5
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/6.jpg",
+            id: 6
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/7.jpg",
+            id: 7
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/8.jpg",
+            id: 8
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/9.jpg",
+            id: 9
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/9.jpg",
+            id: 10
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/9.jpg",
+            id: 11
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/9.jpg",
+            id: 12
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/9.jpg",
+            id: 13
+          }
+        ]
+      },
+
+      {
+        imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/thumbnail.png",
+        title: "Plan 3",
+        id: 3,
+        itineraries: [
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 1
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 2
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 3
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 4
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 5
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 6
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 7
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 8
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 9
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 10
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 11
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 12
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 13
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 14
+          }
+        ]
+      },
+      {
+        "imageUrl": "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/thumbnail.png",
+        title: "Plan 4",
+        id: 4,
+        itineraries: [
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/1.jpg",
+            id: 1
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/2.jpg",
+            id: 2
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/3.jpg",
+            id: 3
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/4.jpg",
+            id: 4
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/5.jpg",
+            id: 5
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/6.jpg",
+            id: 6
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/7.jpg",
+            id: 7
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/8.jpg",
+            id: 8
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/9.jpg",
+            id: 9
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/10.jpg",
+            id: 10
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/11.jpg",
+            id: 11
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/12.jpg",
+            id: 12
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/13.jpg",
+            id: 13
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/14.jpg",
+            id: 14
+          }
+        ]
+      },
+      {
+        imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/thumbnail.png",
+        title: "Plan 5",
+        id: 5,
+        itineraries: [
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 1
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 2
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 3
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 4
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 5
+          }
+          ,{
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 6
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 7
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 8
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 9
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 10
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 11
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 12
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 13
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 14
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 15
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 16
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 17
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 18
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 19
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 20
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 21
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 22
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 23
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 24
+          }
+        ]
+      }
+    ];
+
+
     // Public API here
     return {
       getHomePageContent: function () {
@@ -539,16 +875,16 @@ angular.module('wanderwagon-webapp')
         return deferred.promise;
       },
 
-      getAllEvents: function () {
+      getEventTravelPlans: function () {
         var deferred = $q.defer();
-        deferred.resolve(eventsData);
+        deferred.resolve(travelPlans);
         return deferred.promise;
       },
 
-      getEventById: function (id) {
+      getPlanById: function (id) {
         var deferred = $q.defer();
-        angular.forEach(eventsData, function (value, key) {
-          if (value.eventId == id) {
+        angular.forEach(travelPlans, function (value, key) {
+          if (value.id == id) {
             deferred.resolve(value);
           }
         });

@@ -33,7 +33,7 @@ angular
   ])
   .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', '$authProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider) {
 
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
     // $locationProvider.hashPrefix('');
 
     $authProvider.baseUrl = '/';
@@ -175,9 +175,14 @@ angular
         templateUrl: 'views/payment.html',
         controller: 'PaymentCtrl'
       })
-      .state('events', {
-        url: '/events/:eventSlug',
-        templateUrl: 'views/events.html',
+      .state('valentine', {
+        url: '/event/1/:eventSlug',
+        templateUrl: 'views/valentine.html',
+        controller: 'EventCtrl'
+      })
+      .state('holi', {
+        url: '/event/2/:eventSlug',
+        templateUrl: 'views/holi.html',
         controller: 'EventCtrl'
       });
 
@@ -2357,6 +2362,342 @@ angular.module('wanderwagon-webapp')
     ];
 
 
+    var travelPlans = [{
+        imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/thumbnail.png",
+        title: "Plan 1",
+        id: 1,
+        itineraries: [
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/1.jpg",
+            id: 1
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/2.jpg",
+            id: 2
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/3.jpg",
+            id: 3
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/4.jpg",
+            id: 4
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/5.jpg",
+            id: 5
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/6.jpg",
+            id: 6
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/7.jpg",
+            id: 7
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/8.jpg",
+            id: 8
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_1/flipbook/9.jpg",
+            id: 9
+          }
+        ]
+      },
+
+      {
+        imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/thumbnail.png",
+        title: "Plan 2",
+        id: 2,
+        itineraries: [
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/1.jpg",
+            id: 1
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/2.jpg",
+            id: 2
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/3.jpg",
+            id: 3
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/4.jpg",
+            id: 4
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/5.jpg",
+            id: 5
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/6.jpg",
+            id: 6
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/7.jpg",
+            id: 7
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/8.jpg",
+            id: 8
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/9.jpg",
+            id: 9
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/9.jpg",
+            id: 10
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/9.jpg",
+            id: 11
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/9.jpg",
+            id: 12
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_2/flipbook/9.jpg",
+            id: 13
+          }
+        ]
+      },
+
+      {
+        imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/thumbnail.png",
+        title: "Plan 3",
+        id: 3,
+        itineraries: [
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 1
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 2
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 3
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 4
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 5
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 6
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 7
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 8
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 9
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 10
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 11
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 12
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 13
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/1.jpg",
+            id: 14
+          }
+        ]
+      },
+      {
+        "imageUrl": "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/thumbnail.png",
+        title: "Plan 4",
+        id: 4,
+        itineraries: [
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/1.jpg",
+            id: 1
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/2.jpg",
+            id: 2
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/3.jpg",
+            id: 3
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/4.jpg",
+            id: 4
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/5.jpg",
+            id: 5
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/6.jpg",
+            id: 6
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/7.jpg",
+            id: 7
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/8.jpg",
+            id: 8
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/9.jpg",
+            id: 9
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/10.jpg",
+            id: 10
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/11.jpg",
+            id: 11
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/12.jpg",
+            id: 12
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/13.jpg",
+            id: 13
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/14.jpg",
+            id: 14
+          }
+        ]
+      },
+      {
+        imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/thumbnail.png",
+        title: "Plan 5",
+        id: 5,
+        itineraries: [
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 1
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 2
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 3
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 4
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 5
+          }
+          ,{
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 6
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 7
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 8
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 9
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 10
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 11
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 12
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 13
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 14
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 15
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 16
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 17
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 18
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 19
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 20
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 21
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 22
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 23
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/1.jpg",
+            id: 24
+          }
+        ]
+      }
+    ];
+
+
     // Public API here
     return {
       getHomePageContent: function () {
@@ -2416,16 +2757,16 @@ angular.module('wanderwagon-webapp')
         return deferred.promise;
       },
 
-      getAllEvents: function () {
+      getEventTravelPlans: function () {
         var deferred = $q.defer();
-        deferred.resolve(eventsData);
+        deferred.resolve(travelPlans);
         return deferred.promise;
       },
 
-      getEventById: function (id) {
+      getPlanById: function (id) {
         var deferred = $q.defer();
-        angular.forEach(eventsData, function (value, key) {
-          if (value.eventId == id) {
+        angular.forEach(travelPlans, function (value, key) {
+          if (value.id == id) {
             deferred.resolve(value);
           }
         });
@@ -2861,16 +3202,16 @@ angular.module('wanderwagon-webapp')
  * Controller of the wanderwagon-webapp
  */
 angular.module('wanderwagon-webapp')
-  .controller('EventCtrl', ["$scope", "$stateParams", "auth", "$rootScope", "remoteSvc", function ($scope, $stateParams,auth, $rootScope, remoteSvc) {
-   
-    var event = $stateParams.eventSlug ;
+  .controller('EventCtrl', ["$scope", "$stateParams", "auth", "$rootScope", "mockRemoteSvc", "$document", function ($scope, $stateParams, auth, $rootScope, mockRemoteSvc, $document) {
+
+    var event = $stateParams.eventSlug;
     var eventId;
 
     $scope.mobileImageUrl;
-    if(event.includes('holi')) {
+    if (event.includes('holi')) {
       eventId = 2
       $scope.mobileImageUrl = 'https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/holi_cover.jpg';
-    } else{
+    } else {
       eventId = 1;
       $scope.mobileImageUrl = 'https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/mobile/valentine_cover.jpg';
     }
@@ -2878,37 +3219,115 @@ angular.module('wanderwagon-webapp')
     $scope.formSubmitted = false;
     $scope.messageType = "Query Form";
 
-    var getEventById = function(eventId) {
-      remoteSvc.getEventById(eventId).then(function(data){
-        $scope.eventDetail = data.response;
-      });
-    };
-    getEventById(eventId);
+    // var getEventById = function (eventId) {
+    //   remoteSvc.getEventById(eventId).then(function (data) {
+    //     $scope.eventDetail = data.response;
+    //   });
+    // };
+    // getEventById(eventId);
 
-  
+
     var showModal = function (messageType, message) {
       angular.element(document.querySelectorAll('#tripModal')).modal('show');
       $scope.messageType = messageType;
       $scope.message = message;
     };
 
-    
-    var showImageModal = function() {
+
+    var showImageModal = function () {
       angular.element(document.querySelectorAll('#plantripModal')).modal('show');
+    };
+
+    var getEventTravelPlans = function() {
+      mockRemoteSvc.getEventTravelPlans().then(function (data){
+        $scope.travelPlans = data;
+      });
+    };
+
+    getEventTravelPlans();
+
+    $scope.getPlanById = function(id) {
+      mockRemoteSvc.getPlanById(id).then(function (data) {
+        $scope.itineraries = data.itineraries;
+        console.log(data);
+      });
+    }
+
+
+    var owlAPi;
+    $scope.ready = function ($api) {
+      owlAPi = $api;
+    };
+
+    $scope.sliderProperties = {
+      // autoHeight:true,
+      animateIn: 'fadeIn',
+      lazyLoad: true,
+      items: 4,
+      margin: 0,
+      mouseDrag: true,
+      touchDrag: true,
+      dots: false,
+      nav: true,
+      responsiveClass: true,
+      navText : ["<i class='icon-circle-arrow-left'></i>","<i class='icon-circle-arrow-right'></i>"],
+      responsive: {
+        0: {
+          items: 1,
+          nav: true
+        },
+        600: {
+          items: 3,
+          nav: true
+        },
+        1000: {
+          items: 4,
+          nav: true
+        }
+      }
     };
 
 
 
-    $scope.submitEventForm = function (form) {    
-          remoteSvc.submitEventForm($scope.formObj)
-          .success(function (data) {
-            $scope.formObj = {};
-            showModal("Cheers", "We will return the favour soon.");
-          })
-          .error(function (error) {
-            $scope.formObj = {};
-            $scope.showModal("Error", error.error.message);
-          })
+   
+
+
+  $scope.openAccordion = false;
+    $scope.openOrCloseAccordion = function () {
+      console.log("Clicked");
+        if ($scope.openAccordion === true) {
+          $scope.closeAccordion();
+        } else if ($scope.openAccordion === false) {
+          $scope.openAccordion = true;
+        }
+    };
+
+    $scope.closeAccordion = function () {
+      $scope.itineraries = undefined;
+      $scope.openAccordion = false;
+      var someElement = angular.element(document.getElementById('places'));
+        $document.scrollToElement(someElement, 30, 800);
+    };
+
+    
+    $scope.$watch('openAccordion', function (openAccordion) {
+      if (openAccordion) {
+        var someElement = angular.element(document.getElementById('accordion1'));
+        $document.scrollToElement(someElement, 30, 800);
+      }
+    });
+
+
+    $scope.submitEventForm = function (form) {
+      remoteSvc.submitEventForm($scope.formObj)
+        .success(function (data) {
+          $scope.formObj = {};
+          showModal("Cheers", "We will return the favour soon.");
+        })
+        .error(function (error) {
+          $scope.formObj = {};
+          $scope.showModal("Error", error.error.message);
+        })
     };
 
   }]);
@@ -3123,6 +3542,15 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
 
   $templateCache.put('views/flipbook.html',
     "<div id=\"flipbook\"> <div ng-repeat=\"item in data\"> <img style=\"object-fit:fill; width:100%; height:100%\" ng-src=\"{{item.imageUrl}}\"> </div> </div> <a class=\"btn flipbook-prev-button\" href=\"#\" id=\"prev\"> <i style=\"margin:7px 0 0 0px; font-size:15px; color:white; font-weight:600\" class=\"icon-angle-left\"></i> </a> <a class=\"btn flipbook-next-button\" href=\"#\" id=\"next\"> <i style=\"margin:7px 0 0 0; font-size:15px; color:white; font-weight:600\" class=\"icon-angle-right\"></i></a> "
+  );
+
+
+  $templateCache.put('views/holi.html',
+    "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url({{eventDetail.eventImage}});background-attachment: fixed;\n" +
+    "background-position: center;\n" +
+    "background-repeat: no-repeat;\n" +
+    "background-size: cover; height:100vh\"> <div style=\"background-color:#36353B; height:100px\" class=\"clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background: url({{mobileImageUrl}}) no-repeat center center fixed;background-attachment: fixed;\n" +
+    "background-size: cover; height:100vh\"> <div style=\"background-color:#36353B; height:100px\" class=\"clearfix\"> </div> </div> <section id=\"about\"> <div class=\"container clearfix\"> <div> <h2 class=\"paul-title\" style=\"margin-top:5%\"> Chasing colours - Mathura ki Holi </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> </div> <div class=\"custom-para-event\"> <p>How do you see yourself playing Holi this year? Same old or Some bold? It is for you to decide. Kyuki Mathura ki Holi nahi kheli, to kya kia? Let us help you check one more item off your bucket list as you soak into the vibrancy of this festival.</p> <p> Travel back in time to witness the authentic Holi of Mathura. Follow the steps of Lord Krishna and let the inner kid take over. Let go of the inhibitions and let others watch you bring your A-Game. This Holi there's no stopping you; Cause what happens in Mathura stays in Mathura! </p> <p> Celebrations start a week in advance and here is when and where you should be while celebrating Holi in Mathura. </p> </div> </div> </section> <section class=\"clearfix custom-padding\" id=\"places\"> <h2 style=\"margin-top:5%\" class=\"paul-title\"> Travel Plans </h2> <div class=\"underline\" style=\"margin-bottom:5rem\"> </div> <ng-owl-carousel class=\"owl-theme\" owl-items=\"travelPlans\" owl-properties=\"sliderProperties\" owl-ready=\"ready($api)\"> <div ng-click=\"openOrCloseAccordion() ; getPlanById(item.id)\" class=\"paul-slide\" style=\"padding:2% 0 2% 0%\" data-ng-repeat=\"item in travelPlans\"> <img style=\"object-fit:cover; width:100%; height:100%\" class=\"owl-lazy\" data-src=\"{{item.imageUrl}}\"> </div> </ng-owl-carousel> <div id=\"accordion1\" class=\"clearfix\"> <uib-accordion> <uib-accordion-group is-open=\"openAccordion\"> <div class=\"center-block custom-container\"> <flip-book ng-if=\"itineraries\" data=\"itineraries\"></flip-book> </div> </uib-accordion-group> </uib-accordion> </div> </section> <section id=\"content\"> <div class=\"content-wrap\"> <div class=\"container clearfix\"> <div style=\"float: none; display: block; margin-right: auto; margin-left: auto\" class=\"col_half nobottommargin\"> <h2 style=\"margin-bottom:5%\">We would need a little help from you.</h2> <form id=\"conditional-form\" name=\"tripForm\" class=\"nobottommargin\" ng-submit=\"submitEventForm(tripForm)\"> <div class=\"col_full\"> <label for=\"form-condition-1\">Destination</label> <input placeholder=\"Where would you like to go?\" pattern=\"^[a-zA-Z ]*$\" type=\"text\" class=\"form-control required\" id=\"form-condition-1\" name=\"form-condition-1\" ng-model=\"formObj.destination\" required> <!-- <a href=\"#\" class=\"button button-border button-rounded\"><i class=\"icon-gift\"></i>Button</a> --> </div> <div class=\"col_full\"> <label for=\"template-contactform-name\">Name </label> <input placeholder=\"Enter your name\" pattern=\"[a-zA-Z][a-zA-Z ]+\" required ng-model=\"formObj.name\" type=\"text\" id=\"template-contactform-name\" name=\"template-contactform-name\" value=\"\" class=\"form-control required show-error-msg\"> </div> <div class=\"col_full\"> <label for=\"template-contactform-email\">Email </label> <input placeholder=\"Enter your email id\" required ng-model=\"formObj.email\" type=\"email\" id=\"template-contactform-email\" name=\"template-contactform-email\" value=\"\" class=\"required email form-control\"> </div> <div class=\"col_full col_last\"> <label for=\"template-contactform-phone\">Phone</label> <input placeholder=\"Enter your mobile no.\" pattern=\"^[0][1-9]\\d{9}$|^[1-9]\\d{9}$\" required ng-model=\"formObj.phone\" type=\"text\" id=\"template-contactform-phone\" name=\"template-contactform-phone\" value=\"\" class=\"form-control\"> </div> <div ng-style=\"display10\" class=\"col_full\" id=\"form-condition-submit\"> <button class=\"button nomargin\" type=\"submit\">Plan My Trip</button> </div> </form> </div> </div> </div> </section> <div class=\"modal fade\" id=\"eventModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"eventModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"> <span aria-hidden=\"true\">&times;</span> </button> <h4 class=\"modal-title\" id=\"eventModallabel\">Query Form</h4> </div> <div class=\"modal-body\"> <div class=\"row\"> <div style=\"padding:0 5%\" class=\"col-full\"> <form name=\"queryForm\" class=\"nobottommargin\" ng-submit=\"onFormSubmit(queryForm)\"> <div class=\"col_full\"> <label for=\"queryName\"> <font color=\"white\">Name</font> </label> <input type=\"text\" class=\"form-control\" id=\"queryName\" name=\"queryName\" placeholder=\"Name\" ng-model=\"queryObj.name\" required> </div> <div class=\"col_full\"> <label for=\"queryPhone\"> <font color=\"white\">Phone no.</font> </label> <input type=\"tel\" class=\"form-control\" id=\"queryPhone\" name=\"queryPhone\" placeholder=\"Phone\" ng-model=\"queryObj.phone\" required> </div> <div class=\"col_full nobottommargin\"> <button type=\"submit\" class=\"button button-blue\"> <font color=\"white\">Submit</font> </button> </div> </form> </div> </div> </div> </div> </div> </div> <div class=\"modal fade\" id=\"tripModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"tripModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\" style=\"text-align:center\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"> <span aria-hidden=\"true\">&times;</span> </button> <h4 class=\"modal-title\" id=\"tripModallabel\">{{messageType}}<img style=\"margin-left:20px\" height=\"20\" width=\"20\" src=\"images/cheers.png\"></h4> </div> <div class=\"modal-body\"> <div class=\"row\" style=\"text-align:center\"> <div style=\"padding:5%\" class=\"col-full\"> {{message}} </div> </div> </div> </div> </div> </div> <div class=\"modal fade\" id=\"plantripModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"plantripModal\"> <div class=\"modal-dialog\" role=\"document\"> <button style=\"color:#FFF; font-size:40px\" type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"> <span aria-hidden=\"true\">&times;</span> </button> <div class=\"modal-content plantripModal\"> <div class=\"modal-body\"> </div> </div> </div> </div> <div class=\"modal fade\" id=\"eventSuccessModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"eventSuccessModal\"> <div class=\"modal-dialog\" role=\"document\"> <button style=\"color:#FFF; font-size:40px\" type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"> <span aria-hidden=\"true\">&times;</span> </button> <div class=\"modal-content eventSuccessModal\"> <div class=\"modal-body\"> </div> </div> </div> </div> "
   );
 
 
@@ -3410,6 +3838,15 @@ angular.module('wanderwagon-webapp').run(['$templateCache', function($templateCa
     "        <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img style=\"height:400px\" ng-src=\"{{blog[0].imageUrl}}\" alt=\"{{blog[0].title}}\"> </picture> </div> <div class=\"text blog-content-left\" style=\"height:auto;margin:0; padding:0 0 0 10px\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[0].id})\" class=\"blog-title\"> {{blog[0].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[0].description}}... </p> <span class=\"icon-calendar3 toppadding\"><b> {{blog[0].date | date : 'dd-MM-yyyy'}} • {{blog[0].author}} </b></span> </div> </div> </div> <div style=\"overflow:hidden\"> <div style=\"cursor:pointer; height:400px\" ui-sref=\"blog.detail({postId: blog[1].id})\" class=\"image blog-image-right\"> <picture> <!--<source media=\"(min-width: 1280px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 1280w\">\n" +
     "        <source media=\"(min-width: 960px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 960w\">\n" +
     "        <source media=\"(min-width: 640px)\" srcset=\"https://www.roughguides.com/wp-content/uploads/2016/04/pier-440339-660x420.jpg 640w\">--> <img style=\"height:400px\" ng-src=\"{{blog[1].imageUrl}}\" alt=\"{{blog[1].title}}\"> </picture> </div> <div class=\"text blog-content-right\"> <h3 style=\"cursor:pointer\" ui-sref=\"blog.detail({postId: blog[1].id})\" class=\"blog-title\"> {{blog[1].title}}</h3> <div class=\"blog-content\"> <p style=\"margin-bottom:0\">{{blog[1].description}}... </p> <span class=\"icon-calendar3 toppadding\"> <b> {{blog[1].date | date : 'dd-MM-yyyy'}} • {{blog[1].author}} </b></span> </div> </div> </div> </section> "
+  );
+
+
+  $templateCache.put('views/valentine.html',
+    "<div class=\"cover-page\" style=\"background-color:#36353B;background-image: url({{eventDetail.eventImage}});background-attachment: fixed;\n" +
+    "background-position: center;\n" +
+    "background-repeat: no-repeat;\n" +
+    "background-size: cover; height:100vh\"> <div style=\"background-color:#36353B; height:100px\" class=\"clearfix\"> </div> </div> <div class=\"mobile-cover-page\" style=\"background-color:#36353B;background: url({{mobileImageUrl}}) no-repeat center center fixed;background-attachment: fixed;\n" +
+    "background-size: cover; height:100vh\"> <div style=\"background-color:#36353B; height:100px\" class=\"clearfix\"> </div> </div> <section id=\"about\"> <div class=\"container clearfix\"> <div> <h2 class=\"paul-title\" style=\"margin-top:5%\"> Valentine's Day </h2> <div class=\"underline\" style=\"margin-bottom:2rem\"> </div> </div> <div class=\"custom-para-event\"> <p>Aren't we all rebels, fighting against the \"usual\". Trying to change the roles that people have given us in the stories they make up in their heads. Love is no different, being caged and trapped within the bars of a single definition. We have already made these bars weak enough for us to escape, by choosing whom or what to love, in a way we fancy.</p> <p> This Valentine's, let's break through and define love in not just one or two but million and trillion ways. Let's start with a journey to celebrate love , togetherness and freedom. Allow WanderWagon to give you the travel experiences, that would forever be cherished in your memories. </p> <p> So, Why not Pack your bags and head out for a celebratory journey ? </p> <div class=\"custom-para-event\" style=\"text-align:center\"> <p> <strong>Remember - This year it's just you and your Valentine against the world.</strong> </p> </div> </div> </div> </section> <section id=\"content\"> <div class=\"content-wrap\"> <div class=\"container clearfix\"> <div style=\"float: none; display: block; margin-right: auto; margin-left: auto\" class=\"col_half nobottommargin\"> <h2 style=\"margin-bottom:5%\">We would need a little help from you.</h2> <form id=\"conditional-form\" name=\"tripForm\" class=\"nobottommargin\" ng-submit=\"submitEventForm(tripForm)\"> <div class=\"col_full\"> <label for=\"form-condition-1\">Destination</label> <input placeholder=\"Where would you like to go?\" pattern=\"^[a-zA-Z ]*$\" type=\"text\" class=\"form-control required\" id=\"form-condition-1\" name=\"form-condition-1\" ng-model=\"formObj.destination\" required> <!-- <a href=\"#\" class=\"button button-border button-rounded\"><i class=\"icon-gift\"></i>Button</a> --> </div> <div class=\"col_full\"> <label for=\"template-contactform-name\">Name </label> <input placeholder=\"Enter your name\" pattern=\"[a-zA-Z][a-zA-Z ]+\" required ng-model=\"formObj.name\" type=\"text\" id=\"template-contactform-name\" name=\"template-contactform-name\" value=\"\" class=\"form-control required show-error-msg\"> </div> <div class=\"col_full\"> <label for=\"template-contactform-email\">Email </label> <input placeholder=\"Enter your email id\" required ng-model=\"formObj.email\" type=\"email\" id=\"template-contactform-email\" name=\"template-contactform-email\" value=\"\" class=\"required email form-control\"> </div> <div class=\"col_full col_last\"> <label for=\"template-contactform-phone\">Phone</label> <input placeholder=\"Enter your mobile no.\" pattern=\"^[0][1-9]\\d{9}$|^[1-9]\\d{9}$\" required ng-model=\"formObj.phone\" type=\"text\" id=\"template-contactform-phone\" name=\"template-contactform-phone\" value=\"\" class=\"form-control\"> </div> <div ng-style=\"display10\" class=\"col_full\" id=\"form-condition-submit\"> <button class=\"button nomargin\" type=\"submit\">Plan My Trip</button> </div> </form> </div> </div> </div> </section> <div class=\"modal fade\" id=\"eventModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"eventModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"> <span aria-hidden=\"true\">&times;</span> </button> <h4 class=\"modal-title\" id=\"eventModallabel\">Query Form</h4> </div> <div class=\"modal-body\"> <div class=\"row\"> <div style=\"padding:0 5%\" class=\"col-full\"> <form name=\"queryForm\" class=\"nobottommargin\" ng-submit=\"onFormSubmit(queryForm)\"> <div class=\"col_full\"> <label for=\"queryName\"> <font color=\"white\">Name</font> </label> <input type=\"text\" class=\"form-control\" id=\"queryName\" name=\"queryName\" placeholder=\"Name\" ng-model=\"queryObj.name\" required> </div> <div class=\"col_full\"> <label for=\"queryPhone\"> <font color=\"white\">Phone no.</font> </label> <input type=\"tel\" class=\"form-control\" id=\"queryPhone\" name=\"queryPhone\" placeholder=\"Phone\" ng-model=\"queryObj.phone\" required> </div> <div class=\"col_full nobottommargin\"> <button type=\"submit\" class=\"button button-blue\"> <font color=\"white\">Submit</font> </button> </div> </form> </div> </div> </div> </div> </div> </div> <div class=\"modal fade\" id=\"tripModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"tripModal\"> <div class=\"modal-dialog\" role=\"document\"> <div class=\"modal-content\"> <div class=\"modal-header\" style=\"text-align:center\"> <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"> <span aria-hidden=\"true\">&times;</span> </button> <h4 class=\"modal-title\" id=\"tripModallabel\">{{messageType}}<img style=\"margin-left:20px\" height=\"20\" width=\"20\" src=\"images/cheers.png\"></h4> </div> <div class=\"modal-body\"> <div class=\"row\" style=\"text-align:center\"> <div style=\"padding:5%\" class=\"col-full\"> {{message}} </div> </div> </div> </div> </div> </div> <div class=\"modal fade\" id=\"plantripModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"plantripModal\"> <div class=\"modal-dialog\" role=\"document\"> <button style=\"color:#FFF; font-size:40px\" type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"> <span aria-hidden=\"true\">&times;</span> </button> <div class=\"modal-content plantripModal\"> <div class=\"modal-body\"> </div> </div> </div> </div> <div class=\"modal fade\" id=\"eventSuccessModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"eventSuccessModal\"> <div class=\"modal-dialog\" role=\"document\"> <button style=\"color:#FFF; font-size:40px\" type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"> <span aria-hidden=\"true\">&times;</span> </button> <div class=\"modal-content eventSuccessModal\"> <div class=\"modal-body\"> </div> </div> </div> </div> "
   );
 
 }]);

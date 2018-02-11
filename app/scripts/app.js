@@ -33,7 +33,7 @@ angular
   ])
   .config(['$routeProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', '$authProvider', function ($routeProvider, $urlRouterProvider, $stateProvider, $locationProvider, $authProvider) {
 
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
     // $locationProvider.hashPrefix('');
 
     $authProvider.baseUrl = '/';
@@ -175,9 +175,14 @@ angular
         templateUrl: 'views/payment.html',
         controller: 'PaymentCtrl'
       })
-      .state('events', {
-        url: '/events/:eventSlug',
-        templateUrl: 'views/events.html',
+      .state('valentine', {
+        url: '/event/1/:eventSlug',
+        templateUrl: 'views/valentine.html',
+        controller: 'EventCtrl'
+      })
+      .state('holi', {
+        url: '/event/2/:eventSlug',
+        templateUrl: 'views/holi.html',
         controller: 'EventCtrl'
       });
 
