@@ -52,7 +52,8 @@ angular.module('wanderwagon-webapp')
 
     getEventTravelPlans();
 
-    $scope.getPlanById = function(id) {
+    var getPlanById = function(id) {
+      
       mockRemoteSvc.getPlanById(id).then(function (data) {
         $scope.itineraries = data.itineraries;
         console.log(data);
@@ -99,17 +100,17 @@ angular.module('wanderwagon-webapp')
 
 
   $scope.openAccordion = false;
-    $scope.openOrCloseAccordion = function () {
-      console.log("Clicked");
+    $scope.openOrCloseAccordion = function (id) {
         if ($scope.openAccordion === true) {
           $scope.closeAccordion();
         } else if ($scope.openAccordion === false) {
+          getPlanById(id);
           $scope.openAccordion = true;
         }
     };
 
     $scope.closeAccordion = function () {
-      $scope.itineraries = undefined;
+      $scope.itineraries = [];
       $scope.openAccordion = false;
       var someElement = angular.element(document.getElementById('places'));
         $document.scrollToElement(someElement, 30, 800);

@@ -1,4 +1,4 @@
-<div class="cover-page" style="background-color:#36353B;background-image: url({{eventDetail.eventImage}});background-attachment: fixed;
+<div class="cover-page" style="background-color:#36353B;background-image: url('https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/holi_cover.jpg');background-attachment: fixed;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover; height:100vh;">
@@ -48,7 +48,7 @@ background-size: cover; height:100vh;">
       </div>
   
     <ng-owl-carousel class="owl-theme" owl-items="travelPlans" owl-properties="sliderProperties" owl-ready="ready($api)">
-      <div ng-click="openOrCloseAccordion() ; getPlanById(item.id)" class="paul-slide" style="padding:2% 0 2% 0%" data-ng-repeat="item in travelPlans">
+      <div ng-click="openOrCloseAccordion(item.id)" class="paul-slide" style="padding:2% 0 2% 0%" data-ng-repeat="item in travelPlans">
         <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
       </div>    
     </ng-owl-carousel>
@@ -58,7 +58,7 @@ background-size: cover; height:100vh;">
         <uib-accordion-group is-open="openAccordion">
             <div class="center-block custom-container">
    
-                <flip-book ng-if="itineraries" data="itineraries"></flip-book>
+                <flip-book ng-if="itineraries.length > 0" data="itineraries"></flip-book>
             
               </div>
 
