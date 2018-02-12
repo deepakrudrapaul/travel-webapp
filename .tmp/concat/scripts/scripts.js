@@ -2692,6 +2692,14 @@ angular.module('wanderwagon-webapp')
           {
             imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/24.jpg",
             id: 24
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/25.jpg",
+            id: 25
+          },
+          {
+            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/26.jpg",
+            id: 26
           }
         ]
       }
