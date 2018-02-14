@@ -58,12 +58,17 @@
             <div>
               <i style="padding:5% 5% 0 5%;" class="icon-calendar"></i>Events</div>
           </a>
-          <div style="margin-left:10%;">
-            <a href="" ui-sref="events({eventSlug: getSlug('valentines day')})" ng-touch="closeSideNav()" ng-click="closeSideNav()">
-              <div>
-                <i style="padding:2%;" class=""></i>Valentine's Day</div>
+
+          <div ng-if="isEventOpen" style="margin-left:10%;">
+            <a href="" ui-sref="valentine({eventSlug: getSlug('valentines day')})" ng-touch="closeSideNav()" ng-click="closeSideNav()">
+              <div><i style="padding:2%;" class=""></i>Valentine's Day</div>
+            </a>
+
+            <a href="" ui-sref="holi({eventSlug: getSlug('mathura ki holi')})" ng-touch="closeSideNav()" ng-click="closeSideNav()">
+              <div><i style="padding:2%;" class=""></i>Mathura ki Holi</div>
             </a>
           </div>
+
           <a href="" ui-sref-active="active-menu" ui-sref="blog.list" ng-touch="closeSideNav()" ng-click="closeSideNav()">
             <div>
               <i style="padding:5%;" class="icon-comment"></i>Blogs</div>
