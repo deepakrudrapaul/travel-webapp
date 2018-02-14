@@ -624,26 +624,6 @@ angular.module('wanderwagon-webapp')
           {
             imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/9.jpg",
             id: 9
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/10.jpg",
-            id: 10
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/11.jpg",
-            id: 11
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/12.jpg",
-            id: 12
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/13.jpg",
-            id: 13
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_3/flipbook/14.jpg",
-            id: 14
           }
         ]
       },
@@ -695,18 +675,6 @@ angular.module('wanderwagon-webapp')
           {
             imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/11.jpg",
             id: 11
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/12.jpg",
-            id: 12
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/13.jpg",
-            id: 13
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_4/flipbook/14.jpg",
-            id: 14
           }
         ]
       },
@@ -798,27 +766,8 @@ angular.module('wanderwagon-webapp')
           {
             imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/21.jpg",
             id: 21
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/22.jpg",
-            id: 22
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/23.jpg",
-            id: 23
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/24.jpg",
-            id: 24
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/25.jpg",
-            id: 25
-          },
-          {
-            imageUrl: "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/events/holi/plans/plan_5/flipbook/26.jpg",
-            id: 26
           }
+          
         ]
       }
     ];
