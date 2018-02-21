@@ -2,14 +2,12 @@
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover; height:100vh;">
-  <div style="background-color:#36353B; height:100px;" class="clearfix">
-  </div>
+ 
 </div>
 
 <div class="mobile-cover-page" style="background-color:#36353B;background: url({{mobileImageUrl}}) no-repeat center center fixed;background-attachment: fixed;
 background-size: cover; height:100vh;">
-  <div style="background-color:#36353B; height:100px;" class="clearfix">
-  </div>
+
 </div>
 
 <section id="about">
@@ -24,16 +22,66 @@ background-size: cover; height:100vh;">
 
 
     <div class="custom-para-event">
-      <p>How do you see yourself playing Holi this year? Same old or Some bold? It is for you to decide.
-        Kyuki Mathura ki Holi nahi kheli, to kya kia? Let us help you check one more item off your bucket list as you soak into the vibrancy of this festival.</p>
-
-      <p>
-        Travel back in time to witness the authentic Holi of Mathura.  Follow the steps of Lord Krishna and let the inner kid take over.  Let go of the inhibitions and let others watch you bring your A-Game. This Holi there's no stopping you; Cause what happens in Mathura stays in Mathura!
-      </p>
-
-      <p>
-        Celebrations start a week in advance and here is when and where you should be while celebrating Holi in Mathura.
-      </p>
+        <p style="margin-bottom:20px;">How do you see yourself playing Holi this year? Same old or Some bold? It is for you to decide. Kyuki Mathura ki Holi
+            nahi kheli, to kya kia? Let us help you check one more item off your bucket list as you soak into the vibrancy of
+            this festival.</p>
+    
+          <p style="margin-bottom:20px;">
+            Travel back in time to witness the authentic Holi of Mathura. Follow the steps of Lord Krishna and let the inner kid take
+            over. Let go of the inhibitions and let others watch you bring your A-Game. This Holi there's no stopping you; Cause
+            what happens in Mathura stays in Mathura!
+          </p>
+    
+          <p style="font-size:2.2rem; margin-bottom:20px;">
+            Celebrations start a week in advance and here is when and where you should be while celebrating Holi in Mathura.
+          </p>
+    
+          <p style="margin-bottom:20px;">
+            <strong>* Lathmar Holi - 24.02.2018-25.02.2018 </strong>
+            <br/> What literally translates to a festival of lathis (sticks) and colours, Lathmar Holi lives up to every bit of its
+            name.
+          </p>
+    
+          <p style="margin-bottom:20px;">
+    
+            <strong> * Phoolon Wali Holi - 26.02.2018 </strong>
+            <br/> Flowers and showers, Phoolon Wali Holi lives up to every bit of its name.
+    
+          </p>
+    
+          <p style="margin-bottom:20px;">
+            <strong>* Widow’s Holi- 27.02.2018 </strong>
+            <br/> The only day when a widow’s saree turns into a blank canvas to be filled with colours.
+          </p>
+    
+          <p style="margin-bottom:20px;">
+    
+            <strong> * Holi at Vrindavan- 01.03.2018 </strong>
+            <br/> The festivities begin as the gates to the temple of Banke Bihari open up for you to play Holi with the lord himself.
+          </p>
+    
+          <p style="margin-bottom:20px;">
+    
+            <strong> * Holi at Mathura- 01.03.2018 </strong>
+            <br/> Witness the rest of the Holi along the lanes of Mathura.
+          </p>
+    
+          <p style="margin-bottom:20px;">
+    
+            <strong> * Holika Dahan- 01.03.2018 </strong>
+            <br/> Celebrate the victory of good over evil as you watch the effigy of Holika burn down to ashes.
+    
+          </p>
+          <p style="margin-bottom:20px;">
+            <strong>* Grand Holi- 02.03.2018 </strong>
+            <br/> Travel back in time and witness the authentic holi of Mathura amongst the riot of colours.
+          </p>
+    
+          <p style="margin-bottom:20px;">
+    
+            <strong> * Huranga- 03.03.2018 </strong>
+            <br/>It’s not over yet! Let the inner child take over a day after.
+          </p>
     
     </div>
   </div>
@@ -47,11 +95,56 @@ background-size: cover; height:100vh;">
     <div class="underline" style="margin-bottom:5rem;">
       </div>
   
-    <ng-owl-carousel class="owl-theme" owl-items="travelPlans" owl-properties="sliderProperties" owl-ready="ready($api)">
-      <div ng-click="openOrCloseAccordion(item.id)" class="paul-slide" style="padding:2% 0 2% 0%" data-ng-repeat="item in travelPlans">
-        <img style="object-fit:cover; width:100%; height:100%;" class="owl-lazy" data-src="{{item.imageUrl}}">
-      </div>    
-    </ng-owl-carousel>
+    
+  <div class="row row-centered">
+      <div style="margin-bottom:2%;" ng-repeat="plan in travelPlans" class="col-sm-6 col-centered col-fixed">
+  
+  
+  
+        <div class="photo" style="cursor:pointer; width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      margin: 10px 0;">
+  
+  
+          <img ng-click="openOrCloseAccordion(plan.id)" class="img-responsive" style="height:500px; display: block;
+      position: relative;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      margin: 0 auto;" src="{{plan.imageUrl}}">
+  
+  
+          <!-- <div class="overlay" style="width: 100%;
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      -webkit-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out">
+                <h2 style="color: #fff;
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      bottom: 10%;
+      font-size: 20px;
+      font-weight: 400;
+      padding: 10px;
+      background: rgba(0,0,0,0.6);" class="ng-binding">{{destination.name}}</h2>
+              </div> -->
+         
+  
+        </div>
+        <div ng-click="pay(plan.price,  plan.title)" style=" width:100%; cursor:pointer; text-align:center;">
+          <a class="button button-3d button-rounded button-blue">Book Now</a>
+        </div>
+  
+  
+  
+      </div>
+    </div>
   
     <div id="accordion1" class="clearfix" >
       <uib-accordion>
@@ -67,53 +160,7 @@ background-size: cover; height:100vh;">
     </div>
   </section>
 
-<section id="content">
 
-  <div class="content-wrap">
-
-    <div class="container clearfix">
-
-      <div style="float: none; display: block; margin-right: auto; margin-left: auto;" class="col_half nobottommargin">
-        <h2 style="margin-bottom:5%;">We would need a little help from you.</h2>
-        <form id="conditional-form" name="tripForm" class="nobottommargin" ng-submit="submitEventForm(tripForm)">
-
-          <div class="col_full">
-            <label for="form-condition-1">Destination</label>
-            <input placeholder="Where would you like to go?" pattern="^[a-zA-Z ]*$" type="text" class="form-control required" id="form-condition-1" name="form-condition-1"
-              ng-model="formObj.destination" required>
-            <!-- <a href="#" class="button button-border button-rounded"><i class="icon-gift"></i>Button</a> -->
-          </div>
-
-
-          <div class="col_full">
-            <label for="template-contactform-name">Name </label>
-            <input placeholder="Enter your name" pattern="[a-zA-Z][a-zA-Z ]+" required ng-model="formObj.name" type="text" id="template-contactform-name"
-              name="template-contactform-name" value="" class="form-control required show-error-msg" />
-          </div>
-
-          <div class="col_full">
-            <label for="template-contactform-email">Email </label>
-            <input placeholder="Enter your email id" required ng-model="formObj.email" type="email" id="template-contactform-email" name="template-contactform-email"
-              value="" class="required email form-control" />
-          </div>
-
-          <div class="col_full col_last">
-            <label for="template-contactform-phone">Phone</label>
-            <input placeholder="Enter your mobile no." pattern="^[0][1-9]\d{9}$|^[1-9]\d{9}$" required ng-model="formObj.phone" type="text" id="template-contactform-phone"
-              name="template-contactform-phone" value="" class="form-control" />
-          </div>
-
-
-
-          <div ng-style="display10" class="col_full" id="form-condition-submit">
-            <button class="button nomargin" type="submit">Plan My Trip</button>
-          </div>
-
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModal">
