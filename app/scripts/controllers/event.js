@@ -142,7 +142,7 @@ angular.module('wanderwagon-webapp')
         "key": "rzp_live_lhuK7gjYSF90ee",
   
         "name": "Wanderwagon Pvt Ltd",
-        "image": "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/logo/logo-short.png",        
+        "image": "https://s3-ap-southeast-1.amazonaws.com/wanderwagon/images/logo/logo-square.png",        
         "description": "Kheerganga Trek Booking",
         "prefill": {
           
