@@ -170,21 +170,6 @@ angular
         templateUrl: 'views/privacy-policy.html',
         controller: 'ContactCtrl'
       })
-      .state('payment', {
-        url: '/payment',
-        templateUrl: 'views/payment.html',
-        controller: 'PaymentCtrl'
-      })
-      .state('valentine', {
-        url: '/event/1/:eventSlug',
-        templateUrl: 'views/valentine.html',
-        controller: 'EventCtrl'
-      })
-      .state('holi', {
-        url: '/event/2/:eventSlug',
-        templateUrl: 'views/holi.html',
-        controller: 'EventCtrl'
-      });
 
   }])
   .run(["$rootScope", "$location", "$window", "auth", "$anchorScroll", function ($rootScope, $location, $window, auth, $anchorScroll) {
